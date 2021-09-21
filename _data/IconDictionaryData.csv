@@ -1,0 +1,122 @@
+name,current icon,class,suggested class icon,synonyms,usage,category,sub,image,inlineCSS,css,url
+Accreditation Services,,award,,accreditation,Accreditation Content,content,product,,,far,
+Action Plan,,file-signature,, ,"Multi-page booklet that includes information about how to manage a health condition or initiate a medication, with input areas to record progress or goals.",content, ,,,far,"https://www.cardiosmart.org/search?sort=relevancy&q=action%20plan ; https://www.cardiosmart.org/topics/manage-your-care/your-responsibilities "
+"Add, New",,plus,,"new, another, expand","Used in buttons - the plus icon is combined with ""Add [new item being added]"". For example: ""Add User""",action,button & link,,,far,https://memberhub.acc.org/discuss/viewcategory/336 
+Annual Scientific Sessions,,,,,,,,,,far,https://www.acc.org/Education-and-Meetings 
+Announcement,,megaphone,,"section news, updates","Time sensitive messages that are not evergreen news. ","content ",article,,,far,
+Apps & Tools,,"mobile-alt,heart",,applications,"Simple icon used in lists, search, ui or small graphic moments when the full graphic would deteriorate or become unreadable.",,,,font-size: 50%;top: -9%;,"fas, fas c_primary",https://www.acc.org/guidelines/hubs/atrial-fibrillation 
+Audio,,headphones,,"sound clip, listen","The audio icon is often placed, with the title of the file.  Audio files include but are not limited to podcast, mp3, or wav.","content,ui",asset,,,far,https://www.acc.org/My-ACC/My-Library 
+Award,,trophy,,,"Simple icon used in lists, search, ui or small graphic moments when the full graphic would deteriorate or become unreadable.",,,,,far,https://www.acc.org/membership/current-members 
+Bookmark,,bookmark,,save to library, Appears when an item is saved to library,ui, ,,,far,https://memberhub.acc.org/profile/12609 
+Brute Force Lock,,"lock,ban",,,Icon to use that the users authentication has been revoked because they have had too many failed attempts. This icon is always an alert state.,ui,,,top: 20%;font-size: 75%;,"fas,far c_white",
+Career & Practice Resources,,"clipboard,tasks",,resources,"Simple icon used in lists, search, ui or small graphic moments when the full graphic would deteriorate or become unreadable.",,,,top: 15%;font-size: 85%;,"fas,far c_white",https://www.acc.org/membership/current-members 
+Cart,,shopping-cart,,"shopping cart, bag, shopping bag, basket, shopping basket",Signifies the user's products or potential purchases when signed into acc.org,,,,,far,https://www.acc.org/ 
+Certificate Program,,,,,"The primary purpose of an assessment-based certificate program is on facilitating the accomplishment of the intended learning outcomes by providing education and training that supports the accomplishment of intended learning outcomes. ",content,product,,,far,
+Certified Patient Cases,,,,,"A format used for applicaiton of knowledge in a real situation.  to show the application of a theory or concept to real situations.  ",content,product,,,far,
+Chapter Meetings,,,,,,,,,,far,https://www.acc.org/Education-and-Meetings 
+Clinical Toolkit,,"box,tools",,toolkit,"Simple icon used in lists, search, ui or small graphic  moments when the full graphic would deteriorate or become unreadable.",content,product,,top: 22%;font-size: 75%;,"far,fas c_white",
+Clinical Trials,,microscope,,,,content,,,,far,
+Collapse,,minus,,"minimize,hide","In combination with the ""Expand"" icon, these icons toggle to reflect the opposite state of complex content - such as navigation and sections of content.",action,hidden content,,,far,
+Credit,,file-certificate,,certificate,"When denoting the types of education credits or certificates that are attached to a content item. ",ui, ,,,far,
+Decision Aid,,sitemap,, ,Decision Aid: Multi-page booklet or video to support shared decision-making.,content, ,,,far,"https://www.cardiosmart.org/search?sort=relevancy&q=decision%20aid ; https://www.cardiosmart.org/assets/decision-aid/choosing-between-tavr-and-surgery "
+Discussion Guide,,user-md-chat,, ,Multi-page booklet for clinician to use with patient to learn about a topic.,content, ,,,far,
+Down Voted,,thumbs-down,,"unliked, disapproved, disliked", ,ui, ,,,far,
+Download,,arrow-to-bottom,,"save local copy, save to disk, save to drive","This icon must always be connected to the name of the file type it is downloading.  This can either be the title of the file or the type of file. For example: (Download) The complications of the heart, or (Download) Presentation",action,button & link,,,far," ; https://www.cardiosmart.org/assets/fact-sheet/hypertrophic-cardiomyopathy-fact-sheet "
+Drill and Practice,,,,,"Drill & Practice products feature 3 convenient modes:
+
+Learn Mode: Provides an overview of the topic.
+Drill/Practice Mode: Includes “flash cards” that you can use to reinforce & apply what you learned in the Learn section. Turn each card over to see the answer and explanation.
+Perform Mode: Practice by answering multiple choice questions featuring case-based scenarios. Receive detailed commentary on how your answer compares to the experts’.",content,product,,,far,https://www.acc.org/Education-and-Meetings 
+Editor in Chief,,users-medical,,"editor, editorial board",,ui,users,,,far,
+Editors Pick,,thumbs-up,,"approved, liked, up voted"," Signifies that content (typically an article, jscan, etc.) is picked by the editor of ACC.org",ui, ,,,far,https://www.acc.org/Latest-in-Cardiology#sort=%40commonsortdate%20descending&f:@themecomputed=[Clinical%20Updates%20and%20Discoveries]&f:@themecomputed:lookupvalues={%22Clinical%20Updates%20and%20Discoveries%22:%22Clinical%20Updates%20and%20Discoveries%22} 
+Education,,,,,"Simple icon used in lists, search, ui or small graphic moments when the full graphic would deteriorate or become unreadable.",,,,,far,https://www.acc.org/guidelines/hubs/atrial-fibrillation 
+"Educational Activities, ",,university,,Education,"Simple icon used in lists, search, ui or small graphic moments when the full graphic would deteriorate or become unreadable.",,,,,far,"https://www.acc.org/My-ACC/My-Library ; https://www.acc.org/membership/current-members "
+"Event, Date",,calendar-alt,,calendar, Signifies the date of an event,"content,ui", ,,,far,"https://www.acc.org/education-and-meetings/meetings?w_nav=MN#sort=%40startz32xdatetime%20ascending&f:@meetingtypedescription=[Chapter%20Meetings] ; https://www.acc.org/membership/current-members ; https://www.acc.org/Education-and-Meetings/Meetings#sort=%40startz32xdatetime%20ascending  ; https://www.acc.org/#sort=%40commonsortdate%20descending "
+Expand,,plus,," show, maximize, more","In combination with the ""Collapse"" these icons toggle to reflect the opposite state of complex content - such as navigation, and sections of content.",action,hidden content,,,far,Cardiosmart.org 
+Expert Analysis,,user-chart,,,Either a written or video format in which one or more experts teaches a topic,content,product,,,far,
+External Link,,external-link,,"pop out, open in new window",Any link that will drive the user to a page outside of the domain of the acc should have this icon postpended to it,action,button & link,,,far,"https://www.acc.org/ ; https://www.acc.org/guidelines/hubs/valvular-heart-disease ; https://www.acc.org/Education-and-Meetings "
+Facebook,,facebook-square,, ,Icon representation of the social network,ui,social,,,fab,
+Fact Sheet,,ballot-check,, ,"One page, mostly text, explains key information about a topic.",content, ,,,far,https://www.cardiosmart.org/search?sort=csposteddate%20descending&f:@cscontentitemtype=Fact%20sheet 
+Featured,,star,,starred, ,ui, ,,,far,
+Filter,,filter,,refine,This icon are usually combined with the word filter,action,button & link,,,far,https://memberhub.acc.org/discuss/viewcategory/336 
+Font Size,,text-size,,text size,"This is a set of 3 icons in one - the user can click on each A, and the font-size will change accordingly",,,,,far,https://www.acc.org/latest-in-cardiology/articles/2021/01/12/18/39/jacc-cardiooncology-papers-discuss-evolving-landscape-of-immune-checkpoint-inhibitors 
+Generic Article,,file-medical-alt,, ,Any news or editorial article that doesn't fit into the specialized sub article types,content,article,,,far,https://www.acc.org/My-ACC/My-Library 
+Google Play,,google-play,,,Icon representation of the social network,,,,,fab,https://www.acc.org/latest-in-cardiology/features/podcasts 
+Guideline,,book-medical,, ,"Capital ""G"" guidelines",content, ,,,far,
+Guideline Hub,,hubspot,,Hub,"Guideline hub icon, appears on the guideline search listing page - links to hub for the particular guideline it appears next to",,,,,fab,https://www.acc.org/latest-in-cardiology/features/podcasts 
+"Guideline, Guideline Education",,book-open,,"recomendation, rule","Simple icon used in lists, search, ui or small graphic moments when the full graphic would deteriorate or become unreadable.",content,,,,far,https://www.acc.org/Education-and-Meetings 
+Home,,home,,,Links to homepage on ACC.org - appears in top line navigation,,,,,fas,https://www.acc.org/ 
+image,,image,,"graphic, picture, photo",Signifies that the object is an image file,"content,ui",asset,,,far,https://memberhub.acc.org/profile/12609  ; https://www.acc.org/My-ACC/My-Library 
+Infographic,,file-chart-pie,,"poster, printable flier","One page, mostly images, that explains a health topic. Can be printed as a handout or posted on the wall.",content, ,,,far,https://www.cardiosmart.org/topics/healthy-living/eat-better 
+Instagram,,instagram-square,, ,Icon representation of the social network,ui,social,,,fab,
+iTunes,,itunes,,,Icon representation of the social network,,,,,fab,https://www.acc.org/latest-in-cardiology/features/podcasts 
+JACC Journals CME/MOC/ECME,,,,,"JACC Icon is used in the guidelines search listing, signifiying a link to the JACC guideline article",content,product,,,far,https://www.acc.org/membership/current-members 
+Less,,chevron-up,,"collapse, read less, hide","In combination with the ""More"" icon this icon toggles simple text content by showing less of the content",action,hidden content,,,far,
+LinkedIn,,linkedin,, ,Icon representation of the social network,ui,social,,,fab,
+List bullets,,,,,"We use browser rendered bullets and do not inlcude an alternate version for consistency. ",,,,,far,https://www.acc.org/education-and-meetings/features/2020/05/iv-board-prep-virtual-experience   https://www.acc.org/My-ACC/My-Communication-Preferences 
+LIve,,video,,"live stream, video in progress","Icon that denotes if a presentation is currently or will be ""live/live streamed""",,,,,far,
+Lock,,lock,,secure,Signifies content that requires a login to view. Appears after text.,,,,,far,https://www.acc.org/membership/current-members 
+Login,,sign-in,,sign-in,used in main nav that denotes how a user will log into the ACC systems.,,,,,far,https://memberhub.acc.org/welcome/profile/12073 
+Logout,,sign-out,,"sign-out, log out, sign out",used in main nav that denotes how a user will log out of the ACC systems.,,,,,far,https://memberhub.acc.org/welcome/profile/12073 
+Meeting on Demand,,"calendar,play-circle",,"past meeting, meeting recording","ACC’s Meeting on DemandTM Programs allow busy cardiovascular practitioners to participate in educational courses from the convenience of their home or office.  They feature education in a user-friendly online lecture format featuring synchronized slides, video and audio, supplemented by self-assessment questions.  ",content,product,,top: 16%;font-size: 86%;,"fas,fas c_white",
+Meetings,,"calendar-day
+",,"Conference, meetup,live meeting","Simple icon used in lists, search, ui or small graphic moments when the full graphic would deteriorate or become unreadable.",,,,,far,https://www.acc.org/My-ACC/My-Library 
+Member Hub,,,,,Icon representation of MH,memberhub,,,,,https://www.acc.org/latest-in-cardiology/features/podcasts
+Message,,envelope,,"send message, email, chat",,,,,,far,"https://memberhub.acc.org/profile/12609 ; https://memberhub.acc.org/profile/12609 ; https://www.acc.org/latest-in-cardiology/articles/2021/01/12/18/39/jacc-cardiooncology-papers-discuss-evolving-landscape-of-immune-checkpoint-inhibitors "
+My Account,,user-circle,,"me, my",,,,,,far,https://memberhub.acc.org/welcome/profile/12073 
+News Article,,newspaper,,news,A news article that is an update or newsworthy,content,article,,,far,https://www.cardiosmart.org/topics/angina 
+Notification,,bell,,alert,,,,,,far,https://memberhub.acc.org/welcome/profile/12073 
+On Demand,,"rectangle-wide,play-circle",,"pre recored, on demand, direct access","Icon that denotes if a presentation is currently or will be ""on demand""",,,,font-size:80%,"far,fas c_primary",
+Online Course,,"browser,graduation-cap",,"Digital Learning, Online Educaiton,Online Learning, Self-Paced Learning",Educational materials that can be done 100% online and on demand. This type of education may or may not reward credits.,content,,,top: 7%;font-size: 90%;,"far, fas c_primary",https://learn.acc.org/Page/LEARNHCM
+Patient Case Quizzes,,notes-medical,,,"A format used to test knowledge for both formative or summative assessments.  Quizzes are usually brief, ie one or two questions",content,product,,,far,
+Patient Resources,,"clipboard,user",,resources,Used for CardioSmart and other resources that focus on the patient,,,,top: 10%;font-size: 80%;,"fas,fas c_white",https://www.acc.org/guidelines/hubs/atrial-fibrillation 
+Patient/Survivor Story,,address-card,, ,An article or essay that is focus on or in the words of a patient,content, ,,,far,
+PDF,,file-pdf,,document,"Used to signifiy a link to a PDF, can appear on it's own or after linked text (ala the external link icon)",,,,,far,https://www.acc.org/search#q=summary&sort=relevancy 
+Perspectives (Guidelines commentary),,,,,"Simple icon used in lists, search, ui or small graphic moments when the full graphic would deteriorate or become unreadable.",,,,,far,https://www.acc.org/guidelines/hubs/atrial-fibrillation 
+Player FM,,,,,Icon representation of Player FM,,,,,far,https://www.acc.org/latest-in-cardiology/features/podcasts 
+Podcast,,podcast,,,Icon representation of podcasts,ui,users,,,far,
+Print,,print,,,"When clicked, user's print dialogue opens",,,,,far,https://www.acc.org/latest-in-cardiology/articles/2021/01/19/14/27/new-insights-into-prescribing-of-sglt2-inhibitors-and-glp-1-receptor-agonists-in-2020 
+Quality Campaign,,,,campaign,"Simple icon used in lists, search, ui or small graphic  moments when the full graphic would deteriorate or become unreadable.",content,product,,,far,
+Quick Reference,,,,,"Simple icon used in lists, search, ui or small graphic moments when the full graphic would deteriorate or become unreadable.",,,,,far,https://www.acc.org/guidelines/hubs/atrial-fibrillation 
+Registered,,check-circle,,purchased," Signifies that an item was purchased, or an event was registered for",ui, ,,,far,
+Registry,,"file,cog",,NCDR,"Simple icon used in lists, search, ui or small graphic  moments when the full graphic would deteriorate or become unreadable.",content,product,,top: 10%;font-size: 90%;,"far,fas c_primary",
+"Remove, Cancel, Clear",,times,,"delete, close, exit","Used in buttons, the times icon is combined in two ways: either with ""Cancel"" or with the word ""Remove or Delete"" + [the item being removed]. For Example ""Remove User"" ",action,button & link,,,far,"https://www.cardiosmart.org/find-your-heart-a-home ; https://www.acc.org/education-and-meetings/education-catalog#sort=%40originalz32xpostedz32xdate%20descending "
+Report,,exclamation-triangle,,warning,,,,,,far,https://memberhub.acc.org/profile/12609 
+Risk Calculator,,calculator,, ,SPA (Single Page Application) that helps a user understand their risk for a condition.,content, ,,,far,
+RSS,,rss-square,,,Icon representation of a rss feed,,,,,far,https://www.acc.org/Latest-in-Cardiology#sort=%40commonsortdate%20descending 
+Search,,search,,find,"Appears next to search bars. Signifies search functinality ",,,,,far,https://www.acc.org/#sort=%40commonsortdate%20descending 
+Section News,,scroll,,,"Simple icon used in lists, search, ui or small graphic moments when the full graphic would deteriorate or become unreadable.",,,,,far,https://www.acc.org/My-ACC/My-Library 
+Self-Paced Learning,,book-reader,,"modules,Online Course, Online Learning","Self-paced learning means you can learn in your own time and schedule.  This is not format-dependent, rather how you consume the activity.   If more this more than one self- paced activity, it sould be described as an Online Course.  ",content,product,,,far,https://learn.acc.org/Page/LEARNARRHYTHMIATOOLKIT
+Self-Assessment Programs,,,,,"SAPs are ACC's most comprehensive educational offering.  Each SAP provides a core curriculum on a specific area of cardiovascular medicine.  SAPs include education in a variety of formats, including text, video presentations and audio presentations.  They also include hundreds of multiple-choice questions that allow the user to apply what they learned and identify knowledge gaps.  ",content,product,,,far,https://www.acc.org/Education-and-Meetings 
+Service Glossary,,,,,This a link to the services glossary which is a glossary that provides descriptions and other names for the cardiac services and medications you can search for in the Find Your Heart a Home tool.,,,,,far,https://www.cardiosmart.org/find-your-heart-a-home 
+Share,,share-square,,"send to, ",Used in articles and landing pages with shareable information. The icon will pop-up a dialogue that will allow the user to share through email or social media.,,,,,far,https://www.cardiosmart.org/find-your-heart-a-home 
+"Slideshow, Slides",,slideshare,,"PowerPoint, Deck, Slide Deck,","Simple icon used in lists, search, ui or small graphic moments when the full graphic would deteriorate or become unreadable.",,,,,fab,"https://www.acc.org/My-ACC/My-Library ; https://www.acc.org/membership/current-members ; https://www.acc.org/guidelines/hubs/atrial-fibrillation "
+Round Table,,"circle,comments,comments,ellipsis-h",,,Used in publications for round tables,,,,"top:0%;font-size:150%;left:16%;,top:0%;font-size:160%;left:16%;,font-size:70%;top:-9%;left:7%;","fas,fas c_primary,fal c_white,fas c_white",
+Sort,,sort,,"arrange, order",,,,,,far,"https://memberhub.acc.org/discuss/viewcategory/336 
+
+https://memberhub.acc.org/dashboard#recent-discussions "
+Sound,,volume,,"volume, listen",Signifies the ability to adjust volume,action,button & link,,,far,
+Sound Off,,volume-mute,,"volume off, mute","Signifies the ability to mute the audio file ",action,button & link,,,far,
+Time,,clock,, ,When a content object specifically only shows the time this icon is used.,ui, ,,,far,
+Tooltip,,question,,"assistance, question, ask, help, information, view more info","Appears next to content that has a tooltip ",,,,,far,"https://www.acc.org/education-and-meetings/education-catalog#sort=%40originalz32xpostedz32xdate%20descending       https://www.acc.org/Clinical-Topics/Anticoagulation-Management#sort=%40commonsortdate%20descending "
+Trending,,analytics,,,"Signifies trending  sort view on Latest in Cardiology ",,,,,far,https://www.acc.org/#sort=%40commonsortdate%20descending 
+Twitter,,twitter-square,, ,Icon representation of the social network,ui,social,,,fab,https://www.acc.org/latest-in-cardiology/articles/2021/01/12/18/39/jacc-cardiooncology-papers-discuss-evolving-landscape-of-immune-checkpoint-inhibitors 
+Upload,,arrow-to-top,,"add image, add file",This icon must always be connected to the expected asset to uploaded. For example: (Upload) image,action,button & link,,,far,
+User,,user,,member, Icon representation of a user,ui,users,,,far,
+Users,,users,,"members, group, people","Simple icon used in lists, search, ui or small graphic moments when the full graphic would deteriorate or become unreadable.","content, ui",users,,,far,
+Video,,photo-video,,stream, Signifies a video that's not a webinar,"content,ui", ,,,far,https://www.cardiosmart.org/search?sort=relevancy&q=video 
+View Password,,eye,,"show password, reveal password","In login, appears after password entry form. When clicked the user will be able to see their password instead of bullets hiding actual characters",,,,,far,https://www.acc.org/login?returnUrl=http://www.acc.org/ 
+Views,,eye,,Show Password,,,,,,far,https://memberhub.acc.org/discuss/viewcategory/336 
+Webinar,,desktop-alt,," event, virtual meeting, online session, stream, video",Webinar events that are upcoming or are on-demand,content, ,,,far,
+Worksheet,,tasks,,,"One page, mostly text, with input areas to record progress or work done.",content,,,,far,
+YouTube,,youtube-square,,,Icon representation of the social network,ui,users,,"top: 0%;font-size: 150%;left: 16%;,top: 0%;font-size: 160%;left: 16%;",fab,
+Certified Education,,"badge,book-reader",,,,content,,,font-size:85%,"fas, fas c_white",
+Advocacy,,balance-scale,,,ACC.21 Booth Page,,,,,far,
+"Global Initiatives ",,globe,,,ACC.21 Booth Page,,,,,far,
+Covid19,,virus,,,ACC.21 Booth Page,,,,,far,
+Quality Programs,,badge-check,,,ACC.21 Booth Page,,,,,far,
+Resources,,"clipboard,heart",,resources,,,,,font-size: 70%;top: 18%;,"fas,fas c_white",
+Interactive Tool,,"tablet,sliders-v-square",,,,,,,font-size: 130%;top: -9%;,"fas,fas c_white",
+Expert Panel Discussions,,users-class,,"panel, expert panel, panel discussion",,,,,,far,
+,,,,,,,,,,,
+,,,,,,,,,"    ",,
