@@ -1,43 +1,13 @@
 ---
-
+layout: default
 ---
-<html class="">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="initial-scale=1.0, maximum-scale=2.0, width=device-width" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Home - American College of Cardiology</title>
-        <meta name="description" content="The American College of Cardiology, a 49,000-member nonprofit medical society, is dedicated to enhancing the lives of cardiovascular patients through continuous quality improvement, patient-centered care, payment innovation and professionalism." />
-        <meta name="keyword" content="" />
-        <link rel="stylesheet" href="{{ 'assets/css/bootstrap.css' | append: site.github.build_revision | relative_url }}"/>
-        <link rel="stylesheet" href="{{ 'assets/css/ACCLibrary.css' | append: site.github.build_revision | relative_url }}" />
-        <link rel="stylesheet" href="{{ 'assets/css/acc_arches_override.css' | append: site.github.build_revision | relative_url }}" />
-        <link rel="stylesheet" href="{{ 'assets/css/color-code_credits.min.css' | append: site.github.build_revision | relative_url }}" />
-        <link rel="stylesheet" href="{{ 'assets/css/css/color-code_social.css' | append: site.github.build_revision | relative_url }}" />
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-     </head>
-
+{% include legacy-head.html %} 
 <body id="ng-app" ng-app="AccApp" class="user-not-logged-in ng-scope medium-viewport">
-    <div id="main-container" class="layout-homepage">
-        <header id="header">
-            <h1 id="header-logo" role="banner">
-               <a href="https://acc-style.github.io/ACC-HomePlayground/">
-                  <img src="{{ 'assets/img/logo-header-acc.png' | append: site.github.build_revision | relative_url }}" alt="American College of Cardiology" class="desktop-logo" />
-                  <svg class="mobile-logo-svg">
-                     <image xlink:href="{{ 'assets/img/logo-header-mobile.svg' | append: site.github.build_revision | relative_url }}" src="{{ 'assets/img/logo-header-mobile.svg' | append: site.github.build_revision | relative_url }}" width="126" height="43" class="mobile-logo-image"></image>
-                  </svg>
-               </a>
-            </h1>
-         </header>
-        <!-- header -->
+    <div id="main-container" class="layout-fullwidth">
+       {% include legacy-header.html %}
+        <div id="main-content">
         {{content}}
-        <!-- /main-content -->
-        <!-- footer -->
-
-        <!-- /footer wrap-->
-        <!--  832.0.0.0 -->
+        </div>
+        {% include legacy-footer.html %}
     </div>
 </body>
-
-</html>

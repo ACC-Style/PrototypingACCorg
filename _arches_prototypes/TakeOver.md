@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: arches
 name: "Marketing Takeover"
 position: "Home Page"
 ---

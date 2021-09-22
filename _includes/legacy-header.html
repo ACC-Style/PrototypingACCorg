@@ -1,0 +1,321 @@
+<header id="header">
+
+    <h1 id="header-logo" role="banner">
+    <a href="{{ '/' | append: site.github.build_revision | relative_url }}">
+            <img src="https://www.acc.org/-/media/Non-Clinical/Images/System-Images/Logos/ACC-Logo-altered.png" alt="American College of Cardiology" class="desktop-logo">
+
+            <svg class="mobile-logo-svg">
+                <image href="https://www.acc.org/-/media/Non-Clinical/Images/System-Images/Logos/ACC-Logo-Large-svg.svg" width="126" height="43" class="mobile-logo-image"></image>
+            </svg>
+
+    </a>
+</h1>
+  
+    
+  
+    <div id="nav-utility-holder">
+    
+<ul id="nav-utility">
+            <li class="header-link"><a href="https://www.acc.org/Guidelines" title="Access ACC guidelines and clinical policy documents as well as related resources">Guidelines</a></li>
+            <li class="header-link"><a href="https://www.jacc.org/" target="_blank" title="JACC.org">JACC</a></li>
+            <li class="header-link"><a href="https://accscientificsession.acc.org/" target="_blank" title="ACC Annual Scientific Session">ACC.22</a></li>
+            <li class="header-link"><a href="https://www.acc.org/membership/current-members">Members</a></li>
+            <li class="header-link"><a href="https://www.acc.org/About-ACC">About</a></li>
+            <li class="header-link"><a href="https://www.acc.org/membership/join-us">Join</a></li>
+    </ul></div>
+
+     
+    
+
+
+<!-- This hidden input is required to bypass a problem with the Enter key causing a form submission
+    if the form has exactly one text field, or only when there is a submit button present. -->
+<!-- <input type="text" class="fix-submit"> -->
+<div id="twotabsearchtextbox">
+    <div id="search-holder" role="search">
+
+        <!-- <div class="search-bar">
+            <div id="mainSearchBox" class="CoveoSearchInterface Coveostate CoveoComponentState CoveoComponentOptions CoveoQueryController CoveoDebug" style="display: block;">
+                <label id="nav-search-label" for="searchDropdownBox">Search</label>
+                
+
+                <div class="coveo-searchBox-column">
+                    <div class="CoveoSearchbox" data-enable-omnibox="true" data-placeholder="Search">
+                        <div class="CoveoFieldSuggestions" data-field="@topictermsearchvalues" data-header-title="Topics &amp; Keywords" data-number-of-suggestions="30"></div>
+                    <a class="CoveoSearchButton"><span class="coveo-icon">Search</span></a><div class="CoveoOmnibox magic-box"><div class="magic-box-clear"><div class="magic-box-icon"></div></div><div class="magic-box-input"><div class="magic-box-underlay"><span class="magic-box-highlight-container"><span data-id="start" data-success="true"><span data-id="Start" data-success="true"><span data-id="Empty" data-success="true" data-value=""></span></span></span></span><span class="magic-box-ghost-text"></span></div><input spellcheck="false" form="coveo-dummy-form" autocomplete="off" placeholder="Search" mptid="INPUT;null;1"></div><div class="magic-box-suggestions"></div></div></div>
+                </div>
+
+            </div>
+        </div> -->
+    </div>
+
+</div>
+
+
+
+
+    
+    <!-- main navigation -->
+    <div id="nav-primary-holder">
+        <div id="myacc-holder">
+
+        <div class="logged-out">
+            <div id="header-personal">
+                <p><a href="/preregistration">Create Free Account</a> or</p>
+            </div>
+            <div class="header-link header-myacc">
+                <p>
+                    
+
+
+                    <a href="/login?returnUrl=https://www.acc.org/latest-in-cardiology">
+                        <i class="far fa-sign-in"></i> Log in to MyACC
+                    </a>
+                </p>
+            </div>
+        </div><!-- logged-out -->
+</div><!-- myacc-holder -->
+
+<script type="text/javascript">
+    function setNotificationsAsSeen() {
+        $.post("/Services/MyACC/Notification.asmx/SetNotificationsAsSeen");
+    }
+</script>
+        <!-- main navigation -->
+  
+    <div id="header-mobile-trigger">Menu</div>
+
+    <div class="header-link header-home nav-tooltip" data-placement="top" data-toggle="tooltip" data-original-title="Home"><a href="/">Home</a></div>
+
+    <div id="nav-utility-handheld"></div>
+
+    <ul id="nav-primary" role="navigation">
+            <li class="header-link header-clinical"><span class="toggler"></span>
+                <a href="/Clinical-Topics">Clinical Topics</a>
+                <div class="dropdown">
+                            <div class="set-one">
+                                <ul class="nav-level-1">
+                                            <li>
+                                                <a href="/Clinical-Topics/Acute-Coronary-Syndromes">Acute Coronary Syndromes</a>
+                                            </li>
+                                            <li>
+                                                <a href="/Clinical-Topics/Anticoagulation-Management" title="Anticoagulation Management">Anticoagulation Management</a>
+                                            </li>
+                                            <li>
+                                                <a href="/Clinical-Topics/Arrhythmias-and-Clinical-EP">Arrhythmias and Clinical EP</a>
+                                            </li>
+                                            <li>
+                                                <a href="/Clinical-Topics/Cardiac-Surgery">Cardiac Surgery</a>
+                                            </li>
+                                            <li>
+                                                <a href="/Clinical-Topics/Cardio-Oncology">Cardio-Oncology</a>
+                                            </li>
+                                            <li>
+                                                <a href="/Clinical-Topics/Cardiovascular-Care-Team">Cardiovascular Care Team</a>
+                                            </li>
+                                            <li>
+                                                <a href="/Clinical-Topics/Congenital-Heart-Disease-Pediatric-Cardiology">Congenital Heart Disease and Pediatric Cardiology</a>
+                                            </li>
+                                            <li>
+                                                <a href="/Latest-in-Cardiology/Features/ACCs-Coronavirus-Disease-2019-COVID-19-Hub">COVID-19 Hub</a>
+                                            </li>
+                                            <li>
+                                                <a href="/Clinical-Topics/Diabetes-and-Cardiometabolic-Disease">Diabetes and Cardiometabolic Disease</a>
+                                            </li>
+                                            <li>
+                                                <a href="/Clinical-Topics/Dyslipidemia" title="Dyslipidemia">Dyslipidemia</a>
+                                            </li>
+                                            <li>
+                                                <a href="/Clinical-Topics/Geriatric-Cardiology">Geriatric Cardiology</a>
+                                            </li>
+                                </ul>
+                            </div>
+                            <div class="set-two">
+                                <ul class="nav-level-1">
+                                            <li>
+                                                <a href="/Clinical-Topics/Heart-Failure-and-Cardiomyopathies" title="Heart Failure and Cardiomyopathies">Heart Failure and Cardiomyopathies</a>
+                                            </li>
+                                            <li>
+                                                <a href="/Clinical-Topics/Invasive-Cardiovascular-Angiography-and-Intervention" title="Invasive Cardiovascular Angiography and Intervention">Invasive Cardiovascular Angiography and Intervention</a>
+                                            </li>
+                                            <li>
+                                                <a href="/Clinical-Topics/Noninvasive-Imaging" title="Noninvasive Imaging">Noninvasive Imaging</a>
+                                            </li>
+                                            <li>
+                                                <a href="/Clinical-Topics/Pericardial-Disease" title="Pericardial Disease">Pericardial Disease</a>
+                                            </li>
+                                            <li>
+                                                <a href="/Clinical-Topics/Prevention" title="Prevention">Prevention</a>
+                                            </li>
+                                            <li>
+                                                <a href="/Clinical-Topics/Pulmonary-Hypertension-and-Venous-Thromboembolism">Pulmonary Hypertension and Venous Thromboembolism</a>
+                                            </li>
+                                            <li>
+                                                <a href="/Clinical-Topics/Sports-and-Exercise-Cardiology">Sports and Exercise Cardiology</a>
+                                            </li>
+                                            <li>
+                                                <a href="/Clinical-Topics/Stable-Ischemic-Heart-Disease" title="Stable Ischemic Heart Disease">Stable Ischemic Heart Disease</a>
+                                            </li>
+                                            <li>
+                                                <a href="/Clinical-Topics/Valvular-Heart-Disease">Valvular Heart Disease</a>
+                                            </li>
+                                            <li>
+                                                <a href="/Clinical-Topics/Vascular-Medicine">Vascular Medicine</a>
+                                            </li>
+                                </ul>
+                            </div>
+                </div>
+            </li>
+            <li class="header-link header-latest"><span class="toggler"></span>
+                <a href="/Latest-in-Cardiology">Latest In Cardiology</a>
+                <div class="dropdown">
+                        <ul class="nav-level-1">
+                                <li>
+                                    <a href="/Latest-in-Cardiology#theme=Clinical Updates and Discoveries">Clinical Updates &amp; Discoveries</a>
+                                </li>
+                                <li>
+                                    <a href="/Latest-in-Cardiology#theme=Advocacy and Policy">Advocacy &amp; Policy</a>
+                                </li>
+                                <li>
+                                    <a href="/Latest-in-Cardiology#theme=Perspectives and Analysis">Perspectives &amp; Analysis</a>
+                                </li>
+                                <li>
+                                    <a href="/Latest-in-Cardiology/Features/ACC-meeting-coverage">Meeting Coverage</a>
+                                </li>
+                                <li>
+                                    <a href="/Membership/Join-Us/Benefits/ACC-Member-Publications">ACC Member Publications</a>
+                                </li>
+                                <li>
+                                    <a href="/Latest-in-Cardiology/Features/podcasts">ACC Podcasts</a>
+                                </li>
+                                <li>
+                                    <a href="/Latest-in-Cardiology" class="lvl2">View All Cardiology Updates</a>
+                                </li>
+                        </ul>
+                </div>
+            </li>
+            <li class="header-link header-education"><span class="toggler"></span>
+                <a href="/Education-and-Meetings">Education and Meetings</a>
+                <div class="dropdown">
+                            <div class="set-one">
+                                <ul class="nav-level-1">
+                                            <li><span class="toggler"></span>
+                                                <a href="/Education-and-Meetings/Education-Catalog">Online Learning Catalog</a>
+                                                    <ul class="nav-level-2">
+                                                            <li><a href="/earncredit">Earn Credit</a></li>
+                                                            <li><a href="https://www.acc.org/BoardPrep">Board Prep Offerings</a></li>
+                                                            <li><a href="/Education-and-Meetings/Education-Catalog">View the Entire Catalog</a></li>
+                                                    </ul>
+                                            </li>
+                                            <li><span class="toggler"></span>
+                                                <a href="/Education-and-Meetings/Education-Catalog">Products</a>
+                                                    <ul class="nav-level-2">
+                                                            <li><a href="/Education-and-Meetings/Products-and-Resources/ACCSAP">ACCSAP</a></li>
+                                                            <li><a href="/Education-and-Meetings/Products-and-Resources/ACCEL-Audio">ACCEL</a></li>
+                                                            <li><a href="/Education-and-Meetings/Products-and-Resources/CardioSource-Plus">CardioSource Plus for Institutions and Practices</a></li>
+                                                            <li><a href="/Education-and-Meetings/Products-and-Resources/CathSAP">CathSAP</a></li>
+                                                            <li><a href="/Education-and-Meetings/Products-and-Resources/ECG-Drill-and-Practice" title="ECG Drill and Practice">ECG Drill and Practice</a></li>
+                                                            <li><a href="/Education-and-Meetings/Products-and-Resources/EchoSAP">EchoSAP</a></li>
+                                                            <li><a href="/Education-and-Meetings/Products-and-Resources/EPSAP">EP SAP</a></li>
+                                                            <li><a href="/Education-and-Meetings/Products-and-Resources/HFSAP">HF SAP</a></li>
+                                                            <li><a href="/Education-and-Meetings/Products-and-Resources/Heart-Songs-5">Heart Songs</a></li>
+                                                            <li><a href="/Education-and-Meetings/Online-Courses">Online Courses</a></li>
+                                                    </ul>
+                                            </li>
+                                </ul>
+                            </div>
+                            <div class="set-two">
+                                <ul class="nav-level-1">
+                                            <li>
+                                                <a href="/Education-and-Meetings/Maintenance-of-Certification-Information-Hub/Collaborative-Maintenance-Pathway">Collaborative Maintenance Pathway (CMP)</a>
+                                            </li>
+                                            <li>
+                                                <a href="/Education-and-Meetings/Products-and-Resources">Resources</a>
+                                            </li>
+                                            <li>
+                                                <a href="/Education-and-Meetings/Products-and-Resources/Guideline-Education">Guideline Education</a>
+                                            </li>
+                                            <li>
+                                                <a href="/Education-and-Meetings/Maintenance-of-Certification-Information-Hub">Understanding MOC</a>
+                                            </li>
+                                            <li>
+                                                <a href="/Education-and-Meetings/Image-and-Slide-Gallery">Image and Slide Gallery</a>
+                                            </li>
+                                            <li><span class="toggler"></span>
+                                                <a href="/Education-and-Meetings/Meetings">Meetings</a>
+                                                    <ul class="nav-level-2">
+                                                            <li><a href="http://accscientificsession.acc.org" class="new-window-icon" target="_blank">Annual Scientific Session and Related Events</a></li>
+                                                            <li><a href="https://www.acc.org/education-and-meetings/meetings?w_nav=MN#type=Chapter Meetings">Chapter Meetings</a></li>
+                                                            <li><a href="https://www.acc.org/education-and-meetings/meetings?w_nav=MN#type=Live Meetings" class="lvl2">Live Meetings</a></li>
+                                                            <li><a href="https://www.acc.org/education-and-meetings/meetings?w_nav=MN#type=Live Meetings - International">Live Meetings - International</a></li>
+                                                            <li><a href="/Education-and-Meetings/Meetings#type=Webinars - Live" class="lvl2">Webinars - Live</a></li>
+                                                            <li><a href="/education-and-meetings/meetings?view=archive&amp;#type=Webinars - OnDemand">Webinars - OnDemand</a></li>
+                                                    </ul>
+                                            </li>
+                                </ul>
+                            </div>
+                </div>
+            </li>
+            <li class="header-link header-tools"><span class="toggler"></span>
+                <a href="/Tools-and-Practice-Support">Tools and Practice Support</a>
+                <div class="dropdown">
+                            <div class="set-one">
+                                <ul class="nav-level-1">
+                                            <li>
+                                                <a href="http://cvquality.acc.org" class="new-window-icon" target="_blank">ACC Quality Improvement for Institutions Program</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://cvquality.acc.org/NCDR-Home.aspx" class="new-window-icon" target="_blank">National Cardiovascular Data Registry (NCDR)</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.medaxiom.com/" class="new-window-icon" target="_blank">MedAxiom</a>
+                                            </li>
+                                            <li>
+                                                <a href="http://www.cardiosmart.org" class="new-window-icon" target="_blank">CardioSmart</a>
+                                            </li>
+                                            <li>
+                                                <a href="http://accreditation.acc.org/" class="new-window-icon" target="_blank">ACC Accreditation Services</a>
+                                            </li>
+                                </ul>
+                            </div>
+                            <div class="set-two">
+                                <ul class="nav-level-1">
+                                            <li>
+                                                <a href="/Tools-and-Practice-Support/Advocacy-at-the-ACC">Advocacy at the ACC</a>
+                                            </li>
+                                            <li>
+                                                <a href="http://www.healthecareers.com/acc" class="new-window-icon" target="_blank">Cardiology Careers</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://cardiovascularbuyersguide.com/" target="_blank">Cardiovascular Buyers Guide</a>
+                                            </li>
+                                            <li>
+                                                <a href="/Tools-and-Practice-Support/Clinical-Toolkits">Clinical Toolkits</a>
+                                            </li>
+                                            <li>
+                                                <a href="/Features/2019/07/clinican-well-being-portal" title="Clinician Well-Being Portal">Clinician Well-Being Portal</a>
+                                            </li>
+                                            <li>
+                                                <a href="/About-ACC/Diversity-and-Inclusion" title="Diversity and Inclusion">Diversity and Inclusion</a>
+                                            </li>
+                                            <li>
+                                                <a href="/Tools-and-Practice-Support/Expert-Consensus-Decision-Pathways">Expert Consensus Decision Pathways</a>
+                                            </li>
+                                            <li>
+                                                <a href="/Tools-and-Practice-Support/Infographics">Infographics</a>
+                                            </li>
+                                            <li>
+                                                <a href="/Tools-and-Practice-Support/Mobile-Resources">Mobile and Web Apps</a>
+                                            </li>
+                                            <li>
+                                                <a href="/Tools-and-Practice-Support/Quality-Programs">Quality Programs</a>
+                                            </li>
+                                </ul>
+                            </div>
+                </div>
+            </li>
+    </ul>
+
+ <!-- main-nav -->
+    </div>
+</header>

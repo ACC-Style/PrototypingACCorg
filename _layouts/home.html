@@ -1,10 +1,28 @@
 ---
 layout: default
 ---
+{% include arches-head.html %} 
+<body class="texture_light">
+  <div class="max-w_90 m_auto flex_column flex justify_around bg_white shadow_overlap-light ">
+    <header class="p_4 flex_none flex flex_row:md flex_column br-b_3 br_acc br_solid">
+      <div class="logo_primary max-w_20 flex_grow"></div>
+<div class="flex_auto p-l_5:lg p-l_4:md p-t_4">      <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
+  <p>{{ site.description | default: site.github.project_tagline }}</p></div>
 
-<div class="">
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
+    {% if site.github.is_project_page %}
+    <p class="view"><a href="{{ site.github.repository_url }}">View the Project on GitHub <small>{{ site.github.repository_nwo }}</small></a></p>
+    {% endif %}
+  </header>
+<section class="p_4 flex_auto min-h_80">
   {{ content }}
-</div>
+
+</section>
+  <footer class=" flex_none m-t_auto p_4">
+    {%- assign update_date ="9/22/2021"  -%}
+    <strong> last updated: {{ update_date  }}</strong>
+    <p><small>
+      This project is maintained by ACC's Digital Stradegy Team.<br/>
+      Hosted on GitHub Pages</small></p>
+  </footer>
+  </div>
+</body>
