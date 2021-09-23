@@ -1,0 +1,91 @@
+---
+layout: virtual
+name: "Structure"
+position: "Page Frames"
+---
+
+<h2 class="font_display p_4">Banner Header</h2>
+<div class="relative">
+   <div class="absolute b_4 r_4 l_4 b_auto:lg t_4:lg r_4:lg r_4:md l_auto:md b_4:md t_4:md justify_center flex flex_row flex_column:md flex_row:lg gap-x_4 gap-y_4">
+    <a class="btn btn-primary uppercase shadow_overlap-light font_ui font_medium" href="#">Login</a>
+    <a class="btn btn-secondary uppercase shadow_overlap-light font_ui font_medium" href="#">Register</a>
+   </div> 
+<picture class="w_100">
+    <source class="w_100" srcset="https://via.placeholder.com/1440x200.png?text=Banner+Graphic+Desktop+Large" media="(min-width: 1200px)">
+    <source class="w_100" srcset="https://via.placeholder.com/1200x200.png?text=Banner+Graphic+Desktop" media="(min-width: 1024px)">
+    <source class="w_100" srcset="https://via.placeholder.com/768x200.png?text=Banner+Graphic+Tablet" media="(min-width: 768px)">
+    <source class="w_100" srcset="https://via.placeholder.com/600x250.png?text=Banner+Graphic+Mobile" media="(min-width: 400px)"> <source class="w_100" srcset="https://via.placeholder.com/400x300.png?text=Banner+Graphic+Mobile" media="(min-width: 400px)">
+   
+    <img src="https://via.placeholder.com/400x300.png?text=Banner+Graphic+Mobile" class="w_100" alt="">
+</picture>
+
+</div>
+
+<h2 class="font_display p_4">Main Navigation</h2>
+
+<div class="flex l_0 r_0 relative:md z_3">
+    <nav class="bg_acc flex_auto font_0 font_1:md font_2:lg font_display font_medium m-l_0 navbar navbar-dark navbar-expand-lg p_0 text_center:lg text_left">
+        <ul class="br_none collapsed flex font_1 justify_between lh_0  navbar-toggler shadow_overlap-light text_center ul_none w_100">
+        <li class="flex_auto h:bg_secondary flex flex_column">
+            <a class="a:bg_primary c_white block p-x_2 p-y_4 font_medium  text_center self_center" href="/" target="_self">
+                <i class="fa-fw  fa-home-heart fas inline-block m_auto p_2"></i>
+                <span class="block font_n1 text_center">Home</span>
+            </a>
+        </li>
+        <li class="flex_auto h:bg_secondary flex flex_column">
+            <a class="a:bg_primary c_white block p-x_2 p-y_3 font_medium justify_center text_center self_center" href="/on-demand" target="_self">
+                <span class="fa-stack"> 
+                    <i class="fa-rectangle-wide fas fa-stack-2x"></i> 
+                    <i style="font-size:80%" class="fa-play-circle fas c_acc fa-stack-1x"></i> </span>
+                <span class="block font_n1 text_center">Agenda</span>
+            </a>
+        </li>
+        <li class="flex_auto h:bg_secondary flex flex_column">
+            <a class="a:bg_primary c_white block p-x_2 p-y_4 font_medium  text_center self_center" href="/eabstracts" target="_blank">
+                <i class="fa-fw  fa-presentation fas inline-block m_auto p_2"></i>
+                <span class="block font_n1 text_center">eAbstracts</span>
+            </a>
+        </li>
+            <li class="flex_grow bg_secondary h:bg_secondary-n2 flex flex_column">
+                <a class="c_black block p-x_4 p-y_4 text_center bg_tansparent br_0 self_center" data-toggle="collapse" href="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa-fw fas inline-block m_auto p_2 fa-ellipsis-h-alt"></i><span class="block font_n1 text_center">More</span>
+                </a>
+            </li>
+        </ul>
+        <div class="collapse show navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav flex w_100">
+            <li class="nav-item flex_auto display_none block:lg">
+                <a class="a:bg_primary nav-link font_medium h:bg_secondary h:c_white text_left text_center:lg p-l_4 p-l_0:lg text-shadow_black-1 active" href="/" target="_self">
+                    <i class="fa-fw fas fa-home-heart"></i>
+                </a>
+            </li>
+            <li class="nav-item flex_auto display_none block:lg">
+                <a class="a:bg_primary nav-link font_medium h:bg_secondary h:c_white text_left text_center:lg p-l_4 p-l_0:lg text-shadow_black-1 " href="/on-demand" target="_self">
+                    Agenda
+                </a>
+            </li>
+            <li class="nav-item flex_auto display_none block:lg">
+                <a class="a:bg_primary nav-link font_medium h:bg_secondary h:c_white text_left text_center:lg p-l_4 p-l_0:lg text-shadow_black-1 " href="/eabstracts" target="_blank">
+                    eAbstracts
+                </a>
+            </li>
+            <li class="nav-item flex_auto">
+                <a class="a:bg_primary nav-link font_medium h:bg_secondary h:c_white text_left text_center:lg p-l_4 p-l_0:lg text-shadow_black-1 " href="/convocation" target="_self">
+                    Convocation
+                </a>
+            </li>
+            <li class="nav-item flex_auto">
+                <a class="a:bg_primary nav-link font_medium h:bg_secondary h:c_white text_left text_center:lg p-l_4 p-l_0:lg text-shadow_black-1 " href="/expo" target="_self">
+                    Expo
+                </a>
+            </li>
+            <li class="nav-item flex_auto">
+                <a class="a:bg_primary nav-link font_medium h:bg_secondary h:c_white text_left text_center:lg p-l_4 p-l_0:lg text-shadow_black-1 " href="/engage" target="_self">
+                    Engage
+                </a>
+            </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
