@@ -1,0 +1,14 @@
+---
+layout: default
+---
+{% include legacy-head.html %} 
+<body id="ng-app" ng-app="AccApp" class="user-not-logged-in ng-scope medium-viewport">
+    {{content}}
+    <div id="main-container" class="layout-fullwidth">
+       {% include legacy-header.html %}
+        <div id="main-content">
+            <p>Body content.</p>
+        </div>
+        {% include legacy-footer.html %}
+    </div>
+</body>
