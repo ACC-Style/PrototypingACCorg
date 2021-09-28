@@ -4,18 +4,14 @@ name: "Marketing Takeover"
 position: "Legacy Pages"
 ---
 
-<div id="takeover" class="max-w_75 m_auto m-y_3">
+<div id="takeover">
     <a href="/">
-        <img srcset="/PrototypingACCorg/assets/images/TakeOver/takeover-sm.png 300w,
-                    /PrototypingACCorg/assets/images/TakeOver/takeover-md.png 600w,
-                    /PrototypingACCorg/assets/images/TakeOver/takeover-lg.png 900w,
-                    /PrototypingACCorg/assets/images/TakeOver/takeover-xl.png 1200w"
-            sizes="(max-width: 350px) 300px,
-                    (max-width: 650px) 600px,
-                    (max-width: 950px) 900px,
-                    1200px" 
-            src="/PrototypingACCorg/assets/images/TakeOver/takeover-lg.png" 
-            alt="Renew Your Membership" />
+        <picture>
+            <source srcset="https://via.placeholder.com/1200x160.png?text=Banner+Graphic+Desktop+Large" media="(min-width: 1024px)">
+            <source srcset="https://via.placeholder.com/900x160.png?text=Banner+Graphic+Desktop" media="(min-width: 768px)">
+            <source srcset="https://via.placeholder.com/600x200.png?text=Banner+Graphic+Tablet" media="(min-width: 400px)">
+            <img src="https://via.placeholder.com/300x300.png?text=Banner+Graphic+Mobile" alt="Renew Your Membership">
+        </picture>
     </a>
 </div>
 
@@ -34,7 +30,6 @@ position: "Legacy Pages"
     }
     #takeover img {
         width: 100%;
-        height: auto;
     }
 
 </style>
