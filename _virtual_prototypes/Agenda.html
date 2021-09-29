@@ -1,0 +1,72 @@
+---
+layout: virtual
+name: "Agenda Items No Images"
+position: "Structure"
+---
+<h2 class="font_display p_4">{{page.name}}</h2>
+
+<div class="grid template-x_25 p_5 gap-x_5 gap-y_5">
+    {% assign SessionNumber = 0 %}
+    {% for item in site.data.agenda %}
+    {% if item.SessionNumber <= "200"  %}    
+    {% if SessionNumber !=  item.SessionNumber  %}    
+    {% assign SessionNumber = item.SessionNumber %}
+    <article class="c_black p-b_4 p-b_5:md p-t_0:md p-t_4 p-t_5:lg">
+        <div class="br_1 br_radius br_solid br_black-2 flex flex_column flex_column:lg flex_row:md font_ui h:bg_black-2 m-t_n2 relative" style="height: 100%">
+            <div class="display_none:lg flex_none justify_center p-l_4:md p-y_3" style="width: 4rem">
+                <div class="flex_none m-t_n5 m_auto m_auto:md self_center text_center" style="width: 3rem">
+                    <div class="pathwayColor  bg_acc bg_brand  flex_shrink relative aspect_1x1 shadow_3 text_center texture_ondemand thumb [ bg-blend_multiply bg_center bg_contain bg_no-repeat  ][ br_2 br_black-3 br_radius br_solid ]">
+                        <div class="absolute b_0 flex h:opacity justify_center l_0 opacity_7 r_0 self_center t_0 text_center w_100"><em class="absolute c_white-9 fa-play fas flex_auto font_2 self_center text_center w_100"></em></div>
+                    </div>
+                </div>
+            </div>
+            <div class="block:lg display_none m-t_n5 m-x_5 p-x_5">
+                <div class="m-t_n5 m_auto m_auto:md self_center text_center">
+                    <div class="aspect_21x9 bg-blend_overlay bg_cover bg_no-repeat bg_acc bg_brand br_2 br_radius br_solid br_black-3 flex_shrink relative shadow_3 texture_ondemand text_center thumb">
+                        <div class="absolute b_0 flex h:opacity justify_center l_0 opacity_7 r_0 self_center t_0 text_center w_100"><em class="absolute c_white-9 fa-play fas flex_auto font_5 self_center text_center w_100"></em></div>
+                    </div>
+                </div>
+            </div>
+            <div class="order_1:md order_2 flex_auto [ c_primary-n4  font_0 font_1:md font_copy font_regular lh_2 ]">
+
+                <div class="p-t_2 p_4 relative p-y_0 p-y_3:md p-x_5:lg m-b_n4">
+                    <a class="expanded-click-area h:undecorated block" target="_blank" href="/docs/default-source/filesah20/eabstracts/chowdhury-anabolic-androgenic-1130-279.pdf?sfvrsn=2518b85a_2"><span class="font_bold c_primary-n3">{{ item.SessionNumber}}</span>. {{ item.SessionTitle}}</a>
+                    <span class="font_italic c_black-8 font_n2">{{item.StartTime}} - {{item.EndTime}} {{item.DateStart}} ({{ item.TimeZone }})</span>
+                </div>
+            </div>
+            <div class="order_1 order_2:md flex flex_column-reverse:md flex_row flex_row:lg flex_wrap gap-x_3 gap-y_3 justify_center:lg justify_end justify_end:md m-t_4:md m-t_auto:lg m-t_n4 order_1 p-b_4 p-x_4">
+                <a href="{{item.PresentationAttachmentURL}}" class="btn btn-primary h:bg_secondary-n3 z_5">Watch </a>
+                <a href="{{item.PresentationAttachmentURL}}" class="btn btn-secondary z_5"><i class="fas fa-heart c_white"></i></a>
+            </div>
+        </div>
+        <div class="c_black flex flex_wrap font_n2 justify_start m-t_2 p-t_2">
+            <div class="flex_shrink block  text_left p-r_4 m-r_4 br_solid br-r_1 br_black-3">
+                <a href="#modal-extra" class="block h:underline uppercase" data-remote="https://disclosures.acc.org/Public/AnnualMeetingAppConsol?pid=14617" data-toggle="modal" data-target="#modal-disclosures">Session Details</a>
+            </div>
+            <div class="flex_shrink block  text_left p-r_4 m-r_4 ">
+                <a href="#modal-extra" class="block h:underline uppercase" data-remote="https://disclosures.acc.org/Public/AnnualMeetingAppConsol?pid=14617" data-toggle="modal" data-target="#modal-disclosures"><i class="far fa-paperclip"></i> Attachments</a>
+            </div>
+            <div class="flex_grow uppercase text_right">
+                <ul class="m-t_n2 ul_none">
+                    {% if item.CME %}
+                    <li class="inline-block lh_0 p-l_3">
+                        <span class="bg_CME br_1 br_black-3 br_circle br_solid inline-block m-r_1" style=" height: 1em; width: 1em;">&nbsp;</span> cme </li>
+                        {% endif %}
+                        {% if item.CNE %}
+                    <li class="inline-block lh_0 p-l_3">
+                        <span class="bg_CNE br_1 br_black-3 br_circle br_solid inline-block m-r_1" style=" height: 1em; width: 1em;">&nbsp;</span> cne </li>
+                        {% endif %}
+                        {% if item.COP %}
+                    <li class="inline-block lh_0 p-l_3">
+                        <span class="bg_COP br_1 br_black-3 br_circle br_solid inline-block m-r_1" style=" height: 1em; width: 1em;">&nbsp;</span> cop </li>
+                        {% endif %}
+                </ul>
+            </div>
+        </div>
+    </article>
+
+    {% endif %}   
+    
+    {% endif %}               
+    {% endfor %}
+</div>
