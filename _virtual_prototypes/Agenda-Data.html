@@ -5,7 +5,7 @@ position: "Structure"
 ---
 <h2 class="font_display p_4">{{page.name}}</h2>
 
-<div class="grid template-x_25 p_5 gap-x_5 gap-y_5">
+<div class=" max-w_60 p-x_5">
     {% assign SessionNumber = 0 %}
     {% for item in site.data.agenda %}
     {% assign parentLoop = true %}
@@ -15,25 +15,31 @@ position: "Structure"
     
     {% if  parentLoop %}    
     {% assign SessionNumber = item.SessionNumber %} 
-    <article class="c_black p-b_4 p-b_5:md p-t_0:md p-t_4 p-t_5:lg">
-        <div class="br_1 br_radius br_solid br_black-2 flex flex_column font_ui m-t_n2 relative">
+    <article class="c_black font_0 m-b_4 br-t_3 br_solid br_primary-2 br_radius">
+        <div class="br_1 br_radius br_solid br_black-3 flex flex_column font_ui m-t_n2 relative">
             <div class="">
-            <div class="p_4 p-b_2">
-                <h3 class="font_display m-b_3 lh_2 c_primary-n2 font-size_up-2"><span class="font_bold p-r_3">{{ item.SessionNumber }}</span>{{ item.SessionTitle }}</h3> 
-                <span class="c_accent">{{item.DateStart}}0: {{item.StartTime}} - {{item.EndTime}}</span>
-                <div class="flex flex_column-reverse flex_row:lg flex_wrap gap-x_3 gap-y_3 justify_center p-y_3">
-                    <a href="{{item.PresentationAttachmentURL}}" class="btn btn-primary h:bg_secondary-n3 z_5">Watch </a>
+            <div class="p_4 p-b_2 flex flex_column flex_row:lg">
+                <h3 class="font_display m-b_3 lh_2 c_primary-n2 font-size_up-2 p-r_4:lg">
+                    <span class="block"><span class="font_bold p-r_3">{{ item.SessionNumber }}</span>{{ item.SessionTitle }}</span> 
+                    <span class="c_accent  font-size_down-1">{{item.DateStart}}0: {{item.StartTime}} - {{item.EndTime}}</span>
+                </h3> 
+               
+                <div class="flex_grow m-l_auto:lg">
+                    <div class="flex flex_column-reverse flex_row:lg flex_wrap gap-x_3 gap-y_3 p-y_3 p-y_0:lg justify_end">
+                        <a href="{{item.PresentationAttachmentURL}}" class="btn btn-primary h:bg_secondary-n3 z_5">Watch </a>
                     <a href="{{item.PresentationAttachmentURL}}" class="btn btn-secondary z_5"><i class="fas fa-heart c_white"></i></a>
+                    </div>
                 </div>
-                <h4 class="font-size_up">Presentations</h4>
+                
             </div>
-            <ul class="ul_none br-t_1 br-b_1 br_solid br_primary p_0 font_n1">
+            <h4 class="font-size_up p-x_4 c_primary font_medium">Presentations</h4>
+            <ul class="ul_none br-t_1 br-b_1 br_solid br_primary p_0 font_n1 bg_primary-n3">
 
             {% for presentations in site.data.agenda %}
             {% if presentations.SessionNumber == SessionNumber %}
-                <li class="br-t_1 br_black-2 br_solid p-x_4 p-y_3 m_0">
-                    <span class="font-size_up block">{{presentations.PresentationTitle}} </span>
-                    <span class="font-size-down opacity_7">{{presentations.FullName}}</span>
+                <li class="br-t_1 br_black-2 br_solid p-x_4 p-y_3 m_0 lh_2 {% cycle 'bg_white-9', 'bg_white' %}">
+                    <span class="font-size_up-1 block font_display">{{presentations.PresentationTitle}} </span>
+                    <span class="font-size-down opacity_7 font_ui">{{presentations.FullName}}</span>
                 </li>
                 {% endif %}
             {% endfor %}
