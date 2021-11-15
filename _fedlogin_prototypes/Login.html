@@ -1,83 +1,389 @@
 ---
-layout: arches_external
+layout: arches
 name: "Login"
 ---
 
-<div class="p_4">
-    <h1>Forgot your username?</h1>
-    
-</div>
 
 
 
 
+<section id="acc-login-container">
+    <article id="site-login" ng-module="Login">
+        <div class="acc-login-content">
 
-<section id="acc-login-container" ng-controller="ForgotUsernameCntrl">
-    <article id="forgot-username">
+            <div class="ta-center">
+                <h1>Log In To Your Account</h1>
+            </div>
 
-        <form action="/ForgotUsername" autocomplete="off" id="formForgotUsername" method="post"
-            name="formForgotUsername">
-            <script src="/Scripts/jquery.validate.min.js"></script>
-            <script src="/Scripts/jquery.validate.unobtrusive.min.js"></script>
-            <script src="/Scripts/forgot-username/forgot-username.js"></script>
-            <script src="/Scripts/acc-errorplacement.js"></script>
-            <div class="acc-login-content">
-                <div class="ta-center">
-                    <h1>Forgot your username?</h1>
+            <div ng-controller="LoginController" ng-model="LoginModel"
+                class="ng-pristine ng-untouched ng-valid ng-scope ng-empty">
+                <script type="text/javascript">
+                    window.um = { "UserName": null, "Password": null, "RememberMe": false, "ReturnUrl": "https%3a%2f%2fwww.acc.org%2f", "FederatedUrl": "/preregistration?returnUrl=https://www.acc.org/", "MultipleAccounts": false, "SitecoreItemId": null, "ValidateAuthKey": null, "IsFederatedLogin": false }; //
+                </script>
+                <script type="text/ng-template" id="userAgreement.html">
+
+                    <section id="ua-section">
+                        <h1>Registered User Agreement</h1>
+                        <div id="ua-content">
+                            <p>Effective Date: October 16, 2018 </p>
+<ol class="olbold">
+    <li>Introduction</li>
+    <p>This Registered User  Agreement ("Agreement") is by and between the American College of  Cardiology Foundation, its affiliated entities, including the American College  of Cardiology, and their respective agents, representatives, and contractors (collectively  referred to herein as, "ACC" or "we" or &ldquo;us&rdquo; or &ldquo;our&rdquo;), and  you ("you" or &ldquo;your&rdquo;), and governs your use of the online and digital  services (the "Services") provided by ACC through the following: <a href="http://www.acc.org">www.acc.org</a>, <a href="http://www.ncdr.com" target="_blank">www.ncdr.com</a>, <a href="http://www.cardiosmart.org" target="_blank">www.cardiosmart.org</a>, <a href="http://www.onlinejacc.org" target="_blank">www.onlinejacc.org</a>, <a href="http://www.cvquality.acc.org" target="_blank">www.cvquality.acc.org</a>, <a href="http://www.alm.acc.org" target="_blank">www.alm.acc.org</a> (and each  sub-domain associated with this URL) and other websites, mobile websites,  microsites, mobile applications, social media sites, and any other digital  services and platforms officially operated by or for ACC (collectively, the  &ldquo;Sites&rdquo;). The Services may allow  you to access certain content and make use of advanced personalization features  of the Sites that are only available to registered users. </p>
+    <p>
+    You agree that by registering,  accessing, or using our Services and Sites, you accept and agree to be legally bound  by all of the terms and conditions set forth in this Agreement. If you do not  wish to accept the terms and conditions of this Agreement, do not register for,  access, or otherwise use any of our Services. If you wish to terminate your  acceptance of these terms and conditions, at any time you can do so by closing  your account and no longer accessing or using our Services and Sites.</p>
+    <p>
+    ACC may change the terms  of this Agreement from time to time without further notice directly to you.  When the terms are changed, ACC will post a general conspicuous notice on the  Sites. If you do not agree with the revised terms, please contact ACC at <a href="mailto:membercare@acc.org">membercare@acc.org</a> immediately to cancel your access to the Services. Your continued use of the  Services following such notice constitutes your acceptance of any revised terms  of the Agreement. This Agreement expressly incorporates by reference and  includes the <a href="~/link.aspx?_id=021AEB8298684D329BB31DA01D08623C&amp;_z=z">Terms  of Service</a>, <a href="~/link.aspx?_id=F49677817FCC4259A63A243C49B14B5F&amp;_z=z">Privacy Notice</a>, <a href="~/link.aspx?_id=DE4FE1F7BED040008654941D03DF0850&amp;_z=z">Cookie Policy</a>, and  any other terms and conditions that may be posted elsewhere in the Services or  otherwise communicated to our users.</p>
+    <li>Access  to Services</li>
+    <p>
+    The Services may only be available  to registered users, members, and/or subscribers by logging in to the Sites  using your username and password (collectively "User ID"). Use or  sharing of your User ID with a non-registered user, member, or subscriber is strictly  prohibited, and your failure to comply will result in immediate suspension of  your account and/or access to the Services. You are solely responsible for  maintaining the confidentiality of your User ID and all activities that occur  under your User ID. You agree to immediately notify ACC at <a href="mailto:membercare@acc.org">membercare@acc.org</a> in the event that (i) your User ID is lost or stolen, or (ii) you become aware  of any unauthorized use of your User ID or of any other breach of security that  might affect the Sites. You agree that ACC is in no way liable for any claims  or losses of any kind related to the use or misuse of your User ID due to the  activities of third-parties outside of ACC's control or due to your failure to  maintain the confidentiality and security of your User ID.</p>
+    <li>User  Content</li>
+    <p>
+    We welcome your views,  comments, and other communications on our Services and Sites which may include  discussion boards, blogs, and other services that allow users to provide  feedback, comment, content or information (collectively, &ldquo;User Content&rdquo;). You  own and are responsible for all User Content that you submit, post, or  otherwise transmit through or using the Services and Sites.&nbsp; You are responsible for complying with all  third-party rights with respect to all such User Content that appears on the  Services and Sites, and not to submit, post, or otherwise transmit such User  Content in violation of any third-party rights. By submitting User Content to  ACC, you understand and acknowledge that this information is available to the  public&nbsp; and you grant to ACC a  non-exclusive, worldwide, royalty-free, perpetual, irrevocable, transferable,  and sublicensable right and license to use, copy, reproduce, modify,  distribute, publish, translate, create derivative works from, and process such  User Content, in whole or part, in other works in any form, media, or  technology now known or later developed for the full term of any rights that  may exist in such User Content without any further consent, notice, and/or  compensation to you or others. We retain the right to remove any User Content  for any reason, including but not limited to, content that it deems  threatening, demeaning, profane, obscene, a violation of intellectual property  rights or privacy laws, off-topic, commercial or promotion of organizations or  programs, or otherwise injurious or illegal. ACC also retains the right to ban  or block a user from posting on our Sites without notice for a pattern of  inappropriate postings or as it deems necessary.</p>
+    <p>
+    You may not post: (a)  material that infringes the copyright of another person, including insufficient  copyright attribution; (b) materials which defames, abuses, or threatens  others; (c) statements that are bigoted, hateful or racially offensive; (d) material  that advocates illegal activity or discusses illegal activities with the intent  to commit them; (e) material that contains vulgar, obscene or indecent language  or images; (f) personal information of other users that is unauthorized; (g)  advertising or commercial solicitations; or (h) opinions of fictitious or third  parties. You may not intentionally disrupt or interfere with the Services or  Sites, directly or indirectly, in any manner that may adversely affect ACC or  any user of the Services or Sites. You may not submit, post, or otherwise  transmit User Content or any material that contains software viruses or any  other code, files, or programs designed or known to disable, interrupt, or  limit the functionality of any computer hardware, computer software, or  telecommunications equipment or facilities. </p>
+    <p>
+    You and ACC agree that we  may access, store, process and use any information and personal data that you  provide in accordance with the terms of the <a href="~/link.aspx?_id=F49677817FCC4259A63A243C49B14B5F&amp;_z=z">Privacy Notice</a> and  your choices (including settings). </p>
+    <p>
+    You agree and acknowledge  that you are solely responsible for any liabilities, fines, penalties or  forfeitures occasioned by any such violations or lack of rights.
+    </p>
+    <li>Intellectual  Property Rights</li>
+    <p>
+    We own and reserve all of  our intellectual property rights in the Services and Sites, including the  information, text, graphics, images, audio, and video files, trademarks, and  other materials that may be contained therein (collectively  "Content"). Your use of the Services, Sites, and Content shall be  governed by applicable patent, copyright, trademark and other intellectual  property laws. Using the Services does not give you any ownership in our  Services or the Content made available through our Services. Trademarks and  logos used in connection with the Services are the trademarks of their  respective owners.</p>
+    <p>
+    ACC grants you a limited,  nonexclusive, nontransferable, revocable license to utilize and access the  Services, Sites, and Content for your noncommercial, personal use according to  the terms and conditions set forth in this Agreement. You may not modify,  publish, transmit, participate in the transfer, lease, or sale of, reproduce,  create derivative works from, distribute, perform, display, incorporate into  another website, or in any other way exploit the Services, Sites, and/or any  Content, in whole or in part. </p>
+    <li>Fees  and Payments</li>
+    <p>
+    We may charge fees for  products available on or through the Services, and/or for access to any  portion(s) of the Service or the Service as a whole. You agree to pay all such  fees for the products and/or Services which are not paid by another  organization or agent on your behalf (&ldquo;Sponsoring Organization&rdquo;) at the rates  in effect for the billing period in which such fees and charges are incurred.  Unless otherwise specified on the Services (or other agreement between you and  ACC overriding the terms of this Agreement), all fees will be quoted and  charged in U.S. dollars. We reserve the right to change the amount of, or basis  for determining, any fees, and to institute new fees. The fee options available  to you will be presented within the Services or otherwise communicated to you.  In order to continue your access, you will need to select one of the new fee  options. If you do not select one of these options, your access to the Services  will be terminated at the end of the term then in effect.</p>
+    <p>
+    All charges incurred in  connection with your registration or purchase that are not paid by a Sponsoring  Organization on your behalf will be billed to the credit, debit, or payment  account number, or other payment information that you provide to us upon  registration, at the time of purchase, or otherwise, and you authorize, give us  permission, and direct us to retain such information and to charge all fees to  such payment method.</p>
+    <p>
+    For purposes of  identification and billing, you agree to provide ACC with accurate, complete,  and updated information required to process the purchase or registration for  the Services ("Registration Data"), including your name, address, and  applicable payment data (e.g., credit card number, e-mail address, and  expiration date). You are solely responsible for ensuring that your  Registration Data is current and accurate, and, if not, to correct or update  your Registration Data. Failure to comply with this provision (including,  without limitation, falsification of any Registration Data) may, at ACC's  option, result in immediate suspension or termination of your right to use the  Services.</p>
+    <p>
+    ACC will treat your  personal information in accordance with our <a href="~/link.aspx?_id=F49677817FCC4259A63A243C49B14B5F&amp;_z=z">Privacy Notice</a>.</p>
+    <p>
+    In addition, you are  responsible for obtaining and maintaining at your own expense all equipment,  hardware, software, and telephone, cable, mobile, wireless, Internet and other  services necessary to access, visit and/or use the Services. </p>
+    <li>Notices  and Messages</li>
+    <p>
+    You agree that we will  provide notices and messages to you in the following ways: (1) within the  Services, or (2) sent to the contact information you provided us (e.g., email  address, mobile number, physical address). You agree to keep your contact information  up to date.</p>
+    <p>
+    Please review your  settings in the Services to control messages you receive from us.</p>
+    <li>Term  and Termination</li>
+    <p>
+    Unless otherwise specified  on the Services (or other agreement between you and ACC overriding the terms of  this Agreement), your access to the Services will continue until one of the  following occurs:
+    </p>
+    <ul>
+        <li>your membership, subscription, or other access to the Services expires and you have not chosen to renew your membership, subscription, or other access to the Services;</li>
+        <li>	your purchase of products available on or through, or membership, subscription, or other access to the Services is cancelled by ACC or by you for any reason; </li>
+        <li> ACC discontinues the products available on or through the Services or the Services; or</li>
+        <li> you or ACC terminates this Agreement.</li>
+    </ul>
+    You may cancel your access to the Services at any time by notifying ACC in any of the following manners:
+    <ul>
+        <li>By email:  at <a href="mailto:membercare@acc.org">membercare@acc.org</a></li>
+        <li>By  mail: ACC Member Care, 2400 N Street, N.W., Washington, D.C. 20037</li>
+        <li>By  means provided within the Services. </li>
+    </ul>
+    <p>
+    For annual subscribers to  Services who elect to cancel their subscription to the Services, you will  receive a pro-rata refund that will cover the unused months of your  subscription, and you will not receive a refund for partial months used, from  the date on which ACC receives your notice of cancellation. For monthly  subscribers to Services, cancellation will take effect on your next monthly  subscription anniversary date, which is the day of the month on which you  subscribed, but no refund will be given. Any pro-rata amounts will be credited  to the payment method to which your subscription is charged. There is no  pro-rata refund if your subscription is paid on your behalf by a Sponsoring  Organization (as defined herein), regardless of whether you are an annual or  monthly subscriber.</p>
+    <p>
+    ACC may terminate your  access to Services at any time. If ACC has reason to believe that you have  violated any of the terms of this Agreement, you will not be credited with a  refund. You agree that any termination of your access to the Services shall not  result in any liability or other obligation of ACC to you, your agent, or any  third party in connection with such termination.</p>
+    <li>Limitation  of Liability</li>
+    <p>
+    YOU EXPRESSLY UNDERSTAND  AND AGREE THAT ACC (AND THOSE THAT ACC WORKS WITH TO PROVIDE THE SERVICES) SHALL  NOT BE LIABLE TO YOU OR OTHERS FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,  CONSEQUENTIAL, PUNITIVE OR EXEMPLARY DAMAGES, INCLUDING WITHOUT LIMITATION,  DAMAGES FOR LOSS OF PROFITS OR REVENUES, GOODWILL, USE, LOSS OF DATA, OR OTHER  LOSSES RESULTING FROM OR RELATED TO: (i) THE USE OR INABILITY TO USE THE  SERVICES AND/OR SITES, (ii) THE COST OF ANY SUBSTITUTE PRODUCTS AND/OR SERVICES  RESULTING FROM ANY PRODUCTS, DATA, INFORMATION OR SERVICES OBTAINED OR WHICH  YOU WERE UNABLE TO OBTAIN OR TRANSACTIONS EFFECTED OR FAILED TO BE EFFECTED,  (iii) THE USE OR INABILITY TO USE ANY THIRD PARTY APPLICATIONS CONTAINED WITHIN  THE SERVICES, OR (iv) ANY MATTER OTHERWISE RELATED TO YOUR USE OF THE SERVICES  OR SITES.</p>
+    <p>
+    THIS LIMITATION OF  LIABILITY SHALL APPLY TO ALL CLAIMS OF LIABILITY (E.G., WARRANTY, TORT,  NEGLIGENCE, CONTRACT, LAW) AND EVEN IF ACC HAS BEEN TOLD OF THE POSSIBILITY OF  ANY SUCH DAMAGE, AND EVEN IF THESE REMEDIES FAIL THEIR ESSENTIAL PURPOSE.</p>
+    <li>Disclaimer  of Warranties</li>
+    <p>
+    THE SERVICES AND SITES ARE  PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS. ACC  EXPRESSLY DISCLAIMS ALL WARRANTIES OF ANY KIND WITH RESPECT TO THE SERVICES AND  SITES, WHETHER EXPRESS OR IMPLIED, INCLUDING IMPLIED WARRANTIES OF  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT.  ACC MAKES NO WARRANTY THAT THE TOOL AND/OR ANY CONTENT THEREIN WILL MEET YOUR  REQUIREMENTS, OR WILL BE UNINTERRUPTED, TIMELY, SECURE, CURRENT, ACCURATE,  COMPLETE, OR ERROR-FREE OR THE RESULTS THAT MAY BE OBTAINED BY USE OF THE  SERVICES, SITES, AND/OR ANY CONTENT THEREIN WILL BE ACCURATE OR RELIABLE. YOU  UNDERSTAND AND ACKNOWLEDGE THAT YOUR SOLE AND EXCLUSIVE REMEDY WITH RESPECT TO  ANY DEFECT IN OR DISSATISFACTION WITH THE SERVICES, SITES, AND/OR CONTENT IS TO  CEASE ITS USE AND/OR CANCEL YOUR REGISTRATION, SUBSCRIPTION, OR ACCESS TO THE  SERVICES.</p>
+    <li>Force  Majeure</li>
+    <p>
+    Neither party shall be  liable or considered in default under this Agreement when the failure or delay  of performance is caused by circumstances beyond its reasonable control and  occurring without its fault or negligence, including, but not limited to,  failure of suppliers, licensors, subcontractors, and carriers, acts of civil or  military authorities, national emergencies, fire, flood, acts of God, threats  or acts of terrorism, insurrection, and war, provided the party invoking this  Section immediately provides notice thereof to the other and does everything  reasonable possible.</p>
+    <li>No  Assignment</li>
+    <p>
+    This agreement is personal  to you, and you may not assign your rights or obligations to anyone.</p>
+    <li>No  Waiver</li>
+    <p>
+    Neither failure nor delay  on the part of any party to exercise any right, remedy, power, or privilege  hereunder nor course of dealing between the parties shall operate as a waiver  thereof, or of the exercise of any other right, remedy, power, or privilege. No  term of this Agreement shall be deemed waived, and no breach consented to,  unless such waiver or consent shall be in writing and signed by the party claiming  such waiver or consent.</p>
+    <li>Severability</li>
+    <p>
+    If any provision in this  Agreement is held invalid or unenforceable under applicable law, the remaining  provisions shall continue in full force and effect.</p>
+    <li>Indemnification</li>
+    <p>
+    You agree to indemnify,  defend, and hold ACC and its directors, officers, employees, shareholders,  parents, subsidiaries, affiliates, agents, and representatives harmless from  and against any and all liability, losses, damages, claims, and costs,  including, without limitation, reasonable attorneys' fees, which may arise out  of or are in any way connected with your access, visitation, and/or use of the  Services, Sites, User Content, unauthorized use of Content obtained on or through  the Services and Sites, breach or alleged breach of this Agreement, or from any  of your acts or omissions in connection with the Services, Sites, and Content. </p>
+    <li>Governing  Law  </li>
+    <p>
+    You and ACC agree that this  Agreement shall be governed by and construed exclusively in accordance with the  laws of the District of Columbia, U.S.A, without regard to its conflicts of law  principles. You and ACC agree that all claims and disputes shall be litigated  only in a court of competent jurisdiction located in the District of Columbia,  U.S.A, and you and ACC each agree to personal jurisdiction in such courts. </p>
+    <li>Entire  Agreement</li>
+    <p>
+    This Agreement (including  additional terms that may be provided by us when you engage with a feature of  the Services) is the only agreement between us regarding the Services and supersedes all prior agreements for the Services.</p>
+</ol>
+<style>
+    #main-content p, #main-content table {
+    font-size:1em;
+    }
+    li {
+    font-weight: bold;
+    }
+    ul li{
+    font-weight: normal;
+    }
+</style>
+                        </div>
+                        <div class="ta-center btn-container">
+                            <div class="row">
+                                <div class="col-md-3"></div>
+                                <div class="col-md-6"><button type="button" class="btn btn-primary btn-block btn-lg" ng-click="ok()" ng-disabled="LoginUASpinner" ng-enter="ok()">I Agree <i ng-show="LoginUASpinner" class="spinner fa fa-spinner fa-spin"></i></button></div>
+                                <div class="col-md-3"></div>
+                            </div>
+                            <p>
+                                <a href="#" ng-click="cancel()">Cancel</a>
+                            </p>
+
+                        </div>
 
 
-                    <p><i class="fa fa-lock fa-4x" aria-hidden="true"></i></p>
-                    <p>Enter your email address to verify your identity and retrieve your username.</p>
+                    </section>
 
-                </div>
-                <div class="row">
-                    <div class="col-md-3"></div>
-                    <div class="col-md-6">
+                </script>
 
-                        <fieldset>
+                <form novalidate="novalidate" method="post" name="formLogin" id="formLogin" autocomplete="off"
+                    class="ng-pristine ng-invalid ng-invalid-required">
 
-                            <div id="Controls" class="form-group">
-                                <div class="editor-label">
-                                    <label for="UserName">Enter your email address</label>
-                                </div>
-                                <div class="editor-field">
-                                    <input data-val="true" data-val-regex="A valid email address format is required."
-                                        data-val-regex-pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"
-                                        data-val-required="Please enter email address" id="UserName" name="UserName"
-                                        ng-model="username" ng-required="true" type="text" value="" />
-                                    <span class="field-validation-valid" data-valmsg-for="UserName"
-                                        data-valmsg-replace="true"></span>
+                    <input id="antiForgeryToken" data-ng-model="antiForgeryToken" type="hidden"
+                        data-ng-init="antiForgeryToken='3zVj-RIkyzOhSmAAetBCYJ7KYYddjIjyIVnjsj8tNU9VVsKthCscZo0wbPEAnkwCYGt3j_HQLevzWgqGW8VLJVxpB941:4H0f2aUF4sOECfp4bFXEUpWO89QPbiT7aXX3YjWGA8nveOOopfLnE9SlShbhGSZv-MjVobQ-DjvCopdNe4QtyMXJy6I1'"
+                        autocomplete="off" class="ng-pristine ng-untouched ng-valid ng-not-empty">
+                    <input type="hidden" id="sitecoreItemId" data-ng-model="sitecoreItemId"
+                        data-ng-init="sitecoreItemId='27754088-d725-4137-ba2f-45e37a91851f'" autocomplete="off"
+                        class="ng-pristine ng-untouched ng-valid ng-not-empty">
+                    <br>
+                    <div class="alert alert-danger ng-hide" ng-show="Message">
+                        <div class="flex-row">
+                            <div class="col-md-1 col-flex">
+                                <i class="fa fa-exclamation-circle fa-4x" aria-hidden="true"></i>
+                            </div>
+                            <div class="col-md-11">
+                                <div class="p-l_1">
+                                    <p ng-bind-html="Message" class="ng-binding"></p>
                                 </div>
                             </div>
-                            <div>
+                        </div>
+                    </div>
+
+                    <input id="FederatedUrl" name="FederatedUrl" type="hidden"
+                        value="/preregistration?returnUrl=https://www.acc.org/" autocomplete="off">
+
+
+                    <div class="alert alert-danger ng-hide" ng-show="duplicateaccounts">
+                        <div class="flex-row">
+                            <div class="col-md-1 col-flex">
                                 <p>
-                                    <button id="btnEnter" type="button"
-                                        ng-disabled="formForgotUsername.$invalid || invalidEmail"
-                                        class="btn btn-primary btn-block btn-lg">Submit Email <i id="btnSpinner"
-                                            class="spinner fa fa-spinner fa-spin" style="display:none"></i></button>
+                                    <i class="fa fa-exclamation-triangle fa-4x" aria-hidden="true"></i>
                                 </p>
                             </div>
-                        </fieldset>
+                            <div class="col-md-11">
+                                <div class="p-l_1">
+                                    <p>
+                                        <strong>Duplicate Accounts</strong><br>
+                                        <span>That email address is associated with multiple ACC accounts. Please call
+                                            the ACC Member Care to consolidate your acc.org accounts:</span>
+                                    </p>
+                                    <ul>
+                                        <li>1-800-253-4636 ext. 5603 (Toll Free US &amp; Canada)</li>
+                                        <li>202-375-6000 ext. 5603 (Outside US &amp; Canada)</li>
+                                    </ul>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- LOGIN SCREEN -->
+                    <div>
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6">
+
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12">
+                                        <div class="form-group m_0">
+                                            <div class="editor-label">
+                                                <label for="UserName">Email or Username</label>
+                                            </div>
+                                            <div class="editor-field">
+                                                <input autocapitalize="no" autocorrect="no"
+                                                    class="input-username ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required"
+                                                    data-val="true" data-val-required="Please enter Email or Username"
+                                                    id="UserName" name="UserName" ng-init="UserName=''"
+                                                    ng-model="UserName" ng-required="true" placeholder="username"
+                                                    tabindex="1" type="text" value="" required="required">
+                                                <span class="field-validation-valid" data-valmsg-for="UserName"
+                                                    data-valmsg-replace="true"></span>
+                                                <a href="/ForgotUsername">Forgot Username?</a>
+                                            </div>
+                                        </div>
+                                        <div class="form-group m_0">
+                                            <div class="editor-label">
+                                                <label for="Password">Password</label>
+                                            </div>
+                                            <div class="editor-field">
+                                                <div class="input-button-container password-container">
+                                                    <input
+                                                        class="input-password bw-r_0 ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required"
+                                                        data-val="true" data-val-required="Please enter Password"
+                                                        id="Password" name="Password" ng-init="Password=''"
+                                                        ng-model="Password" ng-required="true" placeholder="password"
+                                                        tabindex="2" type="password" required="required">
+                                                    <button class="btn btn-default br_0 bw-l_0" id="toggleBtn"
+                                                        type="button"><i id="toggleViewPassword" class="fa fa-eye"
+                                                            aria-hidden="true"></i></button>
+                                                </div>
+                                                <span class="field-validation-valid" data-valmsg-for="Password"
+                                                    data-valmsg-replace="true"></span>
+                                                <p class="input-description m_0">At least 7 characters with at least 1
+                                                    number and 1 letter</p>
+                                                <a href="/ForgotPassword">Forgot Password?</a>
+                                                <div class="remember-me">
+                                                    <input data-val="true"
+                                                        data-val-required="The Remember Password field is required."
+                                                        id="RememberMe" name="RememberMe" ng-checked="true"
+                                                        ng-init="RememberMe=true" ng-model="RememberMe" type="checkbox"
+                                                        value="true"
+                                                        class="ng-pristine ng-untouched ng-valid ng-not-empty"
+                                                        checked="checked"><input name="RememberMe" type="hidden"
+                                                        value="false" autocomplete="off">
+                                                    <label for="RememberMe">Remember Password</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="ta-center">
+                                    <div class="row">
+
+                                        <div class="col-md-12 m_0">
+                                            <button id="loginBtn" onclick="return false;" ng-click="Login()"
+                                                ng-disabled="formLogin.$invalid"
+                                                class="btn btn-primary btn-block btn-lg" disabled="disabled">Log In <i
+                                                    class="fa fa-spinner fa-spin ng-hide"
+                                                    ng-show="LoginSpinner"></i></button>
+                                        </div>
+
+                                    </div>
+
+                                    <p ng-show="Registerlink">
+                                        <a href="/preregistration?returnUrl=https://www.acc.org/">Create Free
+                                            Account</a>
+                                    </p>
+                                </div>
+
+                            </div>
+                            <div class="col-md-3"></div>
+                        </div>
+
 
 
                     </div>
-                    <div class="col-md-3"></div>
-                </div>
+                </form>
+
             </div>
-        </form>
-        <div id="separator">
-            <hr />
-        </div>
+            <div class="dart-ads">
 
-        <div class="footer">
-            <b>Have questions or need assistance?</b> Please contact ACC Member Care
-            <ul>
-                <li class="m-b_025"><i class="fa fa-phone"></i> 1-800-253-4636, ext. 5603 (Toll Free U.S. & Canada)</li>
-                <li class="m-b_025"><i class="fa fa-phone"></i> 202-375-6000, ext. 5603 (International)</li>
-                <li><i class="fa fa-envelope"></i> <a href="mailto:membercare@acc.org">membercare@acc.org</a></li>
-            </ul>
-        </div>
 
+                <script type="text/javascript" src="/Scripts/jquery.onscreen.js"></script>
+                <script type="text/javascript">
+                    var topSlot;
+                    var bottomSlot;
+                    var leaderboardSlot;
+                    var leaderboard2Slot;
+
+                    var googletag = googletag || {};
+                    googletag.cmd = googletag.cmd || [];
+                    (function () {
+                        var gads = document.createElement('script'); gads.async = true; gads.type = 'text/javascript';
+                        var useSSL = 'https:' == document.location.protocol; gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js'; var node = document.getElementsByTagName('script')[0]; node.parentNode.insertBefore(gads, node);
+                    })();
+
+                    googletag.cmd.push(function () {
+
+                        var mapping1 = googletag.sizeMapping().
+                            addSize([1024, 100], [728, 90]).
+                            addSize([375, 667], [300, 250]).
+                            addSize([2, 2], [300, 250]).
+                            build();
+
+                        googletag.pubads().setTargeting('hubspon', '');
+                        googletag.pubads().setTargeting('zone', 'login');
+                        googletag.pubads().setTargeting('clin-topic', dartTopicId);
+                        googletag.pubads().setTargeting('accnpi', '0000000000');
+                        topSlot = googletag.defineSlot('/30017927/amc.acc/acc.300x250.top', [300, 250], 'Adslot-0').addService(googletag.pubads());
+                        bottomSlot = googletag.defineSlot('/30017927/amc.acc/acc.300x250.bottom', [300, 250], 'Adslot-1').addService(googletag.pubads());
+                        leaderboardSlot = googletag.defineSlot('/30017927/amc.acc/Guidelines_leaderboard', [728, 90], 'Adslot-3').setTargeting('zone', '').addService(googletag.pubads());
+                        leaderboard2Slot = googletag.defineSlot('/30017927/amc.acc/acc.728x90', [[300, 250], [728, 90]], 'Adslot-4').defineSizeMapping(mapping1).addService(googletag.pubads());
+
+                        googletag.pubads().collapseEmptyDivs();
+                        googletag.pubads().disableInitialLoad();
+                        googletag.pubads().enableAsyncRendering();
+                        googletag.enableServices();
+                    });
+                    $(document).ready(function () {
+                        // switched from documen.ready to window.on.load to insure the ads didn't start to load until after the search results were rendered
+                        $(window).on('load', function () {
+                            $('#Adslot-1').on('onscreen', function (event, measurement) {
+                                var $self = $(this);
+                                if (measurement.percentInview > 0) {
+                                    if (measurement.percentInviewVertical >= 50) {
+                                        googletag.cmd.push(function () {
+                                            googletag.pubads().refresh([bottomSlot]);
+                                            $self.unbind(event);
+                                        });
+                                    }
+                                }
+                            });
+                            $('#Adslot-0').on('onscreen', function (event, measurement) {
+                                var $self = $(this);
+                                if (measurement.percentInview > 0) {
+                                    if (measurement.percentInviewVertical >= 50) {
+                                        googletag.cmd.push(function () {
+                                            googletag.pubads().refresh([topSlot]);
+                                            $self.unbind(event);
+                                        });
+                                    }
+                                }
+                            });
+
+                            $('#Adslot-4').on('onscreen', function (event, measurement) {
+                                var $self = $(this);
+                                if (measurement.percentInview > 0) {
+                                    if (measurement.percentInviewVertical >= 50) {
+                                        googletag.cmd.push(function () {
+                                            googletag.pubads().refresh([leaderboard2Slot]);
+                                            $self.unbind(event);
+                                        });
+                                    }
+                                }
+                            });
+
+                        });
+                    });
+                </script>
+                <div id="Adslot-4" class="dart-ad text_center m-b_4" style="min-height:1px;width:100%;"
+                    data-google-query-id="CI_MhuOCjfQCFUNBDQodykADpw">
+
+                    <div id="google_ads_iframe_/30017927/amc.acc/acc.728x90_0__container__" style="border: 0pt none;">
+                        <iframe id="google_ads_iframe_/30017927/amc.acc/acc.728x90_0" title="3rd party ad content"
+                            name="google_ads_iframe_/30017927/amc.acc/acc.728x90_0" width="728" height="90"
+                            scrolling="no" marginwidth="0" marginheight="0" frameborder="0" srcdoc=""
+                            data-google-container-id="1" style="border: 0px; vertical-align: bottom;"
+                            data-load-complete="true"></iframe>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
 
     </article>
 </section>

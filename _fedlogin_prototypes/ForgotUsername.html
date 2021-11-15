@@ -1,0 +1,130 @@
+---
+layout: arches
+name: "Forgot Username"
+---
+
+<script src="/Scripts/jquery.validate.min.js"></script>
+<script src="/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script src="/Scripts/acc-errorplacement.js"></script>
+
+<div class="p_4">
+    <h1>Forgot your username?</h1>
+    <i class="far font_10 fa-lock fas c_primary"></i>
+    <p>Enter your email address to verify your identity and retrieve your username.</p>
+
+    <form action="/ForgotUsername" autocomplete="off" id="formForgotUsername" method="post" name="formForgotUsername" novalidate>
+        <fieldset>
+            <div class="form-group">
+                <div>
+                    <label>
+                        <label for="UserName">Enter your email address</label>
+                        
+                    </label>
+                </div>
+
+
+                <div class="editor-label">
+                    <label for="UserName">Enter your email address</label>
+                </div>
+                <div class="editor-field">
+                    <input data-val="true" data-val-regex="A valid email address format is required."
+                        data-val-regex-pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"
+                        data-val-required="Please enter email address" id="UserName" name="UserName"
+                        ng-model="username" ng-required="true" type="text" value=""
+                        class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required"
+                        required="required">
+                    <span class="field-validation-valid" data-valmsg-for="UserName"
+                        data-valmsg-replace="true"></span>
+                </div>
+            </div>
+            <div>
+                <p>
+                    <button id="btnEnter" type="button"
+                        ng-disabled="formForgotUsername.$invalid || invalidEmail"
+                        class="btn btn-primary btn-block btn-lg" disabled="disabled">Submit Email <i
+                            id="btnSpinner" class="spinner fa fa-spinner fa-spin"
+                            style="display:none"></i></button>
+                </p>
+            </div>
+        </fieldset>
+    </form>
+
+</div>
+
+
+
+
+
+<section id="acc-login-container" ng-controller="ForgotUsernameCntrl" class="ng-scope">
+    <article id="forgot-username">
+
+        <form action="/ForgotUsername" autocomplete="off" id="formForgotUsername" method="post"
+            name="formForgotUsername" class="ng-pristine ng-invalid ng-invalid-required" novalidate="novalidate">
+            <script src="/Scripts/jquery.validate.min.js"></script>
+            <script src="/Scripts/jquery.validate.unobtrusive.min.js"></script>
+            <script src="/Scripts/forgot-username/forgot-username.js"></script>
+            <script src="/Scripts/acc-errorplacement.js"></script>
+            <div class="acc-login-content">
+                <div class="ta-center">
+                    <h1>Forgot your username?</h1>
+
+
+                    <p><i class="fa fa-lock fa-4x" aria-hidden="true"></i></p>
+                    <p>Enter your email address to verify your identity and retrieve your username.</p>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+
+                        <fieldset>
+
+                            <div id="Controls" class="form-group">
+                                <div class="editor-label">
+                                    <label for="UserName">Enter your email address</label>
+                                </div>
+                                <div class="editor-field">
+                                    <input data-val="true" data-val-regex="A valid email address format is required."
+                                        data-val-regex-pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"
+                                        data-val-required="Please enter email address" id="UserName" name="UserName"
+                                        ng-model="username" ng-required="true" type="text" value=""
+                                        class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required"
+                                        required="required">
+                                    <span class="field-validation-valid" data-valmsg-for="UserName"
+                                        data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
+                            <div>
+                                <p>
+                                    <button id="btnEnter" type="button"
+                                        ng-disabled="formForgotUsername.$invalid || invalidEmail"
+                                        class="btn btn-primary btn-block btn-lg" disabled="disabled">Submit Email <i
+                                            id="btnSpinner" class="spinner fa fa-spinner fa-spin"
+                                            style="display:none"></i></button>
+                                </p>
+                            </div>
+                        </fieldset>
+
+
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+            </div>
+        </form>
+        <div id="separator">
+            <hr>
+        </div>
+
+        <div class="footer">
+            <b>Have questions or need assistance?</b> Please contact ACC Member Care
+            <ul>
+                <li class="m-b_025"><i class="fa fa-phone"></i> 1-800-253-4636, ext. 5603 (Toll Free U.S. &amp; Canada)
+                </li>
+                <li class="m-b_025"><i class="fa fa-phone"></i> 202-375-6000, ext. 5603 (International)</li>
+                <li><i class="fa fa-envelope"></i> <a href="mailto:membercare@acc.org">membercare@acc.org</a></li>
+            </ul>
+        </div>
+
+
+    </article>
+</section>
