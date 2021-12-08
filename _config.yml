@@ -44,6 +44,9 @@ collections:
   virtual_prototypes:
     output: true
     permalink: /virtual/:path/
+  fedlogin_prototypes:
+    output: true
+    permalink: /fedlogin/:path/
 
 # Exclude from processing.
 # The following items will not be processed, by default.
