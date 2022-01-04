@@ -48,5 +48,16 @@ layout: home
     </a></li>
   </ul>
 {% endfor %}
+<h2 class="font_display">Library Prototypes</h2>
+{% for library_prototype in site.library_prototypes %}
+  <ul class="ul_none ">
+<li class="p_3 p-l_0 h:bg_primary-5">    <a href="{{ library_prototype.url | append: site.github.build_revision | relative_url }}">
+      {{ library_prototype.name }}
+      {% if library_prototype.position %}
+         - {{ library_prototype.position }}
+      {% endif %}
+    </a></li>
+  </ul>
+{% endfor %}
 </div>
 </div>

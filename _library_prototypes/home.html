@@ -1,0 +1,199 @@
+--- 
+layout: arches_fullscreen_empty 
+name: "Virtual Video Player"
+position: "Home Page" 
+--- 
+
+<section class="main-area-offset p_4 p_5:lg isolation_isolate">
+<header>
+    <section class="br_radius overflow_hidden relative z_1 m-x_n3 m-t_n3">
+        <picture class="w_100">
+            <source class="w_100" srcset="https://via.placeholder.com/1440x250.png?text=Desktop+Large" media="(min-width: 1200px)">
+            <source class="w_100" srcset="https://via.placeholder.com/1200x250.png?text=Desktop" media="(min-width: 1024px)">
+            <source class="w_100" srcset="https://via.placeholder.com/768x200.png?text=Tablet" media="(min-width: 768px)">
+            <source class="w_100" srcset="https://via.placeholder.com/600x250.png?text=Mobile" media="(min-width: 400px)"> <source class="w_100" srcset="https://via.placeholder.com/400x300.png?text=Mobile" media="(min-width: 400px)">
+            <img src="https://via.placeholder.com/400x300.png?text=Mobile" class="w_100" alt="">
+        </picture>
+    </section>
+    <div class="m_auto m-t_n4 t_n4 t_n5:lg m-t_n5:lg max-w_60:lg max-w_40:md p-x_3 p-x_5:md z_2 relative">
+        <div class="bg_white br_radius shadow_overlap-light p_5:lg p_4">
+            <div class="input-holder flex flex_row self_end relative w_100">
+                <input id="input_uniqueTextAndButton" name="input_uniqueTextAndButton" type="text" placeholder="Search" class="br_2 flex_auto p-y_2 br_solid flex_auto p-l_4 lh_3 br_radius bg_white c_black bg_white f:bg_primary br_black-2 "/>
+                <button  class="diabled ease_out transition_1 f:outline_none text_center br_none inline-block w_auto font_medium font_ui absolute t_0 b_0 r_0 h:underline undecorated bg_primary c_white h:br_primary-n3 br-br_radius br-tr_radius br_square" >Search</button>
+            </div>
+            <nav class="utlity-nav p-t_3 p-t_4:lg font_n3 font_0:md font_1:lg m-b_n3">
+                <ul class="flex flex_row ul_none justify_center">
+                    <li class="text_center p-x_3 p-x_4:md lh_1">
+                        <a class="h:undecorated c_primary h:c_secondary-n3"
+                            ><i class="fal fa-star  block inline:md"></i><span class=""> featured</span></a
+                        >
+                    </li>
+                    <li class="text_center p-x_3 p-x_4:md lh_1 br-l_1 br_solid br_black-4">
+                        <a class="h:undecorated c_primary h:c_secondary-n3"
+                            ><i class="fal fa-sitemap  block inline:md"></i><span class=""> Clinical Focus</span></a
+                        >
+                    </li>
+                    <li class="text_center p-x_3 p-x_4:md lh_1 text_center  br-l_1 br_solid br_black-4">
+                         <a class="h:undecorated c_primary h:c_secondary-n3"
+                        ><i class="fal fa-heart block inline:md"></i><span class=""> Saved</span></a
+                    >
+                    </li>
+                    <li class="text_center p-x_3 p-x_4:md lh_1 br-l_1 br_solid br_black-4">
+                        <a class="h:undecorated c_primary h:c_secondary-n3"
+                        ><i class="fal fa-play  block inline:md"></i><span class=""> Continue Watching</span></a
+                    >
+                    </li>
+                    <li class="text_center p-x_3 p-x_4:md lh_1 br-l_1 br_solid br_black-4">
+                        <a class="h:undecorated c_primary h:c_secondary-n3"
+                        ><i class="fal fa-sync  block inline:md"></i><span class=""> Watch Again </span></a
+                    >
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+<main>
+    
+    <section >
+        <header class="font_display font_3 c_primary m-x_3 m-b_0 m-b_3:lg"><h2 >Featured</h2></header>
+        <div class="font_0 font_1:lg gap_4 flex scrollbar-mini overflow_auto p-x_2 p-y_3">
+            {% include library-article.html %}
+            {% include library-article.html %}
+            {% include library-article.html %}
+            {% include library-article.html %}
+        </div>
+        <footer><a href="" class="link float_right">view all from "Featured" <i class="fal fa-chevron-circle-right m-r_3"></i></a></footer>       
+    </section>
+    <section >
+        <header class="font_display font_3 c_primary m-x_3 m-b_0 m-b_3:lg"><h2 >Featured</h2></header>
+        <div class="font_0 font_1:lg gap_4 flex scrollbar-mini overflow_auto p-x_2 p-y_3">
+            {% include library-article.html %}
+            {% include library-article.html %}
+            {% include library-article.html %}
+            {% include library-article.html %}
+        </div>
+        <footer><a href="" class="link float_right">view all from "Featured" <i class="fal fa-chevron-circle-right m-r_3"></i></a></footer>       
+    </section>
+    <section >
+        <header class="font_display font_3 c_primary m-x_3 m-b_0 m-b_3:lg"><h2 >Featured</h2></header>
+        <div class="font_0 font_1:lg gap_4 flex scrollbar-mini overflow_auto p-x_2 p-y_3">
+            {% include library-article.html %}
+            {% include library-article.html %}
+            {% include library-article.html %}
+            {% include library-article.html %}
+        </div>
+        <footer><a href="" class="link float_right">view all from "Featured" <i class="fal fa-chevron-circle-right m-r_3"></i></a></footer>       
+    </section>
+    <section >
+        <header class="font_display font_3 c_primary m-x_3 m-b_0 m-b_3:lg"><h2 >Featured</h2></header>
+        <div class="font_0 font_1:lg gap_4 flex scrollbar-mini overflow_auto p-x_2 p-y_3">
+            {% include library-article.html %}
+            {% include library-article.html %}
+            {% include library-article.html %}
+            {% include library-article.html %}
+        </div>
+        <footer><a href="" class="link float_right">view all from "Featured" <i class="fal fa-chevron-circle-right m-r_3"></i></a></footer>       
+    </section>
+    
+</main>
+</section>
+<nav class="absolute t_5 r_0  z_2  display_none:md">
+    <ul class="bg_primary br-tl_radius br-bl_radius shadow_overlap-light font_4:lg font_3:md font_2 ul_none overflow_hidden flex flex_column gap_2">
+        <li class="c_white h:c_white h:bg_primary-n3">
+            <a class="c_inherit-all p-x_3 p-y_2" href=""><i class="fas fa-cog"></i></a>
+        </li>
+        <li class="c_white h:c_white h:bg_primary-n3">
+            <a class="c_inherit-all p-x_3 p-y_2" href=""><i class="fas fa-sign-out-alt"></i></a>
+        </li>
+    </ul>
+</nav> 
+<nav id="navigation" class="shadow_emboss-light filter_blur fixed overflow_hidden  r_0 l_0 b_0 t_0:md r_auto:md bg_black-3 flex flex_column:md flex_row justify_between p-t_0 p-b_3 p-l_3 p-r_3 p-b_4:md p-t_4:md p-r_0:md font_4:lg font_3:md font_2 transition_3 w_100 nav-mined font_display">
+    <ul class="flex flex_column:md flex_row ul_none justify_around justify_start:md gap_3 w_100 w_auto:md">
+        <li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_black h:bg_white h:c_primary a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light active">
+            <a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md"><i class="icon fas fa-fw fa-home-heart p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center display_none:md p-l_3:md p-l_4:lg lowercase lh_0 c_black a:c_white active font_n2 font_3:md font_4:lg">Home</span></a>
+        </li>
+        <li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_black h:bg_white h:c_primary a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light">
+            <a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md"><i class="icon fas fa-fw fa-search p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center display_none:md p-l_3:md p-l_4:lg lowercase lh_0 c_black a:c_white font_n2 font_3:md font_4:lg">Search</span></a>
+        </li>
+        <li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_black h:bg_white h:c_primary a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light">
+            <a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md"><i class="icon fas fa-fw fa-heart p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center display_none:md p-l_3:md p-l_4:lg lowercase lh_0 c_black a:c_white font_n2 font_3:md font_4:lg">My List</span></a>
+        </li>
+        <li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_black h:bg_white h:c_primary a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light">
+            <a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md"><i class="icon fas fa-fw fa-award p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center display_none:md p-l_3:md p-l_4:lg lowercase lh_0 c_black a:c_white font_n2 font_3:md font_4:lg">Credits</span></a>
+        </li>
+    </ul>
+    <ul class="flex_column:md flex_row ul_none justify_center gap_3 display_none flex:md">
+        <li class="nav-item flex_auto br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_black h:bg_white h:c_primary a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light">
+            <a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md"><i class="icon fas fa-fw fa-cog p-x_2 p-y_3 p-y_0:md self_center"></i><span class="label self_center display_none:md p-l_3:md p-l_4:lg lowercase lh_0 c_black a:c_white font_n2 font_3:md font_4:lg">Setting</span></a>
+        </li>
+        <li class="nav-item flex_auto br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_black h:bg_white h:c_primary a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light">
+            <a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md"><i class="icon fas fa-fw fa-sign-out-alt p-x_2 p-y_3 p-y_0:md self_center"></i><span class="label self_center display_none:md p-l_3:md p-l_4:lg lowercase lh_0 c_black a:c_white font_n2 font_3:md font_4:lg">Log Out</span></a>
+        </li>
+    </ul>
+</nav>
+<style>
+
+    .filter_blur{
+        backdrop-filter: blur(5px);
+    }
+    .h\:shadow_overlap-light:hover{box-shadow: 0 1px 10px rgb(0 0 0 / 5%), 0 2px 4px rgb(0 0 0 / 30%), 1px 5px 5px rgb(0 0 0 / 1%);}
+    .a\:shadow_overlap-light.active{box-shadow: 0 1px 10px rgb(0 0 0 / 5%), 0 2px 4px rgb(0 0 0 / 30%), 1px 5px 5px rgb(0 0 0 / 1%);}
+    @media only screen and (min-width: 768px){
+        .main-area-offset{
+            margin-left: 5rem;
+        }
+        .nav-maxed{
+            max-width: clamp(10vw, 25rem, 100%);
+        }
+        .nav-mined{
+            max-width: 4rem;
+        }
+    }
+    .bookmark-clipping-path{
+        clip-path: polygon(100% 0, 100% 100%, 50% 90%, 0% 100%, 0 48%, 0% 0%);
+    }
+    .bookmark-shadow{
+        filter: drop-shadow(2px 2px 3px rgb(50 50 0 / 25%));;
+    }
+</style>
+<script>
+    let nav = document.getElementById("navigation");
+    navigation.addEventListener("mouseenter", function () {
+        //test document width is greater than 768px
+        if(document.documentElement.clientWidth > 768){
+            navigation.classList.add("hover", "nav-maxed");
+            navigation.classList.remove("nav-mined");
+            let navItems = navigation.querySelectorAll(".nav-item");
+            navItems.forEach(function (navItem) {
+                setTimeout(function () {
+                    navItem.querySelector(".label").classList.add("inline-block" , "opacity_none");
+                    navItem
+                    .querySelector(".label")
+                    .classList.remove("display_none:md" , "opacity_0");
+                }, 300);
+            });
+        }
+
+    });
+    navigation.addEventListener("mouseleave", function () {
+        setTimeout(function () {
+        navigation.classList.remove("hover", "nav-maxed");
+        navigation.classList.add("nav-mined");
+        let navItems = navigation.querySelectorAll(".nav-item");
+        navItems.forEach(function (navItem) {
+            navItem.querySelector(".label").classList.remove("inline-block" );
+            navItem
+            .querySelector(".label")
+            .classList.add("display_none:md");
+            //test document width is greater than 768px
+        if(document.documentElement.clientWidth > 768){
+            navItem.querySelector(".label").classList.remove("opacity_none");
+            navItem
+            .querySelector(".label")
+            .classList.add( "opacity_0");
+        }
+        });
+        }, 300);
+    });
+</script>

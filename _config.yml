@@ -47,6 +47,9 @@ collections:
   fedlogin_prototypes:
     output: true
     permalink: /fedlogin/:path/
+  library_prototypes:
+    output: true
+    permalink: /library/:path/
 
 # Exclude from processing.
 # The following items will not be processed, by default.
