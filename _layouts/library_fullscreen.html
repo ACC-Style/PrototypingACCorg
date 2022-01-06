@@ -1,0 +1,235 @@
+--- 
+layout: default
+---
+{% include arches-head.html %}
+
+<body class="bg_black-4 w_100 h_100 min-h_100 p_3:md p_2 shadow_overlap-light">
+
+    <div class="bg_white-7 br_radius relative m-b_3 p-t_1">
+        <nav id="navigation_mobile" class="block display_none:md shadow_emboss-light filter_blur br_radius m_3 m-b_0 bg_black-6 p_2 sticky t_3 z_4">
+            <ul class="flex flex_row ul_none justify_between">
+                <li class="nav-item flex_auto br_radius c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light active">
+                    <a class="c_inherit-all flex flex_column h:undecorated p_3 transition_4"><i class="icon fas fa-fw fa-home-heart p-y_2 self_center"></i><span class="label self_center  lowercase lh_0 active font_n2 h_1h">Home</span></a>
+                </li>
+                <li class="nav-item flex_auto br_radius c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light">
+                    <a class="c_inherit-all flex flex_column h:undecorated p_3 transition_4"><i class="icon fas fa-fw fa-search p-y_2 self_center"></i><span class="label self_center  lowercase lh_0 font_n2 h_1h">Search</span></a>
+                </li>
+                <li class="nav-item flex_auto br_radius c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light">
+                    <a class="c_inherit-all flex flex_column h:undecorated p_3 transition_4"><i class="icon fas fa-fw fa-heart p-y_2 self_center"></i><span class="label self_center  lowercase lh_0 font_n2 h_1h nowrap">Saved</span></a>
+                </li>
+                <li class="nav-item flex_auto br_radius c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light">
+                    <a class="c_inherit-all flex flex_column h:undecorated p_3 transition_4"><i class="icon fas fa-fw fa-award p-y_2 self_center"></i><span class="label self_center  lowercase lh_0 font_n2 h_1h">Credits</span></a>
+                </li>
+                <li class="nav-item flex_auto br_radius c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light disabled opacity_3 cursor_not-allowed">
+                    <a class="c_inherit-all flex flex_column h:undecorated p_3 transition_4"><i class="icon fas fa-fw fa-play p-y_2 self_center"></i><span class="label self_center lowercase lh_0 font_n2 h_1h">Watching</span></a>
+                </li>
+                <li class="nav-item flex_auto br_radius c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light">
+                    <a class="c_inherit-all flex flex_column h:undecorated p_3 transition_4"><i class="icon fas fa-fw fa-sign-out-alt p-y_2 self_center"></i><span class="label self_center lowercase lh_0 font_n2 nowrap h_1h">Log Out</span></a>
+                </li>
+            </ul>
+        </nav>
+        <div class="main-area-offset p_0 p-x_5:md p-y_4:md isolation_isolate min-h_100">
+            {{content}}
+            <footer>
+                <!-- subfooter -->
+                <div id="subfooter" class="bg_primary-1 font_n1 p-x_4 p-y_4 z_0 br_radius texture_dust shadow_emboss-light m-t_4">
+                    <ul class="m_auto footer-bottom-links ul_none max-w_80">
+                        <li class="inline p_2"><a href="//www.acc.org/footer-pages/media-center" class="c_white-6 h:c_white">Media Center</a></li>
+                        <li class="inline p_2"><a href="//www.acc.org/footer-pages/quick-start-guide" class="c_white-6 h:c_white">ACC.org Quick Start Guide</a></li>
+                        <li class="inline p_2"><a class="c_white-6 h:c_white" href="//www.acc.org/footer-pages/advertising-and-sponsorship-policy">Advertising &amp; Sponsorship Policy</a></li>
+                        <li class="inline p_2"><a class="c_white-6 h:c_white" href="//www.acc.org/footer-pages/clinical-content-disclaimer">Clinical Content Disclaimer</a> </li>
+                        <li class="inline p_2"><a class="c_white-6 h:c_white" href="//www.acc.org/footer-pages/editorial-board">Editorial Board</a></li>
+                        <li class="inline p_2"><a class="c_white-6 h:c_white" href="//www.acc.org/footer-pages/privacy-policy">Privacy Policy</a></li>
+                        <li class="inline p_2"><a class="c_white-6 h:c_white" href="//www.acc.org/footer-pages/registered-user-agreement">Registered User Agreement</a></li>
+                        <li class="inline p_2"><a class="c_white-6 h:c_white" href="//www.acc.org/footer-pages/terms-and-conditions">Terms of Service</a></li>
+                        <li class="inline p_2"><a class="c_white-6 h:c_white" href="//www.acc.org/footer-pages/cookie-policy">Cookie Policy</a></li>
+                        <li class="inline p_2"><a class="c_white-6 h:c_white" href="//www.acc.org/footer-pages/member-hub-terms-of-use">Member Hub Terms of Use</a></li>
+                        <li class="inline p_2"><a class="c_white-6 h:c_white" href="//www.acc.org/sitemap-acc.xml">Site Map</a> </li>
+                    </ul> <!-- /footer-bottom-links -->
+                </div><!-- /subfooter -->
+            </footer>
+        </div>
+        <nav id="navigation" class="display_none fixed shadow_emboss-light filter_blur overflow_hidden br_radius r_3 r_0:md r_auto:md l_4 b_4 t_auto t_4:md bg_black-7 flex:md flex_column:md justify_between p-t_0 p-b_3 p-l_3 p-r_3 p-b_4:md p-t_4:md p-r_0:md font_4:lg font_3:md font_2 transition_3 font_display nav-mined">
+            <ul class="flex flex_column:md flex_row ul_none justify_around justify_start:md gap_3 w_100 w_auto:md">
+                <li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light active">
+                    <a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md"><i class="icon fas fa-fw fa-home-heart p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center display_none:md p-l_3:md p-l_4:lg lowercase lh_0 active font_n2 font_3:md font_4:lg">Home</span></a>
+                </li>
+                <li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light">
+                    <a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md"><i class="icon fas fa-fw fa-search p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center display_none:md p-l_3:md p-l_4:lg lowercase lh_0 font_n2 font_3:md font_4:lg">Search</span></a>
+                </li>
+                <li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light">
+                    <a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md"><i class="icon fas fa-fw fa-heart p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center display_none:md p-l_3:md p-l_4:lg lowercase lh_0 font_n2 font_3:md font_4:lg">Saved</span></a>
+                </li>
+                <li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light">
+                    <a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md"><i class="icon fas fa-fw fa-award p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center display_none:md p-l_3:md p-l_4:lg lowercase lh_0 font_n2 font_3:md font_4:lg">Credits</span></a>
+                </li>
+                <li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light disabled cursor_not-allowed opacity_3">
+                    <a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md"><i class="icon fas fa-fw fa-play p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center display_none:md p-l_3:md p-l_4:lg lowercase lh_0 font_n2 font_3:md font_4:lg">Watching</span></a>
+                </li>
+            </ul>
+            <ul class="flex_column:md flex_row ul_none justify_center gap_3 flex">
+                <li class="nav-item flex_auto br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light">
+                    <a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md"><i class="icon fas fa-fw fa-sign-out-alt p-x_2 p-y_3 p-y_0:md self_center"></i><span class="label self_center display_none:md p-l_3:md p-l_4:lg lowercase lh_0 font_n2 font_3:md font_4:lg">Log Out</span></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <style>
+        .filter_blur {
+            backdrop-filter: blur(5px);
+        }
+
+        .h\:shadow_overlap-light:hover {
+            box-shadow: 0 1px 10px rgb(0 0 0 / 5%), 0 2px 4px rgb(0 0 0 / 30%), 1px 5px 5px rgb(0 0 0 / 1%);
+        }
+
+        .a\:shadow_overlap-light.active {
+            box-shadow: 0 1px 10px rgb(0 0 0 / 5%), 0 2px 4px rgb(0 0 0 / 30%), 1px 5px 5px rgb(0 0 0 / 1%);
+        }
+
+        @media only screen and (min-width: 768px) {
+            .main-area-offset {
+                margin-left: 4rem;
+            }
+
+            .nav-maxed {
+                max-width: clamp(10vw, 25rem, 100%);
+            }
+
+            .nav-mined {
+                max-width: 4rem;
+            }
+        }
+
+        .bookmark-clipping-path {
+            clip-path: polygon(100% 0, 100% 100%, 50% 90%, 0% 100%, 0 48%, 0% 0%);
+        }
+
+        .bookmark-shadow {
+            filter: drop-shadow(2px 2px 3px rgb(50 50 0 / 25%));
+            ;
+        }
+
+        /* nav */
+        .tns-nav {
+            text-align: center;
+            margin: .5rem 0;
+        }
+
+        .tns-nav>[aria-controls] {
+            width: .5rem;
+            height: .5rem;
+            padding: 0;
+            margin: 0 .25rem;
+            border-radius: 50%;
+            background: #ddd;
+            border: 0;
+            min-height: 0;
+            line-height: 1;
+        }
+
+        .tns-nav>.tns-nav-active {
+            background: #999;
+        }
+
+        .tns-item {
+            display: flex !important;
+        }
+
+        .tns-visually-hidden {
+            display: none;
+        }
+        html:not([data-scroll='0']) #navigation_mobile .label {
+            opacity:0 !important;
+            height:0;
+        }
+
+    </style>
+    <script>
+       // The debounce function receives our function as a parameter
+const debounce = (fn) => {
+
+// This holds the requestAnimationFrame reference, so we can cancel it if we wish
+let frame;
+
+// The debounce function returns a new function that can receive a variable number of arguments
+return (...params) => {
+  
+  // If the frame variable has been defined, clear it now, and queue for next frame
+  if (frame) { 
+    cancelAnimationFrame(frame);
+  }
+
+  // Queue our function call for the next frame
+  frame = requestAnimationFrame(() => {
+    
+    // Call our function and pass any params we received
+    fn(...params);
+  });
+
+} 
+};
+
+
+// Reads out the scroll position and stores it in the data attribute
+// so we can use it in our stylesheets
+const storeScroll = () => {
+document.documentElement.dataset.scroll = window.scrollY;
+}
+
+// Listen for new scroll events, here we debounce our `storeScroll` function
+document.addEventListener('scroll', debounce(storeScroll), { passive: true });
+
+// Update scroll position for first time
+storeScroll();
+    </script>
+    <script>
+        let nav = document.getElementById("navigation");
+        navigation.addEventListener("mouseenter", function () {
+            //test document width is greater than 768px
+            navigation.mouseIsOver = true;
+            navigation.onmouseover = function () {
+                this.mouseIsOver = true;
+            };
+            navigation.onmouseout = function () {
+                this.mouseIsOver = false;
+            }
+            setTimeout(function () {
+                if (document.documentElement.clientWidth > 768 && navigation.mouseIsOver) {
+                    navigation.classList.add("hover", "nav-maxed");
+                    navigation.classList.remove("nav-mined");
+                    let navItems = navigation.querySelectorAll(".nav-item");
+                    navItems.forEach(function (navItem) {
+                        setTimeout(function () {
+                            navItem.querySelector(".label").classList.add("inline-block", "opacity_none");
+                            navItem
+                                .querySelector(".label")
+                                .classList.remove("display_none:md", "opacity_0");
+                        }, 300);
+                    });
+                }
+            }, 500);
+        });
+        navigation.addEventListener("mouseleave", function () {
+            setTimeout(function () {
+                navigation.classList.remove("hover", "nav-maxed");
+                navigation.classList.add("nav-mined");
+                let navItems = navigation.querySelectorAll(".nav-item");
+                navItems.forEach(function (navItem) {
+                    navItem.querySelector(".label").classList.remove("inline-block");
+                    navItem
+                        .querySelector(".label")
+                        .classList.add("display_none:md");
+                    //test document width is greater than 768px
+                    if (document.documentElement.clientWidth > 768) {
+                        navItem.querySelector(".label").classList.remove("opacity_none");
+                        navItem
+                            .querySelector(".label")
+                            .classList.add("opacity_0");
+                    }
+                });
+            }, 300);
+        });
+    </script>
+    </div>
+</body>
