@@ -1,0 +1,133 @@
+--- 
+layout: library_fullscreen
+name: "Virtual Video Player"
+position: "Search"
+--- 
+<header class="m-t_3 m-x_3">
+    <div class="flex_inline flex lh_0 bg_white-7 br_radius br_solid br_1 br_black-2 p_3 p_4:md font_ui font_2">
+        <div class="relative  m-b_2" level="-1">
+            <div >
+                <div class="h:underline h:c_primary c_black-9"><i class="fal m-l_1 fa-fw m-r_3 flex_none self_center c_primary font-size_up fa-home"></i> <span class="font_regular flex_auto self_center">Home</span></div>
+            </div>
+        </div> 
+        <i class="fal fa-chevron-left c_primary-n2 m-x_3 self_center font-size_down"></i>
+        <div class="flex_inline flex lh_0">
+            <div class="relative  m-b_2" level="0">
+                <div >
+                    <div class="h:underline h:c_primary c_black-9"><span class="flex_none self_center font-size_up m-r_3"></span> <span class="font_regular flex_auto self_center">Search</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<main class="flex flex_column-reverse flex_row:lg gap_5:lg gap_3 gap_4:md m-t_3 m-t_4:md min-h_60 m-x_3">
+    <nav class="aspect_1x1:md bg_black-3 br_radius filter_blur flex_auto nav-mined overflow_hidden self_start shadow_emboss-light">
+        <ul class="flex flex_column:md flex_row gap_3 justify_start:md m_3 ul_none w_100 w_auto:md">
+                <li class="a:bg_primary a:c_white a:shadow_overlap-light aspect_1x1:lg br_radius c_white-8 flex_none grid h:bg_black-9 h:c_white h:shadow_overlap-light items_center justify_center nav-item p_0:md p_3" style="
+    align-items: center;
+">
+                    <a class="c_inherit-all h:undecorated "><i class="far fa-filter"></i><span class="active display_none:md font_3:md font_4:lg font-size_down label lh_0 lowercase p-l_2 p-l_3:md p-l_4:lg self_center">Filter</span></a>
+                </li>
+            </ul>
+        </nav>
+        <div class="bg_black-3 br_1 br_black-2 br_radius br_solid flex_auto font_0:lg font_n1 max-w_20:md max-w_30:lg p_3 p_4:md w_30:lg">
+            <header class="lh_1  flex flex_row justify_between">
+                <span class="font_display font_medium m-t_3 font_3:lg font_2:md font_1 c_white "><i class="far fa-filter"></i> Filter</span> 
+                <div class="flex flex_row lowercase lh_1 self_start">
+                    <a href="" class="p-x_3 p-y_2 bg_black-3 h:bg_black-7 font_n1 c_white h:c_primary-5 undecorated h:undecorated active self_center br_radius"> <i class="fas fa-times"></i> close</a>
+                </div>
+            </header>
+            {% include library-search-facet.html %}
+            {% include library-search-facet.html %}
+            {% include library-search-facet.html %}
+    
+        </div>
+
+    <div class="flex_auto w_70:lg flex_column gap-y_4 ">
+        <div class="bg_white br_radius shadow_overlap-light p_4 p-b_0 p_5:lg p_4 m-b_4 p-b_0:lg">
+            <div class="input-holder flex flex_row self_end relative w_100">
+                <input id="input_uniqueTextAndButton" name="input_uniqueTextAndButton" type="text" placeholder="Search" class="br_2 flex_auto p-y_2 br_solid flex_auto p-l_4 lh_3 br_radius bg_white c_black bg_white f:bg_primary br_black-2 " />
+                <button class="diabled ease_out transition_1 f:outline_none text_center br_none inline-block w_auto font_medium  absolute t_0 b_0 r_0 h:underline undecorated bg_primary c_white h:br_primary-n3 br-br_radius br-tr_radius br_square">Search</button>
+            </div>
+            <div class="row flex flex_row c_black-5 font_n2 font_ui m-t_3"><label><input type="checkbox"/> Include slide content in search</label></div>
+            <nav class="font_ui relative br_1 br_solid br_black-3 br-b_0 br-tr_radius br-tl_radius overflow_hidden">
+                <ul class="flex flex_auto flex_nowrap flex_row:md nav overflow_hidden font-size_up ul_none">
+                    <li id="LinkUI-tab" class=" nav-item relative p_3 p-x_4:md h:bg_black-3 br-l_1 br_black-3 br_solid flex_grow text_center bg_disabled opacity_disabled a:bg_accent-n1">
+                        <span
+                             class="h:undecorated expanded-click-area c_black-8 a:c_white-9 h:c_black "
+                            >Sessions</span>
+                    </li>
+                    <li class="active nav-item relative p_3 p-x_4:md h:bg_black-3 br-l_1 br_black-3 br_solid flex_grow text_center bg_disabled opacity_disabled a:bg_accent-n1">
+                        <a
+                            id="ActiveLinkUI-tab"
+                            role="tab"
+                            class="h:undecorated expanded-click-area c_black-8 a:c_white-9 h:c_black "
+                            href="#">Presentations (Active)</a>
+                    </li>
+                    <li id="LinkUI-tab" class=" nav-item relative p_3 p-x_4:md h:bg_black-3 br-l_1 br_black-3 br_solid flex_grow text_center bg_disabled opacity_disabled a:bg_accent-n1">
+                        <span
+                             class="h:undecorated expanded-click-area c_black-8 a:c_white-9 h:c_black "
+                            >Faculty</span>
+                    </li>
+
+            </nav>
+        </div>
+        <div class="bg_white-7 br_radius br_solid br_1 br_black-2">
+            <header class="p-x_4 m-x_3 m-b_3 m-b_3:lg lh_1 m-t_4:md m-t_3 flex flex_row justify_between">
+                <span class="font_display font_medium font_3:lg font_2:md font_1 c_primary-n1 ">Results</span> 
+                <div class="flex flex_row lowercase lh_1">
+                    <a href="" class="c_black-6 p-x_3 font_n1 a:c_primary-n1 undecorated h:underline self_center"><i class="fas fa-check a:_inline-block display_none"></i> popular</a>
+                    <span class="br-l_1 br_solid br_black-4"></span>
+                    <a href="" class="c_black-6 p-x_3 font_n1 a:c_primary-n1 undecorated h:underline active self_center"> <i class="fas fa-check a:_inline-block display_none"></i> relevance</a>
+                </div>
+            </header>
+            <ul class="ul_none p_3 flex_column flex gap-y_3">
+                {% include library-presentation.html %}
+                {% include library-presentation.html %}
+                {% include library-presentation.html %}
+            </ul>
+        </div>
+    </div>
+</main>
+<!-- Slider CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
+<!-- Slider JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+<script>
+    let args = {
+        items: 1,
+        mouseDrag: true,
+        slideBy: "page",
+        swipeAngle: false,
+        autoplay: false,
+        controls: true,
+        nav: false,
+        edgePadding: 0,
+        loop: true,
+        edgePadding: 48,
+        center: false,
+        gutter: 16,
+        responsive: {
+            480: {
+                items: 1
+            },
+            768: {
+                items: 2
+            },
+            1024: {
+                items: 2
+            },
+            1200: {
+                items: 3
+            }
+        }
+    };
+    let slider1 = tns({ container: '#slider1', controlsContainer: "#slider1-customize-controls", ...args });
+    let slider2 = tns({ container: '#slider2', controlsContainer: "#slider2-customize-controls", ...args });
+    let slider3 = tns({ container: '#slider3', controlsContainer: "#slider3-customize-controls", ...args });
+</script>
+<style>
+    .tns-item {
+        display: flex !important;
+    }
+</style>
