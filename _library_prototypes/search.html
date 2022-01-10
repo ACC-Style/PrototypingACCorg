@@ -2,6 +2,8 @@
 layout: library_fullscreen
 name: "Virtual Video Player"
 position: "Search"
+homeActive: false
+searchActive: true
 --- 
 <header class="m-t_3 m-x_3">
     <div class="flex_inline flex lh_0 bg_white-7 br_radius br_solid br_1 br_black-2 p_3 p_4:md font_ui font_2">
@@ -20,7 +22,7 @@ position: "Search"
         </div>
     </div>
 </header>
-<main class="flex flex_column-reverse flex_row-reverse:md flex_row:lg gap_5:lg gap_3 gap_4:md m-t_3 m-t_4:md min-h_60 m-x_3">
+<main class="flex flex_column-reverse flex_row-reverse:md flex_row:lg gap_5:lg gap_3 gap_4:md m-t_3 m-t_4:md min-h_60:md m-x_3">
         <div id="filterZone"  class="{aspect_1x1:md} {nav-mined} nav-maxed self_start bg_black-3 br_1 br_black-2 br_radius br_solid flex_auto p_2 p_3:md w_30:lg shadow_emboss-light transition_3 flex flex_column">
             <nav class="flex_auto overflow_hidden self_stretch font_4:lg font_3:md font_2 font_display font_display">
                 <ul class="flex flex_column:md flex_row gap_3 justify_start:md ul_none w_100 w_auto:md">
@@ -32,7 +34,7 @@ position: "Search"
                     </li>
                 </ul>
             </nav>
-            <ul id="filterFacets" class="ul_none font_n1 {display_none} opacity_none transition_3 min-h_80">
+            <ul id="filterFacets" class="ul_none font_n1 {display_none} opacity_none transition_3 min-h_50:md">
                 {% include library-search-facet.html %}
                 {% include library-search-facet.html %}
                 {% include library-search-facet.html %}
@@ -50,8 +52,8 @@ position: "Search"
                             setTimeout(function () {
                                 filterFacets.classList.toggle("{display_none}");
                                 filterFacets.classList.toggle("display_none");
-                                filterFacets.classList.toggle("min-h_0");
-                                filterFacets.classList.toggle("min-h_50");
+                                filterFacets.classList.toggle("min-h_0:md");
+                                filterFacets.classList.toggle("min-h_50:md");
                                 filterZone.classList.remove("{aspect_1x1:md}","{nav-mined}", "nav-maxed");
                                 filterZone.classList.add("aspect_1x1:md","nav-mined", "{nav-maxed}");
                                 filterZoneNav.querySelector("span.label").classList.toggle("{display_none:md}");
@@ -64,8 +66,8 @@ position: "Search"
                         }else{
                             filterZone.classList.add("{aspect_1x1:md}","{nav-mined}","nav-maxed");
                             filterZone.classList.remove("aspect_1x1:md","nav-mined", "{nav-maxed}");
-                            filterFacets.classList.toggle("min-h_0" );
-                            filterFacets.classList.toggle("min-h_80" );
+                            filterFacets.classList.toggle("min-h_0:md" );
+                            filterFacets.classList.toggle("min-h_50:md" );
                             filterFacets.classList.toggle("{display_none}");
                             filterFacets.classList.toggle("display_none");
                             setTimeout(function () {
