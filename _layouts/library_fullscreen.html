@@ -3,36 +3,36 @@ layout: default
 ---
 {% include arches-head.html %}
 
-<body class="bg_black-4 w_100 h_100 min-h_100 p_3:md p_2 shadow_overlap-light">
+<body class="bg_black-4 w_100 min-h_100 p_3:md p_2">
 
-    <div class="bg_white-7 br_radius relative m-b_3 p-t_1 p-b_1">
+    <div class="bg_white-7 br_radius relative p-t_1 p-b_1">
         <nav id="navigation_mobile" class="block display_none:md shadow_emboss-light filter_blur br_radius m_3 m-b_0 bg_black-6 p_2 sticky t_3 z_4">
             <ul class="flex flex_row ul_none justify_between">
                 <li class="nav-item flex_auto br_radius c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light {% if page.homeActive %}active{% endif %}">
-                    <a class="c_inherit-all flex flex_column h:undecorated p_3 transition_4" href="../home"><i class="icon fas fa-fw fa-home-heart p-y_2 self_center"></i><span class="label self_center  lowercase lh_0 {% if page.homeActive %}active{% endif %} font_n2 h_1h">Home</span></a>
+                    <a class="c_inherit-all flex flex_column h:undecorated p_3" href="../home"><i class="icon fas fa-fw fa-home-heart p-y_2 self_center"></i><span class="label self_center  lowercase lh_0 {% if page.homeActive %}active{% endif %} font_n2 h_1h">Home</span></a>
                 </li>
                 <li class="nav-item flex_auto br_radius c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light {% if page.searchActive %}active{% endif %}">
-                    <a class="c_inherit-all flex flex_column h:undecorated p_3 transition_4" href="../search"><i class="icon fas fa-fw fa-search p-y_2 self_center"></i><span class="label self_center  lowercase lh_0 font_n2 h_1h {% if page.searchActive %}active{% endif %}">Search</span></a>
+                    <a class="c_inherit-all flex flex_column h:undecorated p_3" href="../search"><i class="icon fas fa-fw fa-search p-y_2 self_center"></i><span class="label self_center  lowercase lh_0 font_n2 h_1h {% if page.searchActive %}active{% endif %}">Search</span></a>
                 </li>
                 <li class="nav-item flex_auto br_radius c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light {% if page.saveActive %}active{% endif %}">
-                    <a class="c_inherit-all flex flex_column h:undecorated p_3 transition_4" href="../saved"><i class="icon fas fa-fw fa-heart p-y_2 self_center"></i><span class="label self_center  lowercase lh_0 font_n2 h_1h nowrap {% if page.saveActive %}active{% endif %}">Saved</span></a>
+                    <a class="c_inherit-all flex flex_column h:undecorated p_3" href="../saved"><i class="icon fas fa-fw fa-heart p-y_2 self_center"></i><span class="label self_center  lowercase lh_0 font_n2 h_1h nowrap {% if page.saveActive %}active{% endif %}">Saved</span></a>
                 </li>
                 <li class="nav-item flex_auto br_radius c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light {% if page.creditsActive %}active{% endif %}">
-                    <a class="c_inherit-all flex flex_column h:undecorated p_3 transition_4" href="../saved"><i class="icon fas fa-fw fa-award p-y_2 self_center"></i><span class="label self_center  lowercase lh_0 font_n2 h_1h {% if page.creditsActive %}active{% endif %}">Credits</span></a>
+                    <a class="c_inherit-all flex flex_column h:undecorated p_3" href="../saved"><i class="icon fas fa-fw fa-award p-y_2 self_center"></i><span class="label self_center  lowercase lh_0 font_n2 h_1h {% if page.creditsActive %}active{% endif %}">Credits</span></a>
                 </li>
                 <li class="nav-item flex_auto br_radius c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light disabled opacity_3 cursor_not-allowed {% if page.watchingActive %}active{% endif %}">
-                    <a class="c_inherit-all flex flex_column h:undecorated p_3 transition_4"  href="../search"><i class="icon fas fa-fw fa-play p-y_2 self_center"></i><span class="label self_center lowercase lh_0 font_n2 h_1h {% if page.watchingActive %}active{% endif %}">Watching</span></a>
+                    <a class="c_inherit-all flex flex_column h:undecorated p_3"  href="../search"><i class="icon fas fa-fw fa-play p-y_2 self_center"></i><span class="label self_center lowercase lh_0 font_n2 h_1h {% if page.watchingActive %}active{% endif %}">Watching</span></a>
                 </li>
                 <li class="nav-item flex_auto br_radius c_white-8 bg_acc-n1 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light">
-                    <a class="c_inherit-all flex flex_column h:undecorated p_3 transition_4"><i class="icon fas fa-fw fa-sign-out-alt p-y_2 self_center"></i><span class="label self_center lowercase lh_0 font_n2 nowrap h_1h">Log Out</span></a>
+                    <a class="c_inherit-all flex flex_column h:undecorated p_3"><i class="icon fas fa-fw fa-sign-out-alt p-y_2 self_center"></i><span class="label self_center lowercase lh_0 font_n2 nowrap h_1h">Log Out</span></a>
                 </li>
             </ul>
         </nav>
         <div class="main-area-offset p_0 p-x_5:md p-y_4:md isolation_isolate min-h_100">
             {{content}}
-            <footer>
+            <footer class="flex flex_row:md flex_column-reverse gap_4 m-t_4 p-x_3">
                 <!-- subfooter -->
-                <div id="subfooter" class="bg_primary-1 font_n1 p-x_4 p-y_4 z_0 br_radius texture_dust shadow_emboss-light m-t_4 m-x_3 p-b_5">
+                <div id="subfooter" class="bg_primary-1 flex_auto font_n1 p-x_4 p-y_4 z_0 br_radius texture_dust shadow_emboss-light p-b_4">
                     <ul class="m_auto footer-bottom-links ul_none max-w_80">
                         <li class="inline p_2"><a href="//www.acc.org/footer-pages/media-center" class="c_white-6 h:c_white">Media Center</a></li>
                         <li class="inline p_2"><a href="//www.acc.org/footer-pages/quick-start-guide" class="c_white-6 h:c_white">ACC.org Quick Start Guide</a></li>
@@ -47,6 +47,9 @@ layout: default
                         <li class="inline p_2"><a class="c_white-6 h:c_white" href="//www.acc.org/sitemap-acc.xml">Site Map</a> </li>
                     </ul> <!-- /footer-bottom-links -->
                 </div><!-- /subfooter -->
+                <div id="logo" class="bg_white-4 br_1 br_black-1 br_round br-br_radius   br-tl_radius  br_solid flex flex_none flex_row items_center justify_center max-w_25:md max-w_30:lg p-x_4 p-y_3 shadow_bevel-light w_100">
+                    <h2 class="logo_condensed w_100 max-w_20">American College of Cardiology</h2>
+                </div>
             </footer>
         </div>
         <nav id="navigation" class=" display_none fixed shadow_emboss-light filter_blur overflow_hidden br_radius r_3 r_0:md r_auto:md l_4 b_4 t_auto t_4:md bg_black-7 flex:md flex_column:md justify_between p-t_0 p-b_3 p-l_3 p-r_3 p-b_4:md p-t_4:md p-r_0:md font_4:lg font_3:md font_2 transition_3 font_display nav-mined">
