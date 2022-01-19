@@ -4,7 +4,7 @@ name: "Virtual Video Player"
 position: "Credits"
 creditsActive: true
 --- 
-<header class="m-t_3 m-x_3">
+<header class="">
     <div class="flex_inline flex lh_0 bg_white-7 br_radius br_solid br_1 br_black-2 p_3 p_4:md font_ui font_2">
         <div class="relative  m-b_2" level="-1">
             <div >
@@ -21,12 +21,12 @@ creditsActive: true
         </div>
     </div>
 </header>
-<main class="flex flex_column flex_row:lg  m-t_3 m-t_4:md min-h_60:md m-x_3 bg_white-7 br_radius br_solid br_1 br_black-2 p_5:lg p_4">
+<main class="flex flex_column flex_row:lg min-h_60:md bg_white-7 br_radius br_solid br_1 br_black-2 p_5:lg p_4 flex_auto">
     <div class="flex_auto w_50:lg br-r_1 br_dotted:lg br_none br_primary-3 reading-typography font-size_up p_5:lg p_4">
         <h1 ><span class="font_8">Claim Credit Based on Total Watch Time</span><sup>*</sup></h1>
         <p>We’re keeping track of the time you spend watching videos to make it easier for you to claim credit.  The chart below shows total watch time by credit type.  ​
         </p>
-        <h2 class="">You have watched a lot of this education.</h2>
+        <!-- 
         <div class="p-y_4 flex_row flex_wrap justify_center flex font_display c_primary items_center bg_black-1 br_round">
             <span class="font_10 font_bold">105</span>
             <span class="font_1 lh_0 p-l_3 font_accent">Hours<br> Watched</span>
@@ -34,34 +34,70 @@ creditsActive: true
             <span class="font_10 font_bold">170</span>
             <span class="font_1 lh_0 p-l_3 font_accent">Available<br>Credits Hours</span>
         </div>
-        <h2 class="">You have watched a lot of these types of education.</h2>
-        <section class="br_radius overflow_hidden relative z_1" >
-            <picture class="w_100">
-                <source class="w_100" srcset="https://via.placeholder.com/768x250/004176/fff?text=Chart" media="(min-width: 768px)">
-                <source class="w_100" srcset="https://via.placeholder.com/600x300/004176/fff?text=Chart" media="(min-width: 400px)">
-                <img src="https://via.placeholder.com/400x300/004176/fff?text=Chart" class="w_100" alt="">
-            </picture>
+        <h2 class="">You have watched a lot of these types of education.</h2> -->
+        <h2 class="">You have watched a lot of this education.</h2>
+        <section class="br_radius overflow_hidden relative z_1" id="CreditChartContainer" style="width:100%; height:500px;">
+    
         </section>
+
         <p class="font-size_down c_priamry-n2"><sup>*</sup>claimed credits and watched video can take up to 24 hours to reflect in your profile. </p>
     </div>
     <div class="flex_auto w_50:lg  br-t_1 br_dotted br_none:lg br_primary-3  p_5:lg p_4">
         <section class="reading-typography font-size_up ">
-            <h2>You can claim X types of credits </h2>
-            <p>
-                Below is the optimized view and the amount of each credit to can claim to make the most of your watched experience.
-            </p>
-            <section class="br_radius overflow_hidden relative z_1" >
-                <picture class="w_100">
-                    <source class="w_100" srcset="https://via.placeholder.com/768x250/004176/fff?text=Chart" media="(min-width: 768px)">
-                    <source class="w_100" srcset="https://via.placeholder.com/600x300/004176/fff?text=Chart" media="(min-width: 400px)">
-                    <img src="https://via.placeholder.com/400x300/004176/fff?text=Chart" class="w_100" alt="">
-                </picture>
-            </section>
-        </section>
-        <div class="br_solid m-t_4 bg_accent-4 c_black br_1 br_accent-1 br_radius text_center p_4">
-            <h3 class="c_black bold font_4 br-b_2 br_solid br_accent p-y_3">Caution</h3>
+            <h2 ><span class="font_7">Claiming Credit </span></h2>
+            <div class="reading-typography">
+                <p> Credit claiming will be available beginning December 12, 2021, at noon ET. Credit must be claimed by March 12, 2022, at 11:59 p.m. ET. You may only complete the evaluation and claim credit once; therefore, please do not proceed until you have finished your participation in the certified content for which you wish to claim credit. </p>
+            </div>
+        <div class="br_dashed m-t_4 c_black br_3 br_warning br_round text_center p_4 bg_warning-5">
+            <h3 class="c_warning-n4 font_bold font_4 br-b_2 br_solid br_warning p-y_3 p-x_5:lg p-x_4"><i class="fas fa-exclamation-triangle"></i> Caution <i class="fas fa-exclamation-triangle"></i></h3>
             <p class="font-size_up m-t_4">You can only claim once so please watch as much as you want before claiming. </p>
-            <button class="ease_out transition_1 f:outline_none text_center br_none inline-block w_auto font_medium font_ui h:underline undecorated btn btn-primary br_2 br_primary br_solid br_radius m-x_auto m-t_4 font_2 shadow_overlap-light btn-lg">Claim Credits</button>
         </div>
+        <button class="ease_out transition_1 float_right f:outline_none text_center br_none inline-block w_auto font_medium font_ui h:underline undecorated btn btn-primary br_2 br_primary br_solid br_radius m-x_auto m-t_4 font_2 shadow_overlap-light btn-lg m-y_5">Claim Credits</button>
     </div>
 </main>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script>
+    // Load the Visualization API and the corechart package.
+    google.charts.load('current', {'packages':['corechart']});
+
+// Set a callback to run when the Google Visualization API is loaded.
+google.charts.setOnLoadCallback(drawChart);
+
+// Callback that creates and populates a data table,
+// instantiates the pie chart, passes in the data and
+// draws it.
+function drawChart() {
+    
+    var data = google.visualization.arrayToDataTable([
+        ['Credit Type', 'Watched Hours' ,{ role: 'style' }],
+        ['AAPA', 1.45, '#e8c536' ],
+        ['available', 28.55, '#a4a4a4' ],
+        ['', null, '' ],
+        ['ABP', 0, "#007a5b"],
+        ['available', 100, '#a4a4a4' ],
+        ['', null, '' ],
+        ['CME', 8.94, '#00a15b'],      
+        ['available', 91.06, '#a4a4a4' ],
+        ['', null, '' ],
+        ['CNE', 10.49, '#198dae'],   
+        ['available', 89.51, '#a4a4a4' ],
+        ['', null, '' ],       
+        ['MOC', 19.30, '#9a1267'],
+        ['available', 80.70, '#a4a4a4' ],
+        ['', null, '' ],
+    ]);
+  var view = new google.visualization.DataView(data);
+  view.setColumns([0, 1,{ calc: "stringify",  sourceColumn: 1, type: "string", role: "annotation" },2]);
+
+  var options = {
+    title: "Claimable Credits based on Watched Hours of Education",
+    bar: {groupWidth: "70%"},
+    legend: { position: "none" }
+  };
+  var chart = new google.visualization.BarChart(document.getElementById("CreditChartContainer"));
+  chart.draw(view, options);
+}
+const element = document.querySelectorAll('#CreditChartContainer');
+const observer = new ResizeObserver( element[0],()=>{ drawChart();});
+
+</script>

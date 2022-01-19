@@ -1,138 +1,198 @@
 --- 
-layout: library_fullscreen
-name: "Virtual Video Player"
-position: "Search"
-homeActive: false
-searchActive: true
+layout: library_fullscreen 
+name: "Virtual Video Player" 
+position: "Search" 
+homeActive: false 
+searchActive: true 
 --- 
-<header class="m-t_3 m-x_3">
+<header class="">
     <div class="flex_inline flex lh_0 bg_white-7 br_radius br_solid br_1 br_black-2 p_3 p_4:md font_ui font_2">
         <div class="relative  m-b_2" level="-1">
-            <div >
+            <div>
                 <a href="../home" class="h:underline h:c_primary c_black-9"><i class="fal m-l_1 fa-fw m-r_3 flex_none self_center c_primary font-size_up fa-home"></i> <span class="font_regular flex_auto self_center">Home</span></a>
             </div>
-        </div> 
+        </div>
         <i class="fal fa-chevron-left c_primary-n2 m-x_3 self_center font-size_down"></i>
         <div class="flex_inline flex lh_0">
             <div class="relative  m-b_2" level="0">
-                <div >
+                <div>
                     <div class="c_black-9"><span class="flex_none self_center font-size_up m-r_3"></span> <span class="font_regular flex_auto self_center">Search</span></div>
                 </div>
             </div>
         </div>
     </div>
 </header>
-<main class="flex flex_column-reverse flex_row-reverse:md flex_row:lg gap_5:lg gap_3 gap_4:md m-t_3 m-t_4:md min-h_60:md m-x_3">
-        <div id="filterZone"  class="{aspect_1x1:md} {nav-mined} nav-maxed self_start bg_black-3 br_1 br_black-2 br_radius br_solid flex_auto p_2 p_3:md w_30:lg shadow_emboss-light transition_3 flex flex_column">
-            <nav class="flex_auto overflow_hidden self_stretch font_4:lg font_3:md font_2 font_display font_display">
-                <ul class="flex flex_column:md flex_row gap_3 justify_start:md ul_none w_100 w_auto:md">
-                    <li class="a:bg_primary a:c_white a:shadow_overlap-light {aspect_1x1:md} br_radius c_white-8 flex_none grid h:bg_black-7 h:c_white h:shadow_overlap-light nav-item p_0:md p_3">
-                        <a class="c_inherit-all h:undecorated p_3 lh_1 m-x_n1">
-                            <i class="far fa-filter p-x_2:md p-y_3 p-y_0:md"></i>
-                            <span class="font-size_down label lh_0 lowercase self_center font_medium {display_none:md}">Filter</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <ul id="filterFacets" class="ul_none font_n1 {display_none} opacity_none transition_3 min-h_50:md">
-                {% include library-search-facet.html %}
-                {% include library-search-facet.html %}
-                {% include library-search-facet.html %}
+<main class="flex flex_column-reverse flex_row-reverse:md flex_row:lg gap_5:lg gap_3 gap_4:md min-h_60:md flex_auto">
+    <div id="filterZone" class="{aspect_1x1:md} {nav-mined} nav-maxed self_start bg_black-3 br_1 br_black-2 br_radius br_solid flex_auto p_2 p_3:md w_30:lg shadow_emboss-light transition_3 flex flex_column">
+        <nav class="flex_auto overflow_hidden self_stretch font_4:lg font_3:md font_2 font_display font_display">
+            <ul class="flex flex_column:md flex_row gap_3 justify_start:md ul_none w_100 w_auto:md">
+                <li class="a:bg_primary a:c_white a:shadow_overlap-light {aspect_1x1:md} br_radius c_white-8 flex_none grid h:bg_black-7 h:c_white h:shadow_overlap-light nav-item p_0:md p_3">
+                    <a class="c_inherit-all h:undecorated p_3 lh_1 m-x_n1">
+                        <i class="far fa-filter p-x_2:md p-y_3 p-y_0:md"></i>
+                        <span class="font-size_down label lh_0 lowercase self_center font_medium {display_none:md}">Filter</span>
+                    </a>
+                </li>
             </ul>
-                <script>
+        </nav>
+        <ul id="filterFacets" class="ul_none font_n1 {display_none} opacity_none transition_3 min-h_50:md"> {% include library-search-facet.html %} {% include library-search-facet.html %} {% include library-search-facet.html %} </ul>
+        <script>
 
-                    let filterZone = document.getElementById("filterZone");
-                    let filterZoneNav = filterZone.querySelector("nav");
-                    let filterFacets =   filterZone.querySelector("#filterFacets");
-                    let filterZoneExpanded = true;
-                    filterZoneNav.addEventListener("click", function () {
-                        if(filterZoneExpanded){                                
-                            filterFacets.classList.toggle("opacity_0");
-                            filterFacets.classList.toggle("opacity_none");
-                            setTimeout(function () {
-                                filterFacets.classList.toggle("{display_none}");
-                                filterFacets.classList.toggle("display_none");
-                                filterFacets.classList.toggle("min-h_0:md");
-                                filterFacets.classList.toggle("min-h_50:md");
-                                filterZone.classList.remove("{aspect_1x1:md}","{nav-mined}", "nav-maxed");
-                                filterZone.classList.add("aspect_1x1:md","nav-mined", "{nav-maxed}");
-                                filterZoneNav.querySelector("span.label").classList.toggle("{display_none:md}");
-                                filterZoneNav.querySelector("span.label").classList.toggle("display_none:md");
+            let filterZone = document.getElementById("filterZone");
+            let filterZoneNav = filterZone.querySelector("nav");
+            let filterFacets = filterZone.querySelector("#filterFacets");
+            let filterZoneExpanded = true;
+            filterZoneNav.addEventListener("click", function () {
+                if (filterZoneExpanded) {
+                    filterFacets.classList.toggle("opacity_0");
+                    filterFacets.classList.toggle("opacity_none");
+                    setTimeout(function () {
+                        filterFacets.classList.toggle("{display_none}");
+                        filterFacets.classList.toggle("display_none");
+                        filterFacets.classList.toggle("min-h_0:md");
+                        filterFacets.classList.toggle("min-h_50:md");
+                        filterZone.classList.remove("{aspect_1x1:md}", "{nav-mined}", "nav-maxed");
+                        filterZone.classList.add("aspect_1x1:md", "nav-mined", "{nav-maxed}");
+                        filterZoneNav.querySelector("span.label").classList.toggle("{display_none:md}");
+                        filterZoneNav.querySelector("span.label").classList.toggle("display_none:md");
 
-                                filterZoneExpanded = false;
-                            },300);
-                            
-                            return;
-                        }else{
-                            filterZone.classList.add("{aspect_1x1:md}","{nav-mined}","nav-maxed");
-                            filterZone.classList.remove("aspect_1x1:md","nav-mined", "{nav-maxed}");
-                            filterFacets.classList.toggle("min-h_0:md" );
-                            filterFacets.classList.toggle("min-h_50:md" );
-                            filterFacets.classList.toggle("{display_none}");
-                            filterFacets.classList.toggle("display_none");
-                            setTimeout(function () {
-                                filterFacets.classList.toggle("opacity_0");
-                                filterFacets.classList.toggle("opacity_none");
-                                filterZoneNav.querySelector("span.label").classList.toggle("{display_none:md}");
-                                filterZoneNav.querySelector("span.label").classList.toggle("display_none:md");
-                                filterZoneExpanded = true;
-                            },300);
-                            return;
-                        }
-                    });
+                        filterZoneExpanded = false;
+                    }, 300);
 
-                </script>
-    
-        </div>
+                    return;
+                } else {
+                    filterZone.classList.add("{aspect_1x1:md}", "{nav-mined}", "nav-maxed");
+                    filterZone.classList.remove("aspect_1x1:md", "nav-mined", "{nav-maxed}");
+                    filterFacets.classList.toggle("min-h_0:md");
+                    filterFacets.classList.toggle("min-h_50:md");
+                    filterFacets.classList.toggle("{display_none}");
+                    filterFacets.classList.toggle("display_none");
+                    setTimeout(function () {
+                        filterFacets.classList.toggle("opacity_0");
+                        filterFacets.classList.toggle("opacity_none");
+                        filterZoneNav.querySelector("span.label").classList.toggle("{display_none:md}");
+                        filterZoneNav.querySelector("span.label").classList.toggle("display_none:md");
+                        filterZoneExpanded = true;
+                    }, 300);
+                    return;
+                }
+            });
 
+        </script>
+    </div>
     <div class="flex_auto w_70:lg flex_column gap-y_4 ">
         <div class="bg_white br_radius shadow_overlap-light p_4 p-b_0 p_5:lg p_4 m-b_4 p-b_0:lg">
             <h1 class="font_display c_primary-n1 m-t_n4:lg m-t_n3">Search: All</h1>
             <div class="input-holder flex flex_row self_end relative w_100">
-                <input id="input_uniqueTextAndButton" name="input_uniqueTextAndButton" type="text" placeholder="Search" class=" br_2 flex_auto p-y_2 br_solid flex_auto p-l_4 lh_3 br_radius bg_white c_black bg_white f:bg_primary br_black-2 font_2:lg font_1:md font_0" />
-                <button class="diabled ease_out transition_1 f:outline_none text_center br_none inline-block w_auto font_medium absolute t_0 b_0 r_0 h:undecorated undecorated bg_primary c_white h:bg_primary-n3 br-br_radius br-tr_radius br_square font_1:lg font_0:md font_n1">Search</button>
+                <input id="input_uniqueTextAnda" name="input_uniqueTextAnda" type="text" placeholder="Search" class=" br_2 flex_auto p-y_2 br_solid flex_auto p-l_4 lh_3 br_radius bg_white c_black bg_white f:bg_primary br_black-2 font_2:lg font_1:md font_0" />
+                
+                <a class="diabled ease_out transition_1 f:outline_none h:undecorated a:c_white c_black-7 h:c_black text_center inline-block w_auto font_medium absolute t_0 b_0 r_0 h:undecorated undecorated bg_primary c_white h:bg_primary-n3 br-br_radius br-tr_radius br_square font_1:lg font_0:md font_n1">Search</a>
             </div>
-            <div class="row flex flex_row c_black-5 font_n2 font_ui m-t_3"><label><input type="checkbox"/> Include slide content in search</label></div>
+            <div class="row flex flex_row c_black-5 font_n2 font_ui m-t_3"><label><input type="checkbox" /> Include slide content in search</label></div>
             <nav class="font_ui relative br_1 br_solid br_black-3 br-b_0 br-tr_radius br-tl_radius overflow_hidden">
                 <ul class="flex flex_auto flex_nowrap flex_row:md nav overflow_hidden font-size_up ul_none">
                     <li id="LinkUI-tab" class=" nav-item relative p_3 p-x_4:md h:bg_black-3 br-l_1 br_black-3 br_solid flex_grow text_center bg_disabled opacity_disabled a:bg_accent-n1">
-                        <span
-                             class="h:undecorated expanded-click-area c_black-8 a:c_white-9 h:c_black "
-                            >Sessions</span>
+                        <span class="h:undecorated expanded-click-area c_black-8 a:c_white-9 h:c_black ">Sessions</span>
                     </li>
                     <li class="active nav-item relative p_3 p-x_4:md h:bg_black-3 br-l_1 br_black-3 br_solid flex_grow text_center bg_disabled opacity_disabled a:bg_accent-n1">
-                        <a
-                            id="ActiveLinkUI-tab"
-                            role="tab"
-                            class="h:undecorated expanded-click-area c_black-8 a:c_white-9 h:c_black "
-                            href="#">Presentations (Active)</a>
+                        <a id="ActiveLinkUI-tab" role="tab" class="h:undecorated expanded-click-area c_black-8 a:c_white-9 h:c_black " href="#">Presentations (Active)</a>
                     </li>
                     <!-- <li id="LinkUI-tab" class=" nav-item relative p_3 p-x_4:md h:bg_black-3 br-l_1 br_black-3 br_solid flex_grow text_center bg_disabled opacity_disabled a:bg_accent-n1">
                         <span
                              class="h:undecorated expanded-click-area c_black-8 a:c_white-9 h:c_black "
                             >Faculty</span>
                     </li> -->
-
             </nav>
         </div>
         <div class="bg_white-7 br_radius br_solid br_1 br_black-2">
             <header class="p-x_4 m-x_3 m-b_3 m-b_3:lg lh_1 m-t_4:md m-t_3 flex flex_row justify_between">
-                <span class="font_display font_medium font_3:lg font_2:md font_1 c_primary-n1 ">Results</span> 
+                <span class="font_display font_medium font_3:lg font_2:md font_1 c_primary-n1 ">Results</span>
                 <div class="flex flex_row lowercase lh_1">
                     <a href="" class="c_black-6 p-x_3 font_n1 a:c_primary-n1 undecorated h:underline self_center"><i class="fas fa-check a:_inline-block display_none"></i> popular</a>
                     <span class="br-l_1 br_solid br_black-4"></span>
                     <a href="" class="c_black-6 p-x_3 font_n1 a:c_primary-n1 undecorated h:underline active self_center"> <i class="fas fa-check a:_inline-block display_none"></i> relevance</a>
                 </div>
             </header>
-            <ul class="ul_none p_3 flex_column flex gap-y_3">
-                {% include library-presentation.html %}
-                {% include library-presentation.html %}
-                {% include library-presentation.html %}
+            <ul class="ul_none p_3 flex_column flex gap-y_3"> 
+                {% include library-presentation.html %} 
+                {% include library-presentation.html %} 
+                {% include library-presentation.html %} 
             </ul>
+            <nav aria-label="Pagination" class="flex flex_row p-b_5:lg p-b_4">
+                <ul class="pagination flex flex_row ul_none justify_strech relative lh_0 font_n1 font_medium m-x_auto shadow_bevel-light br_radius overflow_hidden">
+                    <li class="flex pagination-previous ">
+                        <a class="ease_out transition_1 f:outline_none h:undecorated a:c_white c_black-7 h:c_black text_center inline-block w_auto cursor_pointer br-tl_radius br-bl_radius overflow_hidden br_square br-l_1 br_solid br_1 br_black-3 bg_white h:bg_black-3 p-y_3 p-x_3" style="min-height: unset;">
+                            <div class="flex block justify_center flex_column ">
+                                <div class="flex_auto self_center justify_center flex">
+                                    <div class="flex flex_row nowrap"><i class="fas fa-arrow-left p-r_3 self_center"></i> <span class="show-for-sr display_none inline:md self_center">Prev</span></div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <!---->
+                    <li class="flex">
+                        <a class="ease_out transition_1 f:outline_none h:undecorated a:c_white c_black-7 h:c_black text_center inline-block w_auto cursor_pointer  br_square br-l_1 br_solid br_1 br_black-3 bg_white h:bg_black-3 p-y_3 p-x_3" style="min-height: unset;">
+                            <div class="flex block justify_center flex_column ">
+                                <div class="flex_auto self_center justify_center flex"><i class="fas  fa-ellipsis-h left"></i></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="flex">
+                        <a class="ease_out transition_1 f:outline_none h:undecorated a:c_white c_black-7 h:c_black text_center inline-block w_auto cursor_pointer  br_square br-l_1 br_solid br_1 br_black-3 bg_white h:bg_black-3 p-y_3 p-x_3" style="min-height: unset;">
+                            <div class="flex block justify_center flex_column ">
+                                <div class="flex_auto self_center justify_center flex">50 </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="flex">
+                        <a class="ease_out transition_1 f:outline_none h:undecorated a:c_white c_black-7 h:c_black text_center inline-block w_auto font_medium font_ui  c_white h:c_white h:bg_primary-n2 br_primary-n3 bg_primary p-y_3 p-x_3 cursor_pointer  br_square br-l_1 br_solid br_1 br_black-3 bg_white h:bg_black-3 " style="min-height: unset;">
+                            <div class="flex block justify_center flex_column ">
+                                <div class="flex_auto self_center justify_center flex">51 </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="flex">
+                        <a class="ease_out transition_1 f:outline_none h:undecorated a:c_white c_black-7 h:c_black text_center inline-block w_auto cursor_pointer  br_square br-l_1 br_solid br_1 br_black-3 bg_white h:bg_black-3 p-y_3 p-x_3" style="min-height: unset;">
+                            <div class="flex block justify_center flex_column ">
+                                <div class="flex_auto self_center justify_center flex">52 </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="flex">
+                        <a class="ease_out transition_1 f:outline_none h:undecorated a:c_white c_black-7 h:c_black text_center inline-block w_auto cursor_pointer  br_square br-l_1 br_solid br_1 br_black-3 bg_white h:bg_black-3 p-y_3 p-x_3" style="min-height: unset;">
+                            <div class="flex block justify_center flex_column ">
+                                <div class="flex_auto self_center justify_center flex">53 </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="flex">
+                        <a class="ease_out transition_1 f:outline_none h:undecorated a:c_white c_black-7 h:c_black text_center inline-block w_auto cursor_pointer  br_square br-l_1 br_solid br_1 br_black-3 bg_white h:bg_black-3 p-y_3 p-x_3" style="min-height: unset;">
+                            <div class="flex block justify_center flex_column ">
+                                <div class="flex_auto self_center justify_center flex">54 </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="flex">
+                        <a class="ease_out transition_1 f:outline_none h:undecorated a:c_white c_black-7 h:c_black text_center inline-block w_auto cursor_pointer  br_square br-l_1 br_solid br_1 br_black-3 bg_white h:bg_black-3 p-y_3 p-x_3" style="min-height: unset;">
+                            <div class="flex block justify_center flex_column ">
+                                <div class="flex_auto self_center justify_center flex"><i class="fas  fa-ellipsis-h right"></i></div>
+                            </div>
+                        </a>
+                    </li>
+                    <!---->
+                    <li class="flex pagination-next">                        
+                        <a class="ease_out transition_1 f:outline_none h:undecorated a:c_white c_black-7 h:c_black text_center inline-block w_auto cursor_pointer  br-tr_radius br-br_radius overflow_hidden br_square br-l_1 br_solid br_1 br_black-3 bg_white h:bg_black-3 p-y_3 p-x_3" aria-label="Next Page" style="min-height: unset;">
+                            <div class="flex block justify_center flex_column ">
+                                <div class="flex_auto self_center justify_center flex">
+                                    <div class="flex flex_row nowrap"><span class="show-for-sr display_none inline:md self_center">Next</span> <i class="fas fa-arrow-right p-l_3 self_center"></i></div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </div>
 </main>
-
 <style>
     .tns-item {
         display: flex !important;
