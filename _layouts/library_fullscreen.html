@@ -3,7 +3,7 @@ layout: default
 ---
 {% include arches-head.html %}
 
-<body class="bg_black-4 w_100 min-h_100 p_3:md p_2">
+<body class="bg_black-4 w_100 min-h_100 p_3:md p_2 overflow_scroll" style="overflow-y: scroll !important;">
 
     <div class="bg_white-7 br_radius relative p-t_1 p-b_1">
         <nav id="navigation_mobile" class="block display_none:md shadow_emboss-light filter_blur br_radius m_3 m-b_0 bg_black-6 p_2 sticky t_3 z_4">
@@ -21,16 +21,16 @@ layout: default
                     <a class="c_inherit-all flex flex_column h:undecorated p_3" href="../saved"><i class="icon fas fa-fw fa-award p-y_2 self_center"></i><span class="label self_center  lowercase lh_0 font_n2 h_1h {% if page.creditsActive %}active{% endif %}">Credits</span></a>
                 </li>
                 <li class="nav-item flex_auto br_radius c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light disabled opacity_3 cursor_not-allowed {% if page.watchingActive %}active{% endif %}">
-                    <a class="c_inherit-all flex flex_column h:undecorated p_3"  href="../search"><i class="icon fas fa-fw fa-play p-y_2 self_center"></i><span class="label self_center lowercase lh_0 font_n2 h_1h {% if page.watchingActive %}active{% endif %}">Watching</span></a>
+                    <a class="c_inherit-all flex flex_column h:undecorated p_3"  href="../watching"><i class="icon fas fa-fw fa-play p-y_2 self_center"></i><span class="label self_center lowercase lh_0 font_n2 h_1h {% if page.watchingActive %}active{% endif %}">Watching</span></a>
                 </li>
                 <li class="nav-item flex_auto br_radius c_white-8 bg_acc-n1 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light">
                     <a class="c_inherit-all flex flex_column h:undecorated p_3"><i class="icon fas fa-fw fa-sign-out-alt p-y_2 self_center"></i><span class="label self_center lowercase lh_0 font_n2 nowrap h_1h">Log Out</span></a>
                 </li>
             </ul>
         </nav>
-        <div class="main-area-offset p_0 p-x_5:md p-y_4:md isolation_isolate min-h_100">
+        <div class="main-area-offset p_0 p-x_5:md p-y_4:md isolation_isolate flex flex_column justify_stretch gap_3:md gap_2" style="min-height: calc(100vh - 1.25rem);">
             {{content}}
-            <footer class="flex flex_row:md flex_column-reverse gap_4 m-t_4">
+            <footer class="flex flex_row:md flex_column-reverse gap_4 m-t_4 flex_none">
                 <!-- subfooter -->
                 <div id="subfooter" class="bg_primary-1 flex_auto font_n1 p-x_4 p-y_4 z_0 br_radius texture_dust shadow_emboss-light p-b_4">
                     <ul class="m_auto footer-bottom-links ul_none max-w_80">
@@ -67,7 +67,7 @@ layout: default
                     <a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md" href="../credits"><i class="icon fas fa-fw fa-award p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center display_none:md p-l_3:md p-l_4:lg lowercase lh_0 font_n2 font_3:md font_4:lg {% if page.creditsActive == true %} active {% endif %}">Credits</span></a>
                 </li>
                 <li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light disabled cursor_not-allowed opacity_3 {% if page.watchingActive == true %} active {% endif %}">
-                    <a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md"><i class="icon fas fa-fw fa-play p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center display_none:md p-l_3:md p-l_4:lg lowercase lh_0 font_n2 font_3:md font_4:lg {% if page.watchingActive == true %} active {% endif %}">Watching</span></a>
+                    <a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md"  href="../watching"><i class="icon fas fa-fw fa-play p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center display_none:md p-l_3:md p-l_4:lg lowercase lh_0 font_n2 font_3:md font_4:lg {% if page.watchingActive == true %} active {% endif %}">Watching</span></a>
                 </li>
             </ul>
             <ul class="flex_column:md flex_row ul_none justify_center gap_3 flex">
@@ -238,4 +238,51 @@ storeScroll();
     </script>
     </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  
+  <!-- Modal -->
+  <div class="modal fade bg_black-8" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Clinical Focus</h5>
+          <button type="button" class="link m-l_auto c_primary h:c_primary-n3 self_center font-size_down-1 bg_transparent br_none" data-bs-dismiss="modal" aria-label="Close"> <i class="fas fa-times"></i></button>
+        </div>
+        <div class="modal-body reading-typography">
+          <p class="c_primary">Select up to three clinical focus to personalize this view.</p>
+          <div class="m-b_4">
+              <label for="selectClinicalFocus1">Clinical Focus 1</label>
+              <select id="selectClinicalFocus1" class="form-select" aria-label="Default select example">
+                <option selected>Select One</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+          </div>
+          <div class="m-b_4">
+              <label for="selectClinicalFocus2">Clinical Focus 2</label>
+            <select id="selectClinicalFocus2" class="form-select" aria-label="Default select example">
+              <option selected>Select One</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+        </div>
+        <div class="m-b_4">
+            <label for="selectClinicalFocus3">Clinical Focus 3</label>
+            <select id="selectClinicalFocus3" class="form-select" aria-label="Default select example">
+              <option selected>Select One</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+        </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
