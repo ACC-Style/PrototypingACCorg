@@ -50,6 +50,9 @@ collections:
   library_prototypes:
     output: true
     permalink: /library/:path/
+  event_prototypes:
+    output: true
+    permalink: /event/:path/
 
 # Exclude from processing.
 # The following items will not be processed, by default.
