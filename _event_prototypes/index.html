@@ -197,40 +197,14 @@ homeActive: true
             </div>
             <div class="absolute t_0 r_0 b_0 l_0">
                 <div id="AgendaGrid" class="grid absolute b_0 grid l_0 r_0 relative t_0">
-                    <div id="Agenda_104" class="agenda_item grid bg_black-3 br_radius m-x_3 m-y_1 overflow_hidden p_2 shadow_1" style="grid-column: 2/3; grid-row: 540 / 630;">
-                        <div class="upnext bg_white-3 c_black-7 m_2 m-b_0 br_radius overflow_hidden p_3" style="grid-row: 1 / 30;">
-                            <h4 class="font_xbold uppercase font-size_down-2 lh_0 m_0"> up next </h4>
-                        </div>
-                        <div class="live bg_primary-3 br-tr_radius  br-tl_radius m_2 m-b_0 c_black overflow_hidden" style="grid-row: 30 / 35;">
-                            <h4 class="font_xbold uppercase font-size_down-2 lh_0 m_0 p_3"> buffer </h4>
-                        </div>
-                        <div class="live bg_primary br-br_radius br-bl_radius m_2 m-t_0 c_white overflow_hidden p_3" style="grid-row: 35 / 90;">
-                            <h4 class="font_xbold uppercase font-size_down-2 lh_0"> Live </h4>
-                            <h3 class="block font-size_up overflow_ellipsis">
-                                <span>104</span> Session Title super long title that goes on for ever and ever and ever and ever.
-                            </h3>
-                        </div>
-                    </div>
-                    <div id="Agenda_105" class="agenda_item grid bg_black-3 br_radius m-x_3 m-y_1 overflow_hidden p_2 shadow_1" style="grid-column: 3/3; grid-row: 630 / 780;">
-                        <div class="upnext bg_white-3 c_black-7 m_2 m-b_0 br_radius overflow_hidden p_3" style="grid-row: 1 / 20;">
-                            <h4 class="font_xbold uppercase font-size_down-2 lh_0 m_0"> up next </h4>
-                        </div>
-                        <div class="live bg_primary-3 br-tr_radius  br-tl_radius m_2 m-b_0 c_black overflow_hidden" style="grid-row: 20 / 35;">
-                            <h4 class="font_xbold uppercase font-size_down-2 lh_0 m_0 p_3"> buffer </h4>
-                        </div>
-                        <div class="live bg_primary br-br_radius br-bl_radius m_2 m-t_0 c_white overflow_hidden p_3" style="grid-row: 35 / 150;">
-                            <h4 class="font_xbold uppercase font-size_down-2 lh_0"> Live </h4>
-                            <h3 class="block font-size_up overflow_ellipsis">
-                                <span>105</span> Session Title super long title that goes on for ever and ever and ever and ever.
-                            </h3>
-                        </div>
-                    </div>
+                    {% include session-id-104.html %}
+                    {% include session-id-105.html %}
                 </div>
             </div>
         </section>
     </main>
-    <aside class="flex_auto flex_100 max-w_25:lg max-w_30:md bg_black-1 p_4 br_radius m-x_3 relative">
-        <section class="sticky t_4 br_round shadow_overlap-light p_4 flex_column flex">
+    <aside class="flex_auto flex_100 max-w_35:lg max-w_40:md bg_black-1 p_4 br_radius m-x_3 relative">
+        <section class="sticky t_4 br_round shadow_overlap-light p_4 flex_column flex bg_white">
             {% include session-form.html %}
         </section>
     </aside>
