@@ -9,7 +9,7 @@ homeActive: true
 </header>
 <main class="flex_auto p_4">
     <section id="AgendaHolder" class="relative">
-        <div id="day" class="grid  relative h_100">
+        <div id="day" class="grid  relative">
             <!-- <div class="hour hour_00 br-t_1 br_solid br_primary-4 relative">
                 <span class="absolute block c_primary-n2 font_3 font_display hour_label l_3 lh_0 opacity_8 t_3">Midnight</span>
                 <div class="minutes flex flex_column justify_stretch absolute t_0 r_0 b_0 l_0">
@@ -158,12 +158,8 @@ homeActive: true
             <div class="channel channel_1 bg_black-2"></div>
             <div class="channel channel_2 bg_black-_05"></div>
             <div class="channel channel_3 bg_black-2"></div>
+            {% include session-id-105.html %}
         </div>
-        <div class="absolute t_0 r_0 b_0 l_0">
-            <div id="AgendaGrid" class="grid absolute b_0 grid l_0 r_0 relative t_0 h_100">
-
-                {% include session-id-105.html %}
-            </div>
         </div>
     </section>
 </main>
@@ -173,12 +169,12 @@ homeActive: true
         --hour-start_offset: 9;
         --hour-end_truncate: 18;
         --hour-length: calc( var(--hour-end_truncate) - var(--hour-start_offset) ); 
-        grid-template-rows: repeat( calc( var(--hour-length) * 12 ), auto);
+        grid-template-rows: [ channelName ] 1fr  repeat( calc( var(--hour-length) * 12 ), 1fr);
         grid-template-columns: 100px repeat(3, 1fr);
     }
 
     .grid.agenda_item {
-        grid-template-rows: repeat(auto-fill, auto);
+        grid-template-rows: repeat(auto-fill, 1fr);
         grid-template-columns: 1fr;
     }
 
