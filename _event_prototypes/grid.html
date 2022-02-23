@@ -169,10 +169,10 @@ homeActive: true
     #AgendaGrid {
         --hour-start_offset: 9;
         --hour-end_truncate: 18;
-        --channels-per-day: 2;
+        --channels-per-day: 4;
         --hour-length: calc( var(--hour-end_truncate) - var(--hour-start_offset) ); 
         grid-template-rows: [ channelName ] 1fr repeat( calc( var(--hour-length) * 12 ), 1fr);
-        grid-template-columns: [ timeSlot ] 6rem repeat(3, 1fr);
+        grid-template-columns: [ timeSlot ] 6rem repeat( var(--channels-per-day), 1fr);
     }
 
 
@@ -193,9 +193,9 @@ homeActive: true
     .hour {
         
         --hour: 0;
-        grid-column: 1/5;
+        grid-column: 1/-1;
         display: grid;
-        grid-template-columns: [ timeSlot ] 100px repeat(var(--channels-per-day), 1fr);
+        grid-template-columns: [ timeSlot ] 6rem repeat(var(--channels-per-day), 1fr);
     }
     .hour_label{
         grid-column: timeSlot;
