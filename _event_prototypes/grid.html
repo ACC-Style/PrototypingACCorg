@@ -1,7 +1,7 @@
 --- 
 layout: arches_fullscreen_empty 
-name: "Event Agenda" 
-position: "Agenda" 
+name: "Event Grid Agenda" 
+position: "Website" 
 homeActive: true 
 --- 
 <header class="p_4">
@@ -9,156 +9,157 @@ homeActive: true
 </header>
 <main class="flex_auto p_4">
     <section id="AgendaHolder" class="relative">
-        <div id="day" class="grid  relative">
-            <!-- <div class="hour hour_00 br-t_1 br_solid br_primary-4 relative">
-                <span class="absolute block c_primary-n2 font_3 font_display hour_label l_3 lh_0 opacity_8 t_3">Midnight</span>
-                <div class="minutes flex flex_column justify_stretch absolute t_0 r_0 b_0 l_0">
-                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span>
+        <div id="day" class="grid:md  relative">
+            <div class="channel channel_1 bg_black-2 display_none block:md" style="grid_column:2/3"></div>
+            <div class="channel channel_2 bg_black-_05 display_none block:md" style="grid_column:3/4"></div>
+            <div class="channel channel_3 bg_black-2 display_none block:md" style="grid_column:4/5"></div>
+            <!-- <div class="hour hour_00 br-t_1 br_solid br_accent-2 relative">
+                <span class="c_accent-n2 font_3 font_display hour_label lh_0 opacity_7 self_start p_3">Midnight</span>
+                <div class="minutes opacity_3 bg_accent-4 flex_column:md justify_stretch absolute t_0 r_0 b_0 l_0 display_none flex:md">
+                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span>
                 </div>
             </div>
-            <div class="hour hour_01 br-t_1 br_solid br_primary-4 relative">
-                <span class="absolute block c_primary-n2 font_3 font_display hour_label l_3 lh_0 opacity_8 t_3">1 A.M.</span>
-                <div class="minutes flex flex_column justify_stretch absolute t_0 r_0 b_0 l_0">
-                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span>
+            <div class="hour hour_01 br-t_1 br_solid br_accent-2 relative">
+                <span class="c_accent-n2 font_3 font_display hour_label lh_0 opacity_7 self_start p_3">1 A.M.</span>
+                <div class="minutes opacity_3 bg_accent-4 flex_column:md justify_stretch absolute t_0 r_0 b_0 l_0 display_none flex:md">
+                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span>
                 </div>
             </div>
-            <div class="hour hour_02 br-t_1 br_solid br_primary-4 relative">
-                <span class="absolute block c_primary-n2 font_3 font_display hour_label l_3 lh_0 opacity_8 t_3">2 A.M.</span>
-                <div class="minutes flex flex_column justify_stretch absolute t_0 r_0 b_0 l_0">
-                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span>
+            <div class="hour hour_02 br-t_1 br_solid br_accent-2 relative">
+                <span class="c_accent-n2 font_3 font_display hour_label lh_0 opacity_7 self_start p_3">2 A.M.</span>
+                <div class="minutes opacity_3 bg_accent-4 flex_column:md justify_stretch absolute t_0 r_0 b_0 l_0 display_none flex:md">
+                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span>
                 </div>
             </div>
-            <div class="hour hour_03 br-t_1 br_solid br_primary-4 relative">
-                <span class="absolute block c_primary-n2 font_3 font_display hour_label l_3 lh_0 opacity_8 t_3">3 A.M.</span>
-                <div class="minutes flex flex_column justify_stretch absolute t_0 r_0 b_0 l_0">
-                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span>
+            <div class="hour hour_03 br-t_1 br_solid br_accent-2 relative">
+                <span class="c_accent-n2 font_3 font_display hour_label lh_0 opacity_7 self_start p_3">3 A.M.</span>
+                <div class="minutes opacity_3 bg_accent-4 flex_column:md justify_stretch absolute t_0 r_0 b_0 l_0 display_none flex:md">
+                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span>
                 </div>
             </div>
-            <div class="hour hour_04 br-t_1 br_solid br_primary-4 relative">
-                <span class="absolute block c_primary-n2 font_3 font_display hour_label l_3 lh_0 opacity_8 t_3">4 A.M.</span>
-                <div class="minutes flex flex_column justify_stretch absolute t_0 r_0 b_0 l_0">
-                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span>
+            <div class="hour hour_04 br-t_1 br_solid br_accent-2 relative">
+                <span class="c_accent-n2 font_3 font_display hour_label lh_0 opacity_7 self_start p_3">4 A.M.</span>
+                <div class="minutes opacity_3 bg_accent-4 flex_column:md justify_stretch absolute t_0 r_0 b_0 l_0 display_none flex:md">
+                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span>
                 </div>
             </div>
-            <div class="hour hour_05 br-t_1 br_solid br_primary-4 relative">
-                <span class="absolute block c_primary-n2 font_3 font_display hour_label l_3 lh_0 opacity_8 t_3">5 A.M.</span>
-                <div class="minutes flex flex_column justify_stretch absolute t_0 r_0 b_0 l_0">
-                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span>
+            <div class="hour hour_05 br-t_1 br_solid br_accent-2 relative">
+                <span class="c_accent-n2 font_3 font_display hour_label lh_0 opacity_7 self_start p_3">5 A.M.</span>
+                <div class="minutes opacity_3 bg_accent-4 flex_column:md justify_stretch absolute t_0 r_0 b_0 l_0 display_none flex:md">
+                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span>
                 </div>
             </div>
-            <div class="hour hour_06 br-t_1 br_solid br_primary-4 relative">
-                <span class="absolute block c_primary-n2 font_3 font_display hour_label l_3 lh_0 opacity_8 t_3">6 A.M.</span>
-                <div class="minutes flex flex_column justify_stretch absolute t_0 r_0 b_0 l_0">
-                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span>
+            <div class="hour hour_06 br-t_1 br_solid br_accent-2 relative">
+                <span class="c_accent-n2 font_3 font_display hour_label lh_0 opacity_7 self_start p_3">6 A.M.</span>
+                <div class="minutes opacity_3 bg_accent-4 flex_column:md justify_stretch absolute t_0 r_0 b_0 l_0 display_none flex:md">
+                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span>
                 </div>
             </div>
-            <div class="hour hour_07 br-t_1 br_solid br_primary-4 relative">
-                <span class="absolute block c_primary-n2 font_3 font_display hour_label l_3 lh_0 opacity_8 t_3">7 A.M.</span>
-                <div class="minutes flex flex_column justify_stretch absolute t_0 r_0 b_0 l_0">
-                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span>
+            <div class="hour hour_07 br-t_1 br_solid br_accent-2 relative">
+                <span class="c_accent-n2 font_3 font_display hour_label lh_0 opacity_7 self_start p_3">7 A.M.</span>
+                <div class="minutes opacity_3 bg_accent-4 flex_column:md justify_stretch absolute t_0 r_0 b_0 l_0 display_none flex:md">
+                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span>
                 </div>
             </div>
-            <div class="hour hour_08 br-t_1 br_solid br_primary-4 relative">
-                <span class="absolute block c_primary-n2 font_3 font_display hour_label l_3 lh_0 opacity_8 t_3">8 A.M.</span>
-                <div class="minutes flex flex_column justify_stretch absolute t_0 r_0 b_0 l_0">
-                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span>
+            <div class="hour hour_08 br-t_1 br_solid br_accent-2 relative">
+                <span class="c_accent-n2 font_3 font_display hour_label lh_0 opacity_7 self_start p_3">8 A.M.</span>
+                <div class="minutes opacity_3 bg_accent-4 flex_column:md justify_stretch absolute t_0 r_0 b_0 l_0 display_none flex:md">
+                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span>
                 </div>
             </div> -->
-            <div class="hour hour_09 br-t_1 br_solid br_primary-4 relative">
-                <span class="absolute block c_primary-n2 font_3 font_display hour_label l_3 lh_0 opacity_8 t_3">9 A.M.</span>
-                <div class="minutes flex flex_column justify_stretch absolute t_0 r_0 b_0 l_0">
-                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span>
+            <div class="hour hour_09 br-t_1 br_solid br_accent-2 relative">
+                <span class="c_accent-n2 font_3 font_display hour_label lh_0 opacity_7 self_start p_3">9 A.M.</span>
+                <div class="minutes opacity_3 bg_accent-4 flex_column:md justify_stretch absolute t_0 r_0 b_0 l_0 display_none flex:md">
+                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span>
                 </div>
             </div>
-            <div class="hour hour_10 br-t_1 br_solid br_primary-4 relative">
-                <span class="absolute block c_primary-n2 font_3 font_display hour_label l_3 lh_0 opacity_8 t_3">10 A.M.</span>
-                <div class="minutes flex flex_column justify_stretch absolute t_0 r_0 b_0 l_0">
-                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span>
+            <div class="hour hour_10 br-t_1 br_solid br_accent-2 relative">
+                <span class="c_accent-n2 font_3 font_display hour_label lh_0 opacity_7 self_start p_3">10 A.M.</span>
+                <div class="minutes opacity_3 bg_accent-4 flex_column:md justify_stretch absolute t_0 r_0 b_0 l_0 display_none flex:md">
+                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span>
                 </div>
             </div>
-            <div class="hour hour_11 br-t_1 br_solid br_primary-4 relative">
-                <span class="absolute block c_primary-n2 font_3 font_display hour_label l_3 lh_0 opacity_8 t_3">11 A.M.</span>
-                <div class="minutes flex flex_column justify_stretch absolute t_0 r_0 b_0 l_0">
-                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span>
+            <div class="hour hour_11 br-t_1 br_solid br_accent-2 relative">
+                <span class="c_accent-n2 font_3 font_display hour_label lh_0 opacity_7 self_start p_3">11 A.M.</span>
+                <div class="minutes opacity_3 bg_accent-4 flex_column:md justify_stretch absolute t_0 r_0 b_0 l_0 display_none flex:md">
+                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span>
                 </div>
             </div>
-            <div class="hour hour_12 br-t_1 br_solid br_primary-4 relative">
-                <span class="absolute block c_primary-n2 font_3 font_display hour_label l_3 lh_0 opacity_8 t_3">12 P.M.</span>
-                <div class="minutes flex flex_column justify_stretch absolute t_0 r_0 b_0 l_0">
-                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span>
+            <div class="hour hour_12 br-t_1 br_solid br_accent-2 relative">
+                <span class="c_accent-n2 font_3 font_display hour_label lh_0 opacity_7 self_start p_3">12 P.M.</span>
+                <div class="minutes opacity_3 bg_accent-4 flex_column:md justify_stretch absolute t_0 r_0 b_0 l_0 display_none flex:md">
+                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span>
                 </div>
             </div>
-            <div class="hour hour_13 br-t_1 br_solid br_primary-4 relative">
-                <span class="absolute block c_primary-n2 font_3 font_display hour_label l_3 lh_0 opacity_8 t_3">1 P.M.</span>
-                <div class="minutes flex flex_column justify_stretch absolute t_0 r_0 b_0 l_0">
-                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span>
+            <div class="hour hour_13 br-t_1 br_solid br_accent-2 relative">
+                <span class="c_accent-n2 font_3 font_display hour_label lh_0 opacity_7 self_start p_3">1 P.M.</span>
+                <div class="minutes opacity_3 bg_accent-4 flex_column:md justify_stretch absolute t_0 r_0 b_0 l_0 display_none flex:md">
+                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span>
                 </div>
             </div>
-            <div class="hour hour_14 br-t_1 br_solid br_primary-4 relative">
-                <span class="absolute block c_primary-n2 font_3 font_display hour_label l_3 lh_0 opacity_8 t_3">2 P.M.</span>
-                <div class="minutes flex flex_column justify_stretch absolute t_0 r_0 b_0 l_0">
-                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span>
+            <div class="hour hour_14 br-t_1 br_solid br_accent-2 relative">
+                <span class="c_accent-n2 font_3 font_display hour_label lh_0 opacity_7 self_start p_3">2 P.M.</span>
+                <div class="minutes opacity_3 bg_accent-4 flex_column:md justify_stretch absolute t_0 r_0 b_0 l_0 display_none flex:md">
+                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span>
                 </div>
             </div>
-            <div class="hour hour_15 br-t_1 br_solid br_primary-4 relative">
-                <span class="absolute block c_primary-n2 font_3 font_display hour_label l_3 lh_0 opacity_8 t_3">3 P.M.</span>
-                <div class="minutes flex flex_column justify_stretch absolute t_0 r_0 b_0 l_0">
-                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span>
+            <div class="hour hour_15 br-t_1 br_solid br_accent-2 relative">
+                <span class="c_accent-n2 font_3 font_display hour_label lh_0 opacity_7 self_start p_3">3 P.M.</span>
+                <div class="minutes opacity_3 bg_accent-4 flex_column:md justify_stretch absolute t_0 r_0 b_0 l_0 display_none flex:md">
+                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span>
                 </div>
             </div>
-            <div class="hour hour_16 br-t_1 br_solid br_primary-4 relative">
-                <span class="absolute block c_primary-n2 font_3 font_display hour_label l_3 lh_0 opacity_8 t_3">4 P.M.</span>
-                <div class="minutes flex flex_column justify_stretch absolute t_0 r_0 b_0 l_0">
-                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span>
+            <div class="hour hour_16 br-t_1 br_solid br_accent-2 relative">
+                <span class="c_accent-n2 font_3 font_display hour_label lh_0 opacity_7 self_start p_3">4 P.M.</span>
+                <div class="minutes opacity_3 bg_accent-4 flex_column:md justify_stretch absolute t_0 r_0 b_0 l_0 display_none flex:md">
+                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span>
                 </div>
             </div>
-            <div class="hour hour_17 br-t_1 br_solid br_primary-4 relative">
-                <span class="absolute block c_primary-n2 font_3 font_display hour_label l_3 lh_0 opacity_8 t_3">5 P.M.</span>
-                <div class="minutes flex flex_column justify_stretch absolute t_0 r_0 b_0 l_0">
-                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span>
+            <div class="hour hour_17 br-t_1 br_solid br_accent-2 relative">
+                <span class="c_accent-n2 font_3 font_display hour_label lh_0 opacity_7 self_start p_3">5 P.M.</span>
+                <div class="minutes opacity_3 bg_accent-4 flex_column:md justify_stretch absolute t_0 r_0 b_0 l_0 display_none flex:md">
+                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span>
                 </div>
             </div>
             <!-- 
-            <div class="hour hour_18 br-t_1 br_solid br_primary-4 relative">
-                <span class="absolute block c_primary-n2 font_3 font_display hour_label l_3 lh_0 opacity_8 t_3">6 P.M.</span>
-                <div class="minutes flex flex_column justify_stretch absolute t_0 r_0 b_0 l_0">
-                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span>
+            <div class="hour hour_18 br-t_1 br_solid br_accent-2 relative">
+                <span class="c_accent-n2 font_3 font_display hour_label lh_0 opacity_7 self_start p_3">6 P.M.</span>
+                <div class="minutes opacity_3 bg_accent-4 flex_column:md justify_stretch absolute t_0 r_0 b_0 l_0 display_none flex:md">
+                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span>
                 </div>
             </div>
-            <div class="hour hour_19 br-t_1 br_solid br_primary-4 relative">
-                <span class="absolute block c_primary-n2 font_3 font_display hour_label l_3 lh_0 opacity_8 t_3">7 P.M.</span>
-                <div class="minutes flex flex_column justify_stretch absolute t_0 r_0 b_0 l_0">
-                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span>
+            <div class="hour hour_19 br-t_1 br_solid br_accent-2 relative">
+                <span class="c_accent-n2 font_3 font_display hour_label lh_0 opacity_7 self_start p_3">7 P.M.</span>
+                <div class="minutes opacity_3 bg_accent-4 flex_column:md justify_stretch absolute t_0 r_0 b_0 l_0 display_none flex:md">
+                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span>
                 </div>
             </div>
-            <div class="hour hour_20 br-t_1 br_solid br_primary-4 relative">
-                <span class="absolute block c_primary-n2 font_3 font_display hour_label l_3 lh_0 opacity_8 t_3">8 P.M.</span>
-                <div class="minutes flex flex_column justify_stretch absolute t_0 r_0 b_0 l_0">
-                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span>
+            <div class="hour hour_20 br-t_1 br_solid br_accent-2 relative">
+                <span class="c_accent-n2 font_3 font_display hour_label lh_0 opacity_7 self_start p_3">8 P.M.</span>
+                <div class="minutes opacity_3 bg_accent-4 flex_column:md justify_stretch absolute t_0 r_0 b_0 l_0 display_none flex:md">
+                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span>
                 </div>
             </div>
-            <div class="hour hour_21 br-t_1 br_solid br_primary-4 relative">
-                <span class="absolute block c_primary-n2 font_3 font_display hour_label l_3 lh_0 opacity_8 t_3">9 P.M.</span>
-                <div class="minutes flex flex_column justify_stretch absolute t_0 r_0 b_0 l_0">
-                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span>
+            <div class="hour hour_21 br-t_1 br_solid br_accent-2 relative">
+                <span class="c_accent-n2 font_3 font_display hour_label lh_0 opacity_7 self_start p_3">9 P.M.</span>
+                <div class="minutes opacity_3 bg_accent-4 flex_column:md justify_stretch absolute t_0 r_0 b_0 l_0 display_none flex:md">
+                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span>
                 </div>
             </div>
-            <div class="hour hour_22 br-t_1 br_solid br_primary-4 relative">
-                <span class="absolute block c_primary-n2 font_3 font_display hour_label l_3 lh_0 opacity_8 t_3">10 P.M.</span>
-                <div class="minutes flex flex_column justify_stretch absolute t_0 r_0 b_0 l_0">
-                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span>
+            <div class="hour hour_22 br-t_1 br_solid br_accent-2 relative">
+                <span class="c_accent-n2 font_3 font_display hour_label lh_0 opacity_7 self_start p_3">10 P.M.</span>
+                <div class="minutes opacity_3 bg_accent-4 flex_column:md justify_stretch absolute t_0 r_0 b_0 l_0 display_none flex:md">
+                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span>
                 </div>
             </div>
-            <div class="hour hour_23 br-t_1 br_solid br_primary-4 relative">
-                <span class="absolute block c_primary-n2 font_3 font_display hour_label l_3 lh_0 opacity_8 t_3">11 P.M.</span>
-                <div class="minutes flex flex_column justify_stretch absolute t_0 r_0 b_0 l_0">
-                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_black-1"></span>
+            <div class="hour hour_23 br-t_1 br_solid br_accent-2 relative">
+                <span class="c_accent-n2 font_3 font_display hour_label lh_0 opacity_7 self_start p_3">11 P.M.</span>
+                <div class="minutes opacity_3 bg_accent-4 flex_column:md justify_stretch absolute t_0 r_0 b_0 l_0 display_none flex:md">
+                    <span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span><span class="minutes_10 flex_auto"></span><span class="minutes_10 flex_auto bg_white"></span>
                 </div>
             </div> -->
-            <div class="channel channel_1 bg_black-2"></div>
-            <div class="channel channel_2 bg_black-_05"></div>
-            <div class="channel channel_3 bg_black-2"></div>
-            {% include session-id-105.html %}
+
+            {% include sessions-website-grid.html %}
         </div>
         </div>
     </section>
@@ -168,10 +169,12 @@ homeActive: true
     #AgendaGrid {
         --hour-start_offset: 9;
         --hour-end_truncate: 18;
+        --channels-per-day: 2;
         --hour-length: calc( var(--hour-end_truncate) - var(--hour-start_offset) ); 
         grid-template-rows: [ channelName ] 1fr repeat( calc( var(--hour-length) * 12 ), 1fr);
-        grid-template-columns: 100px repeat(3, 1fr);
+        grid-template-columns: [ timeSlot ] 6rem repeat(3, 1fr);
     }
+
 
     .grid.agenda_item {
         grid-template-rows: repeat(auto-fill, 1fr);
@@ -191,8 +194,17 @@ homeActive: true
         
         --hour: 0;
         grid-column: 1/5;
+        display: grid;
+        grid-template-columns: [ timeSlot ] 100px repeat(var(--channels-per-day), 1fr);
     }
-
+    .hour_label{
+        grid-column: timeSlot;
+        grid-row: 1;
+    }
+    .minutes{
+        grid-column: 2/calc(2 + var(--channels-per-day));
+        grid-row: 1;
+    }
     .hour_01 {
         --hour: calc( 1 - var(--hour-start_offset));
         grid-row-start: calc(12 * (var(--hour)) + 1 );

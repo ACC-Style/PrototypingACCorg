@@ -4,9 +4,9 @@
 
 layout: home
 ---
-<div class="flex flex_row:md flex_column flex_wrap">
+<div class="grid grid-col_3:lg grid-col_2:md grid-col_1 gap_4">
 
-<div class="flex_none w_50:md">
+<div class="">
 <h2 class="font_display">Legacy Prototypes</h2>
 {% for legacy_prototype in site.legacy_prototypes %}
   <ul class="ul_none ">
@@ -16,7 +16,7 @@ layout: home
   </ul>
 {% endfor %}
 </div>
-<div class="flex_none w_50:md">
+<div class="">
 <h2 class="font_display">Arches Prototypes</h2>
 {% for arches_prototype in site.arches_prototypes %}
   <ul class="ul_none ">
@@ -26,7 +26,7 @@ layout: home
   </ul>
 {% endfor %}
 </div>
-<div class="flex_none w_50:md">
+<div class="">
 <h2 class="font_display">Virtual Prototypes</h2>
 {% for virtual_prototype in site.virtual_prototypes %}
   <ul class="ul_none ">
@@ -36,7 +36,7 @@ layout: home
   </ul>
 {% endfor %}
 </div>
-<div class="flex_none w_50:md">
+<div class="">
 <h2 class="font_display">Federated Login Prototypes</h2>
 {% for fedlogin_prototype in site.fedlogin_prototypes %}
   <ul class="ul_none ">
@@ -48,6 +48,8 @@ layout: home
     </a></li>
   </ul>
 {% endfor %}
+</div>
+<div class="">
 <h2 class="font_display">Library Prototypes</h2>
 {% for library_prototype in site.library_prototypes %}
   <ul class="ul_none ">
@@ -55,6 +57,19 @@ layout: home
       {{ library_prototype.name }}
       {% if library_prototype.position %}
          - {{ library_prototype.position }}
+      {% endif %}
+    </a></li>
+  </ul>
+{% endfor %}
+</div>
+<div class="">
+<h2 class="font_display">Event Prototypes</h2>
+{% for event_prototype in site.event_prototypes %}
+  <ul class="ul_none ">
+<li class="p_3 p-l_0 h:bg_primary-5">    <a href="{{ event_prototype.url | append: site.github.build_revision | relative_url }}">
+      {{ event_prototype.name }}
+      {% if event_prototype.position %}
+         - {{ event_prototype.position }}
       {% endif %}
     </a></li>
   </ul>
