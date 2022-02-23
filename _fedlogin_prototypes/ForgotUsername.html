@@ -3,36 +3,31 @@ layout: arches
 name: "Forgot Username"
 ---
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
-
-<div class="p_4 text_center max-w_50 m_auto">
+<div class="p_4 max-w_50 m_auto text_center">
     <h1 class="c_acc font_6">Forgot your username?</h1>
     <p><i class="far font_10 fa-lock fas c_secondary"></i></p>
     <p>Enter your email address to verify your identity and retrieve your username.</p>
 </div>
-<form action="/ForgotUsername" autocomplete="off" id="formForgotUsername" method="post" name="formForgotUsername" novalidate="novalidate" class="max-w_50 m_auto">
+    
+<form class="p_4 max-w_30 m_auto needs-validation" action="/ForgotUsername" autocomplete="off" id="formForgotUsername" method="post" name="formForgotUsername" novalidate="novalidate">
     <fieldset>
-        <!-- No error -->
         <div class="m-b_3">
             <label for="email" class="form-label">Enter your email address</label>
-            <input id="email" name="email" type="email" required="required" class="form-control" title="Please enter a valid email address.">
-            <div id="validationMsg" class="invalid-feedback"></div>
+            <input id="email" name="email" type="email" required="required" class="form-control">
+            <div class="invalid-feedback">Please enter a valid email address.</div>
         </div>
         <button type="submit" class="btn btn-primary btn-lg">Submit Email <i id="btnSpinner"
                 class="spinner fa fa-spinner fa-spin display_none"></i></button>
     </fieldset>
 </form>
 
-
 <hr>
 
 <div class="p_4 font_1 max-w_50 m_auto">
     <p><b>Have questions or need assistance?</b> Please contact ACC Member Care</p>
     <ul class="ul_none p-l_5">
-        <li><i class="fa fa-phone"></i> 1-800-253-4636, ext. 5603 (Toll Free U.S. &amp; Canada)</li>
-        <li><i class="fa fa-phone"></i> 202-375-6000, ext. 5603 (International)</li>
+        <li><i class="fa fa-phone"></i> <a href="tel:+18002534636">1-800-253-4636, ext. 5603</a> (Toll Free U.S. &amp; Canada)</li>
+        <li><i class="fa fa-phone"></i> <a href="tel:2023756000">202-375-6000, ext. 5603</a> (International)</li>
         <li><i class="fa fa-envelope"></i> <a href="mailto:membercare@acc.org">membercare@acc.org</a></li>
     </ul>
 </div>
@@ -40,20 +35,31 @@ name: "Forgot Username"
 
 <!-- Demo Related Scripting-->
 <script>
-    const form = $('form[name="formForgotUsername"]');
-    const container = $('.invalid-feedback');
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+        'use strict'
 
-    $(form).validate({
-        errorLabelContainer: container
-    });
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
 
-    $(form).submit(function(event){
-        event.preventDefault();
-        if($(form).valid()){
-            $('#btnSpinner').removeClass('display_none');
-            $('button[type="submit"]').prop("disabled",true);
-        } else {
-            $('#email').addClass("is-invalid");
-        }
-    });
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    //DEVELOPMENT NOTE: This prevent default has been duplicated ONLY for prototype purposes.
+                    //Keeping this here will stop the form from submitted regardless if it is valid.
+                    event.preventDefault()
+                    //END NOTE
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    } else { //FOR DEV PROTOTYPE PURPOSES, these are the "loading" effects
+                        form.querySelector('#btnSpinner').classList.remove('display_none');
+                        form.querySelector('button').disabled = true;
+                    }
+                    form.classList.add('was-validated');
+                   
+                }, false)
+            })
+    })()
 </script>
