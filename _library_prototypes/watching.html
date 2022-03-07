@@ -25,7 +25,8 @@ watchActive: true
     </div>
 </header>
 <main class="flex flex_column flex_row:lg gap_5:lg gap_3 gap_4:md flex_auto">   
-    <div class="flex_auto w_70:lg bg_white-7 br_radius br_solid br_1 br_black-3">
+    <div class="flex_auto w_70:lg flex flex_column gap-y_4">
+        <section  class=" bg_white-7 br_radius br_solid br_1 br_black-3">
         <div class="flex flex_row font_ui justify_start relative w_100">
             <main class="flex flex_column flex_auto justify_between flex_auto p_5:lg p_4:md  p-y_3 relative w_100 isolation_isolate font_5">
                 <h1 class="font-size_up-1 font_display lh_2 c_primary h:underline c_primary-n3 m-t_2">
@@ -51,6 +52,10 @@ watchActive: true
                 <li class="br_solid br_black-3 br_radius br_1 h:bg_black-3 m-l_auto"><a class="p-y_3 p-x_4 p-x_5:lg" href=""><i class="fal fa-paperclip"></i> Attachments</a></li>
             </ul>
         </nav>
+    </section>
+    <section  class=" bg_white-7 br_radius br_solid br_1 br_black-3  p_5:lg p_4:md  p-y_3 relative w_100 isolation_isolate ">
+        {% include library-session-auxdata.html %}
+    </section>
     </div>
     <div class="flex_auto w_30:lg bg_white-7 br_radius br_solid br_1 br_black-3"> 
         <section  class="">
@@ -62,7 +67,8 @@ watchActive: true
                     {% include library-presentation.html %}
 
                 </ul>
-            </div>    
+            </div>  
+             
         </section>        
     </div>
 </main>
