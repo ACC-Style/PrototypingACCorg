@@ -97,7 +97,7 @@ searchActive: true
             </div>
             </div>
             <div class="bg_white br_radius p_4:lg p_3 shadow_overlap-light z_2 relative" >
-                <h1 class="c_primary-n1 font_display m-b_3 m-t_0 flex flex_row justify_between"><span>Program</span>
+                <h1 class="c_primary-n1 font_display m-b_3 m-t_0 flex flex_row justify_start"><span>Search:</span><span class=" p-x_3 c_accent-n1 font_medium lowercase">All Sessions</span>
                   <a href="#FilterNavContainer" class="absolute br-tl_square br-tr_square br_radius btn btn-accent btn-sm display_none:md flex_none grid items_center justify_center m-l_auto r_3 self_center t_0">
                   <span><i class="fas fa-arrow-down"></i><i class="fas fa-filter"></i></span>
                   </a>
@@ -122,10 +122,22 @@ searchActive: true
                     <a href="" class="c_black-6 p-x_3 font_n1 a:c_primary-n1 undecorated h:underline active self_center"> <i class="fas fa-check a:_inline-block display_none"></i> relevance</a>
                 </div>
             </header>
-        <div class="bg_black-2 shadow_emboss-light br_radius br_solid br_1 br_black-2">
+        <div class="bg_black-1 shadow_emboss-light br_radius br_solid br_1 br_black-2">
             <ul class="ul_none p_3 flex_column flex gap-y_3"> 
                 <!-- TODO: Add Timing Marks -->
-                
+                <nav class="bg_black-2 m_3  br_3 br_radius br_solid br_white-7 c_primary font_0 font_bold font_accent: p-x_0 p-x_4:md shadow_bevel-light">
+                    <ul class="flex_column flex_row:md  nav">
+                        <li class=" br-t_3 br_solid:md br_white-0 m-l_1 nav-item">
+                            <a
+                                id="ActiveLink-tab" data-bs-toggle="tab" data-bs-target="#ActiveLink"  role="tab" aria-controls="ActiveLink" aria-selected="true"
+                                class="active a:bg_accent-n2 h:underline-none a:c_white br-b_3 br_white-0 br_solid:md c_black h:bg_acc-n3 h:br_accent h:c_white m-y_n2:md nav-link p-y_3:md p-x_4"
+                                href="#">Sessions</a>
+                        </li>        <li class="br-t_3 br_solid:md br_white-0 m-l_1 nav-item">
+                            <a
+                            id="BasicLink-tab" data-bs-toggle="tab" data-bs-target="#BasicLink"  role="tab" aria-controls="BasicLink" aria-selected="true"
+                            class="a:bg_accent-n2 h:underline-none a:c_white br-b_3 br_white-0 br_solid:md c_black h:bg_acc-n3 h:br_accent h:c_white m-y_n2:md nav-link p-y_3:md p-x_4" href="#">Presentations</a>
+                        </li>    </ul>
+                </nav>
                 {% include search-presentation.html %} 
                 {% include search-presentation.html %} 
                 {% include search-presentation.html %} 
