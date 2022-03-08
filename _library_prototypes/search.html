@@ -1,44 +1,50 @@
---- 
-layout: library_fullscreen 
-name: "Virtual Video Player" 
-position: "Search" 
-homeActive: false 
-searchActive: true 
---- 
+---
+layout: library_fullscreen
+name: "Virtual Video Player"
+position: "Search"
+homeActive: false
+searchActive: true
+---
 <header class="">
     <div class="flex_inline flex lh_0 bg_white-7 br_radius br_solid br_1 br_black-2 p_3 p_4:md font_ui font_2">
         <div class="relative  m-b_2" level="-1">
             <div>
-                <a href="../home" class="h:underline h:c_primary c_black-9"><i class="fal m-l_1 fa-fw m-r_3 flex_none self_center c_primary font-size_up fa-home"></i> <span class="font_regular flex_auto self_center">Home</span></a>
+                <a href="../home" class="h:underline h:c_primary c_black-9"><i
+                        class="fal m-l_1 fa-fw m-r_3 flex_none self_center c_primary font-size_up fa-home"></i> <span
+                        class="font_regular flex_auto self_center">Home</span></a>
             </div>
         </div>
         <i class="fal fa-chevron-left c_primary-n2 m-x_3 self_center font-size_down"></i>
         <div class="flex_inline flex lh_0">
             <div class="relative  m-b_2" level="0">
                 <div>
-                    <div class="c_black-9"><span class="flex_none self_center font-size_up m-r_3"></span> <span class="font_regular flex_auto self_center">Search</span></div>
+                    <div class="c_black-9"><span class="flex_none self_center font-size_up m-r_3"></span> <span
+                            class="font_regular flex_auto self_center">Search</span></div>
                 </div>
             </div>
         </div>
     </div>
 </header>
 <main class="flex flex_column-reverse flex_row-reverse:md flex_row:lg gap_5:lg gap_3 gap_4:md min-h_60:md flex_auto">
-    <div id="filterZone" class="{aspect_1x1:md} {nav-mined} nav-maxed self_start bg_black-3 br_1 br_black-2 br_radius br_solid flex_auto p_2 p_3:md w_30:lg shadow_emboss-light transition_3 flex flex_column">
+    <div id="filterZone"
+        class="{aspect_1x1:md} {nav-mined} nav-maxed self_start bg_black-3 br_1 br_black-2 br_radius br_solid flex_auto p_2 p_3:md w_30:lg shadow_emboss-light transition_3 flex flex_column">
         <nav class="flex_auto overflow_hidden self_stretch font_4:lg font_3:md font_2 font_display font_display">
             <ul class="flex flex_column:md flex_row gap_3 justify_start:md ul_none w_100 w_auto:md">
-                <li class="a:bg_primary a:c_white a:shadow_overlap-light {aspect_1x1:md} br_radius c_white-8 flex_none grid h:bg_black-7 h:c_white h:shadow_overlap-light nav-item p_0:md p_3">
+                <li
+                    class="a:bg_primary a:c_white a:shadow_overlap-light {aspect_1x1:md} br_radius c_white-8 flex_none grid h:bg_black-7 h:c_white h:shadow_overlap-light nav-item p_0:md p_3">
                     <a class="c_inherit-all h:undecorated p_3 lh_1 m-x_n1">
                         <i class="far fa-filter p-x_2:md p-y_3 p-y_0:md"></i>
-                        <span class="font-size_down label lh_0 lowercase self_center font_medium {display_none:md}">Filter</span>
+                        <span
+                            class="font-size_down label lh_0 lowercase self_center font_medium {display_none:md}">Filter</span>
                     </a>
                 </li>
             </ul>
         </nav>
-        <ul id="filterFacets" class="ul_none font_n1 {display_none} opacity_none transition_3 min-h_50:md"> 
+        <ul id="filterFacets" class="ul_none font_n1 {display_none} opacity_none transition_3 min-h_50:md">
             {% include library-search-facet-faculty.html %}
-            {% include library-search-facet.html %} 
-            {% include library-search-facet.html %} 
-            </ul>
+            {% include library-search-facet.html %}
+            {% include library-search-facet.html %}
+        </ul>
         <script>
 
             let filterZone = document.getElementById("filterZone");
@@ -86,65 +92,92 @@ searchActive: true
     <div class="flex_auto w_70:lg flex_column gap-y_4 ">
         <div class=" sticky t_0 r_0 z_1">
             <div class="absolute r_4 t_0  flex flex_row flex_nowrap gap-x_3">
-            <!--  Helper Jump links -->
-              <a class="br-tl_square br-tr_square br_radius btn btn-accent btn-sm grid items_center justify_center m-l_auto self_center shadow_3" href="#SearchBarTop">
-              <span><i class="fas fa-arrow-up"></i><i class="m-l_2 fas fa-search"></i></span>
-              </a>
-              <a href="#FilterNavContainer" class="br-tl_square br-tr_square br_radius btn btn-accent btn-sm display_none:md grid items_center justify_center m-l_auto self_center shadow_3">
-              <span><i class="fas fa-arrow-down"></i><i class="m-l_2 fas fa-filter"></i></span>
-              </a>
-            <!--  Helper Jump links -->
-            <!-- TODO: fix the Jump Links-->
+                <!--  Helper Jump links -->
+                <a class="br-tl_square br-tr_square br_radius btn btn-accent btn-sm grid items_center justify_center m-l_auto self_center shadow_3"
+                    href="#SearchBarTop">
+                    <span><i class="fas fa-arrow-up"></i><i class="m-l_2 fas fa-search"></i></span>
+                </a>
+                <a href="#filterZone"
+                    class="br-tl_square br-tr_square br_radius btn btn-accent btn-sm display_none:md grid items_center justify_center m-l_auto self_center shadow_3">
+                    <span><i class="fas fa-arrow-down"></i><i class="m-l_2 fas fa-filter"></i></span>
+                </a>
+                <!--  Helper Jump links -->
+                <!-- TODO: fix the Jump Links-->
             </div>
-            </div>
-            <div class="bg_white br_radius p_4:lg p_3 shadow_overlap-light z_2 relative" >
-                <h1 class="c_primary-n1 font_display m-b_3 m-t_0 flex flex_row justify_start"><span>Search:</span><span class=" p-x_3 c_accent-n1 font_medium lowercase">All Sessions</span>
-                  <a href="#FilterNavContainer" class="absolute br-tl_square br-tr_square br_radius btn btn-accent btn-sm display_none:md flex_none grid items_center justify_center m-l_auto r_3 self_center t_0">
-                  <span><i class="fas fa-arrow-down"></i><i class="fas fa-filter"></i></span>
-                  </a>
-                </h1>
-                <div class="flex_row flex gap-x_3">
-                  <div class="input-holder flex_auto flex flex_row self_end relative w_100">
-                      <input id="input_uniqueTextAnda" name="input_uniqueTextAnda" type="text" placeholder="Search" class=" br_2 flex_auto p-y_2 br_solid flex_auto p-l_4 lh_3 br_radius bg_white c_black bg_white f:bg_primary br_black-2 font_2:lg font_1:md font_0">
-                      <button class="absolute b_0 br-bl_square br-tl_square btn btn-primary flex_none grid items_center justify_center r_0 t_0" onClick="Search()">
-                      <i class="fas fa-search"></i>
-                      </button>
-                  </div>
-                  <button class="disabled flex_none grid items_center justify_center btn btn-alert">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-            </div>
-            <header class="p_3  m-y_3 lh_1 flex flex_row justify_between">
-                <span class="font_display font_medium font_3:lg font_2:md font_1 c_primary-n1 ">Results</span>
-                <div class="flex flex_row lowercase lh_1">
-                    <a href="" class="c_black-6 p-x_3 font_n1 a:c_primary-n1 undecorated h:underline self_center"><i class="fas fa-check a:_inline-block display_none"></i> popular</a>
-                    <span class="br-l_1 br_solid br_black-4"></span>
-                    <a href="" class="c_black-6 p-x_3 font_n1 a:c_primary-n1 undecorated h:underline active self_center"> <i class="fas fa-check a:_inline-block display_none"></i> relevance</a>
-                </div>
-            </header>
-        <div class="bg_black-1 shadow_emboss-light br_radius br_solid br_1 br_black-2">
-            <ul class="ul_none p_3 flex_column flex gap-y_3"> 
-                <!-- TODO: Add Timing Marks -->
-                <nav class="bg_black-2 m_3  br_3 br_radius br_solid br_white-7 c_primary font_0 font_bold font_accent: p-x_0 p-x_4:md shadow_bevel-light">
-                    <ul class="flex_column flex_row:md  nav">
-                        <li class=" br-t_3 br_solid:md br_white-0 m-l_1 nav-item">
-                            <a
-                                id="ActiveLink-tab" data-bs-toggle="tab" data-bs-target="#ActiveLink"  role="tab" aria-controls="ActiveLink" aria-selected="true"
-                                class="active a:bg_accent-n2 h:underline-none a:c_white br-b_3 br_white-0 br_solid:md c_black h:bg_acc-n3 h:br_accent h:c_white m-y_n2:md nav-link p-y_3:md p-x_4"
-                                href="#">Sessions</a>
-                        </li>        <li class="br-t_3 br_solid:md br_white-0 m-l_1 nav-item">
-                            <a
-                            id="BasicLink-tab" data-bs-toggle="tab" data-bs-target="#BasicLink"  role="tab" aria-controls="BasicLink" aria-selected="true"
-                            class="a:bg_accent-n2 h:underline-none a:c_white br-b_3 br_white-0 br_solid:md c_black h:bg_acc-n3 h:br_accent h:c_white m-y_n2:md nav-link p-y_3:md p-x_4" href="#">Presentations</a>
-                        </li>    </ul>
-                </nav>
-                {% include search-presentation.html %} 
-                {% include search-presentation.html %} 
-                {% include search-presentation.html %} 
-            </ul>
         </div>
-        {% include pagination.html %}
+        <div class="bg_white br_radius p_4:lg p_3 shadow_overlap-light z_2 relative" id="SearchBarTop">
+            <h1 class="c_primary-n1 font_display m-b_3 m-t_0 flex flex_row justify_start"><span>Search:</span><span
+                    class=" p-x_3 c_accent-n1 font_medium lowercase">All Sessions</span>
+                <a href="#filterZone"
+                    class="absolute br-tl_square br-tr_square br_radius btn btn-accent btn-sm display_none:md flex_none grid items_center justify_center m-l_auto r_3 self_center t_0">
+                    <span><i class="fas fa-arrow-down"></i><i class="fas fa-filter"></i></span>
+                </a>
+            </h1>
+            <div class="flex_row flex gap-x_3">
+                <div class="input-holder flex_auto flex flex_row self_end relative w_100">
+                    <input id="input_uniqueTextAnda" name="input_uniqueTextAnda" type="text" placeholder="Search"
+                        class=" br_2 flex_auto p-y_2 br_solid flex_auto p-l_4 lh_3 br_radius bg_white c_black bg_white f:bg_primary br_black-2 font_2:lg font_1:md font_0">
+                    <button
+                        class="absolute b_0 br-bl_square br-tl_square btn btn-primary flex_none grid items_center justify_center r_0 t_0"
+                        onClick="Search()">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <button class="disabled flex_none grid items_center justify_center btn btn-alert">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+        <header class="p_3  m-y_3 lh_1 flex flex_row justify_between">
+            <span class="font_display font_medium font_3:lg font_2:md font_1 c_primary-n1 ">Results</span>
+            <div class="flex flex_row lowercase lh_1">
+                <a href="" class="c_black-6 p-x_3 font_n1 a:c_primary-n1 undecorated h:underline self_center"><i
+                        class="fas fa-check a:_inline-block display_none"></i> popular</a>
+                <span class="br-l_1 br_solid br_black-4"></span>
+                <a href="" class="c_black-6 p-x_3 font_n1 a:c_primary-n1 undecorated h:underline active self_center"> <i
+                        class="fas fa-check a:_inline-block display_none"></i> relevance</a>
+            </div>
+        </header>
+        <div class="bg_black-1 shadow_emboss-light br_radius br_solid br_1 br_black-2">
+
+            <!-- TODO: Add Timing Marks -->
+            <nav
+                class="bg_black-2 m_3  br_3 br_radius br_solid br_white-7 c_primary font_0 font_bold font_accent: p-x_0 p-x_4:md shadow_bevel-light">
+                <ul class="flex_column flex_row:md  nav">
+                    <li class=" br-t_3 br_solid:md br_white-0 m-l_1 nav-item">
+                        <a id="SessionTab-tab" data-bs-toggle="tab" data-bs-target="#SessionTab" role="tab"
+                            aria-controls="SessionTab" aria-selected="true"
+                            class="active a:bg_accent-n2 h:underline-none a:c_white br-b_3 br_white-0 br_solid:md c_black h:bg_acc-n3 h:br_accent h:c_white m-y_n2:md nav-link p-y_3:md p-x_4"
+                            href="#">Sessions</a>
+                    </li>
+                    <li class="br-t_3 br_solid:md br_white-0 m-l_1 nav-item">
+                        <a id="PresentationTab-tab" data-bs-toggle="tab" data-bs-target="#PresentationTab" role="tab"
+                            aria-controls="PresentationTab" aria-selected="true"
+                            class="a:bg_accent-n2 h:underline-none a:c_white br-b_3 br_white-0 br_solid:md c_black h:bg_acc-n3 h:br_accent h:c_white m-y_n2:md nav-link p-y_3:md p-x_4"
+                            href="#">Presentations</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="" id="nav-tabContent">
+                <div class="tab-pane fade  collapse active show" id="SessionTab" role="tabpanel" aria-labelledby="SessionTab-Tab">
+                    <ul class="ul_none p_3 flex_column flex gap-y_3">
+                        {% include search-session.html %}
+                        {% include search-session.html %}
+                        {% include search-session.html %}
+                    </ul>
+                </div>
+                <div class="tab-pane fade collapse " id="PresentationTab" role="tabpane2" aria-labelledby="PresentationTab-Tab">
+                    <ul class="ul_none p_3 flex_column flex gap-y_3">
+                        {% include search-presentation.html %}
+                        {% include search-presentation.html %}
+                        {% include search-presentation.html %}
+
+                    </ul>
+                </div>
+            </div>
+            <button class="block btn btn-outline-secondary btn-sm m-b_3 m_auto p-x_5">Load More</button>
+        </div>
+
     </div>
 </main>
 <style>
