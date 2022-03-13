@@ -6,6 +6,10 @@
 	],
 	"settings": {
 		"liveServer.settings.port": 5501,
-		"todo-tree.tree.scanMode": "open files"
+		"todo-tree.tree.scanMode": "open files",
+		"cSpell.words": [
+			"prototypingaccorg",
+			"subfooter"
+		]
 	}
 }
