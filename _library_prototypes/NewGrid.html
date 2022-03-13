@@ -6,9 +6,8 @@ homeActive: false
 searchActive: true 
 --- 
 {% include lib-head.html %}
-<body class="BODY_TAG-stand-in bg_black-4 w_100 p_3:md p_2 grid">
-	
 
+<body class="BODY_TAG-stand-in bg_black-4 w_100 p_3:md p_2 grid min-h_100">
 	<div class="page-wrapper grid p_2 p_3:md isolation_isolate br_radius bg_white-7">
 		<div class="grid:md grid-template_page flex flex_column gap_4:md gap_3">
 			<div class="grid-area_menuArea">
@@ -60,8 +59,8 @@ searchActive: true
 				            </li>
 				        </ul>
 				    </nav>
-				    <script src="../js/library/library.main-nav.js"></script>
-				    <!-- These Styles are just for the styleguide and are not to be included with the pattern. -->			</div>
+				    <!-- These Styles are just for the styleguide and are not to be included with the pattern. -->			
+            </div>
 			<header class="grid-area_headerArea flex flex_row items_center justify_start inset-level_up flex_auto bg_white-7 br_radius br_solid br_1 br_black-2 p_2 p_3:md p_4:lg">
 				<nav class="overflow_hidden lh_0  font_ui font_2 font_regular c_black-7 ">
 				    <ol class="flex flex_no-wrap flex_row items_center overflow_hidden ul_none w_100">
@@ -112,95 +111,6 @@ searchActive: true
 				</div>			</footer>
 		</div>
 	</div>
-
-
-    <script>
-		// The debounce function receives our function as a parameter
- const debounce = (fn) => {
- 
- // This holds the requestAnimationFrame reference, so we can cancel it if we wish
- let frame;
- 
- // The debounce function returns a new function that can receive a variable number of arguments
- return (...params) => {
-   
-   // If the frame variable has been defined, clear it now, and queue for next frame
-   if (frame) { 
-	 cancelAnimationFrame(frame);
-   }
- 
-   // Queue our function call for the next frame
-   frame = requestAnimationFrame(() => {
-	 
-	 // Call our function and pass any params we received
-	 fn(...params);
-   });
- 
- } 
- };
- 
- 
- // Reads out the scroll position and stores it in the data attribute
- // so we can use it in our stylesheets
- const storeScroll = () => {
- document.documentElement.dataset.scroll = window.scrollY;
- }
- 
- // Listen for new scroll events, here we debounce our `storeScroll` function
- document.addEventListener('scroll', debounce(storeScroll), { passive: true });
- 
- // Update scroll position for first time
- storeScroll();
-	 </script>
-	 <script>
-		 let nav = document.getElementById("navigation");
-		 navigation.addEventListener("mouseenter", function () {
-			 //test document width is greater than 768px
-			 navigation.mouseIsOver = true;
-			 navigation.onmouseover = function () {
-				 this.mouseIsOver = true;
-			 };
-			 navigation.onmouseout = function () {
-				 this.mouseIsOver = false;
-			 }
-			 setTimeout(function () {
-				 if (document.documentElement.clientWidth > 768 && navigation.mouseIsOver) {
-					 navigation.classList.add("hover", "nav-maxed");
-					 navigation.classList.remove("nav-mined");
-					 let navItems = navigation.querySelectorAll(".nav-item");
-					 navItems.forEach(function (navItem) {
-						 setTimeout(function () {
-							 navItem.querySelector(".label").classList.add("inline-block", "opacity_none");
-							 navItem
-								 .querySelector(".label")
-								 .classList.remove("display_none:md", "opacity_0");
-						 }, 300);
-					 });
-				 }
-			 }, 500);
-		 });
-		 navigation.addEventListener("mouseleave", function () {
-			 setTimeout(function () {
-				 navigation.classList.remove("hover", "nav-maxed");
-				 navigation.classList.add("nav-mined");
-				 let navItems = navigation.querySelectorAll(".nav-item");
-				 navItems.forEach(function (navItem) {
-					 navItem.querySelector(".label").classList.remove("inline-block");
-					 navItem
-						 .querySelector(".label")
-						 .classList.add("display_none:md");
-					 //test document width is greater than 768px
-					 if (document.documentElement.clientWidth > 768) {
-						 navItem.querySelector(".label").classList.remove("opacity_none");
-						 navItem
-							 .querySelector(".label")
-							 .classList.add("opacity_0");
-					 }
-				 });
-			 }, 300);
-		 });
-	 </script>
-	 </div>
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="{{ 'assets/js/lib/script.js' | relative_url }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
-                                
