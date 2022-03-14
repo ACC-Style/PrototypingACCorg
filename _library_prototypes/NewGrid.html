@@ -10,58 +10,55 @@ searchActive: true
 <body class="BODY_TAG-stand-in bg_black-4 w_100 p_3:md p_2 grid min-h_100">
 	<div class="page-wrapper grid p_2 p_3:md isolation_isolate br_radius bg_white-7">
 		<div class="grid:md grid-template_page flex flex_column gap_4:md gap_3">
-			<div class="grid-area_menuArea">
-				<div class="display_none flex:md sticky t_3">
-				        <nav style="height: calc(100vh - 2rem); width: 35rem;" id="navigation" class="absolute h_100vh shadow_emboss-light filter_blur overflow_hidden br_radius bg_black-7 flex:md flex_column:md justify_between p-t_0 p-b_3 p-l_3 p-r_3 p-b_4:md p-t_4:md p-r_0:md font_4:lg font_3:md font_2 transition_3 font_display nav-mined">
-				            <ul class="flex flex_column:md flex_row ul_none justify_around justify_start:md gap_3 w_100 w_auto:md">
-				                <li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light active">
-				                    <a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md" href="../home"><i class="icon fas fa-fw fa-home-heart p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center p-l_3:md p-l_4:lg lowercase lh_0 active font_n2 font_3:md font_4:lg display_none:md opacity_0">Home</span></a>
-				                </li>
-				                <li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light ">
-				                    <a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md " href="../search"><i class="icon fas fa-fw fa-search p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center p-l_3:md p-l_4:lg lowercase lh_0 font_n2 font_3:md font_4:lg display_none:md opacity_0">Search</span></a>
-				                </li>
-				                <li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light ">
-				                    <a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md" href="../saved"><i class="icon fas fa-fw fa-heart p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center p-l_3:md p-l_4:lg lowercase lh_0 font_n2 font_3:md font_4:lg display_none:md opacity_0">Saved</span></a>
-				                </li>
-				                <li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light ">
-				                    <a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md" href="../credits"><i class="icon fas fa-fw fa-award p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center p-l_3:md p-l_4:lg lowercase lh_0 font_n2 font_3:md font_4:lg display_none:md opacity_0">Credits</span></a>
-				                </li>
-				                <li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light disabled cursor_not-allowed opacity_3 ">
-				                    <a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md" href="../watching"><i class="icon fas fa-fw fa-play p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center p-l_3:md p-l_4:lg lowercase lh_0 font_n2 font_3:md font_4:lg display_none:md opacity_0">Watching</span></a>
-				                </li>
-				            </ul>
-				            <ul class="flex_column:md flex_row ul_none justify_center gap_3 flex">
-				                <li class="nav-item flex_auto br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 bg_acc-n1 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light">
-				                    <a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md"><i class="icon fas fa-fw fa-sign-out-alt p-x_2 p-y_3 p-y_0:md self_center"></i><span class="label self_center p-l_3:md p-l_4:lg lowercase lh_0 font_n2 font_3:md font_4:lg display_none:md opacity_0">Log Out</span></a>
-				                </li>
-				            </ul>
-				        </nav>
-				    </div>
-				    <nav id="navigation_mobile" class="block display_none:md shadow_emboss-light filter_blur br_radius bg_black-6 p_2 sticky t_3 z_4">
-				        <ul class="flex flex_row ul_none justify_between">
-				            <li class="nav-item flex_auto br_radius c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light active">
-				                <a class="c_inherit-all flex flex_column h:undecorated p_3" href="../home"><i class="icon fas fa-fw fa-home-heart p-y_2 self_center"></i><span class="label self_center  lowercase lh_0 active font_n2 h_1h">Home</span></a>
-				            </li>
-				            <li class="nav-item flex_auto br_radius c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light ">
-				                <a class="c_inherit-all flex flex_column h:undecorated p_3" href="../search"><i class="icon fas fa-fw fa-search p-y_2 self_center"></i><span class="label self_center  lowercase lh_0 font_n2 h_1h ">Search</span></a>
-				            </li>
-				            <li class="nav-item flex_auto br_radius c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light ">
-				                <a class="c_inherit-all flex flex_column h:undecorated p_3" href="../saved"><i class="icon fas fa-fw fa-heart p-y_2 self_center"></i><span class="label self_center  lowercase lh_0 font_n2 h_1h nowrap ">Saved</span></a>
-				            </li>
-				            <li class="nav-item flex_auto br_radius c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light ">
-				                <a class="c_inherit-all flex flex_column h:undecorated p_3" href="../saved"><i class="icon fas fa-fw fa-award p-y_2 self_center"></i><span class="label self_center  lowercase lh_0 font_n2 h_1h ">Credits</span></a>
-				            </li>
-				            <li class="nav-item flex_auto br_radius c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light disabled opacity_3 cursor_not-allowed ">
-				                <a class="c_inherit-all flex flex_column h:undecorated p_3" href="../watching"><i class="icon fas fa-fw fa-play p-y_2 self_center"></i><span class="label self_center lowercase lh_0 font_n2 h_1h ">Watching</span></a>
-				            </li>
-				            <li class="nav-item flex_auto br_radius c_white-8 bg_acc-n1 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light">
-				                <a class="c_inherit-all flex flex_column h:undecorated p_3"><i class="icon fas fa-fw fa-sign-out-alt p-y_2 self_center"></i><span class="label self_center lowercase lh_0 font_n2 nowrap h_1h">Log Out</span></a>
-				            </li>
-				        </ul>
-				    </nav>
-				    <!-- These Styles are just for the styleguide and are not to be included with the pattern. -->			
-            </div>
-			<header class="grid-area_headerArea flex flex_row items_center justify_start inset-level_up flex_auto bg_white-7 br_radius br_solid br_1 br_black-2 p_2 p_3:md p_4:lg">
+			<div class="display_none flex:md sticky t_3 grid-area_menuArea">
+			        <nav style="height: calc(100vh - 2rem); width: 35rem;" id="navigation" class="absolute h_100vh shadow_emboss-light filter_blur overflow_hidden br_radius bg_black-7 flex:md flex_column:md justify_between p-t_0 p-b_3 p-l_3 p-r_3 p-b_4:md p-t_4:md p-r_0:md font_4:lg font_3:md font_2 transition_3 font_display nav-mined">
+			            <ul class="flex flex_column:md flex_row ul_none justify_around justify_start:md gap_3 w_100 w_auto:md">
+			                <li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light active">
+			                    <a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md" href="../home"><i class="icon fas fa-fw fa-home-heart p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center p-l_3:md p-l_4:lg lowercase lh_0 active font_n2 font_3:md font_4:lg display_none:md opacity_0">Home</span></a>
+			                </li>
+			                <li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light ">
+			                    <a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md " href="../search"><i class="icon fas fa-fw fa-search p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center p-l_3:md p-l_4:lg lowercase lh_0 font_n2 font_3:md font_4:lg display_none:md opacity_0">Search</span></a>
+			                </li>
+			                <li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light ">
+			                    <a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md" href="../saved"><i class="icon fas fa-fw fa-heart p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center p-l_3:md p-l_4:lg lowercase lh_0 font_n2 font_3:md font_4:lg display_none:md opacity_0">Saved</span></a>
+			                </li>
+			                <li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light ">
+			                    <a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md" href="../credits"><i class="icon fas fa-fw fa-award p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center p-l_3:md p-l_4:lg lowercase lh_0 font_n2 font_3:md font_4:lg display_none:md opacity_0">Credits</span></a>
+			                </li>
+			                <li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light disabled cursor_not-allowed opacity_3 ">
+			                    <a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md" href="../watching"><i class="icon fas fa-fw fa-play p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center p-l_3:md p-l_4:lg lowercase lh_0 font_n2 font_3:md font_4:lg display_none:md opacity_0">Watching</span></a>
+			                </li>
+			            </ul>
+			            <ul class="flex_column:md flex_row ul_none justify_center gap_3 flex">
+			                <li class="nav-item flex_auto br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 bg_acc-n1 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light">
+			                    <a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md"><i class="icon fas fa-fw fa-sign-out-alt p-x_2 p-y_3 p-y_0:md self_center"></i><span class="label self_center p-l_3:md p-l_4:lg lowercase lh_0 font_n2 font_3:md font_4:lg display_none:md opacity_0">Log Out</span></a>
+			                </li>
+			            </ul>
+			        </nav>
+			    </div>
+			    <nav id="navigation_mobile" class="block display_none:md shadow_emboss-light filter_blur br_radius bg_black-6 p_2 sticky t_3 z_4">
+			        <ul class="flex flex_row ul_none justify_between">
+			            <li class="nav-item flex_auto br_radius c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light active">
+			                <a class="c_inherit-all flex flex_column h:undecorated p_3" href="../home"><i class="icon fas fa-fw fa-home-heart p-y_2 self_center"></i><span class="label self_center  lowercase lh_0 active font_n2 h_1h">Home</span></a>
+			            </li>
+			            <li class="nav-item flex_auto br_radius c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light ">
+			                <a class="c_inherit-all flex flex_column h:undecorated p_3" href="../search"><i class="icon fas fa-fw fa-search p-y_2 self_center"></i><span class="label self_center  lowercase lh_0 font_n2 h_1h ">Search</span></a>
+			            </li>
+			            <li class="nav-item flex_auto br_radius c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light ">
+			                <a class="c_inherit-all flex flex_column h:undecorated p_3" href="../saved"><i class="icon fas fa-fw fa-heart p-y_2 self_center"></i><span class="label self_center  lowercase lh_0 font_n2 h_1h nowrap ">Saved</span></a>
+			            </li>
+			            <li class="nav-item flex_auto br_radius c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light ">
+			                <a class="c_inherit-all flex flex_column h:undecorated p_3" href="../saved"><i class="icon fas fa-fw fa-award p-y_2 self_center"></i><span class="label self_center  lowercase lh_0 font_n2 h_1h ">Credits</span></a>
+			            </li>
+			            <li class="nav-item flex_auto br_radius c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light disabled opacity_3 cursor_not-allowed ">
+			                <a class="c_inherit-all flex flex_column h:undecorated p_3" href="../watching"><i class="icon fas fa-fw fa-play p-y_2 self_center"></i><span class="label self_center lowercase lh_0 font_n2 h_1h ">Watching</span></a>
+			            </li>
+			            <li class="nav-item flex_auto br_radius c_white-8 bg_acc-n1 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light">
+			                <a class="c_inherit-all flex flex_column h:undecorated p_3"><i class="icon fas fa-fw fa-sign-out-alt p-y_2 self_center"></i><span class="label self_center lowercase lh_0 font_n2 nowrap h_1h">Log Out</span></a>
+			            </li>
+			        </ul>
+			    </nav>
+			    <!-- These Styles are just for the styleguide and are not to be included with the pattern. -->			<header class="grid-area_headerArea flex flex_row items_center justify_start flex_none inset-level_up bg_white-7 br_radius br_solid br_1 br_black-2 p_2 p_3:md p_4:lg">
 				<nav class="overflow_hidden lh_0  font_ui font_2 font_regular c_black-7 ">
 				    <ol class="flex flex_no-wrap flex_row items_center overflow_hidden ul_none w_100">
 				        <li class="flex flex-shrink_1 flex_auto:md flex_inline h:c_primary lh_2 m-b_1 relative">
@@ -84,15 +81,204 @@ searchActive: true
 				        </li>    </ol>
 				</nav>			</header>
 			<section class="grid:md flex flex_column grid-template_content grid-area_mainArea gap_4 p-y_3 p-y_0:md">
-			<aside class="col-start_filterArea col-end_filterArea order_last order_0:md">
-				<div class="w_auto h_100p c_success-n4 font_xbold font_3 br_dotted br_success bg_success-5 br_1 grid items_center justify_center lh_0 overflow_ellipsis">Grid Area: F</div></aside>
-			<div class="col-start_insertArea-1 col-end_insertArea-2 inset-level_up flex_auto bg_white-7 br_radius br_solid br_1 br_black-2 p_2 p_3:md p_4:lg">
-				<div class="h_30 w_100 c_accent-n4 font_xbold font_3 br_accent bg_accent-5 br_dashed br_1 m_3 p_5 grid items_center justify_center">Layout Zone: Insert Primary</div>			</div>
-			<div class="col-start_insertArea-3 col-end_insertArea-4 inset-level_up flex_auto bg_white-7 br_radius br_solid br_1 br_black-2 p_2 p_3:md p_4:lg">
-				<div class="w_auto h_100p c_success-n4 font_xbold font_3 br_dotted br_success bg_success-5 br_1 grid items_center justify_center lh_0 overflow_ellipsis">Grid Area: Insert Secondary</div>			</div>
+			<div id="filterZone" class="{aspect_1x1:md} {nav-mined} nav-maxed self_start bg_black-3 br_1 br_black-2 br_radius br_solid flex_auto p_2 p_3:md  shadow_emboss-light transition_3 flex flex_column col-start_filterArea col-end_filterArea order_last order_unset:md">
+				<nav class="flex_auto overflow_hidden self_stretch font_4:lg font_3:md font_2 font_display font_display">
+					<ul class="flex flex_column:md flex_row gap_3 justify_start:md ul_none w_100 w_auto:md">
+						<li class="a:bg_primary a:c_white a:shadow_overlap-light {aspect_1x1:md} br_radius c_white-8 flex_none grid h:bg_black-7 h:c_white h:shadow_overlap-light nav-item p_0:md p_3">
+							<a class="c_inherit-all h:undecorated p_3 lh_1 m-x_n1">
+								<i class="far fa-filter p-x_2:md p-y_3 p-y_0:md"></i>
+								<span class="font-size_down label lh_0 lowercase self_center font_medium {display_none:md}">Filter</span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+				<ul id="filterFacets" class="ul_none font_n1 {display_none} opacity_none transition_3 min-h_50:md">
+					<li data-name="library-search-facet" class="bg_white-8 br_radius m-t_3 p_3 max-w_20:md Filter1">
+					    <header class="flex font-size_up m-y_2">
+					        <div class="flex_auto  self_center p-l_0 lh_1 font-size_up font_medium">Type Ahead Filter</div>
+					    </header>
+					    <main class="p_1 collapse show">
+					        <div class="p_3 flex flex_row">
+					            <input class="br-tr_square br-br_square" type="text" name="" id="" placeholder="Filter Name">
+					            <button class="btn btn-secondary br-tl_square br-bl_square"><i class="fas fa-users"></i></button>
+					        </div>
+					    </main>
+					    <header class="flex font-size_up m-y_2">
+					        <div class="flex_auto self_center p-l_2 lh_1 font-size_down font_bold opacity_8">Filtering By</div>
+					        <div class="c_primary-n2 flex flex_nowrap flex_row font-size_down h:c_primary-n3 h:opacity h:undecorated items_center lh_1 m-l_auto opacity_5 self_center toggle user-select_none p-l_4" data-bs-toggle="collapse" data-bs-target="#collapseTypeAhead" role="button" aria-expanded="true" aria-controls="#collapseTypeAhead">
+					          <div class="flex_none self_center"> collapse </div>
+					          <div class="flex_none">
+					              <span class="fa-stack">
+					                <i class="fas fa-minus fa-stack-1x"></i>
+					                <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+					              </span>
+					          </div>
+					        </div>    </header>
+					    <main id="collapseTypeAhead" class="p_1 collapse show" style="">
+					        <ul class="p-y_3 ul_none br-t_1 br-b_1 br_primary-3 transition_3 br_solid">
+					            <li class="m-y_2">
+					                <div class="input flex user-select_none relative h:bg_black-1 br_radius">
+					                    <div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacetfacet_9964" id="checkfacetfacet_9964" class="font-size_up"></div>
+					                    <div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacetfacet_9964" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md">  type ahead filter facet_9964</span></label></div>
+					                    <div class="">
+					                        <button class="bg_transparent br_0 br_radius c_alert h:bg_alert-3 h:c_alert-n3 p-y_2"><i class="fas fa-trash"></i></button>
+					                    </div>
+					                    <!---->
+					                </div>
+					            </li>            <li class="m-y_2">
+					                <div class="input flex user-select_none relative h:bg_black-1 br_radius">
+					                    <div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacetfacet_5573" id="checkfacetfacet_5573" class="font-size_up"></div>
+					                    <div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacetfacet_5573" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md">  type ahead filter facet_5573</span></label></div>
+					                    <div class="">
+					                        <button class="bg_transparent br_0 br_radius c_alert h:bg_alert-3 h:c_alert-n3 p-y_2"><i class="fas fa-trash"></i></button>
+					                    </div>
+					                    <!---->
+					                </div>
+					            </li>        </ul>
+					        <footer class="text_center font-size_down c_primary-n1 p-t_3"><span class="cursor_not-allowed c_black-3">less</span><span class="c_primary"> | </span><span class="link h:underline h:black link h:underline h:black cursor_pointer">more</span></footer>
+					    </main>
+					</li>		<li data-name="library-search-facet" class="bg_white-8 br_radius m-t_3 p_3  max-w_20:md Filter2">
+					    <header class="flex font-size_up m-y_2">
+					        <div class="flex_auto  self_center p-l_0 lh_1 font-size_up font_medium">Primary Category </div>
+					         <div class="c_primary-n2 flex flex_nowrap flex_row font-size_down h:c_primary-n3 h:opacity h:undecorated items_center lh_1 m-l_auto opacity_5 self_center toggle user-select_none p-l_4" data-bs-toggle="collapse" data-bs-target="#CollapseFacetGroupPrimaryID" role="button" aria-expanded="true" aria-controls="#CollapseFacetGroupPrimaryID">
+					           <div class="flex_none self_center"> collapse </div>
+					           <div class="flex_none">
+					               <span class="fa-stack">
+					                 <i class="fas fa-minus fa-stack-1x"></i>
+					                 <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+					               </span>
+					           </div>
+					         </div>    </header>
+					    <main id="CollapseFacetGroupPrimaryID" class="p_1 collapse show" style="">
+					        <ul class="p-y_3 ul_none br-t_1 br-b_1 br_primary-3 transition_3 br_solid">
+					            <li class="m-y_2">
+					                <div class="input flex user-select_none relative h:bg_black-1 br_radius">
+					                    <div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_6471" id="checkfacet_6471" class="font-size_up"></div>
+					                    <div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_6471" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_6471ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
+					                    <!---->
+					                </div>
+					            </li>            <li class="m-y_2">
+					                <div class="input flex user-select_none relative h:bg_black-1 br_radius">
+					                    <div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_8366" id="checkfacet_8366" class="font-size_up"></div>
+					                    <div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_8366" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_8366ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
+					                    <!---->
+					                </div>
+					            </li>            <li class="m-y_2">
+					                <div class="input flex user-select_none relative h:bg_black-1 br_radius">
+					                    <div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_5846" id="checkfacet_5846" class="font-size_up"></div>
+					                    <div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_5846" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_5846ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
+					                    <!---->
+					                </div>
+					            </li>            <li class="m-y_2">
+					                <div class="input flex user-select_none relative h:bg_black-1 br_radius">
+					                    <div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_2369" id="checkfacet_2369" class="font-size_up"></div>
+					                    <div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_2369" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_2369ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
+					                    <!---->
+					                </div>
+					            </li>            <li class="m-y_2">
+					                <div class="input flex user-select_none relative h:bg_black-1 br_radius">
+					                    <div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_6025" id="checkfacet_6025" class="font-size_up"></div>
+					                    <div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_6025" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_6025ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
+					                    <!---->
+					                </div>
+					            </li>        </ul>
+					        <footer class="text_center font-size_down c_primary-n1 p-t_3"><span class="cursor_not-allowed c_black-3">less</span><span class="c_primary"> | </span><span class="link h:underline h:black link h:underline h:black cursor_pointer">more</span></footer>
+					    </main>
+					</li>		<li data-name="library-search-facet" class="bg_white-8 br_radius m-t_3 p_3  max-w_20:md Filter3">
+					    <header class="flex font-size_up m-y_2">
+					        <div class="flex_auto  self_center p-l_0 lh_1 font-size_up font_medium">Drugs Generic </div>
+					          <div class="c_primary-n2 flex flex_nowrap flex_row font-size_down h:c_primary-n3 h:opacity h:undecorated items_center lh_1 m-l_auto opacity_5 self_center toggle user-select_none p-l_4" data-bs-toggle="collapse" data-bs-target="#CollapseFacetGroupID" role="button" aria-expanded="true" aria-controls="#CollapseFacetGroupID">
+					            <div class="flex_none self_center"> collapse </div>
+					            <div class="flex_none">
+					                <span class="fa-stack">
+					                  <i class="fas fa-minus fa-stack-1x"></i>
+					                  <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+					                </span>
+					            </div>
+					          </div>    </header>
+					    <main id="CollapseFacetGroupID" class="p_1 collapse show" style="">
+					        <ul class="p-y_3 ul_none br-t_1 br-b_1 br_primary-3 transition_3 br_solid">
+					            <li class="m-y_2">
+					                <div class="input flex user-select_none relative h:bg_black-1 br_radius">
+					                    <div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_5096" id="checkfacet_5096" class="font-size_up"></div>
+					                    <div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_5096" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_5096ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
+					                    <!---->
+					                </div>
+					            </li>            <li class="m-y_2">
+					                <div class="input flex user-select_none relative h:bg_black-1 br_radius">
+					                    <div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_4206" id="checkfacet_4206" class="font-size_up"></div>
+					                    <div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_4206" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_4206ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
+					                    <!---->
+					                </div>
+					            </li>            <li class="m-y_2">
+					                <div class="input flex user-select_none relative h:bg_black-1 br_radius">
+					                    <div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_3451" id="checkfacet_3451" class="font-size_up"></div>
+					                    <div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_3451" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_3451ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
+					                    <!---->
+					                </div>
+					            </li>            <li class="m-y_2">
+					                <div class="input flex user-select_none relative h:bg_black-1 br_radius">
+					                    <div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_6129" id="checkfacet_6129" class="font-size_up"></div>
+					                    <div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_6129" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_6129ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
+					                    <!---->
+					                </div>
+					            </li>            <li class="m-y_2">
+					                <div class="input flex user-select_none relative h:bg_black-1 br_radius">
+					                    <div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_4012" id="checkfacet_4012" class="font-size_up"></div>
+					                    <div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_4012" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_4012ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
+					                    <!---->
+					                </div>
+					            </li>        </ul>
+					        <footer class="text_center font-size_down c_primary-n1 p-t_3"><span class="cursor_not-allowed c_black-3">less</span><span class="c_primary"> | </span><span class="link h:underline h:black link h:underline h:black cursor_pointer">more</span></footer>
+					    </main>
+					</li>	</ul>
+				<script>
+					let filterZone = document.getElementById("filterZone");
+					let filterZoneNav = filterZone.querySelector("nav");
+					let filterFacets = filterZone.querySelector("#filterFacets");
+					let filterZoneExpanded = true;
+					filterZoneNav.addEventListener("click", function () {
+						if (filterZoneExpanded) {
+							filterFacets.classList.toggle("opacity_0");
+							filterFacets.classList.toggle("opacity_none");
+							setTimeout(function () {
+								filterFacets.classList.toggle("{display_none}");
+								filterFacets.classList.toggle("display_none");
+								filterFacets.classList.toggle("min-h_0:md");
+								filterFacets.classList.toggle("min-h_50:md");
+								filterZone.classList.remove("{aspect_1x1:md}", "{nav-mined}", "nav-maxed");
+								filterZone.classList.add("aspect_1x1:md", "nav-mined", "{nav-maxed}");
+								filterZoneNav.querySelector("span.label").classList.toggle("{display_none:md}");
+								filterZoneNav.querySelector("span.label").classList.toggle("display_none:md");
+								filterZoneExpanded = false;
+							}, 300);
+							return;
+						} else {
+							filterZone.classList.add("{aspect_1x1:md}", "{nav-mined}", "nav-maxed");
+							filterZone.classList.remove("aspect_1x1:md", "nav-mined", "{nav-maxed}");
+							filterFacets.classList.toggle("min-h_0:md");
+							filterFacets.classList.toggle("min-h_50:md");
+							filterFacets.classList.toggle("{display_none}");
+							filterFacets.classList.toggle("display_none");
+							setTimeout(function () {
+								filterFacets.classList.toggle("opacity_0");
+								filterFacets.classList.toggle("opacity_none");
+								filterZoneNav.querySelector("span.label").classList.toggle("{display_none:md}");
+								filterZoneNav.querySelector("span.label").classList.toggle("display_none:md");
+								filterZoneExpanded = true;
+							}, 300);
+							return;
+						}
+					});
+				</script>
+			</div>
+			<div class="col-start_insertArea-1 col-end_insertArea-2 inset-level_up bg_white-7 br_radius br_solid br_1 br_black-2 p_2 p_3:md p_4:lg">
+				<div class="h_30 c_accent-n4 font_xbold font_3 br_accent bg_accent-5 br_dashed br_1 m_3 p_5 grid items_center justify_center">Layout Zone: Inset  Primary</div>			</div>
+			<div class="col-start_insertArea-3 col-end_insertArea-4 inset-level_up bg_white-7 br_radius br_solid br_1 br_black-2 p_2 p_3:md p_4:lg">
+				<div class="h_30 c_accent-n4 font_xbold font_3 br_accent bg_accent-5 br_dashed br_1 m_3 p_5 grid items_center justify_center">Layout Zone: Inset  Secondary</div>				</div>
 			</section>
-			<footer class="grid:md flex flex_column grid-template_content grid-area_footerArea m-t_auto	">
-				<div id="subfooter" class="bg_primary-1 flex_auto font_n1 z_1 br_radius texture_dust shadow_emboss-light p_2 p_3:md p_4:lg col-end_insertArea-2 col-start">
+			<footer class="grid:md flex flex_column grid-template_content grid-area_footerArea m-t_auto gap_4:md gap_3 p_3  ">
+				<div id="subfooter" class="bg_primary-1 flex_auto font_n1 z_1 br_radius texture_dust shadow_emboss-light p_3 p_4:lg col-end_insertArea-3 col-start">
 				    <ul class="m_auto footer-bottom-links ul_none max-w_80">
 				        <li class="inline p_2"><a href="//www.acc.org/footer-pages/media-center" class="c_white-6 h:c_white">Media Center</a></li>
 				        <li class="inline p_2"><a href="//www.acc.org/footer-pages/quick-start-guide" class="c_white-6 h:c_white">ACC.org Quick Start Guide</a></li>
@@ -106,7 +292,7 @@ searchActive: true
 				        <li class="inline p_2"><a class="c_white-6 h:c_white" href="//www.acc.org/footer-pages/member-hub-terms-of-use">Member Hub Terms of Use</a></li>
 				        <li class="inline p_2"><a class="c_white-6 h:c_white" href="//www.acc.org/sitemap-acc.xml">Site Map</a> </li>
 				    </ul> <!-- /footer-bottom-links -->
-				</div><!-- /subfooter -->				<div id="logo" class="bg_white-4 br_1 br_black-1 br_round br-br_radius br-tl_radius  br_solid flex flex_none flex_row items_center justify_center  shadow_bevel-light p_2 p_3:md p_4:lg col-start_insertArea-3 col-end ">
+				</div><!-- /subfooter -->				<div id="logo" class="bg_white br_1 br_black-1 br_round br-br_radius br-tl_radius  br_solid flex flex_none flex_row items_center justify_center  shadow_bevel-light p_2 p_3:md p_4:lg col-start_insertArea-4 col-end ">
 				    <h2 class="logo_condensed w_100 max-w_20">American College of Cardiology</h2>
 				</div>			</footer>
 		</div>
