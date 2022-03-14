@@ -10,7 +10,7 @@ searchActive: true
 <body class="BODY_TAG-stand-in bg_black-4 w_100 p_3:md p_2 grid min-h_100">
 	<div class="page-wrapper grid p_2 p_3:md isolation_isolate br_radius bg_white-7">
 		<div class="grid:md grid-template_page flex flex_column gap_4:md gap_3">
-			<div class="display_none flex:md sticky t_3 grid-area_menuArea">
+			<div class="display_none flex:md sticky t_3 grid-area_menuArea z_4">
 			        <nav style="height: calc(100vh - 2rem); width: 35rem;" id="navigation" class="absolute h_100vh shadow_emboss-light filter_blur overflow_hidden br_radius bg_black-7 flex:md flex_column:md justify_between p-t_0 p-b_3 p-l_3 p-r_3 p-b_4:md p-t_4:md p-r_0:md font_4:lg font_3:md font_2 transition_3 font_display nav-mined">
 			            <ul class="flex flex_column:md flex_row ul_none justify_around justify_start:md gap_3 w_100 w_auto:md">
 			                <li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light active">
@@ -58,7 +58,7 @@ searchActive: true
 			            </li>
 			        </ul>
 			    </nav>
-			    <!-- These Styles are just for the styleguide and are not to be included with the pattern. -->			<header class="grid-area_headerArea flex flex_row items_center justify_start flex_none inset-level_up bg_white-7 br_radius br_solid br_1 br_black-2 p_2 p_3:md p_4:lg">
+			    <!-- These Styles are just for the styleguide and are not to be included with the pattern. -->			<header class="grid-area_headerArea flex flex_row items_center justify_start flex_none z_1 inset-level_up bg_white-7 br_radius br_solid br_1 br_black-2 p_2 p_3:md p_4:lg">
 				<nav class="overflow_hidden lh_0  font_ui font_2 font_regular c_black-7 ">
 				    <ol class="flex flex_no-wrap flex_row items_center overflow_hidden ul_none w_100">
 				        <li class="flex flex-shrink_1 flex_auto:md flex_inline h:c_primary lh_2 m-b_1 relative">
@@ -80,204 +80,634 @@ searchActive: true
 				            </div>
 				        </li>    </ol>
 				</nav>			</header>
-			<section class="grid:md flex flex_column grid-template_content grid-area_mainArea gap_4 p-y_3 p-y_0:md">
-			<div id="filterZone" class="{aspect_1x1:md} {nav-mined} nav-maxed self_start bg_black-3 br_1 br_black-2 br_radius br_solid flex_auto p_2 p_3:md  shadow_emboss-light transition_3 flex flex_column col-start_filterArea col-end_filterArea order_last order_unset:md">
-				<nav class="flex_auto overflow_hidden self_stretch font_4:lg font_3:md font_2 font_display font_display">
-					<ul class="flex flex_column:md flex_row gap_3 justify_start:md ul_none w_100 w_auto:md">
-						<li class="a:bg_primary a:c_white a:shadow_overlap-light {aspect_1x1:md} br_radius c_white-8 flex_none grid h:bg_black-7 h:c_white h:shadow_overlap-light nav-item p_0:md p_3">
-							<a class="c_inherit-all h:undecorated p_3 lh_1 m-x_n1">
-								<i class="far fa-filter p-x_2:md p-y_3 p-y_0:md"></i>
-								<span class="font-size_down label lh_0 lowercase self_center font_medium {display_none:md}">Filter</span>
-							</a>
-						</li>
-					</ul>
-				</nav>
-				<ul id="filterFacets" class="ul_none font_n1 {display_none} opacity_none transition_3 min-h_50:md">
-					<li data-name="library-search-facet" class="bg_white-8 br_radius m-t_3 p_3 max-w_20:md Filter1">
-					    <header class="flex font-size_up m-y_2">
-					        <div class="flex_auto  self_center p-l_0 lh_1 font-size_up font_medium">Type Ahead Filter</div>
-					    </header>
-					    <main class="p_1 collapse show">
-					        <div class="p_3 flex flex_row">
-					            <input class="br-tr_square br-br_square" type="text" name="" id="" placeholder="Filter Name">
-					            <button class="btn btn-secondary br-tl_square br-bl_square"><i class="fas fa-users"></i></button>
-					        </div>
-					    </main>
-					    <header class="flex font-size_up m-y_2">
-					        <div class="flex_auto self_center p-l_2 lh_1 font-size_down font_bold opacity_8">Filtering By</div>
-					        <div class="c_primary-n2 flex flex_nowrap flex_row font-size_down h:c_primary-n3 h:opacity h:undecorated items_center lh_1 m-l_auto opacity_5 self_center toggle user-select_none p-l_4" data-bs-toggle="collapse" data-bs-target="#collapseTypeAhead" role="button" aria-expanded="true" aria-controls="#collapseTypeAhead">
-					          <div class="flex_none self_center"> collapse </div>
-					          <div class="flex_none">
-					              <span class="fa-stack">
-					                <i class="fas fa-minus fa-stack-1x"></i>
-					                <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
-					              </span>
-					          </div>
-					        </div>    </header>
-					    <main id="collapseTypeAhead" class="p_1 collapse show" style="">
-					        <ul class="p-y_3 ul_none br-t_1 br-b_1 br_primary-3 transition_3 br_solid">
-					            <li class="m-y_2">
-					                <div class="input flex user-select_none relative h:bg_black-1 br_radius">
-					                    <div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacetfacet_9964" id="checkfacetfacet_9964" class="font-size_up"></div>
-					                    <div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacetfacet_9964" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md">  type ahead filter facet_9964</span></label></div>
-					                    <div class="">
-					                        <button class="bg_transparent br_0 br_radius c_alert h:bg_alert-3 h:c_alert-n3 p-y_2"><i class="fas fa-trash"></i></button>
-					                    </div>
-					                    <!---->
-					                </div>
-					            </li>            <li class="m-y_2">
-					                <div class="input flex user-select_none relative h:bg_black-1 br_radius">
-					                    <div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacetfacet_5573" id="checkfacetfacet_5573" class="font-size_up"></div>
-					                    <div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacetfacet_5573" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md">  type ahead filter facet_5573</span></label></div>
-					                    <div class="">
-					                        <button class="bg_transparent br_0 br_radius c_alert h:bg_alert-3 h:c_alert-n3 p-y_2"><i class="fas fa-trash"></i></button>
-					                    </div>
-					                    <!---->
-					                </div>
-					            </li>        </ul>
-					        <footer class="text_center font-size_down c_primary-n1 p-t_3"><span class="cursor_not-allowed c_black-3">less</span><span class="c_primary"> | </span><span class="link h:underline h:black link h:underline h:black cursor_pointer">more</span></footer>
-					    </main>
-					</li>		<li data-name="library-search-facet" class="bg_white-8 br_radius m-t_3 p_3  max-w_20:md Filter2">
-					    <header class="flex font-size_up m-y_2">
-					        <div class="flex_auto  self_center p-l_0 lh_1 font-size_up font_medium">Primary Category </div>
-					         <div class="c_primary-n2 flex flex_nowrap flex_row font-size_down h:c_primary-n3 h:opacity h:undecorated items_center lh_1 m-l_auto opacity_5 self_center toggle user-select_none p-l_4" data-bs-toggle="collapse" data-bs-target="#CollapseFacetGroupPrimaryID" role="button" aria-expanded="true" aria-controls="#CollapseFacetGroupPrimaryID">
-					           <div class="flex_none self_center"> collapse </div>
-					           <div class="flex_none">
-					               <span class="fa-stack">
-					                 <i class="fas fa-minus fa-stack-1x"></i>
-					                 <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
-					               </span>
-					           </div>
-					         </div>    </header>
-					    <main id="CollapseFacetGroupPrimaryID" class="p_1 collapse show" style="">
-					        <ul class="p-y_3 ul_none br-t_1 br-b_1 br_primary-3 transition_3 br_solid">
-					            <li class="m-y_2">
-					                <div class="input flex user-select_none relative h:bg_black-1 br_radius">
-					                    <div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_6471" id="checkfacet_6471" class="font-size_up"></div>
-					                    <div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_6471" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_6471ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
-					                    <!---->
-					                </div>
-					            </li>            <li class="m-y_2">
-					                <div class="input flex user-select_none relative h:bg_black-1 br_radius">
-					                    <div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_8366" id="checkfacet_8366" class="font-size_up"></div>
-					                    <div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_8366" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_8366ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
-					                    <!---->
-					                </div>
-					            </li>            <li class="m-y_2">
-					                <div class="input flex user-select_none relative h:bg_black-1 br_radius">
-					                    <div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_5846" id="checkfacet_5846" class="font-size_up"></div>
-					                    <div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_5846" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_5846ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
-					                    <!---->
-					                </div>
-					            </li>            <li class="m-y_2">
-					                <div class="input flex user-select_none relative h:bg_black-1 br_radius">
-					                    <div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_2369" id="checkfacet_2369" class="font-size_up"></div>
-					                    <div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_2369" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_2369ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
-					                    <!---->
-					                </div>
-					            </li>            <li class="m-y_2">
-					                <div class="input flex user-select_none relative h:bg_black-1 br_radius">
-					                    <div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_6025" id="checkfacet_6025" class="font-size_up"></div>
-					                    <div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_6025" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_6025ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
-					                    <!---->
-					                </div>
-					            </li>        </ul>
-					        <footer class="text_center font-size_down c_primary-n1 p-t_3"><span class="cursor_not-allowed c_black-3">less</span><span class="c_primary"> | </span><span class="link h:underline h:black link h:underline h:black cursor_pointer">more</span></footer>
-					    </main>
-					</li>		<li data-name="library-search-facet" class="bg_white-8 br_radius m-t_3 p_3  max-w_20:md Filter3">
-					    <header class="flex font-size_up m-y_2">
-					        <div class="flex_auto  self_center p-l_0 lh_1 font-size_up font_medium">Drugs Generic </div>
-					          <div class="c_primary-n2 flex flex_nowrap flex_row font-size_down h:c_primary-n3 h:opacity h:undecorated items_center lh_1 m-l_auto opacity_5 self_center toggle user-select_none p-l_4" data-bs-toggle="collapse" data-bs-target="#CollapseFacetGroupID" role="button" aria-expanded="true" aria-controls="#CollapseFacetGroupID">
-					            <div class="flex_none self_center"> collapse </div>
-					            <div class="flex_none">
-					                <span class="fa-stack">
-					                  <i class="fas fa-minus fa-stack-1x"></i>
-					                  <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
-					                </span>
-					            </div>
-					          </div>    </header>
-					    <main id="CollapseFacetGroupID" class="p_1 collapse show" style="">
-					        <ul class="p-y_3 ul_none br-t_1 br-b_1 br_primary-3 transition_3 br_solid">
-					            <li class="m-y_2">
-					                <div class="input flex user-select_none relative h:bg_black-1 br_radius">
-					                    <div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_5096" id="checkfacet_5096" class="font-size_up"></div>
-					                    <div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_5096" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_5096ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
-					                    <!---->
-					                </div>
-					            </li>            <li class="m-y_2">
-					                <div class="input flex user-select_none relative h:bg_black-1 br_radius">
-					                    <div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_4206" id="checkfacet_4206" class="font-size_up"></div>
-					                    <div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_4206" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_4206ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
-					                    <!---->
-					                </div>
-					            </li>            <li class="m-y_2">
-					                <div class="input flex user-select_none relative h:bg_black-1 br_radius">
-					                    <div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_3451" id="checkfacet_3451" class="font-size_up"></div>
-					                    <div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_3451" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_3451ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
-					                    <!---->
-					                </div>
-					            </li>            <li class="m-y_2">
-					                <div class="input flex user-select_none relative h:bg_black-1 br_radius">
-					                    <div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_6129" id="checkfacet_6129" class="font-size_up"></div>
-					                    <div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_6129" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_6129ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
-					                    <!---->
-					                </div>
-					            </li>            <li class="m-y_2">
-					                <div class="input flex user-select_none relative h:bg_black-1 br_radius">
-					                    <div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_4012" id="checkfacet_4012" class="font-size_up"></div>
-					                    <div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_4012" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_4012ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
-					                    <!---->
-					                </div>
-					            </li>        </ul>
-					        <footer class="text_center font-size_down c_primary-n1 p-t_3"><span class="cursor_not-allowed c_black-3">less</span><span class="c_primary"> | </span><span class="link h:underline h:black link h:underline h:black cursor_pointer">more</span></footer>
-					    </main>
-					</li>	</ul>
-				<script>
-					let filterZone = document.getElementById("filterZone");
-					let filterZoneNav = filterZone.querySelector("nav");
-					let filterFacets = filterZone.querySelector("#filterFacets");
-					let filterZoneExpanded = true;
-					filterZoneNav.addEventListener("click", function () {
-						if (filterZoneExpanded) {
-							filterFacets.classList.toggle("opacity_0");
-							filterFacets.classList.toggle("opacity_none");
-							setTimeout(function () {
-								filterFacets.classList.toggle("{display_none}");
-								filterFacets.classList.toggle("display_none");
-								filterFacets.classList.toggle("min-h_0:md");
-								filterFacets.classList.toggle("min-h_50:md");
-								filterZone.classList.remove("{aspect_1x1:md}", "{nav-mined}", "nav-maxed");
-								filterZone.classList.add("aspect_1x1:md", "nav-mined", "{nav-maxed}");
-								filterZoneNav.querySelector("span.label").classList.toggle("{display_none:md}");
-								filterZoneNav.querySelector("span.label").classList.toggle("display_none:md");
-								filterZoneExpanded = false;
-							}, 300);
-							return;
-						} else {
-							filterZone.classList.add("{aspect_1x1:md}", "{nav-mined}", "nav-maxed");
-							filterZone.classList.remove("aspect_1x1:md", "nav-mined", "{nav-maxed}");
-							filterFacets.classList.toggle("min-h_0:md");
-							filterFacets.classList.toggle("min-h_50:md");
-							filterFacets.classList.toggle("{display_none}");
-							filterFacets.classList.toggle("display_none");
-							setTimeout(function () {
+			<section class="grid:md flex flex_column grid-template_content grid-area_mainArea gap_4 p-y_3 p-y_0:md z_1 font_1:lg font_0">
+				<div id="filterZone" class="self_start bg_black-3 br_1 br_black-2 br_radius br_solid flex_auto p_2 p_3:md shadow_emboss-light transition_3 flex flex_column col-start_filterArea col-end_filterArea order_last order_unset:md {aspect_1_1:md} {nav-mined} nav-maxed">
+					<nav class="flex_auto overflow_hidden self_stretch font_4:lg font_3:md font_2 font_display font_display">
+						<ul class="flex flex_column:md flex_row gap_3 justify_start:md ul_none w_100 w_auto:md">
+							<li class="a:bg_primary a:c_white a:shadow_overlap-light {aspect_1_1:md} br_radius c_white-8 flex_none grid h:bg_black-7 h:c_white h:shadow_overlap-light nav-item p_0:md p_3">
+								<a class="c_inherit-all h:undecorated p_3 lh_1 m-x_n1">
+									<i class="far fa-filter p-x_2:md p-y_3 p-y_0:md"></i>
+									<span class="font-size_down label lh_0 lowercase self_center font_medium {display_none:md}">Filter</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+					<ul id="filterFacets" class="ul_none font_n1 transition_3 min-h_30:md {display_none} opacity_none">
+						<li data-name="library-search-facet" class="bg_white-8 br_radius m-t_3 p_3 max-w_20:md Filter1">
+						    <header class="flex font-size_up m-y_2">
+						        <div class="flex_auto  self_center p-l_0 lh_1 font-size_up font_medium">Type Ahead Filter</div>
+						    </header>
+						    <main class="p_1 collapse show">
+						        <div class="p_3 flex flex_row">
+						            <input class="br-tr_square br-br_square" type="text" name="" id="" placeholder="Filter Name">
+						            <button class="btn btn-secondary br-tl_square br-bl_square"><i class="fas fa-users"></i></button>
+						        </div>
+						    </main>
+						    <header class="flex font-size_up m-y_2">
+						        <div class="flex_auto self_center p-l_2 lh_1 font-size_down font_bold opacity_8">Filtering By</div>
+						        <div class="c_primary-n2 flex flex_nowrap flex_row font-size_down h:c_primary-n3 h:opacity h:undecorated items_center lh_1 m-l_auto opacity_5 self_center toggle user-select_none p-l_4" data-bs-toggle="collapse" data-bs-target="#collapseTypeAhead" role="button" aria-expanded="true" aria-controls="#collapseTypeAhead">
+						          <div class="flex_none self_center"> collapse </div>
+						          <div class="flex_none">
+						              <span class="fa-stack">
+						                <i class="fas fa-minus fa-stack-1x"></i>
+						                <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+						              </span>
+						          </div>
+						        </div>    </header>
+						    <main id="collapseTypeAhead" class="p_1 collapse show" style="">
+						        <ul class="p-y_3 ul_none br-t_1 br-b_1 br_primary-3 transition_3 br_solid">
+						            <li class="m-y_2">
+						                <div class="input flex user-select_none relative h:bg_black-1 br_radius">
+						                    <div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacetfacet_2980" id="checkfacetfacet_2980" class="font-size_up"></div>
+						                    <div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacetfacet_2980" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md">  type ahead filter facet_2980</span></label></div>
+						                    <div class="">
+						                        <button class="bg_transparent br_0 br_radius c_alert h:bg_alert-3 h:c_alert-n3 p-y_2"><i class="fas fa-trash"></i></button>
+						                    </div>
+						                    <!---->
+						                </div>
+						            </li>            <li class="m-y_2">
+						                <div class="input flex user-select_none relative h:bg_black-1 br_radius">
+						                    <div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacetfacet_0767" id="checkfacetfacet_0767" class="font-size_up"></div>
+						                    <div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacetfacet_0767" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md">  type ahead filter facet_0767</span></label></div>
+						                    <div class="">
+						                        <button class="bg_transparent br_0 br_radius c_alert h:bg_alert-3 h:c_alert-n3 p-y_2"><i class="fas fa-trash"></i></button>
+						                    </div>
+						                    <!---->
+						                </div>
+						            </li>        </ul>
+						        <footer class="text_center font-size_down c_primary-n1 p-t_3"><span class="cursor_not-allowed c_black-3">less</span><span class="c_primary"> | </span><span class="link h:underline h:black link h:underline h:black cursor_pointer">more</span></footer>
+						    </main>
+						</li>		<li data-name="library-search-facet" class="bg_white-8 br_radius m-t_3 p_3  max-w_20:md Filter2">
+						    <header class="flex font-size_up m-y_2">
+						        <div class="flex_auto  self_center p-l_0 lh_1 font-size_up font_medium">Primary Category </div>
+						         <div class="c_primary-n2 flex flex_nowrap flex_row font-size_down h:c_primary-n3 h:opacity h:undecorated items_center lh_1 m-l_auto opacity_5 self_center toggle user-select_none p-l_4" data-bs-toggle="collapse" data-bs-target="#CollapseFacetGroupPrimaryID" role="button" aria-expanded="true" aria-controls="#CollapseFacetGroupPrimaryID">
+						           <div class="flex_none self_center"> collapse </div>
+						           <div class="flex_none">
+						               <span class="fa-stack">
+						                 <i class="fas fa-minus fa-stack-1x"></i>
+						                 <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+						               </span>
+						           </div>
+						         </div>    </header>
+						    <main id="CollapseFacetGroupPrimaryID" class="p_1 collapse show" style="">
+						        <ul class="p-y_3 ul_none br-t_1 br-b_1 br_primary-3 transition_3 br_solid">
+						            <li class="m-y_2">
+						                <div class="input flex user-select_none relative h:bg_black-1 br_radius">
+						                    <div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_2481" id="checkfacet_2481" class="font-size_up"></div>
+						                    <div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_2481" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_2481ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
+						                    <!---->
+						                </div>
+						            </li>            <li class="m-y_2">
+						                <div class="input flex user-select_none relative h:bg_black-1 br_radius">
+						                    <div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_0231" id="checkfacet_0231" class="font-size_up"></div>
+						                    <div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_0231" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_0231ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
+						                    <!---->
+						                </div>
+						            </li>            <li class="m-y_2">
+						                <div class="input flex user-select_none relative h:bg_black-1 br_radius">
+						                    <div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_1217" id="checkfacet_1217" class="font-size_up"></div>
+						                    <div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_1217" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_1217ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
+						                    <!---->
+						                </div>
+						            </li>            <li class="m-y_2">
+						                <div class="input flex user-select_none relative h:bg_black-1 br_radius">
+						                    <div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_4505" id="checkfacet_4505" class="font-size_up"></div>
+						                    <div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_4505" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_4505ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
+						                    <!---->
+						                </div>
+						            </li>            <li class="m-y_2">
+						                <div class="input flex user-select_none relative h:bg_black-1 br_radius">
+						                    <div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_5644" id="checkfacet_5644" class="font-size_up"></div>
+						                    <div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_5644" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_5644ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
+						                    <!---->
+						                </div>
+						            </li>        </ul>
+						        <footer class="text_center font-size_down c_primary-n1 p-t_3"><span class="cursor_not-allowed c_black-3">less</span><span class="c_primary"> | </span><span class="link h:underline h:black link h:underline h:black cursor_pointer">more</span></footer>
+						    </main>
+						</li>		<li data-name="library-search-facet" class="bg_white-8 br_radius m-t_3 p_3  max-w_20:md Filter3">
+						    <header class="flex font-size_up m-y_2">
+						        <div class="flex_auto  self_center p-l_0 lh_1 font-size_up font_medium">Drugs Generic </div>
+						          <div class="c_primary-n2 flex flex_nowrap flex_row font-size_down h:c_primary-n3 h:opacity h:undecorated items_center lh_1 m-l_auto opacity_5 self_center toggle user-select_none p-l_4" data-bs-toggle="collapse" data-bs-target="#CollapseFacetGroupID" role="button" aria-expanded="true" aria-controls="#CollapseFacetGroupID">
+						            <div class="flex_none self_center"> collapse </div>
+						            <div class="flex_none">
+						                <span class="fa-stack">
+						                  <i class="fas fa-minus fa-stack-1x"></i>
+						                  <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+						                </span>
+						            </div>
+						          </div>    </header>
+						    <main id="CollapseFacetGroupID" class="p_1 collapse show" style="">
+						        <ul class="p-y_3 ul_none br-t_1 br-b_1 br_primary-3 transition_3 br_solid">
+						            <li class="m-y_2">
+						                <div class="input flex user-select_none relative h:bg_black-1 br_radius">
+						                    <div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_8496" id="checkfacet_8496" class="font-size_up"></div>
+						                    <div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_8496" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_8496ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
+						                    <!---->
+						                </div>
+						            </li>            <li class="m-y_2">
+						                <div class="input flex user-select_none relative h:bg_black-1 br_radius">
+						                    <div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_7754" id="checkfacet_7754" class="font-size_up"></div>
+						                    <div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_7754" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_7754ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
+						                    <!---->
+						                </div>
+						            </li>            <li class="m-y_2">
+						                <div class="input flex user-select_none relative h:bg_black-1 br_radius">
+						                    <div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_6156" id="checkfacet_6156" class="font-size_up"></div>
+						                    <div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_6156" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_6156ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
+						                    <!---->
+						                </div>
+						            </li>            <li class="m-y_2">
+						                <div class="input flex user-select_none relative h:bg_black-1 br_radius">
+						                    <div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_5949" id="checkfacet_5949" class="font-size_up"></div>
+						                    <div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_5949" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_5949ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
+						                    <!---->
+						                </div>
+						            </li>            <li class="m-y_2">
+						                <div class="input flex user-select_none relative h:bg_black-1 br_radius">
+						                    <div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_4277" id="checkfacet_4277" class="font-size_up"></div>
+						                    <div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_4277" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_4277ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
+						                    <!---->
+						                </div>
+						            </li>        </ul>
+						        <footer class="text_center font-size_down c_primary-n1 p-t_3"><span class="cursor_not-allowed c_black-3">less</span><span class="c_primary"> | </span><span class="link h:underline h:black link h:underline h:black cursor_pointer">more</span></footer>
+						    </main>
+						</li>	</ul>
+					<script>
+						let filterZone = document.getElementById("filterZone");
+						let filterZoneNav = filterZone.querySelector("nav");
+						let filterFacets = filterZone.querySelector("#filterFacets");
+						let filterZoneExpanded = true;
+						filterZoneNav.addEventListener("click", function () {
+							if (filterZoneExpanded) {
 								filterFacets.classList.toggle("opacity_0");
 								filterFacets.classList.toggle("opacity_none");
-								filterZoneNav.querySelector("span.label").classList.toggle("{display_none:md}");
-								filterZoneNav.querySelector("span.label").classList.toggle("display_none:md");
-								filterZoneExpanded = true;
-							}, 300);
-							return;
-						}
-					});
-				</script>
-			</div>
-			<div class="col-start_insertArea-1 col-end_insertArea-2 inset-level_up bg_white-7 br_radius br_solid br_1 br_black-2 p_2 p_3:md p_4:lg">
-				<div class="h_30 c_accent-n4 font_xbold font_3 br_accent bg_accent-5 br_dashed br_1 m_3 p_5 grid items_center justify_center">Layout Zone: Inset  Primary</div>			</div>
-			<div class="col-start_insertArea-3 col-end_insertArea-4 inset-level_up bg_white-7 br_radius br_solid br_1 br_black-2 p_2 p_3:md p_4:lg">
-				<div class="h_30 c_accent-n4 font_xbold font_3 br_accent bg_accent-5 br_dashed br_1 m_3 p_5 grid items_center justify_center">Layout Zone: Inset  Secondary</div>				</div>
+								setTimeout(function () {
+									filterFacets.classList.toggle("{display_none}");
+									filterFacets.classList.toggle("display_none");
+									filterFacets.classList.toggle("min-h_0:md");
+									filterFacets.classList.toggle("min-h_30:md");
+									filterZone.classList.remove("{aspect_1_1:md}", "{nav-mined}", "nav-maxed");
+									filterZone.classList.add("aspect_1_1:md", "nav-mined", "{nav-maxed}");
+									filterZoneNav.querySelector("span.label").classList.toggle("{display_none:md}");
+									filterZoneNav.querySelector("span.label").classList.toggle("display_none:md");
+									filterZoneExpanded = false;
+								}, 300);
+								return;
+							} else {
+								filterZone.classList.add("{aspect_1_1:md}", "{nav-mined}", "nav-maxed");
+								filterZone.classList.remove("aspect_1_1:md", "nav-mined", "{nav-maxed}");
+								filterFacets.classList.toggle("min-h_0:md");
+								filterFacets.classList.toggle("min-h_30:md");
+								filterFacets.classList.toggle("{display_none}");
+								filterFacets.classList.toggle("display_none");
+								setTimeout(function () {
+									filterFacets.classList.toggle("opacity_0");
+									filterFacets.classList.toggle("opacity_none");
+									filterZoneNav.querySelector("span.label").classList.toggle("{display_none:md}");
+									filterZoneNav.querySelector("span.label").classList.toggle("display_none:md");
+									filterZoneExpanded = true;
+								}, 300);
+								return;
+							}
+						});
+					</script>
+				</div>				<div class="col-start_insertArea-1 col-end_insertArea-4 	 row-start_1">
+					<div class=" sticky t_0 r_0 z_1">
+					<div class="absolute r_4 t_0  flex flex_row flex_nowrap gap-x_3">
+					<!--  Helper Jump links -->
+					  <a class="br-tl_square br-tr_square br_radius btn btn-accent btn-sm grid items_center justify_center m-l_auto self_center shadow_3" href="#SearchBarTop">
+					  <span><i class="fas fa-arrow-up"></i><i class="m-l_2 fas fa-search"></i></span>
+					  </a>
+					  <a href="#FilterNavContainer" class="br-tl_square br-tr_square br_radius btn btn-accent btn-sm display_none:md grid items_center justify_center m-l_auto self_center shadow_3">
+					  <span><i class="fas fa-arrow-down"></i><i class="m-l_2 fas fa-filter"></i></span>
+					  </a>
+					<!--  Helper Jump links -->
+					</div>
+					</div>
+					<div class="bg_white br_radius p_4:lg p_3 shadow_overlap-light z_2 relative">
+					    <h1 class="c_primary-n1 font_display m-b_3 m-t_0 flex flex_row justify_between"><span>Program</span>
+					      <a href="#FilterNavContainer" class="absolute br-tl_square br-tr_square br_radius btn btn-accent btn-sm display_none:md flex_none grid items_center justify_center m-l_auto r_3 self_center t_0">
+					      <span><i class="fas fa-arrow-down"></i><i class="fas fa-filter"></i></span>
+					      </a>
+					    </h1>
+					    <div class="flex_row flex gap-x_3">
+					      <div class="input-holder flex_auto flex flex_row self_end relative w_100">
+					          <input id="input_uniqueTextAnda" name="input_uniqueTextAnda" type="text" placeholder="Search" class=" br_2 flex_auto p-y_2 br_solid flex_auto p-l_4 lh_3 br_radius bg_white c_black bg_white f:bg_primary br_black-2 font_2:lg font_1:md font_0">
+					          <button class="absolute b_0 br-bl_square br-tl_square btn btn-primary flex_none grid items_center justify_center r_0 t_0" onclick="Search()">
+					          <i class="fas fa-search"></i>
+					          </button>
+					      </div>
+					      <button class="disabled flex_none grid items_center justify_center btn btn-alert">
+					        <i class="fas fa-times"></i>
+					      </button>
+					    </div>
+					</div>					<div class="p-y_2 p-y_3:md p-y_4:lg">
+						<div class="c_secondary-2 font_medium font-size_down-2 font_ui p_2 ">
+						  <ul class="ul_inline-pipe">
+						      <li>
+						        <ul class="c_primary-2 ul_inline-comma">
+						            <li class="font_xbold no-after uppercase">Results:</li>
+						            <li>230</li>
+						        </ul>
+						      </li>
+						      <li>
+						        <ul class="ul_inline-comma">
+						            <li class="font_xbold no-after uppercase">Filters:</li>
+						            <li><a class="h:underline">Category A <i class="fas fa-times c_alert-n1 p_2"></i></a></li>
+						            <li><a class="h:underline">Tag B  <i class="fas fa-times c_alert-n1 p_2"></i></a></li>
+						            <li><a class="h:underline">Tag C <i class="fas fa-times c_alert-n1 p_2"></i></a></li>
+						        </ul>
+						      </li>
+						  </ul>
+						</div>					</div>
+					<div class="inset-level_down-1 bg_black-1 shadow_emboss-light br_solid br_1 br_black-2 br_radius p_2 p_3:md ">
+					<nav class="bg_black-2 br_3 br_radius br_solid br_white-9 c_primary font_0 font_bold font_accent: p-x_0 p-x_4:md shadow_bevel-light" id="tabContentLight" role="tablist">
+						<ul class="flex_column flex_row:md  nav">
+							<li class=" br-t_3 br_solid:md br_white-0 m-l_1 nav-item">
+							    <a id="ActiveLink-tab" data-bs-toggle="tab" data-bs-target="#ActiveLink" role="tab" aria-controls="ActiveLink" aria-selected="false" class="a:bg_accent-n2 h:underline-none a:c_white br-b_3 br_white-0 br_solid:md c_primary h:bg_acc-n3 h:br_accent h:c_white m-y_n2:md nav-link p-y_3:md p-x_4" href="#">Active</a>
+							</li>							<li class="br-t_3 br_solid:md br_white-0 m-l_1 nav-item">
+							    <a id="BasicLink-tab" data-bs-toggle="tab" data-bs-target="#BasicLink" role="tab" aria-controls="BasicLink" aria-selected="true" class="a:bg_accent-n2 h:underline-none a:c_white br-b_3 br_white-0 br_solid:md c_primary h:bg_acc-n3 h:br_accent h:c_white m-y_n2:md nav-link p-y_3:md p-x_4 active" href="#">Link</a>
+							</li>							
+						</ul>
+					</nav>
+					<div class="tab-content" id="nav-tabContent">
+						<div class="tab-pane fade" id="ActiveLink" role="tabpanel" aria-labelledby="ActiveLink">
+							<ul class="ul_none flex flex_column gap_2 gap_3:md gap_4:lg p-y_2 p-y_3:md p-y_4:lg">
+								<li class=""><div>
+<article class="flex flex_grow w_100 inset-level_up-1 bg_white br_radius shadow_overlap-light relative br_solid br_1 br_black-2">
+    <div class="flex flex_row font_ui justify_start relative w_100">
+        <main class="flex flex_column flex_auto justify_between flex_auto relative w_100 isolation_isolate p_3 p_4:lg">
+            <h2 class="font-size_up-1 font_display font_regular lh_2 h:underline c_primary-n3 m-t_2">
+                <a class="c_inherit-all expanded-click-area z_1">
+                    Clinical Update for the Clinical Cardiovascular Arrhythmia 
+                </a>
+            </h2>
+            <ul class="ul_none flex flex_row flex_wrap justify_start font-size_down-1 c_black-7 m-t_auto lh_0 items_end">
+                <li class="inline-block p-r_3 p_2">
+                    <span class="font-size_up c_primary-n2 block"><i class="fal fa-clock"></i> 15</span>
+                    minutes
+                </li>                <li class="inline-block p-r_3 p_2">
+                    <span class="font-size_up c_primary-n2 block">4</span>
+                    presentations
+                </li>                <li class="inline-block br_round p-x_3 m-l_n3 p_2 z_3 h:bg_black-2 br_radius self_end">
+                    <a href="" class="link flex_auto underline h:undecorated">
+                    <span class="font-size_up c_primary-n2"><i class="fal fa-paperclip"></i></span>
+                    Attachments</a>
+                </li>            </ul>
+        </main>
+        <aside class="flex_none p-x_3:md p-b_3">
+            <ul class="b_3 flex flex_column flex_wrap font-size_down-2 gap_2 justify_end:md justify_start r_4 self_center ul_none uppercase p-x_3 m-t_n2">
+                <li class="flex_auto p-b_3 m-b_auto bookmark-shadow">
+                   <a class="inline-block m-x_n3 m-t_n1">
+                       <span class="fa-stack fa-2x a:c_alert-n2 c_secondary-2 h:c_alert-n3 Clinical Cardiovascular Arrhythmia ">
+                           <i class="fas fa-bookmark fa-stack-2x c_inherit-all text-shadow_black-1"></i>
+                           <i class="fa-heart c_black-4 h:c_white a:c_white fa-stack-1x fas font-size_down-1  text-shadow_black-n1"></i>
+                       </span>
+                   </a>                </li>
+                <li class="lh_0">
+                    <span class="bg_CME br_1 br_black-3 br_round c_white br_solid p-y_1 p_2 block text_center font_regular font_ui">CME</span>                </li>
+                <li class="lh_0">
+                    <span class="bg_CNE br_1 br_black-3 br_round c_white br_solid p-y_1 p_2 block text_center font_regular font_ui">CNE</span>                </li>
+                <li class="lh_0">
+                    <span class="bg_AAPA br_1 br_black-3 br_round c_white br_solid p-y_1 p_2 block text_center font_regular font_ui">AAPA</span>                </li>
+            </ul>
+        </aside>
+    </div>
+</article>
+</div></li>
+								<li class=""><div>
+<article class="flex flex_grow w_100 inset-level_up-1 bg_white br_radius shadow_overlap-light relative br_solid br_1 br_black-2">
+    <div class="flex flex_row font_ui justify_start relative w_100">
+        <main class="flex flex_column flex_auto justify_between flex_auto relative w_100 isolation_isolate p_3 p_4:lg">
+            <h2 class="font-size_up-1 font_display font_regular lh_2 h:underline c_primary-n3 m-t_2">
+                <a class="c_inherit-all expanded-click-area z_1">
+                    Clinical Update for the Arrhythmia Pericardial Blood Vessel Valvular Heart Disease Side Effect Arteriosclerosis 
+                </a>
+            </h2>
+            <ul class="ul_none flex flex_row flex_wrap justify_start font-size_down-1 c_black-7 m-t_auto lh_0 items_end">
+                <li class="inline-block p-r_3 p_2">
+                    <span class="font-size_up c_primary-n2 block"><i class="fal fa-clock"></i> 15</span>
+                    minutes
+                </li>                <li class="inline-block p-r_3 p_2">
+                    <span class="font-size_up c_primary-n2 block">4</span>
+                    presentations
+                </li>                <li class="inline-block br_round p-x_3 m-l_n3 p_2 z_3 h:bg_black-2 br_radius self_end">
+                    <a href="" class="link flex_auto underline h:undecorated">
+                    <span class="font-size_up c_primary-n2"><i class="fal fa-paperclip"></i></span>
+                    Attachments</a>
+                </li>            </ul>
+        </main>
+        <aside class="flex_none p-x_3:md p-b_3">
+            <ul class="b_3 flex flex_column flex_wrap font-size_down-2 gap_2 justify_end:md justify_start r_4 self_center ul_none uppercase p-x_3 m-t_n2">
+                <li class="flex_auto p-b_3 m-b_auto bookmark-shadow">
+                   <a class="inline-block m-x_n3 m-t_n1">
+                       <span class="fa-stack fa-2x a:c_alert-n2 c_secondary-2 h:c_alert-n3 Arrhythmia Pericardial Blood Vessel Valvular Heart Disease Side Effect Arteriosclerosis ">
+                           <i class="fas fa-bookmark fa-stack-2x c_inherit-all text-shadow_black-1"></i>
+                           <i class="fa-heart c_black-4 h:c_white a:c_white fa-stack-1x fas font-size_down-1  text-shadow_black-n1"></i>
+                       </span>
+                   </a>                </li>
+                <li class="lh_0">
+                    <span class="bg_CME br_1 br_black-3 br_round c_white br_solid p-y_1 p_2 block text_center font_regular font_ui">CME</span>                </li>
+                <li class="lh_0">
+                    <span class="bg_CNE br_1 br_black-3 br_round c_white br_solid p-y_1 p_2 block text_center font_regular font_ui">CNE</span>                </li>
+                <li class="lh_0">
+                    <span class="bg_AAPA br_1 br_black-3 br_round c_white br_solid p-y_1 p_2 block text_center font_regular font_ui">AAPA</span>                </li>
+            </ul>
+        </aside>
+    </div>
+</article>
+</div></li>
+								<li class=""><div>
+<article class="flex flex_grow w_100 inset-level_up-1 bg_white br_radius shadow_overlap-light relative br_solid br_1 br_black-2">
+    <div class="flex flex_row font_ui justify_start relative w_100">
+        <main class="flex flex_column flex_auto justify_between flex_auto relative w_100 isolation_isolate p_3 p_4:lg">
+            <h2 class="font-size_up-1 font_display font_regular lh_2 h:underline c_primary-n3 m-t_2">
+                <a class="c_inherit-all expanded-click-area z_1">
+                    Clinical Update for the Pharmacologic Cardiovascular Chest Pain Arteriosclerosis Electrocardiographic 
+                </a>
+            </h2>
+            <ul class="ul_none flex flex_row flex_wrap justify_start font-size_down-1 c_black-7 m-t_auto lh_0 items_end">
+                <li class="inline-block p-r_3 p_2">
+                    <span class="font-size_up c_primary-n2 block"><i class="fal fa-clock"></i> 15</span>
+                    minutes
+                </li>                <li class="inline-block p-r_3 p_2">
+                    <span class="font-size_up c_primary-n2 block">4</span>
+                    presentations
+                </li>                <li class="inline-block br_round p-x_3 m-l_n3 p_2 z_3 h:bg_black-2 br_radius self_end">
+                    <a href="" class="link flex_auto underline h:undecorated">
+                    <span class="font-size_up c_primary-n2"><i class="fal fa-paperclip"></i></span>
+                    Attachments</a>
+                </li>            </ul>
+        </main>
+        <aside class="flex_none p-x_3:md p-b_3">
+            <ul class="b_3 flex flex_column flex_wrap font-size_down-2 gap_2 justify_end:md justify_start r_4 self_center ul_none uppercase p-x_3 m-t_n2">
+                <li class="flex_auto p-b_3 m-b_auto bookmark-shadow">
+                   <a class="inline-block m-x_n3 m-t_n1">
+                       <span class="fa-stack fa-2x a:c_alert-n2 c_secondary-2 h:c_alert-n3 Pharmacologic Cardiovascular Chest Pain Arteriosclerosis Electrocardiographic ">
+                           <i class="fas fa-bookmark fa-stack-2x c_inherit-all text-shadow_black-1"></i>
+                           <i class="fa-heart c_black-4 h:c_white a:c_white fa-stack-1x fas font-size_down-1  text-shadow_black-n1"></i>
+                       </span>
+                   </a>                </li>
+                <li class="lh_0">
+                    <span class="bg_CME br_1 br_black-3 br_round c_white br_solid p-y_1 p_2 block text_center font_regular font_ui">CME</span>                </li>
+                <li class="lh_0">
+                    <span class="bg_CNE br_1 br_black-3 br_round c_white br_solid p-y_1 p_2 block text_center font_regular font_ui">CNE</span>                </li>
+                <li class="lh_0">
+                    <span class="bg_AAPA br_1 br_black-3 br_round c_white br_solid p-y_1 p_2 block text_center font_regular font_ui">AAPA</span>                </li>
+            </ul>
+        </aside>
+    </div>
+</article>
+</div></li>
+							</ul>
+							<div class=""><button class="block btn btn-outline-secondary btn-sm m-b_3 m_auto p-x_5">Load More</button></div>
+							</div>
+						<div class="tab-pane fade active show" id="BasicLink" role="tabpanel" aria-labelledby="BasicLink">
+							<ul class="ul_none flex flex_column gap_2 gap_3:md gap_4:lg p-y_2 p-y_3:md p-y_4:lg">
+								<li class=""> <div>
+    <article class="flex flex_grow flex_column w_100  inset-level_up-1 bg_white br_radius shadow_overlap-light relative br_solid br_1 br_black-2">
+        <div class="flex flex_row font_ui justify_start relative w_100 gap_3">
+            <main class="flex flex_column flex_auto justify_between flex_auto relative w_100 isolation_isolate p_3 p_4:lg ">
+                <div class="font_display m-b_3 lh_2 ">
+                    <h1 class="block c_black-6 uppercase font_bold font-size_down lh_1 m_0 m-t_"> Cardiovascular Update for the Clinician III</h1>
+                    <h2 class="font-size_up-1 font_display font_regular lh_2 h:underline c_primary-n3">
+                    <a class="c_inherit-all expanded-click-area z_1">
+                        Presentation of the findings Pericardial Cardiovascular Valvular 
+                    </a>
+                    </h2>
+                </div>
+                <div class="c_black-8 font_copy font-size_down-1">
+                    <ul class="ul_inline-semicolon font_regular font_copy">
+                      <li class="no-after font_medium c_primary-n1 Pericardial Cardiovascular Valvular ">Role Type 1:</li>
+                      <li>Pepper H. Soda III, MD, FACC <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
+                      <li class="no-after font_medium c_primary-n1  Pericardial Cardiovascular Valvular ">Role Type 2:</li>
+                      <li>Dianna Denesik III <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
+                      <li>Miguel Romaguera <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
+                      <li>Jeanette Franecki <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
+                    </ul>                </div>
+                <ul class="ul_none flex flex_row justify_start font-size_down-1 c_black-7  m-t_auto lh_0">
+                <li class="inline-block p-r_3 p_2">
+                    <span class="font-size_up c_primary-n2 block"><i class="fal fa-clock"></i> 15</span>
+                    minutes
+                </li>                <li class="inline-block p-r_3 p_2">
+                    <span class="font-size_up c_primary-n2 block">4</span>
+                    presentations
+                </li>                <li class="inline-block br_round p-x_3 m-l_n3 p_2 z_3 h:bg_black-2 br_radius self_end">
+                    <a href="" class="link flex_auto underline h:undecorated">
+                    <span class="font-size_up c_primary-n2"><i class="fal fa-paperclip"></i></span>
+                    Attachments</a>
+                </li>                </ul>
+            </main>
+            <aside class="flex_none p-x_3:md p-b_3">
+                <ul class="b_3 flex flex_column flex_wrap font_n3 gap_2 justify_end:md justify_start r_4 self_center ul_none uppercase p-x_3 m-t_n2">
+                    <li class="flex_auto p-b_3 m-b_auto bookmark-shadow">
+                        <a class="inline-block m-x_n3 m-t_n1">
+                            <span class="fa-stack fa-2x a:c_alert-n2 c_secondary-2 h:c_alert-n3 Pericardial Cardiovascular Valvular ">
+                                <i class="fas fa-bookmark fa-stack-2x c_inherit-all text-shadow_black-1"></i>
+                                <i class="fa-heart c_black-4 h:c_white a:c_white fa-stack-1x fas font-size_down-1  text-shadow_black-n1"></i>
+                            </span>
+                        </a>                    </li>
+                    <li class="lh_0">
+                        <span class="bg_CME br_1 br_black-3 br_round c_white br_solid p-y_1 p_2 block text_center font_regular font_ui">CME</span>                    </li>
+                    <li class="lh_0">
+                        <span class="bg_CNE br_1 br_black-3 br_round c_white br_solid p-y_1 p_2 block text_center font_regular font_ui">CNE</span>                    </li>
+                </ul>
+            </aside>
+        </div>
+        <div class="p_2 p_3:md">
+            <aside class="bg_secondary-3 h:bg_primary-3 p-x_4 p-y_3 br_radius flex flex_row texture_dust relative">
+                <a class="expanded-click-area" href="player@"><i class="fa fa-play p-x_3 c_primary"></i></a>
+                <div class="progress w_100 self_center br_black-2 br_solid bg_black-4 br_1 br_round h_0lh font_n4">
+                    <div class="progress-bar bg_accent" role="progressbar" style="width: %" aria-valuenow="" aria-valuemax="100"></div>
+                </div>
+            </aside>        </div>
+    </article>
+</div></li>
+								<li class=""> <div>
+    <article class="flex flex_grow flex_column w_100  inset-level_up-1 bg_white br_radius shadow_overlap-light relative br_solid br_1 br_black-2">
+        <div class="flex flex_row font_ui justify_start relative w_100 gap_3">
+            <main class="flex flex_column flex_auto justify_between flex_auto relative w_100 isolation_isolate p_3 p_4:lg ">
+                <div class="font_display m-b_3 lh_2 ">
+                    <h1 class="block c_black-6 uppercase font_bold font-size_down lh_1 m_0 m-t_"> Cardiovascular Update for the Clinician III</h1>
+                    <h2 class="font-size_up-1 font_display font_regular lh_2 h:underline c_primary-n3">
+                    <a class="c_inherit-all expanded-click-area z_1">
+                        Presentation of the findings Pharmacologic Side Effect Arteriosclerosis Pharmacologic 
+                    </a>
+                    </h2>
+                </div>
+                <div class="c_black-8 font_copy font-size_down-1">
+                    <ul class="ul_inline-semicolon font_regular font_copy">
+                      <li class="no-after font_medium c_primary-n1 Pharmacologic Side Effect Arteriosclerosis Pharmacologic ">Role Type 1:</li>
+                      <li>Pepper H. Soda III, MD, FACC <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
+                      <li class="no-after font_medium c_primary-n1  Pharmacologic Side Effect Arteriosclerosis Pharmacologic ">Role Type 2:</li>
+                      <li>Dianna Denesik III <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
+                      <li>Miguel Romaguera <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
+                      <li>Jeanette Franecki <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
+                    </ul>                </div>
+                <ul class="ul_none flex flex_row justify_start font-size_down-1 c_black-7  m-t_auto lh_0">
+                <li class="inline-block p-r_3 p_2">
+                    <span class="font-size_up c_primary-n2 block"><i class="fal fa-clock"></i> 15</span>
+                    minutes
+                </li>                <li class="inline-block p-r_3 p_2">
+                    <span class="font-size_up c_primary-n2 block">4</span>
+                    presentations
+                </li>                <li class="inline-block br_round p-x_3 m-l_n3 p_2 z_3 h:bg_black-2 br_radius self_end">
+                    <a href="" class="link flex_auto underline h:undecorated">
+                    <span class="font-size_up c_primary-n2"><i class="fal fa-paperclip"></i></span>
+                    Attachments</a>
+                </li>                </ul>
+            </main>
+            <aside class="flex_none p-x_3:md p-b_3">
+                <ul class="b_3 flex flex_column flex_wrap font_n3 gap_2 justify_end:md justify_start r_4 self_center ul_none uppercase p-x_3 m-t_n2">
+                    <li class="flex_auto p-b_3 m-b_auto bookmark-shadow">
+                        <a class="inline-block m-x_n3 m-t_n1">
+                            <span class="fa-stack fa-2x a:c_alert-n2 c_secondary-2 h:c_alert-n3 Pharmacologic Side Effect Arteriosclerosis Pharmacologic ">
+                                <i class="fas fa-bookmark fa-stack-2x c_inherit-all text-shadow_black-1"></i>
+                                <i class="fa-heart c_black-4 h:c_white a:c_white fa-stack-1x fas font-size_down-1  text-shadow_black-n1"></i>
+                            </span>
+                        </a>                    </li>
+                    <li class="lh_0">
+                        <span class="bg_CME br_1 br_black-3 br_round c_white br_solid p-y_1 p_2 block text_center font_regular font_ui">CME</span>                    </li>
+                    <li class="lh_0">
+                        <span class="bg_CNE br_1 br_black-3 br_round c_white br_solid p-y_1 p_2 block text_center font_regular font_ui">CNE</span>                    </li>
+                </ul>
+            </aside>
+        </div>
+        <div class="p_2 p_3:md">
+            <aside class="bg_secondary-3 h:bg_primary-3 p-x_4 p-y_3 br_radius flex flex_row texture_dust relative">
+                <a class="expanded-click-area" href="player@"><i class="fa fa-play p-x_3 c_primary"></i></a>
+                <div class="progress w_100 self_center br_black-2 br_solid bg_black-4 br_1 br_round h_0lh font_n4">
+                    <div class="progress-bar bg_accent" role="progressbar" style="width: %" aria-valuenow="" aria-valuemax="100"></div>
+                </div>
+            </aside>        </div>
+    </article>
+</div></li>
+								<li class=""> <div>
+    <article class="flex flex_grow flex_column w_100  inset-level_up-1 bg_white br_radius shadow_overlap-light relative br_solid br_1 br_black-2">
+        <div class="flex flex_row font_ui justify_start relative w_100 gap_3">
+            <main class="flex flex_column flex_auto justify_between flex_auto relative w_100 isolation_isolate p_3 p_4:lg ">
+                <div class="font_display m-b_3 lh_2 ">
+                    <h1 class="block c_black-6 uppercase font_bold font-size_down lh_1 m_0 m-t_"> Cardiovascular Update for the Clinician III</h1>
+                    <h2 class="font-size_up-1 font_display font_regular lh_2 h:underline c_primary-n3">
+                    <a class="c_inherit-all expanded-click-area z_1">
+                        Presentation of the findings Blood Vessel 
+                    </a>
+                    </h2>
+                </div>
+                <div class="c_black-8 font_copy font-size_down-1">
+                    <ul class="ul_inline-semicolon font_regular font_copy">
+                      <li class="no-after font_medium c_primary-n1 Blood Vessel ">Role Type 1:</li>
+                      <li>Pepper H. Soda III, MD, FACC <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
+                      <li class="no-after font_medium c_primary-n1  Blood Vessel ">Role Type 2:</li>
+                      <li>Dianna Denesik III <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
+                      <li>Miguel Romaguera <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
+                      <li>Jeanette Franecki <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
+                    </ul>                </div>
+                <ul class="ul_none flex flex_row justify_start font-size_down-1 c_black-7  m-t_auto lh_0">
+                <li class="inline-block p-r_3 p_2">
+                    <span class="font-size_up c_primary-n2 block"><i class="fal fa-clock"></i> 15</span>
+                    minutes
+                </li>                <li class="inline-block p-r_3 p_2">
+                    <span class="font-size_up c_primary-n2 block">4</span>
+                    presentations
+                </li>                <li class="inline-block br_round p-x_3 m-l_n3 p_2 z_3 h:bg_black-2 br_radius self_end">
+                    <a href="" class="link flex_auto underline h:undecorated">
+                    <span class="font-size_up c_primary-n2"><i class="fal fa-paperclip"></i></span>
+                    Attachments</a>
+                </li>                </ul>
+            </main>
+            <aside class="flex_none p-x_3:md p-b_3">
+                <ul class="b_3 flex flex_column flex_wrap font_n3 gap_2 justify_end:md justify_start r_4 self_center ul_none uppercase p-x_3 m-t_n2">
+                    <li class="flex_auto p-b_3 m-b_auto bookmark-shadow">
+                        <a class="inline-block m-x_n3 m-t_n1">
+                            <span class="fa-stack fa-2x a:c_alert-n2 c_secondary-2 h:c_alert-n3 Blood Vessel ">
+                                <i class="fas fa-bookmark fa-stack-2x c_inherit-all text-shadow_black-1"></i>
+                                <i class="fa-heart c_black-4 h:c_white a:c_white fa-stack-1x fas font-size_down-1  text-shadow_black-n1"></i>
+                            </span>
+                        </a>                    </li>
+                    <li class="lh_0">
+                        <span class="bg_CME br_1 br_black-3 br_round c_white br_solid p-y_1 p_2 block text_center font_regular font_ui">CME</span>                    </li>
+                    <li class="lh_0">
+                        <span class="bg_CNE br_1 br_black-3 br_round c_white br_solid p-y_1 p_2 block text_center font_regular font_ui">CNE</span>                    </li>
+                </ul>
+            </aside>
+        </div>
+        <div class="p_2 p_3:md">
+            <aside class="bg_secondary-3 h:bg_primary-3 p-x_4 p-y_3 br_radius flex flex_row texture_dust relative">
+                <a class="expanded-click-area" href="player@"><i class="fa fa-play p-x_3 c_primary"></i></a>
+                <div class="progress w_100 self_center br_black-2 br_solid bg_black-4 br_1 br_round h_0lh font_n4">
+                    <div class="progress-bar bg_accent" role="progressbar" style="width: %" aria-valuenow="" aria-valuemax="100"></div>
+                </div>
+            </aside>        </div>
+    </article>
+</div></li>
+								<li class=""> <div>
+    <article class="flex flex_grow flex_column w_100  inset-level_up-1 bg_white br_radius shadow_overlap-light relative br_solid br_1 br_black-2">
+        <div class="flex flex_row font_ui justify_start relative w_100 gap_3">
+            <main class="flex flex_column flex_auto justify_between flex_auto relative w_100 isolation_isolate p_3 p_4:lg ">
+                <div class="font_display m-b_3 lh_2 ">
+                    <h1 class="block c_black-6 uppercase font_bold font-size_down lh_1 m_0 m-t_"> Cardiovascular Update for the Clinician III</h1>
+                    <h2 class="font-size_up-1 font_display font_regular lh_2 h:underline c_primary-n3">
+                    <a class="c_inherit-all expanded-click-area z_1">
+                        Presentation of the findings Pericardial Clinical Cardiovascular Valvular Electrocardiographic Valvular Heart Disease Pericardial Myocardial Side Effect 
+                    </a>
+                    </h2>
+                </div>
+                <div class="c_black-8 font_copy font-size_down-1">
+                    <ul class="ul_inline-semicolon font_regular font_copy">
+                      <li class="no-after font_medium c_primary-n1 Pericardial Clinical Cardiovascular Valvular Electrocardiographic Valvular Heart Disease Pericardial Myocardial Side Effect ">Role Type 1:</li>
+                      <li>Pepper H. Soda III, MD, FACC <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
+                      <li class="no-after font_medium c_primary-n1  Pericardial Clinical Cardiovascular Valvular Electrocardiographic Valvular Heart Disease Pericardial Myocardial Side Effect ">Role Type 2:</li>
+                      <li>Dianna Denesik III <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
+                      <li>Miguel Romaguera <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
+                      <li>Jeanette Franecki <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
+                    </ul>                </div>
+                <ul class="ul_none flex flex_row justify_start font-size_down-1 c_black-7  m-t_auto lh_0">
+                <li class="inline-block p-r_3 p_2">
+                    <span class="font-size_up c_primary-n2 block"><i class="fal fa-clock"></i> 15</span>
+                    minutes
+                </li>                <li class="inline-block p-r_3 p_2">
+                    <span class="font-size_up c_primary-n2 block">4</span>
+                    presentations
+                </li>                <li class="inline-block br_round p-x_3 m-l_n3 p_2 z_3 h:bg_black-2 br_radius self_end">
+                    <a href="" class="link flex_auto underline h:undecorated">
+                    <span class="font-size_up c_primary-n2"><i class="fal fa-paperclip"></i></span>
+                    Attachments</a>
+                </li>                </ul>
+            </main>
+            <aside class="flex_none p-x_3:md p-b_3">
+                <ul class="b_3 flex flex_column flex_wrap font_n3 gap_2 justify_end:md justify_start r_4 self_center ul_none uppercase p-x_3 m-t_n2">
+                    <li class="flex_auto p-b_3 m-b_auto bookmark-shadow">
+                        <a class="inline-block m-x_n3 m-t_n1">
+                            <span class="fa-stack fa-2x a:c_alert-n2 c_secondary-2 h:c_alert-n3 Pericardial Clinical Cardiovascular Valvular Electrocardiographic Valvular Heart Disease Pericardial Myocardial Side Effect ">
+                                <i class="fas fa-bookmark fa-stack-2x c_inherit-all text-shadow_black-1"></i>
+                                <i class="fa-heart c_black-4 h:c_white a:c_white fa-stack-1x fas font-size_down-1  text-shadow_black-n1"></i>
+                            </span>
+                        </a>                    </li>
+                    <li class="lh_0">
+                        <span class="bg_CME br_1 br_black-3 br_round c_white br_solid p-y_1 p_2 block text_center font_regular font_ui">CME</span>                    </li>
+                    <li class="lh_0">
+                        <span class="bg_CNE br_1 br_black-3 br_round c_white br_solid p-y_1 p_2 block text_center font_regular font_ui">CNE</span>                    </li>
+                </ul>
+            </aside>
+        </div>
+        <div class="p_2 p_3:md">
+            <aside class="bg_secondary-3 h:bg_primary-3 p-x_4 p-y_3 br_radius flex flex_row texture_dust relative">
+                <a class="expanded-click-area" href="player@"><i class="fa fa-play p-x_3 c_primary"></i></a>
+                <div class="progress w_100 self_center br_black-2 br_solid bg_black-4 br_1 br_round h_0lh font_n4">
+                    <div class="progress-bar bg_accent" role="progressbar" style="width: %" aria-valuenow="" aria-valuemax="100"></div>
+                </div>
+            </aside>        </div>
+    </article>
+</div></li>
+							</ul>
+							<div class=""><button class="block btn btn-outline-secondary btn-sm m-b_3 m_auto p-x_5">Load More</button></div>
+						</div>
+					</div>
+					</div>
+				</div>
 			</section>
-			<footer class="grid:md flex flex_column grid-template_content grid-area_footerArea m-t_auto gap_4:md gap_3 p_3  ">
+			<footer class="grid:md flex flex_column grid-template_content grid-area_footerArea m-t_auto gap_4:md gap_3 p_3 z_1">
 				<div id="subfooter" class="bg_primary-1 flex_auto font_n1 z_1 br_radius texture_dust shadow_emboss-light p_3 p_4:lg col-end_insertArea-3 col-start">
 				    <ul class="m_auto footer-bottom-links ul_none max-w_80">
 				        <li class="inline p_2"><a href="//www.acc.org/footer-pages/media-center" class="c_white-6 h:c_white">Media Center</a></li>
