@@ -9,33 +9,31 @@ searchActive: true
 <body class="BODY_TAG-stand-in bg_black-4 w_100 p_3:md p_2 grid min-h_100">
 	<div class="page-wrapper grid p_2 p_3:md isolation_isolate br_radius bg_white-7">
 		<div class="grid:md grid-template_page flex flex_column gap_4:md gap_3">
-			<div class="display_none flex:md grid-area_menuArea z_4 relative">
-				<div class="absolute t_0 l_0 b_0">
-					<nav style="height: calc(100vh - 1.5rem); width: 35rem;" id="navigation" class="sticky t_3 h_100vh  shadow_emboss-light filter_blur overflow_hidden br_radius bg_black-7 flex:md flex_column:md justify_between p-t_0 p-b_3 p-l_3 p-r_3 p-b_4:md p-t_4:md p-r_0:md font_4:lg font_3:md font_2 transition_3 font_display nav-mined">
-						<ul class="flex flex_column:md flex_row ul_none justify_around justify_start:md gap_3 w_100 w_auto:md">
-							<li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light active">
-								<a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md" href="../home"><i class="icon fas fa-fw fa-home-heart p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center p-l_3:md p-l_4:lg lowercase lh_0 active font_n2 font_3:md font_4:lg display_none:md opacity_0">Home</span></a>
-							</li>
-							<li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light ">
-								<a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md " href="../search"><i class="icon fas fa-fw fa-search p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center p-l_3:md p-l_4:lg lowercase lh_0 font_n2 font_3:md font_4:lg display_none:md opacity_0">Search</span></a>
-							</li>
-							<li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light ">
-								<a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md" href="../saved"><i class="icon fas fa-fw fa-heart p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center p-l_3:md p-l_4:lg lowercase lh_0 font_n2 font_3:md font_4:lg display_none:md opacity_0">Saved</span></a>
-							</li>
-							<li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light ">
-								<a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md" href="../credits"><i class="icon fas fa-fw fa-award p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center p-l_3:md p-l_4:lg lowercase lh_0 font_n2 font_3:md font_4:lg display_none:md opacity_0">Credits</span></a>
-							</li>
-							<li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light disabled cursor_not-allowed opacity_3 ">
-								<a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md" href="../watching"><i class="icon fas fa-fw fa-play p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center p-l_3:md p-l_4:lg lowercase lh_0 font_n2 font_3:md font_4:lg display_none:md opacity_0">Watching</span></a>
-							</li>
-						</ul>
-						<ul class="flex_column:md flex_row ul_none justify_center gap_3 flex">
-							<li class="nav-item flex_auto br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 bg_acc-n1 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light">
-								<a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md"><i class="icon fas fa-fw fa-sign-out-alt p-x_2 p-y_3 p-y_0:md self_center"></i><span class="label self_center p-l_3:md p-l_4:lg lowercase lh_0 font_n2 font_3:md font_4:lg display_none:md opacity_0">Log Out</span></a>
-							</li>
-						</ul>
-					</nav>
-				</div>
+			<div style="height: calc(100vh - 1.5rem);" class="display_none flex:md sticky t_3  grid-area_menuArea z_4">
+				<nav style="height: calc(100vh - 1.5rem); width: 35rem;" id="navigation" class="absolute h_100vh shadow_emboss-light filter_blur overflow_hidden br_radius bg_black-7 flex:md flex_column:md justify_between p-t_0 p-b_3 p-l_3 p-r_3 p-b_4:md p-t_4:md p-r_0:md font_4:lg font_3:md font_2 transition_3 font_display nav-mined">
+					<ul class="flex flex_column:md flex_row ul_none justify_around justify_start:md gap_3 w_100 w_auto:md">
+						<li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light active">
+							<a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md" href="../home"><i class="icon fas fa-fw fa-home-heart p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center p-l_3:md p-l_4:lg lowercase lh_0 active font_n2 font_3:md font_4:lg display_none:md opacity_0">Home</span></a>
+						</li>
+						<li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light ">
+							<a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md " href="../search"><i class="icon fas fa-fw fa-search p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center p-l_3:md p-l_4:lg lowercase lh_0 font_n2 font_3:md font_4:lg display_none:md opacity_0">Search</span></a>
+						</li>
+						<li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light ">
+							<a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md" href="../saved"><i class="icon fas fa-fw fa-heart p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center p-l_3:md p-l_4:lg lowercase lh_0 font_n2 font_3:md font_4:lg display_none:md opacity_0">Saved</span></a>
+						</li>
+						<li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light ">
+							<a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md" href="../credits"><i class="icon fas fa-fw fa-award p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center p-l_3:md p-l_4:lg lowercase lh_0 font_n2 font_3:md font_4:lg display_none:md opacity_0">Credits</span></a>
+						</li>
+						<li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light disabled cursor_not-allowed opacity_3 ">
+							<a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md" href="../watching"><i class="icon fas fa-fw fa-play p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center p-l_3:md p-l_4:lg lowercase lh_0 font_n2 font_3:md font_4:lg display_none:md opacity_0">Watching</span></a>
+						</li>
+					</ul>
+					<ul class="flex_column:md flex_row ul_none justify_center gap_3 flex">
+						<li class="nav-item flex_auto br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 bg_acc-n1 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light">
+							<a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md"><i class="icon fas fa-fw fa-sign-out-alt p-x_2 p-y_3 p-y_0:md self_center"></i><span class="label self_center p-l_3:md p-l_4:lg lowercase lh_0 font_n2 font_3:md font_4:lg display_none:md opacity_0">Log Out</span></a>
+						</li>
+					</ul>
+				</nav>
 			</div>
 			<nav id="navigation_mobile" class="block display_none:md shadow_emboss-light filter_blur br_radius bg_black-6 p_2 sticky t_3 z_4">
 				<ul class="flex flex_row ul_none justify_between">
@@ -98,7 +96,7 @@ searchActive: true
 							</li>
 						</ul>
 					</nav>
-					<ul id="filterFacets" class="ul_none font_n1 {display_none} opacity_none transition_3 max-h_100p">
+					<ul id="filterFacets" class="ul_none font_n1 {display_none} opacity_none transition_3 min-h_30:md">
 						<li data-name="library-search-facet" class="bg_white-8 br_radius m-t_3 p_3 max-w_20:md Filter1">
 							<header class="flex font-size_up m-y_2">
 								<div class="flex_auto  self_center p-l_0 lh_1 font-size_up font_medium">Type Ahead Filter</div>
@@ -125,8 +123,8 @@ searchActive: true
 								<ul class="p-y_3 ul_none br-t_1 br-b_1 br_primary-3 transition_3 br_solid">
 									<li class="m-y_2">
 										<div class="input flex user-select_none relative h:bg_black-1 br_radius">
-											<div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacetfacet_6853" id="checkfacetfacet_6853" class="font-size_up"></div>
-											<div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacetfacet_6853" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> type ahead filter facet_6853</span></label></div>
+											<div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacetfacet_7226" id="checkfacetfacet_7226" class="font-size_up"></div>
+											<div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacetfacet_7226" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> type ahead filter facet_7226</span></label></div>
 											<div class="">
 												<button class="bg_transparent br_0 br_radius c_alert h:bg_alert-3 h:c_alert-n3 p-y_2"><i class="fas fa-trash"></i></button>
 											</div>
@@ -135,8 +133,8 @@ searchActive: true
 									</li>
 									<li class="m-y_2">
 										<div class="input flex user-select_none relative h:bg_black-1 br_radius">
-											<div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacetfacet_3626" id="checkfacetfacet_3626" class="font-size_up"></div>
-											<div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacetfacet_3626" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> type ahead filter facet_3626</span></label></div>
+											<div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacetfacet_8343" id="checkfacetfacet_8343" class="font-size_up"></div>
+											<div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacetfacet_8343" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> type ahead filter facet_8343</span></label></div>
 											<div class="">
 												<button class="bg_transparent br_0 br_radius c_alert h:bg_alert-3 h:c_alert-n3 p-y_2"><i class="fas fa-trash"></i></button>
 											</div>
@@ -164,36 +162,36 @@ searchActive: true
 								<ul class="p-y_3 ul_none br-t_1 br-b_1 br_primary-3 transition_3 br_solid">
 									<li class="m-y_2">
 										<div class="input flex user-select_none relative h:bg_black-1 br_radius">
-											<div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_6240" id="checkfacet_6240" class="font-size_up"></div>
-											<div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_6240" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_6240ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
+											<div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_2810" id="checkfacet_2810" class="font-size_up"></div>
+											<div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_2810" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_2810ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
 											<!---->
 										</div>
 									</li>
 									<li class="m-y_2">
 										<div class="input flex user-select_none relative h:bg_black-1 br_radius">
-											<div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_5947" id="checkfacet_5947" class="font-size_up"></div>
-											<div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_5947" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_5947ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
+											<div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_9949" id="checkfacet_9949" class="font-size_up"></div>
+											<div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_9949" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_9949ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
 											<!---->
 										</div>
 									</li>
 									<li class="m-y_2">
 										<div class="input flex user-select_none relative h:bg_black-1 br_radius">
-											<div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_8619" id="checkfacet_8619" class="font-size_up"></div>
-											<div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_8619" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_8619ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
+											<div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_7900" id="checkfacet_7900" class="font-size_up"></div>
+											<div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_7900" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_7900ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
 											<!---->
 										</div>
 									</li>
 									<li class="m-y_2">
 										<div class="input flex user-select_none relative h:bg_black-1 br_radius">
-											<div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_9169" id="checkfacet_9169" class="font-size_up"></div>
-											<div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_9169" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_9169ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
+											<div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_5119" id="checkfacet_5119" class="font-size_up"></div>
+											<div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_5119" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_5119ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
 											<!---->
 										</div>
 									</li>
 									<li class="m-y_2">
 										<div class="input flex user-select_none relative h:bg_black-1 br_radius">
-											<div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_1185" id="checkfacet_1185" class="font-size_up"></div>
-											<div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_1185" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_1185ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
+											<div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_5489" id="checkfacet_5489" class="font-size_up"></div>
+											<div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_5489" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_5489ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
 											<!---->
 										</div>
 									</li>
@@ -218,36 +216,36 @@ searchActive: true
 								<ul class="p-y_3 ul_none br-t_1 br-b_1 br_primary-3 transition_3 br_solid">
 									<li class="m-y_2">
 										<div class="input flex user-select_none relative h:bg_black-1 br_radius">
-											<div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_4023" id="checkfacet_4023" class="font-size_up"></div>
-											<div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_4023" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_4023ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
+											<div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_5136" id="checkfacet_5136" class="font-size_up"></div>
+											<div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_5136" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_5136ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
 											<!---->
 										</div>
 									</li>
 									<li class="m-y_2">
 										<div class="input flex user-select_none relative h:bg_black-1 br_radius">
-											<div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_2840" id="checkfacet_2840" class="font-size_up"></div>
-											<div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_2840" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_2840ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
+											<div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_0887" id="checkfacet_0887" class="font-size_up"></div>
+											<div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_0887" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_0887ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
 											<!---->
 										</div>
 									</li>
 									<li class="m-y_2">
 										<div class="input flex user-select_none relative h:bg_black-1 br_radius">
-											<div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_9508" id="checkfacet_9508" class="font-size_up"></div>
-											<div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_9508" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_9508ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
+											<div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_5992" id="checkfacet_5992" class="font-size_up"></div>
+											<div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_5992" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_5992ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
 											<!---->
 										</div>
 									</li>
 									<li class="m-y_2">
 										<div class="input flex user-select_none relative h:bg_black-1 br_radius">
-											<div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_3379" id="checkfacet_3379" class="font-size_up"></div>
-											<div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_3379" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_3379ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
+											<div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_6184" id="checkfacet_6184" class="font-size_up"></div>
+											<div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_6184" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_6184ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
 											<!---->
 										</div>
 									</li>
 									<li class="m-y_2">
 										<div class="input flex user-select_none relative h:bg_black-1 br_radius">
-											<div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_4086" id="checkfacet_4086" class="font-size_up"></div>
-											<div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_4086" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_4086ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
+											<div class="flex_none p-l_3 p-r_3 self_center"><input type="checkbox" name="checkfacet_8613" id="checkfacet_8613" class="font-size_up"></div>
+											<div class="flex_auto self_center p-l_2 p-y_2"><label for="checkfacet_8613" class="font-size_up lh_2 block"><span class="font_regular p-y_2 inline-block p-y_1:md"> facet_8613ut nobis est<small class="flex_auto p-l_2 font_light c_accent font-size_down-1">58</small></span></label></div>
 											<!---->
 										</div>
 									</li>
@@ -268,20 +266,20 @@ searchActive: true
 								setTimeout(function () {
 									filterFacets.classList.toggle("{display_none}");
 									filterFacets.classList.toggle("display_none");
-									filterFacets.classList.toggle("max-h_0");
-									filterFacets.classList.toggle("max-h_100p");
+									filterFacets.classList.toggle("min-h_0:md");
+									filterFacets.classList.toggle("min-h_30:md");
 									filterZone.classList.remove("{aspect_1_1:md}", "{nav-mined}", "nav-maxed");
 									filterZone.classList.add("aspect_1_1:md", "nav-mined", "{nav-maxed}");
 									filterZoneNav.querySelector("span.label").classList.toggle("{display_none:md}");
 									filterZoneNav.querySelector("span.label").classList.toggle("display_none:md");
 									filterZoneExpanded = false;
-								}, 500);
+								}, 300);
 								return;
 							} else {
 								filterZone.classList.add("{aspect_1_1:md}", "{nav-mined}", "nav-maxed");
 								filterZone.classList.remove("aspect_1_1:md", "nav-mined", "{nav-maxed}");
-								filterFacets.classList.toggle("max-h_0");
-								filterFacets.classList.toggle("max-h_100p");
+								filterFacets.classList.toggle("min-h_0:md");
+								filterFacets.classList.toggle("min-h_30:md");
 								filterFacets.classList.toggle("{display_none}");
 								filterFacets.classList.toggle("display_none");
 								setTimeout(function () {
@@ -290,17 +288,13 @@ searchActive: true
 									filterZoneNav.querySelector("span.label").classList.toggle("{display_none:md}");
 									filterZoneNav.querySelector("span.label").classList.toggle("display_none:md");
 									filterZoneExpanded = true;
-								}, 500);
+								}, 300);
 								return;
 							}
 						});
 					</script>
-					<style>
-						.max-h_0{max-height: 0px;}
-						.max-h_100p{max-height: calc(100% - 1px);}
-					</style>
 				</div>
-				<div class="col-start_insertArea-1 col-end_insertArea-4 	 row-start_1">
+				<div class="col-start_insertArea-1 col-end_insertArea-4 row-start_1" id="SearchBarTop">
 					<div class=" sticky t_0 r_0 z_1">
 						<div class="absolute r_4 t_0  flex flex_row flex_nowrap gap-x_3">
 							<!--  Helper Jump links -->
@@ -331,7 +325,7 @@ searchActive: true
 							</button>
 						</div>
 					</div>
-					<div class="p-y_2 p-y_3:md p-y_4:lg font_2">
+					<div class="p-y_2 p-y_3:md p-y_4:lg">
 						<div class="c_secondary-2 font_medium font-size_down-2 font_ui p_2 ">
 							<ul class="ul_inline-pipe">
 								<li>
@@ -364,25 +358,25 @@ searchActive: true
 						</nav>
 						<div class="tab-content" id="nav-tabContent">
 							<div class="tab-pane fade" id="ActiveLink" role="tabpanel" aria-labelledby="ActiveLink">
-								<ul class="ul_none flex flex_column gap_2 gap_3:md gap_4:lg p-y_2 p-y_3:md p-y_4:lg">
+								<ul class="ul_none flex flex_column gap_3 gap_4:lg p-y_2 p-y_3:md p-y_4:lg">
 									<li class="">
 										<div>
 											<article class="flex flex_grow w_100 inset-level_up-1 bg_white br_radius shadow_overlap-light relative br_solid br_1 br_black-2">
 												<div class="flex flex_row font_ui justify_start relative w_100">
-													<main class="flex flex_column flex_auto justify_between flex_auto relative w_100 isolation_isolate p_3 p_4:lg">
+													<main class="flex flex_column flex_auto justify_between flex_auto relative w_100 isolation_isolate p_4">
 														<h2 class="font-size_up-1 font_display font_regular lh_2 h:underline c_primary-n3 m-t_2">
-															<a class="c_inherit-all expanded-click-area z_1"> Clinical Update for the Clinical Arteriosclerosis </a>
+															<a class="c_inherit-all expanded-click-area z_1"> Clinical Update for the Clinical Valvular Myocardial Valvular </a>
 														</h2>
-														<ul class="ul_none flex flex_row flex_wrap justify_start font-size_down-1 c_black-7 m-t_auto lh_0 items_end">
+														<ul class="ul_none flex flex_row flex_wrap justify_start font-size_down-1 c_black-7 m-t_auto lh_0 items_end gap_2">
 															<li class="inline-block p-r_3 p_2">
-																<span class="font-size_up c_primary-n2 block"><i class="fal fa-clock"></i> 15</span> minutes
+																<span class="font-size_up c_accent-n2 block"><i class="fal fa-clock"></i> 15</span> minutes
 															</li>
 															<li class="inline-block p-r_3 p_2">
-																<span class="font-size_up c_primary-n2 block">4</span> presentations
+																<span class="font-size_up c_accent-n2 block">4</span> presentations
 															</li>
-															<li class="inline-block br_round p-x_3 m-l_n3 p_2 z_3 h:bg_black-2 br_radius self_end">
-																<a href="" class="link flex_auto underline h:undecorated">
-																	<span class="font-size_up c_primary-n2"><i class="fal fa-paperclip"></i></span> Attachments</a>
+															<li class="inline-block br_radius p-x_3 m-l_n3 p_2 z_3 self_end relative h:bg_black-2">
+																<a href="" class="undecorated h:undecorated expanded-click-area">
+																	<span class="font-size_up c_primary-n2 block"><i class="fal fa-paperclip p-r_3"></i> <span>ZIP</span></span> Attachments </a>
 															</li>
 														</ul>
 													</main>
@@ -390,7 +384,7 @@ searchActive: true
 														<ul class="b_3 flex flex_column flex_wrap font_n3 gap_2 justify_end:md justify_start r_4 self_center ul_none uppercase p-x_3 m-t_n2 items_center">
 															<li class="flex_auto p-b_3 m-b_auto">
 																<a class="inline-block m-x_n3 m-t_n1">
-																	<span class="fa-stack fa-2x a:c_alert-n2 c_secondary-2 h:c_alert-n3 Clinical Arteriosclerosis ">
+																	<span class="fa-stack fa-2x a:c_alert-n2 c_secondary-2 h:c_alert-n3 Clinical Valvular Myocardial Valvular ">
 																		<i class="fas fa-bookmark fa-stack-2x c_inherit-all text-shadow_black-1"></i>
 																		<i class="fa-heart c_black-4 h:c_white a:c_white fa-stack-1x fas font-size_down-1  text-shadow_black-n1"></i>
 																	</span>
@@ -415,20 +409,20 @@ searchActive: true
 										<div>
 											<article class="flex flex_grow w_100 inset-level_up-1 bg_white br_radius shadow_overlap-light relative br_solid br_1 br_black-2">
 												<div class="flex flex_row font_ui justify_start relative w_100">
-													<main class="flex flex_column flex_auto justify_between flex_auto relative w_100 isolation_isolate p_3 p_4:lg">
+													<main class="flex flex_column flex_auto justify_between flex_auto relative w_100 isolation_isolate p_4">
 														<h2 class="font-size_up-1 font_display font_regular lh_2 h:underline c_primary-n3 m-t_2">
-															<a class="c_inherit-all expanded-click-area z_1"> Clinical Update for the Cardiovascular </a>
+															<a class="c_inherit-all expanded-click-area z_1"> Clinical Update for the Valvular Heart Disease Pharmacologic Clinical Electrocardiogram Clinical Arteriosclerosis Side Effect Arrhythmia </a>
 														</h2>
-														<ul class="ul_none flex flex_row flex_wrap justify_start font-size_down-1 c_black-7 m-t_auto lh_0 items_end">
+														<ul class="ul_none flex flex_row flex_wrap justify_start font-size_down-1 c_black-7 m-t_auto lh_0 items_end gap_2">
 															<li class="inline-block p-r_3 p_2">
-																<span class="font-size_up c_primary-n2 block"><i class="fal fa-clock"></i> 15</span> minutes
+																<span class="font-size_up c_accent-n2 block"><i class="fal fa-clock"></i> 15</span> minutes
 															</li>
 															<li class="inline-block p-r_3 p_2">
-																<span class="font-size_up c_primary-n2 block">4</span> presentations
+																<span class="font-size_up c_accent-n2 block">4</span> presentations
 															</li>
-															<li class="inline-block br_round p-x_3 m-l_n3 p_2 z_3 h:bg_black-2 br_radius self_end">
-																<a href="" class="link flex_auto underline h:undecorated">
-																	<span class="font-size_up c_primary-n2"><i class="fal fa-paperclip"></i></span> Attachments</a>
+															<li class="inline-block br_radius p-x_3 m-l_n3 p_2 z_3 self_end relative h:bg_black-2">
+																<a href="" class="undecorated h:undecorated expanded-click-area">
+																	<span class="font-size_up c_primary-n2 block"><i class="fal fa-paperclip p-r_3"></i> <span>ZIP</span></span> Attachments </a>
 															</li>
 														</ul>
 													</main>
@@ -436,7 +430,7 @@ searchActive: true
 														<ul class="b_3 flex flex_column flex_wrap font_n3 gap_2 justify_end:md justify_start r_4 self_center ul_none uppercase p-x_3 m-t_n2 items_center">
 															<li class="flex_auto p-b_3 m-b_auto">
 																<a class="inline-block m-x_n3 m-t_n1">
-																	<span class="fa-stack fa-2x a:c_alert-n2 c_secondary-2 h:c_alert-n3 Cardiovascular ">
+																	<span class="fa-stack fa-2x a:c_alert-n2 c_secondary-2 h:c_alert-n3 Valvular Heart Disease Pharmacologic Clinical Electrocardiogram Clinical Arteriosclerosis Side Effect Arrhythmia ">
 																		<i class="fas fa-bookmark fa-stack-2x c_inherit-all text-shadow_black-1"></i>
 																		<i class="fa-heart c_black-4 h:c_white a:c_white fa-stack-1x fas font-size_down-1  text-shadow_black-n1"></i>
 																	</span>
@@ -461,20 +455,20 @@ searchActive: true
 										<div>
 											<article class="flex flex_grow w_100 inset-level_up-1 bg_white br_radius shadow_overlap-light relative br_solid br_1 br_black-2">
 												<div class="flex flex_row font_ui justify_start relative w_100">
-													<main class="flex flex_column flex_auto justify_between flex_auto relative w_100 isolation_isolate p_3 p_4:lg">
+													<main class="flex flex_column flex_auto justify_between flex_auto relative w_100 isolation_isolate p_4">
 														<h2 class="font-size_up-1 font_display font_regular lh_2 h:underline c_primary-n3 m-t_2">
-															<a class="c_inherit-all expanded-click-area z_1"> Clinical Update for the Clinical Pericardial Cardiovascular Blood Vessel Arrhythmia Pericardial Electrocardiographic Valvular </a>
+															<a class="c_inherit-all expanded-click-area z_1"> Clinical Update for the Pericardial Cardiovascular Arteriosclerosis Side Effect Side Effect Blood Vessel Valvular Heart Disease Electrocardiographic Electrocardiographic </a>
 														</h2>
-														<ul class="ul_none flex flex_row flex_wrap justify_start font-size_down-1 c_black-7 m-t_auto lh_0 items_end">
+														<ul class="ul_none flex flex_row flex_wrap justify_start font-size_down-1 c_black-7 m-t_auto lh_0 items_end gap_2">
 															<li class="inline-block p-r_3 p_2">
-																<span class="font-size_up c_primary-n2 block"><i class="fal fa-clock"></i> 15</span> minutes
+																<span class="font-size_up c_accent-n2 block"><i class="fal fa-clock"></i> 15</span> minutes
 															</li>
 															<li class="inline-block p-r_3 p_2">
-																<span class="font-size_up c_primary-n2 block">4</span> presentations
+																<span class="font-size_up c_accent-n2 block">4</span> presentations
 															</li>
-															<li class="inline-block br_round p-x_3 m-l_n3 p_2 z_3 h:bg_black-2 br_radius self_end">
-																<a href="" class="link flex_auto underline h:undecorated">
-																	<span class="font-size_up c_primary-n2"><i class="fal fa-paperclip"></i></span> Attachments</a>
+															<li class="inline-block br_radius p-x_3 m-l_n3 p_2 z_3 self_end relative h:bg_black-2">
+																<a href="" class="undecorated h:undecorated expanded-click-area">
+																	<span class="font-size_up c_primary-n2 block"><i class="fal fa-paperclip p-r_3"></i> <span>ZIP</span></span> Attachments </a>
 															</li>
 														</ul>
 													</main>
@@ -482,7 +476,7 @@ searchActive: true
 														<ul class="b_3 flex flex_column flex_wrap font_n3 gap_2 justify_end:md justify_start r_4 self_center ul_none uppercase p-x_3 m-t_n2 items_center">
 															<li class="flex_auto p-b_3 m-b_auto">
 																<a class="inline-block m-x_n3 m-t_n1">
-																	<span class="fa-stack fa-2x a:c_alert-n2 c_secondary-2 h:c_alert-n3 Clinical Pericardial Cardiovascular Blood Vessel Arrhythmia Pericardial Electrocardiographic Valvular ">
+																	<span class="fa-stack fa-2x a:c_alert-n2 c_secondary-2 h:c_alert-n3 Pericardial Cardiovascular Arteriosclerosis Side Effect Side Effect Blood Vessel Valvular Heart Disease Electrocardiographic Electrocardiographic ">
 																		<i class="fas fa-bookmark fa-stack-2x c_inherit-all text-shadow_black-1"></i>
 																		<i class="fa-heart c_black-4 h:c_white a:c_white fa-stack-1x fas font-size_down-1  text-shadow_black-n1"></i>
 																	</span>
@@ -507,38 +501,35 @@ searchActive: true
 								<div class=""><button class="block btn btn-outline-secondary btn-sm m-b_3 m_auto p-x_5">Load More</button></div>
 							</div>
 							<div class="tab-pane fade active show" id="BasicLink" role="tabpanel" aria-labelledby="BasicLink">
-								<ul class="ul_none flex flex_column gap_2 gap_3:md gap_4:lg p-y_2 p-y_3:md p-y_4:lg">
+								<ul class="ul_none flex flex_column gap_3 gap_4:lg p-y_2 p-y_3:md p-y_4:lg">
 									<li class="">
 										<div>
 											<article class="flex flex_grow flex_column w_100  inset-level_up-1 bg_white br_radius shadow_overlap-light relative br_solid br_1 br_black-2">
 												<div class="flex flex_row font_ui justify_start relative w_100 gap_3">
-													<main class="flex flex_column flex_auto justify_between flex_auto relative w_100 isolation_isolate p_3 p_4:lg ">
+													<main class="flex flex_column flex_auto gap_3 justify_between flex_auto relative w_100 isolation_isolate p_4 ">
 														<div class="font_display m-b_3 lh_2 ">
-															<h1 class="block c_black-6 uppercase font_bold font-size_down lh_1 m_0 m-t_"> Cardiovascular Update for the Clinician III</h1>
-															<h2 class="font-size_up-1 font_display font_regular lh_2 h:underline c_primary-n3">
-																<a class="c_inherit-all expanded-click-area z_1"> Presentation of the findings Pharmacologic Chest Pain Electrocardiogram Chest Pain Clinical Arrhythmia Pericardial Pericardial Myocardial </a>
+															<h1 class="block c_black-6 uppercase font_bold font-size_down lh_2 m-y_2"> Cardiovascular Update for the Clinician III</h1>
+															<h2 class="font-size_up-1 font_display font_regular lh_1 h:underline c_primary-n3 m_0">
+																<a class="c_inherit-all expanded-click-area z_1"> Presentation of the findings Cardiovascular Chest Pain Arrhythmia Electrocardiogram Side Effect Clinical </a>
 															</h2>
 														</div>
 														<div class="c_black-8 font_copy font-size_down-1">
 															<ul class="ul_inline-semicolon font_regular font_copy">
-																<li class="no-after font_medium c_primary-n1 Pharmacologic Chest Pain Electrocardiogram Chest Pain Clinical Arrhythmia Pericardial Pericardial Myocardial ">Role Type 1:</li>
+																<li class="no-after font_medium c_primary-n1 Cardiovascular Chest Pain Arrhythmia Electrocardiogram Side Effect Clinical ">Role Type 1:</li>
 																<li>Pepper H. Soda III, MD, FACC <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
-																<li class="no-after font_medium c_primary-n1  Pharmacologic Chest Pain Electrocardiogram Chest Pain Clinical Arrhythmia Pericardial Pericardial Myocardial ">Role Type 2:</li>
+																<li class="no-after font_medium c_primary-n1  Cardiovascular Chest Pain Arrhythmia Electrocardiogram Side Effect Clinical ">Role Type 2:</li>
 																<li>Dianna Denesik III <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
 																<li>Miguel Romaguera <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
 																<li>Jeanette Franecki <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
 															</ul>
 														</div>
-														<ul class="ul_none flex flex_row justify_start font-size_down-1 c_black-7  m-t_auto lh_0">
+														<ul class="ul_none flex flex_row flex_wrap justify_start font-size_down-1 c_black-7 m-t_auto lh_0 items_end gap_2">
 															<li class="inline-block p-r_3 p_2">
-																<span class="font-size_up c_primary-n2 block"><i class="fal fa-clock"></i> 15</span> minutes
+																<span class="font-size_up c_accent-n2 block"><i class="fal fa-clock"></i> 15</span> minutes
 															</li>
-															<li class="inline-block p-r_3 p_2">
-																<span class="font-size_up c_primary-n2 block">4</span> presentations
-															</li>
-															<li class="inline-block br_round p-x_3 m-l_n3 p_2 z_3 h:bg_black-2 br_radius self_end">
-																<a href="" class="link flex_auto underline h:undecorated">
-																	<span class="font-size_up c_primary-n2"><i class="fal fa-paperclip"></i></span> Attachments</a>
+															<li class="inline-block br_radius p-x_3 m-l_n3 p_2 z_3 self_end relative h:bg_black-2">
+																<a href="" class="undecorated h:undecorated expanded-click-area">
+																	<span class="font-size_up c_primary-n2 block"><i class="fal fa-paperclip p-r_3"></i> <span>PDF</span></span> Attachments </a>
 															</li>
 														</ul>
 													</main>
@@ -546,7 +537,7 @@ searchActive: true
 														<ul class="b_3 flex flex_column flex_wrap font_n3 gap_2 justify_end:md justify_start r_4 self_center ul_none uppercase p-x_3 m-t_n2 items_center">
 															<li class="flex_auto p-b_3 m-b_auto">
 																<a class="inline-block m-x_n3 m-t_n1">
-																	<span class="fa-stack fa-2x a:c_alert-n2 c_secondary-2 h:c_alert-n3 Pharmacologic Chest Pain Electrocardiogram Chest Pain Clinical Arrhythmia Pericardial Pericardial Myocardial ">
+																	<span class="fa-stack fa-2x a:c_alert-n2 c_secondary-2 h:c_alert-n3 Cardiovascular Chest Pain Arrhythmia Electrocardiogram Side Effect Clinical ">
 																		<i class="fas fa-bookmark fa-stack-2x c_inherit-all text-shadow_black-1"></i>
 																		<i class="fa-heart c_black-4 h:c_white a:c_white fa-stack-1x fas font-size_down-1  text-shadow_black-n1"></i>
 																	</span>
@@ -578,33 +569,30 @@ searchActive: true
 										<div>
 											<article class="flex flex_grow flex_column w_100  inset-level_up-1 bg_white br_radius shadow_overlap-light relative br_solid br_1 br_black-2">
 												<div class="flex flex_row font_ui justify_start relative w_100 gap_3">
-													<main class="flex flex_column flex_auto justify_between flex_auto relative w_100 isolation_isolate p_3 p_4:lg ">
+													<main class="flex flex_column flex_auto gap_3 justify_between flex_auto relative w_100 isolation_isolate p_4 ">
 														<div class="font_display m-b_3 lh_2 ">
-															<h1 class="block c_black-6 uppercase font_bold font-size_down lh_1 m_0 m-t_"> Cardiovascular Update for the Clinician III</h1>
-															<h2 class="font-size_up-1 font_display font_regular lh_2 h:underline c_primary-n3">
-																<a class="c_inherit-all expanded-click-area z_1"> Presentation of the findings Pharmacologic Chest Pain Electrocardiogram Chest Pain Clinical Arrhythmia Pericardial Pericardial Myocardial </a>
+															<h1 class="block c_black-6 uppercase font_bold font-size_down lh_2 m-y_2"> Cardiovascular Update for the Clinician III</h1>
+															<h2 class="font-size_up-1 font_display font_regular lh_1 h:underline c_primary-n3 m_0">
+																<a class="c_inherit-all expanded-click-area z_1"> Presentation of the findings Side Effect Valvular Valvular Heart Disease Arrhythmia Side Effect Clinical Side Effect Clinical Clinical </a>
 															</h2>
 														</div>
 														<div class="c_black-8 font_copy font-size_down-1">
 															<ul class="ul_inline-semicolon font_regular font_copy">
-																<li class="no-after font_medium c_primary-n1 Pharmacologic Chest Pain Electrocardiogram Chest Pain Clinical Arrhythmia Pericardial Pericardial Myocardial ">Role Type 1:</li>
+																<li class="no-after font_medium c_primary-n1 Side Effect Valvular Valvular Heart Disease Arrhythmia Side Effect Clinical Side Effect Clinical Clinical ">Role Type 1:</li>
 																<li>Pepper H. Soda III, MD, FACC <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
-																<li class="no-after font_medium c_primary-n1  Pharmacologic Chest Pain Electrocardiogram Chest Pain Clinical Arrhythmia Pericardial Pericardial Myocardial ">Role Type 2:</li>
+																<li class="no-after font_medium c_primary-n1  Side Effect Valvular Valvular Heart Disease Arrhythmia Side Effect Clinical Side Effect Clinical Clinical ">Role Type 2:</li>
 																<li>Dianna Denesik III <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
 																<li>Miguel Romaguera <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
 																<li>Jeanette Franecki <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
 															</ul>
 														</div>
-														<ul class="ul_none flex flex_row justify_start font-size_down-1 c_black-7  m-t_auto lh_0">
+														<ul class="ul_none flex flex_row flex_wrap justify_start font-size_down-1 c_black-7 m-t_auto lh_0 items_end gap_2">
 															<li class="inline-block p-r_3 p_2">
-																<span class="font-size_up c_primary-n2 block"><i class="fal fa-clock"></i> 15</span> minutes
+																<span class="font-size_up c_accent-n2 block"><i class="fal fa-clock"></i> 15</span> minutes
 															</li>
-															<li class="inline-block p-r_3 p_2">
-																<span class="font-size_up c_primary-n2 block">4</span> presentations
-															</li>
-															<li class="inline-block br_round p-x_3 m-l_n3 p_2 z_3 h:bg_black-2 br_radius self_end">
-																<a href="" class="link flex_auto underline h:undecorated">
-																	<span class="font-size_up c_primary-n2"><i class="fal fa-paperclip"></i></span> Attachments</a>
+															<li class="inline-block br_radius p-x_3 m-l_n3 p_2 z_3 self_end relative h:bg_black-2">
+																<a href="" class="undecorated h:undecorated expanded-click-area">
+																	<span class="font-size_up c_primary-n2 block"><i class="fal fa-paperclip p-r_3"></i> <span>PDF</span></span> Attachments </a>
 															</li>
 														</ul>
 													</main>
@@ -612,7 +600,7 @@ searchActive: true
 														<ul class="b_3 flex flex_column flex_wrap font_n3 gap_2 justify_end:md justify_start r_4 self_center ul_none uppercase p-x_3 m-t_n2 items_center">
 															<li class="flex_auto p-b_3 m-b_auto">
 																<a class="inline-block m-x_n3 m-t_n1">
-																	<span class="fa-stack fa-2x a:c_alert-n2 c_secondary-2 h:c_alert-n3 Pharmacologic Chest Pain Electrocardiogram Chest Pain Clinical Arrhythmia Pericardial Pericardial Myocardial ">
+																	<span class="fa-stack fa-2x a:c_alert-n2 c_secondary-2 h:c_alert-n3 Side Effect Valvular Valvular Heart Disease Arrhythmia Side Effect Clinical Side Effect Clinical Clinical ">
 																		<i class="fas fa-bookmark fa-stack-2x c_inherit-all text-shadow_black-1"></i>
 																		<i class="fa-heart c_black-4 h:c_white a:c_white fa-stack-1x fas font-size_down-1  text-shadow_black-n1"></i>
 																	</span>
@@ -644,33 +632,30 @@ searchActive: true
 										<div>
 											<article class="flex flex_grow flex_column w_100  inset-level_up-1 bg_white br_radius shadow_overlap-light relative br_solid br_1 br_black-2">
 												<div class="flex flex_row font_ui justify_start relative w_100 gap_3">
-													<main class="flex flex_column flex_auto justify_between flex_auto relative w_100 isolation_isolate p_3 p_4:lg ">
+													<main class="flex flex_column flex_auto gap_3 justify_between flex_auto relative w_100 isolation_isolate p_4 ">
 														<div class="font_display m-b_3 lh_2 ">
-															<h1 class="block c_black-6 uppercase font_bold font-size_down lh_1 m_0 m-t_"> Cardiovascular Update for the Clinician III</h1>
-															<h2 class="font-size_up-1 font_display font_regular lh_2 h:underline c_primary-n3">
-																<a class="c_inherit-all expanded-click-area z_1"> Presentation of the findings Pharmacologic Chest Pain Electrocardiogram Chest Pain Clinical Arrhythmia Pericardial Pericardial Myocardial </a>
+															<h1 class="block c_black-6 uppercase font_bold font-size_down lh_2 m-y_2"> Cardiovascular Update for the Clinician III</h1>
+															<h2 class="font-size_up-1 font_display font_regular lh_1 h:underline c_primary-n3 m_0">
+																<a class="c_inherit-all expanded-click-area z_1"> Presentation of the findings Pericardial Valvular Cardiovascular Electrocardiogram Side Effect </a>
 															</h2>
 														</div>
 														<div class="c_black-8 font_copy font-size_down-1">
 															<ul class="ul_inline-semicolon font_regular font_copy">
-																<li class="no-after font_medium c_primary-n1 Pharmacologic Chest Pain Electrocardiogram Chest Pain Clinical Arrhythmia Pericardial Pericardial Myocardial ">Role Type 1:</li>
+																<li class="no-after font_medium c_primary-n1 Pericardial Valvular Cardiovascular Electrocardiogram Side Effect ">Role Type 1:</li>
 																<li>Pepper H. Soda III, MD, FACC <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
-																<li class="no-after font_medium c_primary-n1  Pharmacologic Chest Pain Electrocardiogram Chest Pain Clinical Arrhythmia Pericardial Pericardial Myocardial ">Role Type 2:</li>
+																<li class="no-after font_medium c_primary-n1  Pericardial Valvular Cardiovascular Electrocardiogram Side Effect ">Role Type 2:</li>
 																<li>Dianna Denesik III <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
 																<li>Miguel Romaguera <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
 																<li>Jeanette Franecki <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
 															</ul>
 														</div>
-														<ul class="ul_none flex flex_row justify_start font-size_down-1 c_black-7  m-t_auto lh_0">
+														<ul class="ul_none flex flex_row flex_wrap justify_start font-size_down-1 c_black-7 m-t_auto lh_0 items_end gap_2">
 															<li class="inline-block p-r_3 p_2">
-																<span class="font-size_up c_primary-n2 block"><i class="fal fa-clock"></i> 15</span> minutes
+																<span class="font-size_up c_accent-n2 block"><i class="fal fa-clock"></i> 15</span> minutes
 															</li>
-															<li class="inline-block p-r_3 p_2">
-																<span class="font-size_up c_primary-n2 block">4</span> presentations
-															</li>
-															<li class="inline-block br_round p-x_3 m-l_n3 p_2 z_3 h:bg_black-2 br_radius self_end">
-																<a href="" class="link flex_auto underline h:undecorated">
-																	<span class="font-size_up c_primary-n2"><i class="fal fa-paperclip"></i></span> Attachments</a>
+															<li class="inline-block br_radius p-x_3 m-l_n3 p_2 z_3 self_end relative h:bg_black-2">
+																<a href="" class="undecorated h:undecorated expanded-click-area">
+																	<span class="font-size_up c_primary-n2 block"><i class="fal fa-paperclip p-r_3"></i> <span>PDF</span></span> Attachments </a>
 															</li>
 														</ul>
 													</main>
@@ -678,7 +663,7 @@ searchActive: true
 														<ul class="b_3 flex flex_column flex_wrap font_n3 gap_2 justify_end:md justify_start r_4 self_center ul_none uppercase p-x_3 m-t_n2 items_center">
 															<li class="flex_auto p-b_3 m-b_auto">
 																<a class="inline-block m-x_n3 m-t_n1">
-																	<span class="fa-stack fa-2x a:c_alert-n2 c_secondary-2 h:c_alert-n3 Pharmacologic Chest Pain Electrocardiogram Chest Pain Clinical Arrhythmia Pericardial Pericardial Myocardial ">
+																	<span class="fa-stack fa-2x a:c_alert-n2 c_secondary-2 h:c_alert-n3 Pericardial Valvular Cardiovascular Electrocardiogram Side Effect ">
 																		<i class="fas fa-bookmark fa-stack-2x c_inherit-all text-shadow_black-1"></i>
 																		<i class="fa-heart c_black-4 h:c_white a:c_white fa-stack-1x fas font-size_down-1  text-shadow_black-n1"></i>
 																	</span>
@@ -710,33 +695,30 @@ searchActive: true
 										<div>
 											<article class="flex flex_grow flex_column w_100  inset-level_up-1 bg_white br_radius shadow_overlap-light relative br_solid br_1 br_black-2">
 												<div class="flex flex_row font_ui justify_start relative w_100 gap_3">
-													<main class="flex flex_column flex_auto justify_between flex_auto relative w_100 isolation_isolate p_3 p_4:lg ">
+													<main class="flex flex_column flex_auto gap_3 justify_between flex_auto relative w_100 isolation_isolate p_4 ">
 														<div class="font_display m-b_3 lh_2 ">
-															<h1 class="block c_black-6 uppercase font_bold font-size_down lh_1 m_0 m-t_"> Cardiovascular Update for the Clinician III</h1>
-															<h2 class="font-size_up-1 font_display font_regular lh_2 h:underline c_primary-n3">
-																<a class="c_inherit-all expanded-click-area z_1"> Presentation of the findings Pharmacologic Chest Pain Electrocardiogram Chest Pain Clinical Arrhythmia Pericardial Pericardial Myocardial </a>
+															<h1 class="block c_black-6 uppercase font_bold font-size_down lh_2 m-y_2"> Cardiovascular Update for the Clinician III</h1>
+															<h2 class="font-size_up-1 font_display font_regular lh_1 h:underline c_primary-n3 m_0">
+																<a class="c_inherit-all expanded-click-area z_1"> Presentation of the findings Cardiovascular Myocardial Pericardial Valvular Cardiovascular Electrocardiogram </a>
 															</h2>
 														</div>
 														<div class="c_black-8 font_copy font-size_down-1">
 															<ul class="ul_inline-semicolon font_regular font_copy">
-																<li class="no-after font_medium c_primary-n1 Pharmacologic Chest Pain Electrocardiogram Chest Pain Clinical Arrhythmia Pericardial Pericardial Myocardial ">Role Type 1:</li>
+																<li class="no-after font_medium c_primary-n1 Cardiovascular Myocardial Pericardial Valvular Cardiovascular Electrocardiogram ">Role Type 1:</li>
 																<li>Pepper H. Soda III, MD, FACC <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
-																<li class="no-after font_medium c_primary-n1  Pharmacologic Chest Pain Electrocardiogram Chest Pain Clinical Arrhythmia Pericardial Pericardial Myocardial ">Role Type 2:</li>
+																<li class="no-after font_medium c_primary-n1  Cardiovascular Myocardial Pericardial Valvular Cardiovascular Electrocardiogram ">Role Type 2:</li>
 																<li>Dianna Denesik III <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
 																<li>Miguel Romaguera <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
 																<li>Jeanette Franecki <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
 															</ul>
 														</div>
-														<ul class="ul_none flex flex_row justify_start font-size_down-1 c_black-7  m-t_auto lh_0">
+														<ul class="ul_none flex flex_row flex_wrap justify_start font-size_down-1 c_black-7 m-t_auto lh_0 items_end gap_2">
 															<li class="inline-block p-r_3 p_2">
-																<span class="font-size_up c_primary-n2 block"><i class="fal fa-clock"></i> 15</span> minutes
+																<span class="font-size_up c_accent-n2 block"><i class="fal fa-clock"></i> 15</span> minutes
 															</li>
-															<li class="inline-block p-r_3 p_2">
-																<span class="font-size_up c_primary-n2 block">4</span> presentations
-															</li>
-															<li class="inline-block br_round p-x_3 m-l_n3 p_2 z_3 h:bg_black-2 br_radius self_end">
-																<a href="" class="link flex_auto underline h:undecorated">
-																	<span class="font-size_up c_primary-n2"><i class="fal fa-paperclip"></i></span> Attachments</a>
+															<li class="inline-block br_radius p-x_3 m-l_n3 p_2 z_3 self_end relative h:bg_black-2">
+																<a href="" class="undecorated h:undecorated expanded-click-area">
+																	<span class="font-size_up c_primary-n2 block"><i class="fal fa-paperclip p-r_3"></i> <span>PDF</span></span> Attachments </a>
 															</li>
 														</ul>
 													</main>
@@ -744,271 +726,7 @@ searchActive: true
 														<ul class="b_3 flex flex_column flex_wrap font_n3 gap_2 justify_end:md justify_start r_4 self_center ul_none uppercase p-x_3 m-t_n2 items_center">
 															<li class="flex_auto p-b_3 m-b_auto">
 																<a class="inline-block m-x_n3 m-t_n1">
-																	<span class="fa-stack fa-2x a:c_alert-n2 c_secondary-2 h:c_alert-n3 Pharmacologic Chest Pain Electrocardiogram Chest Pain Clinical Arrhythmia Pericardial Pericardial Myocardial ">
-																		<i class="fas fa-bookmark fa-stack-2x c_inherit-all text-shadow_black-1"></i>
-																		<i class="fa-heart c_black-4 h:c_white a:c_white fa-stack-1x fas font-size_down-1  text-shadow_black-n1"></i>
-																	</span>
-																</a>
-															</li>
-															<li class="lh_0 w_100">
-																<span class="bg_CME-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center">CME</span>
-															</li>
-															<li class="lh_0 w_100">
-																<span class="bg_CNE-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center">CNE</span>
-															</li>
-														</ul>
-													</aside>
-												</div>
-												<div class="p_2 p_3:md">
-													<aside class="bg_black-_05 p-x_4 p-y_3 br_radius flex flex_row flex_wrap texture_light br_solid br_black-1 br_1 font_ui">
-														<strong class="p-r_3 block w_100">Search Word Found At These Time Markers</strong>
-														<ul class="ul_inline-pipe">
-															<li class="c_primary uppercase font_medium"><a href="" class="link"><i class="fas fa-play c_primary font-size_down-1 self_center"></i> start</a></li>
-															<li><a href="" class="link"><i class="fas fa-step-forward c_primary font-size_down-1 self_center"></i> 0:53</a></li>
-															<li><a href="" class="link"><i class="fas fa-step-forward c_primary font-size_down-1 self_center"></i> 2:30</a></li>
-														</ul>
-													</aside>
-												</div>
-											</article>
-										</div>
-									</li>
-									<li class="">
-										<div>
-											<article class="flex flex_grow flex_column w_100  inset-level_up-1 bg_white br_radius shadow_overlap-light relative br_solid br_1 br_black-2">
-												<div class="flex flex_row font_ui justify_start relative w_100 gap_3">
-													<main class="flex flex_column flex_auto justify_between flex_auto relative w_100 isolation_isolate p_3 p_4:lg ">
-														<div class="font_display m-b_3 lh_2 ">
-															<h1 class="block c_black-6 uppercase font_bold font-size_down lh_1 m_0 m-t_"> Cardiovascular Update for the Clinician III</h1>
-															<h2 class="font-size_up-1 font_display font_regular lh_2 h:underline c_primary-n3">
-																<a class="c_inherit-all expanded-click-area z_1"> Presentation of the findings Pharmacologic Chest Pain Electrocardiogram Chest Pain Clinical Arrhythmia Pericardial Pericardial Myocardial </a>
-															</h2>
-														</div>
-														<div class="c_black-8 font_copy font-size_down-1">
-															<ul class="ul_inline-semicolon font_regular font_copy">
-																<li class="no-after font_medium c_primary-n1 Pharmacologic Chest Pain Electrocardiogram Chest Pain Clinical Arrhythmia Pericardial Pericardial Myocardial ">Role Type 1:</li>
-																<li>Pepper H. Soda III, MD, FACC <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
-																<li class="no-after font_medium c_primary-n1  Pharmacologic Chest Pain Electrocardiogram Chest Pain Clinical Arrhythmia Pericardial Pericardial Myocardial ">Role Type 2:</li>
-																<li>Dianna Denesik III <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
-																<li>Miguel Romaguera <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
-																<li>Jeanette Franecki <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
-															</ul>
-														</div>
-														<ul class="ul_none flex flex_row justify_start font-size_down-1 c_black-7  m-t_auto lh_0">
-															<li class="inline-block p-r_3 p_2">
-																<span class="font-size_up c_primary-n2 block"><i class="fal fa-clock"></i> 15</span> minutes
-															</li>
-															<li class="inline-block p-r_3 p_2">
-																<span class="font-size_up c_primary-n2 block">4</span> presentations
-															</li>
-															<li class="inline-block br_round p-x_3 m-l_n3 p_2 z_3 h:bg_black-2 br_radius self_end">
-																<a href="" class="link flex_auto underline h:undecorated">
-																	<span class="font-size_up c_primary-n2"><i class="fal fa-paperclip"></i></span> Attachments</a>
-															</li>
-														</ul>
-													</main>
-													<aside class="flex_none p-x_3:md p-b_3">
-														<ul class="b_3 flex flex_column flex_wrap font_n3 gap_2 justify_end:md justify_start r_4 self_center ul_none uppercase p-x_3 m-t_n2 items_center">
-															<li class="flex_auto p-b_3 m-b_auto">
-																<a class="inline-block m-x_n3 m-t_n1">
-																	<span class="fa-stack fa-2x a:c_alert-n2 c_secondary-2 h:c_alert-n3 Pharmacologic Chest Pain Electrocardiogram Chest Pain Clinical Arrhythmia Pericardial Pericardial Myocardial ">
-																		<i class="fas fa-bookmark fa-stack-2x c_inherit-all text-shadow_black-1"></i>
-																		<i class="fa-heart c_black-4 h:c_white a:c_white fa-stack-1x fas font-size_down-1  text-shadow_black-n1"></i>
-																	</span>
-																</a>
-															</li>
-															<li class="lh_0 w_100">
-																<span class="bg_CME-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center">CME</span>
-															</li>
-															<li class="lh_0 w_100">
-																<span class="bg_CNE-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center">CNE</span>
-															</li>
-														</ul>
-													</aside>
-												</div>
-												<div class="p_2 p_3:md">
-													<aside class="bg_black-_05 p-x_4 p-y_3 br_radius flex flex_row flex_wrap texture_light br_solid br_black-1 br_1 font_ui">
-														<strong class="p-r_3 block w_100">Search Word Found At These Time Markers</strong>
-														<ul class="ul_inline-pipe">
-															<li class="c_primary uppercase font_medium"><a href="" class="link"><i class="fas fa-play c_primary font-size_down-1 self_center"></i> start</a></li>
-															<li><a href="" class="link"><i class="fas fa-step-forward c_primary font-size_down-1 self_center"></i> 0:53</a></li>
-															<li><a href="" class="link"><i class="fas fa-step-forward c_primary font-size_down-1 self_center"></i> 2:30</a></li>
-														</ul>
-													</aside>
-												</div>
-											</article>
-										</div>
-									</li>
-									<li class="">
-										<div>
-											<article class="flex flex_grow flex_column w_100  inset-level_up-1 bg_white br_radius shadow_overlap-light relative br_solid br_1 br_black-2">
-												<div class="flex flex_row font_ui justify_start relative w_100 gap_3">
-													<main class="flex flex_column flex_auto justify_between flex_auto relative w_100 isolation_isolate p_3 p_4:lg ">
-														<div class="font_display m-b_3 lh_2 ">
-															<h1 class="block c_black-6 uppercase font_bold font-size_down lh_1 m_0 m-t_"> Cardiovascular Update for the Clinician III</h1>
-															<h2 class="font-size_up-1 font_display font_regular lh_2 h:underline c_primary-n3">
-																<a class="c_inherit-all expanded-click-area z_1"> Presentation of the findings Electrocardiographic Blood Vessel Blood Vessel Valvular Heart Disease Electrocardiogram Blood Vessel Cardiovascular Arrhythmia Valvular Heart Disease </a>
-															</h2>
-														</div>
-														<div class="c_black-8 font_copy font-size_down-1">
-															<ul class="ul_inline-semicolon font_regular font_copy">
-																<li class="no-after font_medium c_primary-n1 Electrocardiographic Blood Vessel Blood Vessel Valvular Heart Disease Electrocardiogram Blood Vessel Cardiovascular Arrhythmia Valvular Heart Disease ">Role Type 1:</li>
-																<li>Pepper H. Soda III, MD, FACC <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
-																<li class="no-after font_medium c_primary-n1  Electrocardiographic Blood Vessel Blood Vessel Valvular Heart Disease Electrocardiogram Blood Vessel Cardiovascular Arrhythmia Valvular Heart Disease ">Role Type 2:</li>
-																<li>Dianna Denesik III <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
-																<li>Miguel Romaguera <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
-																<li>Jeanette Franecki <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
-															</ul>
-														</div>
-														<ul class="ul_none flex flex_row justify_start font-size_down-1 c_black-7  m-t_auto lh_0">
-															<li class="inline-block p-r_3 p_2">
-																<span class="font-size_up c_primary-n2 block"><i class="fal fa-clock"></i> 15</span> minutes
-															</li>
-															<li class="inline-block p-r_3 p_2">
-																<span class="font-size_up c_primary-n2 block">4</span> presentations
-															</li>
-															<li class="inline-block br_round p-x_3 m-l_n3 p_2 z_3 h:bg_black-2 br_radius self_end">
-																<a href="" class="link flex_auto underline h:undecorated">
-																	<span class="font-size_up c_primary-n2"><i class="fal fa-paperclip"></i></span> Attachments</a>
-															</li>
-														</ul>
-													</main>
-													<aside class="flex_none p-x_3:md p-b_3">
-														<ul class="b_3 flex flex_column flex_wrap font_n3 gap_2 justify_end:md justify_start r_4 self_center ul_none uppercase p-x_3 m-t_n2 items_center">
-															<li class="flex_auto p-b_3 m-b_auto">
-																<a class="inline-block m-x_n3 m-t_n1">
-																	<span class="fa-stack fa-2x a:c_alert-n2 c_secondary-2 h:c_alert-n3 Electrocardiographic Blood Vessel Blood Vessel Valvular Heart Disease Electrocardiogram Blood Vessel Cardiovascular Arrhythmia Valvular Heart Disease ">
-																		<i class="fas fa-bookmark fa-stack-2x c_inherit-all text-shadow_black-1"></i>
-																		<i class="fa-heart c_black-4 h:c_white a:c_white fa-stack-1x fas font-size_down-1  text-shadow_black-n1"></i>
-																	</span>
-																</a>
-															</li>
-															<li class="lh_0 w_100">
-																<span class="bg_CME-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center">CME</span>
-															</li>
-															<li class="lh_0 w_100">
-																<span class="bg_CNE-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center">CNE</span>
-															</li>
-														</ul>
-													</aside>
-												</div>
-												<div class="p_2 p_3:md">
-													<aside class="bg_black-_05 p-x_4 p-y_3 br_radius flex flex_row flex_wrap texture_light br_solid br_black-1 br_1 font_ui">
-														<strong class="p-r_3 block w_100">Search Word Found At These Time Markers</strong>
-														<ul class="ul_inline-pipe">
-															<li class="c_primary uppercase font_medium"><a href="" class="link"><i class="fas fa-play c_primary font-size_down-1 self_center"></i> start</a></li>
-															<li><a href="" class="link"><i class="fas fa-step-forward c_primary font-size_down-1 self_center"></i> 0:53</a></li>
-															<li><a href="" class="link"><i class="fas fa-step-forward c_primary font-size_down-1 self_center"></i> 2:30</a></li>
-														</ul>
-													</aside>
-												</div>
-											</article>
-										</div>
-									</li>
-									<li class="">
-										<div>
-											<article class="flex flex_grow flex_column w_100  inset-level_up-1 bg_white br_radius shadow_overlap-light relative br_solid br_1 br_black-2">
-												<div class="flex flex_row font_ui justify_start relative w_100 gap_3">
-													<main class="flex flex_column flex_auto justify_between flex_auto relative w_100 isolation_isolate p_3 p_4:lg ">
-														<div class="font_display m-b_3 lh_2 ">
-															<h1 class="block c_black-6 uppercase font_bold font-size_down lh_1 m_0 m-t_"> Cardiovascular Update for the Clinician III</h1>
-															<h2 class="font-size_up-1 font_display font_regular lh_2 h:underline c_primary-n3">
-																<a class="c_inherit-all expanded-click-area z_1"> Presentation of the findings Side Effect Clinical Valvular Clinical Chest Pain Valvular Heart Disease Cardiovascular Side Effect Pharmacologic </a>
-															</h2>
-														</div>
-														<div class="c_black-8 font_copy font-size_down-1">
-															<ul class="ul_inline-semicolon font_regular font_copy">
-																<li class="no-after font_medium c_primary-n1 Side Effect Clinical Valvular Clinical Chest Pain Valvular Heart Disease Cardiovascular Side Effect Pharmacologic ">Role Type 1:</li>
-																<li>Pepper H. Soda III, MD, FACC <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
-																<li class="no-after font_medium c_primary-n1  Side Effect Clinical Valvular Clinical Chest Pain Valvular Heart Disease Cardiovascular Side Effect Pharmacologic ">Role Type 2:</li>
-																<li>Dianna Denesik III <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
-																<li>Miguel Romaguera <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
-																<li>Jeanette Franecki <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
-															</ul>
-														</div>
-														<ul class="ul_none flex flex_row justify_start font-size_down-1 c_black-7  m-t_auto lh_0">
-															<li class="inline-block p-r_3 p_2">
-																<span class="font-size_up c_primary-n2 block"><i class="fal fa-clock"></i> 15</span> minutes
-															</li>
-															<li class="inline-block p-r_3 p_2">
-																<span class="font-size_up c_primary-n2 block">4</span> presentations
-															</li>
-															<li class="inline-block br_round p-x_3 m-l_n3 p_2 z_3 h:bg_black-2 br_radius self_end">
-																<a href="" class="link flex_auto underline h:undecorated">
-																	<span class="font-size_up c_primary-n2"><i class="fal fa-paperclip"></i></span> Attachments</a>
-															</li>
-														</ul>
-													</main>
-													<aside class="flex_none p-x_3:md p-b_3">
-														<ul class="b_3 flex flex_column flex_wrap font_n3 gap_2 justify_end:md justify_start r_4 self_center ul_none uppercase p-x_3 m-t_n2 items_center">
-															<li class="flex_auto p-b_3 m-b_auto">
-																<a class="inline-block m-x_n3 m-t_n1">
-																	<span class="fa-stack fa-2x a:c_alert-n2 c_secondary-2 h:c_alert-n3 Side Effect Clinical Valvular Clinical Chest Pain Valvular Heart Disease Cardiovascular Side Effect Pharmacologic ">
-																		<i class="fas fa-bookmark fa-stack-2x c_inherit-all text-shadow_black-1"></i>
-																		<i class="fa-heart c_black-4 h:c_white a:c_white fa-stack-1x fas font-size_down-1  text-shadow_black-n1"></i>
-																	</span>
-																</a>
-															</li>
-															<li class="lh_0 w_100">
-																<span class="bg_CME-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center">CME</span>
-															</li>
-															<li class="lh_0 w_100">
-																<span class="bg_CNE-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center">CNE</span>
-															</li>
-														</ul>
-													</aside>
-												</div>
-												<div class="p_2 p_3:md">
-													<aside class="bg_black-_05 p-x_4 p-y_3 br_radius flex flex_row flex_wrap texture_light br_solid br_black-1 br_1 font_ui">
-														<strong class="p-r_3 block w_100">Search Word Found At These Time Markers</strong>
-														<ul class="ul_inline-pipe">
-															<li class="c_primary uppercase font_medium"><a href="" class="link"><i class="fas fa-play c_primary font-size_down-1 self_center"></i> start</a></li>
-															<li><a href="" class="link"><i class="fas fa-step-forward c_primary font-size_down-1 self_center"></i> 0:53</a></li>
-															<li><a href="" class="link"><i class="fas fa-step-forward c_primary font-size_down-1 self_center"></i> 2:30</a></li>
-														</ul>
-													</aside>
-												</div>
-											</article>
-										</div>
-									</li>
-									<li class="">
-										<div>
-											<article class="flex flex_grow flex_column w_100  inset-level_up-1 bg_white br_radius shadow_overlap-light relative br_solid br_1 br_black-2">
-												<div class="flex flex_row font_ui justify_start relative w_100 gap_3">
-													<main class="flex flex_column flex_auto justify_between flex_auto relative w_100 isolation_isolate p_3 p_4:lg ">
-														<div class="font_display m-b_3 lh_2 ">
-															<h1 class="block c_black-6 uppercase font_bold font-size_down lh_1 m_0 m-t_"> Cardiovascular Update for the Clinician III</h1>
-															<h2 class="font-size_up-1 font_display font_regular lh_2 h:underline c_primary-n3">
-																<a class="c_inherit-all expanded-click-area z_1"> Presentation of the findings Electrocardiogram Chest Pain Pharmacologic Cardiovascular Pericardial Cardiovascular Valvular </a>
-															</h2>
-														</div>
-														<div class="c_black-8 font_copy font-size_down-1">
-															<ul class="ul_inline-semicolon font_regular font_copy">
-																<li class="no-after font_medium c_primary-n1 Electrocardiogram Chest Pain Pharmacologic Cardiovascular Pericardial Cardiovascular Valvular ">Role Type 1:</li>
-																<li>Pepper H. Soda III, MD, FACC <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
-																<li class="no-after font_medium c_primary-n1  Electrocardiogram Chest Pain Pharmacologic Cardiovascular Pericardial Cardiovascular Valvular ">Role Type 2:</li>
-																<li>Dianna Denesik III <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
-																<li>Miguel Romaguera <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
-																<li>Jeanette Franecki <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
-															</ul>
-														</div>
-														<ul class="ul_none flex flex_row justify_start font-size_down-1 c_black-7  m-t_auto lh_0">
-															<li class="inline-block p-r_3 p_2">
-																<span class="font-size_up c_primary-n2 block"><i class="fal fa-clock"></i> 15</span> minutes
-															</li>
-															<li class="inline-block p-r_3 p_2">
-																<span class="font-size_up c_primary-n2 block">4</span> presentations
-															</li>
-															<li class="inline-block br_round p-x_3 m-l_n3 p_2 z_3 h:bg_black-2 br_radius self_end">
-																<a href="" class="link flex_auto underline h:undecorated">
-																	<span class="font-size_up c_primary-n2"><i class="fal fa-paperclip"></i></span> Attachments</a>
-															</li>
-														</ul>
-													</main>
-													<aside class="flex_none p-x_3:md p-b_3">
-														<ul class="b_3 flex flex_column flex_wrap font_n3 gap_2 justify_end:md justify_start r_4 self_center ul_none uppercase p-x_3 m-t_n2 items_center">
-															<li class="flex_auto p-b_3 m-b_auto">
-																<a class="inline-block m-x_n3 m-t_n1">
-																	<span class="fa-stack fa-2x a:c_alert-n2 c_secondary-2 h:c_alert-n3 Electrocardiogram Chest Pain Pharmacologic Cardiovascular Pericardial Cardiovascular Valvular ">
+																	<span class="fa-stack fa-2x a:c_alert-n2 c_secondary-2 h:c_alert-n3 Cardiovascular Myocardial Pericardial Valvular Cardiovascular Electrocardiogram ">
 																		<i class="fas fa-bookmark fa-stack-2x c_inherit-all text-shadow_black-1"></i>
 																		<i class="fa-heart c_black-4 h:c_white a:c_white fa-stack-1x fas font-size_down-1  text-shadow_black-n1"></i>
 																	</span>
