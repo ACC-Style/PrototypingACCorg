@@ -6,56 +6,72 @@ homeActive: false
 searchActive: true 
 --- 
 {% include lib-head.html %}
+
 <body class="BODY_TAG-stand-in bg_black-4 w_100 p_3:md p_2 grid:md min-h_100">
 	<div class="page-wrapper grid:md p_2 p_3:md isolation_isolate br_radius bg_white-7 items_center justify_center">
 		<div class="max-w_50">
 			<section class="reading-typography inset-level_down-1 bg_black-1 shadow_emboss-light br_solid br_1 br_black-2 br_radius p_5:lg p_4 flex flex_column gap_3">
 				<section class="br_radius overflow_hidden relative z_1">
 					<picture class="w_100">
-						<source class="w_100" srcset="https://acc-style.github.io/PrototypingACCorg/assets/images/lib/J22043_600x225.jpg" media="(min-width: 400px)">
-						<img src="https://acc-style.github.io/PrototypingACCorg/assets/images/lib/J22043_400x300.jpg" class="w_100" alt="">
+						<source class="w_100" srcset="
+								https://acc-style.github.io/PrototypingACCorg/assets/images/lib/J22043_600x225.jpg
+							" media="(min-width: 400px)" />
+						<img src="https://acc-style.github.io/PrototypingACCorg/assets/images/lib/J22043_400x300.jpg" class="w_100" alt="" />
 					</picture>
 				</section>
-				<div class="inset-level_up-1 bg_white br_radius relative  p_4">
+				<div class="inset-level_up-1 bg_white br_radius relative p_4">
 					<h1 class="c_primary">Legal Agreements</h1>
-					<p class="font-size_up font_bold">Please scroll down and agree to all the legal agreements.</p>
+					<p class="font-size_up font_bold"> Please scroll down and agree to all the legal agreements. </p>
 				</div>
-				<div class="inset-level_up-1 bg_white br_radius shadow_overlap-light relative br_solid br_1 br_black-2 p_4">
-					<h2>Method of Participation and Claiming Credit</h2>
-					<p class="font-size_up">You may claim credit for this Product up to the maximum credit amounts noted above based on the number of hours You spend watching presentations.  You may re-enter the Product as many times as You wish, but You can claim credit only once and must claim credit by 11:59 p.m. March 1, 2023. </p>
-					
-					<h3>To receive credit for this Product, You must:</h3>
-					<ol>
-						<li>Purchase the Product</li>
-	
-						<li>Read the Credit Information when You first enter the Product.</li>
-						<li>View the presentations of your choosing.</li>
-						<li>Click credits from the left navigation bar after You have completed viewing all presentations for which You intend to claim credit.</li>
-						<li>Complete the evaluation. </li>
-						<li>Enter the number of credits You wish to claim.  Credits claimed should reflect the total number of hours that You spent watching presentations.</li>
-						<li>If you are an ABIM or ABP Diplomate, You will need to enter your ABIM or ABP ID and Date of Birth to claim MOC points.</li>
-						<li>Generate and print your certificate. If You are an ABIM or ABP Diplomate and claimed MOC points, your completion information will be transmitted to the ACCME/ABIM/ABP on your behalf.</li>
-					</ol>
-					<a href="" class="btn btn-success  c_white h:undecorated float_right"><i class="fas fa-check"></i> I agree</a>
+				<div class="inset-level_up-1 bg_white br_radius shadow_overlap-light relative br_solid br_1 br_black-2 p_4 relative isolation_isolate" id="TopAgreement1">
+					<div class="sticky t_0 r_0 z_1">
+						<div class="absolute r_4 t_0 flex flex_row flex_nowrap gap-x_3">
+							<!--  Helper Jump links -->
+							<a class="c_white br-tl_square br-tr_square br_radius btn btn-accent btn-sm grid items_center justify_center m-l_auto self_center shadow_3" href="#TopAgreement1">
+								<span><i class="fas fa-arrow-up p-r_2"></i>top</span>
+							</a>
+							<a class="c_white br-tl_square br-tr_square br_radius btn btn-accent btn-sm grid items_center justify_center m-l_auto self_center shadow_3" href="#Agreement1" >
+								<span><i class="fas fa-arrow-down p-r_2"></i>scroll down</span>
+							</a>
+							<!--  Helper Jump links -->
+						</div>
+					</div>
+					<div class="bg_white br_solid  br-b_1 br_priamry z_2 relative m-t_n2 m-b_4" >
+						<h2>Method of Participation and Claiming Credit</h2>
+						<p class="font-size_up"> You may claim credit for this Product up to the maximum credit amounts noted above based on the number of hours You spend watching presentations. You may re-enter the Product as many times as You wish, but You can claim credit only once and must claim credit by 11:59 p.m. March 1, 2023. </p>
+					</div>
+					<main class="z_0 isolation_isolate">
+						<h3>To receive credit for this Product, You must:</h3>
+						<ol>
+							<li>Purchase the Product</li>
+							<li> Read the Credit Information when You first enter the Product. </li>
+							<li>View the presentations of your choosing.</li>
+							<li> Click credits from the left navigation bar after You have completed viewing all presentations for which You intend to claim credit. </li>
+							<li>Complete the evaluation.</li>
+							<li> Enter the number of credits You wish to claim. Credits claimed should reflect the total number of hours that You spent watching presentations. </li>
+							<li> If you are an ABIM or ABP Diplomate, You will need to enter your ABIM or ABP ID and Date of Birth to claim MOC points. </li>
+							<li> Generate and print your certificate. If You are an ABIM or ABP Diplomate and claimed MOC points, your completion information will be transmitted to the ACCME/ABIM/ABP on your behalf. </li>
+						</ol>
+					</main>
+					<footer id="Agreement1">
+						<a href="" class="btn btn-success c_white h:undecorated float_right"><i class="fas fa-check"></i> I agree</a>
+					</footer>
 				</div>
 				<div class="up inset-level_up-1 bg_white br_radius shadow_overlap-light relative br_solid br_1 br_black-2 p_4">
 					<h2>Legal Terms of Servide</h2>
-					<p class="font-size_up">Iure vero velit pariatur velit ex ea deserunt aut alias. Quis eligendi blanditiis excepturi provident consectetur amet quam. Quae veniam qui odit vitae qui modi dolorem.</p>
-					<a href="" class="btn btn-secondary  c_white h:undecorated float_right">I agree</a>
-				</div>	
-				
+					<p class="font-size_up"> Iure vero velit pariatur velit ex ea deserunt aut alias. Quis eligendi blanditiis excepturi provident consectetur amet quam. Quae veniam qui odit vitae qui modi dolorem. </p>
+					<a href="" class="btn btn-secondary c_white h:undecorated float_right">I agree</a>
+				</div>
 				<div class="up inset-level_up-1 bg_white br_radius shadow_overlap-light relative br_solid br_1 br_black-2 p_4">
 					<h2>Cookie Agreement</h2>
-					<p class="font-size_up">Iure vero velit pariatur velit ex ea deserunt aut alias. Quis eligendi blanditiis excepturi provident consectetur amet quam. Quae veniam qui odit vitae qui modi dolorem.</p>
-					<a href="" class="btn btn-secondary  c_white h:undecorated float_right">I agree</a>
+					<p class="font-size_up"> Iure vero velit pariatur velit ex ea deserunt aut alias. Quis eligendi blanditiis excepturi provident consectetur amet quam. Quae veniam qui odit vitae qui modi dolorem. </p>
+					<a href="" class="btn btn-secondary c_white h:undecorated float_right">I agree</a>
 				</div>
 				<div class="inset-level_up-1 bg_white br_radius relative p_4">
-
-					<h4 class="font_bold">You can continue when all legal terms are agreed to.</h4>
+					<h4 class="font_bold"> You can continue when all legal terms are agreed to. </h4>
 					<a href="" class="btn btn-disabled disabled block">Continue</a>
 				</div>
 			</section>
 		</div>
-
 	</div>
 </body>
