@@ -57,47 +57,38 @@ creditsActive: true
 </main>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script>
-    // Load the Visualization API and the corechart package.
-    google.charts.load('current', {'packages':['corechart']});
-
-// Set a callback to run when the Google Visualization API is loaded.
-google.charts.setOnLoadCallback(drawChart);
-
-// Callback that creates and populates a data table,
-// instantiates the pie chart, passes in the data and
-// draws it.
-function drawChart() {
-    
-    var data = google.visualization.arrayToDataTable([
-        ['Credit Type', 'Watched Hours' ,{ role: 'style' }],
-        ['AAPA', 1.45, '#e8c536' ],
-        ['available', 28.55, '#a4a4a4' ],
-        ['', null, '' ],
-        ['ABP', 0, "#007a5b"],
-        ['available', 100, '#a4a4a4' ],
-        ['', null, '' ],
-        ['CME', 8.94, '#00a15b'],      
-        ['available', 91.06, '#a4a4a4' ],
-        ['', null, '' ],
-        ['CNE', 10.49, '#198dae'],   
-        ['available', 89.51, '#a4a4a4' ],
-        ['', null, '' ],       
-        ['MOC', 19.30, '#9a1267'],
-        ['available', 80.70, '#a4a4a4' ],
-        ['', null, '' ],
-    ]);
-  var view = new google.visualization.DataView(data);
-  view.setColumns([0, 1,{ calc: "stringify",  sourceColumn: 1, type: "string", role: "annotation" },2]);
-
-  var options = {
-    title: "Claimable Credits based on Watched Hours of Education",
-    bar: {groupWidth: "70%"},
-    legend: { position: "none" }
-  };
-  var chart = new google.visualization.BarChart(document.getElementById("CreditChartContainer"));
-  chart.draw(view, options);
-}
-const element = document.querySelectorAll('#CreditChartContainer');
-const observer = new ResizeObserver( element[0],()=>{ drawChart();});
-
-</script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Credit Type', 'Watched Hours', { role: 'style' },'Total Credit Hours',{ role: 'style' }],
+                ['AAPA', 1.45, "#e8c536",  28.55, '#cccccc'],
+                ['ABP', 2,  "#007a5b", 100, "#cccccc"],
+                ['CME', 8.94, "#00a15b",  91, '#cccccc'],
+                ['CNE', 10.49, "#198dae",  89, '#cccccc'],
+                ['MOC', 19.30, "#9a1267",  80, '#cccccc'],
+            ]);
+            var view = new google.visualization.DataView(data);
+            var options = {
+            title: "My Watch Time (by credit type) Your watch time = colored bars; total credit available = gray bars",
+            subtitle: 'Your watch time = colored bars; total credit available = gray bars',
+            bars:'horizontal',
+                legend: { position: "right", },
+            series: {
+                0: { haxis: 'Watched Hours' },
+                1: { haxis: 'Total Credit Hours' },
+            },
+            hAxis:{title: 'Total Credit Hours in Grey' , side:'top' },
+            vAxis: {title: 'Credit Types', titleTextStyle: {color: 'black'}},
+            colors: ['blue','#cccccc'],
+                };
+            var chart = new google.visualization.BarChart(document.getElementById("CreditChartContainer"));
+            chart.draw(view, options);
+        }
+        const element = document.querySelectorAll('#CreditChartContainer');
+        const observer = new ResizeObserver(element[0], () => {
+            drawChart();
+        });
+    });
+    </script>
