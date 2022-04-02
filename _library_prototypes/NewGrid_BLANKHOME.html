@@ -1,7 +1,7 @@
 --- 
 layout: library_blank 
 name: "New Grid" 
-position: "BLANK" 
+position: "BLANK HOME" 
 homeActive: false 
 searchActive: true 
 --- 
@@ -59,28 +59,44 @@ searchActive: true
 			    </nav>
 			    <script src="../js/library/library.main-nav.js"></script>
 			    <!-- These Styles are just for the styleguide and are not to be included with the pattern. -->			
-				<header class="grid-area_headerArea flex flex_row items_center justify_start flex_none z_1 inset-level_up bg_white-7 br_radius br_solid br_1 br_black-2 p_2 p_3:md p_4:lg">
-				<nav class="overflow_hidden lh_0  font_ui font_2 font_regular c_black-7 ">
-				    <ol class="flex flex_no-wrap flex_row items_center overflow_hidden ul_none w_100">
-				        <li class="flex flex-shrink_1 flex_auto:md flex_inline h:c_primary lh_2 m-b_1 relative">
-				            <i class="fal fa-home fa-fw flex_none self_center c_primary font-size_up "></i>
-				            <a href="../home" class="inherit_all h:underline undecorated expanded-click-area overflow_ellipsis flex flex_nowrap nowrap">
-				                <span class="display_none flex_auto inline:md self_center m-l_3">Home</span>
-				            </a>
-				        </li>        <li class="flex flex-shrink_1 flex_auto:md flex_50 flex_inline h:c_primary lh_2 m-b_1 overflow_hidden relative">
-				            <i class="fal fa-chevron-left fa-fw m-x_3 flex_none self_center c_primary font-size_down"></i>
-				            <a href="../watching" class="inherit_all h:underline undecorated expanded-click-area overflow_ellipsis flex flex_nowrap nowrap">
-				                <span class=" flex_auto self_center">Page Type Label</span>
-				                <span class=" flex_auto self_center display_inline:md display_none">Session Shorten Name</span>
-				            </a>
-				        </li>        <li class="flex flex-shrink_1 flex_auto:md flex_50 flex_inline lh_2 m-b_1 overflow_hidden relative c_black-7">
-				            <i class="fal fa-chevron-left c_primary-n2 m-x_3 self_center font-size_down"></i>
-				            <div class="flex flex_row flex_nowrap overflow_ellipsis nowrap">
-				                <span class=" flex_auto self_center">Page Type Label</span>
-				                <span class=" flex_auto self_center display_inline:md display_none font_medium">Presentation Shorten Name</span>
-				            </div>
-				        </li>    </ol>
-				</nav>			</header>
+				<header class="p_3 p_0:md grid-area_headerArea">
+					<section class="br_radius overflow_hidden relative z_1">
+						<picture class="w_100">
+							<source class="w_100" srcset="https://acc-style.github.io/PrototypingACCorg/assets/images/lib/J22043_1440x250.jpg" media="(min-width: 1200px)">
+							<source class="w_100" srcset="https://acc-style.github.io/PrototypingACCorg/assets/images/lib/J22043_1200x250.jpg" media="(min-width: 1024px)">
+							<source class="w_100" srcset="https://acc-style.github.io/PrototypingACCorg/assets/images/lib/J22043_768x200.jpg" media="(min-width: 768px)">
+							<source class="w_100" srcset="https://acc-style.github.io/PrototypingACCorg/assets/images/lib/J22043_600x225.jpg" media="(min-width: 400px)">
+							<img src="https://acc-style.github.io/PrototypingACCorg/assets/images/lib/J22043_400x300.jpg" class="w_100" alt="">
+						</picture>
+					</section>
+					<div class="m_auto m-t_n4 t_n4 t_n5:lg m-t_n5:lg max-w_60:lg max-w_40:md p-x_3 p-x_5:md z_2 relative">
+						<div class="inset-level_up-1 bg_white br_radius shadow_overlap-light relative br_solid br_1 br_black-2  p_4 p_5:lg">
+							<div class="input-holder flex flex_row self_end relative w_100 p_2 p_3:md">
+								<input id="input_uniqueTextAndButton" name="input_uniqueTextAndButton" type="text" placeholder="Search" class="br_2 flex_auto p-y_2 br_solid flex_auto p-l_4 lh_3 br_radius bg_white c_black bg_white f:bg_primary br_black-2  font_2">
+								<button class="disabled b_0 br-br_radius br-tr_radius br_none br_square btn btn-primary c_white ease_out f:outline_none font_2 font_regular font_ui h:br_primary-n3 h:underline inline-block r_0 t_0 text_center transition_1 undecorated w_auto">
+								<i class="fas fa-search"></i>
+								<span class="inline-block:md display_none">Search</span>
+								</button>
+							</div>    <nav class="utility-nav p-t_3 p-t_4:lg font_n3 font_0:md font_1:lg ">
+								<ul class="flex flex_row ul_none justify_center">
+									<li class="text_center p-x_2 block p-x_4:md lh_1">
+										<a class="h:undecorated c_primary block h:c_secondary-n3 p_3 p_0:md"><i class="fal fa-star  block inline:md"></i><span class="display_none inline:md"> featured</span></a>
+									</li>
+									<li class="text_center p-x_2 block p-x_4:md lh_1 br-l_1 br_solid br_black-4">
+										<a class="h:undecorated c_primary block h:c_secondary-n3 p_3 p_0:md"><i class="fal fa-sitemap  block inline:md"></i><span class="display_none inline:md"> hot topics</span></a>
+									</li>
+									<li class="text_center p-x_2 block p-x_4:md lh_1 text_center  br-l_1 br_solid br_black-4">
+										<a class="h:undecorated c_primary block h:c_secondary-n3 p_3 p_0:md"><i class="fal fa-heart block inline:md"></i><span class="display_none inline:md"> saved</span></a>
+									</li>
+									<li class="text_center p-x_2 block p-x_4:md lh_1 br-l_1 br_solid br_black-4">
+										<a class="h:undecorated c_primary block h:c_secondary-n3 p_3 p_0:md"><i class="fal fa-play  block inline:md"></i><span class="display_none inline:md"> continue watching</span></a>
+									</li>
+									<li class="text_center p-x_2 block p-x_4:md lh_1 br-l_1 br_solid br_black-4">
+										<a class="h:undecorated c_primary block h:c_secondary-n3 p_3 p_0:md"><i class="fal fa-sync  block inline:md"></i><span class="display_none inline:md"> watch again </span></a>
+									</li>
+								</ul>
+							</nav></div>    </div>
+				</header>
 			<section class="grid:md flex flex_column grid-template_filterAndContent grid-area_mainArea gap_4 p-y_3 p-y_0:md font_1:lg font_0">
 				<!-- <div class="grid:md flex flex_column grid-col_5 gap_4 col-start col-end">
 					<div class="w_auto h_100p c_success-n4 font_xbold font_3 br_dotted br_success bg_success-5 br_1 grid items_center justify_center lh_0 overflow_ellipsis">Grid Area: Insert</div>					<div class="w_auto h_100p c_success-n4 font_xbold font_3 br_dotted br_success bg_success-5 br_1 grid items_center justify_center lh_0 overflow_ellipsis">Grid Area: Insert</div>					<div class="w_auto h_100p c_success-n4 font_xbold font_3 br_dotted br_success bg_success-5 br_1 grid items_center justify_center lh_0 overflow_ellipsis">Grid Area: Insert</div>					<div class="w_auto h_100p c_success-n4 font_xbold font_3 br_dotted br_success bg_success-5 br_1 grid items_center justify_center lh_0 overflow_ellipsis">Grid Area: Insert</div>					<div class="w_auto h_100p c_success-n4 font_xbold font_3 br_dotted br_success bg_success-5 br_1 grid items_center justify_center lh_0 overflow_ellipsis">Grid Area: Insert</div>				</div> -->
