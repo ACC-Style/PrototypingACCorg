@@ -1,295 +1,222 @@
 --- 
-layout: library_blank 
+layout: library_app_frame
 name: "New Grid" 
-position: "NG - Watch Presentation" 
-homeActive: false 
-searchActive: true 
+position: "Presentation" 
+watchingActive: true 
 --- 
-{% include lib-head.html %}
-<body class="BODY_TAG-stand-in bg_black-4 w_100 p_3:md p_2 grid min-h_100">
-	<div class="page-wrapper grid p_2 p_3:md isolation_isolate br_radius bg_white-7">
-		<div class="grid:md grid-template_page flex flex_column gap_4:md gap_3">
-			<div style="height: calc(100vh - 1.5rem);" class="display_none flex:md sticky t_3  grid-area_menuArea z_4">
-			        <nav style="height: calc(100vh - 1.5rem); width: 35rem;" id="navigation" class="absolute h_100vh shadow_emboss-light filter_blur overflow_hidden br_radius bg_black-7 flex:md flex_column:md justify_between p-t_0 p-b_3 p-l_3 p-r_3 p-b_4:md p-t_4:md p-r_0:md font_4:lg font_3:md font_2 transition_3 font_display nav-mined">
-			            <ul class="flex flex_column:md flex_row ul_none justify_around justify_start:md gap_3 w_100 w_auto:md">
-			                <li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light active">
-			                    <a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md" href="../home"><i class="icon fas fa-fw fa-home-heart p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center p-l_3:md p-l_4:lg lowercase lh_0 active font_n2 font_3:md font_4:lg display_none:md opacity_0">Home</span></a>
-			                </li>
-			                <li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light ">
-			                    <a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md " href="../search"><i class="icon fas fa-fw fa-search p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center p-l_3:md p-l_4:lg lowercase lh_0 font_n2 font_3:md font_4:lg display_none:md opacity_0">Search</span></a>
-			                </li>
-			                <li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light ">
-			                    <a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md" href="../saved"><i class="icon fas fa-fw fa-heart p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center p-l_3:md p-l_4:lg lowercase lh_0 font_n2 font_3:md font_4:lg display_none:md opacity_0">Saved</span></a>
-			                </li>
-			                <li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light ">
-			                    <a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md" href="../credits"><i class="icon fas fa-fw fa-award p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center p-l_3:md p-l_4:lg lowercase lh_0 font_n2 font_3:md font_4:lg display_none:md opacity_0">Credits</span></a>
-			                </li>
-			                <li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light disabled cursor_not-allowed opacity_3 ">
-			                    <a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md" href="../watching"><i class="icon fas fa-fw fa-play p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center p-l_3:md p-l_4:lg lowercase lh_0 font_n2 font_3:md font_4:lg display_none:md opacity_0">Watching</span></a>
-			                </li>
-			            </ul>
-			            <ul class="flex_column:md flex_row ul_none justify_center gap_3 flex">
-			                <li class="nav-item flex_auto br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 bg_acc-n1 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light">
-			                    <a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md"><i class="icon fas fa-fw fa-sign-out-alt p-x_2 p-y_3 p-y_0:md self_center"></i><span class="label self_center p-l_3:md p-l_4:lg lowercase lh_0 font_n2 font_3:md font_4:lg display_none:md opacity_0">Log Out</span></a>
-			                </li>
-			            </ul>
-			        </nav>
-			    </div>
-			    <nav id="navigation_mobile" class="block display_none:md shadow_emboss-light filter_blur br_radius bg_black-6 p_2 sticky t_3 z_4">
-			        <ul class="flex flex_row ul_none justify_between">
-			            <li class="nav-item flex_auto br_radius c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light active">
-			                <a class="c_inherit-all flex flex_column h:undecorated p_3" href="../home"><i class="icon fas fa-fw fa-home-heart p-y_2 self_center"></i><span class="label self_center  lowercase lh_0 active font_n2 h_1h">Home</span></a>
-			            </li>
-			            <li class="nav-item flex_auto br_radius c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light ">
-			                <a class="c_inherit-all flex flex_column h:undecorated p_3" href="../search"><i class="icon fas fa-fw fa-search p-y_2 self_center"></i><span class="label self_center  lowercase lh_0 font_n2 h_1h ">Search</span></a>
-			            </li>
-			            <li class="nav-item flex_auto br_radius c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light ">
-			                <a class="c_inherit-all flex flex_column h:undecorated p_3" href="../saved"><i class="icon fas fa-fw fa-heart p-y_2 self_center"></i><span class="label self_center  lowercase lh_0 font_n2 h_1h nowrap ">Saved</span></a>
-			            </li>
-			            <li class="nav-item flex_auto br_radius c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light ">
-			                <a class="c_inherit-all flex flex_column h:undecorated p_3" href="../saved"><i class="icon fas fa-fw fa-award p-y_2 self_center"></i><span class="label self_center  lowercase lh_0 font_n2 h_1h ">Credits</span></a>
-			            </li>
-			            <li class="nav-item flex_auto br_radius c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light disabled opacity_3 cursor_not-allowed ">
-			                <a class="c_inherit-all flex flex_column h:undecorated p_3" href="../watching"><i class="icon fas fa-fw fa-play p-y_2 self_center"></i><span class="label self_center lowercase lh_0 font_n2 h_1h ">Watching</span></a>
-			            </li>
-			            <li class="nav-item flex_auto br_radius c_white-8 bg_acc-n1 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light">
-			                <a class="c_inherit-all flex flex_column h:undecorated p_3"><i class="icon fas fa-fw fa-sign-out-alt p-y_2 self_center"></i><span class="label self_center lowercase lh_0 font_n2 nowrap h_1h">Log Out</span></a>
-			            </li>
-			        </ul>
-			    </nav>
-
-			    <!-- These Styles are just for the styleguide and are not to be included with the pattern. -->			<header class="grid-area_headerArea flex flex_row items_center justify_start flex_none z_1 inset-level_up bg_white-7 br_radius br_solid br_1 br_black-2 p_2 p_3:md p_4:lg">
-				<nav class="overflow_hidden lh_0  font_ui font_2 font_regular c_black-7 ">
-				    <ol class="flex flex_no-wrap flex_row items_center overflow_hidden ul_none w_100">
-				        <li class="flex flex-shrink_1 flex_auto:md flex_inline h:c_primary lh_2 m-b_1 relative">
-				            <i class="fal fa-home fa-fw flex_none self_center c_primary font-size_up "></i>
-				            <a href="../home" class="inherit_all h:underline undecorated expanded-click-area overflow_ellipsis flex flex_nowrap nowrap">
-				                <span class="display_none flex_auto inline:md self_center m-l_3">Home</span>
-				            </a>
-				        </li>        <li class="flex flex-shrink_1 flex_auto:md flex_50 flex_inline h:c_primary lh_2 m-b_1 overflow_hidden relative">
-				            <i class="fal fa-chevron-left fa-fw m-x_3 flex_none self_center c_primary font-size_down"></i>
-				            <a href="../watching" class="inherit_all h:underline undecorated expanded-click-area overflow_ellipsis flex flex_nowrap nowrap">
-				                <span class=" flex_auto self_center">Page Type Label</span>
-				                <span class=" flex_auto self_center display_inline:md display_none">Session Shorten Name</span>
-				            </a>
-				        </li>        <li class="flex flex-shrink_1 flex_auto:md flex_50 flex_inline lh_2 m-b_1 overflow_hidden relative c_black-7">
-				            <i class="fal fa-chevron-left c_primary-n2 m-x_3 self_center font-size_down"></i>
-				            <div class="flex flex_row flex_nowrap overflow_ellipsis nowrap">
-				                <span class=" flex_auto self_center">Page Type Label</span>
-				                <span class=" flex_auto self_center display_inline:md display_none font_medium">Presentation Shorten Name</span>
-				            </div>
-				        </li>    </ol>
-				</nav>			</header>
-			<section class="flex flex_column font_0 font_1:lg gap_4 grid-area_mainArea grid-col_6 grid-col_5:lg grid:md p-y_0:md p-y_3">
-				<div class="col-start col-end_4:lg col-end flex flex_column gap_4 row-start_1">
-					<section class="inset-level_up-1 bg_white br_radius shadow_overlap-light relative br_solid br_1 br_black-2">
-						<div class="flex flex_row font_ui justify_start relative w_100">
-							<main class="flex flex_column flex_auto justify_between flex_auto relative w_100 isolation_isolate font_4:lg font_3:md font_2 p_3 p_4:lg">
-								<h1 class="font-size_up-1 font_display lh_2 c_primary c_primary-n3 m-t_2"> New York Cardiovascular Symposium 2021 Welcome Video and Introduction of Session and Faculty Cardiovascular </h1>
-							</main>
-							<aside class="flex_none m-t_n2 m-t_n2:md m-t_n3:lg p-x_3:md">
-								<ul class="flex flex_column flex_wrap gap_2 justify_start self_center ul_none uppercase p-x_3">
-									<li class="flex_auto">
-										<a class="inline-block m-x_n3 m-t_n1">
-										    <span class="fa-stack fa-2x a:c_alert-n2 c_secondary-2 h:c_alert-n3 ">
-										        <i class="fas fa-bookmark fa-stack-2x c_inherit-all text-shadow_black-1"></i>
-										        <i class="fa-heart c_black-4 h:c_white a:c_white fa-stack-1x fas font-size_down-1  text-shadow_black-n1"></i>
-										    </span>
-										</a>									</li>
-								</ul>
-							</aside>
-						</div>
-						<div class="player hd full flex_auto w_100 p_4:lg p_3">
-							<div class="bg_acc aspect_16x9 c_white text_center  justify_center flex items_center">VIDEO EMBED</div>
-						</div>
-						<nav class="p_4 font_2:lg font_1">
-							<aside class="bg_black-_05 p-x_4 p-y_3 br_radius flex flex_row flex_wrap texture_light br_solid br_black-1 br_1 font_ui">
-							    <strong class="p-r_3 block w_100">Search Word Found At These Time Markers</strong>
-							    <ul class="ul_inline-pipe">
-							        <li class="c_primary uppercase font_medium"><a href="" class="link"><i class="fas fa-play c_primary font-size_down-1 self_center"></i> start</a></li>
-							        <li><a href="" class="link"><i class="fas fa-step-forward c_primary font-size_down-1 self_center"></i>  0:53</a></li>
-							        <li><a href="" class="link"><i class="fas fa-step-forward c_primary font-size_down-1 self_center"></i>  2:30</a></li>
-							    </ul>
-							</aside>							<h3 class="c_black-8">How did you like this presentation?</h3>
-							<ul class="ul_none flex flex_row lowercase flex flex_row gap_2">
-							    <li class="br_solid br_black-3 br_radius br_1 h:bg_black-3">
-							        <a class="p-y_3 p-x_4 " href=""><i class="fal fa-thumbs-up"></i></a>
-							    </li>
-							    <li class="br_solid br_black-3 br_radius br_1 h:bg_black-3">
-							        <a class="p-y_3 p-x_4 " href=""><i class="fal fa-thumbs-down"></i></a>
-							    </li>
-							    <li class="br_solid br_black-3 br_radius br_1 h:bg_black-3 m-l_auto">
-							        <a class="p-y_3 p-x_4 " href=""><i class="fal fa-paperclip"></i> Attachments</a>
-							    </li>
-							</ul>						</nav>
-					</section>
+<header class="grid-area_headerArea flex flex_row items_center justify_start flex_none z_1 inset-level_up bg_white-7 br_radius br_solid br_1 br_black-2 p_2 p_3:md p_4:lg">
+	<nav class="overflow_hidden lh_0  font_ui font_2 font_regular c_black-7 ">
+		<ol class="flex flex_no-wrap flex_row items_center overflow_hidden ul_none w_100">
+			<li class="flex flex-shrink_1 flex_auto:md flex_inline h:c_primary lh_2 m-b_1 relative">
+				<i class="fal fa-home fa-fw flex_none self_center c_primary font-size_up "></i>
+				<a href="../home" class="inherit_all h:underline undecorated expanded-click-area overflow_ellipsis flex flex_nowrap nowrap">
+					<span class="display_none flex_auto inline:md self_center m-l_3">Home</span>
+				</a>
+			</li>
+			<li class="flex flex-shrink_1 flex_auto:md flex_50 flex_inline h:c_primary lh_2 m-b_1 overflow_hidden relative">
+				<i class="fal fa-chevron-left fa-fw m-x_3 flex_none self_center c_primary font-size_down"></i>
+				<a href="../watching" class="inherit_all h:underline undecorated expanded-click-area overflow_ellipsis flex flex_nowrap nowrap">
+					<span class=" flex_auto self_center">Page Type Label</span>
+					<span class=" flex_auto self_center display_inline:md display_none">Session Shorten Name</span>
+				</a>
+			</li>
+			<li class="flex flex-shrink_1 flex_auto:md flex_50 flex_inline lh_2 m-b_1 overflow_hidden relative c_black-7">
+				<i class="fal fa-chevron-left c_primary-n2 m-x_3 self_center font-size_down"></i>
+				<div class="flex flex_row flex_nowrap overflow_ellipsis nowrap">
+					<span class=" flex_auto self_center">Page Type Label</span>
+					<span class=" flex_auto self_center display_inline:md display_none font_medium">Presentation Shorten Name</span>
 				</div>
-				<div class="col-end col-start_4:lg col-start flex flex_column flex_row:md flex_column:lg gap_4">
-					<section class="flex_auto flex_50:md  flex_auto:lg flex_none:lg font_0 inset-level_up bg_white-7 br_radius br_solid br_1 br_black-2 p_3 p_4:lg">
-						<header class="font_display font_regular  c_primary-n1 m-b_3 lh_1 m-b_4:lg m-t_3 "><h2 class="lh_1 m_0 font_regular lowercase font_3:lg font_2:md font_1">presentation</h2></header>						<aside class="">
-						    <h4 class="font-size_up c_black-6 font_medium capitalize"><i class="fas fa-users p-r_3"></i> Role Type 1</h4>
-						    <div class="p-y_3 br-t_1  br_primary-2 br_solid font-size_down">
-						    <ul class="ul_inline-semicolon font_regular font_copy">
-						      <li>Marty Little <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
-						      <li>Eileen Marvin <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
-						      <li>Chelsea Dach DVM <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
-						    </ul>
-						    </div>
-						    <h4 class="font-size_up c_black-6 font_medium capitalize"><i class="fas fa-users p-r_3"></i> Role Type 2</h4>
-						    <div class="p-y_3 br-t_1  br_primary-2 br_solid font-size_down">
-						    <ul class="ul_inline-semicolon font_regular font_copy">
-						      <li>Wm Price<span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
-						      <li>Mrs. Jeffrey Cartwright <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
-						      <li>CEmmett Spencer<span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
-						    </ul>
-						    </div>    <h4 class="font-size_up c_black-6 font_medium capitalize"><i class="fas fa-file-certificate p-r_3"></i> Credits</h4>
-						    <div class="p-y_3 br-t_1  br_primary-2 br_solid font-size_down-1">
-						      <ul class="flex flex_row flex_wrap font_n3 gap_2 justify_start self_center ul_none uppercase items_center">
-						          <li class="lh_0 flex_shrink">
-						              <span class="bg_CME-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center">CME</span>    </li>
-						          <li class="lh_0 flex_shrink">
-						              <span class="bg_CNE-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center">CNE</span>    </li>
-						      </ul>    </div>
-						    <h4 class="font-size_up  c_black-6 font_medium"><i class="fas fa-tag p-r_3"></i>category</h4>
-						    <div class="br-t_1  br_primary-2 br_solid p-y_3 c_black-7 font-size_down">
-						        <ul class="ul_inline-comma">
-						          <li>Channel 1</li>
-						          <li>Navigating Health Care Economics</li>
-						        </ul>    </div>
-						    <h4 class="font-size_up  c_black-6 font_medium"><i class="fas fa-tags p-r_3"></i>tags</h4>
-						    <div class="br-t_1  br_primary-2 br_solid p-y_3 c_black-7 font-size_down">
-						      <ul class="ul_inline-comma">
-						        <li>Tag Name 1</li>
-						        <li>Daugherty - Larkin</li>
-						        <li>relationships</li>
-						        <li>web-readiness</li>
-						      </ul>    </div>
-						</aside>					</section>
-					<section class="flex_auto flex_50:md  flex_auto:lg flex_none:lg  font_0 inset-level_up bg_white-7 br_radius br_solid br_1 br_black-2 p_3 p_4:lg">
-						<header class="font_display font_regular  c_primary-n1 m-b_3 lh_1 m-b_4:lg m-t_3 "><h2 class="lh_1 m_0 font_regular lowercase font_3:lg font_2:md font_1">session</h2></header>						<h4 class="font-size_up c_black-6 font_medium capitalize">
-							<i class="fas fa-users p-r_3"></i> Title
-						</h4>
-						<div class="p-y_3 br-t_1 br_black-2 br_solid font-size_down">
-							Cardiovascular Update for the Clinician III Pharmacologic Electrocardiogram Electrocardiographic Side Effect Cardiovascular Chest Pain Chest Pain Side Effect
-						</div>
-						<h4 class="font-size_up c_black-6 font_medium capitalize">
-							<i class="fas fa-users p-r_3"></i> Faculty
-						</h4>
-						<div class="p-y_3 br-t_1 br_black-2 br_solid font-size_down">
-							<ul class="ul_inline-semicolon font_regular font_copy">
-							  <li class="no-after font_medium c_primary-n1 ">Role Type 1:</li>
-							  <li>Pepper H. Soda III, MD, FACC <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
-							  <li class="no-after font_medium c_primary-n1  ">Role Type 2:</li>
-							  <li>Dianna Denesik III <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
-							  <li>Miguel Romaguera <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
-							  <li>Jeanette Franecki <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
-							</ul>						</div>
-						<section class="inset-level_down-1 bg_black-1 shadow_emboss-light br_solid br_1 br_black-2 br_radius p_3 p_4:lg">
-							<div class="flex flex_row items_center">
-							<span class="c_black-4 font_0 font_1:md font_2:lg font_display font_regular lh_1 m-b_3 m-b_4:lg m-t_3 p-l_3 p-r_4 self_end"><i class="fa-list-alt fas font-size_up-2"></i></span>
-							<header class="font_display font_regular  c_primary-n2 m-b_2 lh_1 m-b_3:lg m-t_2 "><h3 class="lh_1 m_0 font_regular lowercase font_2:lg font_1:md font_0">presentation playlist</h3></header></div>
-							<div class="font_n2 font_n1:lg relative isolation_isolate">
-								<ul class="flex flex_column justify_stretch gap_3 ul_none">
-									<article class="br-t_1 br_black-3 br_solid flex flex_column flex_grow w_100 p-t_3">
-									    <div class="flex flex_row font_ui justify_start relative w_100 gap_3 p_2 p_3:md h:bg_white-8 br_radius">
-									        <main class="flex flex_column flex_auto gap_4 justify_between flex_auto relative w_100 isolation_isolate">
-									            <h2 class="font-size_up-1 lh_2 font_display font_regular lh_1 c_primary-n3 m_0">
-									                <a class="c_inherit-all expanded-click-area z_1 h:undecorated undecorated">
-									                    Presentation of the findings Arrhythmia Valvular Heart Disease Blood Vessel Blood Vessel 
-									                </a>
-									            </h2>
-									        </main>
-									        <aside class="flex_auto flex flex_column items_center justify_center">
-									            <span class="font-size_down inline-block lh_0  c_black-8 text_center nowrap">
-									                <span class="font-size_up c_accent-n2 block ">
-									                <i class="fal fa-clock"></i>
-									                15
-									                </span>
-									                minutes
-									            </span>
-									        </aside>
-									    </div>
-									</article>									<article class="br-t_1 br_black-3 br_solid flex flex_column flex_grow w_100 p-t_3">
-									    <div class="flex flex_row font_ui justify_start relative w_100 gap_4 p_4 bg_white shadow_overlap-light br_radius">
-									        <main class="flex_auto">
-									            <h2 class="font-size_up-1 lh_2 font_display font_regular lh_1 c_primary-n3 m_0">
-									                <a class="c_inherit-all expanded-click-area z_1 h:undecorated undecorated">
-									                    Presentation of the findings Electrocardiogram Chest Pain Arteriosclerosis Side Effect Electrocardiogram 
-									                </a>
-									            </h2>
-									        </main>
-									        <aside class="flex_none flex flex_column items_center justify_center">
-									            <span class="font-size_up-2 inline-block lh_0  c_accent text_center nowrap">
-									                <i class="fas fa-play"></i>
-									            </span>
-									        </aside>
-									    </div>
-									</article>									<article class="br-t_1 br_black-3 br_solid flex flex_column flex_grow w_100 p-t_3">
-									    <div class="flex flex_row font_ui justify_start relative w_100 gap_3 p_2 p_3:md h:bg_white-8 br_radius">
-									        <main class="flex flex_column flex_auto gap_4 justify_between flex_auto relative w_100 isolation_isolate">
-									            <h2 class="font-size_up-1 lh_2 font_display font_regular lh_1 c_primary-n3 m_0">
-									                <a class="c_inherit-all expanded-click-area z_1 h:undecorated undecorated">
-									                    Presentation of the findings Valvular Heart Disease Myocardial Valvular Pericardial Pericardial Blood Vessel 
-									                </a>
-									            </h2>
-									        </main>
-									        <aside class="flex_auto flex flex_column items_center justify_center">
-									            <span class="font-size_down inline-block lh_0  c_black-8 text_center nowrap">
-									                <span class="font-size_up c_accent-n2 block ">
-									                <i class="fal fa-clock"></i>
-									                15
-									                </span>
-									                minutes
-									            </span>
-									        </aside>
-									    </div>
-									</article>									<article class="br-t_1 br_black-3 br_solid flex flex_column flex_grow w_100 p-t_3">
-									    <div class="flex flex_row font_ui justify_start relative w_100 gap_3 p_2 p_3:md h:bg_white-8 br_radius">
-									        <main class="flex flex_column flex_auto gap_4 justify_between flex_auto relative w_100 isolation_isolate">
-									            <h2 class="font-size_up-1 lh_2 font_display font_regular lh_1 c_primary-n3 m_0">
-									                <a class="c_inherit-all expanded-click-area z_1 h:undecorated undecorated">
-									                    Presentation of the findings 
-									                </a>
-									            </h2>
-									        </main>
-									        <aside class="flex_auto flex flex_column items_center justify_center">
-									            <span class="font-size_down inline-block lh_0  c_black-8 text_center nowrap">
-									                <span class="font-size_up c_accent-n2 block ">
-									                <i class="fal fa-clock"></i>
-									                15
-									                </span>
-									                minutes
-									            </span>
-									        </aside>
-									    </div>
-									</article>								</ul>
+			</li>
+		</ol>
+	</nav>
+</header>
+<section class="flex flex_column font_0 font_1:lg gap_4 grid-area_mainArea grid-col_6 grid-col_5:lg grid:md p-y_0:md p-y_3">
+	<div class="col-start col-end_4:lg col-end flex flex_column gap_4 row-start_1">
+		<section class="inset-level_up-1 bg_white br_radius shadow_overlap-light relative br_solid br_1 br_black-2">
+			<div class="flex flex_row font_ui justify_start relative w_100">
+				<main class="flex flex_column flex_auto justify_between flex_auto relative w_100 isolation_isolate font_4:lg font_3:md font_2 p_3 p_4:lg">
+					<h1 class="font-size_up-1 font_display lh_2 c_primary c_primary-n3 m-t_2"> New York Cardiovascular Symposium 2021 Welcome Video and Introduction of Session and Faculty Cardiovascular </h1>
+				</main>
+				<aside class="flex_none m-t_n2 m-t_n2:md m-t_n3:lg p-x_3:md">
+					<ul class="flex flex_column flex_wrap gap_2 justify_start self_center ul_none uppercase p-x_3">
+						<li class="flex_auto">
+							<a class="inline-block m-x_n3 m-t_n1">
+								<span class="fa-stack fa-2x a:c_alert-n2 c_secondary-2 h:c_alert-n3 ">
+									<i class="fas fa-bookmark fa-stack-2x c_inherit-all text-shadow_black-1"></i>
+									<i class="fa-heart c_black-4 h:c_white a:c_white fa-stack-1x fas font-size_down-1  text-shadow_black-n1"></i>
+								</span>
+							</a>
+						</li>
+					</ul>
+				</aside>
+			</div>
+			<div class="player hd full flex_auto w_100 p_4:lg p_3">
+				<div class="bg_acc aspect_16x9 c_white text_center  justify_center flex items_center">VIDEO EMBED</div>
+			</div>
+			<nav class="p_4 font_2:lg font_1">
+				<aside class="bg_black-_05 p-x_4 p-y_3 br_radius flex flex_row flex_wrap texture_light br_solid br_black-1 br_1 font_ui">
+					<strong class="p-r_3 block w_100">Search Word Found At These Time Markers</strong>
+					<ul class="ul_inline-pipe">
+						<li class="c_primary uppercase font_medium"><a href="" class="link"><i class="fas fa-play c_primary font-size_down-1 self_center"></i> start</a></li>
+						<li><a href="" class="link"><i class="fas fa-step-forward c_primary font-size_down-1 self_center"></i> 0:53</a></li>
+						<li><a href="" class="link"><i class="fas fa-step-forward c_primary font-size_down-1 self_center"></i> 2:30</a></li>
+					</ul>
+				</aside>
+				<h3 class="c_black-8">How did you like this presentation?</h3>
+				<ul class="ul_none flex flex_row lowercase flex flex_row gap_2">
+					<li class="br_solid br_black-3 br_radius br_1 h:bg_black-3">
+						<a class="p-y_3 p-x_4 " href=""><i class="fal fa-thumbs-up"></i></a>
+					</li>
+					<li class="br_solid br_black-3 br_radius br_1 h:bg_black-3">
+						<a class="p-y_3 p-x_4 " href=""><i class="fal fa-thumbs-down"></i></a>
+					</li>
+					<li class="br_solid br_black-3 br_radius br_1 h:bg_black-3 m-l_auto">
+						<a class="p-y_3 p-x_4 " href=""><i class="fal fa-paperclip"></i> Attachments</a>
+					</li>
+				</ul>
+			</nav>
+		</section>
+	</div>
+	<div class="col-end col-start_4:lg col-start flex flex_column flex_row:md flex_column:lg gap_4">
+		<section class="flex_auto flex_50:md  flex_auto:lg flex_none:lg font_0 inset-level_up bg_white-7 br_radius br_solid br_1 br_black-2 p_3 p_4:lg">
+			<header class="font_display font_regular  c_primary-n1 m-b_3 lh_1 m-b_4:lg m-t_3 ">
+				<h2 class="lh_1 m_0 font_regular lowercase font_3:lg font_2:md font_1">presentation</h2>
+			</header>
+			<aside class="">
+				<h4 class="font-size_up c_black-6 font_medium capitalize"><i class="fas fa-users p-r_3"></i> Role Type 1</h4>
+				<div class="p-y_3 br-t_1  br_primary-2 br_solid font-size_down">
+					<ul class="ul_inline-semicolon font_regular font_copy">
+						<li>Marty Little <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
+						<li>Eileen Marvin <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
+						<li>Chelsea Dach DVM <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
+					</ul>
+				</div>
+				<h4 class="font-size_up c_black-6 font_medium capitalize"><i class="fas fa-users p-r_3"></i> Role Type 2</h4>
+				<div class="p-y_3 br-t_1  br_primary-2 br_solid font-size_down">
+					<ul class="ul_inline-semicolon font_regular font_copy">
+						<li>Wm Price<span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
+						<li>Mrs. Jeffrey Cartwright <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
+						<li>CEmmett Spencer<span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
+					</ul>
+				</div>
+				<h4 class="font-size_up c_black-6 font_medium capitalize"><i class="fas fa-file-certificate p-r_3"></i> Credits</h4>
+				<div class="p-y_3 br-t_1  br_primary-2 br_solid font-size_down-1">
+					<ul class="flex flex_row flex_wrap font_n3 gap_2 justify_start self_center ul_none uppercase items_center">
+						<li class="lh_0 flex_shrink">
+							<span class="bg_CME-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center">CME</span>
+						</li>
+						<li class="lh_0 flex_shrink">
+							<span class="bg_CNE-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center">CNE</span>
+						</li>
+					</ul>
+				</div>
+				<h4 class="font-size_up  c_black-6 font_medium"><i class="fas fa-tag p-r_3"></i>category</h4>
+				<div class="br-t_1  br_primary-2 br_solid p-y_3 c_black-7 font-size_down">
+					<ul class="ul_inline-comma">
+						<li>Channel 1</li>
+						<li>Navigating Health Care Economics</li>
+					</ul>
+				</div>
+				<h4 class="font-size_up  c_black-6 font_medium"><i class="fas fa-tags p-r_3"></i>tags</h4>
+				<div class="br-t_1  br_primary-2 br_solid p-y_3 c_black-7 font-size_down">
+					<ul class="ul_inline-comma">
+						<li>Tag Name 1</li>
+						<li>Daugherty - Larkin</li>
+						<li>relationships</li>
+						<li>web-readiness</li>
+					</ul>
+				</div>
+			</aside>
+		</section>
+		<section class="flex_auto flex_50:md  flex_auto:lg flex_none:lg  font_0 inset-level_up bg_white-7 br_radius br_solid br_1 br_black-2 p_3 p_4:lg">
+			<header class="font_display font_regular  c_primary-n1 m-b_3 lh_1 m-b_4:lg m-t_3 ">
+				<h2 class="lh_1 m_0 font_regular lowercase font_3:lg font_2:md font_1">session</h2>
+			</header>
+			<h4 class="font-size_up c_black-6 font_medium capitalize">
+				<i class="fas fa-users p-r_3"></i> Title
+			</h4>
+			<div class="p-y_3 br-t_1 br_black-2 br_solid font-size_down"> Cardiovascular Update for the Clinician III Pharmacologic Electrocardiogram Electrocardiographic Side Effect Cardiovascular Chest Pain Chest Pain Side Effect </div>
+			<h4 class="font-size_up c_black-6 font_medium capitalize">
+				<i class="fas fa-users p-r_3"></i> Faculty
+			</h4>
+			<div class="p-y_3 br-t_1 br_black-2 br_solid font-size_down">
+				<ul class="ul_inline-semicolon font_regular font_copy">
+					<li class="no-after font_medium c_primary-n1 ">Role Type 1:</li>
+					<li>Pepper H. Soda III, MD, FACC <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
+					<li class="no-after font_medium c_primary-n1  ">Role Type 2:</li>
+					<li>Dianna Denesik III <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
+					<li>Miguel Romaguera <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
+					<li>Jeanette Franecki <span class="opacity_9 font_light m-l_2">( New York, NY, USA)<span></span></span></li>
+				</ul>
+			</div>
+			<section class="inset-level_down-1 bg_black-1 shadow_emboss-light br_solid br_1 br_black-2 br_radius p_3 p_4:lg">
+				<div class="flex flex_row items_center">
+					<span class="c_black-4 font_0 font_1:md font_2:lg font_display font_regular lh_1 m-b_3 m-b_4:lg m-t_3 p-l_3 p-r_4 self_end"><i class="fa-list-alt fas font-size_up-2"></i></span>
+					<header class="font_display font_regular  c_primary-n2 m-b_2 lh_1 m-b_3:lg m-t_2 ">
+						<h3 class="lh_1 m_0 font_regular lowercase font_2:lg font_1:md font_0">presentation playlist</h3>
+					</header>
+				</div>
+				<div class="font_n2 font_n1:lg relative isolation_isolate">
+					<ul class="flex flex_column justify_stretch gap_3 ul_none">
+						<article class="br-t_1 br_black-3 br_solid flex flex_column flex_grow w_100 p-t_3">
+							<div class="flex flex_row font_ui justify_start relative w_100 gap_3 p_2 p_3:md h:bg_white-8 br_radius">
+								<main class="flex flex_column flex_auto gap_4 justify_between flex_auto relative w_100 isolation_isolate">
+									<h2 class="font-size_up-1 lh_2 font_display font_regular lh_1 c_primary-n3 m_0">
+										<a class="c_inherit-all expanded-click-area z_1 h:undecorated undecorated"> Presentation of the findings Arrhythmia Valvular Heart Disease Blood Vessel Blood Vessel </a>
+									</h2>
+								</main>
+								<aside class="flex_auto flex flex_column items_center justify_center">
+									<span class="font-size_down inline-block lh_0  c_black-8 text_center nowrap">
+										<span class="font-size_up c_accent-n2 block ">
+											<i class="fal fa-clock"></i> 15 </span> minutes </span>
+								</aside>
 							</div>
-						</section>
-					</section>
+						</article>
+						<article class="br-t_1 br_black-3 br_solid flex flex_column flex_grow w_100 p-t_3">
+							<div class="flex flex_row font_ui justify_start relative w_100 gap_4 p_4 bg_white shadow_overlap-light br_radius">
+								<main class="flex_auto">
+									<h2 class="font-size_up-1 lh_2 font_display font_regular lh_1 c_primary-n3 m_0">
+										<a class="c_inherit-all expanded-click-area z_1 h:undecorated undecorated"> Presentation of the findings Electrocardiogram Chest Pain Arteriosclerosis Side Effect Electrocardiogram </a>
+									</h2>
+								</main>
+								<aside class="flex_none flex flex_column items_center justify_center">
+									<span class="font-size_up-2 inline-block lh_0  c_accent text_center nowrap">
+										<i class="fas fa-play"></i>
+									</span>
+								</aside>
+							</div>
+						</article>
+						<article class="br-t_1 br_black-3 br_solid flex flex_column flex_grow w_100 p-t_3">
+							<div class="flex flex_row font_ui justify_start relative w_100 gap_3 p_2 p_3:md h:bg_white-8 br_radius">
+								<main class="flex flex_column flex_auto gap_4 justify_between flex_auto relative w_100 isolation_isolate">
+									<h2 class="font-size_up-1 lh_2 font_display font_regular lh_1 c_primary-n3 m_0">
+										<a class="c_inherit-all expanded-click-area z_1 h:undecorated undecorated"> Presentation of the findings Valvular Heart Disease Myocardial Valvular Pericardial Pericardial Blood Vessel </a>
+									</h2>
+								</main>
+								<aside class="flex_auto flex flex_column items_center justify_center">
+									<span class="font-size_down inline-block lh_0  c_black-8 text_center nowrap">
+										<span class="font-size_up c_accent-n2 block ">
+											<i class="fal fa-clock"></i> 15 </span> minutes </span>
+								</aside>
+							</div>
+						</article>
+						<article class="br-t_1 br_black-3 br_solid flex flex_column flex_grow w_100 p-t_3">
+							<div class="flex flex_row font_ui justify_start relative w_100 gap_3 p_2 p_3:md h:bg_white-8 br_radius">
+								<main class="flex flex_column flex_auto gap_4 justify_between flex_auto relative w_100 isolation_isolate">
+									<h2 class="font-size_up-1 lh_2 font_display font_regular lh_1 c_primary-n3 m_0">
+										<a class="c_inherit-all expanded-click-area z_1 h:undecorated undecorated"> Presentation of the findings </a>
+									</h2>
+								</main>
+								<aside class="flex_auto flex flex_column items_center justify_center">
+									<span class="font-size_down inline-block lh_0  c_black-8 text_center nowrap">
+										<span class="font-size_up c_accent-n2 block ">
+											<i class="fal fa-clock"></i> 15 </span> minutes </span>
+								</aside>
+							</div>
+						</article>
+					</ul>
 				</div>
 			</section>
-			<footer class="flex flex_column gap_4 grid-area_footerArea grid-col_5 grid:md m-t_auto p-y_0:md p-y_3">
-				<div id="subfooter" class="bg_primary-1 flex_auto font_n1 z_1 br_radius texture_dust shadow_emboss-light p_3 p_4:lg col-start
-				col-end_4">
-    <ul class="m_auto footer-bottom-links ul_none max-w_80">
-        <li class="inline p_2"><a href="//www.acc.org/footer-pages/media-center" class="c_white-6 h:c_white">Media Center</a></li>
-        <li class="inline p_2"><a href="//www.acc.org/footer-pages/quick-start-guide" class="c_white-6 h:c_white">ACC.org Quick Start Guide</a></li>
-        <li class="inline p_2"><a class="c_white-6 h:c_white" href="//www.acc.org/footer-pages/advertising-and-sponsorship-policy">Advertising &amp; Sponsorship Policy</a></li>
-        <li class="inline p_2"><a class="c_white-6 h:c_white" href="//www.acc.org/footer-pages/clinical-content-disclaimer">Clinical Content Disclaimer</a> </li>
-        <li class="inline p_2"><a class="c_white-6 h:c_white" href="//www.acc.org/footer-pages/editorial-board">Editorial Board</a></li>
-        <li class="inline p_2"><a class="c_white-6 h:c_white" href="//www.acc.org/footer-pages/privacy-policy">Privacy Policy</a></li>
-        <li class="inline p_2"><a class="c_white-6 h:c_white" href="//www.acc.org/footer-pages/registered-user-agreement">Registered User Agreement</a></li>
-        <li class="inline p_2"><a class="c_white-6 h:c_white" href="//www.acc.org/footer-pages/terms-and-conditions">Terms of Service</a></li>
-        <li class="inline p_2"><a class="c_white-6 h:c_white" href="//www.acc.org/footer-pages/cookie-policy">Cookie Policy</a></li>
-        <li class="inline p_2"><a class="c_white-6 h:c_white" href="//www.acc.org/footer-pages/member-hub-terms-of-use">Member Hub Terms of Use</a></li>
-        <li class="inline p_2"><a class="c_white-6 h:c_white" href="//www.acc.org/sitemap-acc.xml">Site Map</a> </li>
-    </ul> <!-- /footer-bottom-links -->
-</div><!-- /subfooter --> <div id="logo" class="bg_white br_1 br_black-1 br_round br-br_radius br-tl_radius  br_solid flex flex_none flex_row items_center justify_center  shadow_bevel-light p_2 p_3:md p_4:lg col-start_4 col-end ">
-    <h2 class="logo_condensed w_100 max-w_20">American College of Cardiology</h2>
-</div>
-			</footer>
-		</div>
+		</section>
 	</div>
-	<script src="{{ 'assets/js/lib/script.js' | relative_url }}"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-</body>
+</section>
