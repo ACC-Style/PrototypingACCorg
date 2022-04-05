@@ -1,0 +1,72 @@
+--- 
+layout: default
+---
+{% include lib-head.html %}
+
+
+<body class="BODY_TAG-stand-in bg_black-4 w_100 p_3:md p_2 grid:md min-h_100"></body>
+<div class="page-wrapper grid:md p_2 p_3:md isolation_isolate br_radius bg_white-7">
+	<div style="height: calc(100vh - 1.5rem);" class="display_none flex:md sticky t_3  ">
+        <nav style="height: calc(100vh - 1.5rem); width: 35rem;" id="navigation" class="absolute h_100vh shadow_emboss-light filter_blur overflow_hidden br_radius bg_black-7 flex:md flex_column:md justify_between p-t_0 p-b_3 p-l_3 p-r_3 p-b_4:md p-t_4:md p-r_0:md font_4:lg font_3:md font_2 transition_3 font_display nav-mined">
+            <ul class="flex flex_column:md flex_row ul_none justify_around justify_start:md gap_3 w_100 w_auto:md">
+                <li  id="mainDesktopNavTouchToggle" class="display_none flex:touch flex_row justify_end p-x_3 m-l_n3 ">
+                    <span class="aspect_1x1 bg_accent br_round c_inherit-all c_white-8 grid h:c_white justify_center p_3 self_center text_center w_auto shadow_n3"><i class="block fa-chevron-circle-right fa-fw fas icon [rotate_180] self_center text-shadow_black-1 transition_2"></i></span>
+                </li>
+                <li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light active">
+                    <a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md" href="./home"><i class="icon fas fa-fw fa-home-heart p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center p-l_3:md p-l_4:lg lowercase lh_0 active font_n2 font_3:md font_4:lg display_none:md opacity_0">Home</span></a>
+                </li>
+                <li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light ">
+                    <a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md " href="./search"><i class="icon fas fa-fw fa-search p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center p-l_3:md p-l_4:lg lowercase lh_0 font_n2 font_3:md font_4:lg display_none:md opacity_0">Search</span></a>
+                </li>
+                <li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light ">
+                    <a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md" href="./saved"><i class="icon fas fa-fw fa-heart p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center p-l_3:md p-l_4:lg lowercase lh_0 font_n2 font_3:md font_4:lg display_none:md opacity_0">Saved</span></a>
+                </li>
+                <li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light ">
+                    <a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md" href="./credits"><i class="icon fas fa-fw fa-award p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center p-l_3:md p-l_4:lg lowercase lh_0 font_n2 font_3:md font_4:lg display_none:md opacity_0">Credits</span></a>
+                </li>
+                <li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light disabled cursor_not-allowed opacity_3 ">
+                    <a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md" href="./watching"><i class="icon fas fa-fw fa-play p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center p-l_3:md p-l_4:lg lowercase lh_0 font_n2 font_3:md font_4:lg display_none:md opacity_0">Watching</span></a>
+                </li>
+            </ul>
+            <ul class="flex_column:md flex_row ul_none justify_center gap_3 flex">
+                <li class="nav-item flex_auto br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 bg_acc-n1 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light">
+                    <a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md"><i class="icon fas fa-fw fa-sign-out-alt p-x_2 p-y_3 p-y_0:md self_center"></i><span class="label self_center p-l_3:md p-l_4:lg lowercase lh_0 font_n2 font_3:md font_4:lg display_none:md opacity_0">Log Out</span></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <nav id="navigation_mobile" class="block display_none:md shadow_emboss-light filter_blur br_radius bg_black-6 p_2 sticky t_3 z_4">
+        <ul class="flex flex_row ul_none justify_between">
+            <li class="nav-item flex_auto br_radius c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light active">
+                <a class="c_inherit-all flex flex_column h:undecorated p_3" href="./home"><i class="icon fas fa-fw fa-home-heart p-y_2 self_center"></i><span class="label self_center  lowercase lh_0 active font_n2 h_1h">Home</span></a>
+            </li>
+            <li class="nav-item flex_auto br_radius c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light ">
+                <a class="c_inherit-all flex flex_column h:undecorated p_3" href="./search"><i class="icon fas fa-fw fa-search p-y_2 self_center"></i><span class="label self_center  lowercase lh_0 font_n2 h_1h ">Search</span></a>
+            </li>
+            <li class="nav-item flex_auto br_radius c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light ">
+                <a class="c_inherit-all flex flex_column h:undecorated p_3" href="./saved"><i class="icon fas fa-fw fa-heart p-y_2 self_center"></i><span class="label self_center  lowercase lh_0 font_n2 h_1h nowrap ">Saved</span></a>
+            </li>
+            <li class="nav-item flex_auto br_radius c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light ">
+                <a class="c_inherit-all flex flex_column h:undecorated p_3" href="./saved"><i class="icon fas fa-fw fa-award p-y_2 self_center"></i><span class="label self_center  lowercase lh_0 font_n2 h_1h ">Credits</span></a>
+            </li>
+            <li class="nav-item flex_auto br_radius c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light disabled opacity_3 cursor_not-allowed ">
+                <a class="c_inherit-all flex flex_column h:undecorated p_3" href="./watching"><i class="icon fas fa-fw fa-play p-y_2 self_center"></i><span class="label self_center lowercase lh_0 font_n2 h_1h ">Watching</span></a>
+            </li>
+            <li class="nav-item flex_auto br_radius c_white-8 bg_acc-n1 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light">
+                <a class="c_inherit-all flex flex_column h:undecorated p_3"><i class="icon fas fa-fw fa-sign-out-alt p-y_2 self_center"></i><span class="label self_center lowercase lh_0 font_n2 nowrap h_1h">Log Out</span></a>
+            </li>
+        </ul>
+    </nav>
+    <script src="./js/library/library.main-nav.js"></script>
+    <!-- These Styles are just for the styleguide and are not to be included with the pattern. -->
+</div>
+
+
+<script src="{{ 'assets/js/lib/script.js' | relative_url }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  <!-- Slider CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css"> 
+  <!-- Slider JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+</body>
