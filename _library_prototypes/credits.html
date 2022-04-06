@@ -36,7 +36,7 @@ creditsActive: true
         </div>
         <h2 class="">You have watched a lot of these types of education.</h2> -->
         <h2 class="">You have watched a lot of this education.</h2>
-        <section class="br_radius overflow_hidden relative z_1" id="CreditChartContainer" style="width:100%; height:500px;">
+        <section class="br_radius overflow_hidden relative z_1 h_50:lh h_60:md h_80" id="CreditChartContainer" style="width:100%;">
     
         </section>
 
@@ -63,11 +63,15 @@ creditsActive: true
         function drawChart() {
             var data = google.visualization.arrayToDataTable([
                 ['Credit Type', 'Watched Hours', { role: 'style' },'Total Credit Hours',{ role: 'style' }],
-                ['AAPA', 1.45, "#e8c536",  28.55, '#cccccc'],
-                ['ABP', 2,  "#007a5b", 100, "#cccccc"],
-                ['CME', 8.94, "#00a15b",  91, '#cccccc'],
-                ['CNE', 10.49, "#198dae",  89, '#cccccc'],
-                ['MOC', 19.30, "#9a1267",  80, '#cccccc'],
+                ['CME', 8.94, "#00a15b",  100, '#cccccc'],
+                ['MOC', 19.30, "#9a1267",  100, '#cccccc'],
+                ['ABP MOC', 19.30, "#0b6d4c",  100, '#cccccc'],
+                ['CNE', 10.49, "#198dae",  100, '#cccccc'],
+                ['AAPA', 1.45, "#e8c536", 100, '#cccccc'],
+                ['CPE', 1.45, "#992e2e", 100, '#cccccc'],
+                ['IPCE', 2,  "#6c36b3", 31, "#cccccc"],
+                ['ECME', 2,  "#d16528", 100, "#cccccc"],
+                
             ]);
             var view = new google.visualization.DataView(data);
             var options = {
