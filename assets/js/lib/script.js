@@ -25,7 +25,6 @@ document.addEventListener("scroll", debounce(storeScroll), { passive: true });
 // Update scroll position for first time
 storeScroll();
 
-
 let nav = document.getElementById("navigation");
 navigation.addEventListener("mouseenter", openMainDesktopNav);
 navigation.addEventListener("mouseleave", closeMainDesktopNav);
@@ -41,86 +40,98 @@ function toggleMainDesktopNav() {
     openMainDesktopNav();
   }
 }
-//test document width is greater than 768px
+
+////To prevent the menu from opening and closing too rapidly, we will set timers around the mouseenter and mouseleave events
+////If the opposite event is fired before the current running timeout finishes, the current timeout will be cancelled
+//delay times
+let showMenuDelay = 300;
+let hideMenuDelay = 500;
+//storing setTimeout instances
+let showMenuTimer, hideMenuTimer;
 
 function openMainDesktopNav() {
-	setTimeout(function () {
-		if (
-			document.documentElement.clientWidth > 768
-		) {
+	clearTimeout(hideMenuTimer);
+	showMenuTimer = setTimeout(function () {
+		//test document width is greater than or equal to 768px
+		if ( document.documentElement.clientWidth >= 768 ) {
 			navigation.classList.add("hover", "nav-maxed");
 			navigation.classList.remove("nav-mined");
+			
 			let navItems = navigation.querySelectorAll(".nav-item");
-      let icon = touchToggle.querySelector(".icon");
-      icon.classList.toggle("rotate_180");
+      		let icon = touchToggle.querySelector(".icon");
+      		icon.classList.toggle("rotate_180");
+			
 			navItems.forEach(function (navItem) {
-				setTimeout(function () {
+				//setTimeout(function () {
 					navItem
-						.querySelector(".label")
-						.classList.add("inline-block", "opacity_none");
+					  .querySelector(".label")
+					  .classList.add("inline-block", "opacity_none");
 					navItem
-						.querySelector(".label")
-						.classList.remove("display_none:md", "opacity_0");
-				}, 300);
+					  .querySelector(".label")
+					  .classList.remove("display_none:md", "opacity_0");
+				//}, 300);
 			});
 		}
-	}, 500);
+	}, showMenuDelay);
 }
+
 function closeMainDesktopNav() {
-	setTimeout(function () {
+	hideMenuTimer = setTimeout(function () {
 		navigation.classList.remove("hover", "nav-maxed");
 		navigation.classList.add("nav-mined");
+
 		let navItems = navigation.querySelectorAll(".nav-item");
-    let icon = touchToggle.querySelector(".icon");
-    icon.classList.toggle("rotate_180");
+    	let icon = touchToggle.querySelector(".icon");
+    	icon.classList.toggle("rotate_180");
+
 		navItems.forEach(function (navItem) {
 			navItem.querySelector(".label").classList.remove("inline-block");
 			navItem.querySelector(".label").classList.add("display_none:md");
-			//test document width is greater than 768px
-			if (document.documentElement.clientWidth > 768) {
+			//test document width is greater than or equal to 768px
+			if (document.documentElement.clientWidth >= 768) {
 				navItem
-					.querySelector(".label")
-					.classList.remove("opacity_none");
+				  .querySelector(".label")
+				  .classList.remove("opacity_none");
 				navItem.querySelector(".label").classList.add("opacity_0");
 			}
 		});
-	}, 300);
+	}, hideMenuDelay);
 }
 
-			let filterZone = document.getElementById("filterZone");
-			let filterZoneNav = filterZone.querySelector("nav");
-			let filterFacets = filterZone.querySelector("#filterFacets");
-			let filterZoneExpanded = true;
-			filterZoneNav.addEventListener("click", function () {
-				if (filterZoneExpanded) {
-					filterFacets.classList.toggle("opacity_0");
-					filterFacets.classList.toggle("opacity_none");
-					setTimeout(function () {
-						filterFacets.classList.toggle("{display_none}");
-						filterFacets.classList.toggle("display_none");
-						filterFacets.classList.toggle("min-h_0:md");
-						filterFacets.classList.toggle("min-h_30:md");
-						filterZone.classList.remove("{nav-mined}", "nav-maxed");
-						filterZone.classList.add("nav-mined", "{nav-maxed}");
-						filterZoneNav.querySelector("span.label").classList.toggle("{display_none:md}");
-						filterZoneNav.querySelector("span.label").classList.toggle("display_none:md");
-						filterZoneExpanded = false;
-					}, 300);
-					return;
-				} else {
-					filterZone.classList.add( "{nav-mined}", "nav-maxed");
-					filterZone.classList.remove( "nav-mined", "{nav-maxed}");
-					filterFacets.classList.toggle("min-h_0:md");
-					filterFacets.classList.toggle("min-h_30:md");
-					filterFacets.classList.toggle("{display_none}");
-					filterFacets.classList.toggle("display_none");
-					setTimeout(function () {
-						filterFacets.classList.toggle("opacity_0");
-						filterFacets.classList.toggle("opacity_none");
-						filterZoneNav.querySelector("span.label").classList.toggle("{display_none:md}");
-						filterZoneNav.querySelector("span.label").classList.toggle("display_none:md");
-						filterZoneExpanded = true;
-					}, 300);
-					return;
-				}
-			});
+let filterZone = document.getElementById("filterZone");
+let filterZoneNav = filterZone.querySelector("nav");
+let filterFacets = filterZone.querySelector("#filterFacets");
+let filterZoneExpanded = true;
+filterZoneNav.addEventListener("click", function () {
+	if (filterZoneExpanded) {
+		filterFacets.classList.toggle("opacity_0");
+		filterFacets.classList.toggle("opacity_none");
+		setTimeout(function () {
+			filterFacets.classList.toggle("{display_none}");
+			filterFacets.classList.toggle("display_none");
+			filterFacets.classList.toggle("min-h_0:md");
+			filterFacets.classList.toggle("min-h_30:md");
+			filterZone.classList.remove("{nav-mined}", "nav-maxed");
+			filterZone.classList.add("nav-mined", "{nav-maxed}");
+			filterZoneNav.querySelector("span.label").classList.toggle("{display_none:md}");
+			filterZoneNav.querySelector("span.label").classList.toggle("display_none:md");
+			filterZoneExpanded = false;
+		}, 300);
+		return;
+	} else {
+		filterZone.classList.add( "{nav-mined}", "nav-maxed");
+		filterZone.classList.remove( "nav-mined", "{nav-maxed}");
+		filterFacets.classList.toggle("min-h_0:md");
+		filterFacets.classList.toggle("min-h_30:md");
+		filterFacets.classList.toggle("{display_none}");
+		filterFacets.classList.toggle("display_none");
+		setTimeout(function () {
+			filterFacets.classList.toggle("opacity_0");
+			filterFacets.classList.toggle("opacity_none");
+			filterZoneNav.querySelector("span.label").classList.toggle("{display_none:md}");
+			filterZoneNav.querySelector("span.label").classList.toggle("display_none:md");
+			filterZoneExpanded = true;
+		}, 300);
+		return;
+	}
+});
