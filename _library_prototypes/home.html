@@ -15,8 +15,8 @@ y_0:md font_1:lg font_0 w_100">
 		<div class="relative isolation_isolate overflow_hidden m-x_n2 m-x_n3:md m-x_n4:lg">
 			<!-- Start of the javascript Widget -->
 			<!-- javascript documentation: http://ganlanyuan.github.io/tiny-slider/#2-add-markup -->
-			<div id="slider1" class=" flex flex_row justify_stretch p-y_4 p-x_3 overflow_hidden m-y_3 inset-level_down-1 bg_black-1 shadow_emboss-light br_solid br_1 br_black-2 br_radius texture_light ">
-				<div>
+			<div id="slider1" class="min-h_30 flex flex_row justify_stretch p-y_4 p-x_3 overflow_hidden m-y_3 inset-level_down-1 bg_black-1 shadow_emboss-light br_solid br_1 br_black-2 br_radius texture_light ">
+				<div class="opacity_0 transition_4 display_none ">
 					<article class="flex flex_grow w_100 inset-level_up-1 bg_white br_radius shadow_overlap-light relative br_solid br_1 br_black-2">
 						<div class="flex flex_row font_ui justify_start relative w_100">
 							<main class="flex flex_column flex_auto justify_between flex_auto relative w_100 isolation_isolate p_4 gap_3">
@@ -62,7 +62,7 @@ y_0:md font_1:lg font_0 w_100">
 						</div>
 					</article>
 				</div>
-				<div>
+				<div class="opacity_0 transition_4 display_none ">
 					<article class="flex flex_grow w_100 inset-level_up-1 bg_white br_radius shadow_overlap-light relative br_solid br_1 br_black-2">
 						<div class="flex flex_row font_ui justify_start relative w_100">
 							<main class="flex flex_column flex_auto justify_between flex_auto relative w_100 isolation_isolate p_4 gap_3">
@@ -111,7 +111,7 @@ y_0:md font_1:lg font_0 w_100">
 						</div>
 					</article>
 				</div>
-				<div>
+				<div class="opacity_0 transition_4 display_none ">
 					<article class="flex flex_grow w_100 inset-level_up-1 bg_white br_radius shadow_overlap-light relative br_solid br_1 br_black-2">
 						<div class="flex flex_row font_ui justify_start relative w_100">
 							<main class="flex flex_column flex_auto justify_between flex_auto relative w_100 isolation_isolate p_4 gap_3">
@@ -169,7 +169,7 @@ y_0:md font_1:lg font_0 w_100">
 						</div>
 					</article>
 				</div>
-				<div>
+				<div class="opacity_0 transition_4 display_none ">
 					<article class="flex flex_grow w_100 inset-level_up-1 bg_white br_radius shadow_overlap-light relative br_solid br_1 br_black-2">
 						<div class="flex flex_row font_ui justify_start relative w_100">
 							<main class="flex flex_column flex_auto justify_between flex_auto relative w_100 isolation_isolate p_4 gap_3">
@@ -252,7 +252,22 @@ y_0:md font_1:lg font_0 w_100">
 			</div>
 		</div>
 		<script>
-			document.addEventListener("DOMContentLoaded", function (event) {
+		let fadeInSlides = function(selector) {
+					let selectorSlides = selector + ' .display_none';
+					console.log(selectorSlides);
+					let els = document.querySelectorAll(selectorSlides);
+					setTimeout(function() {
+						for(i=0; i<els.length; i++){
+						els[i].classList.add("opacity_none");
+						els[i].classList.remove("display_none");
+						els[i].classList.remove("opacity_0");
+					}
+					}, 500);
+
+					
+			}
+			document.addEventListener("DOMContentLoaded", function (event) {			
+
 				let args = {
 					items: 1,
 					mouseDrag: true,
@@ -280,8 +295,14 @@ y_0:md font_1:lg font_0 w_100">
 						}
 					}
 				};
-				let slider1 = tns({ container: '#slider1', controlsContainer: "#slider1-customize-controls", ...args });
+
+				
+				
+				
+			let slider1 = tns({ container: '#slider1', controlsContainer: "#slider1-customize-controls", onInit: fadeInSlides("#slider1"),...args });
+
 			});
+
 		</script>
 		<!-- End of widget. -->
 		<footer class="flex flex_row-reverse p-t_3 p-b_4"><a href="" class="link self_end   ">view all from "Featured" <i class="fal fa-chevron-circle-right m-r_3"></i></a></footer>
