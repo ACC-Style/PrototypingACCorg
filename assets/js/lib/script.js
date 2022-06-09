@@ -25,7 +25,7 @@ document.addEventListener("scroll", debounce(storeScroll), { passive: true });
 // Update scroll position for first time
 storeScroll();
 
-let nav = document.getElementById("navigation");
+let navigation = document.getElementById("navigation");
 navigation.addEventListener("mouseenter", openMainDesktopNav);
 navigation.addEventListener("mouseleave", closeMainDesktopNav);
 
