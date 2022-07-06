@@ -24,7 +24,7 @@ const storeScroll = () => {
 document.addEventListener("scroll", debounce(storeScroll), { passive: true });
 // Update scroll position for first time
 storeScroll();
-
+let isMouseHover = false;
 let navigation = document.getElementById("navigation");
 navigation.addEventListener("mouseenter", openMainDesktopNav);
 navigation.addEventListener("mouseleave", closeMainDesktopNav);
@@ -34,11 +34,11 @@ let touchToggle = document.getElementById("mainDesktopNavTouchToggle");
 touchToggle.addEventListener("click", toggleMainDesktopNav);
 
 function toggleMainDesktopNav() {
-  if (navigation.classList.contains("nav-maxed")) {
-    closeMainDesktopNav();
-  } else {
-    openMainDesktopNav();
-  }
+	if (navigation.classList.contains("nav-maxed")) {
+		closeMainDesktopNav();
+	} else {
+		openMainDesktopNav();
+	}
 }
 
 ////To prevent the menu from opening and closing too rapidly, we will set timers around the mouseenter and mouseleave events
@@ -50,39 +50,44 @@ let hideMenuDelay = 500;
 let showMenuTimer, hideMenuTimer;
 
 function openMainDesktopNav() {
+	isMouseHover = true;
 	clearTimeout(hideMenuTimer);
 	showMenuTimer = setTimeout(function () {
-		//test document width is greater than or equal to 768px
-		if ( document.documentElement.clientWidth >= 768 ) {
-			navigation.classList.add("hover", "nav-maxed");
-			navigation.classList.remove("nav-mined");
-			
-			let navItems = navigation.querySelectorAll(".nav-item");
-      		let icon = touchToggle.querySelector(".icon");
-      		icon.classList.toggle("rotate_180");
-			
-			navItems.forEach(function (navItem) {
-				//setTimeout(function () {
+		// test if cursor is over the navigation
+		if (isMouseHover) {
+			//test document width is greater than or equal to 768px
+			if (document.documentElement.clientWidth >= 768) {
+				navigation.classList.add("hover", "nav-maxed");
+				navigation.classList.remove("nav-mined");
+
+				let navItems = navigation.querySelectorAll(".nav-item");
+				let icon = touchToggle.querySelector(".icon");
+				icon.classList.toggle("rotate_180");
+
+				navItems.forEach(function (navItem) {
+					//setTimeout(function () {
 					navItem
-					  .querySelector(".label")
-					  .classList.add("inline-block", "opacity_none");
+						.querySelector(".label")
+						.classList.add("inline-block", "opacity_none");
 					navItem
-					  .querySelector(".label")
-					  .classList.remove("display_none:md", "opacity_0");
-				//}, 300);
-			});
+						.querySelector(".label")
+						.classList.remove("display_none:md", "opacity_0");
+					//}, 300);
+				});
+			}
 		}
 	}, showMenuDelay);
 }
 
 function closeMainDesktopNav() {
+	isMouseHover = false;
 	hideMenuTimer = setTimeout(function () {
 		navigation.classList.remove("hover", "nav-maxed");
 		navigation.classList.add("nav-mined");
 
 		let navItems = navigation.querySelectorAll(".nav-item");
-    	let icon = touchToggle.querySelector(".icon");
-    	icon.classList.toggle("rotate_180");
+		let icon = touchToggle.querySelector(".icon");
+		icon.classList.toggle("rotate_180");
 
 		navItems.forEach(function (navItem) {
 			navItem.querySelector(".label").classList.remove("inline-block");
@@ -90,8 +95,8 @@ function closeMainDesktopNav() {
 			//test document width is greater than or equal to 768px
 			if (document.documentElement.clientWidth >= 768) {
 				navItem
-				  .querySelector(".label")
-				  .classList.remove("opacity_none");
+					.querySelector(".label")
+					.classList.remove("opacity_none");
 				navItem.querySelector(".label").classList.add("opacity_0");
 			}
 		});
@@ -113,14 +118,18 @@ filterZoneNav.addEventListener("click", function () {
 			filterFacets.classList.toggle("min-h_30:md");
 			filterZone.classList.remove("{nav-mined}", "nav-maxed");
 			filterZone.classList.add("nav-mined", "{nav-maxed}");
-			filterZoneNav.querySelector("span.label").classList.toggle("{display_none:md}");
-			filterZoneNav.querySelector("span.label").classList.toggle("display_none:md");
+			filterZoneNav
+				.querySelector("span.label")
+				.classList.toggle("{display_none:md}");
+			filterZoneNav
+				.querySelector("span.label")
+				.classList.toggle("display_none:md");
 			filterZoneExpanded = false;
 		}, 300);
 		return;
 	} else {
-		filterZone.classList.add( "{nav-mined}", "nav-maxed");
-		filterZone.classList.remove( "nav-mined", "{nav-maxed}");
+		filterZone.classList.add("{nav-mined}", "nav-maxed");
+		filterZone.classList.remove("nav-mined", "{nav-maxed}");
 		filterFacets.classList.toggle("min-h_0:md");
 		filterFacets.classList.toggle("min-h_30:md");
 		filterFacets.classList.toggle("{display_none}");
@@ -128,8 +137,12 @@ filterZoneNav.addEventListener("click", function () {
 		setTimeout(function () {
 			filterFacets.classList.toggle("opacity_0");
 			filterFacets.classList.toggle("opacity_none");
-			filterZoneNav.querySelector("span.label").classList.toggle("{display_none:md}");
-			filterZoneNav.querySelector("span.label").classList.toggle("display_none:md");
+			filterZoneNav
+				.querySelector("span.label")
+				.classList.toggle("{display_none:md}");
+			filterZoneNav
+				.querySelector("span.label")
+				.classList.toggle("display_none:md");
 			filterZoneExpanded = true;
 		}, 300);
 		return;
