@@ -44,7 +44,7 @@ function toggleMainDesktopNav() {
 ////To prevent the menu from opening and closing too rapidly, we will set timers around the mouseenter and mouseleave events
 ////If the opposite event is fired before the current running timeout finishes, the current timeout will be cancelled
 //delay times
-let showMenuDelay = 300;
+let showMenuDelay = 1000;
 let hideMenuDelay = 500;
 //storing setTimeout instances
 let showMenuTimer, hideMenuTimer;
