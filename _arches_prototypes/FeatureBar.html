@@ -1,0 +1,92 @@
+---
+layout: arches
+name: "Tiny-Slider"
+position: "Feature Bar"
+---
+
+  <!-- Slider CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
+    <!-- Slider JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+
+        <!-- Slider Start -->
+        <div id="featureSlider" class="relative">
+            <div class="slider flex flex_row justify_stretch m-y_4">
+                <div class="slide flex flex_column m-x_3 relative m-b_3 self_stretch">
+                    <a class="br_1 br_solid br_black-3 block" href="https://www.acc.org/Latest-in-Cardiology/Articles/2022/05/25/12/10/COVID-19s-Impact-on-Heart-Disease-and-Stroke-Mortality"
+                        target="_blank"><img class="w_100" src="https://www.acc.org/-/media/Non-Clinical/Images/Marketing-Images/Features/Triptychs_New/COVID-19/COVID-19-Data-625x350.jpg"></a>
+                    <span class="date font_n3">July 04, 2022</span>
+                    <h2 class="font_display font_0 font_medium c_primary-n2 m-y_1">
+                        <a href="https://www.acc.org/Latest-in-Cardiology/Articles/2022/05/25/12/10/COVID-19s-Impact-on-Heart-Disease-and-Stroke-Mortality"
+                            target="_blank">Coronary Artery Calcium for Risk Stratification of Sudden Cardiac Death | Certified Activity</a>
+                    </h2>
+                </div>
+                <div class="slide flex flex_column m-x_3 relative m-b_3 self_stretch">
+                    <a class="br_1 br_solid br_black-3 block" href="https://www.acc.org/Latest-in-Cardiology/Articles/2022/06/28/15/59/accel-lite-28jun2022" target="_blank"><img class="w_100" src="https://www.acc.org/-/media/Non-Clinical/Images/Marketing-Images/Features/Triptychs_New/Default-Content/Podcast_accellite_new.jpg"></a>
+                    <span class="date font_n3">June 28, 2022</span>
+                    <h2 class="font_display font_0 font_medium c_primary-n2 m-y_1">
+                        <a href="https://www.acc.org/Latest-in-Cardiology/Articles/2022/06/28/15/59/accel-lite-28jun2022" target="_blank">ACCEL Lite: ACC ECDP on COVID-19: Post-acute Sequelae | Podcast</a>
+                    </h2>
+                </div>
+                <div class="slide flex flex_column m-x_3 relative m-b_3 self_stretch">
+                    <a class="br_1 br_solid br_black-3 block" href="https://www.acc.org/Latest-in-Cardiology/Articles/2022/06/21/16/13/The-PACMAN-AMI-Trial" target="_blank"><img class="w_100" src="https://www.acc.org/-/media/Non-Clinical/Images/Marketing-Images/Features/Triptychs_New/Arteries_Veins_Cholesterol/coronary-artery-plaque_113512809.jpg"></a>
+                    <span class="date font_n3">June 21, 2022</span>
+                    <h2 class="font_display font_0 font_medium c_primary-n2 m-y_1">
+                        <a href="https://www.acc.org/Latest-in-Cardiology/Articles/2022/06/21/16/13/The-PACMAN-AMI-Trial" target="_blank">PACMAN-AMI Trial: Alirocumab Takes a Bite Out of Coronary Plaque | Expert Analysis</a>
+                    </h2>
+                </div>
+                <div class="slide flex flex_column m-x_3 relative m-b_3 self_stretch">
+                    <a class="br_1 br_solid br_black-3 block" href="https://www.acc.org/Latest-in-Cardiology/Articles/2022/06/17/14/15/Top-Takeaways-From-ACC-Care-of-the-Athletic-Heart-Virtual-2022" target="_blank"><img class="w_100" src="https://www.acc.org/-/media/Non-Clinical/Images/Marketing-Images/Features/Triptychs_New/ACC-Meetings/2022/Care-of-Athletic-Heart-2022-logo.png"></a>
+                    <span class="date font_n3">Jun 17, 2022</span>
+                    <h2 class="font_display font_0 font_medium c_primary-n2 m-y_1">
+                        <a href="https://www.acc.org/Latest-in-Cardiology/Articles/2022/06/17/14/15/Top-Takeaways-From-ACC-Care-of-the-Athletic-Heart-Virtual-2022" target="_blank">Top Takeaways From ACC Care of the Athletic Heart Virtual 2022</a>
+                    </h2>
+                </div>
+                <div class="slide flex flex_column m-x_3 relative m-b_3 self_stretch">
+                    <a class="br_1 br_solid br_black-3 block" href="https://www.acc.org/Latest-in-Cardiology/Articles/2022/06/01/12/11/Why-Combination-Lipid-Lowering-Therapy-Should-be-Considered" target="_blank"><img class="w_100" src="https://www.acc.org/-/media/Non-Clinical/Images/Marketing-Images/Features/Triptychs_New/Arteries_Veins_Cholesterol/artery_cholestrol_81970052.jpg"></a>
+                    <span class="date font_n3">June 01, 2022</span>
+                    <h2 class="font_display font_0 font_medium c_primary-n2 m-y_1">
+                        <a href="https://www.acc.org/Latest-in-Cardiology/Articles/2022/06/01/12/11/Why-Combination-Lipid-Lowering-Therapy-Should-be-Considered" target="_blank">Consider Combination Lipid-Lowering Therapy Early for Treatment of Elevated LDL-C | Expert Analysis</a>
+                    </h2>
+                </div>
+            </div>
+            <!-- controls -->
+            <div class="controls" id="customize-controls">
+                <span class="prev c_white-5 h:c_white font_7 text-shadow_black-1 p-y_5 p-x_4 absolute"><i class="fa fa-chevron-left" aria-hidden="true"></i></span>
+                <span class="next c_white-5 h:c_white font_7 text-shadow_black-1 p-y_5 p-x_4 absolute r_0"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+            </div>
+        </div>
+        
+        
+
+
+<script>
+    let slider = tns({
+        "container": ".slider",
+        "items": 3,
+        "autoplay": false,
+        "controlsContainer": "#customize-controls",
+        "nav": false,
+        //navPosition: "bottom",
+        "responsive": {
+            1: {
+                items: 1
+            },
+            480: {
+                "items": 1
+            },
+            768: {
+                "items": 2
+            },
+            1024: {
+                "items": 3
+            }
+        }
+    });
+</script>
+
+<style>
+    #customize-controls span {
+       top: 40%;
+    }
+</style>
