@@ -1,0 +1,177 @@
+---
+layout: virtual
+name: "Form Build Basic"
+position: "Structure"
+---
+<h1 class='font_display p_4'>
+  {{page.name}}
+</h1>
+<div class='p_4 max-w_30 font_0 gap_4 flex_column flex'> 
+  {% for item in site.data.form %}
+   <div class='question font_ui'>
+    <label for="{{item.id}}" class='label-holder flex font-size_up-1 font_display font_medium p-y_2 lh_1'>
+      <span class='text cell flex_shrink'>
+        {{item.label}}
+      </span>
+      <span class='requied-holder flex_none'>
+        <i class='fas fa-fa-asterisk c_warning'></i>
+      </span>
+    </label>
+    {% if  item.input-type == 'select' %} 
+    <div class='input-holder flex self_end'>
+      <label for="{{item.id}}" class='value-space br_solid br_2 p_3 p-y_0 texture_light flex_column flex justify_center flex_none p-x_3 p-y_0 br-tl_radius br-bl_radius c_black-6 bg_black-_05 br_black-2'>
+        <i class='fas {{item.pre-icon}}'></i>
+      </label>
+      <select id="{{item.id}}" name="{{item.id}}" type="{{item.input-type}}" placeholder="{{ item.placeholder }}" {% if item.disabled %} disabled {% endif %} class='br_2 p-y_2 br_solid flex_auto p-l_4 lh_3  c_black bg_white f:bg_primary br_black-2  br-l_0 br-tl_square br-bl_square 
+        {% if item.post-unit != undefined %}
+        br_square 
+        {% endif %}
+        {% if item.disabled %}
+        disabled 
+        {% endif %}
+        '>
+        <option default disabled>Select One</option> {% assign options = item.options | split: " | " %} {% for option in options %} <option value="{{ option }}">{{option}}</option> {% endfor %}
+      </select> {% if item.post-unit != undefined %} <span class="c_black-6 bg_black-_05 br_black-2 br_solid br_1 br-tr_radius br-br_radius texture_light grid justify_center text_center p_2 b-l_0">{{item.post-unit}}</span> {% endif %}
+      <!---->
+    </div>      
+    {% elsif  item.input-type == 'datetime' %} 
+    <div class='input-holder flex self_end gap-x_3'>
+      <div class="flex_auto flex flex_row">
+        <label for="{{item.id}}-date" class='value-space br_solid br_2 p_3 p-y_0 texture_light flex_column flex justify_center flex_none p-x_3 p-y_0 br-tl_radius br-bl_radius c_black-6 bg_black-_05 br_black-2'>
+          <i class='fas fa-calendar'></i>
+        </label>
+        <input id="{{item.id}}-date" name="{{item.id}}-date" type="date" placeholder="{{item.placeholder}}" class='br_2 p-y_2 br_solid flex_auto p-l_4 lh_3  c_black bg_white f:bg_primary br_black-2  br-l_0 br-tl_square br-bl_square' />
+      </div>
+      <div class="flex_auto flex flex_row">
+        <label for="{{item.id}}-time" class='value-space br_solid br_2 p_3 p-y_0 texture_light flex_column flex justify_center flex_none p-x_3 p-y_0 br-tl_radius br-bl_radius c_black-6 bg_black-_05 br_black-2'>
+          <i class='fas fa-clock'></i>
+        </label>
+        <input id="{{item.id}}-time" name="{{item.id}}-time" type="time" placeholder="{{item.placeholder}}" class='br_2 p-y_2 br_solid flex_auto p-l_4 lh_3  c_black bg_white f:bg_primary br_black-2  br-l_0 br-tl_square br-bl_square' />
+      </div>
+      <!---->
+    </div> 
+    {% else %}
+     <div class='input-holder flex self_end'>
+        <label for="{{item.id}}" class='value-space br_solid br_2 p_3 p-y_0 texture_light flex_column flex justify_center flex_none p-x_3 p-y_0 br-tl_radius br-bl_radius c_black-6 bg_black-_05 br_black-2'>
+          <i class='fas {{item.pre-icon}}'></i>
+        </label>
+        <input id="{{item.id}}" name="{{item.id}}" type="{{item.input-type}}" placeholder="{{ item.placeholder }}" {% if item.disabled %} disabled {% endif %} class='br_2 p-y_2 br_solid flex_auto p-l_4 lh_3  c_black bg_white f:bg_primary br_black-2  br-l_0 br-tl_square br-bl_square 
+          {% if item.post-unit != undefined %}
+          br_square 
+          {% endif %}
+          {% if item.disabled %}
+          disabled 
+          {% endif %}
+          ' /> {% if item.post-unit != undefined %} <span class="c_black-6 bg_black-_05 br_black-2 br_solid br_1 br-tr_radius br-br_radius texture_light grid justify_center text_center p_2 b-l_0">{{item.post-unit}}</span> {% endif %}
+        <!---->
+      </div>
+    {% endif %} <div class='font-size_down'>
+      <span class='opacity_7 font_italic m-t_2 block'>
+        {{item.hint}}
+      </span>
+    </div>
+  </div> {% endfor %} </div>
+
+  <fieldset data-v-43091e28="" data-v-167121a4="" class="
+			relative flex flex_row:md
+			gap-x_4
+			flex_wrap
+			br_solid br_radius br_2
+			p-b_4
+		 br_black-2 m_4" id="CreditValues"><legend data-v-43091e28="" class="absolute r_auto w_auto t_n3 m-t_n2 p-x_3 l_2 lh_0 font-size_up-1 bg_white p-x_4 font_display font_medium c_black-8">Avaliable Credits</legend><div data-v-167121a4="" data-v-43091e28="" class="
+						flex flex_row flex_wrap
+						m-t_3
+						w_100
+						gap-y_3
+						gap-x_4
+					"><div data-v-af33ea72="" data-v-8ace3e46="" data-v-167121a4="" class="question font_ui flex_grow flex_45" data-v-43091e28=""><!----><div data-v-af33ea72="" class="input-holder flex self_end"><!----><input data-v-8ace3e46="" data-v-af33ea72="" id="input_836" name="input_836" type="number" placeholder="" class="br_2 p-y_2 br_solid flex_auto p-l_4 lh_3  c_black bg_white f:bg_primary br_black-2 "><div data-v-af33ea72="" class="
+				br_solid br_2
+				br-l_0
+				p-y_2
+				font_medium
+				flex_none
+				p-x_4
+				lh_3
+				self_strech
+			 c_black-6 bg_black-1 br_black-2 ">ABP</div></div><div data-v-af33ea72="" class="font-size_down"><!----><!----><!----><!----><!----><!----><span data-v-af33ea72="" class="opacity_7 font_italic"></span></div></div><div data-v-af33ea72="" data-v-8ace3e46="" data-v-167121a4="" class="question font_ui flex_grow flex_45" data-v-43091e28=""><!----><div data-v-af33ea72="" class="input-holder flex self_end"><!----><input data-v-8ace3e46="" data-v-af33ea72="" id="input_838" name="input_838" type="number" placeholder="" class="br_2 p-y_2 br_solid flex_auto p-l_4 lh_3  c_black bg_white f:bg_primary br_black-2 "><div data-v-af33ea72="" class="
+				br_solid br_2
+				br-l_0
+				p-y_2
+				font_medium
+				flex_none
+				p-x_4
+				lh_3
+				self_strech
+			 c_black-6 bg_black-1 br_black-2 ">CE</div></div><div data-v-af33ea72="" class="font-size_down"><!----><!----><!----><!----><!----><!----><span data-v-af33ea72="" class="opacity_7 font_italic"></span></div></div><div data-v-af33ea72="" data-v-8ace3e46="" data-v-167121a4="" class="question font_ui flex_grow flex_45" data-v-43091e28=""><!----><div data-v-af33ea72="" class="input-holder flex self_end"><!----><input data-v-8ace3e46="" data-v-af33ea72="" id="input_840" name="input_840" type="number" placeholder="" class="br_2 p-y_2 br_solid flex_auto p-l_4 lh_3  c_black bg_white f:bg_primary br_black-2 "><div data-v-af33ea72="" class="
+				br_solid br_2
+				br-l_0
+				p-y_2
+				font_medium
+				flex_none
+				p-x_4
+				lh_3
+				self_strech
+			 c_black-6 bg_black-1 br_black-2 ">CME</div></div><div data-v-af33ea72="" class="font-size_down"><!----><!----><!----><!----><!----><!----><span data-v-af33ea72="" class="opacity_7 font_italic"></span></div></div><div data-v-af33ea72="" data-v-8ace3e46="" data-v-167121a4="" class="question font_ui flex_grow flex_45" data-v-43091e28=""><!----><div data-v-af33ea72="" class="input-holder flex self_end"><!----><input data-v-8ace3e46="" data-v-af33ea72="" id="input_842" name="input_842" type="number" placeholder="" class="br_2 p-y_2 br_solid flex_auto p-l_4 lh_3  c_black bg_white f:bg_primary br_black-2 "><div data-v-af33ea72="" class="
+				br_solid br_2
+				br-l_0
+				p-y_2
+				font_medium
+				flex_none
+				p-x_4
+				lh_3
+				self_strech
+			 c_black-6 bg_black-1 br_black-2 ">CNE</div></div><div data-v-af33ea72="" class="font-size_down"><!----><!----><!----><!----><!----><!----><span data-v-af33ea72="" class="opacity_7 font_italic"></span></div></div><div data-v-af33ea72="" data-v-8ace3e46="" data-v-167121a4="" class="question font_ui flex_grow flex_45" data-v-43091e28=""><!----><div data-v-af33ea72="" class="input-holder flex self_end"><!----><input data-v-8ace3e46="" data-v-af33ea72="" id="input_844" name="input_844" type="number" placeholder="" class="br_2 p-y_2 br_solid flex_auto p-l_4 lh_3  c_black bg_white f:bg_primary br_black-2 "><div data-v-af33ea72="" class="
+				br_solid br_2
+				br-l_0
+				p-y_2
+				font_medium
+				flex_none
+				p-x_4
+				lh_3
+				self_strech
+			 c_black-6 bg_black-1 br_black-2 ">CNE<sup>rx</sup></div></div><div data-v-af33ea72="" class="font-size_down"><!----><!----><!----><!----><!----><!----><span data-v-af33ea72="" class="opacity_7 font_italic"></span></div></div><div data-v-af33ea72="" data-v-8ace3e46="" data-v-167121a4="" class="question font_ui flex_grow flex_45" data-v-43091e28=""><!----><div data-v-af33ea72="" class="input-holder flex self_end"><!----><input data-v-8ace3e46="" data-v-af33ea72="" id="input_846" name="input_846" type="number" placeholder="" class="br_2 p-y_2 br_solid flex_auto p-l_4 lh_3  c_black bg_white f:bg_primary br_black-2 "><div data-v-af33ea72="" class="
+				br_solid br_2
+				br-l_0
+				p-y_2
+				font_medium
+				flex_none
+				p-x_4
+				lh_3
+				self_strech
+			 c_black-6 bg_black-1 br_black-2 ">COP</div></div><div data-v-af33ea72="" class="font-size_down"><!----><!----><!----><!----><!----><!----><span data-v-af33ea72="" class="opacity_7 font_italic"></span></div></div><div data-v-af33ea72="" data-v-8ace3e46="" data-v-167121a4="" class="question font_ui flex_grow flex_45" data-v-43091e28=""><!----><div data-v-af33ea72="" class="input-holder flex self_end"><!----><input data-v-8ace3e46="" data-v-af33ea72="" id="input_848" name="input_848" type="number" placeholder="" class="br_2 p-y_2 br_solid flex_auto p-l_4 lh_3  c_black bg_white f:bg_primary br_black-2 "><div data-v-af33ea72="" class="
+				br_solid br_2
+				br-l_0
+				p-y_2
+				font_medium
+				flex_none
+				p-x_4
+				lh_3
+				self_strech
+			 c_black-6 bg_black-1 br_black-2 ">CPE</div></div><div data-v-af33ea72="" class="font-size_down"><!----><!----><!----><!----><!----><!----><span data-v-af33ea72="" class="opacity_7 font_italic"></span></div></div><div data-v-af33ea72="" data-v-8ace3e46="" data-v-167121a4="" class="question font_ui flex_grow flex_45" data-v-43091e28=""><!----><div data-v-af33ea72="" class="input-holder flex self_end"><!----><input data-v-8ace3e46="" data-v-af33ea72="" id="input_850" name="input_850" type="number" placeholder="" class="br_2 p-y_2 br_solid flex_auto p-l_4 lh_3  c_black bg_white f:bg_primary br_black-2 "><div data-v-af33ea72="" class="
+				br_solid br_2
+				br-l_0
+				p-y_2
+				font_medium
+				flex_none
+				p-x_4
+				lh_3
+				self_strech
+			 c_black-6 bg_black-1 br_black-2 ">ECME</div></div><div data-v-af33ea72="" class="font-size_down"><!----><!----><!----><!----><!----><!----><span data-v-af33ea72="" class="opacity_7 font_italic"></span></div></div><div data-v-af33ea72="" data-v-8ace3e46="" data-v-167121a4="" class="question font_ui flex_grow flex_45" data-v-43091e28=""><!----><div data-v-af33ea72="" class="input-holder flex self_end"><!----><input data-v-8ace3e46="" data-v-af33ea72="" id="input_852" name="input_852" type="number" placeholder="" class="br_2 p-y_2 br_solid flex_auto p-l_4 lh_3  c_black bg_white f:bg_primary br_black-2 "><div data-v-af33ea72="" class="
+				br_solid br_2
+				br-l_0
+				p-y_2
+				font_medium
+				flex_none
+				p-x_4
+				lh_3
+				self_strech
+			 c_black-6 bg_black-1 br_black-2 ">MOC&nbsp;III</div></div><div data-v-af33ea72="" class="font-size_down"><!----><!----><!----><!----><!----><!----><span data-v-af33ea72="" class="opacity_7 font_italic"></span></div></div><div data-v-af33ea72="" data-v-8ace3e46="" data-v-167121a4="" class="question font_ui flex_grow flex_45" data-v-43091e28=""><!----><div data-v-af33ea72="" class="input-holder flex self_end"><!----><input data-v-8ace3e46="" data-v-af33ea72="" id="input_854" name="input_854" type="number" placeholder="" class="br_2 p-y_2 br_solid flex_auto p-l_4 lh_3  c_black bg_white f:bg_primary br_black-2 "><div data-v-af33ea72="" class="
+				br_solid br_2
+				br-l_0
+				p-y_2
+				font_medium
+				flex_none
+				p-x_4
+				lh_3
+				self_strech
+			 c_black-6 bg_black-1 br_black-2 ">MOC&nbsp;IV</div></div><div data-v-af33ea72="" class="font-size_down"><!----><!----><!----><!----><!----><!----><span data-v-af33ea72="" class="opacity_7 font_italic"></span></div></div></div></fieldset>

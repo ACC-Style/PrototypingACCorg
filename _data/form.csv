@@ -1,0 +1,8 @@
+id,label,input-type,placeholder,options,pre-icon,post-unit,disabled,hint
+SessionNameText,Session Name,text,the title of the session," null"," fa-text",,,
+SessionNumber,Session Number,number,Session is dynamically constructed," null"," fa-hashtag ",,true,"day #, channel #, session sort # by agenda timing then alpha"
+ReleaseDateTime,Release Date & Time,datetime,the title of the session," null"," fa-text",,,
+SessionDuration,Duration,number,minutes," null"," fa-hourglass",min,,
+SessionPEID,Live Source,url,http://....," null"," fa-play",url,,"Source can be webex, zoom, remo, youtube, or mediasite peid."
+SessionOnDemandPEID,On Demand Source,url,http://....," null"," fa-play",url,,"Source can be youtube, or mediasite peid."
+Channel,Channel,select,,primary | none,fa-video,,,"All scheduled sessions need to be a part of a channel. "
