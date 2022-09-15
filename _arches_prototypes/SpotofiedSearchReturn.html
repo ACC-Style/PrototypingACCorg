@@ -1,0 +1,89 @@
+--- 
+layout: arches 
+name: "Non Linear Search Results" 
+position: "Search" 
+--- 
+
+<div class="p_3 p-t_5:lg p-t_4:lg p-x_4:md p-x_5:lg">
+	<div class="bg_white br_radius p_4:lg p_3 shadow_overlap-light z_2 relative">
+		<h1 class="c_primary-n1 font_display m-b_3 m-t_0 flex flex_row justify_between"><span>Search</span>
+			<a href="#FilterNavContainer" class="absolute br-tl_square br-tr_square br_radius btn btn-accent btn-sm display_none:md flex_none grid items_center justify_center m-l_auto r_3 self_center t_0">
+				<span><i class="fas fa-arrow-down"></i><i class="fas fa-filter"></i></span>
+			</a>
+		</h1>
+		<div class="flex_row flex gap-x_3">
+			<div class="input-holder flex_auto flex flex_row self_end relative w_100">
+				<input id="input_uniqueTextAnda" name="input_uniqueTextAnda" type="text" placeholder="Search" class=" br_2 flex_auto p-y_2 br_solid flex_auto p-l_4 lh_3 br_radius bg_white c_black bg_white f:bg_primary br_black-2 font_2:lg font_1:md font_0" value="HFpEF and SGLT2i">
+				<button class="absolute b_0 br-bl_square br-tl_square btn btn-primary flex_none grid items_center justify_center r_0 t_0" onclick="Search()">
+					<i class="fas fa-search"></i>
+				</button>
+			</div>
+			<button class="disabled flex_none grid items_center justify_center btn btn-alert">
+				<i class="fas fa-times"></i>
+			</button>
+			<button class="flex_none grid items_center justify_center btn btn-secondary">
+				<i class="fas fa-filter"></i>
+			</button>
+		</div>
+	</div>
+</div>
+<ul class="ul_inline-pipe p-x_3 p-x_4:md p-x_5:lg font-size_down-2 m-x_3">
+	<li class="font_bold uppercase no-after"><a href="" class="link">Result View:</a></li>
+	<li class=""><a href="" class="link bg_primary c_white br_radius p-x_3 p-y_2">Snapshot</a></li>
+	<li class="a link"><a href="" class="link">List Results</a></li>
+	<li class="a link"><a href="" class="link">Guidelines</a></li>
+	<li class="a link"><a href="" class="link">Image Search</a></li>
+</ul>
+<div class="results p_3 p-x_4:md p-x_5:lg">
+	<div class="grid grid-col_4 grid-row_4 gap-x_5">
+		<main class="flex flex_column gap-y_4 row-start_start row-end_1 col-start_start col-end_end">
+			<h2 class="c_primary-n2 font-size_up-2 font_medium m-b_0 m-t_3">Point of Care Answer</h2> {% include spotify/recommendation.html %} <h2 class="c_primary-n2 font-size_up-2 font_medium m-b_0 m-t_3">Expert Analysis</h2>
+			<ul class="grid grid-col_3 gap_4 ul_none m_0 p_0 m-b_4">
+				<li class=" br_radius br_1 br_black-3 bg_black_-05 br_solid p_3">{% include spotify/jacc-article.html %}</li>
+				<li class=" br_radius br_1 br_black-3 bg_black_-05 br_solid p_3">{% include spotify/jacc-article.html %}</li>
+				<li class=" br_radius br_1 br_black-3 bg_black_-05 br_solid p_3">{% include spotify/jacc-article.html %}</li>
+				<li class=" br_radius br_1 br_black-3 bg_black_-05 br_solid p_3">{% include spotify/expert-consensus.html %}</li>
+				<li class=" br_radius br_1 br_black-3 bg_black_-05 br_solid p_3">{% include spotify/expert-consensus.html %}</li>
+				<li class=" br_radius br_1 br_black-3 bg_black_-05 br_solid p_3">{% include spotify/expert-consensus.html %}</li>
+			</ul>
+			<!-- {% include spotify/guideline.html %} -->
+		</main>
+		<div class="col-end_end col-start_start w_100">
+			<a href="" class="link float_right r_3 b_2 font-size_down">view all expert analysis on this topic<i class="fa-arrow-right fas p-l_3"></i></a>
+		</div>
+		<aside class="col-start_start col-end_3 gap-y_2 ">
+			<h2 class="c_primary-n2 font-size_up-2 font_medium m-b_0 m-t_3">Research Sources</h2>
+			<ul class="grid grid-col_2 gap_4 ul_none m_0 p_0 m-b_4">
+				<li class=" br_radius br_1 br_black-3 bg_black_-05 br_solid p_3">{% include spotify/clinical-trials.html %}</li>
+				<li class=" br_radius br_1 br_black-3 bg_black_-05 br_solid p_3">{% include spotify/jacc-article.html %}</li>
+				<li class=" br_radius br_1 br_black-3 bg_black_-05 br_solid p_3">{% include spotify/jacc-article.html %}</li>
+				<li class=" br_radius br_1 br_black-3 bg_black_-05 br_solid p_3">{% include spotify/expert-consensus.html %}</li>
+			</ul>
+		</aside>
+		<aside class="col-start_3 col-end_end gap-y_2 ">
+			<h2 class="c_primary-n2 font-size_up-2 font_medium m-b_0 m-t_3">Learning Opportunity</h2>
+			<h3 class="c_primary-n2 font-size_up-1 font_medium m-b_0 m-t_3">Associated Product</h3> {% include spotify/product.html %} <h3 class="c_primary-n2 font-size_up-1 font_medium m-b_0 m-t_3">Patient Case Quiz</h3> {% include spotify/patient-case-quiz.html %} {% include spotify/patient-case-quiz.html %}
+		</aside>
+	</div>
+</div>
+<style>
+	.col-start_start {
+		grid-column-start: 1;
+	}
+
+	.col-end_end {
+		grid-column-end: -1;
+	}
+
+	.row-start_start {
+		grid-row-start: 1;
+	}
+
+	.row-end_end {
+		grid-row-end: -1;
+	}
+
+	.grid-row_4 {
+		grid-template-rows: repeat(4, auto);
+	}
+</style>
