@@ -37,33 +37,77 @@ position: "Search"
 <div class="results p_3 p-x_4:md p-x_5:lg">
 	<div class="grid grid-col_4 grid-row_4 gap-x_5">
 		<main class="flex flex_column gap-y_4 row-start_start row-end_1 col-start_start col-end_end">
-			<h2 class="c_primary-n2 font-size_up-2 font_medium m-b_0 m-t_3">Point of Care Answer</h2> {% include spotify/recommendation.html %} <h2 class="c_primary-n2 font-size_up-2 font_medium m-b_0 m-t_3">Expert Analysis</h2>
-			<ul class="grid grid-col_3 gap_4 ul_none m_0 p_0 m-b_4">
-				<li class=" br_radius br_1 br_black-3 bg_black_-05 br_solid p_3">{% include spotify/jacc-article.html %}</li>
-				<li class=" br_radius br_1 br_black-3 bg_black_-05 br_solid p_3">{% include spotify/jacc-article.html %}</li>
-				<li class=" br_radius br_1 br_black-3 bg_black_-05 br_solid p_3">{% include spotify/jacc-article.html %}</li>
-				<li class=" br_radius br_1 br_black-3 bg_black_-05 br_solid p_3">{% include spotify/expert-consensus.html %}</li>
-				<li class=" br_radius br_1 br_black-3 bg_black_-05 br_solid p_3">{% include spotify/expert-consensus.html %}</li>
-				<li class=" br_radius br_1 br_black-3 bg_black_-05 br_solid p_3">{% include spotify/expert-consensus.html %}</li>
-			</ul>
-			<!-- {% include spotify/guideline.html %} -->
+			<section class="font_2">
+				<h2 class="c_primary-n3 font_medium m-b_2 m-t_3 lh_2">Point of Care Answer</h2>
+				{% include spotify/recommendation.html %}
+			</section>
+
+			<section class="font_2">
+				<h2 class="c_primary-n3 font_medium m-b_2 m-t_3 lh_2">Expert Analysis</h2>
+				<!-- {% include spotify/guideline.html %} -->
+				<div class="splide first_slider m-x_n5 bg_black-_05 shadow_emboss-light p-y_3 m-b_4" aria-label="">
+					<div class="splide__track">
+						  <ul class="splide__list">
+							{% include spotify/slides/first_slider/article-slide-1.html %}
+							{% include spotify/slides/first_slider/journal-slide-1.html %}
+						  </ul>
+					</div>
+				  </div>
+			</section>
+			<section class="font_1">
+				<h2 class="c_primary-n3 font_medium m-b_2 m-t_3 lh_2">Foundational Research</h2>
+				<!-- {% include spotify/guideline.html %} -->
+				<div class="splide second_slider m-x_n5 bg_black-_05 shadow_emboss-light p-y_3 m-b_4" aria-label="Splide Basic HTML Ex m-x_n5ample">
+					<div class="splide__track">
+						  <ul class="splide__list">
+								{% include spotify/slides/second_slider/product-slide-1.html %}
+								{% include spotify/slides/second_slider/video-slide-1.html %}
+								{% include spotify/slides/second_slider/article-slide-1.html %}
+								{% include spotify/slides/second_slider/magazine-slide-1.html %}
+						  </ul>
+					</div>
+				  </div>
+			</section>
+			<section class="font_0">
+				<h2 class="c_primary-n3 font_medium m-b_2 m-t_3 lh_2">Learning Opportunities</h2>
+				<!-- {% include spotify/guideline.html %} -->
+				<div class="splide third_slider m-x_n5 bg_black-_05 shadow_emboss-light p-y_3 m-b_4" aria m-x_n5-label="Splide Basic HTML Ex m-x_n5ample">
+					<div class="splide__track">
+						  <ul class="splide__list">
+							{% include spotify/slides/third_slider/article-slide-1.html %}
+							{% include spotify/slides/third_slider/article-slide-1.html %}
+							{% include spotify/slides/third_slider/article-slide-1.html %}
+							{% include spotify/slides/third_slider/article-slide-1.html %}
+							{% include spotify/slides/third_slider/article-slide-1.html %}
+						  </ul>
+					</div>
+				  </div>
+			</section>
 		</main>
-		<div class="col-end_end col-start_start w_100">
+		<!-- <div class="col-end_end col-start_start w_100">
 			<a href="" class="link float_right r_3 b_2 font-size_down">view all expert analysis on this topic<i class="fa-arrow-right fas p-l_3"></i></a>
 		</div>
-		<aside class="col-start_start col-end_3 gap-y_2 ">
-			<h2 class="c_primary-n2 font-size_up-2 font_medium m-b_0 m-t_3">Research Sources</h2>
-			<ul class="grid grid-col_2 gap_4 ul_none m_0 p_0 m-b_4">
+		<aside class="col-start_start col-end_1 gap-y_2 ">
+			<h2 class="c_primary-n3 font_medium m-b_2 m-t_3 lh_2">Foundational Research</h2>
+			<ul class="flex_column flex gap_4 ul_none m_0 p_0 m-b_4">
 				<li class=" br_radius br_1 br_black-3 bg_black_-05 br_solid p_3">{% include spotify/clinical-trials.html %}</li>
-				<li class=" br_radius br_1 br_black-3 bg_black_-05 br_solid p_3">{% include spotify/jacc-article.html %}</li>
-				<li class=" br_radius br_1 br_black-3 bg_black_-05 br_solid p_3">{% include spotify/jacc-article.html %}</li>
 				<li class=" br_radius br_1 br_black-3 bg_black_-05 br_solid p_3">{% include spotify/expert-consensus.html %}</li>
 			</ul>
 		</aside>
-		<aside class="col-start_3 col-end_end gap-y_2 ">
-			<h2 class="c_primary-n2 font-size_up-2 font_medium m-b_0 m-t_3">Learning Opportunity</h2>
-			<h3 class="c_primary-n2 font-size_up-1 font_medium m-b_0 m-t_3">Associated Product</h3> {% include spotify/product.html %} <h3 class="c_primary-n2 font-size_up-1 font_medium m-b_0 m-t_3">Patient Case Quiz</h3> {% include spotify/patient-case-quiz.html %} {% include spotify/patient-case-quiz.html %}
+
+		<aside class="col-start_2 col-end_4 gap-y_2 ">
+			<h2 class="c_primary-n3 font_medium m-b_2 m-t_3 lh_2">Learning Opportunities</h2>
+			{% include spotify/product.html %}
+			{% include spotify/patient-case-quiz.html %}
+			{% include spotify/patient-case-quiz.html %}
 		</aside>
+		<aside class="col-start_4 col-end_end gap-y_2   ">
+			<h2 class="c_primary-n3 font_medium m-b_2 m-t_3 lh_2">Videos</h2>
+			<ul class="flex_column flex gap_4 ul_none m_0 p_0 m-b_4">
+				<li class=" br_radius br_1 br_black-3 bg_black_-05 br_solid p_3">{% include spotify/video.html %}</li>
+				<li class=" br_radius br_1 br_black-3 bg_black_-05 br_solid p_3">{% include spotify/video.html %}</li>
+			</ul>
+		</aside> -->
 	</div>
 </div>
 <style>
@@ -86,4 +130,100 @@ position: "Search"
 	.grid-row_4 {
 		grid-template-rows: repeat(4, auto);
 	}
+	.scale_50{
+		scale:.5;
+	}
+
+	.font-size_inherit{
+		font-size: 1em;
+	}
+
 </style>
+
+
+<!-- // https://splidejs.com/ -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.17/dist/css/splide-core.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.17/dist/css/sea-green.min.css">
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.17/dist/js/splide.min.js"></script>
+
+
+<script>
+    document.addEventListener( 'DOMContentLoaded', function() {
+		var first_slider = new Splide( '.first_slider' , {
+      type       : 'loop',
+      perPage    : 2,
+      gap: '1rem',
+	  padding: '2rem',
+      breakpoints: {
+		640: {
+			perPage: 2,
+		},
+     },
+	 pagination: false,
+	 classes: {
+		// Add classes for arrows.
+		arrows: 'splide__arrows your-class-arrows',
+		arrow : 'splide__arrow your-class-arrow scale_50 absolute t_0 b_0 z_5 shadow_overlap-light h:bg_primary-3',
+		prev  : 'splide__arrow--prev your-class-prev l_n5 rotate_180',
+		next  : 'splide__arrow--next your-class-next r_n5',
+
+		// Add classes for pagination.
+		pagination: 'splide__pagination your-class-pagination', // container
+		page      : 'splide__pagination__page your-class-page', // each button
+  },
+    } );
+      first_slider.mount();
+
+
+	  var second_slider = new Splide( '.second_slider' , {
+      type       : 'loop',
+      perPage    : 4,
+      gap: '1rem',
+	  padding: '2rem',
+      breakpoints: {
+		640: {
+			perPage: 2,
+		},
+     },
+	 pagination: false,
+	 classes: {
+		// Add classes for arrows.
+		arrows: 'splide__arrows your-class-arrows',
+		arrow : 'splide__arrow your-class-arrow scale_50 absolute t_0 b_0 z_5 shadow_overlap-light h:bg_primary-3',
+		prev  : 'splide__arrow--prev your-class-prev l_n5 rotate_180',
+		next  : 'splide__arrow--next your-class-next r_n5',
+
+		// Add classes for pagination.
+		pagination: 'splide__pagination your-class-pagination', // container
+		page      : 'splide__pagination__page your-class-page', // each button
+  },
+    } );
+      second_slider.mount();
+
+
+	  var third_slider = new Splide( '.third_slider' , {
+      type       : 'loop',
+      perPage    : 5,
+      gap: '1rem',
+	  padding: '2rem',
+      breakpoints: {
+		640: {
+			perPage: 2,
+		},
+     },
+	 pagination: false,
+	 classes: {
+		// Add classes for arrows.
+		arrows: 'splide__arrows your-class-arrows',
+		arrow : 'splide__arrow your-class-arrow scale_50 absolute t_0 b_0 z_5 shadow_overlap-light h:bg_primary-3',
+		prev  : 'splide__arrow--prev your-class-prev l_n5 rotate_180',
+		next  : 'splide__arrow--next your-class-next r_n5',
+
+		// Add classes for pagination.
+		pagination: 'splide__pagination your-class-pagination', // container
+		page      : 'splide__pagination__page your-class-page', // each button
+  },
+    } );
+      third_slider.mount();
+    } );
+  </script>
