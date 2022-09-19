@@ -1,8 +1,13 @@
 --- 
 layout: arches 
 name: "ACC Navigator" 
-position: "Home Page" 
+position: "Requirements" 
 --- 
+{% include_relative ACCNavigator/intro.md %}
+<hr>
+{% include_relative ACCNavigator/states.md %}
+<hr>
+<h2>Full Pattern</h2>
 <section data-label="acc-navigator" class="m-y_6 font_n1 font_0:md font_1:lg">
     <div data-label="container" class="br_2 br_black-2 br_round br_solid flex flex_column isolate_isolation items_center m-x_5 relative">
         <header class="font-size_up-2 font_accent font_medium inline-block isolate_isolation overflow_visible w_auto t_n2 m-t_n4 w_100">
