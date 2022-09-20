@@ -10,80 +10,8 @@ position: "Requirements"
 <h2>Full Pattern</h2>
 <section data-label="acc-navigator" class="m-y_6 font_n1 font_0:md font_1:lg">
     <div data-label="container" class="br_2 br_black-2 br_round br_solid flex flex_column isolate_isolation items_center m-x_5 relative">
-        <header class="font-size_up-2 font_accent font_medium inline-block isolate_isolation overflow_visible w_auto t_n2 m-t_n4 w_100">
-            <div class="flex flex_wrap flex_row items_center justify_center z_1 p-x_5:lg p-x_4:md p-x_3 gap-y_4">
-                <div data-label="sentence-starter" class="flex_none self_center lh_0 p-x_4 bg_white">I want to</div>
-                <div data-label="ask-word-first" class="bg_white flex flex_column flex_none justify_center max-w_10 p-y_2 w_100 self_stretch">
-                    <div data-label="input-wrapper" class="flex flex_column h_0 justify_center m-t_n5 m-x_4 relative transition_3 w_auto">
-                        <input type="text" name="" id="input-word-first" class="bg_transparent br-b_2 br_0 br_accent br_solid br_square f:none font-size_up opacity_none overflow_visible p-r_4 relative self_stretch t_2 text_center w_auto">
-                        <i class="absolute c_black-4 fas fa-times font-size_down-2 r_n3 h:c_black p_3 t_n3"></i>
-                    </div>
-                </div>
-                <div data-label="button-wrapper" class="bg_white p-x_4 flex flex_column justify_center">
-                    <a class="flex_none ease_out h:undecorated transition_1 f:outline_none text_center br_none inline- w_auto font_medium font_ui  c_primary-n2 h:c_black h:bg_accent-3 bg_accent-4 br_black-1 cursor_pointer br_1 br_solid br_radius" data-label="selected-word-second">
-                        <div class="flex  justify_center flex_column p-y_3 p-x_3 p-x_4:lg lh_0 font-size_down">
-                            <div class="flex_none self_center justify_center flex">
-                                <span>Button</span>
-                                <i class="p-l_3 p-l_4:lg far fa-times display_none:empty">&nbsp;</i>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div data-label="sentence-follow-up" class="flex_none self_center lh_0 p-x_4 bg_white">Something</div>
-                <div data-label="ask-word-second" class="bg_white flex flex_column flex_none justify_center max-w_10 p-y_2 w_100 self_stretch">
-                    <div data-label="input-wrapper" class="flex flex_column h_0 justify_center m-t_n5 m-x_4 relative transition_3 w_auto">
-                        <input type="text" name="" id="input-word-second" class="bg_transparent br-b_2 br_0 br_primaryse br_solid br_square f:none font-size_up opacity_none overflow_visible p-r_4 relative self_stretch t_2 text_center w_auto">
-                        <i class="absolute c_black-4 fas fa-times font-size_down-2 r_n3 h:c_black p_3 t_n3"></i>
-                    </div>
-                </div>
-                <div data-label="button-wrapper" class="bg_white p-x_4 flex flex_column justify_center">
-                    <a class="flex_none ease_out h:undecorated transition_1 f:outline_none text_center br_none inline- w_auto font_medium font_ui  c_primary-n2 h:c_black h:bg_primary-3 bg_primary-4 br_black-1 cursor_pointer br_1 br_solid br_radius" data-label="selected-word-second">
-                        <div class="flex  justify_center flex_column p-y_3 p-x_3 p-x_4:lg lh_0 font-size_down">
-                            <div class="flex_none self_center justify_center flex">
-                                <span>Button</span>
-                                <i class="p-l_3 p-l_4:lg far fa-times display_none:empty">&nbsp;</i>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </header>
-        <main data-label="shuffle-answers" class="p-x_6:lg  p-x_5:md p-x_4 p-y_6:md p-y_5 w_100 grid grid-col_4:lg grid-col_2:md grid-col_1 gap-x_6:lg gap-x_4:md gap-y_4">
-            <a class="ease_out h:undecorated transition_1 f:outline_none text_center br_none inline-block w_auto font_medium font_ui  c_accent-n2 h:c_black h:bg_accent-3 bg_accent-4 br_black-1 cursor_pointer br_1 br_solid br_radius flex_30" data-label="select-word-first">
-                <div class="flex block justify_center flex_column p-y_3 p-x_3 p-x_5:lg lh_0 p-y_4:md">
-                    <div class="flex_auto self_center justify_center flex">
-                        <span>Button</span>
-                        <i class="p-l_3 p-l_4:lg display_none:empty"></i>
-                    </div>
-                </div>
-            </a>
-            <a class="ease_out h:undecorated transition_1 f:outline_none text_center br_none inline-block w_auto font_medium font_ui  c_accent-n2 h:c_black h:bg_accent-3 bg_accent-4 br_black-1 cursor_pointer br_1 br_solid br_radius flex_30" data-label="select-word-first">
-                <div class="flex block justify_center flex_column p-y_3 p-x_3 p-x_5:lg lh_0 p-y_4:md">
-                    <div class="flex_auto self_center justify_center flex">
-                        <span>Button</span>
-                        <i class="p-l_3 p-l_4:lg display_none:empty"></i>
-                    </div>
-                </div>
-            </a>
-            <a class="ease_out h:undecorated transition_1 f:outline_none text_center br_none inline-block w_auto font_medium font_ui  c_accent-n2 h:c_black h:bg_accent-3 bg_accent-4 br_black-1 cursor_pointer br_1 br_solid br_radius flex_30" data-label="select-word-first">
-                <div class="flex block justify_center flex_column p-y_3 p-x_3 p-x_5:lg lh_0 p-y_4:md">
-                    <div class="flex_auto self_center justify_center flex">
-                        <span>Button</span>
-                        <i class="p-l_3 p-l_4:lg display_none:empty"></i>
-                    </div>
-                </div>
-            </a>
-            <a class="ease_out h:undecorated transition_1 f:outline_none text_center br_none inline-block w_auto font_medium font_ui  c_black-8 h:c_black h:bg_secondary-3 bg_secondary-5 br_black-1 cursor_pointer br_1 br_solid br_radius" data-label="word-shuffle">
-                <div class="flex block justify_center flex_column p-y_3 p-x_3 p-x_5:lg lh_0 p-y_4:md">
-                    <div class="flex_auto self_center justify_center flex">
-                        <span>Shuffle</span>
-                        <i class="far fa-sync p-l_3 p-l_4:lg display_none:empty">
-                            <icon></icon>
-                        </i>
-                    </div>
-                </div>
-            </a>
-        </main>
+    {% include_relative ACCNavigator/subs/question-header.html %}
+    {%  include_relative ACCNavigator/subs/response-buttons-with-shuffle.html %}
         <main data-label="type-ahead-answers" class="p-x_6:lg  p-x_5:md p-x_4 p-y_6:md p-y_5 w_100 grid grid-col_4:lg grid-col_2:md grid-col_1 gap-x_5:lg gap-x_4:md gap-y_4">
             <h2 class="c_black-8 col-start_1 col-end_4:lg col-end_2:md col-end_1 self_center text_left font_accent">Text search for "Credit"</h2>
             <a class="ease_out h:undecorated transition_1 f:outline_none text_center br_none inline-block w_auto font_medium font_ui  c_accent-n2 h:c_black h:bg_accent-3 bg_accent-4 br_black-1 cursor_pointer br_1 br_solid br_radius flex_30" data-label="select-word-first">
@@ -192,20 +120,7 @@ position: "Requirements"
                  </li>
             </ul>
         </main>
-        <footer class="absolute font_accent font_medium flex flex_row h_0 items_center justify_center b_0 w_auto">
-            <div class="bg_white flex w_auto flex_nowrap flex_row gap_4 items_center justify_around z_1 p-x_5:lg p-x_4:md p-x_3">
-                <a class="ease_out h:undecorated transition_1 f:outline_none text_center br_none inline-block w_auto font_medium font_ui  c_black-8 h:c_black h:bg_secondary-3 bg_secondary-5 br_black-1 cursor_pointer br_1 br_solid br_radius" data-label="sentence-reset">
-                    <div class="flex block justify_center flex_column p-y_3 p-x_3 p-x_5:lg lh_0 p-y_4:md">
-                        <div class="flex_auto self_center justify_center flex">
-                            <span>Reset Question</span>
-                            <i class="far fa-times p-l_3 p-l_4:lg display_none:empty">
-                                <icon></icon>
-                            </i>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </footer>
+{% include_relative ACCNavigator/subs/reset-question-footer.html %}
     </div>
 </section>
 <style lang="css">
