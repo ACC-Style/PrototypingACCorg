@@ -5,13 +5,19 @@
 - [Pseudo State or Features](#pseudo-state-or-features)
   - [Empty or Onload State](#empty-or-onload-state)
   - [Power User Feature](#power-user-feature)
-- [Analytics](#analytics)
+- [Admin & Analytics](#admin--analytics)
+  - [Admins How to Populate ACC Navigator](#admins-how-to-populate-acc-navigator)
+  - [Analytics](#analytics)
     - [Sample Data](#sample-data)
-- [Admins How to Populate Navigator.](#admins-how-to-populate-navigator)
 
 ## States of the Widget
 
----
+
+
+
+
+----------
+
 
 ### First Question Answer
 
@@ -83,7 +89,7 @@ Each result will render the Page Title, and a how to navigate to this page bread
     </div>
 </section>
 
----
+----------
 
 ## Pseudo State or Features
 
@@ -91,7 +97,7 @@ Each result will render the Page Title, and a how to navigate to this page bread
 
 The ACC Navigator **(Widget)** when onload and there are no query strings to the URL the widget will render the `First Question Answer`
 
----
+----------
 
 ### Power User Feature
 
@@ -115,24 +121,66 @@ The user should be able to type in question line.  This will replace the basic 
     </div>
 </section>
 
----
+----------
 
-## Analytics
 
-This system should either through google or a log system track how a the user completes a result or where it is abandoned. Abandoned is defined when the user restarts the widget. 
+
+## Admin & Analytics
+### Admins How to Populate ACC Navigator
+
+This is still being discussed but the current concept is to extend the meta data on pages to allow for adding result sentences to page. Result sentences would be a combination of first word, sentence bridge and second word. Sentence Gap, and Second word is Optional
+
+<p class="text_center"><span class="c_highlight m-x_auto inline-block">! This UI is for demo purposes only !</span></p>
+<div class="m_4 br_radius bg_black-05 p_4 shadow_overlap-light">
+<h4 class="">ACC Navigator Meta Data</h4>
+<table class="m-t_3 br_1 br_radius br_black-3 br_solid table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>First Word</th>
+      <th>Sentence Gap</th>
+      <th>Second Word</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Credit</td>
+      <td>that are</td>
+      <td>On Demand</td>
+      <td class="text_right"><a href="#" class="btn btn-alert btn-sm c_white">remove</a></td>
+    </tr>
+    <tr>
+      <td>Learn</td>
+      <td>about</td>
+      <td>Afib</td>
+      <td class="text_right"><a href="#" class="btn btn-alert btn-sm c_white">remove</a></td>
+    </tr>
+    <tr>
+      <td>AFIBSap</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td class="text_right"><a href="#" class="btn btn-alert btn-sm c_white">remove</a></td>
+    </tr>
+  </tbody>
+</table>
+<div class="m-y_5 p_4 br_round bg_black-1 shadow_emboss-light">
+<h5 class="">Add Meta Data To Page</h5>
+<div class="flex flex_row gap_4 items_end justify_between m-x_4">
+<div>
+<div class="m-b_3"><label class="m-b_3" for="example-input-email">First Word <sup><i class="fas fa-asterisk c_warning"></i></sup></label> <input type="text" id="example-input-email" placeholder=""></div></div>
+<div><div class="m-b_3"><label class="m-b_3" for="example-input-email">Email address</label> <input type="text" id="example-input-email" placeholder=""></div></div>
+<div><div class="m-b_3"><label class="m-b_3" for="example-input-email">Second Word</label> <input type="text" id="example-input-email" placeholder=""></div></div></div>
+<div class="flex flex_row-reverse gap_4 items_end justify_between m-x_4"><a href="" class="btn btn-primary c_white"><i class="fas fas-solid fa-plus"></i> Add Another</a><span class="c_warning "><sup><i class="fas fa-asterisk c_warning"></i> </sup>required</span></div>
+</div>
+</div>
+
+----------
+### Analytics
+
+This system should either through google or a log system track how a the user completes a result or where it is abandoned. Abandoned is defined when the user restarts the widget.
 
 #### Sample Data
 
 `Date, Success , First Word, Second Word, Result Clicked On`
 
-## Admins How to Populate Navigator.
-
-This is still being discussed but the current concept is to extend the meta data on pages to allow for adding result sentences to page. Result sentences would be a combination of first word, sentence bridge and second word. Sentence Gap, and Second word is Optional
-
-| First Word | Sentence Gap | Second Word |
-| ---------- | ------------ | ----------- |
-| Credit     | that are     | On Demand   |
-| Learn      | about        | Afib        |
-| AFIBSap    |              |             |
-
-[ add another ]
+----------
