@@ -5,21 +5,23 @@
 - [Pseudo State or Features](#pseudo-state-or-features)
   - [Empty or Onload State](#empty-or-onload-state)
   - [Power User Feature](#power-user-feature)
+- [Analytics](#analytics)
+    - [Sample Data](#sample-data)
+- [Admins How to Populate Navigator.](#admins-how-to-populate-navigator)
+
 ## States of the Widget
 
-----------
+---
 
 ### First Question Answer
 
-The ACC Navigator **(Widget)**  shows the question of "I want to" with an input-line-response and a collection of response buttons populated with response-terms pulled from our search term-result-pairs in SiteCore.  The response-terms will be appropriate to the questions and the lists order will be randomized.  The rendered response buttons are limited to a max count and if the appropriate responses are more then the max count the system will render a shuffle button. 
+The ACC Navigator **(Widget)** shows the question of "I want to" with an input-line-response and a collection of response buttons populated with response-terms pulled from our search term-result-pairs in SiteCore. The response-terms will be appropriate to the questions and the lists order will be randomized. The rendered response buttons are limited to a max count and if the appropriate responses are more then the max count the system will render a shuffle button.
 
-When the user hits the shuffle button the current list of response buttons will be transition out and the next set of response buttons will be displayed.  If the shuffle mechanism reaches the end of the response list then the system will loop to the beginning of the list.  
+When the user hits the shuffle button the current list of response buttons will be transition out and the next set of response buttons will be displayed. If the shuffle mechanism reaches the end of the response list then the system will loop to the beginning of the list.
 
 If the user types into the response line then trigger the [`Power User Feature`](#power-user-feature)
 
-When the user clicks a response button  the response line will be replaced but the selected response button. The system will progress the next state either a [`Follow-up Question State`](#follow-up-question-answer) or a [`Result State`](#result-state) depending if the response-term has follow up terms or can match to a result. 
-
-
+When the user clicks a response button the response line will be replaced but the selected response button. The system will progress the next state either a [`Follow-up Question State`](#follow-up-question-answer) or a [`Result State`](#result-state) depending if the response-term has follow up terms or can match to a result.
 
 <section data-label="acc-navigator" class="m-y_6 font_n1 font_0:md font_1:lg">
     <div data-label="container" class="br_2 br_black-2 br_round br_solid flex flex_column isolate_isolation items_center m-x_5 relative">
@@ -33,12 +35,11 @@ When the user clicks a response button  the response line will be replaced but t
     </div>
 </section>
 
-
 ### Follow-up Question Answer
 
-The Follow-up UI is decorated different then the first round questions to denote a change to the user and to help clue them into which UI is effected but the new UI. 
+The Follow-up UI is decorated different then the first round questions to denote a change to the user and to help clue them into which UI is effected but the new UI.
 
-The Follow-up requires the system to revaluate the term-result-pairs filtered by the previous response. If the response list is singular it will auto fill the only result and proceed to the [`Result State`](#result-state). If the result list is greater then one then the system will render the follow up question line, and the response buttons with the shuffle button if needed. The system will also render a `Restart Question` button bellow the response and shuffle buttons. 
+The Follow-up requires the system to revaluate the term-result-pairs filtered by the previous response. If the response list is singular it will auto fill the only result and proceed to the [`Result State`](#result-state). If the result list is greater then one then the system will render the follow up question line, and the response buttons with the shuffle button if needed. The system will also render a `Restart Question` button bellow the response and shuffle buttons.
 
 The shuffle button works the same as it does with the previous state just will a smaller response list.
 
@@ -82,13 +83,15 @@ Each result will render the Page Title, and a how to navigate to this page bread
     </div>
 </section>
 
-----------
+---
+
 ## Pseudo State or Features
+
 ### Empty or Onload State
 
-The ACC Navigator **(Widget)** when onload and there are no query strings to the URL the widget will render the `First Question Answer` 
+The ACC Navigator **(Widget)** when onload and there are no query strings to the URL the widget will render the `First Question Answer`
 
-----------
+---
 
 ### Power User Feature
 
@@ -112,5 +115,24 @@ The user should be able to type in question line.  This will replace the basic 
     </div>
 </section>
 
+---
 
-----------
+## Analytics
+
+This system should either through google or a login system track how a the user completes a result or where it is abandoned.
+
+#### Sample Data
+
+`Date , First Word, Second Word, Result Clicked On`
+
+## Admins How to Populate Navigator.
+
+This is still being discussed but the current concept is to extend the meta data on pages to allow for adding result sentences to page. Result sentences would be a combination of first word, sentence bridge and second word. Sentence Gap, and Second word is Optional
+
+| First Word | Sentence Gap | Second Word |
+| ---------- | ------------ | ----------- |
+| Credit     | that are     | On Demand   |
+| Learn      | about        | Afib        |
+| AFIBSap    |              |             |
+
+[ add another ]
