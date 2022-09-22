@@ -128,7 +128,9 @@ The user should be able to type in question line.  This will replace the basic 
 ## Admin & Analytics
 ### Admins How to Populate ACC Navigator
 
-This is still being discussed but the current concept is to extend the meta data on pages to allow for adding result sentences to page. Result sentences would be a combination of first word, sentence bridge and second word. Sentence Gap, and Second word is Optional
+This is still being discussed but the current concept is to extend the meta data on pages to allow for adding result sentences to page. Result sentences would be a combination of first word, sentence bridge and second word. Sentence Gap, and Second word is Optional.
+
+The admins should be able to create, repeat, update and delete the result sentences on a page or content. 
 
 <p class="text_center"><span class="c_highlight m-x_auto inline-block">! This UI is for demo purposes only !</span></p>
 <div class="m_4 br_radius bg_black-05 p_4 shadow_overlap-light">
@@ -163,7 +165,7 @@ This is still being discussed but the current concept is to extend the meta data
     </tr>
   </tbody>
 </table>
-<div class="m-y_5 p_4 br_round bg_black-1 shadow_emboss-light">
+<div class="m-t_5 p_4 br_round bg_black-1 shadow_emboss-light">
 <h5 class="">Add Meta Data To Page</h5>
 <div class="flex flex_row gap_4 items_end justify_between m-x_4">
 <div>
