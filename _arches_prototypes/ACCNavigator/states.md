@@ -119,11 +119,11 @@ The user should be able to type in question line.  This will replace the basic 
 
 ## Analytics
 
-This system should either through google or a login system track how a the user completes a result or where it is abandoned.
+This system should either through google or a log system track how a the user completes a result or where it is abandoned. Abandoned is defined when the user restarts the widget. 
 
 #### Sample Data
 
-`Date , First Word, Second Word, Result Clicked On`
+`Date, Success , First Word, Second Word, Result Clicked On`
 
 ## Admins How to Populate Navigator.
 
