@@ -1,4 +1,5 @@
 - [States of the Widget](#states-of-the-widget)
+- [Data Setup](#data-setup)
   - [First Question Answer](#first-question-answer)
   - [Follow-up Question Answer](#follow-up-question-answer)
   - [Result State](#result-state)
@@ -12,22 +13,20 @@
 
 ## States of the Widget
 
-
-
-
-
 ----------
+## Data Setup 
 
+SiteCore the **(System)** will store meta called  **(MadLib-combinations)** that will be needed to run the ACC Navigator **(Widget)**. The MadLib-combinations will comprise of first response, and second response. 
 
 ### First Question Answer
 
-The ACC Navigator **(Widget)** shows the question of "I want to" with an input-line-response and a collection of response buttons populated with response-terms pulled from our search term-result-pairs in SiteCore. The response-terms will be appropriate to the questions and the lists order will be randomized. The rendered response buttons are limited to a max count and if the appropriate responses are more then the max count the system will render a shuffle button.
+The Widget shows the question of "I want to" with an input-line-response and a collection of `response buttons` populated with by the available first responses from the MadLib-combinations. The first responses list order will be randomized. The rendered `response buttons` are limited to a max count and if the first responses list count are more than the max count, the system will render a shuffle button.
 
-When the user hits the shuffle button the current list of response buttons will be transition out and the next set of response buttons will be displayed. If the shuffle mechanism reaches the end of the response list then the system will loop to the beginning of the list.
+When the user hits the shuffle button, the current list of `response buttons` will transition out and the next set of `response buttons` will be displayed. If the shuffle mechanism reaches the end of the response list then the system will loop to the beginning of the list.
 
 If the user types into the response line then trigger the [`Power User Feature`](#power-user-feature)
 
-When the user clicks a response button the response line will be replaced but the selected response button. The system will progress the next state either a [`Follow-up Question State`](#follow-up-question-answer) or a [`Result State`](#result-state) depending if the response-term has follow up terms or can match to a result.
+When the user clicks a response button, the response line will be replaced with the selected response button. The system will progress to the next state either a [`Follow-up Question State`](#follow-up-question-answer) or a [`Result State`](#result-state) depending if the MadLib-combination has associated second responses or can match to a result.
 
 <section data-label="acc-navigator" class="m-y_6 font_n1 font_0:md font_1:lg">
     <div data-label="container" class="br_2 br_black-2 br_round br_solid flex flex_column isolate_isolation items_center m-x_5 relative">
@@ -43,13 +42,13 @@ When the user clicks a response button the response line will be replaced but th
 
 ### Follow-up Question Answer
 
-The Follow-up UI is decorated different then the first round questions to denote a change to the user and to help clue them into which UI is effected but the new UI.
+The Follow-up UI is decorated differently than the *First Question Answer* to denote a change to the user.
 
-The Follow-up requires the system to revaluate the term-result-pairs filtered by the previous response. If the response list is singular it will auto fill the only result and proceed to the [`Result State`](#result-state). If the result list is greater then one then the system will render the follow up question line, and the response buttons with the shuffle button if needed. The system will also render a `Restart Question` button bellow the response and shuffle buttons.
+The Follow-up requires the system to revaluate the MadLib-combinations to produce the Second Response List. If the response list is singular it will auto fill the only result and proceed to the [`Result State`](#result-state). If the result list is greater than one, then the system will render the follow up question line, and the `response buttons` with the shuffle button if needed. The system will also render a `Restart Question` button bellow the response and shuffle buttons.
 
-The shuffle button works the same as it does with the previous state just will a smaller response list.
+The shuffle button works the same as it does with the previous state just within the Second Response List.
 
-If the user types into the response line then trigger the [`Power User Feature`](#power-user-feature)
+If the user types into the response line, then trigger the [`Power User Feature.`](#power-user-feature)
 
 If the user clicks the `Restart Question` Button the Widget will return to a [`Empty or Onload State`](#empty-or-onload-state).
 
@@ -101,7 +100,7 @@ The ACC Navigator **(Widget)** when onload and there are no query strings to the
 
 ### Power User Feature
 
-The user should be able to type in question line.  This will replace the basic response buttons and shuffle button with a grid of buttons based on a reductive filter of the users typed text.  For example typed text of `credit` will return all buttons with `credit` in their label.  A `clear text` button appears in the top right of the button grid and an X button at the end of the text input.   Clicking either will return the user to the basic mode of the current state of the widget and clear out any text in the question-line.  Clicking any of the response buttons will  replace the question line at the top with the selected response button and will progress the widget to the next state.
+The user should be able to type in question line.  This will replace the basic `response buttons` and shuffle button with a grid of buttons based on a reductive filter of the users typed text.  For example typed text of `credit` will return all buttons with `credit` in their label.  A `clear text` button appears in the top right of the button grid and an X button at the end of the text input.   Clicking either will return the user to the basic mode of the current state of the widget and clear out any text in the question-line.  Clicking any of the `response buttons` will  replace the question line at the top with the selected response button and will progress the widget to the next state.
 
 <section data-label="acc-navigator" class="m-y_6 font_n1 font_0:md font_1:lg">
     <div data-label="container" class="br_2 br_black-2 br_round br_solid flex flex_column isolate_isolation items_center m-x_5 relative">
@@ -128,19 +127,19 @@ The user should be able to type in question line.  This will replace the basic 
 ## Admin & Analytics
 ### Admins How to Populate ACC Navigator
 
-This is still being discussed but the current concept is to extend the meta data on pages to allow for adding result sentences to page. Result sentences would be a combination of first word, sentence bridge and second word. Sentence Gap, and Second word is Optional.
+This is still being discussed but the current concept is to extend the meta data on pages to allow for adding MadLib-combinations to page. MadLib-combinations would be a combination of first response, sentence bridge, and second response. Sentence Bridge, and Second Response is Optional. The responses are limited to what is defined.
 
-The admins should be able to create, repeat, update and delete the result sentences on a page or content. 
+The admins should be able to create, repeat, update and delete the  MadLib-combinations on a page or content. 
 
 <p class="text_center"><span class="c_highlight m-x_auto inline-block">! This UI is for demo purposes only !</span></p>
 <div class="m_4 br_radius bg_black-05 p_4 shadow_overlap-light">
-<h4 class="">ACC Navigator Meta Data</h4>
+<h4 class="">ACC Navigator Meta Data (MadLib-combinations)</h4>
 <table class="m-t_3 br_1 br_radius br_black-3 br_solid table table-striped table-bordered">
   <thead>
     <tr>
-      <th>First Word</th>
-      <th>Sentence Gap</th>
-      <th>Second Word</th>
+      <th>First Response</th>
+      <th>Sentence Bridge</th>
+      <th>Second Response</th>
       <th></th>
     </tr>
   </thead>
