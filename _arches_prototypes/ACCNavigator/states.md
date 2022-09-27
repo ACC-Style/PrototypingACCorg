@@ -4,10 +4,11 @@
   - [Follow-up Question Answer](#follow-up-question-answer)
   - [Result State](#result-state)
 - [Pseudo State or Features](#pseudo-state-or-features)
-  - [Empty or Onload State](#empty-or-onload-state)
+  - [Empty Query Onload State](#empty-query-onload-state)
+  - [Not Empty Query Onload State](#not-empty-query-onload-state)
   - [Power User Feature](#power-user-feature)
 - [Admin & Analytics](#admin--analytics)
-  - [Admins How to Populate ACC Navigator](#admins-how-to-populate-acc-navigator)
+  - [Admins How to Populate a MadLib-combinations](#admins-how-to-populate-a-madlib-combinations)
   - [Analytics](#analytics)
     - [Sample Data](#sample-data)
 
@@ -50,7 +51,7 @@ The shuffle button works the same as it does with the previous state just within
 
 If the user types into the response line, then trigger the [`Power User Feature.`](#power-user-feature)
 
-If the user clicks the `Restart Question` Button the Widget will return to a [`Empty or Onload State`](#empty-or-onload-state).
+If the user clicks the `Restart Question` button the Widget will return to a [`Empty or Onload State`](#empty-query-onload-state) and will ignore any URL queries that might exist as it resets.
 
 <section data-label="acc-navigator" class="m-y_6 font_n1 font_0:md font_1:lg">
     <div data-label="container" class="br_2 br_black-2 br_round br_solid flex flex_column isolate_isolation items_center m-x_5 relative">
@@ -69,9 +70,9 @@ If the user clicks the `Restart Question` Button the Widget will return to a [`E
 
 ### Result State
 
-When the widget has only results and or no extra follow-up responses the system will show the result view. The resul view is a list of pages or items from the filtered term-result-pairs list.
+When the Widget has only results and or no extra follow-up responses the system will show the Result State view. The view is a list of pages or items from the filtered `MadLib-combinations`.
 
-Each result will render the Page Title, and a how to navigate to this page breadcrumb to the item from the widgets location.
+Each result will render the Page Title, and a how to navigate to this page breadcrumb to the item from the Widget's location. The results will link directly to page or item.
 
 <section data-label="acc-navigator" class="m-y_6 font_n1 font_0:md font_1:lg">
     <div data-label="container" class="br_2 br_black-2 br_round br_solid flex flex_column isolate_isolation items_center m-x_5 relative">
@@ -92,15 +93,25 @@ Each result will render the Page Title, and a how to navigate to this page bread
 
 ## Pseudo State or Features
 
-### Empty or Onload State
+### Empty Query Onload State
 
-The ACC Navigator **(Widget)** when onload and there are no query strings to the URL the widget will render the `First Question Answer`
+The Widget, when onload and there are no query strings to the URL, the widget will default to the [`First Question Answer`](#first-question-answer).
 
 ----------
 
+### Not Empty Query Onload State
+
+The Widget, when onload and there are query strings to the URL, the widget will render the appropriate state depending on the first and second responses provided.  `url?first-response=abc`
+
+* if first-response then go to [Follow-up Question Answer](#follow-up-question-answer)
+* if first-response and second-response [Result State](#result-state)
+
+----------
+
+
 ### Power User Feature
 
-The user should be able to type in question line.  This will replace the basic `response buttons` and shuffle button with a grid of buttons based on a reductive filter of the users typed text.  For example typed text of `credit` will return all buttons with `credit` in their label.  A `clear text` button appears in the top right of the button grid and an X button at the end of the text input.   Clicking either will return the user to the basic mode of the current state of the widget and clear out any text in the question-line.  Clicking any of the `response buttons` will  replace the question line at the top with the selected response button and will progress the widget to the next state.
+The user should be able to type into the response line.  This will replace the basic `response buttons` and shuffle button with a grid of buttons based on a reductive filter of the users typed text against the current response-list.  For example typed text of `credit` will return all buttons with `credit` in their label.  A `clear text` button appears in the top right of the button grid and an X button at the end of the text input.   Clicking either will return the user to the basic mode of the current state of the Widget and clear out any text in the response line.  Clicking any of the `response buttons` will  replace the response line at the top with the selected response button and will progress the Widget to the next state.
 
 <section data-label="acc-navigator" class="m-y_6 font_n1 font_0:md font_1:lg">
     <div data-label="container" class="br_2 br_black-2 br_round br_solid flex flex_column isolate_isolation items_center m-x_5 relative">
@@ -125,11 +136,15 @@ The user should be able to type in question line.  This will replace the basic 
 
 
 ## Admin & Analytics
-### Admins How to Populate ACC Navigator
+### Admins How to Populate a MadLib-combinations
 
-This is still being discussed but the current concept is to extend the meta data on pages to allow for adding MadLib-combinations to page. MadLib-combinations would be a combination of first response, sentence bridge, and second response. Sentence Bridge, and Second Response is Optional. The responses are limited to what is defined.
+This is still being discussed but the current concept is to extend the meta data on pages to allow for adding MadLib-combinations to page. MadLib-combinations would be a combination of first response, sentence bridge, and second response. Sentence Bridge, and Second Response is Optional. 
 
-The admins should be able to create, repeat, update and delete the  MadLib-combinations on a page or content. 
+The admins should be able to create, repeat, update and delete the  MadLib-combinations on a page or content.
+
+
+
+**Not included in this UI but the breadcrumb path should be included once, when adding a document or page in ACC Navigator.**
 
 <p class="text_center"><span class="c_highlight m-x_auto inline-block">! This UI is for demo purposes only !</span></p>
 <div class="m_4 br_radius bg_black-05 p_4 shadow_overlap-light">
@@ -169,7 +184,7 @@ The admins should be able to create, repeat, update and delete the  MadLib-combi
 <div class="flex flex_row gap_4 items_end justify_between m-x_4">
 <div>
 <div class="m-b_3"><label class="m-b_3" for="example-input-email">First Word <sup><i class="fas fa-asterisk c_warning"></i></sup></label> <input type="text" id="example-input-email" placeholder=""></div></div>
-<div><div class="m-b_3"><label class="m-b_3" for="example-input-email">Email address</label> <input type="text" id="example-input-email" placeholder=""></div></div>
+<div><div class="m-b_3"><label class="m-b_3" for="example-input-email">Sentence Bridge</label> <input type="text" id="example-input-email" placeholder=""></div></div>
 <div><div class="m-b_3"><label class="m-b_3" for="example-input-email">Second Word</label> <input type="text" id="example-input-email" placeholder=""></div></div></div>
 <div class="flex flex_row-reverse gap_4 items_end justify_between m-x_4"><a href="" class="btn btn-primary c_white"><i class="fas fas-solid fa-plus"></i> Add Another</a><span class="c_warning "><sup><i class="fas fa-asterisk c_warning"></i> </sup>required</span></div>
 </div>
@@ -178,10 +193,10 @@ The admins should be able to create, repeat, update and delete the  MadLib-combi
 ----------
 ### Analytics
 
-This system should either through google or a log system track how a the user completes a result or where it is abandoned. Abandoned is defined when the user restarts the widget.
+This system should either through google or a log system track how a the user completes a result or where it is abandoned. Abandoned is defined when the user resets the Widget.
 
 #### Sample Data
 
-`Date, Success , First Word, Second Word, Result Clicked On`
+`Date Time Stamp, Success or Reset , First Word, Second Word, Result Clicked On`
 
 ----------
