@@ -75,4 +75,17 @@ layout: home
   </ul>
 {% endfor %}
 </div>
+<div class="">
+<h2 class="font_display">JACC Prototypes</h2>
+{% for jacc_prototype in site.jacc_prototypes %}
+  <ul class="ul_none ">
+<li class="p_3 p-l_0 h:bg_primary-5">    <a href="{{ jacc_prototype.url | append: site.github.build_revision | relative_url }}">
+      {{ jacc_prototype.name }}
+      {% if jacc_prototype.position %}
+         - {{ jacc_prototype.position }}
+      {% endif %}
+    </a></li>
+  </ul>
+{% endfor %}
+</div>
 </div>
