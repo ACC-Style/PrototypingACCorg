@@ -12,3 +12,6 @@
 
 
 * **user experience summary:** The widget will allow users to interact with simple `MadLib` questions to answer to allow users to discover and navigate to pages and content throughout the web domain of ACC.org.  
+
+
+<p class="font_bold font_1"><span class="c_highlight m-x_auto inline-block">! UX to determine the need for the Sentence Bridge and do we need to change how we represent it throughout the Widget. !</span></p>
