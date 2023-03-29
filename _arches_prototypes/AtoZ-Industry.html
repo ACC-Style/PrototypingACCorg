@@ -3,12 +3,13 @@ layout: arches
 name: "A to Z Industry Generator"
 position: "Home"
 ---
-{% assign alpha_array = 'A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,#' | split: ',' %}
+{% assign alpha_array = 'A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z' | split: ',' %}
 {% assign industry = site.data.industry | sort: 'sortname' %}
 {% assign alpha_categories = industry | map: 'grouping' %}
-<h1 id="AlphaNavTop" class="font_4 c_primary">Alpha List Render</h1>
+
+<h1 class="font_4 c_primary">Alpha List Render</h1>
 <a href="https://raw.githubusercontent.com/ACC-Style/PrototypingACCorg/main/_data/industry.csv" class="link">industry.csv</a>
-<section class="relative p-t_2">
+<section class="relative p-t_2"  id="AlphaNavTop">
   <div class="sticky t_0 r_0 z_1">
     <div class="absolute r_4 t_0 flex flex_row flex_nowrap gap-x_3">
       <!-- Helper Jump links -->

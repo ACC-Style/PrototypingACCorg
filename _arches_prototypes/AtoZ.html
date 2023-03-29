@@ -8,14 +8,14 @@ position: "Home"
 {% assign alpha_categories = people | map: 'group' %}
 {% assign contains_titles = people | map: 'title' %}
 {% assign contains_titles = contains_titles | uniq %}
-{% assign location_font_size = 'font-size_down-1' %}
+{% assign city_font_size = 'font-size_down-1' %}
 {% if contains_titles.size >= 1 and contains_titles.first != '' %}
-  {% assign location_font_size = 'font-size_down-2' %}
+  {% assign city_font_size = 'font-size_down-2' %}
 {% endif %}
 contains titles: {{ contains_titles.size }}
-<h1 id="AlphaNavTop" class="font_4 c_primary">Alpha List Render</h1>
+<h1 class="font_4 c_primary">Alpha List Render</h1>
 <a href="/PrototypingACCorg/_data/people.csv" class="link">People.csv</a>
-<section class="relative p-t_2">
+<section class="relative p-t_2" id="AlphaNavTop" >
   <div class="sticky t_0 r_0 z_1">
     <div class="absolute r_4 t_0 flex flex_row flex_nowrap gap-x_3">
       <!-- Helper Jump links -->
@@ -88,16 +88,20 @@ contains titles: {{ contains_titles.size }}
                     {{- person.title -}}
                   </span>
                 {% endif %}
-                {% if person.location != null and person.location != '' %}
+                {% if person.city != null and person.city != '' %}
                   <span
-                    data-name="newMember__location"
-                    class="block c_black-6 {{location_font_size}} font_accent"
+                    data-name="newMember__city"
+                    class="block c_black-6 {{city_font_size}} font_accent"
                   >
-                    {{ person.location -}}
-                    {%- if person.location != null and person.country != null -%}
+                    {{ person.city -}}
+                    {%- if person.city != null and person.state != null -%}
                       ,
                     {% endif %}
-                    {{ person.country -}}
+                    {{ person.state -}}
+                    {%- if person.state != null and person.country != null -%}
+                    ,
+                  {% endif %}
+                  {{ person.country -}}
                   </span>
                 {% endif %}
               </li>
