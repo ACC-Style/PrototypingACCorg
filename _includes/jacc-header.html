@@ -1,1106 +1,995 @@
-
-<header class="max-w_80">
-    <div class="flex flex_row p_3">
-    <div class="header__logo p_3">
-
-
-        <a href="/" title="JACC Journals"><img id="" alt="JACC Journals" src="https://www.jacc.org/pb-assets/images/site-home/jacc-journals-header-1676480570457.png"></a>
-    </div>
-    <div class="header__content flex flex_row nowrap m-l_auto items_center">
-        <div class="header__institution-bar"></div>
-        <div class="header__search-bar">
-
-
-            <div data-db-target-of="sb1" class="dropBlock__holder quick-search__dropBlock quickSearchFormContainer ">
-                <div class="container">
-                    <div class="quick-search">
-                        <div class="tab ">
-                            <div class="quick-search__searchbox flex flex_row nowrap br_brand br_1 br_solid">
-                                <div class="dropBlock" data-db-parent-of="dbTab-0">
-                                    <a href="#" class="dropBlock__link p_3 font_bold" data-db-target-for="dbTab-0" aria-label="All Journals">
-                                        <span aria-hidden="true">All Journals</span>
-                                        <i class="icon-arrow_d_n far fa-angle-down aria-hidden=" true"=""></i>
-                                    </a>
-
+<header class="br-b_3 br_solid br_brand font_ui ">
+    <div class="max-w_80 m-x_auto">
+        <div class="flex flex_row p_3">
+            <div class="header__logo p_3">
+                <a href="/" title="JACC Journals"><img id="" alt="JACC Journals" src="https://www.jacc.org/pb-assets/images/site-home/jacc-journals-header-1676480570457.png"></a>
+            </div>
+            <div class="header__content flex flex_row nowrap m-l_auto items_center">
+                <div class="header__institution-bar"></div>
+                <div class="header__search-bar">
+                    <div data-db-target-of="sb1" class="dropBlock__holder quick-search__dropBlock quickSearchFormContainer ">
+                        <div class="container">
+                            <div class="quick-search">
+                                <div class="tab ">
+                                    <div class="quick-search__searchbox flex flex_row nowrap br_brand br_1 br_solid">
+                                        <div class="dropBlock" data-db-parent-of="dbTab-0">
+                                            <a href="#" class="dropBlock__link p_3 font_bold" data-db-target-for="dbTab-0" aria-label="All Journals">
+                                                <span aria-hidden="true">All Journals</span>
+                                                <i class="icon-arrow_d_n far fa-angle-down aria-hidden=" true"=""></i>
+                                            </a>
+                                        </div>
+                                        <input type="text" name="" placeholder="Enter Search Terms" id="">
+                                        <button>
+                                            <i class="far fa-search"></i>
+                                        </button>
+                                    </div>
                                 </div>
-                                <input type="text" name="" placeholder="Enter Search Terms" id="">
-                                <button>
-                                    <i class="far fa-search"></i>
-                                </button>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
+                <div class="header__menu-bar p-x_5">
+                    <ul class="c_brand flex flex_row font_2 font_bold font_ui gap_4 rlist--inline ul_none">
+                        <li><a href="https://www.acc.org" class="btn btn--link-primary" target="_blank">ACC.org</a></li>
+                        <li class="cart-wrapper cartLabel">
+                            <div class="eCommerceCartIndicatorWidget">
+                                <a href="/action/showCart?FlowID=1" id="cartLabel" class="font_0">
+                                    <i class="fa-cart-plus far icon-shoppingcart"></i>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="loggin-wrapper">
+                            <ul class="rlist--inline ul_none">
+                                <li>
+                                    <div class="right-side">
+                                        <div class="base loginBar">
+                                            <a href="/action/ssostart?idp=Cardiosource&amp;redirectUri=/&amp;uri=%2F" class="visible-lg" title="Sign in or Create Account">
+                                                <span class="btn btn--link-primary sign-in">Register</span>
+                                                <span class="br_1 br_brand br_solid br_square btn btn--outline-primary btn-outline-primary btn-sm c_brand sign-in">Sign In</span>
+                                            </a>
+                                            <a href="/action/ssostart?idp=Cardiosource&amp;redirectUri=/&amp;uri=%2F" class="hidden-lg display_none:lg">
+                                                <i class="icon-user-outline"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <div class="header__menu-bar p-x_5">
-
-
-            <ul class="c_brand flex flex_row font_2 font_bold font_ui gap_4 rlist--inline ul_none">
-                <li><a href="https://www.acc.org" class="btn btn--link-primary" target="_blank">ACC.org</a></li>
-                <li class="cart-wrapper cartLabel">
-
-
-                    <div class="eCommerceCartIndicatorWidget">
-
-
-                        <a href="/action/showCart?FlowID=1" id="cartLabel" class="font_0">
-                            <i class="fa-cart-plus far icon-shoppingcart"></i>
-                        </a>
-
-
-                    </div>
-                </li>
-                <li class="loggin-wrapper">
-
-
-                    <ul class="rlist--inline ul_none">
-                        <li>
-                            <div class="right-side">
-                                <div class="base loginBar">
-                                    <a href="/action/ssostart?idp=Cardiosource&amp;redirectUri=/&amp;uri=%2F" class="visible-lg" title="Sign in or Create Account">
-                                        <span class="btn btn--link-primary sign-in">Register</span>
-                                        <span class="br_1 br_brand br_solid br_square btn btn--outline-primary btn-outline-primary btn-sm c_brand sign-in">Sign In</span>
-                                    </a>
-                                    <a href="/action/ssostart?idp=Cardiosource&amp;redirectUri=/&amp;uri=%2F" class="hidden-lg display_none:lg">
-                                        <i class="icon-user-outline"></i>
-                                    </a>
+        <div class="header__menu max-w_80 m-x_auto">
+            <div class="main-nav font_0 font_medium c_brand">
+                <nav role="navigation" id="main-menu" data-ctrl-res="screen-md" aria-label="Main Navigation" class="drawer__nav container hidden-md hidden-sm hidden-xs">
+                    <a href="#" data-redirect-to="/" class="menu-header hidden-lg display_none:lg">Home</a>
+                    <ul id="menubar" role="menubar" class="flex flex_row gap_3 menubar rlist--inline ul_none">
+                        <!-- changed class when there is item.content-->
+                        <li role="menuitem" aria-haspopup="true" aria-label="Journals" id="menu-item-main-menu-0" class="dropdown menu-parent p_3 p-b_4 is--current">
+                            <a href="#" id="main-menu-1" data-toggle="dropdown" class="dropdown__toggle flex flex_row nowrap gap_2 items_center">
+                                <span>Journals</span>
+                                <i aria-hidden="true" class="icon-arrow_r pull-right hidden-lg display_none:lg"></i>
+                                <i aria-hidden="true" class="icon-section_arrow_d far fa-angle-down pull-right hidden-md hidden-sm hidden-xs"></i>
+                            </a>
+                            <div aria-labelledby="main-menu-1" role="menu" class="dropdown__menu">
+                                <div class="dropdown__menu__content">
+                                    <section class="dropdown__section accordion display_none">
+                                        <a href="#" tabindex="-1" aria-controls="dropdownMenu-hjk" class="dropdown__section__title menu-item accordion__control js--open" aria-expanded="true">
+                                            <span class="dropdown__section__title__text"> JACC Family of Journals </span>
+                                            <i aria-hidden="true" class="icon-plus hidden-lg display_none:lg"></i>
+                                            <i aria-hidden="true" class="icon-minus hidden-lg display_none:lg"></i>
+                                        </a>
+                                        <div id="dropdownMenu-hjk" class="accordion__content js--open">
+                                            <ul class="rlist">
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="JACC" class="menu-item">
+                                                    <a href="/journal/jacc" class="menu-item__link">
+                                                        <span>JACC</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="JACC: Advances" class="menu-item">
+                                                    <a href="/journal/jacc-advances" class="menu-item__link">
+                                                        <span>JACC: Advances</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="JACC: Asia" class="menu-item">
+                                                    <a href="/journal/jacc-asia" class="menu-item__link">
+                                                        <span>JACC: Asia</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="JACC: Basic to Translational Science" class="menu-item">
+                                                    <a href="/journal/basic-translational" class="menu-item__link">
+                                                        <span>JACC: Basic to Translational Science</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="JACC: CardioOncology" class="menu-item">
+                                                    <a href="/journal/cardio-oncology" class="menu-item__link">
+                                                        <span>JACC: CardioOncology</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="JACC: Cardiovascular Imaging" class="menu-item">
+                                                    <a href="/journal/imaging" class="menu-item__link">
+                                                        <span>JACC: Cardiovascular Imaging</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="JACC: Cardiovascular Interventions" class="menu-item">
+                                                    <a href="/journal/interventions" class="menu-item__link">
+                                                        <span>JACC: Cardiovascular Interventions</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="JACC: Case Reports" class="menu-item">
+                                                    <a href="/journal/case-reports" class="menu-item__link">
+                                                        <span>JACC: Case Reports</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="JACC: Clinical Electrophysiology" class="menu-item">
+                                                    <a href="/journal/electrophysiology" class="menu-item__link">
+                                                        <span>JACC: Clinical Electrophysiology</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="JACC: Heart Failure" class="menu-item">
+                                                    <a href="/journal/heart-failure" class="menu-item__link">
+                                                        <span>JACC: Heart Failure</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </section>
+                                    <section class="dropdown__section accordion display_none">
+                                        <a href="#" tabindex="-1" aria-controls="dropdownMenu-hjk" class="dropdown__section__title menu-item accordion__control js--open" aria-expanded="true">
+                                            <span class="dropdown__section__title__text">Explore</span>
+                                            <i aria-hidden="true" class="icon-plus hidden-lg display_none:lg"></i>
+                                            <i aria-hidden="true" class="icon-minus hidden-lg display_none:lg"></i>
+                                        </a>
+                                        <div id="dropdownMenu-hjk" class="accordion__content js--open">
+                                            <ul class="rlist">
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="About the Journals" class="menu-item">
+                                                    <a href="/about" class="menu-item__link">
+                                                        <span>About the Journals</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Topics" class="menu-item">
+                                                    <a href="/topics" class="menu-item__link">
+                                                        <span>Topics</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Podcasts" class="menu-item">
+                                                    <a href="/podcasts" class="menu-item__link">
+                                                        <span>Podcasts</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Videos" class="menu-item">
+                                                    <a href="/videos" class="menu-item__link">
+                                                        <span>Videos</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="CME/MOC" class="menu-item">
+                                                    <a href="/cme-moc" class="menu-item__link">
+                                                        <span>CME/MOC</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Events" class="menu-item">
+                                                    <a href="/events" class="menu-item__link">
+                                                        <span>Events</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="For Authors" class="menu-item">
+                                                    <a href="/author-center" class="menu-item__link">
+                                                        <span>For Authors</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="For Reviewers" class="menu-item">
+                                                    <a href="/author-center/reviewers-corner" class="menu-item__link">
+                                                        <span>For Reviewers</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="JACC: CardioOncology Pulse" class="menu-item">
+                                                    <a href="/cardio-oncology/pulse" class="menu-item__link">
+                                                        <span>JACC: CardioOncology Pulse</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </section>
+                                    <section class="dropdown__section accordion display_none">
+                                        <a href="#" tabindex="-1" aria-controls="dropdownMenu-hjk" class="dropdown__section__title menu-item accordion__control js--open" aria-expanded="true">
+                                            <span class="dropdown__section__title__text">Stay Connected</span>
+                                            <i aria-hidden="true" class="icon-plus hidden-lg display_none:lg"></i>
+                                            <i aria-hidden="true" class="icon-minus hidden-lg display_none:lg"></i>
+                                        </a>
+                                        <div id="dropdownMenu-hjk" class="accordion__content js--open">
+                                            <ul class="rlist">
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Email Alerts" class="menu-item">
+                                                    <a href="/alerts" class="menu-item__link">
+                                                        <span>Email Alerts</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Follow Us On Social Media" class="menu-item">
+                                                    <a href="/social-media" class="menu-item__link">
+                                                        <span>Follow Us On Social Media</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Subscribe" class="menu-item">
+                                                    <a href="/subscribe" class="menu-item__link">
+                                                        <span>Subscribe</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Contact Us" class="menu-item">
+                                                    <a href="/contact-us" class="menu-item__link">
+                                                        <span>Contact Us</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="JACC Edge Newsletter" class="menu-item">
+                                                    <a href="/jacc-edge/current" class="menu-item__link">
+                                                        <span>JACC Edge Newsletter</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Help" class="menu-item">
+                                                    <a href="/help" class="menu-item__link">
+                                                        <span>Help</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="ACC.org" class="menu-item">
+                                                    <a href="https://www.acc.org/" class="menu-item__link">
+                                                        <span>ACC.org</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- changed class when there is item.content-->
+                        <li role="menuitem" aria-haspopup="true" aria-label="Topics" id="menu-item-main-menu-1" class="dropdown menu-parent p_3 p-b_4">
+                            <a href="#" id="main-menu-2" data-toggle="dropdown" class="dropdown__toggle flex flex_row nowrap gap_2 items_center">
+                                <span>Topics</span>
+                                <i aria-hidden="true" class="icon-arrow_r pull-right hidden-lg display_none:lg"></i>
+                                <i aria-hidden="true" class="icon-section_arrow_d far fa-angle-down pull-right hidden-md hidden-sm hidden-xs"></i>
+                            </a>
+                            <div aria-labelledby="main-menu-2" role="menu" class="dropdown__menu">
+                                <div class="dropdown__menu__content">
+                                    <section class="dropdown__section accordion display_none 33">
+                                        <a href="#" tabindex="-1" aria-controls="dropdownMenu-hjk" class="dropdown__section__title menu-item accordion__control js--open" aria-expanded="true">
+                                            <span class="dropdown__section__title__text"> Topics Quick Links </span>
+                                            <i aria-hidden="true" class="icon-plus hidden-lg display_none:lg"></i>
+                                            <i aria-hidden="true" class="icon-minus hidden-lg display_none:lg"></i>
+                                        </a>
+                                        <div id="dropdownMenu-hjk" class="accordion__content js--open">
+                                            <ul class="rlist">
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Topics by Journal" class="menu-item">
+                                                    <a href="/topics" class="menu-item__link">
+                                                        <span>Topics by Journal</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Global Burden of CVD - Interactive Tool" class="menu-item">
+                                                    <a href="/global-burden-cvd/interactive/21-region" class="menu-item__link">
+                                                        <span>Global Burden of CVD - Interactive Tool</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Global Burden of CVD - Findings by Region" class="menu-item">
+                                                    <a href="/global-burden-cvd-2022" class="menu-item__link">
+                                                        <span>Global Burden of CVD - Findings by Region</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="COVID-19 Clinical Guidance Collection" class="menu-item">
+                                                    <a href="/special-collection/covid-19?=0&amp;sortBy=Earliest" class="menu-item__link">
+                                                        <span>COVID-19 Clinical Guidance Collection</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Social Determinants of Health Collection" class="menu-item">
+                                                    <a href="/special-collection/racial-ethnic-disparities" class="menu-item__link">
+                                                        <span>Social Determinants of Health Collection</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="BEST OF JACC JOURNALS 2022" class="menu-item dropzoneItem">
+                                                    <a class="btn btn--primary" href="/special-collection/best-of-2022">BEST OF JACC JOURNALS 2022</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </section>
+                                    <section class="dropdown__section accordion display_none extended">
+                                        <a href="#" tabindex="-1" aria-controls="dropdownMenu-hjk" class="dropdown__section__title menu-item accordion__control js--open" aria-expanded="true">
+                                            <span class="dropdown__section__title__text"> Topic Collections </span>
+                                            <i aria-hidden="true" class="icon-plus hidden-lg display_none:lg"></i>
+                                            <i aria-hidden="true" class="icon-minus hidden-lg display_none:lg"></i>
+                                        </a>
+                                        <div id="dropdownMenu-hjk" class="accordion__content js--open">
+                                            <ul class="rlist">
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Basic &amp; Translational Research" class="menu-item">
+                                                    <a href="/topic/collection/basic-and-translational-research" class="menu-item__link">
+                                                        <span>Basic &amp; Translational Research</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Cardiometabolic" class="menu-item">
+                                                    <a href="/topic/collection/cardiometabolic" class="menu-item__link">
+                                                        <span>Cardiometabolic</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Cardio-oncology" class="menu-item">
+                                                    <a href="/topic/collection/cardio-oncology" class="menu-item__link">
+                                                        <span>Cardio-oncology</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Cerebrovascular Disease &amp; Stroke" class="menu-item">
+                                                    <a href="/topic/collection/cerebrovascular-disease-and-stroke" class="menu-item__link">
+                                                        <span>Cerebrovascular Disease &amp; Stroke</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Critical Care &amp; Resuscitation" class="menu-item">
+                                                    <a href="/topic/collection/critical-care-and-resuscitation" class="menu-item__link">
+                                                        <span>Critical Care &amp; Resuscitation</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Congenital Heart Disease" class="menu-item">
+                                                    <a href="/topic/collection/congenital-heart-disease" class="menu-item__link">
+                                                        <span>Congenital Heart Disease</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Coronary, Peripheral &amp; Structural Interventions" class="menu-item">
+                                                    <a href="/topic/collection/coronary-peripheral-and-structural-interventions" class="menu-item__link">
+                                                        <span>Coronary, Peripheral &amp; Structural Interventions</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Genetics, Omics &amp; Tissue Regeneration" class="menu-item">
+                                                    <a href="/topic/collection/genetics-omics-and-tissue-regeneration" class="menu-item__link">
+                                                        <span>Genetics, Omics &amp; Tissue Regeneration</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Health Promotion &amp; Preventive Cardiology" class="menu-item">
+                                                    <a href="/topic/collection/health-promotion-and-preventive-cardiology" class="menu-item__link">
+                                                        <span>Health Promotion &amp; Preventive Cardiology</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Heart Failure &amp; Cardiomyopathies" class="menu-item">
+                                                    <a href="/topic/collection/heart-failure-and-cardiomyopathies" class="menu-item__link">
+                                                        <span>Heart Failure &amp; Cardiomyopathies</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Hypertension" class="menu-item">
+                                                    <a href="/topic/collection/hypertension" class="menu-item__link">
+                                                        <span>Hypertension</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Imaging" class="menu-item">
+                                                    <a href="/topic/collection/imaging" class="menu-item__link">
+                                                        <span>Imaging</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Ischemic Heart Disease" class="menu-item">
+                                                    <a href="/topic/collection/ischemic-heart-disease" class="menu-item__link">
+                                                        <span>Ischemic Heart Disease</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Outcomes &amp; Quality" class="menu-item">
+                                                    <a href="/topic/collection/outcomes-and-quality" class="menu-item__link">
+                                                        <span>Outcomes &amp; Quality</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Rhythm Disorders &amp; Electrophysiology" class="menu-item">
+                                                    <a href="/topic/collection/rhythm-disorders-and-electrophysiology" class="menu-item__link">
+                                                        <span>Rhythm Disorders &amp; Electrophysiology</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Surgery" class="menu-item">
+                                                    <a href="/topic/collection/surgery" class="menu-item__link">
+                                                        <span>Surgery</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Valvular Heart Disease" class="menu-item">
+                                                    <a href="/topic/collection/valvular-heart-disease" class="menu-item__link">
+                                                        <span>Valvular Heart Disease</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Vascular Medicine" class="menu-item">
+                                                    <a href="/topic/collection/vascular-medicine" class="menu-item__link">
+                                                        <span>Vascular Medicine</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- changed class when there is item.content-->
+                        <li role="menuitem" aria-haspopup="true" aria-label="Guidelines" id="menu-item-main-menu-2" class="dropdown menu-parent p_3 p-b_4">
+                            <a href="#" id="main-menu-3" data-toggle="dropdown" class="dropdown__toggle flex flex_row nowrap gap_2 items_center">
+                                <span>Guidelines</span>
+                                <i aria-hidden="true" class="icon-arrow_r pull-right hidden-lg display_none:lg"></i>
+                                <i aria-hidden="true" class="icon-section_arrow_d far fa-angle-down pull-right hidden-md hidden-sm hidden-xs"></i>
+                            </a>
+                            <div aria-labelledby="main-menu-3" role="menu" class="dropdown__menu">
+                                <div class="dropdown__menu__content">
+                                    <section class="dropdown__section accordion display_none 33">
+                                        <a href="#" tabindex="-1" aria-controls="dropdownMenu-hjk" class="dropdown__section__title menu-item accordion__control js--open" aria-expanded="true">
+                                            <span class="dropdown__section__title__text"> Guidelines Quick Links </span>
+                                            <i aria-hidden="true" class="icon-plus hidden-lg display_none:lg"></i>
+                                            <i aria-hidden="true" class="icon-minus hidden-lg display_none:lg"></i>
+                                        </a>
+                                        <div id="dropdownMenu-hjk" class="accordion__content js--open">
+                                            <ul class="rlist">
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Guideline Hubs" class="menu-item">
+                                                    <a href="/guidelines/guideline-hubs" class="menu-item__link">
+                                                        <span>Guideline Hubs</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Guidelines and Clinical Documents" class="menu-item">
+                                                    <a href="/guidelines" class="menu-item__link">
+                                                        <span>Guidelines and Clinical Documents</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="ACC.org Guidelines Hub" class="menu-item">
+                                                    <a href="https://www.acc.org/Guidelines" class="menu-item__link">
+                                                        <span>ACC.org Guidelines Hub</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="LATEST GUIDELINE" class="menu-item dropzoneItem">
+                                                    <a class="btn btn--primary" href="/guidelines/aortic-disease">LATEST GUIDELINE</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </section>
+                                    <section class="dropdown__section accordion display_none extended">
+                                        <a href="#" tabindex="-1" aria-controls="dropdownMenu-hjk" class="dropdown__section__title menu-item accordion__control js--open" aria-expanded="true">
+                                            <span class="dropdown__section__title__text">Guideline Hubs</span>
+                                            <i aria-hidden="true" class="icon-plus hidden-lg display_none:lg"></i>
+                                            <i aria-hidden="true" class="icon-minus hidden-lg display_none:lg"></i>
+                                        </a>
+                                        <div id="dropdownMenu-hjk" class="accordion__content js--open">
+                                            <ul class="rlist">
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Adult Congenital Heart Disease Guideline" class="menu-item">
+                                                    <a href="/guidelines/achd" class="menu-item__link">
+                                                        <span>Adult Congenital Heart Disease Guideline</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Aortic Disease Guideline" class="menu-item">
+                                                    <a href="/guidelines/aortic-disease" class="menu-item__link">
+                                                        <span>Aortic Disease Guideline</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Atrial Fibrillation Focused Update Guideline" class="menu-item">
+                                                    <a href="/guidelines/atrial-fibrillation" class="menu-item__link">
+                                                        <span>Atrial Fibrillation Focused Update Guideline</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Bradycardia Guideline" class="menu-item">
+                                                    <a href="/guidelines/bradycardia" class="menu-item__link">
+                                                        <span>Bradycardia Guideline</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Chest Pain Guideline" class="menu-item">
+                                                    <a href="/guidelines/chest-pain" class="menu-item__link">
+                                                        <span>Chest Pain Guideline</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Cholesterol Guideline" class="menu-item">
+                                                    <a href="/guidelines/cholesterol" class="menu-item__link">
+                                                        <span>Cholesterol Guideline</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Coronary Artery Revascularization Guideline" class="menu-item">
+                                                    <a href="/guidelines/revascularization" class="menu-item__link">
+                                                        <span>Coronary Artery Revascularization Guideline</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="High Blood Pressure Guideline" class="menu-item">
+                                                    <a href="/guidelines/high-blood-pressure" class="menu-item__link">
+                                                        <span>High Blood Pressure Guideline</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Hypertrophic Cardiomyopathy Guideline" class="menu-item">
+                                                    <a href="/guidelines/hcm" class="menu-item__link">
+                                                        <span>Hypertrophic Cardiomyopathy Guideline</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Management of Heart Failure Guideline" class="menu-item">
+                                                    <a href="/guidelines/heart-failure-management" class="menu-item__link">
+                                                        <span>Management of Heart Failure Guideline</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Primary Prevention of CVD Guideline" class="menu-item">
+                                                    <a href="/guidelines/prevention" class="menu-item__link">
+                                                        <span>Primary Prevention of CVD Guideline</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Valvular Heart Disease Guideline" class="menu-item">
+                                                    <a href="/guidelines/vhd" class="menu-item__link">
+                                                        <span>Valvular Heart Disease Guideline</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Ventricular Arrhythmia and Sudden Cardiac Death Prevention Guideline" class="menu-item">
+                                                    <a href="/guidelines/vascd" class="menu-item__link">
+                                                        <span>Ventricular Arrhythmia and Sudden Cardiac Death Prevention Guideline</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- changed class when there is item.content-->
+                        <li role="menuitem" aria-haspopup="true" aria-label="Author Center" id="menu-item-main-menu-3" class="dropdown menu-parent p_3 p-b_4">
+                            <a href="#" id="main-menu-4" data-toggle="dropdown" class="dropdown__toggle flex flex_row nowrap gap_2 items_center">
+                                <span>Author Center</span>
+                                <i aria-hidden="true" class="icon-arrow_r pull-right hidden-lg display_none:lg"></i>
+                                <i aria-hidden="true" class="icon-section_arrow_d far fa-angle-down pull-right hidden-md hidden-sm hidden-xs"></i>
+                            </a>
+                            <div aria-labelledby="main-menu-4" role="menu" class="dropdown__menu">
+                                <div class="dropdown__menu__content">
+                                    <section class="dropdown__section accordion display_none">
+                                        <a href="#" tabindex="-1" aria-controls="dropdownMenu-hjk" class="dropdown__section__title menu-item accordion__control js--open" aria-expanded="true">
+                                            <span class="dropdown__section__title__text"> Author Center Quick Links </span>
+                                            <i aria-hidden="true" class="icon-plus hidden-lg display_none:lg"></i>
+                                            <i aria-hidden="true" class="icon-minus hidden-lg display_none:lg"></i>
+                                        </a>
+                                        <div id="dropdownMenu-hjk" class="accordion__content js--open">
+                                            <ul class="rlist">
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Calls for Papers" class="menu-item">
+                                                    <a href="/author-center" class="menu-item__link">
+                                                        <span>Calls for Papers</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Submit" class="menu-item">
+                                                    <a href="/author-center/submit#submit" class="menu-item__link">
+                                                        <span>Submit</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Contact Us" class="menu-item">
+                                                    <a href="/contact-us" class="menu-item__link">
+                                                        <span>Contact Us</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </section>
+                                    <section class="dropdown__section accordion display_none">
+                                        <a href="#" tabindex="-1" aria-controls="dropdownMenu-hjk" class="dropdown__section__title menu-item accordion__control js--open" aria-expanded="true">
+                                            <span class="dropdown__section__title__text">For Authors</span>
+                                            <i aria-hidden="true" class="icon-plus hidden-lg display_none:lg"></i>
+                                            <i aria-hidden="true" class="icon-minus hidden-lg display_none:lg"></i>
+                                        </a>
+                                        <div id="dropdownMenu-hjk" class="accordion__content js--open">
+                                            <ul class="rlist">
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Author Services" class="menu-item">
+                                                    <a href="/author-center/author-services#author-services" class="menu-item__link">
+                                                        <span>Author Services</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Choose Your Journal" class="menu-item">
+                                                    <a href="/author-center/manuscript-guidelines#original-research" class="menu-item__link">
+                                                        <span>Choose Your Journal</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="How to Publish Tips" class="menu-item">
+                                                    <a href="/author-center/how-to-publish#tips" class="menu-item__link">
+                                                        <span>How to Publish Tips</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="How to Submit" class="menu-item">
+                                                    <a href="/author-center/submit#submit" class="menu-item__link">
+                                                        <span>How to Submit</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Why Publish" class="menu-item">
+                                                    <a href="/author-center#why-publish" class="menu-item__link">
+                                                        <span>Why Publish</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </section>
+                                    <section class="dropdown__section accordion display_none">
+                                        <a href="#" tabindex="-1" aria-controls="dropdownMenu-hjk" class="dropdown__section__title menu-item accordion__control js--open" aria-expanded="true">
+                                            <span class="dropdown__section__title__text">For Reviewers</span>
+                                            <i aria-hidden="true" class="icon-plus hidden-lg display_none:lg"></i>
+                                            <i aria-hidden="true" class="icon-minus hidden-lg display_none:lg"></i>
+                                        </a>
+                                        <div id="dropdownMenu-hjk" class="accordion__content js--open">
+                                            <ul class="rlist">
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Become a Reviewer" class="menu-item">
+                                                    <a href="/author-center/reviewers-corner" class="menu-item__link">
+                                                        <span>Become a Reviewer</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Best Practices for Reviewing" class="menu-item">
+                                                    <a href="/author-center/reviewers-corner#best-practices" class="menu-item__link">
+                                                        <span>Best Practices for Reviewing</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="CME Claims" class="menu-item">
+                                                    <a href="/author-center/reviewers-corner#cme" class="menu-item__link">
+                                                        <span>CME Claims</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Recognitions - Publon Credits" class="menu-item">
+                                                    <a href="/author-center/reviewers-corner#benefits" class="menu-item__link">
+                                                        <span>Recognitions - Publon Credits</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Reviewer Ratings" class="menu-item">
+                                                    <a href="/author-center/reviewers-corner#reviewer-ratings" class="menu-item__link">
+                                                        <span>Reviewer Ratings</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- changed class when there is item.content-->
+                        <li role="menuitem" aria-haspopup="true" aria-label="CME/MOC" id="menu-item-main-menu-4" class="dropdown menu-parent p_3 p-b_4">
+                            <a href="#" id="main-menu-5" data-toggle="dropdown" class="dropdown__toggle flex flex_row nowrap gap_2 items_center">
+                                <span>CME/MOC</span>
+                                <i aria-hidden="true" class="icon-arrow_r pull-right hidden-lg display_none:lg"></i>
+                                <i aria-hidden="true" class="icon-section_arrow_d far fa-angle-down pull-right hidden-md hidden-sm hidden-xs"></i>
+                            </a>
+                            <div aria-labelledby="main-menu-5" role="menu" class="dropdown__menu">
+                                <div class="dropdown__menu__content">
+                                    <section class="dropdown__section accordion display_none">
+                                        <a href="#" tabindex="-1" aria-controls="dropdownMenu-hjk" class="dropdown__section__title menu-item accordion__control js--open" aria-expanded="true">
+                                            <span class="dropdown__section__title__text"> CME/MOC Quick Links </span>
+                                            <i aria-hidden="true" class="icon-plus hidden-lg display_none:lg"></i>
+                                            <i aria-hidden="true" class="icon-minus hidden-lg display_none:lg"></i>
+                                        </a>
+                                        <div id="dropdownMenu-hjk" class="accordion__content js--open">
+                                            <ul class="rlist">
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="All Certified Activities" class="menu-item">
+                                                    <a href="/cme-moc" class="menu-item__link">
+                                                        <span>All Certified Activities</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="ACC Online Learning Catalog" class="menu-item">
+                                                    <a href="https://www.acc.org/Education-and-Meetings/Education-Catalog#sort=%40originalz32xpostedz32xdate%20descending" class="menu-item__link">
+                                                        <span>ACC Online Learning Catalog</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </section>
+                                    <section class="dropdown__section accordion display_none">
+                                        <a href="#" tabindex="-1" aria-controls="dropdownMenu-hjk" class="dropdown__section__title menu-item accordion__control js--open" aria-expanded="true">
+                                            <span class="dropdown__section__title__text"> JACC Journals CME/MOCs By Journal </span>
+                                            <i aria-hidden="true" class="icon-plus hidden-lg display_none:lg"></i>
+                                            <i aria-hidden="true" class="icon-minus hidden-lg display_none:lg"></i>
+                                        </a>
+                                        <div id="dropdownMenu-hjk" class="accordion__content js--open">
+                                            <ul class="rlist">
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="JACC" class="menu-item">
+                                                    <a href="/cme-moc?startPage=&amp;rel=nofollow&amp;SeriesKey=jac" class="menu-item__link">
+                                                        <span>JACC</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="JACC: Asia" class="menu-item">
+                                                    <a href="/cme-moc?startPage=&amp;rel=nofollow&amp;SeriesKey=jacasi" class="menu-item__link">
+                                                        <span>JACC: Asia</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="JACC: CardioOncology" class="menu-item">
+                                                    <a href="/cme-moc?startPage=&amp;rel=nofollow&amp;SeriesKey=jaccao" class="menu-item__link">
+                                                        <span>JACC: CardioOncology</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="JACC: Cardiovascular Imaging" class="menu-item">
+                                                    <a href="/cme-moc?startPage=&amp;rel=nofollow&amp;SeriesKey=jcmg" class="menu-item__link">
+                                                        <span>JACC: Cardiovascular Imaging</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="JACC: Cardiovascular Interventions" class="menu-item">
+                                                    <a href="/cme-moc?startPage=&amp;rel=nofollow&amp;SeriesKey=jcin" class="menu-item__link">
+                                                        <span>JACC: Cardiovascular Interventions</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="JACC: Case Reports" class="menu-item">
+                                                    <a href="/cme-moc?startPage=&amp;rel=nofollow&amp;SeriesKey=jaccas" class="menu-item__link">
+                                                        <span>JACC: Case Reports</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="JACC: Clinical Electrophysiology" class="menu-item">
+                                                    <a href="/cme-moc?startPage=&amp;rel=nofollow&amp;SeriesKey=jacep" class="menu-item__link">
+                                                        <span>JACC: Clinical Electrophysiology</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="JACC: Heart Failure" class="menu-item">
+                                                    <a href="/cme-moc?startPage=&amp;rel=nofollow&amp;SeriesKey=jchf" class="menu-item__link">
+                                                        <span>JACC: Heart Failure</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </section>
+                                    <section class="dropdown__section accordion display_none"></section>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- changed class when there is item.content-->
+                        <li role="menuitem" aria-haspopup="true" aria-label="Events" id="menu-item-main-menu-5" class="dropdown menu-parent p_3 p-b_4">
+                            <a href="#" id="main-menu-6" data-toggle="dropdown" class="dropdown__toggle flex flex_row nowrap gap_2 items_center">
+                                <span>Events</span>
+                                <i aria-hidden="true" class="icon-arrow_r pull-right hidden-lg display_none:lg"></i>
+                                <i aria-hidden="true" class="icon-section_arrow_d far fa-angle-down pull-right hidden-md hidden-sm hidden-xs"></i>
+                            </a>
+                            <div aria-labelledby="main-menu-6" role="menu" class="dropdown__menu">
+                                <div class="dropdown__menu__content">
+                                    <section class="dropdown__section accordion display_none">
+                                        <a href="#" tabindex="-1" aria-controls="dropdownMenu-hjk" class="dropdown__section__title menu-item accordion__control js--open" aria-expanded="true">
+                                            <span class="dropdown__section__title__text"> Events Quick Links </span>
+                                            <i aria-hidden="true" class="icon-plus hidden-lg display_none:lg"></i>
+                                            <i aria-hidden="true" class="icon-minus hidden-lg display_none:lg"></i>
+                                        </a>
+                                        <div id="dropdownMenu-hjk" class="accordion__content js--open">
+                                            <ul class="rlist">
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Featured Events" class="menu-item">
+                                                    <a href="/events#featured" class="menu-item__link">
+                                                        <span>Featured Events</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Upcoming Events" class="menu-item">
+                                                    <a href="/events#upcoming" class="menu-item__link">
+                                                        <span>Upcoming Events</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Past Events by Date" class="menu-item">
+                                                    <a href="/events#date" class="menu-item__link">
+                                                        <span>Past Events by Date</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Past Events by Type" class="menu-item">
+                                                    <a href="/events#type" class="menu-item__link">
+                                                        <span>Past Events by Type</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </section>
+                                    <section class="dropdown__section accordion display_none">
+                                        <a href="#" tabindex="-1" aria-controls="dropdownMenu-hjk" class="dropdown__section__title menu-item accordion__control js--open" aria-expanded="true">
+                                            <span class="dropdown__section__title__text">All Events</span>
+                                            <i aria-hidden="true" class="icon-plus hidden-lg display_none:lg"></i>
+                                            <i aria-hidden="true" class="icon-minus hidden-lg display_none:lg"></i>
+                                        </a>
+                                        <div id="dropdownMenu-hjk" class="accordion__content js--open">
+                                            <ul class="rlist">
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Cardiology Hour" class="menu-item">
+                                                    <a href="/cardiology-hour" class="menu-item__link">
+                                                        <span>Cardiology Hour</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Conference Highlights" class="menu-item">
+                                                    <a href="/events" class="menu-item__link">
+                                                        <span>Conference Highlights</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Journal Clubs" class="menu-item">
+                                                    <a href="/events" class="menu-item__link">
+                                                        <span>Journal Clubs</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Lectures" class="menu-item">
+                                                    <a href="/events" class="menu-item__link">
+                                                        <span>Lectures</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </section>
+                                    <section class="dropdown__section accordion display_none">
+                                        <a href="#" tabindex="-1" aria-controls="dropdownMenu-hjk" class="dropdown__section__title menu-item accordion__control js--open" aria-expanded="true">
+                                            <span class="dropdown__section__title__text"> JACC Global Burden of CVD Webinar Series </span>
+                                            <i aria-hidden="true" class="icon-plus hidden-lg display_none:lg"></i>
+                                            <i aria-hidden="true" class="icon-minus hidden-lg display_none:lg"></i>
+                                        </a>
+                                        <div id="dropdownMenu-hjk" class="accordion__content js--open">
+                                            <ul class="rlist">
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Global Burden of CVD Hub" class="menu-item">
+                                                    <a href="/global-burden-cardiovascular-disease" class="menu-item__link">
+                                                        <span>Global Burden of CVD Hub</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Examining Trends in Africa" class="menu-item">
+                                                    <a href="/global-burden-cardiovascular-disease/africa" class="menu-item__link">
+                                                        <span>Examining Trends in Africa</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Examining Trends in East Asia" class="menu-item">
+                                                    <a href="/global-burden-cardiovascular-disease/east-asia" class="menu-item__link">
+                                                        <span>Examining Trends in East Asia</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Examining Trends in North America" class="menu-item">
+                                                    <a href="/global-burden-cardiovascular-disease/north-america" class="menu-item__link">
+                                                        <span>Examining Trends in North America</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Examining Trends in South America" class="menu-item">
+                                                    <a href="/global-burden-cardiovascular-disease/south-america" class="menu-item__link">
+                                                        <span>Examining Trends in South America</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Examining Trends in Western Europe" class="menu-item">
+                                                    <a href="/global-burden-cardiovascular-disease/western-europe" class="menu-item__link">
+                                                        <span>Examining Trends in Western Europe</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- changed class when there is item.content-->
+                        <li role="menuitem" aria-haspopup="true" aria-label="JACC Patient Care Pathways" id="menu-item-main-menu-6" class="dropdown menu-parent p_3 p-b_4">
+                            <a href="#" id="main-menu-7" data-toggle="dropdown" class="dropdown__toggle flex flex_row nowrap gap_2 items_center">
+                                <span>JACC Patient Care Pathways</span>
+                                <i aria-hidden="true" class="icon-arrow_r pull-right hidden-lg display_none:lg"></i>
+                                <i aria-hidden="true" class="icon-section_arrow_d far fa-angle-down pull-right hidden-md hidden-sm hidden-xs"></i>
+                            </a>
+                            <div aria-labelledby="main-menu-7" role="menu" class="dropdown__menu">
+                                <div class="dropdown__menu__content">
+                                    <section class="dropdown__section accordion display_none">
+                                        <a href="#" tabindex="-1" aria-controls="dropdownMenu-hjk" class="dropdown__section__title menu-item accordion__control js--open" aria-expanded="true">
+                                            <span class="dropdown__section__title__text"> Interactive Cases </span>
+                                            <i aria-hidden="true" class="icon-plus hidden-lg display_none:lg"></i>
+                                            <i aria-hidden="true" class="icon-minus hidden-lg display_none:lg"></i>
+                                        </a>
+                                        <div id="dropdownMenu-hjk" class="accordion__content js--open">
+                                            <ul class="rlist">
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Sudden Respiratory Distress in Pregnancy" class="menu-item">
+                                                    <a href="/jacc-patient-care-pathways" class="menu-item__link">
+                                                        <span>Sudden Respiratory Distress in Pregnancy</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="Adult Woman with Myocarditis After SARS-CoV-2 Infection" class="menu-item">
+                                                    <a href="/jacc-patient-care-pathways#myocarditis" class="menu-item__link">
+                                                        <span>Adult Woman with Myocarditis After SARS-CoV-2 Infection</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="A Young Female Patient in Extremis" class="menu-item">
+                                                    <a href="/jacc-patient-care-pathways#young-female" class="menu-item__link">
+                                                        <span>A Young Female Patient in Extremis</span>
+                                                    </a>
+                                                </li>
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="LEARN MORE" class="menu-item dropzoneItem">
+                                                    <a class="btn btn--primary" href="https://www.jacc.org/jacc-patient-care-pathways">LEARN MORE</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </section>
+                                    <section class="dropdown__section accordion display_none">
+                                        <a href="#" tabindex="-1" aria-controls="dropdownMenu-hjk" class="dropdown__section__title menu-item accordion__control js--open" aria-expanded="true">
+                                            <span class="dropdown__section__title__text"> About JACC Patient Care Pathways </span>
+                                            <i aria-hidden="true" class="icon-plus hidden-lg display_none:lg"></i>
+                                            <i aria-hidden="true" class="icon-minus hidden-lg display_none:lg"></i>
+                                        </a>
+                                        <div id="dropdownMenu-hjk" class="accordion__content js--open">
+                                            <ul class="rlist">
+                                                <!-- changed class when there is item.content-->
+                                                <li role="menuitem" tabindex="-1" aria-label="paragraph" class="menu-item dropzoneItem">
+                                                    <p> Each <em>JACC</em> Patient Care Pathway is an immersive, multimedia case report depicting the integration of cross-specialty decision making supported by evidence-based medicine within a single patient journey. </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </section>
+                                    <section class="dropdown__section accordion display_none">
+                                        <a href="/jacc-patient-care-pathways" class="img-link"><img src="https://www.jacc.org/pb-assets/images/ads/I22099-JACC-Patient-Care-Pathways-Web-Ads-300x250-1649024767193.jpg" alt="JACC patient care pathways graphic" width="300" height="250"></a>
+                                    </section>
                                 </div>
                             </div>
                         </li>
                     </ul>
-
-
-                </li>
-            </ul>
+                </nav>
+                <span id="afterNav-hjk" tabindex="-1"></span>
+            </div>
+            <div class="header__dropzone"></div>
         </div>
-    </div>
-</div>
-<div class="header__menu">
-    <div class="main-nav br-b_3 br_solid br_brand font_ui font_0 font_medium c_brand">
-        <nav role="navigation" id="main-menu" data-ctrl-res="screen-md" aria-label="Main Navigation" class="drawer__nav container hidden-md hidden-sm hidden-xs">
-            <a href="#" data-redirect-to="/" class="menu-header hidden-lg display_none:lg">Home</a>
-            <ul id="menubar" role="menubar" class="flex flex_row gap_3 menubar rlist--inline ul_none">
-                <!-- changed class when there is item.content-->
-                <li role="menuitem" aria-haspopup="true" aria-label="Journals" id="menu-item-main-menu-0" class="dropdown menu-parent p_3 p-b_4 is--current">
-                    <a href="#" id="main-menu-1" data-toggle="dropdown" class="dropdown__toggle flex flex_row nowrap gap_2 items_center">
-                        <span>Journals</span>
-                        <i aria-hidden="true" class="icon-arrow_r pull-right hidden-lg display_none:lg"></i>
-                        <i aria-hidden="true" class="icon-section_arrow_d far fa-angle-down pull-right hidden-md hidden-sm hidden-xs"></i>
-                    </a>
-                    <div aria-labelledby="main-menu-1" role="menu" class="dropdown__menu">
-                        <div class="dropdown__menu__content">
-                            <section class="dropdown__section accordion display_none">
-                                <a href="#" tabindex="-1" aria-controls="dropdownMenu-hjk" class="dropdown__section__title menu-item accordion__control js--open" aria-expanded="true">
-                                    <span class="dropdown__section__title__text">
-                                        JACC Family of Journals
-                                    </span>
-                                    <i aria-hidden="true" class="icon-plus hidden-lg display_none:lg"></i>
-                                    <i aria-hidden="true" class="icon-minus hidden-lg display_none:lg"></i>
-                                </a>
-                                <div id="dropdownMenu-hjk" class="accordion__content js--open">
-                                    <ul class="rlist">
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="JACC" class="menu-item">
-                                            <a href="/journal/jacc" class="menu-item__link">
-                                                <span>JACC</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="JACC: Advances" class="menu-item">
-                                            <a href="/journal/jacc-advances" class="menu-item__link">
-                                                <span>JACC:
-                                                                                                        Advances</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="JACC: Asia" class="menu-item">
-                                            <a href="/journal/jacc-asia" class="menu-item__link">
-                                                <span>JACC:
-                                                                                                        Asia</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="JACC: Basic to Translational Science" class="menu-item">
-                                            <a href="/journal/basic-translational" class="menu-item__link">
-                                                <span>JACC:
-                                                                                                        Basic to Translational Science</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="JACC: CardioOncology" class="menu-item">
-                                            <a href="/journal/cardio-oncology" class="menu-item__link">
-                                                <span>JACC:
-                                                                                                        CardioOncology</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="JACC: Cardiovascular Imaging" class="menu-item">
-                                            <a href="/journal/imaging" class="menu-item__link">
-                                                <span>JACC:
-                                                                                                        Cardiovascular Imaging</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="JACC: Cardiovascular Interventions" class="menu-item">
-                                            <a href="/journal/interventions" class="menu-item__link">
-                                                <span>JACC:
-                                                                                                        Cardiovascular Interventions</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="JACC: Case Reports" class="menu-item">
-                                            <a href="/journal/case-reports" class="menu-item__link">
-                                                <span>JACC: Case
-                                                                                                        Reports</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="JACC: Clinical Electrophysiology" class="menu-item">
-                                            <a href="/journal/electrophysiology" class="menu-item__link">
-                                                <span>JACC:
-                                                                                                        Clinical Electrophysiology</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="JACC: Heart Failure" class="menu-item">
-                                            <a href="/journal/heart-failure" class="menu-item__link">
-                                                <span>JACC: Heart
-                                                                                                        Failure</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </section>
-                            <section class="dropdown__section accordion display_none">
-                                <a href="#" tabindex="-1" aria-controls="dropdownMenu-hjk" class="dropdown__section__title menu-item accordion__control js--open" aria-expanded="true">
-                                    <span class="dropdown__section__title__text">Explore</span>
-                                    <i aria-hidden="true" class="icon-plus hidden-lg display_none:lg"></i>
-                                    <i aria-hidden="true" class="icon-minus hidden-lg display_none:lg"></i>
-                                </a>
-                                <div id="dropdownMenu-hjk" class="accordion__content js--open">
-                                    <ul class="rlist">
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="About the Journals" class="menu-item">
-                                            <a href="/about" class="menu-item__link">
-                                                <span>About the Journals</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Topics" class="menu-item">
-                                            <a href="/topics" class="menu-item__link">
-                                                <span>Topics</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Podcasts" class="menu-item">
-                                            <a href="/podcasts" class="menu-item__link">
-                                                <span>Podcasts</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Videos" class="menu-item">
-                                            <a href="/videos" class="menu-item__link">
-                                                <span>Videos</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="CME/MOC" class="menu-item">
-                                            <a href="/cme-moc" class="menu-item__link">
-                                                <span>CME/MOC</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Events" class="menu-item">
-                                            <a href="/events" class="menu-item__link">
-                                                <span>Events</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="For Authors" class="menu-item">
-                                            <a href="/author-center" class="menu-item__link">
-                                                <span>For
-                                                                                                        Authors</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="For Reviewers" class="menu-item">
-                                            <a href="/author-center/reviewers-corner" class="menu-item__link">
-                                                <span>For
-                                                                                                        Reviewers</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="JACC: CardioOncology Pulse" class="menu-item">
-                                            <a href="/cardio-oncology/pulse" class="menu-item__link">
-                                                <span>JACC:
-                                                                                                        CardioOncology Pulse</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </section>
-                            <section class="dropdown__section accordion display_none">
-                                <a href="#" tabindex="-1" aria-controls="dropdownMenu-hjk" class="dropdown__section__title menu-item accordion__control js--open" aria-expanded="true">
-                                    <span class="dropdown__section__title__text">Stay Connected</span>
-                                    <i aria-hidden="true" class="icon-plus hidden-lg display_none:lg"></i>
-                                    <i aria-hidden="true" class="icon-minus hidden-lg display_none:lg"></i>
-                                </a>
-                                <div id="dropdownMenu-hjk" class="accordion__content js--open">
-                                    <ul class="rlist">
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Email Alerts" class="menu-item">
-                                            <a href="/alerts" class="menu-item__link">
-                                                <span>Email Alerts</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Follow Us On Social Media" class="menu-item">
-                                            <a href="/social-media" class="menu-item__link">
-                                                <span>Follow Us On Social
-                                                                                                        Media</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Subscribe" class="menu-item">
-                                            <a href="/subscribe" class="menu-item__link">
-                                                <span>Subscribe</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Contact Us" class="menu-item">
-                                            <a href="/contact-us" class="menu-item__link">
-                                                <span>Contact Us</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="JACC Edge Newsletter" class="menu-item">
-                                            <a href="/jacc-edge/current" class="menu-item__link">
-                                                <span>JACC Edge
-                                                                                                        Newsletter</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Help" class="menu-item">
-                                            <a href="/help" class="menu-item__link">
-                                                <span>Help</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="ACC.org" class="menu-item">
-                                            <a href="https://www.acc.org/" class="menu-item__link">
-                                                <span>ACC.org</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </section>
-                        </div>
-                    </div>
-                </li>
-                <!-- changed class when there is item.content-->
-                <li role="menuitem" aria-haspopup="true" aria-label="Topics" id="menu-item-main-menu-1" class="dropdown menu-parent p_3 p-b_4">
-                    <a href="#" id="main-menu-2" data-toggle="dropdown" class="dropdown__toggle flex flex_row nowrap gap_2 items_center">
-                        <span>Topics</span>
-                        <i aria-hidden="true" class="icon-arrow_r pull-right hidden-lg display_none:lg"></i>
-                        <i aria-hidden="true" class="icon-section_arrow_d far fa-angle-down pull-right hidden-md hidden-sm hidden-xs"></i>
-                    </a>
-                    <div aria-labelledby="main-menu-2" role="menu" class="dropdown__menu">
-                        <div class="dropdown__menu__content">
-                            <section class="dropdown__section accordion display_none 33">
-                                <a href="#" tabindex="-1" aria-controls="dropdownMenu-hjk" class="dropdown__section__title menu-item accordion__control js--open" aria-expanded="true">
-                                    <span class="dropdown__section__title__text">
-                                        Topics Quick Links
-                                    </span>
-                                    <i aria-hidden="true" class="icon-plus hidden-lg display_none:lg"></i>
-                                    <i aria-hidden="true" class="icon-minus hidden-lg display_none:lg"></i>
-                                </a>
-                                <div id="dropdownMenu-hjk" class="accordion__content js--open">
-                                    <ul class="rlist">
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Topics by Journal" class="menu-item">
-                                            <a href="/topics" class="menu-item__link">
-                                                <span>Topics by Journal</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Global Burden of CVD - Interactive Tool" class="menu-item">
-                                            <a href="/global-burden-cvd/interactive/21-region" class="menu-item__link">
-                                                <span>Global Burden of CVD - Interactive
-                                                                                                        Tool</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Global Burden of CVD - Findings by Region" class="menu-item">
-                                            <a href="/global-burden-cvd-2022" class="menu-item__link">
-                                                <span>Global
-                                                                                                        Burden of CVD - Findings by Region</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="COVID-19 Clinical Guidance Collection" class="menu-item">
-                                            <a href="/special-collection/covid-19?=0&amp;sortBy=Earliest" class="menu-item__link">
-                                                <span>COVID-19 Clinical Guidance
-                                                                                                        Collection</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Social Determinants of Health Collection" class="menu-item">
-                                            <a href="/special-collection/racial-ethnic-disparities" class="menu-item__link">
-                                                <span>Social Determinants of Health
-                                                                                                        Collection</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="BEST OF JACC JOURNALS 2022" class="menu-item dropzoneItem">
-                                            <a class="btn btn--primary" href="/special-collection/best-of-2022">BEST OF
-                                                                                                JACC JOURNALS 2022</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </section>
-                            <section class="dropdown__section accordion display_none extended">
-                                <a href="#" tabindex="-1" aria-controls="dropdownMenu-hjk" class="dropdown__section__title menu-item accordion__control js--open" aria-expanded="true">
-                                    <span class="dropdown__section__title__text">
-                                        Topic Collections
-                                    </span>
-                                    <i aria-hidden="true" class="icon-plus hidden-lg display_none:lg"></i>
-                                    <i aria-hidden="true" class="icon-minus hidden-lg display_none:lg"></i>
-                                </a>
-                                <div id="dropdownMenu-hjk" class="accordion__content js--open">
-                                    <ul class="rlist">
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Basic &amp; Translational Research" class="menu-item">
-                                            <a href="/topic/collection/basic-and-translational-research" class="menu-item__link">
-                                                <span>Basic &amp; Translational
-                                                                                                        Research</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Cardiometabolic" class="menu-item">
-                                            <a href="/topic/collection/cardiometabolic" class="menu-item__link">
-                                                <span>Cardiometabolic</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Cardio-oncology" class="menu-item">
-                                            <a href="/topic/collection/cardio-oncology" class="menu-item__link">
-                                                <span>Cardio-oncology</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Cerebrovascular Disease &amp; Stroke" class="menu-item">
-                                            <a href="/topic/collection/cerebrovascular-disease-and-stroke" class="menu-item__link">
-                                                <span>Cerebrovascular Disease &amp;
-                                                                                                        Stroke</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Critical Care &amp; Resuscitation" class="menu-item">
-                                            <a href="/topic/collection/critical-care-and-resuscitation" class="menu-item__link">
-                                                <span>Critical Care &amp;
-                                                                                                        Resuscitation</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Congenital Heart Disease" class="menu-item">
-                                            <a href="/topic/collection/congenital-heart-disease" class="menu-item__link">
-                                                <span>Congenital Heart Disease</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Coronary, Peripheral &amp; Structural Interventions" class="menu-item">
-                                            <a href="/topic/collection/coronary-peripheral-and-structural-interventions" class="menu-item__link">
-                                                <span>Coronary, Peripheral &amp; Structural
-                                                                                                        Interventions</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Genetics, Omics &amp; Tissue Regeneration" class="menu-item">
-                                            <a href="/topic/collection/genetics-omics-and-tissue-regeneration" class="menu-item__link">
-                                                <span>Genetics, Omics &amp; Tissue
-                                                                                                        Regeneration</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Health Promotion &amp; Preventive Cardiology" class="menu-item">
-                                            <a href="/topic/collection/health-promotion-and-preventive-cardiology" class="menu-item__link">
-                                                <span>Health Promotion &amp; Preventive
-                                                                                                        Cardiology</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Heart Failure &amp; Cardiomyopathies" class="menu-item">
-                                            <a href="/topic/collection/heart-failure-and-cardiomyopathies" class="menu-item__link">
-                                                <span>Heart Failure &amp;
-                                                                                                        Cardiomyopathies</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Hypertension" class="menu-item">
-                                            <a href="/topic/collection/hypertension" class="menu-item__link">
-                                                <span>Hypertension</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Imaging" class="menu-item">
-                                            <a href="/topic/collection/imaging" class="menu-item__link">
-                                                <span>Imaging</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Ischemic Heart Disease" class="menu-item">
-                                            <a href="/topic/collection/ischemic-heart-disease" class="menu-item__link">
-                                                <span>Ischemic Heart Disease</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Outcomes &amp; Quality" class="menu-item">
-                                            <a href="/topic/collection/outcomes-and-quality" class="menu-item__link">
-                                                <span>Outcomes &amp; Quality</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Rhythm Disorders &amp; Electrophysiology" class="menu-item">
-                                            <a href="/topic/collection/rhythm-disorders-and-electrophysiology" class="menu-item__link">
-                                                <span>Rhythm Disorders &amp;
-                                                                                                        Electrophysiology</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Surgery" class="menu-item">
-                                            <a href="/topic/collection/surgery" class="menu-item__link">
-                                                <span>Surgery</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Valvular Heart Disease" class="menu-item">
-                                            <a href="/topic/collection/valvular-heart-disease" class="menu-item__link">
-                                                <span>Valvular Heart Disease</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Vascular Medicine" class="menu-item">
-                                            <a href="/topic/collection/vascular-medicine" class="menu-item__link">
-                                                <span>Vascular Medicine</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </section>
-                        </div>
-                    </div>
-                </li>
-                <!-- changed class when there is item.content-->
-                <li role="menuitem" aria-haspopup="true" aria-label="Guidelines" id="menu-item-main-menu-2" class="dropdown menu-parent p_3 p-b_4">
-                    <a href="#" id="main-menu-3" data-toggle="dropdown" class="dropdown__toggle flex flex_row nowrap gap_2 items_center">
-                        <span>Guidelines</span>
-                        <i aria-hidden="true" class="icon-arrow_r pull-right hidden-lg display_none:lg"></i>
-                        <i aria-hidden="true" class="icon-section_arrow_d far fa-angle-down pull-right hidden-md hidden-sm hidden-xs"></i>
-                    </a>
-                    <div aria-labelledby="main-menu-3" role="menu" class="dropdown__menu">
-                        <div class="dropdown__menu__content">
-                            <section class="dropdown__section accordion display_none 33">
-                                <a href="#" tabindex="-1" aria-controls="dropdownMenu-hjk" class="dropdown__section__title menu-item accordion__control js--open" aria-expanded="true">
-                                    <span class="dropdown__section__title__text">
-                                        Guidelines Quick Links
-                                    </span>
-                                    <i aria-hidden="true" class="icon-plus hidden-lg display_none:lg"></i>
-                                    <i aria-hidden="true" class="icon-minus hidden-lg display_none:lg"></i>
-                                </a>
-                                <div id="dropdownMenu-hjk" class="accordion__content js--open">
-                                    <ul class="rlist">
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Guideline Hubs" class="menu-item">
-                                            <a href="/guidelines/guideline-hubs" class="menu-item__link">
-                                                <span>Guideline
-                                                                                                        Hubs</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Guidelines and Clinical Documents" class="menu-item">
-                                            <a href="/guidelines" class="menu-item__link">
-                                                <span>Guidelines and Clinical
-                                                                                                        Documents</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="ACC.org Guidelines Hub" class="menu-item">
-                                            <a href="https://www.acc.org/Guidelines" class="menu-item__link">
-                                                <span>ACC.org Guidelines Hub</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="LATEST GUIDELINE" class="menu-item dropzoneItem">
-                                            <a class="btn btn--primary" href="/guidelines/aortic-disease">LATEST
-                                                                                                GUIDELINE</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </section>
-                            <section class="dropdown__section accordion display_none extended">
-                                <a href="#" tabindex="-1" aria-controls="dropdownMenu-hjk" class="dropdown__section__title menu-item accordion__control js--open" aria-expanded="true">
-                                    <span class="dropdown__section__title__text">Guideline Hubs</span>
-                                    <i aria-hidden="true" class="icon-plus hidden-lg display_none:lg"></i>
-                                    <i aria-hidden="true" class="icon-minus hidden-lg display_none:lg"></i>
-                                </a>
-                                <div id="dropdownMenu-hjk" class="accordion__content js--open">
-                                    <ul class="rlist">
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Adult Congenital Heart Disease Guideline" class="menu-item">
-                                            <a href="/guidelines/achd" class="menu-item__link">
-                                                <span>Adult Congenital
-                                                                                                        Heart Disease Guideline</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Aortic Disease Guideline" class="menu-item">
-                                            <a href="/guidelines/aortic-disease" class="menu-item__link">
-                                                <span>Aortic
-                                                                                                        Disease Guideline</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Atrial Fibrillation Focused Update Guideline" class="menu-item">
-                                            <a href="/guidelines/atrial-fibrillation" class="menu-item__link">
-                                                <span>Atrial Fibrillation Focused Update
-                                                                                                        Guideline</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Bradycardia Guideline" class="menu-item">
-                                            <a href="/guidelines/bradycardia" class="menu-item__link">
-                                                <span>Bradycardia
-                                                                                                        Guideline</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Chest Pain Guideline" class="menu-item">
-                                            <a href="/guidelines/chest-pain" class="menu-item__link">
-                                                <span>Chest Pain
-                                                                                                        Guideline</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Cholesterol Guideline" class="menu-item">
-                                            <a href="/guidelines/cholesterol" class="menu-item__link">
-                                                <span>Cholesterol
-                                                                                                        Guideline</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Coronary Artery Revascularization Guideline" class="menu-item">
-                                            <a href="/guidelines/revascularization" class="menu-item__link">
-                                                <span>Coronary Artery Revascularization
-                                                                                                        Guideline</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="High Blood Pressure Guideline" class="menu-item">
-                                            <a href="/guidelines/high-blood-pressure" class="menu-item__link">
-                                                <span>High
-                                                                                                        Blood Pressure Guideline</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Hypertrophic Cardiomyopathy Guideline" class="menu-item">
-                                            <a href="/guidelines/hcm" class="menu-item__link">
-                                                <span>Hypertrophic
-                                                                                                        Cardiomyopathy Guideline</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Management of Heart Failure Guideline" class="menu-item">
-                                            <a href="/guidelines/heart-failure-management" class="menu-item__link">
-                                                <span>Management of Heart Failure
-                                                                                                        Guideline</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Primary Prevention of CVD Guideline" class="menu-item">
-                                            <a href="/guidelines/prevention" class="menu-item__link">
-                                                <span>Primary
-                                                                                                        Prevention of CVD Guideline</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Valvular Heart Disease Guideline" class="menu-item">
-                                            <a href="/guidelines/vhd" class="menu-item__link">
-                                                <span>Valvular Heart
-                                                                                                        Disease Guideline</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Ventricular Arrhythmia and Sudden Cardiac Death Prevention Guideline" class="menu-item">
-                                            <a href="/guidelines/vascd" class="menu-item__link">
-                                                <span>Ventricular
-                                                                                                        Arrhythmia and Sudden Cardiac Death
-                                                                                                        Prevention Guideline</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </section>
-                        </div>
-                    </div>
-                </li>
-                <!-- changed class when there is item.content-->
-                <li role="menuitem" aria-haspopup="true" aria-label="Author Center" id="menu-item-main-menu-3" class="dropdown menu-parent p_3 p-b_4">
-                    <a href="#" id="main-menu-4" data-toggle="dropdown" class="dropdown__toggle flex flex_row nowrap gap_2 items_center">
-                        <span>Author Center</span>
-                        <i aria-hidden="true" class="icon-arrow_r pull-right hidden-lg display_none:lg"></i>
-                        <i aria-hidden="true" class="icon-section_arrow_d far fa-angle-down pull-right hidden-md hidden-sm hidden-xs"></i>
-                    </a>
-                    <div aria-labelledby="main-menu-4" role="menu" class="dropdown__menu">
-                        <div class="dropdown__menu__content">
-                            <section class="dropdown__section accordion display_none">
-                                <a href="#" tabindex="-1" aria-controls="dropdownMenu-hjk" class="dropdown__section__title menu-item accordion__control js--open" aria-expanded="true">
-                                    <span class="dropdown__section__title__text">
-                                        Author Center Quick Links
-                                    </span>
-                                    <i aria-hidden="true" class="icon-plus hidden-lg display_none:lg"></i>
-                                    <i aria-hidden="true" class="icon-minus hidden-lg display_none:lg"></i>
-                                </a>
-                                <div id="dropdownMenu-hjk" class="accordion__content js--open">
-                                    <ul class="rlist">
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Calls for Papers" class="menu-item">
-                                            <a href="/author-center" class="menu-item__link">
-                                                <span>Calls for
-                                                                                                        Papers</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Submit" class="menu-item">
-                                            <a href="/author-center/submit#submit" class="menu-item__link">
-                                                <span>Submit</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Contact Us" class="menu-item">
-                                            <a href="/contact-us" class="menu-item__link">
-                                                <span>Contact Us</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </section>
-                            <section class="dropdown__section accordion display_none">
-                                <a href="#" tabindex="-1" aria-controls="dropdownMenu-hjk" class="dropdown__section__title menu-item accordion__control js--open" aria-expanded="true">
-                                    <span class="dropdown__section__title__text">For Authors</span>
-                                    <i aria-hidden="true" class="icon-plus hidden-lg display_none:lg"></i>
-                                    <i aria-hidden="true" class="icon-minus hidden-lg display_none:lg"></i>
-                                </a>
-                                <div id="dropdownMenu-hjk" class="accordion__content js--open">
-                                    <ul class="rlist">
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Author Services" class="menu-item">
-                                            <a href="/author-center/author-services#author-services" class="menu-item__link">
-                                                <span>Author Services</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Choose Your Journal" class="menu-item">
-                                            <a href="/author-center/manuscript-guidelines#original-research" class="menu-item__link">
-                                                <span>Choose Your Journal</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="How to Publish Tips" class="menu-item">
-                                            <a href="/author-center/how-to-publish#tips" class="menu-item__link">
-                                                <span>How to Publish Tips</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="How to Submit" class="menu-item">
-                                            <a href="/author-center/submit#submit" class="menu-item__link">
-                                                <span>How to
-                                                                                                        Submit</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Why Publish" class="menu-item">
-                                            <a href="/author-center#why-publish" class="menu-item__link">
-                                                <span>Why
-                                                                                                        Publish</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </section>
-                            <section class="dropdown__section accordion display_none">
-                                <a href="#" tabindex="-1" aria-controls="dropdownMenu-hjk" class="dropdown__section__title menu-item accordion__control js--open" aria-expanded="true">
-                                    <span class="dropdown__section__title__text">For Reviewers</span>
-                                    <i aria-hidden="true" class="icon-plus hidden-lg display_none:lg"></i>
-                                    <i aria-hidden="true" class="icon-minus hidden-lg display_none:lg"></i>
-                                </a>
-                                <div id="dropdownMenu-hjk" class="accordion__content js--open">
-                                    <ul class="rlist">
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Become a Reviewer" class="menu-item">
-                                            <a href="/author-center/reviewers-corner" class="menu-item__link">
-                                                <span>Become a Reviewer</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Best Practices for Reviewing" class="menu-item">
-                                            <a href="/author-center/reviewers-corner#best-practices" class="menu-item__link">
-                                                <span>Best Practices for Reviewing</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="CME Claims" class="menu-item">
-                                            <a href="/author-center/reviewers-corner#cme" class="menu-item__link">
-                                                <span>CME Claims</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Recognitions - Publon Credits" class="menu-item">
-                                            <a href="/author-center/reviewers-corner#benefits" class="menu-item__link">
-                                                <span>Recognitions - Publon Credits</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Reviewer Ratings" class="menu-item">
-                                            <a href="/author-center/reviewers-corner#reviewer-ratings" class="menu-item__link">
-                                                <span>Reviewer Ratings</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </section>
-                        </div>
-                    </div>
-                </li>
-                <!-- changed class when there is item.content-->
-                <li role="menuitem" aria-haspopup="true" aria-label="CME/MOC" id="menu-item-main-menu-4" class="dropdown menu-parent p_3 p-b_4">
-                    <a href="#" id="main-menu-5" data-toggle="dropdown" class="dropdown__toggle flex flex_row nowrap gap_2 items_center">
-                        <span>CME/MOC</span>
-                        <i aria-hidden="true" class="icon-arrow_r pull-right hidden-lg display_none:lg"></i>
-                        <i aria-hidden="true" class="icon-section_arrow_d far fa-angle-down pull-right hidden-md hidden-sm hidden-xs"></i>
-                    </a>
-                    <div aria-labelledby="main-menu-5" role="menu" class="dropdown__menu">
-                        <div class="dropdown__menu__content">
-                            <section class="dropdown__section accordion display_none">
-                                <a href="#" tabindex="-1" aria-controls="dropdownMenu-hjk" class="dropdown__section__title menu-item accordion__control js--open" aria-expanded="true">
-                                    <span class="dropdown__section__title__text">
-                                        CME/MOC Quick Links
-                                    </span>
-                                    <i aria-hidden="true" class="icon-plus hidden-lg display_none:lg"></i>
-                                    <i aria-hidden="true" class="icon-minus hidden-lg display_none:lg"></i>
-                                </a>
-                                <div id="dropdownMenu-hjk" class="accordion__content js--open">
-                                    <ul class="rlist">
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="All Certified Activities" class="menu-item">
-                                            <a href="/cme-moc" class="menu-item__link">
-                                                <span>All Certified
-                                                                                                        Activities</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="ACC Online Learning Catalog" class="menu-item">
-                                            <a href="https://www.acc.org/Education-and-Meetings/Education-Catalog#sort=%40originalz32xpostedz32xdate%20descending" class="menu-item__link">
-                                                <span>ACC Online Learning Catalog</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </section>
-                            <section class="dropdown__section accordion display_none">
-                                <a href="#" tabindex="-1" aria-controls="dropdownMenu-hjk" class="dropdown__section__title menu-item accordion__control js--open" aria-expanded="true">
-                                    <span class="dropdown__section__title__text">
-                                        JACC Journals CME/MOCs By Journal
-                                    </span>
-                                    <i aria-hidden="true" class="icon-plus hidden-lg display_none:lg"></i>
-                                    <i aria-hidden="true" class="icon-minus hidden-lg display_none:lg"></i>
-                                </a>
-                                <div id="dropdownMenu-hjk" class="accordion__content js--open">
-                                    <ul class="rlist">
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="JACC" class="menu-item">
-                                            <a href="/cme-moc?startPage=&amp;rel=nofollow&amp;SeriesKey=jac" class="menu-item__link">
-                                                <span>JACC</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="JACC: Asia" class="menu-item">
-                                            <a href="/cme-moc?startPage=&amp;rel=nofollow&amp;SeriesKey=jacasi" class="menu-item__link">
-                                                <span>JACC: Asia</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="JACC: CardioOncology" class="menu-item">
-                                            <a href="/cme-moc?startPage=&amp;rel=nofollow&amp;SeriesKey=jaccao" class="menu-item__link">
-                                                <span>JACC: CardioOncology</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="JACC: Cardiovascular Imaging" class="menu-item">
-                                            <a href="/cme-moc?startPage=&amp;rel=nofollow&amp;SeriesKey=jcmg" class="menu-item__link">
-                                                <span>JACC: Cardiovascular Imaging</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="JACC: Cardiovascular Interventions" class="menu-item">
-                                            <a href="/cme-moc?startPage=&amp;rel=nofollow&amp;SeriesKey=jcin" class="menu-item__link">
-                                                <span>JACC: Cardiovascular
-                                                                                                        Interventions</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="JACC: Case Reports" class="menu-item">
-                                            <a href="/cme-moc?startPage=&amp;rel=nofollow&amp;SeriesKey=jaccas" class="menu-item__link">
-                                                <span>JACC: Case Reports</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="JACC: Clinical Electrophysiology" class="menu-item">
-                                            <a href="/cme-moc?startPage=&amp;rel=nofollow&amp;SeriesKey=jacep" class="menu-item__link">
-                                                <span>JACC: Clinical
-                                                                                                        Electrophysiology</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="JACC: Heart Failure" class="menu-item">
-                                            <a href="/cme-moc?startPage=&amp;rel=nofollow&amp;SeriesKey=jchf" class="menu-item__link">
-                                                <span>JACC: Heart Failure</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </section>
-                            <section class="dropdown__section accordion display_none"></section>
-                        </div>
-                    </div>
-                </li>
-                <!-- changed class when there is item.content-->
-                <li role="menuitem" aria-haspopup="true" aria-label="Events" id="menu-item-main-menu-5" class="dropdown menu-parent p_3 p-b_4">
-                    <a href="#" id="main-menu-6" data-toggle="dropdown" class="dropdown__toggle flex flex_row nowrap gap_2 items_center">
-                        <span>Events</span>
-                        <i aria-hidden="true" class="icon-arrow_r pull-right hidden-lg display_none:lg"></i>
-                        <i aria-hidden="true" class="icon-section_arrow_d far fa-angle-down pull-right hidden-md hidden-sm hidden-xs"></i>
-                    </a>
-                    <div aria-labelledby="main-menu-6" role="menu" class="dropdown__menu">
-                        <div class="dropdown__menu__content">
-                            <section class="dropdown__section accordion display_none">
-                                <a href="#" tabindex="-1" aria-controls="dropdownMenu-hjk" class="dropdown__section__title menu-item accordion__control js--open" aria-expanded="true">
-                                    <span class="dropdown__section__title__text">
-                                        Events Quick Links
-                                    </span>
-                                    <i aria-hidden="true" class="icon-plus hidden-lg display_none:lg"></i>
-                                    <i aria-hidden="true" class="icon-minus hidden-lg display_none:lg"></i>
-                                </a>
-                                <div id="dropdownMenu-hjk" class="accordion__content js--open">
-                                    <ul class="rlist">
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Featured Events" class="menu-item">
-                                            <a href="/events#featured" class="menu-item__link">
-                                                <span>Featured
-                                                                                                        Events</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Upcoming Events" class="menu-item">
-                                            <a href="/events#upcoming" class="menu-item__link">
-                                                <span>Upcoming
-                                                                                                        Events</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Past Events by Date" class="menu-item">
-                                            <a href="/events#date" class="menu-item__link">
-                                                <span>Past Events by
-                                                                                                        Date</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Past Events by Type" class="menu-item">
-                                            <a href="/events#type" class="menu-item__link">
-                                                <span>Past Events by
-                                                                                                        Type</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </section>
-                            <section class="dropdown__section accordion display_none">
-                                <a href="#" tabindex="-1" aria-controls="dropdownMenu-hjk" class="dropdown__section__title menu-item accordion__control js--open" aria-expanded="true">
-                                    <span class="dropdown__section__title__text">All Events</span>
-                                    <i aria-hidden="true" class="icon-plus hidden-lg display_none:lg"></i>
-                                    <i aria-hidden="true" class="icon-minus hidden-lg display_none:lg"></i>
-                                </a>
-                                <div id="dropdownMenu-hjk" class="accordion__content js--open">
-                                    <ul class="rlist">
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Cardiology Hour" class="menu-item">
-                                            <a href="/cardiology-hour" class="menu-item__link">
-                                                <span>Cardiology
-                                                                                                        Hour</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Conference Highlights" class="menu-item">
-                                            <a href="/events" class="menu-item__link">
-                                                <span>Conference
-                                                                                                        Highlights</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Journal Clubs" class="menu-item">
-                                            <a href="/events" class="menu-item__link">
-                                                <span>Journal Clubs</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Lectures" class="menu-item">
-                                            <a href="/events" class="menu-item__link">
-                                                <span>Lectures</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </section>
-                            <section class="dropdown__section accordion display_none">
-                                <a href="#" tabindex="-1" aria-controls="dropdownMenu-hjk" class="dropdown__section__title menu-item accordion__control js--open" aria-expanded="true">
-                                    <span class="dropdown__section__title__text">
-                                        JACC Global Burden of CVD Webinar Series
-                                    </span>
-                                    <i aria-hidden="true" class="icon-plus hidden-lg display_none:lg"></i>
-                                    <i aria-hidden="true" class="icon-minus hidden-lg display_none:lg"></i>
-                                </a>
-                                <div id="dropdownMenu-hjk" class="accordion__content js--open">
-                                    <ul class="rlist">
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Global Burden of CVD Hub" class="menu-item">
-                                            <a href="/global-burden-cardiovascular-disease" class="menu-item__link">
-                                                <span>Global Burden of CVD Hub</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Examining Trends in Africa" class="menu-item">
-                                            <a href="/global-burden-cardiovascular-disease/africa" class="menu-item__link">
-                                                <span>Examining Trends in Africa</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Examining Trends in East Asia" class="menu-item">
-                                            <a href="/global-burden-cardiovascular-disease/east-asia" class="menu-item__link">
-                                                <span>Examining Trends in East Asia</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Examining Trends in North America" class="menu-item">
-                                            <a href="/global-burden-cardiovascular-disease/north-america" class="menu-item__link">
-                                                <span>Examining Trends in North
-                                                                                                        America</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Examining Trends in South America" class="menu-item">
-                                            <a href="/global-burden-cardiovascular-disease/south-america" class="menu-item__link">
-                                                <span>Examining Trends in South
-                                                                                                        America</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Examining Trends in Western Europe" class="menu-item">
-                                            <a href="/global-burden-cardiovascular-disease/western-europe" class="menu-item__link">
-                                                <span>Examining Trends in Western
-                                                                                                        Europe</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </section>
-                        </div>
-                    </div>
-                </li>
-                <!-- changed class when there is item.content-->
-                <li role="menuitem" aria-haspopup="true" aria-label="JACC Patient Care Pathways" id="menu-item-main-menu-6" class="dropdown menu-parent p_3 p-b_4">
-                    <a href="#" id="main-menu-7" data-toggle="dropdown" class="dropdown__toggle flex flex_row nowrap gap_2 items_center">
-                        <span>JACC Patient Care
-                                                        Pathways</span>
-                        <i aria-hidden="true" class="icon-arrow_r pull-right hidden-lg display_none:lg"></i>
-                        <i aria-hidden="true" class="icon-section_arrow_d far fa-angle-down pull-right hidden-md hidden-sm hidden-xs"></i>
-                    </a>
-                    <div aria-labelledby="main-menu-7" role="menu" class="dropdown__menu">
-                        <div class="dropdown__menu__content">
-                            <section class="dropdown__section accordion display_none">
-                                <a href="#" tabindex="-1" aria-controls="dropdownMenu-hjk" class="dropdown__section__title menu-item accordion__control js--open" aria-expanded="true">
-                                    <span class="dropdown__section__title__text">
-                                        Interactive Cases
-                                    </span>
-                                    <i aria-hidden="true" class="icon-plus hidden-lg display_none:lg"></i>
-                                    <i aria-hidden="true" class="icon-minus hidden-lg display_none:lg"></i>
-                                </a>
-                                <div id="dropdownMenu-hjk" class="accordion__content js--open">
-                                    <ul class="rlist">
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Sudden Respiratory Distress in Pregnancy" class="menu-item">
-                                            <a href="/jacc-patient-care-pathways" class="menu-item__link">
-                                                <span>Sudden
-                                                                                                        Respiratory Distress in Pregnancy</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="Adult Woman with Myocarditis After SARS-CoV-2 Infection" class="menu-item">
-                                            <a href="/jacc-patient-care-pathways#myocarditis" class="menu-item__link">
-                                                <span>Adult Woman with Myocarditis After
-                                                                                                        SARS-CoV-2
-                                                                                                        Infection</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="A Young Female Patient in Extremis" class="menu-item">
-                                            <a href="/jacc-patient-care-pathways#young-female" class="menu-item__link">
-                                                <span>A Young Female Patient in
-                                                                                                        Extremis</span>
-                                            </a>
-                                        </li>
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="LEARN MORE" class="menu-item dropzoneItem">
-                                            <a class="btn btn--primary" href="https://www.jacc.org/jacc-patient-care-pathways">LEARN MORE</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </section>
-                            <section class="dropdown__section accordion display_none">
-                                <a href="#" tabindex="-1" aria-controls="dropdownMenu-hjk" class="dropdown__section__title menu-item accordion__control js--open" aria-expanded="true">
-                                    <span class="dropdown__section__title__text">
-                                        About JACC Patient Care Pathways
-                                    </span>
-                                    <i aria-hidden="true" class="icon-plus hidden-lg display_none:lg"></i>
-                                    <i aria-hidden="true" class="icon-minus hidden-lg display_none:lg"></i>
-                                </a>
-                                <div id="dropdownMenu-hjk" class="accordion__content js--open">
-                                    <ul class="rlist">
-                                        <!-- changed class when there is item.content-->
-                                        <li role="menuitem" tabindex="-1" aria-label="paragraph" class="menu-item dropzoneItem">
-                                            <p>
-                                                Each
-                                                <em>JACC</em>
-                                                Patient Care Pathway is an immersive,
-                                                                                                multimedia case report depicting the integration of
-                                                                                                cross-specialty decision making supported by
-                                                                                                evidence-based medicine within a single patient journey.
-                                            </p>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </section>
-                            <section class="dropdown__section accordion display_none">
-                                <a href="/jacc-patient-care-pathways" class="img-link"><img src="https://www.jacc.org/pb-assets/images/ads/I22099-JACC-Patient-Care-Pathways-Web-Ads-300x250-1649024767193.jpg" alt="JACC patient care pathways graphic" width="300" height="250"></a>
-                            </section>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </nav>
-        <span id="afterNav-hjk" tabindex="-1"></span>
-    </div>
-    <div class="header__dropzone"></div>
-</div>
+        </div>
 </header>

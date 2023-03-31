@@ -1,0 +1,98 @@
+--- 
+layout: jacc 
+name: "Living Guideline:Section" 
+position: "Section Decorations" 
+--- 
+<div class="article__body max-w_60 font_ui">
+	<article class="lg-grid grid lg-segment [debug]">
+		<aside class=" flex flex_column lg-bridge opacity_3 relative">
+			<div class="aspect-ratio_1x1 flex_none grid items_center justify_center bg_white sticky t_0"><i class="fas fa-book c_warning"></i></div> <span class="bg_warning block flex_auto marker self_center w_10"></span>
+		</aside>
+		<aside class=" flex flex_column lg-alterations opacity_3 relative">
+			<div class="aspect-ratio_1x1 flex_none grid items_center justify_center bg_white sticky t_0"><i class="fas fa-plus-circle c_success"></i><label class="c_success absolute t_0 l_5 lh_2 font_n1 ws_nowrap" for="">added: 10/10/2022</label></div> <span class="bg_success block flex_auto marker self_center w_10"> </span>
+		</aside>
+		<aside class="flex flex_column lg-alterations opacity_7 relative">
+		<span class="flex_auto">&nbsp;</span>
+		<div class="aspect-ratio_1x1 b_0 bg_white flex_none grid items_center justify_center sticky"><i class="fas fa-link c_black"></i><label class="absolute b_2 c_black font_n1 l_5 lh_2 ws_nowrap" for="" 
+">related docs: 15</label></div>
+		</aside>
+		<main class="lg-content  reading-typography font_copy"> {% include_relative sections/sesion7-7.html %} </main>
+		<footer class="lg-aux-linkages ">
+			<ul class="ul_none c_black-3 font_bold font_n1 flex flex_row-reverse gap_2 p-r_3">
+				<li><i class="fas fa-bars m-r_3"></i>more</li><li class="opacity_5">|</li>
+				<li><i class="fa-file-medical-alt fas m-r_3"></i>docs</li><li class="opacity_5">|</li>
+				<li><i class="fas fa-plus m-r_3"></i>extras</li>
+			</ul>
+		</footer>
+	</article>
+
+	<article class="lg-grid grid lg-segment lg-removed [debug]">
+		<aside class=" flex flex_row-reverse lg-alterations opacity_3 relative">
+			<div class="aspect-ratio_1x1 flex_none grid items_center justify_center bg_white t_0 relative"><i class="fas fa-times-circle c_alert"></i><label class="c_alert absolute t_0 l_5 lh_2 font_n1 ws_nowrap" for="">removed: 10/10/2022</label></div> <span class="bg_alert block flex_auto marker self_center" style="height:10%"> </span>
+		</aside>
+		<main class="lg-content  reading-typography font_copy"> {% include_relative sections/sesion7-7.html %} </main>
+		<footer class="lg-aux-linkages "></footer>
+	</article>
+
+	<article class="lg-grid grid lg-segment [debug]">
+		<aside class=" flex flex_column lg-bridge opacity_3 relative">
+			<div class="aspect-ratio_1x1 flex_none grid items_center justify_center bg_white sticky t_0"><i class="fas fa-book c_warning"></i></div> <span class="bg_warning block flex_auto marker self_center w_10"></span>
+		</aside>
+		<main class="lg-content  reading-typography font_copy"> {% include_relative sections/sesion7-8.html %} </main>
+		<footer class="lg-aux-linkages "></footer>
+	</article>
+</div>
+<style>
+	.lg-grid {
+		--gutter-size: 1.5rem;
+		grid-template-columns: minmax(var(--gutter-size), auto) 1fr minmax(var(--gutter-size), auto);
+		grid-template-rows: auto minmax(var(--gutter-size), auto);
+		grid-template-areas:
+			"lg-bridge lg-content lg-alterations"
+			"lg-aux-linkages lg-aux-linkages lg-alterations";
+		gap: .25rem;
+		/* add some space between the grid items */
+	}
+.lg-grid.lg-removed{
+	grid-template-columns: minmax(var(--gutter-size), auto) 1fr;
+	grid-template-rows: minmax(var(--gutter-size), auto) auto;
+	grid-template-areas:
+	"lg-bridge lg-alterations"
+	"lg-content  lg-content"
+	"lg-aux-linkages lg-aux-linkages";
+
+
+} 
+.ws_nowrap{white-space: nowrap;}
+	.lg-bridge {
+		grid-area: lg-bridge;
+	
+	}
+
+	.lg-alterations {
+		grid-area: lg-alterations;
+
+	}
+
+	.lg-content {
+		grid-area: lg-content;
+
+	}
+
+	.lg-aux-linkages {
+		grid-area: lg-aux-linkages;
+
+	}
+	.lg-grid.lg-removed .lg-content{
+		display:none;
+	}
+	.grid.debug {
+		outline: 1px dotted lightcoral;
+	}
+
+	.grid.debug>* {
+		outline: 1px dotted lightcoral;
+	}
+
+	.marker {}
+</style>
