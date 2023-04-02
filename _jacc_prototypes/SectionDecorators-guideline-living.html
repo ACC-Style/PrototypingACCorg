@@ -1,42 +1,79 @@
 --- 
 layout: jacc 
-name: "Living Guideline:Section" 
+name: "Living 
+Guideline:Section" 
 position: "Section Decorations" 
 --- 
-<div class="article__body max-w_60 font_ui">
+<style lang="css">
+	    .lg-fade {
+      transition: opacity 0.3s;
+    }
+</style>
+<script>
+	let scrollTimeout;
+  
+	function fadeIn() {
+	  const fadeElements = document.getElementsByClassName('lg-fade');
+  
+	  for (let i = 0; i < fadeElements.length; i++) {
+		fadeElements[i].classList.remove('opacity_3');
+		fadeElements[i].classList.add('opacity_7');
+	  }
+	}
+  
+	function fadeOut() {
+	  const fadeElements = document.getElementsByClassName('lg-fade');
+  
+	  for (let i = 0; i < fadeElements.length; i++) {
+		fadeElements[i].classList.remove('opacity_7');
+		fadeElements[i].classList.add('opacity_3');
+	  }
+	}
+  
+	window.addEventListener('scroll', function () {
+	  clearTimeout(scrollTimeout);
+	  fadeIn();
+  
+	  scrollTimeout = setTimeout(function () {
+		fadeOut();
+	  }, 150);
+	});
+  </script>
+<div class="article__body max-w_60 font_ui relative isolation_isolate z_1">
 	<article class="lg-grid grid lg-segment [debug]">
-		<aside class=" flex flex_column lg-bridge opacity_3 relative">
-			<div class="aspect-ratio_1x1 flex_none grid items_center justify_center bg_white sticky t_0"><i class="fas fa-book c_warning"></i></div> <span class="bg_warning block flex_auto marker self_center w_10"></span>
+		<aside class=" flex flex_column lg-bridge opacity_3 lg-fade relative">
+			<div class="aspect-ratio_1x1 flex_none grid items_center justify_center bg_white sticky t_5"><i class="fas fa-book c_warning"></i></div> <span class="bg_warning block flex_auto marker self_center w_10"></span>
 		</aside>
-		<aside class=" flex flex_column lg-alterations opacity_3 relative">
-			<div class="aspect-ratio_1x1 flex_none grid items_center justify_center bg_white sticky t_0"><i class="fas fa-plus-circle c_success"></i><label class="c_success absolute t_0 l_5 lh_2 font_n1 ws_nowrap" for="">added: 10/10/2022</label></div> <span class="bg_success block flex_auto marker self_center w_10"> </span>
+		<aside class="bg_whtie flex flex_column lg-alterations lg-fade opacity_3 relative z_3">
+			<div class="aspect-ratio_1x1 flex_none grid items_center justify_center bg_white sticky t_5 c_success"><i class="fas fa-plus-circle "></i><label class="absolute bg_white font_n1 inline-block:md l_5:md lh_2 r_5 r_auto:md ws_nowrap p_3" >added: 10/10/2022</label></div> <span class="bg_success block flex_auto marker self_center w_10"> </span>
 		</aside>
-		<aside class="flex flex_column lg-alterations opacity_7 relative">
-		<span class="flex_auto">&nbsp;</span>
-		<div class="aspect-ratio_1x1 b_0 bg_white flex_none grid items_center justify_center sticky"><i class="fas fa-link c_black"></i><label class="absolute b_2 c_black font_n1 l_5 lh_2 ws_nowrap" for="" 
-">related docs: 15</label></div>
-		</aside>
-		<main class="lg-content  reading-typography font_copy"> {% include_relative sections/sesion7-7.html %} </main>
-		<footer class="lg-aux-linkages ">
+		<aside class="bg_whtie flex flex_column lg-alterations lg-fade opacity_3 relative z_3">
+			<span class="flex_auto">&nbsp;</span>
+			<a class="block aspect-ratio_1x1 b_0 bg_white flex_none grid items_center justify_center sticky z_4" href="#auxlinks"><i class="fas fa-link c_black"></i><label class="absolute bg_white font_n1 inline-block:md l_5:md lh_2 r_5 r_auto:md ws_nowrap p_3">related docs: 15</label></a>
+			</aside>
+		<main class=" lg-content reading-typography font_copy"> 
+			{% include_relative sections/sesion7-7.html %} 
+		</main>
+		<footer class="lg-aux-linkages p-t_6 m-t_n6 bg_white z_3 lg-fade opacity_3 h:opacity" id="auxlinks">
 			<ul class="ul_none c_black-3 font_bold font_n1 flex flex_row-reverse gap_2 p-r_3">
-				<li><i class="fas fa-bars m-r_3"></i>more</li><li class="opacity_5">|</li>
-				<li><i class="fa-file-medical-alt fas m-r_3"></i>docs</li><li class="opacity_5">|</li>
-				<li><i class="fas fa-plus m-r_3"></i>extras</li>
+				<li><span class="m_2 p_2 p-x_3 h:bg_black-1 h:c_black"><i class="fas fa-bars m-r_3"></i>more</span></li>
+				<li class="opacity_3">|</li>
+				<li><span class="m_2 p_2 p-x_3 h:bg_black-1 h:c_black"><i class="fa-file-medical-alt fas m-r_3"></i>docs</span></li>
+				<li class="opacity_3">|</li>
+				<li><span class="m_2 p_2 p-x_3 h:bg_black-1 h:c_black"><i class="fas fa-plus m-r_3"></i>extras</span></li>
 			</ul>
 		</footer>
 	</article>
-
 	<article class="lg-grid grid lg-segment lg-removed [debug]">
-		<aside class=" flex flex_row-reverse lg-alterations opacity_3 relative">
-			<div class="aspect-ratio_1x1 flex_none grid items_center justify_center bg_white t_0 relative"><i class="fas fa-times-circle c_alert"></i><label class="c_alert absolute t_0 l_5 lh_2 font_n1 ws_nowrap" for="">removed: 10/10/2022</label></div> <span class="bg_alert block flex_auto marker self_center" style="height:10%"> </span>
+		<aside class=" flex flex_row-reverse lg-alterations lg-fade opacity_3 relative">
+			<div class="aspect-ratio_1x1 flex_none grid items_center justify_center bg_white t_0 relative"><i class="fas fa-times-circle c_alert"></i><label class="display_none inline-block:md c_alert absolute t_0 l_5 lh_2 font_n1 ws_nowrap" for="">removed: 10/10/2022</label></div> <span class="bg_alert block flex_auto marker self_center" style="height:10%"> </span>
 		</aside>
 		<main class="lg-content  reading-typography font_copy"> {% include_relative sections/sesion7-7.html %} </main>
 		<footer class="lg-aux-linkages "></footer>
 	</article>
-
 	<article class="lg-grid grid lg-segment [debug]">
-		<aside class=" flex flex_column lg-bridge opacity_3 relative">
-			<div class="aspect-ratio_1x1 flex_none grid items_center justify_center bg_white sticky t_0"><i class="fas fa-book c_warning"></i></div> <span class="bg_warning block flex_auto marker self_center w_10"></span>
+		<aside class=" flex flex_column lg-bridge lg-fade opacity_3 relative">
+			<div class="aspect-ratio_1x1 flex_none grid items_center justify_center bg_white sticky t_5"><i class="fas fa-book c_warning"></i></div> <span class="bg_warning block flex_auto marker self_center w_10"></span>
 		</aside>
 		<main class="lg-content  reading-typography font_copy"> {% include_relative sections/sesion7-8.html %} </main>
 		<footer class="lg-aux-linkages "></footer>
@@ -53,39 +90,40 @@ position: "Section Decorations"
 		gap: .25rem;
 		/* add some space between the grid items */
 	}
-.lg-grid.lg-removed{
-	grid-template-columns: minmax(var(--gutter-size), auto) 1fr;
-	grid-template-rows: minmax(var(--gutter-size), auto) auto;
-	grid-template-areas:
-	"lg-bridge lg-alterations"
-	"lg-content  lg-content"
-	"lg-aux-linkages lg-aux-linkages";
 
+	.lg-grid.lg-removed {
+		grid-template-columns: minmax(var(--gutter-size), auto) 1fr;
+		grid-template-rows: minmax(var(--gutter-size), auto) auto;
+		grid-template-areas:
+			"lg-bridge lg-alterations"
+			"lg-content  lg-content"
+			"lg-aux-linkages lg-aux-linkages";
+	}
 
-} 
-.ws_nowrap{white-space: nowrap;}
+	.ws_nowrap {
+		white-space: nowrap;
+	}
+
 	.lg-bridge {
 		grid-area: lg-bridge;
-	
 	}
 
 	.lg-alterations {
 		grid-area: lg-alterations;
-
 	}
 
 	.lg-content {
 		grid-area: lg-content;
-
 	}
 
 	.lg-aux-linkages {
 		grid-area: lg-aux-linkages;
+	}
 
+	.lg-grid.lg-removed .lg-content {
+		display: none;
 	}
-	.lg-grid.lg-removed .lg-content{
-		display:none;
-	}
+
 	.grid.debug {
 		outline: 1px dotted lightcoral;
 	}
