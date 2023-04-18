@@ -1,0 +1,104 @@
+/*** COLOR CODES 3 **/
+/**
+ * arches - Global style system focused on utility classes
+ * @version v1.53.0
+ * @link https://github.com/ACC-Style/Arches/
+ */
+/** /setup/__preheader.scss **/
+/**Set Active Class**/
+/** No Framework or is a Style Sheet that Should be used as an augmenting stylesheet **/
+/**  No Brands Are Used for small project that need to be included with a larger base style sheet.    *********************************/
+/**  Colors  **/
+/** Built With Base Branding 1.53.0 **/
+/** social Color Stylesheet **/
+.c_twitter {
+  color: #00aced !important;
+}
+
+.br_twitter {
+  border-color: #00aced !important;
+}
+
+.bg_twitter,
+.twitter {
+  background-color: #00aced !important;
+}
+
+.c_facebook {
+  color: #3b5998 !important;
+}
+
+.br_facebook {
+  border-color: #3b5998 !important;
+}
+
+.bg_facebook,
+.facebook {
+  background-color: #3b5998 !important;
+}
+
+.c_linkedin {
+  color: #0077b5 !important;
+}
+
+.br_linkedin {
+  border-color: #0077b5 !important;
+}
+
+.bg_linkedin,
+.linkedin {
+  background-color: #0077b5 !important;
+}
+
+.c_apple-store {
+  color: #ea4cc0 !important;
+}
+
+.br_apple-store {
+  border-color: #ea4cc0 !important;
+}
+
+.bg_apple-store,
+.apple-store {
+  background-color: #ea4cc0 !important;
+}
+
+.c_google-play {
+  color: #ef6c00 !important;
+}
+
+.br_google-play {
+  border-color: #ef6c00 !important;
+}
+
+.bg_google-play,
+.google-play {
+  background-color: #ef6c00 !important;
+}
+
+.c_youtube {
+  color: #bb0000 !important;
+}
+
+.br_youtube {
+  border-color: #bb0000 !important;
+}
+
+.bg_youtube,
+.youtube {
+  background-color: #bb0000 !important;
+}
+
+.c_instagram {
+  color: #8134af !important;
+}
+
+.br_instagram {
+  border-color: #8134af !important;
+}
+
+.bg_instagram,
+.instagram {
+  background-color: #8134af !important;
+}
+/*# sourceMappingURL=maps/color-code_social.css.map */

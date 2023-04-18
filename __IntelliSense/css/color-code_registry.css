@@ -1,0 +1,1862 @@
+/*** COLOR CODES 3 **/
+/**
+ * arches - Global style system focused on utility classes
+ * @version v1.53.0
+ * @link https://github.com/ACC-Style/Arches/
+ */
+/** /setup/__preheader.scss **/
+/**Set Active Class**/
+/** No Framework or is a Style Sheet that Should be used as an augmenting stylesheet **/
+/**  No Brands Are Used for small project that need to be included with a larger base style sheet.    *********************************/
+/**  Colors  **/
+/** Built With Base Branding 1.53.0 **/
+/** registry Color Stylesheet **/
+
+.bg_CPMI,.bg_CPMI-0 {
+  background-color: #f22418 !important;
+}
+
+.bg_CPMI-1 {
+  background-color: #f4453b !important;
+}
+
+.bg_CPMI-2 {
+  background-color: #f7756d !important;
+}
+
+.bg_CPMI-3 {
+  background-color: #faa7a3 !important;
+}
+
+.bg_CPMI-4 {
+  background-color: #fccfcc !important;
+}
+
+.bg_CPMI-5 {
+  background-color: #fee9e8 !important;
+}
+
+.bg_CPMI-n1 {
+  background-color: #e3190d !important;
+}
+
+.bg_CPMI-n2 {
+  background-color: #bd140b !important;
+}
+
+.bg_CPMI-n3 {
+  background-color: #8b0f08 !important;
+}
+
+.bg_CPMI-n4 {
+  background-color: #650b06 !important;
+}
+
+.bg_CPMI-n5 {
+  background-color: #3f0704 !important;
+}
+
+.c_CPMI,.c_CPMI-0 {
+  color: #f22418 !important;
+}
+
+.c_CPMI-1 {
+  color: #f4453b !important;
+}
+
+.c_CPMI-2 {
+  color: #f7756d !important;
+}
+
+.c_CPMI-3 {
+  color: #faa7a3 !important;
+}
+
+.c_CPMI-4 {
+  color: #fccfcc !important;
+}
+
+.c_CPMI-5 {
+  color: #fee9e8 !important;
+}
+
+.c_CPMI-n1 {
+  color: #e3190d !important;
+}
+
+.c_CPMI-n2 {
+  color: #bd140b !important;
+}
+
+.c_CPMI-n3 {
+  color: #8b0f08 !important;
+}
+
+.c_CPMI-n4 {
+  color: #650b06 !important;
+}
+
+.c_CPMI-n5 {
+  color: #3f0704 !important;
+}
+
+.br_CPMI,.br_CPMI-0 {
+  border-color: #f22418 !important;
+}
+
+.br_CPMI-1 {
+  border-color: #f4453b !important;
+}
+
+.br_CPMI-2 {
+  border-color: #f7756d !important;
+}
+
+.br_CPMI-3 {
+  border-color: #faa7a3 !important;
+}
+
+.br_CPMI-4 {
+  border-color: #fccfcc !important;
+}
+
+.br_CPMI-5 {
+  border-color: #fee9e8 !important;
+}
+
+.br_CPMI-n1 {
+  border-color: #e3190d !important;
+}
+
+.br_CPMI-n2 {
+  border-color: #bd140b !important;
+}
+
+.br_CPMI-n3 {
+  border-color: #8b0f08 !important;
+}
+
+.br_CPMI-n4 {
+  border-color: #650b06 !important;
+}
+
+.br_CPMI-n5 {
+  border-color: #3f0704 !important;
+}
+
+.bg_AFIB,.bg_AFIB-0 {
+  background-color: #ffb300 !important;
+}
+
+.bg_AFIB-1 {
+  background-color: #ffbe26 !important;
+}
+
+.bg_AFIB-2 {
+  background-color: #ffcf5e !important;
+}
+
+.bg_AFIB-3 {
+  background-color: #ffe199 !important;
+}
+
+.bg_AFIB-4 {
+  background-color: #ffeec7 !important;
+}
+
+.bg_AFIB-5 {
+  background-color: #fff7e6 !important;
+}
+
+.bg_AFIB-n1 {
+  background-color: #e6a100 !important;
+}
+
+.bg_AFIB-n2 {
+  background-color: #bf8600 !important;
+}
+
+.bg_AFIB-n3 {
+  background-color: #8c6200 !important;
+}
+
+.bg_AFIB-n4 {
+  background-color: #664800 !important;
+}
+
+.bg_AFIB-n5 {
+  background-color: #402d00 !important;
+}
+
+.c_AFIB,.c_AFIB-0 {
+  color: #ffb300 !important;
+}
+
+.c_AFIB-1 {
+  color: #ffbe26 !important;
+}
+
+.c_AFIB-2 {
+  color: #ffcf5e !important;
+}
+
+.c_AFIB-3 {
+  color: #ffe199 !important;
+}
+
+.c_AFIB-4 {
+  color: #ffeec7 !important;
+}
+
+.c_AFIB-5 {
+  color: #fff7e6 !important;
+}
+
+.c_AFIB-n1 {
+  color: #e6a100 !important;
+}
+
+.c_AFIB-n2 {
+  color: #bf8600 !important;
+}
+
+.c_AFIB-n3 {
+  color: #8c6200 !important;
+}
+
+.c_AFIB-n4 {
+  color: #664800 !important;
+}
+
+.c_AFIB-n5 {
+  color: #402d00 !important;
+}
+
+.br_AFIB,.br_AFIB-0 {
+  border-color: #ffb300 !important;
+}
+
+.br_AFIB-1 {
+  border-color: #ffbe26 !important;
+}
+
+.br_AFIB-2 {
+  border-color: #ffcf5e !important;
+}
+
+.br_AFIB-3 {
+  border-color: #ffe199 !important;
+}
+
+.br_AFIB-4 {
+  border-color: #ffeec7 !important;
+}
+
+.br_AFIB-5 {
+  border-color: #fff7e6 !important;
+}
+
+.br_AFIB-n1 {
+  border-color: #e6a100 !important;
+}
+
+.br_AFIB-n2 {
+  border-color: #bf8600 !important;
+}
+
+.br_AFIB-n3 {
+  border-color: #8c6200 !important;
+}
+
+.br_AFIB-n4 {
+  border-color: #664800 !important;
+}
+
+.br_AFIB-n5 {
+  border-color: #402d00 !important;
+}
+
+.bg_CATHPCI,.bg_CATHPCI-0 {
+  background-color: #0086d5 !important;
+}
+
+.bg_CATHPCI-1 {
+  background-color: #03a1ff !important;
+}
+
+.bg_CATHPCI-2 {
+  background-color: #44baff !important;
+}
+
+.bg_CATHPCI-3 {
+  background-color: #88d3ff !important;
+}
+
+.bg_CATHPCI-4 {
+  background-color: #bee7ff !important;
+}
+
+.bg_CATHPCI-5 {
+  background-color: #e1f4ff !important;
+}
+
+.bg_CATHPCI-n1 {
+  background-color: #0079c0 !important;
+}
+
+.bg_CATHPCI-n2 {
+  background-color: #0065a0 !important;
+}
+
+.bg_CATHPCI-n3 {
+  background-color: #004a75 !important;
+}
+
+.bg_CATHPCI-n4 {
+  background-color: #003655 !important;
+}
+
+.bg_CATHPCI-n5 {
+  background-color: #002235 !important;
+}
+
+.c_CATHPCI,.c_CATHPCI-0 {
+  color: #0086d5 !important;
+}
+
+.c_CATHPCI-1 {
+  color: #03a1ff !important;
+}
+
+.c_CATHPCI-2 {
+  color: #44baff !important;
+}
+
+.c_CATHPCI-3 {
+  color: #88d3ff !important;
+}
+
+.c_CATHPCI-4 {
+  color: #bee7ff !important;
+}
+
+.c_CATHPCI-5 {
+  color: #e1f4ff !important;
+}
+
+.c_CATHPCI-n1 {
+  color: #0079c0 !important;
+}
+
+.c_CATHPCI-n2 {
+  color: #0065a0 !important;
+}
+
+.c_CATHPCI-n3 {
+  color: #004a75 !important;
+}
+
+.c_CATHPCI-n4 {
+  color: #003655 !important;
+}
+
+.c_CATHPCI-n5 {
+  color: #002235 !important;
+}
+
+.br_CATHPCI,.br_CATHPCI-0 {
+  border-color: #0086d5 !important;
+}
+
+.br_CATHPCI-1 {
+  border-color: #03a1ff !important;
+}
+
+.br_CATHPCI-2 {
+  border-color: #44baff !important;
+}
+
+.br_CATHPCI-3 {
+  border-color: #88d3ff !important;
+}
+
+.br_CATHPCI-4 {
+  border-color: #bee7ff !important;
+}
+
+.br_CATHPCI-5 {
+  border-color: #e1f4ff !important;
+}
+
+.br_CATHPCI-n1 {
+  border-color: #0079c0 !important;
+}
+
+.br_CATHPCI-n2 {
+  border-color: #0065a0 !important;
+}
+
+.br_CATHPCI-n3 {
+  border-color: #004a75 !important;
+}
+
+.br_CATHPCI-n4 {
+  border-color: #003655 !important;
+}
+
+.br_CATHPCI-n5 {
+  border-color: #002235 !important;
+}
+
+.bg_ICD,.bg_ICD-0 {
+  background-color: #80b800 !important;
+}
+
+.bg_ICD-1 {
+  background-color: #a2e900 !important;
+}
+
+.bg_ICD-2 {
+  background-color: #c0ff32 !important;
+}
+
+.bg_ICD-3 {
+  background-color: #d7ff7d !important;
+}
+
+.bg_ICD-4 {
+  background-color: #e9ffb7 !important;
+}
+
+.bg_ICD-5 {
+  background-color: #f5ffde !important;
+}
+
+.bg_ICD-n1 {
+  background-color: #73a600 !important;
+}
+
+.bg_ICD-n2 {
+  background-color: #608a00 !important;
+}
+
+.bg_ICD-n3 {
+  background-color: #466500 !important;
+}
+
+.bg_ICD-n4 {
+  background-color: #334a00 !important;
+}
+
+.bg_ICD-n5 {
+  background-color: #202e00 !important;
+}
+
+.c_ICD,.c_ICD-0 {
+  color: #80b800 !important;
+}
+
+.c_ICD-1 {
+  color: #a2e900 !important;
+}
+
+.c_ICD-2 {
+  color: #c0ff32 !important;
+}
+
+.c_ICD-3 {
+  color: #d7ff7d !important;
+}
+
+.c_ICD-4 {
+  color: #e9ffb7 !important;
+}
+
+.c_ICD-5 {
+  color: #f5ffde !important;
+}
+
+.c_ICD-n1 {
+  color: #73a600 !important;
+}
+
+.c_ICD-n2 {
+  color: #608a00 !important;
+}
+
+.c_ICD-n3 {
+  color: #466500 !important;
+}
+
+.c_ICD-n4 {
+  color: #334a00 !important;
+}
+
+.c_ICD-n5 {
+  color: #202e00 !important;
+}
+
+.br_ICD,.br_ICD-0 {
+  border-color: #80b800 !important;
+}
+
+.br_ICD-1 {
+  border-color: #a2e900 !important;
+}
+
+.br_ICD-2 {
+  border-color: #c0ff32 !important;
+}
+
+.br_ICD-3 {
+  border-color: #d7ff7d !important;
+}
+
+.br_ICD-4 {
+  border-color: #e9ffb7 !important;
+}
+
+.br_ICD-5 {
+  border-color: #f5ffde !important;
+}
+
+.br_ICD-n1 {
+  border-color: #73a600 !important;
+}
+
+.br_ICD-n2 {
+  border-color: #608a00 !important;
+}
+
+.br_ICD-n3 {
+  border-color: #466500 !important;
+}
+
+.br_ICD-n4 {
+  border-color: #334a00 !important;
+}
+
+.br_ICD-n5 {
+  border-color: #202e00 !important;
+}
+
+.bg_IMPACT,.bg_IMPACT-0 {
+  background-color: #4e1f73 !important;
+}
+
+.bg_IMPACT-1 {
+  background-color: #6b2b9e !important;
+}
+
+.bg_IMPACT-2 {
+  background-color: #944ace !important;
+}
+
+.bg_IMPACT-3 {
+  background-color: #bb8ce0 !important;
+}
+
+.bg_IMPACT-4 {
+  background-color: #dac0ee !important;
+}
+
+.bg_IMPACT-5 {
+  background-color: #eee2f7 !important;
+}
+
+.bg_IMPACT-n1 {
+  background-color: #461c68 !important;
+}
+
+.bg_IMPACT-n2 {
+  background-color: #3b1756 !important;
+}
+
+.bg_IMPACT-n3 {
+  background-color: #2b113f !important;
+}
+
+.bg_IMPACT-n4 {
+  background-color: #1f0c2e !important;
+}
+
+.bg_IMPACT-n5 {
+  background-color: #14081d !important;
+}
+
+.c_IMPACT,.c_IMPACT-0 {
+  color: #4e1f73 !important;
+}
+
+.c_IMPACT-1 {
+  color: #6b2b9e !important;
+}
+
+.c_IMPACT-2 {
+  color: #944ace !important;
+}
+
+.c_IMPACT-3 {
+  color: #bb8ce0 !important;
+}
+
+.c_IMPACT-4 {
+  color: #dac0ee !important;
+}
+
+.c_IMPACT-5 {
+  color: #eee2f7 !important;
+}
+
+.c_IMPACT-n1 {
+  color: #461c68 !important;
+}
+
+.c_IMPACT-n2 {
+  color: #3b1756 !important;
+}
+
+.c_IMPACT-n3 {
+  color: #2b113f !important;
+}
+
+.c_IMPACT-n4 {
+  color: #1f0c2e !important;
+}
+
+.c_IMPACT-n5 {
+  color: #14081d !important;
+}
+
+.br_IMPACT,.br_IMPACT-0 {
+  border-color: #4e1f73 !important;
+}
+
+.br_IMPACT-1 {
+  border-color: #6b2b9e !important;
+}
+
+.br_IMPACT-2 {
+  border-color: #944ace !important;
+}
+
+.br_IMPACT-3 {
+  border-color: #bb8ce0 !important;
+}
+
+.br_IMPACT-4 {
+  border-color: #dac0ee !important;
+}
+
+.br_IMPACT-5 {
+  border-color: #eee2f7 !important;
+}
+
+.br_IMPACT-n1 {
+  border-color: #461c68 !important;
+}
+
+.br_IMPACT-n2 {
+  border-color: #3b1756 !important;
+}
+
+.br_IMPACT-n3 {
+  border-color: #2b113f !important;
+}
+
+.br_IMPACT-n4 {
+  border-color: #1f0c2e !important;
+}
+
+.br_IMPACT-n5 {
+  border-color: #14081d !important;
+}
+
+.bg_PINNACLE,.bg_PINNACLE-0 {
+  background-color: #0e4f1b !important;
+}
+
+.bg_PINNACLE-1 {
+  background-color: #17842d !important;
+}
+
+.bg_PINNACLE-2 {
+  background-color: #25d248 !important;
+}
+
+.bg_PINNACLE-3 {
+  background-color: #71e689 !important;
+}
+
+.bg_PINNACLE-4 {
+  background-color: #b1f1be !important;
+}
+
+.bg_PINNACLE-5 {
+  background-color: #dcf9e1 !important;
+}
+
+.bg_PINNACLE-n1 {
+  background-color: #0d4718 !important;
+}
+
+.bg_PINNACLE-n2 {
+  background-color: #0b3b14 !important;
+}
+
+.bg_PINNACLE-n3 {
+  background-color: #082b0f !important;
+}
+
+.bg_PINNACLE-n4 {
+  background-color: #06200b !important;
+}
+
+.bg_PINNACLE-n5 {
+  background-color: #041407 !important;
+}
+
+.c_PINNACLE,.c_PINNACLE-0 {
+  color: #0e4f1b !important;
+}
+
+.c_PINNACLE-1 {
+  color: #17842d !important;
+}
+
+.c_PINNACLE-2 {
+  color: #25d248 !important;
+}
+
+.c_PINNACLE-3 {
+  color: #71e689 !important;
+}
+
+.c_PINNACLE-4 {
+  color: #b1f1be !important;
+}
+
+.c_PINNACLE-5 {
+  color: #dcf9e1 !important;
+}
+
+.c_PINNACLE-n1 {
+  color: #0d4718 !important;
+}
+
+.c_PINNACLE-n2 {
+  color: #0b3b14 !important;
+}
+
+.c_PINNACLE-n3 {
+  color: #082b0f !important;
+}
+
+.c_PINNACLE-n4 {
+  color: #06200b !important;
+}
+
+.c_PINNACLE-n5 {
+  color: #041407 !important;
+}
+
+.br_PINNACLE,.br_PINNACLE-0 {
+  border-color: #0e4f1b !important;
+}
+
+.br_PINNACLE-1 {
+  border-color: #17842d !important;
+}
+
+.br_PINNACLE-2 {
+  border-color: #25d248 !important;
+}
+
+.br_PINNACLE-3 {
+  border-color: #71e689 !important;
+}
+
+.br_PINNACLE-4 {
+  border-color: #b1f1be !important;
+}
+
+.br_PINNACLE-5 {
+  border-color: #dcf9e1 !important;
+}
+
+.br_PINNACLE-n1 {
+  border-color: #0d4718 !important;
+}
+
+.br_PINNACLE-n2 {
+  border-color: #0b3b14 !important;
+}
+
+.br_PINNACLE-n3 {
+  border-color: #082b0f !important;
+}
+
+.br_PINNACLE-n4 {
+  border-color: #06200b !important;
+}
+
+.br_PINNACLE-n5 {
+  border-color: #041407 !important;
+}
+
+.bg_PINNACLE-ACCENT,.bg_PINNACLE-ACCENT-0 {
+  background-color: #b3c4c4 !important;
+}
+
+.bg_PINNACLE-ACCENT-1 {
+  background-color: #becdcd !important;
+}
+
+.bg_PINNACLE-ACCENT-2 {
+  background-color: #cfdada !important;
+}
+
+.bg_PINNACLE-ACCENT-3 {
+  background-color: #e1e7e7 !important;
+}
+
+.bg_PINNACLE-ACCENT-4 {
+  background-color: #eef2f2 !important;
+}
+
+.bg_PINNACLE-ACCENT-5 {
+  background-color: #f7f9f9 !important;
+}
+
+.bg_PINNACLE-ACCENT-n1 {
+  background-color: #9eb4b4 !important;
+}
+
+.bg_PINNACLE-ACCENT-n2 {
+  background-color: #7e9b9b !important;
+}
+
+.bg_PINNACLE-ACCENT-n3 {
+  background-color: #5a7474 !important;
+}
+
+.bg_PINNACLE-ACCENT-n4 {
+  background-color: #425454 !important;
+}
+
+.bg_PINNACLE-ACCENT-n5 {
+  background-color: #293535 !important;
+}
+
+.c_PINNACLE-ACCENT,.c_PINNACLE-ACCENT-0 {
+  color: #b3c4c4 !important;
+}
+
+.c_PINNACLE-ACCENT-1 {
+  color: #becdcd !important;
+}
+
+.c_PINNACLE-ACCENT-2 {
+  color: #cfdada !important;
+}
+
+.c_PINNACLE-ACCENT-3 {
+  color: #e1e7e7 !important;
+}
+
+.c_PINNACLE-ACCENT-4 {
+  color: #eef2f2 !important;
+}
+
+.c_PINNACLE-ACCENT-5 {
+  color: #f7f9f9 !important;
+}
+
+.c_PINNACLE-ACCENT-n1 {
+  color: #9eb4b4 !important;
+}
+
+.c_PINNACLE-ACCENT-n2 {
+  color: #7e9b9b !important;
+}
+
+.c_PINNACLE-ACCENT-n3 {
+  color: #5a7474 !important;
+}
+
+.c_PINNACLE-ACCENT-n4 {
+  color: #425454 !important;
+}
+
+.c_PINNACLE-ACCENT-n5 {
+  color: #293535 !important;
+}
+
+.br_PINNACLE-ACCENT,.br_PINNACLE-ACCENT-0 {
+  border-color: #b3c4c4 !important;
+}
+
+.br_PINNACLE-ACCENT-1 {
+  border-color: #becdcd !important;
+}
+
+.br_PINNACLE-ACCENT-2 {
+  border-color: #cfdada !important;
+}
+
+.br_PINNACLE-ACCENT-3 {
+  border-color: #e1e7e7 !important;
+}
+
+.br_PINNACLE-ACCENT-4 {
+  border-color: #eef2f2 !important;
+}
+
+.br_PINNACLE-ACCENT-5 {
+  border-color: #f7f9f9 !important;
+}
+
+.br_PINNACLE-ACCENT-n1 {
+  border-color: #9eb4b4 !important;
+}
+
+.br_PINNACLE-ACCENT-n2 {
+  border-color: #7e9b9b !important;
+}
+
+.br_PINNACLE-ACCENT-n3 {
+  border-color: #5a7474 !important;
+}
+
+.br_PINNACLE-ACCENT-n4 {
+  border-color: #425454 !important;
+}
+
+.br_PINNACLE-ACCENT-n5 {
+  border-color: #293535 !important;
+}
+
+.bg_FOCUS,.bg_FOCUS-0 {
+  background-color: #d6560d !important;
+}
+
+.bg_FOCUS-1 {
+  background-color: #f16a1c !important;
+}
+
+.bg_FOCUS-2 {
+  background-color: #f59057 !important;
+}
+
+.bg_FOCUS-3 {
+  background-color: #f9b994 !important;
+}
+
+.bg_FOCUS-4 {
+  background-color: #fbd8c4 !important;
+}
+
+.bg_FOCUS-5 {
+  background-color: #fdede4 !important;
+}
+
+.bg_FOCUS-n1 {
+  background-color: #c14d0c !important;
+}
+
+.bg_FOCUS-n2 {
+  background-color: #a1410a !important;
+}
+
+.bg_FOCUS-n3 {
+  background-color: #762f07 !important;
+}
+
+.bg_FOCUS-n4 {
+  background-color: #562205 !important;
+}
+
+.bg_FOCUS-n5 {
+  background-color: #361603 !important;
+}
+
+.c_FOCUS,.c_FOCUS-0 {
+  color: #d6560d !important;
+}
+
+.c_FOCUS-1 {
+  color: #f16a1c !important;
+}
+
+.c_FOCUS-2 {
+  color: #f59057 !important;
+}
+
+.c_FOCUS-3 {
+  color: #f9b994 !important;
+}
+
+.c_FOCUS-4 {
+  color: #fbd8c4 !important;
+}
+
+.c_FOCUS-5 {
+  color: #fdede4 !important;
+}
+
+.c_FOCUS-n1 {
+  color: #c14d0c !important;
+}
+
+.c_FOCUS-n2 {
+  color: #a1410a !important;
+}
+
+.c_FOCUS-n3 {
+  color: #762f07 !important;
+}
+
+.c_FOCUS-n4 {
+  color: #562205 !important;
+}
+
+.c_FOCUS-n5 {
+  color: #361603 !important;
+}
+
+.br_FOCUS,.br_FOCUS-0 {
+  border-color: #d6560d !important;
+}
+
+.br_FOCUS-1 {
+  border-color: #f16a1c !important;
+}
+
+.br_FOCUS-2 {
+  border-color: #f59057 !important;
+}
+
+.br_FOCUS-3 {
+  border-color: #f9b994 !important;
+}
+
+.br_FOCUS-4 {
+  border-color: #fbd8c4 !important;
+}
+
+.br_FOCUS-5 {
+  border-color: #fdede4 !important;
+}
+
+.br_FOCUS-n1 {
+  border-color: #c14d0c !important;
+}
+
+.br_FOCUS-n2 {
+  border-color: #a1410a !important;
+}
+
+.br_FOCUS-n3 {
+  border-color: #762f07 !important;
+}
+
+.br_FOCUS-n4 {
+  border-color: #562205 !important;
+}
+
+.br_FOCUS-n5 {
+  border-color: #361603 !important;
+}
+
+.bg_PCIBLEEDING,.bg_PCIBLEEDING-0 {
+  background-color: #c0268e !important;
+}
+
+.bg_PCIBLEEDING-1 {
+  background-color: #d838a4 !important;
+}
+
+.bg_PCIBLEEDING-2 {
+  background-color: #e26cbc !important;
+}
+
+.bg_PCIBLEEDING-3 {
+  background-color: #eca2d4 !important;
+}
+
+.bg_PCIBLEEDING-4 {
+  background-color: #f5cce7 !important;
+}
+
+.bg_PCIBLEEDING-5 {
+  background-color: #fae8f4 !important;
+}
+
+.bg_PCIBLEEDING-n1 {
+  background-color: #ad2280 !important;
+}
+
+.bg_PCIBLEEDING-n2 {
+  background-color: #901d6b !important;
+}
+
+.bg_PCIBLEEDING-n3 {
+  background-color: #6a154e !important;
+}
+
+.bg_PCIBLEEDING-n4 {
+  background-color: #4d0f39 !important;
+}
+
+.bg_PCIBLEEDING-n5 {
+  background-color: #300a24 !important;
+}
+
+.c_PCIBLEEDING,.c_PCIBLEEDING-0 {
+  color: #c0268e !important;
+}
+
+.c_PCIBLEEDING-1 {
+  color: #d838a4 !important;
+}
+
+.c_PCIBLEEDING-2 {
+  color: #e26cbc !important;
+}
+
+.c_PCIBLEEDING-3 {
+  color: #eca2d4 !important;
+}
+
+.c_PCIBLEEDING-4 {
+  color: #f5cce7 !important;
+}
+
+.c_PCIBLEEDING-5 {
+  color: #fae8f4 !important;
+}
+
+.c_PCIBLEEDING-n1 {
+  color: #ad2280 !important;
+}
+
+.c_PCIBLEEDING-n2 {
+  color: #901d6b !important;
+}
+
+.c_PCIBLEEDING-n3 {
+  color: #6a154e !important;
+}
+
+.c_PCIBLEEDING-n4 {
+  color: #4d0f39 !important;
+}
+
+.c_PCIBLEEDING-n5 {
+  color: #300a24 !important;
+}
+
+.br_PCIBLEEDING,.br_PCIBLEEDING-0 {
+  border-color: #c0268e !important;
+}
+
+.br_PCIBLEEDING-1 {
+  border-color: #d838a4 !important;
+}
+
+.br_PCIBLEEDING-2 {
+  border-color: #e26cbc !important;
+}
+
+.br_PCIBLEEDING-3 {
+  border-color: #eca2d4 !important;
+}
+
+.br_PCIBLEEDING-4 {
+  border-color: #f5cce7 !important;
+}
+
+.br_PCIBLEEDING-5 {
+  border-color: #fae8f4 !important;
+}
+
+.br_PCIBLEEDING-n1 {
+  border-color: #ad2280 !important;
+}
+
+.br_PCIBLEEDING-n2 {
+  border-color: #901d6b !important;
+}
+
+.br_PCIBLEEDING-n3 {
+  border-color: #6a154e !important;
+}
+
+.br_PCIBLEEDING-n4 {
+  border-color: #4d0f39 !important;
+}
+
+.br_PCIBLEEDING-n5 {
+  border-color: #300a24 !important;
+}
+
+.bg_LAAO,.bg_LAAO-0 {
+  background-color: #00667a !important;
+}
+
+.bg_LAAO-1 {
+  background-color: #0097b4 !important;
+}
+
+.bg_LAAO-2 {
+  background-color: #0bd7ff !important;
+}
+
+.bg_LAAO-3 {
+  background-color: #64e6ff !important;
+}
+
+.bg_LAAO-4 {
+  background-color: #aaf1ff !important;
+}
+
+.bg_LAAO-5 {
+  background-color: #d8f9ff !important;
+}
+
+.bg_LAAO-n1 {
+  background-color: #005c6e !important;
+}
+
+.bg_LAAO-n2 {
+  background-color: #004d5c !important;
+}
+
+.bg_LAAO-n3 {
+  background-color: #003843 !important;
+}
+
+.bg_LAAO-n4 {
+  background-color: #002931 !important;
+}
+
+.bg_LAAO-n5 {
+  background-color: #001a1f !important;
+}
+
+.c_LAAO,.c_LAAO-0 {
+  color: #00667a !important;
+}
+
+.c_LAAO-1 {
+  color: #0097b4 !important;
+}
+
+.c_LAAO-2 {
+  color: #0bd7ff !important;
+}
+
+.c_LAAO-3 {
+  color: #64e6ff !important;
+}
+
+.c_LAAO-4 {
+  color: #aaf1ff !important;
+}
+
+.c_LAAO-5 {
+  color: #d8f9ff !important;
+}
+
+.c_LAAO-n1 {
+  color: #005c6e !important;
+}
+
+.c_LAAO-n2 {
+  color: #004d5c !important;
+}
+
+.c_LAAO-n3 {
+  color: #003843 !important;
+}
+
+.c_LAAO-n4 {
+  color: #002931 !important;
+}
+
+.c_LAAO-n5 {
+  color: #001a1f !important;
+}
+
+.br_LAAO,.br_LAAO-0 {
+  border-color: #00667a !important;
+}
+
+.br_LAAO-1 {
+  border-color: #0097b4 !important;
+}
+
+.br_LAAO-2 {
+  border-color: #0bd7ff !important;
+}
+
+.br_LAAO-3 {
+  border-color: #64e6ff !important;
+}
+
+.br_LAAO-4 {
+  border-color: #aaf1ff !important;
+}
+
+.br_LAAO-5 {
+  border-color: #d8f9ff !important;
+}
+
+.br_LAAO-n1 {
+  border-color: #005c6e !important;
+}
+
+.br_LAAO-n2 {
+  border-color: #004d5c !important;
+}
+
+.br_LAAO-n3 {
+  border-color: #003843 !important;
+}
+
+.br_LAAO-n4 {
+  border-color: #002931 !important;
+}
+
+.br_LAAO-n5 {
+  border-color: #001a1f !important;
+}
+
+.bg_PVI,.bg_PVI-0 {
+  background-color: #00947f !important;
+}
+
+.bg_PVI-1 {
+  background-color: #00caae !important;
+}
+
+.bg_PVI-2 {
+  background-color: #1bffdf !important;
+}
+
+.bg_PVI-3 {
+  background-color: #6effea !important;
+}
+
+.bg_PVI-4 {
+  background-color: #affff4 !important;
+}
+
+.bg_PVI-5 {
+  background-color: #dbfffa !important;
+}
+
+.bg_PVI-n1 {
+  background-color: #008572 !important;
+}
+
+.bg_PVI-n2 {
+  background-color: #006f5f !important;
+}
+
+.bg_PVI-n3 {
+  background-color: #005146 !important;
+}
+
+.bg_PVI-n4 {
+  background-color: #003b33 !important;
+}
+
+.bg_PVI-n5 {
+  background-color: #002520 !important;
+}
+
+.c_PVI,.c_PVI-0 {
+  color: #00947f !important;
+}
+
+.c_PVI-1 {
+  color: #00caae !important;
+}
+
+.c_PVI-2 {
+  color: #1bffdf !important;
+}
+
+.c_PVI-3 {
+  color: #6effea !important;
+}
+
+.c_PVI-4 {
+  color: #affff4 !important;
+}
+
+.c_PVI-5 {
+  color: #dbfffa !important;
+}
+
+.c_PVI-n1 {
+  color: #008572 !important;
+}
+
+.c_PVI-n2 {
+  color: #006f5f !important;
+}
+
+.c_PVI-n3 {
+  color: #005146 !important;
+}
+
+.c_PVI-n4 {
+  color: #003b33 !important;
+}
+
+.c_PVI-n5 {
+  color: #002520 !important;
+}
+
+.br_PVI,.br_PVI-0 {
+  border-color: #00947f !important;
+}
+
+.br_PVI-1 {
+  border-color: #00caae !important;
+}
+
+.br_PVI-2 {
+  border-color: #1bffdf !important;
+}
+
+.br_PVI-3 {
+  border-color: #6effea !important;
+}
+
+.br_PVI-4 {
+  border-color: #affff4 !important;
+}
+
+.br_PVI-5 {
+  border-color: #dbfffa !important;
+}
+
+.br_PVI-n1 {
+  border-color: #008572 !important;
+}
+
+.br_PVI-n2 {
+  border-color: #006f5f !important;
+}
+
+.br_PVI-n3 {
+  border-color: #005146 !important;
+}
+
+.br_PVI-n4 {
+  border-color: #003b33 !important;
+}
+
+.br_PVI-n5 {
+  border-color: #002520 !important;
+}
+
+.bg_AUXDATA,.bg_AUXDATA-0 {
+  background-color: #04adad !important;
+}
+
+.bg_AUXDATA-1 {
+  background-color: #05dede !important;
+}
+
+.bg_AUXDATA-2 {
+  background-color: #32fafa !important;
+}
+
+.bg_AUXDATA-3 {
+  background-color: #7dfcfc !important;
+}
+
+.bg_AUXDATA-4 {
+  background-color: #b7fdfd !important;
+}
+
+.bg_AUXDATA-5 {
+  background-color: #defefe !important;
+}
+
+.bg_AUXDATA-n1 {
+  background-color: #049c9c !important;
+}
+
+.bg_AUXDATA-n2 {
+  background-color: #038282 !important;
+}
+
+.bg_AUXDATA-n3 {
+  background-color: #025f5f !important;
+}
+
+.bg_AUXDATA-n4 {
+  background-color: #024545 !important;
+}
+
+.bg_AUXDATA-n5 {
+  background-color: #012b2b !important;
+}
+
+.c_AUXDATA,.c_AUXDATA-0 {
+  color: #04adad !important;
+}
+
+.c_AUXDATA-1 {
+  color: #05dede !important;
+}
+
+.c_AUXDATA-2 {
+  color: #32fafa !important;
+}
+
+.c_AUXDATA-3 {
+  color: #7dfcfc !important;
+}
+
+.c_AUXDATA-4 {
+  color: #b7fdfd !important;
+}
+
+.c_AUXDATA-5 {
+  color: #defefe !important;
+}
+
+.c_AUXDATA-n1 {
+  color: #049c9c !important;
+}
+
+.c_AUXDATA-n2 {
+  color: #038282 !important;
+}
+
+.c_AUXDATA-n3 {
+  color: #025f5f !important;
+}
+
+.c_AUXDATA-n4 {
+  color: #024545 !important;
+}
+
+.c_AUXDATA-n5 {
+  color: #012b2b !important;
+}
+
+.br_AUXDATA,.br_AUXDATA-0 {
+  border-color: #04adad !important;
+}
+
+.br_AUXDATA-1 {
+  border-color: #05dede !important;
+}
+
+.br_AUXDATA-2 {
+  border-color: #32fafa !important;
+}
+
+.br_AUXDATA-3 {
+  border-color: #7dfcfc !important;
+}
+
+.br_AUXDATA-4 {
+  border-color: #b7fdfd !important;
+}
+
+.br_AUXDATA-5 {
+  border-color: #defefe !important;
+}
+
+.br_AUXDATA-n1 {
+  border-color: #049c9c !important;
+}
+
+.br_AUXDATA-n2 {
+  border-color: #038282 !important;
+}
+
+.br_AUXDATA-n3 {
+  border-color: #025f5f !important;
+}
+
+.br_AUXDATA-n4 {
+  border-color: #024545 !important;
+}
+
+.br_AUXDATA-n5 {
+  border-color: #012b2b !important;
+}
+
+.bg_STSTVT,.bg_STSTVT-0 {
+  background-color: #a20062 !important;
+}
+
+.bg_STSTVT-1 {
+  background-color: #d60082 !important;
+}
+
+.bg_STSTVT-2 {
+  background-color: #ff24a8 !important;
+}
+
+.bg_STSTVT-3 {
+  background-color: #ff74c8 !important;
+}
+
+.bg_STSTVT-4 {
+  background-color: #ffb2e1 !important;
+}
+
+.bg_STSTVT-5 {
+  background-color: #ffdcf1 !important;
+}
+
+.bg_STSTVT-n1 {
+  background-color: #920058 !important;
+}
+
+.bg_STSTVT-n2 {
+  background-color: #7a004a !important;
+}
+
+.bg_STSTVT-n3 {
+  background-color: #590036 !important;
+}
+
+.bg_STSTVT-n4 {
+  background-color: #410027 !important;
+}
+
+.bg_STSTVT-n5 {
+  background-color: #290019 !important;
+}
+
+.c_STSTVT,.c_STSTVT-0 {
+  color: #a20062 !important;
+}
+
+.c_STSTVT-1 {
+  color: #d60082 !important;
+}
+
+.c_STSTVT-2 {
+  color: #ff24a8 !important;
+}
+
+.c_STSTVT-3 {
+  color: #ff74c8 !important;
+}
+
+.c_STSTVT-4 {
+  color: #ffb2e1 !important;
+}
+
+.c_STSTVT-5 {
+  color: #ffdcf1 !important;
+}
+
+.c_STSTVT-n1 {
+  color: #920058 !important;
+}
+
+.c_STSTVT-n2 {
+  color: #7a004a !important;
+}
+
+.c_STSTVT-n3 {
+  color: #590036 !important;
+}
+
+.c_STSTVT-n4 {
+  color: #410027 !important;
+}
+
+.c_STSTVT-n5 {
+  color: #290019 !important;
+}
+
+.br_STSTVT,.br_STSTVT-0 {
+  border-color: #a20062 !important;
+}
+
+.br_STSTVT-1 {
+  border-color: #d60082 !important;
+}
+
+.br_STSTVT-2 {
+  border-color: #ff24a8 !important;
+}
+
+.br_STSTVT-3 {
+  border-color: #ff74c8 !important;
+}
+
+.br_STSTVT-4 {
+  border-color: #ffb2e1 !important;
+}
+
+.br_STSTVT-5 {
+  border-color: #ffdcf1 !important;
+}
+
+.br_STSTVT-n1 {
+  border-color: #920058 !important;
+}
+
+.br_STSTVT-n2 {
+  border-color: #7a004a !important;
+}
+
+.br_STSTVT-n3 {
+  border-color: #590036 !important;
+}
+
+.br_STSTVT-n4 {
+  border-color: #410027 !important;
+}
+
+.br_STSTVT-n5 {
+  border-color: #290019 !important;
+}
+
+.bg_DIABETES,.bg_DIABETES-0 {
+  background-color: #7893b8 !important;
+}
+
+.bg_DIABETES-1 {
+  background-color: #8ca3c3 !important;
+}
+
+.bg_DIABETES-2 {
+  background-color: #aabbd2 !important;
+}
+
+.bg_DIABETES-3 {
+  background-color: #c9d4e3 !important;
+}
+
+.bg_DIABETES-4 {
+  background-color: #e1e7ef !important;
+}
+
+.bg_DIABETES-5 {
+  background-color: #f2f4f8 !important;
+}
+
+.bg_DIABETES-n1 {
+  background-color: #6483ae !important;
+}
+
+.bg_DIABETES-n2 {
+  background-color: #4f6c95 !important;
+}
+
+.bg_DIABETES-n3 {
+  background-color: #3a506e !important;
+}
+
+.bg_DIABETES-n4 {
+  background-color: #2a3a50 !important;
+}
+
+.bg_DIABETES-n5 {
+  background-color: #1a2432 !important;
+}
+
+.c_DIABETES,.c_DIABETES-0 {
+  color: #7893b8 !important;
+}
+
+.c_DIABETES-1 {
+  color: #8ca3c3 !important;
+}
+
+.c_DIABETES-2 {
+  color: #aabbd2 !important;
+}
+
+.c_DIABETES-3 {
+  color: #c9d4e3 !important;
+}
+
+.c_DIABETES-4 {
+  color: #e1e7ef !important;
+}
+
+.c_DIABETES-5 {
+  color: #f2f4f8 !important;
+}
+
+.c_DIABETES-n1 {
+  color: #6483ae !important;
+}
+
+.c_DIABETES-n2 {
+  color: #4f6c95 !important;
+}
+
+.c_DIABETES-n3 {
+  color: #3a506e !important;
+}
+
+.c_DIABETES-n4 {
+  color: #2a3a50 !important;
+}
+
+.c_DIABETES-n5 {
+  color: #1a2432 !important;
+}
+
+.br_DIABETES,.br_DIABETES-0 {
+  border-color: #7893b8 !important;
+}
+
+.br_DIABETES-1 {
+  border-color: #8ca3c3 !important;
+}
+
+.br_DIABETES-2 {
+  border-color: #aabbd2 !important;
+}
+
+.br_DIABETES-3 {
+  border-color: #c9d4e3 !important;
+}
+
+.br_DIABETES-4 {
+  border-color: #e1e7ef !important;
+}
+
+.br_DIABETES-5 {
+  border-color: #f2f4f8 !important;
+}
+
+.br_DIABETES-n1 {
+  border-color: #6483ae !important;
+}
+
+.br_DIABETES-n2 {
+  border-color: #4f6c95 !important;
+}
+
+.br_DIABETES-n3 {
+  border-color: #3a506e !important;
+}
+
+.br_DIABETES-n4 {
+  border-color: #2a3a50 !important;
+}
+
+.br_DIABETES-n5 {
+  border-color: #1a2432 !important;
+}
+/*# sourceMappingURL=maps/color-code_registry.css.map */

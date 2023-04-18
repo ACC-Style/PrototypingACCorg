@@ -1,0 +1,156 @@
+/*** COLOR CODES 3 **/
+/**
+ * arches - Global style system focused on utility classes
+ * @version v1.53.0
+ * @link https://github.com/ACC-Style/Arches/
+ */
+/** /setup/__preheader.scss **/
+/**Set Active Class**/
+/** No Framework or is a Style Sheet that Should be used as an augmenting stylesheet **/
+/**  No Brands Are Used for small project that need to be included with a larger base style sheet.    *********************************/
+/**  Colors  **/
+/** Built With Base Branding 1.53.0 **/
+/** LOE_COR Color Stylesheet **/
+.c_cor-I {
+  color: #6fc284 !important;
+}
+
+.br_cor-I {
+  border-color: #6fc284 !important;
+}
+
+.bg_cor-I,
+.cor-I {
+  background-color: #6fc284 !important;
+}
+
+.c_cor-IIA {
+  color: #ffd44f !important;
+}
+
+.br_cor-IIA {
+  border-color: #ffd44f !important;
+}
+
+.bg_cor-IIA,
+.cor-IIA {
+  background-color: #ffd44f !important;
+}
+
+.c_cor-IIB {
+  color: #faa74b !important;
+}
+
+.br_cor-IIB {
+  border-color: #faa74b !important;
+}
+
+.bg_cor-IIB,
+.cor-IIB {
+  background-color: #faa74b !important;
+}
+
+.c_cor-III {
+  color: #f15d4c !important;
+}
+
+.br_cor-III {
+  border-color: #f15d4c !important;
+}
+
+.bg_cor-III,
+.cor-III {
+  background-color: #f15d4c !important;
+}
+
+.c_cor-III-NOBENIFIT {
+  color: #f15d4c !important;
+}
+
+.br_cor-III-NOBENIFIT {
+  border-color: #f15d4c !important;
+}
+
+.bg_cor-III-NOBENIFIT,
+.cor-III-NOBENIFIT {
+  background-color: #f15d4c !important;
+}
+
+.c_cor-III-HARM {
+  color: #ed1c00 !important;
+}
+
+.br_cor-III-HARM {
+  border-color: #ed1c00 !important;
+}
+
+.bg_cor-III-HARM,
+.cor-III-HARM {
+  background-color: #ed1c00 !important;
+}
+
+.c_loe-A {
+  color: #3e6fb7 !important;
+}
+
+.br_loe-A {
+  border-color: #3e6fb7 !important;
+}
+
+.bg_loe-A,
+.loe-A {
+  background-color: #3e6fb7 !important;
+}
+
+.c_loe-B-NR {
+  color: #659cd3 !important;
+}
+
+.br_loe-B-NR {
+  border-color: #659cd3 !important;
+}
+
+.bg_loe-B-NR,
+.loe-B-NR {
+  background-color: #659cd3 !important;
+}
+
+.c_loe-B-BR {
+  color: #a1c1e6 !important;
+}
+
+.br_loe-B-BR {
+  border-color: #a1c1e6 !important;
+}
+
+.bg_loe-B-BR,
+.loe-B-BR {
+  background-color: #a1c1e6 !important;
+}
+
+.c_loe-C-LD {
+  color: #b5d5e5 !important;
+}
+
+.br_loe-C-LD {
+  border-color: #b5d5e5 !important;
+}
+
+.bg_loe-C-LD,
+.loe-C-LD {
+  background-color: #b5d5e5 !important;
+}
+
+.c_loe-C-EO {
+  color: #b5d5e5 !important;
+}
+
+.br_loe-C-EO {
+  border-color: #b5d5e5 !important;
+}
+
+.bg_loe-C-EO,
+.loe-C-EO {
+  background-color: #b5d5e5 !important;
+}
+/*# sourceMappingURL=maps/color-code_LOE_COR.css.map */
