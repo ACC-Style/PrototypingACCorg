@@ -1,6 +1,6 @@
 ---
 layout: arches-article
-name: "Cardiovascular Careers"
+name: "Cardiovascular Careers Path"
 position: "Home"
 ---
 
