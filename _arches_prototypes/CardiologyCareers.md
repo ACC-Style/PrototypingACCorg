@@ -4,13 +4,17 @@ name: "Cardiovascular Careers"
 position: "Home"
 ---
 
+
+
+
 # A Career in Cardiology
 
 Welcome to the world of cardiology – a field that focuses on the heart and the circulatory system. Whether you're just starting out or considering a career change, we're here to provide you with the information you need to explore the field of cardiology and the many opportunities it offers. 
+## The American College of Cardiology (ACC) is Here to Help
 
-## The American College of Cardiology (ACC)
+The American College of Cardiology (ACC) is a professional organization dedicated to transforming cardiovascular care and improving heart health. With over 56,000 cardiovascular professionals as members, including physicians, nurse practitioners, registered nurses, PAs, pharmacists, and more, the ACC provides resources, education, and tools to advance and support the careers of its members. The organization helps members navigate career challenges and represents their interests at the local, national, and global level.
 
-The American College of Cardiology (ACC) is a professional organization dedicated to transforming cardiovascular care and improving heart health. With over 56,000 cardiovascular professionals as members, including physicians, nurse practitioners, registered nurses, PAs, pharmacists, and more, the ACC provides resources, education, and tools to advance and support the careers of its members. The organization helps members navigate career challenges and represents their interests at the local, national, and global level. 
+<hr class="br_primary">
 
 ## What is Cardiology?
 
