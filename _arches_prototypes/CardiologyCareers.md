@@ -22,30 +22,30 @@ Cardiovascular disease is the world's number one killer, accounting for nearly h
 
 Cardiology offers an incredible array of career options based on your interests and talents. The field is also rich in history and innovation, and by exploring the experiences of those who have come before you, you can gain a deeper understanding of what it means to be a cardiologist. 
 
+[Explore why some of our members became cardiologists.](#)
+
 ## Who is Part of Cardiology?
 
-Cardiology is a diverse field made up of professionals such as:
-
-* Physicians
-* Nurses
-* Pharmacists
-* [View Full List](#)
+Cardiology is a diverse field made up of professionals such as Physicians, Nurses, Administrators, Pharmacists, and so much more.
 
 
 Early career cardiologists offer a glimpse into what it's like to walk in their shoes, providing insights into the daily life of a cardiologist and what it takes to pursue a career in cardiology.
 
--	A Day in the Life of an ACC FIT (link)
--	A Day in the Life: Andrea Price, MS, RCIS, CCA(link)
--	A Day in the Life: An Interview With Brent N. Reed, PharmD, BCPS-AQ(link)
--	A Day in the Life: Sandy Perlmutter, MSN, ARNP, AACC(link)
--	A Day in the Life: Marion McRae, ACNP-BC(link)
+-	[A Day in the Life of an ACC FIT ](link)
+-	[A Day in the Life: Andrea Price, MS, RCIS, CCA](link)
+-	[A Day in the Life: An Interview With Brent N. Reed, PharmD, BCPS-AQ](link)
+-	[A Day in the Life: Sandy Perlmutter, MSN, ARNP, AACC](link)
+-	[A Day in the Life: Marion McRae, ACNP-BC](link)
 
 
 In addition, we feature stories from experienced cardiologists, such as:
 
-* Ki Park, MD, MS, FACC, a clinical assistant professor of medicine and an interventional cardiologist who focuses on women's cardiovascular health
-* Jignesh A. Patel, MD, a chief cardiology fellow who plans to specialize in interventional cardiology while promoting the importance of creativity and artistic expression among cardiovascular professionals
+* Ki Park, MD, MS, FACC, a clinical assistant professor of medicine and an interventional cardiologist who focuses on women's cardiovascular health.
+<br>[watch video]()
+* Jignesh A. Patel, MD, a chief cardiology fellow who plans to specialize in interventional cardiology while promoting the importance of creativity and artistic expression among cardiovascular professionals.
+<br>[watch video]()
 * Renelle George, MD, a pediatric cardiology fellow who is pursuing a career in pediatric interventional cardiology.
+<br>[watch video]()
 
 
 At the American College of Cardiology, we are committed to strengthening the cardiology talent pipeline and introducing tomorrow's leaders to the field today. We invite you to explore the many career pathways in the field of cardiology, discover what it takes to start pursuing a career in this exciting and dynamic field, and start imagining yourself in cardiovascular medicine!
@@ -55,9 +55,25 @@ At the American College of Cardiology, we are committed to strengthening the car
 
 With as many professions as there are in cardiovascular medicine, there is no one pathway to a career in cardiology. Explore the information below to get a sense of what steps you can start taking to pursue your dream career!
 
-### Physician Pathway
-There are many career paths as a physician in cardiology and a variety of ways to specialize. Learn more about your career options and the training and education you need to pursue each pathway below.
-[Learn More](#)
-### CV Team Pathway
-The Cardiovascular (CV) Team includes nurse practitioners, registered nurses, PAs, pharmacists and many others who work together and alongside physicians to ensure the best possible treatment and outcomes for patients. Explore how to get started in these careers using the links below.
-[Learn More](#)
+
+<div class="bg_acc br_radius c_white color_inherit inherit links_dark p_4 reading-typography">
+<h2 class="text_center br-b_1 br_solid p-b_3 m-b_3">Choose a Pathway</h2>
+<div class="grid gap_4 grid grid-col_2:md">
+<div class="p_3 relative">
+
+<h3>Physician Pathway</h3>
+<p>There are many career paths as a physician in cardiology and a variety of ways to specialize. Learn more about your career options and the training and education you need to pursue each pathway below.</p>
+
+<a class="btn btn-primary font_medium expanded-click-area">Physician Pathway</a>
+
+</div>
+<div class="p_3 relative">
+
+<h3>CV Team Pathway</h3>
+<p>The Cardiovascular (CV) Team includes nurse practitioners, registered nurses, PAs, pharmacists and many others who work together and alongside physicians to ensure the best possible treatment and outcomes for patients. Explore how to get started in these careers using the links below.</p>
+<a class="btn btn-primary font_medium expanded-click-area">CV Team Pathway</a>
+
+
+</div></div>
+</div>
+
