@@ -5,6 +5,7 @@ position: "Video Gallery"
 ---
 # Video Gallery
 
+Our gallery of videos features doctors who are at the forefront of the cardiology industry. In this series of videos, these physicians share their insights and advice for those who aspire to follow in their footsteps. Whether you're a medical student just starting out these videos provide valuable guidance and inspiration to help you achieve your career goals in the field of cardiology.
 
 ----
 
