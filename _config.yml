@@ -17,11 +17,10 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-
+# this means to ignore newlines until "baseurl:"
 title: Prototype for ACC.org Website
 email: mwatier@acc.org
-description: >- # this means to ignore newlines until "baseurl:"
-  This is a playground to prototype the builds that would show up inside acc.org. 
+description: This is a playground to prototype the builds that would show up inside acc.org. 
 baseurl: "/PrototypingACCorg" # the subpath of your site, e.g. /blog
 url: "https://acc-style.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  mattwatier

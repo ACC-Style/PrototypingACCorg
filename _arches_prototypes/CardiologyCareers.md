@@ -44,15 +44,22 @@ Early career cardiologists offer a glimpse into what it's like to walk in their 
 -	[A Day in the Life: Marion McRae, ACNP-BC](link)
 
 
-In addition, we feature stories from experienced cardiologists, such as:
+### In addition, we feature stories from experienced cardiologists, such as:
 
-* Ki Park, MD, MS, FACC, a clinical assistant professor of medicine and an interventional cardiologist who focuses on women's cardiovascular health.
-<br>[watch video]()
-* Jignesh A. Patel, MD, a chief cardiology fellow who plans to specialize in interventional cardiology while promoting the importance of creativity and artistic expression among cardiovascular professionals.
-<br>[watch video]()
-* Renelle George, MD, a pediatric cardiology fellow who is pursuing a career in pediatric interventional cardiology.
-<br>[watch video]()
-
+<ul class="ul_none">
+	<li class="flex flex_row:md flex_column">
+	<div class="aspect aspect_16x9 bg-acc bg_acc br_radius c_white flex_none grid items_center justify_center m-b_3 m-r_4 max-w_15 p_3 text_center">Video</div>
+	<div>Ki Park, MD, MS, FACC, a clinical assistant professor of medicine and an interventional cardiologist who focuses on women's cardiovascular health.</div>
+	</li>
+	<li class="flex flex_row:md flex_column">
+	<div class="aspect aspect_16x9 bg-acc bg_acc br_radius c_white flex_none grid items_center justify_center m-b_3 m-r_4 max-w_15 p_3 text_center">Video</div>
+	<div>Jignesh A. Patel, MD, a chief cardiology fellow who plans to specialize in interventional cardiology while promoting the importance of creativity and artistic expression among cardiovascular professionals.</div>
+	</li>
+	<li class="flex flex_row:md flex_column">
+	<div class="aspect aspect_16x9 bg-acc bg_acc br_radius c_white flex_none grid items_center justify_center m-b_3 m-r_4 max-w_15 p_3 text_center">Video</div>
+	<div>Renelle George, MD, a pediatric cardiology fellow who is pursuing a career in pediatric interventional cardiology.</div>
+	</li>
+</ul>
 
 At the American College of Cardiology, we are committed to strengthening the cardiology talent pipeline and introducing tomorrow's leaders to the field today. We invite you to explore the many career pathways in the field of cardiology, discover what it takes to start pursuing a career in this exciting and dynamic field, and start imagining yourself in cardiovascular medicine!
 

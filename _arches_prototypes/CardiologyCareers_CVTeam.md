@@ -7,88 +7,209 @@ position: "CV Team"
 
 
 
-## Make a Difference in Cardiovascular Care* 
-
-Here is a paragraph with the link titles:
+## Make a Difference in Cardiovascular Care 
 
 Discover exciting career paths beyond traditional clinical practice with these resources:
-- "Novel Careers in Cardiology"
-- "Careers in Entrepreneurship and Industry As a Cardiologist: An Insider's Perspective"
-- "How Can Early Career Cardiologists Build a Successful Research Career: Navigating Clinical Research and Data Sets!"
-- "How Can Early Career Cardiologists Build a Successful Research Career: Grant Research and Manuscript Submission"
-- "Alternative Careers in Cardiology"
+* [Novel Careers in Cardiology: Exploring Unconventional Paths](#)
+* [An Insider's Perspective: Careers in Entrepreneurship and Industry as a Cardiologist](#)
+* [Navigating Clinical Research and Data Sets: Building a Successful Research Career as an Early Career Cardiologist](#)
+* [Grant Research and Manuscript Submission: Building a Successful Research Career as an Early Career Cardiologist](#)
+* [Thinking Beyond the Clinic: Alternative Careers in Cardiology to Consider](#)
 
-Whether you are interested in pursuing a non-traditional role in cardiology, exploring entrepreneurial opportunities, or building a successful research career, these resources offer valuable insights and guidance to help you achieve your career path.
-
-
-Explore the exciting and dynamic career options of the CV Team
+Below is a list of potential careers within the CV Team, each with their own unique set of opportunities and challenges. So, take a look and see which one speaks to you and your career aspirations.
 
 
 
+  
+   
 
 
+<div class="relative">
+    <header id="accordion_header" class="flex flex_row sticky t_n2 bg_white shadow_overlap-light br_solid br_1 br_black-2 z_2 ">
+        <div class="h:bg_primary-5 m_2 c_primary h:c_primary-n2 br_radius">
+            <div class="flex_none collapsed" aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#content_accordion" aria-controls="#content_accordion">
+                    <span class="fa-stack">
+                    <i class="fas fa-minus fa-stack-1x"></i>
+                    <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+                    </span>
+            </div>        </div>
+        <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
+            <div class="flex_auto self_center reading-typography no-margins">
+               <h3>Advanced Cardiac Sonographer (ACS)</h3>
+            </div>
+        </div>
+    </header>
+    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
+<p>As part of an interdisciplinary team, the Advanced Sonographer provides advanced level sonography services based on clinical competency obtained through advanced education and clinical experience.</p>
 
-* * *
+<p><strong>Education/Pathways to Credentialing:</strong> Graduate of Advanced Cardiac Sonography program or have extensive cardiac ultrasound clinical experience with or without the combination of cardiac ultrasound/echocardiography/health science education.</p>
 
-#### **Cardiovascular Invasive and Noninvasive Technologist**
+ </main>
+</div>
+<div class="relative">
+    <header id="accordion_header" class="flex flex_row sticky t_n2 bg_white shadow_overlap-light br_solid br_1 br_black-2 z_2 ">
+        <div class="h:bg_primary-5 m_2 c_primary h:c_primary-n2 br_radius">
+            <div class="flex_none collapsed" aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#content_accordion" aria-controls="#content_accordion">
+                    <span class="fa-stack">
+                    <i class="fas fa-minus fa-stack-1x"></i>
+                    <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+                    </span>
+            </div>        </div>
+        <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
+            <div class="flex_auto self_center reading-typography no-margins">
+               <h3> Cardiographic (ECG/Stress) Technician (CCT)</h3>
+            </div>
+        </div>
+    </header>
+    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
-* * *
+<p>A Certified Cardiographic Technician is a professional working in the areas of EKG, Holter Monitoring and Stress Testing.</p>
 
-#### **Advanced Cardiac Sonographer (ACS)**
+<p><strong>Education/Pathways to Credentialing:</strong> work experience as a cardiovascular technologist or allied health field with or without allied health training/physical health.</p>
 
-As part of an interdisciplinary team, the Advanced Sonographer provides advanced level sonography services based on clinical competency obtained through advanced education and clinical experience.
-
-**Education/Pathways to Credentialing:** Graduate of Advanced Cardiac Sonography program or have extensive cardiac ultrasound clinical experience with or without the combination of cardiac ultrasound/echocardiography/health science education.
-
-* * *
-
-#### **Cardiographic (ECG/Stress) Technician (CCT)**
-
-A Certified Cardiographic Technician is a professional working in the areas of EKG, Holter Monitoring and Stress Testing.
-
-**Education/Pathways to Credentialing:** work experience as a cardiovascular technologist or allied health field with or without allied health training/physical health.
-
-* * *
+ </main>
+</div>
+<div class="relative">
+    <header id="accordion_header" class="flex flex_row sticky t_n2 bg_white shadow_overlap-light br_solid br_1 br_black-2 z_2 ">
+        <div class="h:bg_primary-5 m_2 c_primary h:c_primary-n2 br_radius">
+            <div class="flex_none collapsed" aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#content_accordion" aria-controls="#content_accordion">
+                    <span class="fa-stack">
+                    <i class="fas fa-minus fa-stack-1x"></i>
+                    <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+                    </span>
+            </div>        </div>
+        <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
+            <div class="flex_auto self_center reading-typography no-margins">
+               <h3> Accordion Header Level 3</h3>
+            </div>
+        </div>
+    </header>
+    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
 #### **ECG Monitor/ Rhythm Analysis Technician (CRAT)**
 
 A Certified Rhythm Analysis Technician is a monitor and device cardiac technician who assists in the diagnosis and treatment of patients, by analyzing cardiac rhythms and implanted device tests, utilizing specialized monitoring equipment.
 
-**Education/Pathways to Credentialing:** work experience as a cardiovascular technologist or allied health field with or without allied health training/physical health.
+<strong>Education/Pathways to Credentialing:</strong> work experience as a cardiovascular technologist or allied health field with or without allied health training/physical health.
 
-* * *
+ </main>
+</div>
+<div class="relative">
+    <header id="accordion_header" class="flex flex_row sticky t_n2 bg_white shadow_overlap-light br_solid br_1 br_black-2 z_2 ">
+        <div class="h:bg_primary-5 m_2 c_primary h:c_primary-n2 br_radius">
+            <div class="flex_none collapsed" aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#content_accordion" aria-controls="#content_accordion">
+                    <span class="fa-stack">
+                    <i class="fas fa-minus fa-stack-1x"></i>
+                    <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+                    </span>
+            </div>        </div>
+        <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
+            <div class="flex_auto self_center reading-typography no-margins">
+               <h3> Accordion Header Level 3</h3>
+            </div>
+        </div>
+    </header>
+    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
 #### **Congenital/Pediatric Cardiac Sonographer (RCCS or RDCS-PE)**
 
 A Registered Congenital Cardiac Sonographer assists in the care of patients with pediatric and adult congenital cardiac abnormalities by utilizing specialized ultrasound systems to collect and analyze cardiac images.
 
-**Education/Pathways to Credentialing:** work experience in cardiac ultrasound with or without the combination of adult, adult congenital, or pediatric cardiac ultrasound/echocardiography/health science education.
+<strong>Education/Pathways to Credentialing:</strong> work experience in cardiac ultrasound with or without the combination of adult, adult congenital, or pediatric cardiac ultrasound/echocardiography/health science education.
 
-* * *
+ </main>
+</div>
+<div class="relative">
+    <header id="accordion_header" class="flex flex_row sticky t_n2 bg_white shadow_overlap-light br_solid br_1 br_black-2 z_2 ">
+        <div class="h:bg_primary-5 m_2 c_primary h:c_primary-n2 br_radius">
+            <div class="flex_none collapsed" aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#content_accordion" aria-controls="#content_accordion">
+                    <span class="fa-stack">
+                    <i class="fas fa-minus fa-stack-1x"></i>
+                    <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+                    </span>
+            </div>        </div>
+        <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
+            <div class="flex_auto self_center reading-typography no-margins">
+               <h3> Accordion Header Level 3</h3>
+            </div>
+        </div>
+    </header>
+    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
 #### **Cardiac Sonographer (RCS or RDCS)**
 
 A Registered Cardiac Sonographer assists in the care of patients utilizing echocardiography/cardiac ultrasound systems to collect and analyze cardiac images.
 
-**Education/Pathways to Credentialing:** work experience in cardiac ultrasound with or without cardiac ultrasound/echocardiography/health science education.
+<strong>Education/Pathways to Credentialing:</strong> work experience in cardiac ultrasound with or without cardiac ultrasound/echocardiography/health science education.
 
-* * *
+ </main>
+</div>
+<div class="relative">
+    <header id="accordion_header" class="flex flex_row sticky t_n2 bg_white shadow_overlap-light br_solid br_1 br_black-2 z_2 ">
+        <div class="h:bg_primary-5 m_2 c_primary h:c_primary-n2 br_radius">
+            <div class="flex_none collapsed" aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#content_accordion" aria-controls="#content_accordion">
+                    <span class="fa-stack">
+                    <i class="fas fa-minus fa-stack-1x"></i>
+                    <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+                    </span>
+            </div>        </div>
+        <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
+            <div class="flex_auto self_center reading-typography no-margins">
+               <h3> Accordion Header Level 3</h3>
+            </div>
+        </div>
+    </header>
+    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
 #### **Phlebology Sonographer (RPhS)**
 
 A Registered Phlebology Sonographer is a professional working in venous ultrasound (phlebology). The credential may also be obtained by a Physician, Physician Assistant, and Nurse Practitioner.
 
-**Education/Pathways to Credentialing:** work experience in diagnostic ultrasound in venous disease with or without the combination of in venous disease, ultrasound diagnosis, or vascular anatomy/health science education.
+<strong>Education/Pathways to Credentialing:</strong> work experience in diagnostic ultrasound in venous disease with or without the combination of in venous disease, ultrasound diagnosis, or vascular anatomy/health science education.
 
-* * *
+ </main>
+</div>
+<div class="relative">
+    <header id="accordion_header" class="flex flex_row sticky t_n2 bg_white shadow_overlap-light br_solid br_1 br_black-2 z_2 ">
+        <div class="h:bg_primary-5 m_2 c_primary h:c_primary-n2 br_radius">
+            <div class="flex_none collapsed" aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#content_accordion" aria-controls="#content_accordion">
+                    <span class="fa-stack">
+                    <i class="fas fa-minus fa-stack-1x"></i>
+                    <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+                    </span>
+            </div>        </div>
+        <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
+            <div class="flex_auto self_center reading-typography no-margins">
+               <h3> Accordion Header Level 3</h3>
+            </div>
+        </div>
+    </header>
+    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
 #### **Vascular Specialist/Technologist (RVS or RVT)**
 
 A Registered Vascular Specialist is a professional working in Vascular Technology (Vascular Ultrasound) to collect and analyze venous and arterial images.
 
-**Education/Pathways to Credentialing:** work experience in vascular ultrasound with or without vascular ultrasound/health science education.
+<strong>Education/Pathways to Credentialing:</strong> work experience in vascular ultrasound with or without vascular ultrasound/health science education.
 
-* * *
+ </main>
+</div>
+<div class="relative">
+    <header id="accordion_header" class="flex flex_row sticky t_n2 bg_white shadow_overlap-light br_solid br_1 br_black-2 z_2 ">
+        <div class="h:bg_primary-5 m_2 c_primary h:c_primary-n2 br_radius">
+            <div class="flex_none collapsed" aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#content_accordion" aria-controls="#content_accordion">
+                    <span class="fa-stack">
+                    <i class="fas fa-minus fa-stack-1x"></i>
+                    <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+                    </span>
+            </div>        </div>
+        <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
+            <div class="flex_auto self_center reading-typography no-margins">
+               <h3> Accordion Header Level 3</h3>
+            </div>
+        </div>
+    </header>
+    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
 #### **Clinical Nurse Specialist (CNS)**
 
@@ -100,7 +221,24 @@ An advanced practice registered nurse with a graduate-level degree in nursing an
 
 **For more information please visit:** [AACN Statement of Support for Clinical Nurse Specialists (_aacnnursing.org_).](https://www.aacnnursing.org/News-Information/Position-Statements-White-Papers/CNS)
 
-* * *
+ </main>
+</div>
+<div class="relative">
+    <header id="accordion_header" class="flex flex_row sticky t_n2 bg_white shadow_overlap-light br_solid br_1 br_black-2 z_2 ">
+        <div class="h:bg_primary-5 m_2 c_primary h:c_primary-n2 br_radius">
+            <div class="flex_none collapsed" aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#content_accordion" aria-controls="#content_accordion">
+                    <span class="fa-stack">
+                    <i class="fas fa-minus fa-stack-1x"></i>
+                    <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+                    </span>
+            </div>        </div>
+        <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
+            <div class="flex_auto self_center reading-typography no-margins">
+               <h3> Accordion Header Level 3</h3>
+            </div>
+        </div>
+    </header>
+    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
 #### **Clinical Pharmacist**
 
@@ -110,7 +248,24 @@ Trained Pharmacist that provides patient care that optimizes the use of medicati
 
 **Practice Setting:** Inpatient, acute, and critical care For more information **[click here](https://www.accp.com/about/clinicalpharmacists.aspx)**.
 
-* * *
+ </main>
+</div>
+<div class="relative">
+    <header id="accordion_header" class="flex flex_row sticky t_n2 bg_white shadow_overlap-light br_solid br_1 br_black-2 z_2 ">
+        <div class="h:bg_primary-5 m_2 c_primary h:c_primary-n2 br_radius">
+            <div class="flex_none collapsed" aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#content_accordion" aria-controls="#content_accordion">
+                    <span class="fa-stack">
+                    <i class="fas fa-minus fa-stack-1x"></i>
+                    <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+                    </span>
+            </div>        </div>
+        <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
+            <div class="flex_auto self_center reading-typography no-margins">
+               <h3> Accordion Header Level 3</h3>
+            </div>
+        </div>
+    </header>
+    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
 #### **Clinical Psychologist**
 
@@ -124,7 +279,24 @@ How can clinical psychologists impact cardiovascular care? Cardiovascular diseas
 
 **For more information please visit:** [How to Become a Clinical Psychologist | _Psychology.org_](https://www.psychology.org/careers/clinical-psychologist/)
 
-* * *
+ </main>
+</div>
+<div class="relative">
+    <header id="accordion_header" class="flex flex_row sticky t_n2 bg_white shadow_overlap-light br_solid br_1 br_black-2 z_2 ">
+        <div class="h:bg_primary-5 m_2 c_primary h:c_primary-n2 br_radius">
+            <div class="flex_none collapsed" aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#content_accordion" aria-controls="#content_accordion">
+                    <span class="fa-stack">
+                    <i class="fas fa-minus fa-stack-1x"></i>
+                    <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+                    </span>
+            </div>        </div>
+        <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
+            <div class="flex_auto self_center reading-typography no-margins">
+               <h3> Accordion Header Level 3</h3>
+            </div>
+        </div>
+    </header>
+    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
 #### **Clinical Social Worker**
 
@@ -136,7 +308,24 @@ Cardiovascular disease can be complex and incoorperate multiple co-morbid condit
 
 **Practice Setting:** Hospital and ambulatory settings For more information please visit: Clinical Social Work ([_socialworkers.org_](https://www.socialworkers.org/))
 
-* * *
+ </main>
+</div>
+<div class="relative">
+    <header id="accordion_header" class="flex flex_row sticky t_n2 bg_white shadow_overlap-light br_solid br_1 br_black-2 z_2 ">
+        <div class="h:bg_primary-5 m_2 c_primary h:c_primary-n2 br_radius">
+            <div class="flex_none collapsed" aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#content_accordion" aria-controls="#content_accordion">
+                    <span class="fa-stack">
+                    <i class="fas fa-minus fa-stack-1x"></i>
+                    <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+                    </span>
+            </div>        </div>
+        <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
+            <div class="flex_auto self_center reading-typography no-margins">
+               <h3> Accordion Header Level 3</h3>
+            </div>
+        </div>
+    </header>
+    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
 #### **Exercise Physiologist**
 
@@ -150,7 +339,24 @@ Exercise physiologists typically function within cardiovascular care in the card
 
 **For more information please visit:** [American Society of Exercise Physiologists (_asep.org_)](https://www.asep.org/)
 
-* * *
+ </main>
+</div>
+<div class="relative">
+    <header id="accordion_header" class="flex flex_row sticky t_n2 bg_white shadow_overlap-light br_solid br_1 br_black-2 z_2 ">
+        <div class="h:bg_primary-5 m_2 c_primary h:c_primary-n2 br_radius">
+            <div class="flex_none collapsed" aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#content_accordion" aria-controls="#content_accordion">
+                    <span class="fa-stack">
+                    <i class="fas fa-minus fa-stack-1x"></i>
+                    <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+                    </span>
+            </div>        </div>
+        <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
+            <div class="flex_auto self_center reading-typography no-margins">
+               <h3> Accordion Header Level 3</h3>
+            </div>
+        </div>
+    </header>
+    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
 #### **Genetic Counselor**
 
@@ -164,7 +370,24 @@ Certain cardiovascular conditions can be hereditary such as cardiomyopathies or 
 
 **For more information please visit:** [NSGC (_nsgc.org_)](https://www.nsgc.org/)
 
-* * *
+ </main>
+</div>
+<div class="relative">
+    <header id="accordion_header" class="flex flex_row sticky t_n2 bg_white shadow_overlap-light br_solid br_1 br_black-2 z_2 ">
+        <div class="h:bg_primary-5 m_2 c_primary h:c_primary-n2 br_radius">
+            <div class="flex_none collapsed" aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#content_accordion" aria-controls="#content_accordion">
+                    <span class="fa-stack">
+                    <i class="fas fa-minus fa-stack-1x"></i>
+                    <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+                    </span>
+            </div>        </div>
+        <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
+            <div class="flex_auto self_center reading-typography no-margins">
+               <h3> Accordion Header Level 3</h3>
+            </div>
+        </div>
+    </header>
+    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
 #### **Informatics**
 
@@ -176,7 +399,24 @@ The application of informatics and information technology to deliver healthcare 
 
 **For more information please visit:** [Healthcare Informatics | (_himss.org_)](https://www.himss.org/resources/healthcare-informatics)
 
-* * *
+ </main>
+</div>
+<div class="relative">
+    <header id="accordion_header" class="flex flex_row sticky t_n2 bg_white shadow_overlap-light br_solid br_1 br_black-2 z_2 ">
+        <div class="h:bg_primary-5 m_2 c_primary h:c_primary-n2 br_radius">
+            <div class="flex_none collapsed" aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#content_accordion" aria-controls="#content_accordion">
+                    <span class="fa-stack">
+                    <i class="fas fa-minus fa-stack-1x"></i>
+                    <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+                    </span>
+            </div>        </div>
+        <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
+            <div class="flex_auto self_center reading-typography no-margins">
+               <h3> Accordion Header Level 3</h3>
+            </div>
+        </div>
+    </header>
+    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
 #### **Nurse practitioner/Advanced Practice Nurse**
 
@@ -192,13 +432,47 @@ An APRN is a master's or post-masters level nurse and are prepared to assess, di
 
 **For more information please visit:** [The American Academy of Nurse Practitioners Certification Board (_aanpcert.org_)](https://www.aanpcert.org/)
 
-* * *
+ </main>
+</div>
+<div class="relative">
+    <header id="accordion_header" class="flex flex_row sticky t_n2 bg_white shadow_overlap-light br_solid br_1 br_black-2 z_2 ">
+        <div class="h:bg_primary-5 m_2 c_primary h:c_primary-n2 br_radius">
+            <div class="flex_none collapsed" aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#content_accordion" aria-controls="#content_accordion">
+                    <span class="fa-stack">
+                    <i class="fas fa-minus fa-stack-1x"></i>
+                    <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+                    </span>
+            </div>        </div>
+        <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
+            <div class="flex_auto self_center reading-typography no-margins">
+               <h3> Accordion Header Level 3</h3>
+            </div>
+        </div>
+    </header>
+    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
 #### **Occupational Therapist**
 
 oooooo
 
-* * *
+ </main>
+</div>
+<div class="relative">
+    <header id="accordion_header" class="flex flex_row sticky t_n2 bg_white shadow_overlap-light br_solid br_1 br_black-2 z_2 ">
+        <div class="h:bg_primary-5 m_2 c_primary h:c_primary-n2 br_radius">
+            <div class="flex_none collapsed" aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#content_accordion" aria-controls="#content_accordion">
+                    <span class="fa-stack">
+                    <i class="fas fa-minus fa-stack-1x"></i>
+                    <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+                    </span>
+            </div>        </div>
+        <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
+            <div class="flex_auto self_center reading-typography no-margins">
+               <h3> Accordion Header Level 3</h3>
+            </div>
+        </div>
+    </header>
+    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
 #### **Perfusionist**
 
@@ -210,7 +484,24 @@ A cardiovascular perfusionist, clinical perfusionist or perfusiologist, and occa
 
 **For more information please visit:** [State Perfusion Societies - International Board of Blood Management (_intbbm.org_)](https://intbbm.org/organizations/state-perfusion-societies/)
 
-* * *
+ </main>
+</div>
+<div class="relative">
+    <header id="accordion_header" class="flex flex_row sticky t_n2 bg_white shadow_overlap-light br_solid br_1 br_black-2 z_2 ">
+        <div class="h:bg_primary-5 m_2 c_primary h:c_primary-n2 br_radius">
+            <div class="flex_none collapsed" aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#content_accordion" aria-controls="#content_accordion">
+                    <span class="fa-stack">
+                    <i class="fas fa-minus fa-stack-1x"></i>
+                    <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+                    </span>
+            </div>        </div>
+        <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
+            <div class="flex_auto self_center reading-typography no-margins">
+               <h3> Accordion Header Level 3</h3>
+            </div>
+        </div>
+    </header>
+    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
 #### **Physical Therapist**
 
@@ -222,7 +513,24 @@ Physical therapists are movement experts who improve quality of life through pre
 
 **For more information please visit:** [Become a PA: Getting Your Prerequisites and Certification - (_aapa.org_)](https://www.aapa.org/career-central/become-a-pa/)
 
-* * *
+ </main>
+</div>
+<div class="relative">
+    <header id="accordion_header" class="flex flex_row sticky t_n2 bg_white shadow_overlap-light br_solid br_1 br_black-2 z_2 ">
+        <div class="h:bg_primary-5 m_2 c_primary h:c_primary-n2 br_radius">
+            <div class="flex_none collapsed" aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#content_accordion" aria-controls="#content_accordion">
+                    <span class="fa-stack">
+                    <i class="fas fa-minus fa-stack-1x"></i>
+                    <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+                    </span>
+            </div>        </div>
+        <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
+            <div class="flex_auto self_center reading-typography no-margins">
+               <h3> Accordion Header Level 3</h3>
+            </div>
+        </div>
+    </header>
+    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
 #### **Physician Associate**
 
@@ -236,7 +544,24 @@ PAs practice in every state and in every medical setting and specialty, improvin
 
 **For more information please visit:**
 
-* * *
+ </main>
+</div>
+<div class="relative">
+    <header id="accordion_header" class="flex flex_row sticky t_n2 bg_white shadow_overlap-light br_solid br_1 br_black-2 z_2 ">
+        <div class="h:bg_primary-5 m_2 c_primary h:c_primary-n2 br_radius">
+            <div class="flex_none collapsed" aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#content_accordion" aria-controls="#content_accordion">
+                    <span class="fa-stack">
+                    <i class="fas fa-minus fa-stack-1x"></i>
+                    <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+                    </span>
+            </div>        </div>
+        <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
+            <div class="flex_auto self_center reading-typography no-margins">
+               <h3> Accordion Header Level 3</h3>
+            </div>
+        </div>
+    </header>
+    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
 #### **Registered Dietitian**
 
@@ -250,7 +575,24 @@ RDN's/RD'S are trained by completing an undergraduate degree in food or nutritio
 
 **For more information please visit:** [Registered Dietitian (RD) or Registered Dietitian Nutritionist (RDN) Certification - Commission on Dietetic Registration (_cdrnet.org_)](https://www.cdrnet.org/certifications/registered-dietitian-rd-certification)
 
-* * *
+ </main>
+</div>
+<div class="relative">
+    <header id="accordion_header" class="flex flex_row sticky t_n2 bg_white shadow_overlap-light br_solid br_1 br_black-2 z_2 ">
+        <div class="h:bg_primary-5 m_2 c_primary h:c_primary-n2 br_radius">
+            <div class="flex_none collapsed" aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#content_accordion" aria-controls="#content_accordion">
+                    <span class="fa-stack">
+                    <i class="fas fa-minus fa-stack-1x"></i>
+                    <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+                    </span>
+            </div>        </div>
+        <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
+            <div class="flex_auto self_center reading-typography no-margins">
+               <h3> Accordion Header Level 3</h3>
+            </div>
+        </div>
+    </header>
+    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
 #### **Registered Nurse**
 
@@ -262,4 +604,5 @@ A Registered Nurse (RN) is a licensed healthcare professional who has graduated 
 
 **For more information please visit:** [Join the American Nurses Association (_nursingworld.org_)](https://www.nursingworld.org/membership/joinANA/)
 
-* * *
+ </main>
+</div>
