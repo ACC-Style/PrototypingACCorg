@@ -1,8 +1,30 @@
 ---
-layout: arches-article
-name: "Cardiovascular Careers Path"
-position: "Home"
+layout: arches-cardiology
+name: "Careers"
+position: "CV Team"
 ---
+# CV Team Pathways
+
+
+
+## Make a Difference in Cardiovascular Care* 
+
+Here is a paragraph with the link titles:
+
+Discover exciting career paths beyond traditional clinical practice with these resources:
+- "Novel Careers in Cardiology"
+- "Careers in Entrepreneurship and Industry As a Cardiologist: An Insider's Perspective"
+- "How Can Early Career Cardiologists Build a Successful Research Career: Navigating Clinical Research and Data Sets!"
+- "How Can Early Career Cardiologists Build a Successful Research Career: Grant Research and Manuscript Submission"
+- "Alternative Careers in Cardiology"
+
+Whether you are interested in pursuing a non-traditional role in cardiology, exploring entrepreneurial opportunities, or building a successful research career, these resources offer valuable insights and guidance to help you achieve your career path.
+
+
+Explore the exciting and dynamic career options of the CV Team
+
+
+
 
 
 

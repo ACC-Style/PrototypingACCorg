@@ -1,0 +1,183 @@
+---
+layout: default
+---
+
+{% include arches-head.html %}
+<body
+  id="ng-app"
+  ng-app="AccApp"
+  class="user-not-logged-in ng-scope medium-viewport"
+  style="background-color: #c1d6d9"
+>
+  <style lang="">
+    .col-end_end {
+      grid-column-end: -1;
+    }
+    .col-start_start {
+      grid-column-start: 1;
+    }
+  </style>
+  <div class="max-w_75 m_auto">
+    <div class="bg_white shadow_overlap-light">
+      {% include arches-header.html %}
+      <div class="grid grid-col_1 grid-col_3:md grid-col_4:lg">
+        <main
+          class="reading-typography col-end_end col-start_2:md p_5:lg p_4:md p_3"
+        >
+          {{content}}
+        </main>
+        <section
+          class="col-end_2:md col-start_start row-start_1:md row-start_2"
+        >
+          <nav class="nav-sub bg_primary c_white font_2 font_ui">
+            <ul class="ul_none flex_column flex">
+              <li class="nav-item font-size_up" data-nav="parent">
+                <div class="bg_black-4">
+                  <a href="../CardiologyCareers"
+                    class="text-shadow_black-1 block w_100 c_white p-y_2 p-x_4 w_100 h:c_white inline-block h:underline self_center"
+                    >A Career in Cardiology</a
+                  >
+                </div>
+              </li>
+              <li class="nav-item" data-nav="child">
+                <div class="flex flex_row">
+                  <div class="flex flex_column flex_none justify_start">
+                    <div class="flex_none">
+                      <span class="fa-stack">
+                        <i class="fas fa-spacer fa-stack-1x"></i>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="flex_auto self_center">
+                    <a href="../CardiologyCareers_Physician/"
+                      class="text-shadow_black-1 c_white-9 p-y_2 p-x_3 w_100 h:c_white inline-block h:underline self_center a:bg_black-3"
+                      >Physician Pathway</a
+                    >
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item" data-nav="child">
+                <div class="flex flex_row">
+                  <div class="flex flex_column flex_none justify_start">
+                    <div class="flex_none">
+                      <span class="fa-stack">
+                        <i class="fas fa-spacer fa-stack-1x"></i>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="flex_auto self_center">
+                    <a
+                    href="../CardiologyCareers_CVTeam/"
+                      class="text-shadow_black-1 c_white-9 p-y_2 p-x_3 w_100 h:c_white inline-block h:underline self_center a:bg_black-3"
+                      >CV Team Pathway</a
+                    >
+                  </div>
+                </div>
+              </li>
+             
+              <li class="nav-item active" data-nav="child">
+            <div class="flex flex_row">
+                <div class="active br-r_1 br_solid br_white-2 flex flex_column flex_none justify_start text-shadow_black-n1 c_white">
+                    <div class="flex_none" aria-expanded="false" data-bs-toggle="collapse" data-bs-target=".childNavCollapse" aria-controls=".childNavCollapse">
+                            <span class="fa-stack">
+                            <i class="fas fa-minus fa-stack-1x"></i>
+                            <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+                            </span>
+                    </div></div>        <div class="flex_auto self_center">
+                    <a class="text-shadow_black-1 active c_white-9 p-y_2 p-x_3 w_100 h:c_white inline-block h:underline self_center  a:bg_black-3">Resources</a>
+                    <nav class="nav-sub-child bg_white-2 font-size_down collapse childNavCollapse show">
+                        <ul class="ul_none flex_column flex">
+                            <li class="nav-item " data-nav="child">
+                                <div class="flex flex_row">
+                                    <div class="flex flex_column flex_none justify_start">
+                                        <div class="flex_none">
+                                            <span class="fa-stack">
+                                                <i class="fas fa-spacer fa-stack-1x"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="flex_auto self_center">
+                                        <a href="../CardiologyCareers_Gallery/" class="text-shadow_black-1  c_white-9 p-y_2 p-x_3 w_100 h:c_white inline-block h:underline self_center a:bg_black-3">Video Gallery</a>
+                                    </div>
+                                </div>
+                            </li>                    <li class="nav-item " data-nav="child">
+                                <div class="flex flex_row">
+                                    <div class="flex flex_column flex_none justify_start">
+                                        <div class="flex_none">
+                                            <span class="fa-stack">
+                                                <i class="fas fa-spacer fa-stack-1x"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="flex_auto self_center">
+                                        <a class="text-shadow_black-1  c_white-9 p-y_2 p-x_3 w_100 h:c_white inline-block h:underline self_center  a:bg_black-3">Webinars</a>
+                                    </div>
+                                </div>
+                            </li>                    <li class="nav-item " data-nav="child">
+                                <div class="flex flex_row">
+                                    <div class="flex flex_column flex_none justify_start">
+                                        <div class="flex_none">
+                                            <span class="fa-stack">
+                                                <i class="fas fa-spacer fa-stack-1x"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="flex_auto self_center">
+                                        <a class="text-shadow_black-1  c_white-9 p-y_2 p-x_3 w_100 h:c_white inline-block h:underline self_center  a:bg_black-3">Why Cardiology</a>
+                                    </div>
+                                </div>
+                            </li>                         
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </li>
+              <li class="nav-item" data-nav="child">
+                <div class="flex flex_row">
+                  <div class="flex flex_column flex_none justify_start">
+                    <div class="flex_none">
+                      <span class="fa-stack">
+                        <i class="fas fa-spacer fa-stack-1x"></i>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="flex_auto self_center">
+                    <a
+                      class="text-shadow_black-1 c_white-9 p-y_2 p-x_3 w_100 h:c_white inline-block h:underline self_center a:bg_black-3"
+                      >Leadership Programs</a
+                    >
+                  </div>
+                </div>
+              </li>
+                            <li class="nav-item" data-nav="child">
+                <div class="flex flex_row">
+                  <div class="flex flex_column flex_none justify_start">
+                    <div class="flex_none">
+                      <span class="fa-stack">
+                        <i class="fas fa-spacer fa-stack-1x"></i>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="flex_auto self_center">
+                    <a
+                      class="text-shadow_black-1 c_white-9 p-y_2 p-x_3 w_100 h:c_white inline-block h:underline self_center a:bg_black-3"
+                      >Community</a
+                    >
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </nav>
+        </section>
+      </div>
+
+      {% include arches-footer.html %}
+    </div>
+  </div>
+</body>
+
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+  crossorigin="anonymous"
+></script>

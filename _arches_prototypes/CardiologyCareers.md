@@ -1,13 +1,13 @@
 ---
-layout: arches-article
-name: "Cardiovascular Careers"
-position: "Home"
+layout: arches-cardiology
+name: "Careers"
+position: "Cardiovascular"
 ---
 
 
 
 
-# A Career in Cardiology
+# Empowering Future Cardiologists: A Career in Cardiology
 
 Welcome to the world of cardiology – a field that focuses on the heart and the circulatory system. Whether you're just starting out or considering a career change, we're here to provide you with the information you need to explore the field of cardiology and the many opportunities it offers. 
 ## The American College of Cardiology (ACC) is Here to Help
@@ -21,6 +21,8 @@ The American College of Cardiology (ACC) is a professional organization dedicate
 Cardiology is a medical specialty that focuses on the structure, function, prevention, and treatment of disorders of the heart and vascular system. This field includes the diagnosis and treatment of congenital heart defects, coronary artery disease, vascular disease, heart rhythm abnormalities, and heart failure. 
 
 ## Why Cardiology?
+
+<div class="aspect aspect_16x9 bg-acc bg_acc br_radius c_white grid items_center justify_center m-b_3 p_3 text_center float_right:md max-w_20:md m_5 m-t_0">Why I choose cardiology</div>
 
 Cardiovascular disease is the world's number one killer, accounting for nearly half of all non-communicable disease-related deaths. By choosing cardiology as your profession, you will have the opportunity to make a difference in your patients' lives and impact public health on a global scale. 
 
