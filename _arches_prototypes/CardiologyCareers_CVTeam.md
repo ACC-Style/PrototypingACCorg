@@ -16,11 +16,10 @@ Discover exciting career paths beyond traditional clinical practice with these r
 * [Grant Research and Manuscript Submission: Building a Successful Research Career as an Early Career Cardiologist](#)
 * [Thinking Beyond the Clinic: Alternative Careers in Cardiology to Consider](#)
 
+
+## Diverse and Dynamic Feild
 Below is a list of potential careers within the CV Team, each with their own unique set of opportunities and challenges. So, take a look and see which one speaks to you and your career aspirations.
 
-
-
-  
    
 
 

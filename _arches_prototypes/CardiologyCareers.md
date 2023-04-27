@@ -68,6 +68,12 @@ At the American College of Cardiology, we are committed to strengthening the car
 
 With as many professions as there are in cardiovascular medicine, there is no one pathway to a career in cardiology. Explore the information below to get a sense of what steps you can start taking to pursue your dream career!
 
+### High School and College Students
+
+The [Young Scholars Program](#) pairs participants with an ACC member mentor for a year of research and education about cardiology and cardiovascular disease. This program is designed for those interested in a career in science.
+
+
+
 
 <div class="bg_acc br_radius c_white color_inherit inherit links_dark p_4 reading-typography">
 <h2 class="text_center br-b_1 br_solid p-b_3 m-b_3">Choose a Pathway</h2>
