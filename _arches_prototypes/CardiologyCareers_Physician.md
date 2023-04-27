@@ -19,6 +19,7 @@ There are many career paths in cardiology and a variety of ways to specialize. L
 -	FAQs, Fellowship Application Resources, and Advice for International Medical Graduates
 -	Tips and Tricks For Fellowship Interviews
 -	Residency: Picking the Right Program, Creating Your Opportunities, and Transitioning to Fellowship and Beyond
+
 ## Cardiology Fellowship
 -	How to Navigate the First Year of CV Fellowship: Practical Pearls from My Training Years (Webinar)
 -	Applying for Fellowship in 2022: Tips and Tricks Straight from Program Directors - An ACC FIT and PDGME Section Collaboration

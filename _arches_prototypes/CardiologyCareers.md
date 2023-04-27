@@ -28,7 +28,7 @@ Cardiovascular disease is the world's number one killer, accounting for nearly h
 
 Cardiology offers an incredible array of career options based on your interests and talents. The field is also rich in history and innovation, and by exploring the experiences of those who have come before you, you can gain a deeper understanding of what it means to be a cardiologist. 
 
-[Explore why some of our members became cardiologists.](#)
+[Explore why some of the personal stories behind why our members became cardiologists.](#)
 
 ## Who is Part of Cardiology?
 
