@@ -80,17 +80,17 @@ Below is a list of potential careers within the CV Team, each with their own uni
             </div>        </div>
         <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
             <div class="flex_auto self_center reading-typography no-margins">
-               <h3> Accordion Header Level 3</h3>
+               <h3> ECG Monitor/ Rhythm Analysis Technician (CRAT)</h3>
             </div>
         </div>
     </header>
     <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
-#### **ECG Monitor/ Rhythm Analysis Technician (CRAT)**
 
-A Certified Rhythm Analysis Technician is a monitor and device cardiac technician who assists in the diagnosis and treatment of patients, by analyzing cardiac rhythms and implanted device tests, utilizing specialized monitoring equipment.
+<p>A Certified Rhythm Analysis Technician is a monitor and device cardiac technician who assists in the diagnosis and treatment of patients, by analyzing cardiac rhythms and implanted device tests, utilizing specialized monitoring equipment.</p>
 
-<strong>Education/Pathways to Credentialing:</strong> work experience as a cardiovascular technologist or allied health field with or without allied health training/physical health.
+
+<p><strong>Education/Pathways to Credentialing:</strong> work experience as a cardiovascular technologist or allied health field with or without allied health training/physical health.</p>
 
  </main>
 </div>

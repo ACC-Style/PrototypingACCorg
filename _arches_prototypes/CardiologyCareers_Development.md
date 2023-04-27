@@ -1,27 +1,11 @@
 ---
 layout: arches-cardiology
 name: "Careers"
-position: "Physician Pathway"
+position: "Development & Leadership"
 ---
 
 # Physician Pathway
 There are many career paths in cardiology and a variety of ways to specialize. Learn more about your career options and the training and education you need to pursue each pathway below.
-
-## From Student to Practitioner
-
-The American College of Cardiology (ACC) offers various resources and programs at different stages of your career:
-
-- **High School and College Students** <br> The Young Scholars Program pairs participants with an ACC member mentor for a year of research and education about cardiology and cardiovascular disease. This program is designed for those interested in a career in science.
-- **Medical Students** <br> The ACC's active medical students group provides helpful information about pursuing a career in cardiology and a group of peers focused on exploring the specialty. Membership is free. 
-    - The Medical School Cardiology Interest Group Directory is also available for medical students to explore cardiology interest groups at educational institutions worldwide.
-- **Medical Residents** <br> The ACC's medical resident group provides community and education for residents interested in pursuing a career in cardiology. Find tools for career development, network with like-minded peers, and more. Membership is free.
-- **Becoming a Member**<br>
-    Medical students, residents, and fellows are eligible for free membership in the College. Apply in minutes online.
-
-By taking advantage of these programs and resources, you can learn more about the field of cardiology and build connections with others in the field at various stages of their careers.
-
-
-
 
 ## Secondary Education, College and Medical School
 -	Medical Resident Roadmap and Timeline
