@@ -61,38 +61,12 @@ Early career cardiologists offer a glimpse into what it's like to walk in their 
 	</li>
 </ul>
 
+## Start Today with help from the ACC
+
 At the American College of Cardiology, we are committed to strengthening the cardiology talent pipeline and introducing tomorrow's leaders to the field today. We invite you to explore the many career pathways in the field of cardiology, discover what it takes to start pursuing a career in this exciting and dynamic field, and start imagining yourself in cardiovascular medicine!
 
-
-## How To Start A Career In Cardiology
-
-With as many professions as there are in cardiovascular medicine, there is no one pathway to a career in cardiology. Explore the information below to get a sense of what steps you can start taking to pursue your dream career!
-
-### High School and College Students
-
-The [Young Scholars Program](#) pairs participants with an ACC member mentor for a year of research and education about cardiology and cardiovascular disease. This program is designed for those interested in a career in science.
+<a class="btn btn-primary" href="../CardiologyCareers_Start">How to Get Started</a>
 
 
 
-
-<div class="bg_acc br_radius c_white color_inherit inherit links_dark p_4 reading-typography">
-<h2 class="text_center br-b_1 br_solid p-b_3 m-b_3">Choose a Pathway</h2>
-<div class="grid gap_4 grid grid-col_2:md">
-<div class="p_3 relative">
-
-<h3>Physician Pathway</h3>
-<p>There are many career paths as a physician in cardiology and a variety of ways to specialize. Learn more about your career options and the training and education you need to pursue each pathway below.</p>
-
-<a class="btn btn-primary font_medium expanded-click-area">Physician Pathway</a>
-
-</div>
-<div class="p_3 relative">
-
-<h3>CV Team Pathway</h3>
-<p>The Cardiovascular (CV) Team includes nurse practitioners, registered nurses, PAs, pharmacists and many others who work together and alongside physicians to ensure the best possible treatment and outcomes for patients. Explore how to get started in these careers using the links below.</p>
-<a class="btn btn-primary font_medium expanded-click-area">CV Team Pathway</a>
-
-
-</div></div>
-</div>
 
