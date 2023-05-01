@@ -26,3 +26,6 @@ The ACC is committed to promoting clinical research in cardiovascular care. They
 
 - [Gender Diversity in Cardiovascular Trial Research Begins at the Top (JACC)](#)
 - [Clinical Research in a Big Data, High-Tech World (Cardiology)](#)
+
+---
+**Explore Cardiovascular Pathways:** [Physicain](../CardiologyCareers_Physician/)`|`[CV Team](../CardiologyCareers_CVTeam/)`|`[Clinical Trials Research](../CardiologyCareers_ClinicalTrial/)

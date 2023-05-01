@@ -104,13 +104,11 @@ Below is a list of potential careers within the CV Team, each with their own uni
             </div>        </div>
         <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
             <div class="flex_auto self_center reading-typography no-margins">
-               <h3> Accordion Header Level 3</h3>
+               <h3> Congenital/Pediatric Cardiac Sonographer (RCCS or RDCS-PE)</h3>
             </div>
         </div>
     </header>
     <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
-
-#### **Congenital/Pediatric Cardiac Sonographer (RCCS or RDCS-PE)**
 
 A Registered Congenital Cardiac Sonographer assists in the care of patients with pediatric and adult congenital cardiac abnormalities by utilizing specialized ultrasound systems to collect and analyze cardiac images.
 
@@ -129,13 +127,11 @@ A Registered Congenital Cardiac Sonographer assists in the care of patients with
             </div>        </div>
         <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
             <div class="flex_auto self_center reading-typography no-margins">
-               <h3> Accordion Header Level 3</h3>
+               <h3> Cardiac Sonographer (RCS or RDCS)</h3>
             </div>
         </div>
     </header>
     <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
-
-#### **Cardiac Sonographer (RCS or RDCS)**
 
 A Registered Cardiac Sonographer assists in the care of patients utilizing echocardiography/cardiac ultrasound systems to collect and analyze cardiac images.
 
@@ -154,13 +150,13 @@ A Registered Cardiac Sonographer assists in the care of patients utilizing echoc
             </div>        </div>
         <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
             <div class="flex_auto self_center reading-typography no-margins">
-               <h3> Accordion Header Level 3</h3>
+               <h3> Phlebology Sonographer (RPhS)</h3>
             </div>
         </div>
     </header>
     <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
-#### **Phlebology Sonographer (RPhS)**
+
 
 A Registered Phlebology Sonographer is a professional working in venous ultrasound (phlebology). The credential may also be obtained by a Physician, Physician Assistant, and Nurse Practitioner.
 
@@ -179,13 +175,13 @@ A Registered Phlebology Sonographer is a professional working in venous ultrasou
             </div>        </div>
         <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
             <div class="flex_auto self_center reading-typography no-margins">
-               <h3> Accordion Header Level 3</h3>
+               <h3>Vascular Specialist/Technologist (RVS or RVT)</h3>
             </div>
         </div>
     </header>
     <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
-#### **Vascular Specialist/Technologist (RVS or RVT)**
+#### ****
 
 A Registered Vascular Specialist is a professional working in Vascular Technology (Vascular Ultrasound) to collect and analyze venous and arterial images.
 
@@ -204,13 +200,13 @@ A Registered Vascular Specialist is a professional working in Vascular Technolog
             </div>        </div>
         <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
             <div class="flex_auto self_center reading-typography no-margins">
-               <h3> Accordion Header Level 3</h3>
+               <h3>*Clinical Nurse Specialist (CNS)</h3>
             </div>
         </div>
     </header>
     <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
-#### **Clinical Nurse Specialist (CNS)**
+
 
 An advanced practice registered nurse with a graduate-level degree in nursing and competence in a specialized area of nursing. They are clinical experts in evidence-based nursing practice within a specialty area, treating and managing the health concerns of patients and populations. In addition to direct patient care, CNSs also engage in teaching, mentoring, consulting, research, management and systems improvement.
 
@@ -233,13 +229,13 @@ An advanced practice registered nurse with a graduate-level degree in nursing an
             </div>        </div>
         <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
             <div class="flex_auto self_center reading-typography no-margins">
-               <h3> Accordion Header Level 3</h3>
+               <h3>Clinical Pharmacist</h3>
             </div>
         </div>
     </header>
     <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
-#### **Clinical Pharmacist**
+#### ****
 
 Trained Pharmacist that provides patient care that optimizes the use of medication and promotes health, wellness, and disease prevention. Work in collaboration with care teams including physicians, advanced practice providers, nurses, patients, and other healthcare professionals. Primarily practice in a hospital or clinical setting.
 
@@ -260,13 +256,13 @@ Trained Pharmacist that provides patient care that optimizes the use of medicati
             </div>        </div>
         <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
             <div class="flex_auto self_center reading-typography no-margins">
-               <h3> Accordion Header Level 3</h3>
+               <h3>Clinical Psychologist</h3>
             </div>
         </div>
     </header>
     <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
-#### **Clinical Psychologist**
+#### ****
 
 An expert or specialist in the branch of psychology is concerned with the assessment and treatment of mental illness and psychological problems. A clinical psychologist typically completes the equivalent of a year of formal internship before graduating with a doctoral degree. Most states require the equivalent of a year of supervised practice at the postgraduate level.
 
@@ -291,13 +287,13 @@ How can clinical psychologists impact cardiovascular care? Cardiovascular diseas
             </div>        </div>
         <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
             <div class="flex_auto self_center reading-typography no-margins">
-               <h3> Accordion Header Level 3</h3>
+               <h3>Clinical Social Worker</h3>
             </div>
         </div>
     </header>
     <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
-#### **Clinical Social Worker**
+
 
 A specialty practice area of social work which focuses on the assessment, diagnosis, treatment, and prevention of mental illness, emotional, and other behavioral disturbances. Individual, group and family therapy are common treatment modalities.
 
@@ -320,13 +316,13 @@ Cardiovascular disease can be complex and incoorperate multiple co-morbid condit
             </div>        </div>
         <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
             <div class="flex_auto self_center reading-typography no-margins">
-               <h3> Accordion Header Level 3</h3>
+               <h3> Exercise Physiologist</h3>
             </div>
         </div>
     </header>
     <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
-#### **Exercise Physiologist**
+
 
 Exercise Physiologist is a healthcare professional who either has an academic degree in exercise physiology or who is certified by ASEP to practice exercise physiology \[via the Exercise Physiologist Certified exam (EPC)\] and, therefore, is recognized as an ASEP Board Certified Exercise Physiologist, or who has a doctorate degree in exercise physiology from an accredited college or university. The comprehensive delivery of treatment services concerned with the analysis, improvement, and maintenance of the physiological mechanisms underlying physical and mental health and fitness through regular exercise, the prevention and/or treatment of chronic diseases and/or disabilities with exercise medicine, and the professional guidance of athletes and others interested in athletics and sports training.
 
@@ -351,13 +347,13 @@ Exercise physiologists typically function within cardiovascular care in the card
             </div>        </div>
         <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
             <div class="flex_auto self_center reading-typography no-margins">
-               <h3> Accordion Header Level 3</h3>
+               <h3> Genetic Counselor</h3>
             </div>
         </div>
     </header>
     <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
-#### **Genetic Counselor**
+
 
 A health professional who has special training in medical genetics and counseling. Genetic counselors help patients and families who have, or who may be at risk of, a genetic condition. Using family history, a genetic counselor will assess individual or family risk of an inherited condition, such as a genetic disorder or a birth defect.
 
@@ -382,13 +378,13 @@ Certain cardiovascular conditions can be hereditary such as cardiomyopathies or 
             </div>        </div>
         <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
             <div class="flex_auto self_center reading-typography no-margins">
-               <h3> Accordion Header Level 3</h3>
+               <h3>Informatics</h3>
             </div>
         </div>
     </header>
     <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
-#### **Informatics**
+
 
 The application of informatics and information technology to deliver healthcare services. Professionals who are focused on developing, managing, or implementing electronic and informatics solutions for the cardiac patient population. Demonstrate proficient competencies and participate with health information technology, electronic medical records, telemedicine, mobile health, and big data.
 
@@ -411,13 +407,13 @@ The application of informatics and information technology to deliver healthcare 
             </div>        </div>
         <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
             <div class="flex_auto self_center reading-typography no-margins">
-               <h3> Accordion Header Level 3</h3>
+               <h3>Nurse practitioner/Advanced Practice Nurse</h3>
             </div>
         </div>
     </header>
     <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
-#### **Nurse practitioner/Advanced Practice Nurse**
+
 
 An APRN is a master's or post-masters level nurse and are prepared to assess, diagnose, and manage patient problems, order test, and prescribe medications. Furthermore, APRN's advise the public on health issues, manage chronic disease, and engage in continuous education to remain ahead of any technological advances in their field (American Nurses Association).
 
@@ -444,13 +440,13 @@ An APRN is a master's or post-masters level nurse and are prepared to assess, di
             </div>        </div>
         <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
             <div class="flex_auto self_center reading-typography no-margins">
-               <h3> Accordion Header Level 3</h3>
+               <h3>Occupational Therapist</h3>
             </div>
         </div>
     </header>
     <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
-#### **Occupational Therapist**
+#### ****
 
 oooooo
 
@@ -467,13 +463,13 @@ oooooo
             </div>        </div>
         <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
             <div class="flex_auto self_center reading-typography no-margins">
-               <h3> Accordion Header Level 3</h3>
+               <h3>Perfusionist</h3>
             </div>
         </div>
     </header>
     <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
-#### **Perfusionist**
+
 
 A cardiovascular perfusionist, clinical perfusionist or perfusiologist, and occasionally a cardiopulmonary bypass doctor or clinical perfusion scientist, is a healthcare professional who operates the cardiopulmonary bypass machine (heart-lung machine) during cardiac surgery and other surgeries that require a cardiopulmonary bypass to manage the patient's physiological status. As a member of the cardiovascular surgical team, the perfusionist also known as the clinical perfusionist helps maintain blood flow to the body's tissues as well as regulate levels of oxygen and carbon dioxide in the blood, using a heart-lung machine.
 
@@ -496,13 +492,13 @@ A cardiovascular perfusionist, clinical perfusionist or perfusiologist, and occa
             </div>        </div>
         <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
             <div class="flex_auto self_center reading-typography no-margins">
-               <h3> Accordion Header Level 3</h3>
+               <h3> Physical Therapist</h3>
             </div>
         </div>
     </header>
     <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
-#### **Physical Therapist**
+
 
 Physical therapists are movement experts who improve quality of life through prescribed exercise, hands-on care, and patient education. Physical therapists diagnose and treat individuals of all ages, from newborns to people at the end of life. Many patients have injuries, disabilities, or other health conditions that need treatment. But PTs also care for people who simply want to become healthier and to prevent future problems. Physical therapists examine each person and then develop a treatment plan to improve their ability to move, reduce or manage pain, restore function, and prevent disability.
 
@@ -525,13 +521,12 @@ Physical therapists are movement experts who improve quality of life through pre
             </div>        </div>
         <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
             <div class="flex_auto self_center reading-typography no-margins">
-               <h3> Accordion Header Level 3</h3>
+               <h3> Physician Associate</h3>
             </div>
         </div>
     </header>
     <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
-#### **Physician Associate**
 
 PAs (physician associates/physician assistants) are medical professionals who diagnose illness, develop and manage treatment plans, prescribe medications, and often serve as a patient's principal healthcare provider. With thousands of hours of medical training, PAs are versatile and collaborative.
 
@@ -556,13 +551,13 @@ PAs practice in every state and in every medical setting and specialty, improvin
             </div>        </div>
         <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
             <div class="flex_auto self_center reading-typography no-margins">
-               <h3> Accordion Header Level 3</h3>
+               <h3> Registered Dietitian</h3>
             </div>
         </div>
     </header>
     <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
-#### **Registered Dietitian**
+
 
 Responsible for the promotion of good health through proper diet and with the therapeutic use of diet in the treatment of disease. The Registered Dietitian Nutritionist (RDN) or Registered Dietitian (RD) is a vital part of the cardiovascular care team across the spectrum of cardiovascular illness from acute to chronic nutritional management of disease. RDN's/RD's may be involved in interdisciplinary decision making for nutrition in an intensive care unit (ICU), provide dietary and nutrition counseling for patients with newly discovered cardiovascular diseases in the hospital or office setting, or for ongoing nutritional adjustments in the outpatient setting.
 
@@ -587,13 +582,13 @@ RDN's/RD'S are trained by completing an undergraduate degree in food or nutritio
             </div>        </div>
         <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
             <div class="flex_auto self_center reading-typography no-margins">
-               <h3> Accordion Header Level 3</h3>
+               <h3> Registered Nurse</h3>
             </div>
         </div>
     </header>
     <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
-#### **Registered Nurse**
+
 
 A Registered Nurse (RN) is a licensed healthcare professional who has graduated from an accredited program and passed a national board exam (NCLEX-RN). An RN is licensed by the governing board in the state/province in which he/she practices. The scope of practice is determined by state/province legislation and is regulated by a board. RN's work in the cardiovascular setting in innumerable ways. The most common and often entry-level into cardiovascular nursing is in an acute care hospital in a telemetry (heart monitor) unit, an intensive care unit (ICU), or emergency department. RN's often spend some time in these settings gaining knowledge and experience in cardiovascular care before moving on to more specialty units such as a cardiovascular intensive care unit (CVICU), cardiac catheterization lab, cardiac rehabilitation, outpatient cardiology office setting, or management in certain cardiovascular care lines of service.
 
@@ -605,3 +600,6 @@ A Registered Nurse (RN) is a licensed healthcare professional who has graduated 
 
  </main>
 </div>
+
+---
+**Explore Cardiovascular Pathways:** [Physicain](../CardiologyCareers_Physician/)`|`[CV Team](../CardiologyCareers_CVTeam/)`|`[Clinical Trials Research](../CardiologyCareers_ClinicalTrial/)

@@ -38,3 +38,6 @@ There are many career paths in cardiology and a variety of ways to specialize. L
 -	Ramp It Up: Top Tips for a Successful Heart Failure/Transplant Fellowship Match
 -	Geriatric Cardiology Research Spotlight: Aging Research Within Interventional Cardiology
 -	Multimodality CV Imaging Training: Challenges and Opportunities
+
+---
+**Explore Cardiovascular Pathways:** [Physicain](../CardiologyCareers_Physician/)`|`[CV Team](../CardiologyCareers_CVTeam/)`|`[Clinical Trials Research](../CardiologyCareers_ClinicalTrial/)
