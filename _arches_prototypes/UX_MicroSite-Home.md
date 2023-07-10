@@ -53,15 +53,15 @@ position: "About"
     <div class="grid columns_6 rows_4 gap_4 p-x_5:lg p-x_4 max-w_30 m_auto" style="">
       <img
         class="shadow_overlap-light br_round w_100 row-start_start:md row-end_end:md col-start_start:md col-end_3:md row-start_3 row-end_end col-start_start col-end_5 br-tr_square self_center:md gird"
-        src="{{ 'assets\images\MicroSite\Doctor1.png' | relative_url }}"
+        src="{{ 'assets/images/MicroSite/Doctor1.png' | relative_url }}"
         alt="">
       <img
         class="shadow_overlap-light br_round w_100 row-start_start row-end_3 col-start_3:md col-end_end:md  col-start_2 col-end_n2 self_end br-tl_square br-br_square grid transform_4"
-        src="{{ 'assets\images\MicroSite\Doctor2.png' | relative_url }}"
+        src="{{ 'assets/images/MicroSite/Doctor2.png' | relative_url }}"
         alt="">
       <img
         class="shadow_overlap-light br_round w_100 row-start_3 row-end_end col-start_3:md col-end_6:md col-start_5 col-end_end self_start br-br_square  br-tl_square grid"
-        src="{{ 'assets\images\MicroSite\Doctor3.png' | relative_url }}"
+        src="{{ 'assets/images/MicroSite/Doctor3.png' | relative_url }}"
         alt="">
     </div>
   </div>
