@@ -8,7 +8,7 @@ position: "Why Cardiology"
 Cardiology is a field that requires immense dedication, hard work, and a deep love for helping others. For many medical professionals, the decision to specialize in cardiology is driven by personal experiences, passions, and a desire to make a difference in the lives of their patients. In this collection of stories. From life-changing patient experiences to the thrill of solving complex medical puzzles, these individuals will share the unique and personal reasons why they chose cardiology as their career path.
 
 
-<div class="gap_4 gap_5:lg grid grid-col_1 grid-col_2:md grid-col_3:lg font_1 text_center lh_2">
+<div class="gap_4 gap_5:lg grid columns_1 columns_2:md columns_3:lg font_1 text_center lh_2">
 	<div class="flex flex_column gap_4 relative">
 		<div class="">
 			<img src="https://www.acc.org//-/media/Non-Clinical/Images/2019/07/01/Brown-Sherry-Ann-600x600.jpg" class="w_100 br_circle br_2 br_solid br_black-3  shadow_bevel-bold self_center" style="

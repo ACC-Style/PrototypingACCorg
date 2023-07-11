@@ -39,7 +39,7 @@ Early career cardiologists offer a glimpse into what it's like to walk in their 
 
 ### A Day in the Life
 
-<ul class="gap_2 grid grid-col_1 grid-col_3:lg grid-col_2:md items_start ul_none">
+<ul class="gap_2 grid columns_1 columns_3:lg columns_2:md items_start ul_none">
   <li><a href="link"> <strong>Data Analyst</strong> <br> Andrea Price, MS, RCIS, CCA</a></li>
   <li><a href="link"> <strong>Nurse Practitioner</strong><br> Marion McRae, ACNP-BC</a></li>
   <li><a href="link"> <strong>Advanced Registered Nurse Practitioner</strong> <br>Sandy Perlmutter, MSN, ARNP, AACC</a></li>

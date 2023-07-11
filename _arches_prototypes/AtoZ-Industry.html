@@ -29,7 +29,7 @@ position: "Home"
     class="bg_white br_radius grid items_center p_3 p_4:lg relative shadow_overlap-light z_2 m-t_n2"
   >
     <ul
-      class="c_secondary-2 flex:lg flex_row font_bold gap_4 grid grid-col_5 justify_around:lg justify_center m-x_4 m-y_3 ul_none"
+      class="c_secondary-2 flex:lg flex_row font_bold gap_4 grid columns_5 justify_around:lg justify_center m-x_4 m-y_3 ul_none"
     >
       <!-- Loop -->
       {% for alpha in alpha_array %}
@@ -63,7 +63,7 @@ position: "Home"
           </div>
         </div>
         <ul
-          class="flex_auto gap-x_5:lf gap-x_4 gap-y_4 grid grid-col_1 grid-col_2:md grid-col_3:lg p-t_0 p_4 ul_none"
+          class="flex_auto gap-x_5:lf gap-x_4 gap-y_4 grid columns_1 columns_2:md columns_3:lg p-t_0 p_4 ul_none"
         >
           {% for company in industry %}
             {% if company.grouping == alpha %}
