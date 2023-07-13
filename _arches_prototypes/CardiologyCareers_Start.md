@@ -14,7 +14,7 @@ The [Young Scholars Program](#) pairs participants with an ACC member mentor for
 
 <div class="bg_acc br_radius c_white color_inherit inherit links_dark p_4 reading-typography">
 <h2 class="text_center br-b_1 br_solid p-b_3 m-b_3">Choose a Pathway</h2>
-<div class="grid gap_4 grid grid-col_3:lg">
+<div class="grid gap_4 grid columns_3:lg">
 <div class="p_3 relative">
 
 <h3>Physician Pathway</h3>

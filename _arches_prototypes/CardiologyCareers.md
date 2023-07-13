@@ -37,12 +37,15 @@ Cardiology is a diverse field made up of professionals such as Physicians, Nurse
 
 Early career cardiologists offer a glimpse into what it's like to walk in their shoes, providing insights into the daily life of a cardiologist and what it takes to pursue a career in cardiology.
 
--	[A Day in the Life of an ACC FIT ](link)
--	[A Day in the Life: Andrea Price, MS, RCIS, CCA](link)
--	[A Day in the Life: An Interview With Brent N. Reed, PharmD, BCPS-AQ](link)
--	[A Day in the Life: Sandy Perlmutter, MSN, ARNP, AACC](link)
--	[A Day in the Life: Marion McRae, ACNP-BC](link)
+### A Day in the Life
 
+<ul class="gap_2 grid columns_1 columns_3:lg columns_2:md items_start ul_none">
+  <li><a href="link"> <strong>Data Analyst</strong> <br> Andrea Price, MS, RCIS, CCA</a></li>
+  <li><a href="link"> <strong>Nurse Practitioner</strong><br> Marion McRae, ACNP-BC</a></li>
+  <li><a href="link"> <strong>Advanced Registered Nurse Practitioner</strong> <br>Sandy Perlmutter, MSN, ARNP, AACC</a></li>
+  <li><a href="link"> <strong>ACC FIT</strong><br>  Nkechinyere “Nkechi” Ijioma, MD </a></li>
+  <li><a href="link"> <strong>Physician Practicing advanced HF</strong> <br> Brent N. Reed, PharmD, BCPS-AQ</a></li>
+</ul>
 
 ### In addition, we feature stories from experienced cardiologists, such as:
 

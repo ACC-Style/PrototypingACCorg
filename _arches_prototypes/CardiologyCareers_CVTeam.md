@@ -602,4 +602,4 @@ A Registered Nurse (RN) is a licensed healthcare professional who has graduated 
 </div>
 
 ---
-**Explore Cardiovascular Pathways:** [Physicain](../CardiologyCareers_Physician/)`|`[CV Team](../CardiologyCareers_CVTeam/)`|`[Clinical Trials Research](../CardiologyCareers_ClinicalTrial/)
+**Explore Cardiovascular Pathways:** [Physician](../CardiologyCareers_Physician/)`|`[CV Team](../CardiologyCareers_CVTeam/)`|`[Clinical Trials Research](../CardiologyCareers_ClinicalTrial/)

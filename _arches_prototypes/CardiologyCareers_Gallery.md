@@ -12,7 +12,7 @@ Our gallery of videos features doctors who are at the forefront of the cardiolog
 ## Career Paths In Cardiology
 #### FITs on the Go
 
-<div class="gap_4 grid grid-col_3:lg grid-col_2:md grid-col_1  lh_1">
+<div class="gap_4 grid columns_3:lg columns_2:md columns_1  lh_1">
 
 <div><div class="aspect aspect_16x9 bg-acc bg_acc br_radius c_white grid items_center justify_center m-b_3 p_3 text_center">Video</div>
     

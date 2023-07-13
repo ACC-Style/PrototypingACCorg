@@ -7,16 +7,16 @@ position: "Home Page"
 <div id="takeover" class="max-w_75 m_auto m-y_3">
     <a href="/">
         <picture>
-            <source srcset="https://via.placeholder.com/1200x160.png?text=Banner+Graphic+Desktop+Large" media="(min-width: 1024px)">
-            <source srcset="https://via.placeholder.com/900x160.png?text=Banner+Graphic+Desktop" media="(min-width: 768px)">
-            <source srcset="https://via.placeholder.com/600x200.png?text=Banner+Graphic+Tablet" media="(min-width: 400px)">
-            <img class="w_100" src="https://via.placeholder.com/300x300.png?text=Banner+Graphic+Mobile" alt="Renew Your Membership">
+            <source srcset="{{ 'assets/images/TakeOver/1200X160.png' | relative_url }}" media="(min-width: 1024px)">
+            <source srcset="{{ 'assets/images/TakeOver/900X160.png' | relative_url }}" media="(min-width: 768px)">
+            <source srcset="{{ 'assets/images/TakeOver/600X200.png' | relative_url }}" media="(min-width: 400px)">
+            <img class="w_100" src="{{ 'assets/images/TakeOver/300X300.png' | relative_url }}" alt="Renew Your Membership">
         </picture>
     </a>
 </div>
 
 <style>
     body {
-        background-image: url('/PrototypingACCorg//assets/images/TakeOver/body-bkg.png');
+        background-image: url("{{ 'assets/images/TakeOver/body-bkg.png' | relative_url }}");
     }
 </style>
