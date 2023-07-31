@@ -1,0 +1,39 @@
+---
+layout: arches
+name: "EDU"
+position: "Playground"
+---
+<link rel="stylesheet" href="https://assets.acc.org/Arches/Latest/dist/css/color-code_pathwayv2.css">
+<h1>Heart Failure</h1>
+<div class="grid columns_2:md columns_3:lg gap_4">
+    <div class="br_1 br_black-3 br_radius br_solid isolate_isolation relative">
+<div>
+            <h2 class="bg_hf c_white font_3 font_display p_3 p_4:lg">Acute Cardiac Transplant Rejection
+            <span class="black-6 block font-size_down-2 font_bold">(Version 6)</span>
+        </h2>
+        <ul class="font_copy p_4 reading-typography ul_none">
+            <li>
+                <p><span class="block font_bold">Medical Knowledge #9</span>Know the clinical pharmacology and use of immunosuppressive medications and other interventions in heart transplant patients in the treatment of rejection.</p>
+            </li>
+            <li>
+                <p><span class="block font_bold">PCPS3 Skill</span> to evaluate and manage patients with mechanical circulatory support or after heart transplant</p>
+            </li>
+            <li>
+                <p><span class="block font_bold">IPCS2</span>  Effectively lead and communicate with the interdisciplinary team involved in heart transplant and mechanical circulatory support
+Linked mentions</p>
+            </li>
+            <li class="font-size_down text_right font_italic c_primary underline">Task Force 12 Table 1 – Heart Failure</li>
+        </ul>
+</div>
+        <footer class="br-t_1 br_black-2 br_dotted grid items_center justify_center p-y_3">
+<a href="" class="btn btn-secondary extedned-click-area">Download Simulation Based </a>
+        </footer>
+<aside class="bg_black-2 br-t_1 br_black-2 br_solid p_3 font-size_down-2">
+            <ul class="ul_inline-pipe ul_list-comma">
+                <li class="font_bold no-after">Learning Domain:</li>
+                <li>Cognitive Knowledge Skill</li>
+                <li>Interprofessional Collaborative Team Skills</li>
+            </ul>
+        </aside>
+    </div>
+</div>
