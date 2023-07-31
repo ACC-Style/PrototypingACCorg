@@ -26,7 +26,7 @@ Linked mentions</p>
         </ul>
 </div>
         <footer class="br-t_1 br_black-2 br_dotted grid items_center justify_center p-y_3">
-<a href="" class="btn btn-secondary extedned-click-area">Download Simulation Based </a>
+<a href="" class="btn btn-secondary extedned-click-area">Start Here</a>
         </footer>
 <aside class="bg_black-2 br-t_1 br_black-2 br_solid p_3 font-size_down-2">
             <ul class="ul_inline-pipe ul_list-comma">
