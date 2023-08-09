@@ -5,7 +5,19 @@
 layout: home
 ---
 <div class="grid columns_3:lg columns_2:md columns_1 gap_4">
-
+<div class="">
+<h2 class="font_display">Playground</h2>
+{% for playground_prototype in site.playground_prototypes %}
+  <ul class="ul_none ">
+<li class="p_3 p-l_0 h:bg_primary-5">    <a href="{{ playground_prototype.url | append: site.github.build_revision | relative_url }}">
+      {{ playground_prototype.name }}
+      {% if playground_prototype.position %}
+         - {{ playground_prototype.position }}
+      {% endif %}
+    </a></li>
+  </ul>
+{% endfor %}
+</div>
 <div class="">
 <h2 class="font_display">Legacy Prototypes</h2>
 {% for legacy_prototype in site.legacy_prototypes %}
