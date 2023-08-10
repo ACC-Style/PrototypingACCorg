@@ -14816,1455 +14816,1455 @@ a:focus-visible {
   transition: all ease-in 0.2s;
 }
 
-.h\:bg_primary:hover,.bg_primary-0 {
+.h\:bg_primary:hover,.h\:bg_primary-0:hover {
   background-color: var(--primary) !important;
 }
 
-.bg_primary-1 {
+.h\:bg_primary-1:hover {
   background-color: hsla(var(--primary-h), calc( var(--primary-s) + ((100% - var(--primary-s)) * 0.015) ), calc( var(--primary-l) + ((100% - var(--primary-l)) * 0.15) ), 1) !important;
 }
 
-.bg_primary-2 {
+.h\:bg_primary-2:hover {
   background-color: hsla(var(--primary-h), calc( var(--primary-s) + ((100% - var(--primary-s)) * 0.037) ), calc( var(--primary-l) + ((100% - var(--primary-l)) * 0.37) ), 1) !important;
 }
 
-.bg_primary-3 {
+.h\:bg_primary-3:hover {
   background-color: hsla(var(--primary-h), calc( var(--primary-s) + ((100% - var(--primary-s)) * 0.06) ), calc( var(--primary-l) + ((100% - var(--primary-l)) * 0.6) ), 1) !important;
 }
 
-.bg_primary-4 {
+.h\:bg_primary-4:hover {
   background-color: hsla(var(--primary-h), calc( var(--primary-s) + ((100% - var(--primary-s)) * 0.078) ), calc( var(--primary-l) + ((100% - var(--primary-l)) * 0.78) ), 1) !important;
 }
 
-.bg_primary-5 {
+.h\:bg_primary-5:hover {
   background-color: hsla(var(--primary-h), calc( var(--primary-s) + ((100% - var(--primary-s)) * 0.09) ), calc( var(--primary-l) + ((100% - var(--primary-l)) * 0.9) ), 1) !important;
 }
 
-.bg_primary-n1 {
+.h\:bg_primary-n1:hover {
   background-color: hsla(var(--primary-h), calc( var( --primary-s ) - ( var( --primary-s ) * 0.01 ) ), calc( var( --primary-l ) - ( var( --primary-l ) * 0.1 ) ), 1) !important;
 }
 
-.bg_primary-n2 {
+.h\:bg_primary-n2:hover, .btn_acc-primary:hover {
   background-color: hsla(var(--primary-h), calc( var( --primary-s ) - ( var( --primary-s ) * 0.025 ) ), calc( var( --primary-l ) - ( var( --primary-l ) * 0.25 ) ), 1) !important;
 }
 
-.bg_primary-n3 {
+.h\:bg_primary-n3:hover {
   background-color: hsla(var(--primary-h), calc( var( --primary-s ) - ( var( --primary-s ) * 0.045 ) ), calc( var( --primary-l ) - ( var( --primary-l ) * 0.45 ) ), 1) !important;
 }
 
-.bg_primary-n4 {
+.h\:bg_primary-n4:hover {
   background-color: hsla(var(--primary-h), calc( var( --primary-s ) - ( var( --primary-s ) * 0.06 ) ), calc( var( --primary-l ) - ( var( --primary-l ) * 0.6 ) ), 1) !important;
 }
 
-.bg_primary-n5 {
+.h\:bg_primary-n5:hover {
   background-color: hsla(var(--primary-h), calc( var( --primary-s ) - ( var( --primary-s ) * 0.075 ) ), calc( var( --primary-l ) - ( var( --primary-l ) * 0.75 ) ), 1) !important;
 }
 
-.h\:c_primary:hover,.c_primary-0 {
+.h\:c_primary:hover,.h\:c_primary-0:hover {
   color: var(--primary) !important;
 }
 
-.c_primary-1 {
+.h\:c_primary-1:hover {
   color: hsla(var(--primary-h), calc( var(--primary-s) + ((100% - var(--primary-s)) * 0.015) ), calc( var(--primary-l) + ((100% - var(--primary-l)) * 0.15) ), 1) !important;
 }
 
-.c_primary-2 {
+.h\:c_primary-2:hover {
   color: hsla(var(--primary-h), calc( var(--primary-s) + ((100% - var(--primary-s)) * 0.037) ), calc( var(--primary-l) + ((100% - var(--primary-l)) * 0.37) ), 1) !important;
 }
 
-.c_primary-3 {
+.h\:c_primary-3:hover {
   color: hsla(var(--primary-h), calc( var(--primary-s) + ((100% - var(--primary-s)) * 0.06) ), calc( var(--primary-l) + ((100% - var(--primary-l)) * 0.6) ), 1) !important;
 }
 
-.c_primary-4 {
+.h\:c_primary-4:hover {
   color: hsla(var(--primary-h), calc( var(--primary-s) + ((100% - var(--primary-s)) * 0.078) ), calc( var(--primary-l) + ((100% - var(--primary-l)) * 0.78) ), 1) !important;
 }
 
-.c_primary-5 {
+.h\:c_primary-5:hover {
   color: hsla(var(--primary-h), calc( var(--primary-s) + ((100% - var(--primary-s)) * 0.09) ), calc( var(--primary-l) + ((100% - var(--primary-l)) * 0.9) ), 1) !important;
 }
 
-.c_primary-n1 {
+.h\:c_primary-n1:hover {
   color: hsla(var(--primary-h), calc( var( --primary-s ) - ( var( --primary-s ) * 0.01 ) ), calc( var( --primary-l ) - ( var( --primary-l ) * 0.1 ) ), 1) !important;
 }
 
-.c_primary-n2 {
+.h\:c_primary-n2:hover {
   color: hsla(var(--primary-h), calc( var( --primary-s ) - ( var( --primary-s ) * 0.025 ) ), calc( var( --primary-l ) - ( var( --primary-l ) * 0.25 ) ), 1) !important;
 }
 
-.c_primary-n3 {
+.h\:c_primary-n3:hover {
   color: hsla(var(--primary-h), calc( var( --primary-s ) - ( var( --primary-s ) * 0.045 ) ), calc( var( --primary-l ) - ( var( --primary-l ) * 0.45 ) ), 1) !important;
 }
 
-.c_primary-n4 {
+.h\:c_primary-n4:hover {
   color: hsla(var(--primary-h), calc( var( --primary-s ) - ( var( --primary-s ) * 0.06 ) ), calc( var( --primary-l ) - ( var( --primary-l ) * 0.6 ) ), 1) !important;
 }
 
-.c_primary-n5 {
+.h\:c_primary-n5:hover {
   color: hsla(var(--primary-h), calc( var( --primary-s ) - ( var( --primary-s ) * 0.075 ) ), calc( var( --primary-l ) - ( var( --primary-l ) * 0.75 ) ), 1) !important;
 }
 
-.h\:br_primary:hover,.br_primary-0 {
+.h\:br_primary:hover,.h\:br_primary-0:hover {
   border-color: var(--primary) !important;
 }
 
-.br_primary-1 {
+.h\:br_primary-1:hover {
   border-color: hsla(var(--primary-h), calc( var(--primary-s) + ((100% - var(--primary-s)) * 0.015) ), calc( var(--primary-l) + ((100% - var(--primary-l)) * 0.15) ), 1) !important;
 }
 
-.br_primary-2 {
+.h\:br_primary-2:hover {
   border-color: hsla(var(--primary-h), calc( var(--primary-s) + ((100% - var(--primary-s)) * 0.037) ), calc( var(--primary-l) + ((100% - var(--primary-l)) * 0.37) ), 1) !important;
 }
 
-.br_primary-3 {
+.h\:br_primary-3:hover {
   border-color: hsla(var(--primary-h), calc( var(--primary-s) + ((100% - var(--primary-s)) * 0.06) ), calc( var(--primary-l) + ((100% - var(--primary-l)) * 0.6) ), 1) !important;
 }
 
-.br_primary-4 {
+.h\:br_primary-4:hover {
   border-color: hsla(var(--primary-h), calc( var(--primary-s) + ((100% - var(--primary-s)) * 0.078) ), calc( var(--primary-l) + ((100% - var(--primary-l)) * 0.78) ), 1) !important;
 }
 
-.br_primary-5 {
+.h\:br_primary-5:hover {
   border-color: hsla(var(--primary-h), calc( var(--primary-s) + ((100% - var(--primary-s)) * 0.09) ), calc( var(--primary-l) + ((100% - var(--primary-l)) * 0.9) ), 1) !important;
 }
 
-.br_primary-n1 {
+.h\:br_primary-n1:hover {
   border-color: hsla(var(--primary-h), calc( var( --primary-s ) - ( var( --primary-s ) * 0.01 ) ), calc( var( --primary-l ) - ( var( --primary-l ) * 0.1 ) ), 1) !important;
 }
 
-.br_primary-n2 {
+.h\:br_primary-n2:hover {
   border-color: hsla(var(--primary-h), calc( var( --primary-s ) - ( var( --primary-s ) * 0.025 ) ), calc( var( --primary-l ) - ( var( --primary-l ) * 0.25 ) ), 1) !important;
 }
 
-.br_primary-n3, .btn_acc-primary {
+.h\:br_primary-n3:hover {
   border-color: hsla(var(--primary-h), calc( var( --primary-s ) - ( var( --primary-s ) * 0.045 ) ), calc( var( --primary-l ) - ( var( --primary-l ) * 0.45 ) ), 1) !important;
 }
 
-.br_primary-n4 {
+.h\:br_primary-n4:hover {
   border-color: hsla(var(--primary-h), calc( var( --primary-s ) - ( var( --primary-s ) * 0.06 ) ), calc( var( --primary-l ) - ( var( --primary-l ) * 0.6 ) ), 1) !important;
 }
 
-.br_primary-n5 {
+.h\:br_primary-n5:hover {
   border-color: hsla(var(--primary-h), calc( var( --primary-s ) - ( var( --primary-s ) * 0.075 ) ), calc( var( --primary-l ) - ( var( --primary-l ) * 0.75 ) ), 1) !important;
 }
 
-.h\:bg_secondary:hover,.bg_secondary-0 {
+.h\:bg_secondary:hover,.h\:bg_secondary-0:hover {
   background-color: var(--secondary) !important;
 }
 
-.bg_secondary-1 {
+.h\:bg_secondary-1:hover {
   background-color: hsla(var(--secondary-h), calc( var(--secondary-s) + ((100% - var(--secondary-s)) * 0.015) ), calc( var(--secondary-l) + ((100% - var(--secondary-l)) * 0.15) ), 1) !important;
 }
 
-.bg_secondary-2 {
+.h\:bg_secondary-2:hover {
   background-color: hsla(var(--secondary-h), calc( var(--secondary-s) + ((100% - var(--secondary-s)) * 0.037) ), calc( var(--secondary-l) + ((100% - var(--secondary-l)) * 0.37) ), 1) !important;
 }
 
-.bg_secondary-3 {
+.h\:bg_secondary-3:hover {
   background-color: hsla(var(--secondary-h), calc( var(--secondary-s) + ((100% - var(--secondary-s)) * 0.06) ), calc( var(--secondary-l) + ((100% - var(--secondary-l)) * 0.6) ), 1) !important;
 }
 
-.bg_secondary-4 {
+.h\:bg_secondary-4:hover {
   background-color: hsla(var(--secondary-h), calc( var(--secondary-s) + ((100% - var(--secondary-s)) * 0.078) ), calc( var(--secondary-l) + ((100% - var(--secondary-l)) * 0.78) ), 1) !important;
 }
 
-.bg_secondary-5 {
+.h\:bg_secondary-5:hover {
   background-color: hsla(var(--secondary-h), calc( var(--secondary-s) + ((100% - var(--secondary-s)) * 0.09) ), calc( var(--secondary-l) + ((100% - var(--secondary-l)) * 0.9) ), 1) !important;
 }
 
-.bg_secondary-n1 {
+.h\:bg_secondary-n1:hover {
   background-color: hsla(var(--secondary-h), calc( var( --secondary-s ) - ( var( --secondary-s ) * 0.01 ) ), calc( var( --secondary-l ) - ( var( --secondary-l ) * 0.1 ) ), 1) !important;
 }
 
-.bg_secondary-n2 {
+.h\:bg_secondary-n2:hover {
   background-color: hsla(var(--secondary-h), calc( var( --secondary-s ) - ( var( --secondary-s ) * 0.025 ) ), calc( var( --secondary-l ) - ( var( --secondary-l ) * 0.25 ) ), 1) !important;
 }
 
-.bg_secondary-n3 {
+.h\:bg_secondary-n3:hover {
   background-color: hsla(var(--secondary-h), calc( var( --secondary-s ) - ( var( --secondary-s ) * 0.045 ) ), calc( var( --secondary-l ) - ( var( --secondary-l ) * 0.45 ) ), 1) !important;
 }
 
-.bg_secondary-n4 {
+.h\:bg_secondary-n4:hover {
   background-color: hsla(var(--secondary-h), calc( var( --secondary-s ) - ( var( --secondary-s ) * 0.06 ) ), calc( var( --secondary-l ) - ( var( --secondary-l ) * 0.6 ) ), 1) !important;
 }
 
-.bg_secondary-n5 {
+.h\:bg_secondary-n5:hover {
   background-color: hsla(var(--secondary-h), calc( var( --secondary-s ) - ( var( --secondary-s ) * 0.075 ) ), calc( var( --secondary-l ) - ( var( --secondary-l ) * 0.75 ) ), 1) !important;
 }
 
-.h\:c_secondary:hover,.c_secondary-0 {
+.h\:c_secondary:hover,.h\:c_secondary-0:hover {
   color: var(--secondary) !important;
 }
 
-.c_secondary-1 {
+.h\:c_secondary-1:hover {
   color: hsla(var(--secondary-h), calc( var(--secondary-s) + ((100% - var(--secondary-s)) * 0.015) ), calc( var(--secondary-l) + ((100% - var(--secondary-l)) * 0.15) ), 1) !important;
 }
 
-.c_secondary-2 {
+.h\:c_secondary-2:hover {
   color: hsla(var(--secondary-h), calc( var(--secondary-s) + ((100% - var(--secondary-s)) * 0.037) ), calc( var(--secondary-l) + ((100% - var(--secondary-l)) * 0.37) ), 1) !important;
 }
 
-.c_secondary-3 {
+.h\:c_secondary-3:hover {
   color: hsla(var(--secondary-h), calc( var(--secondary-s) + ((100% - var(--secondary-s)) * 0.06) ), calc( var(--secondary-l) + ((100% - var(--secondary-l)) * 0.6) ), 1) !important;
 }
 
-.c_secondary-4 {
+.h\:c_secondary-4:hover {
   color: hsla(var(--secondary-h), calc( var(--secondary-s) + ((100% - var(--secondary-s)) * 0.078) ), calc( var(--secondary-l) + ((100% - var(--secondary-l)) * 0.78) ), 1) !important;
 }
 
-.c_secondary-5 {
+.h\:c_secondary-5:hover {
   color: hsla(var(--secondary-h), calc( var(--secondary-s) + ((100% - var(--secondary-s)) * 0.09) ), calc( var(--secondary-l) + ((100% - var(--secondary-l)) * 0.9) ), 1) !important;
 }
 
-.c_secondary-n1 {
+.h\:c_secondary-n1:hover {
   color: hsla(var(--secondary-h), calc( var( --secondary-s ) - ( var( --secondary-s ) * 0.01 ) ), calc( var( --secondary-l ) - ( var( --secondary-l ) * 0.1 ) ), 1) !important;
 }
 
-.c_secondary-n2 {
+.h\:c_secondary-n2:hover {
   color: hsla(var(--secondary-h), calc( var( --secondary-s ) - ( var( --secondary-s ) * 0.025 ) ), calc( var( --secondary-l ) - ( var( --secondary-l ) * 0.25 ) ), 1) !important;
 }
 
-.c_secondary-n3 {
+.h\:c_secondary-n3:hover {
   color: hsla(var(--secondary-h), calc( var( --secondary-s ) - ( var( --secondary-s ) * 0.045 ) ), calc( var( --secondary-l ) - ( var( --secondary-l ) * 0.45 ) ), 1) !important;
 }
 
-.c_secondary-n4 {
+.h\:c_secondary-n4:hover {
   color: hsla(var(--secondary-h), calc( var( --secondary-s ) - ( var( --secondary-s ) * 0.06 ) ), calc( var( --secondary-l ) - ( var( --secondary-l ) * 0.6 ) ), 1) !important;
 }
 
-.c_secondary-n5 {
+.h\:c_secondary-n5:hover {
   color: hsla(var(--secondary-h), calc( var( --secondary-s ) - ( var( --secondary-s ) * 0.075 ) ), calc( var( --secondary-l ) - ( var( --secondary-l ) * 0.75 ) ), 1) !important;
 }
 
-.h\:br_secondary:hover,.br_secondary-0 {
+.h\:br_secondary:hover,.h\:br_secondary-0:hover {
   border-color: var(--secondary) !important;
 }
 
-.br_secondary-1 {
+.h\:br_secondary-1:hover {
   border-color: hsla(var(--secondary-h), calc( var(--secondary-s) + ((100% - var(--secondary-s)) * 0.015) ), calc( var(--secondary-l) + ((100% - var(--secondary-l)) * 0.15) ), 1) !important;
 }
 
-.br_secondary-2 {
+.h\:br_secondary-2:hover {
   border-color: hsla(var(--secondary-h), calc( var(--secondary-s) + ((100% - var(--secondary-s)) * 0.037) ), calc( var(--secondary-l) + ((100% - var(--secondary-l)) * 0.37) ), 1) !important;
 }
 
-.br_secondary-3 {
+.h\:br_secondary-3:hover {
   border-color: hsla(var(--secondary-h), calc( var(--secondary-s) + ((100% - var(--secondary-s)) * 0.06) ), calc( var(--secondary-l) + ((100% - var(--secondary-l)) * 0.6) ), 1) !important;
 }
 
-.br_secondary-4 {
+.h\:br_secondary-4:hover {
   border-color: hsla(var(--secondary-h), calc( var(--secondary-s) + ((100% - var(--secondary-s)) * 0.078) ), calc( var(--secondary-l) + ((100% - var(--secondary-l)) * 0.78) ), 1) !important;
 }
 
-.br_secondary-5 {
+.h\:br_secondary-5:hover {
   border-color: hsla(var(--secondary-h), calc( var(--secondary-s) + ((100% - var(--secondary-s)) * 0.09) ), calc( var(--secondary-l) + ((100% - var(--secondary-l)) * 0.9) ), 1) !important;
 }
 
-.br_secondary-n1 {
+.h\:br_secondary-n1:hover {
   border-color: hsla(var(--secondary-h), calc( var( --secondary-s ) - ( var( --secondary-s ) * 0.01 ) ), calc( var( --secondary-l ) - ( var( --secondary-l ) * 0.1 ) ), 1) !important;
 }
 
-.br_secondary-n2 {
+.h\:br_secondary-n2:hover {
   border-color: hsla(var(--secondary-h), calc( var( --secondary-s ) - ( var( --secondary-s ) * 0.025 ) ), calc( var( --secondary-l ) - ( var( --secondary-l ) * 0.25 ) ), 1) !important;
 }
 
-.br_secondary-n3 {
+.h\:br_secondary-n3:hover {
   border-color: hsla(var(--secondary-h), calc( var( --secondary-s ) - ( var( --secondary-s ) * 0.045 ) ), calc( var( --secondary-l ) - ( var( --secondary-l ) * 0.45 ) ), 1) !important;
 }
 
-.br_secondary-n4 {
+.h\:br_secondary-n4:hover {
   border-color: hsla(var(--secondary-h), calc( var( --secondary-s ) - ( var( --secondary-s ) * 0.06 ) ), calc( var( --secondary-l ) - ( var( --secondary-l ) * 0.6 ) ), 1) !important;
 }
 
-.br_secondary-n5 {
+.h\:br_secondary-n5:hover {
   border-color: hsla(var(--secondary-h), calc( var( --secondary-s ) - ( var( --secondary-s ) * 0.075 ) ), calc( var( --secondary-l ) - ( var( --secondary-l ) * 0.75 ) ), 1) !important;
 }
 
-.h\:bg_success:hover,.bg_success-0 {
+.h\:bg_success:hover,.h\:bg_success-0:hover {
   background-color: var(--success) !important;
 }
 
-.bg_success-1 {
+.h\:bg_success-1:hover {
   background-color: hsla(var(--success-h), calc( var(--success-s) + ((100% - var(--success-s)) * 0.015) ), calc( var(--success-l) + ((100% - var(--success-l)) * 0.15) ), 1) !important;
 }
 
-.bg_success-2 {
+.h\:bg_success-2:hover {
   background-color: hsla(var(--success-h), calc( var(--success-s) + ((100% - var(--success-s)) * 0.037) ), calc( var(--success-l) + ((100% - var(--success-l)) * 0.37) ), 1) !important;
 }
 
-.bg_success-3 {
+.h\:bg_success-3:hover {
   background-color: hsla(var(--success-h), calc( var(--success-s) + ((100% - var(--success-s)) * 0.06) ), calc( var(--success-l) + ((100% - var(--success-l)) * 0.6) ), 1) !important;
 }
 
-.bg_success-4 {
+.h\:bg_success-4:hover {
   background-color: hsla(var(--success-h), calc( var(--success-s) + ((100% - var(--success-s)) * 0.078) ), calc( var(--success-l) + ((100% - var(--success-l)) * 0.78) ), 1) !important;
 }
 
-.bg_success-5 {
+.h\:bg_success-5:hover {
   background-color: hsla(var(--success-h), calc( var(--success-s) + ((100% - var(--success-s)) * 0.09) ), calc( var(--success-l) + ((100% - var(--success-l)) * 0.9) ), 1) !important;
 }
 
-.bg_success-n1 {
+.h\:bg_success-n1:hover {
   background-color: hsla(var(--success-h), calc( var( --success-s ) - ( var( --success-s ) * 0.01 ) ), calc( var( --success-l ) - ( var( --success-l ) * 0.1 ) ), 1) !important;
 }
 
-.bg_success-n2 {
+.h\:bg_success-n2:hover {
   background-color: hsla(var(--success-h), calc( var( --success-s ) - ( var( --success-s ) * 0.025 ) ), calc( var( --success-l ) - ( var( --success-l ) * 0.25 ) ), 1) !important;
 }
 
-.bg_success-n3 {
+.h\:bg_success-n3:hover {
   background-color: hsla(var(--success-h), calc( var( --success-s ) - ( var( --success-s ) * 0.045 ) ), calc( var( --success-l ) - ( var( --success-l ) * 0.45 ) ), 1) !important;
 }
 
-.bg_success-n4 {
+.h\:bg_success-n4:hover {
   background-color: hsla(var(--success-h), calc( var( --success-s ) - ( var( --success-s ) * 0.06 ) ), calc( var( --success-l ) - ( var( --success-l ) * 0.6 ) ), 1) !important;
 }
 
-.bg_success-n5 {
+.h\:bg_success-n5:hover {
   background-color: hsla(var(--success-h), calc( var( --success-s ) - ( var( --success-s ) * 0.075 ) ), calc( var( --success-l ) - ( var( --success-l ) * 0.75 ) ), 1) !important;
 }
 
-.h\:c_success:hover,.c_success-0 {
+.h\:c_success:hover,.h\:c_success-0:hover {
   color: var(--success) !important;
 }
 
-.c_success-1 {
+.h\:c_success-1:hover {
   color: hsla(var(--success-h), calc( var(--success-s) + ((100% - var(--success-s)) * 0.015) ), calc( var(--success-l) + ((100% - var(--success-l)) * 0.15) ), 1) !important;
 }
 
-.c_success-2 {
+.h\:c_success-2:hover {
   color: hsla(var(--success-h), calc( var(--success-s) + ((100% - var(--success-s)) * 0.037) ), calc( var(--success-l) + ((100% - var(--success-l)) * 0.37) ), 1) !important;
 }
 
-.c_success-3 {
+.h\:c_success-3:hover {
   color: hsla(var(--success-h), calc( var(--success-s) + ((100% - var(--success-s)) * 0.06) ), calc( var(--success-l) + ((100% - var(--success-l)) * 0.6) ), 1) !important;
 }
 
-.c_success-4 {
+.h\:c_success-4:hover {
   color: hsla(var(--success-h), calc( var(--success-s) + ((100% - var(--success-s)) * 0.078) ), calc( var(--success-l) + ((100% - var(--success-l)) * 0.78) ), 1) !important;
 }
 
-.c_success-5 {
+.h\:c_success-5:hover {
   color: hsla(var(--success-h), calc( var(--success-s) + ((100% - var(--success-s)) * 0.09) ), calc( var(--success-l) + ((100% - var(--success-l)) * 0.9) ), 1) !important;
 }
 
-.c_success-n1 {
+.h\:c_success-n1:hover {
   color: hsla(var(--success-h), calc( var( --success-s ) - ( var( --success-s ) * 0.01 ) ), calc( var( --success-l ) - ( var( --success-l ) * 0.1 ) ), 1) !important;
 }
 
-.c_success-n2 {
+.h\:c_success-n2:hover {
   color: hsla(var(--success-h), calc( var( --success-s ) - ( var( --success-s ) * 0.025 ) ), calc( var( --success-l ) - ( var( --success-l ) * 0.25 ) ), 1) !important;
 }
 
-.c_success-n3 {
+.h\:c_success-n3:hover {
   color: hsla(var(--success-h), calc( var( --success-s ) - ( var( --success-s ) * 0.045 ) ), calc( var( --success-l ) - ( var( --success-l ) * 0.45 ) ), 1) !important;
 }
 
-.c_success-n4 {
+.h\:c_success-n4:hover {
   color: hsla(var(--success-h), calc( var( --success-s ) - ( var( --success-s ) * 0.06 ) ), calc( var( --success-l ) - ( var( --success-l ) * 0.6 ) ), 1) !important;
 }
 
-.c_success-n5 {
+.h\:c_success-n5:hover {
   color: hsla(var(--success-h), calc( var( --success-s ) - ( var( --success-s ) * 0.075 ) ), calc( var( --success-l ) - ( var( --success-l ) * 0.75 ) ), 1) !important;
 }
 
-.h\:br_success:hover,.br_success-0 {
+.h\:br_success:hover,.h\:br_success-0:hover {
   border-color: var(--success) !important;
 }
 
-.br_success-1 {
+.h\:br_success-1:hover {
   border-color: hsla(var(--success-h), calc( var(--success-s) + ((100% - var(--success-s)) * 0.015) ), calc( var(--success-l) + ((100% - var(--success-l)) * 0.15) ), 1) !important;
 }
 
-.br_success-2 {
+.h\:br_success-2:hover {
   border-color: hsla(var(--success-h), calc( var(--success-s) + ((100% - var(--success-s)) * 0.037) ), calc( var(--success-l) + ((100% - var(--success-l)) * 0.37) ), 1) !important;
 }
 
-.br_success-3 {
+.h\:br_success-3:hover {
   border-color: hsla(var(--success-h), calc( var(--success-s) + ((100% - var(--success-s)) * 0.06) ), calc( var(--success-l) + ((100% - var(--success-l)) * 0.6) ), 1) !important;
 }
 
-.br_success-4 {
+.h\:br_success-4:hover {
   border-color: hsla(var(--success-h), calc( var(--success-s) + ((100% - var(--success-s)) * 0.078) ), calc( var(--success-l) + ((100% - var(--success-l)) * 0.78) ), 1) !important;
 }
 
-.br_success-5 {
+.h\:br_success-5:hover {
   border-color: hsla(var(--success-h), calc( var(--success-s) + ((100% - var(--success-s)) * 0.09) ), calc( var(--success-l) + ((100% - var(--success-l)) * 0.9) ), 1) !important;
 }
 
-.br_success-n1 {
+.h\:br_success-n1:hover {
   border-color: hsla(var(--success-h), calc( var( --success-s ) - ( var( --success-s ) * 0.01 ) ), calc( var( --success-l ) - ( var( --success-l ) * 0.1 ) ), 1) !important;
 }
 
-.br_success-n2 {
+.h\:br_success-n2:hover {
   border-color: hsla(var(--success-h), calc( var( --success-s ) - ( var( --success-s ) * 0.025 ) ), calc( var( --success-l ) - ( var( --success-l ) * 0.25 ) ), 1) !important;
 }
 
-.br_success-n3 {
+.h\:br_success-n3:hover {
   border-color: hsla(var(--success-h), calc( var( --success-s ) - ( var( --success-s ) * 0.045 ) ), calc( var( --success-l ) - ( var( --success-l ) * 0.45 ) ), 1) !important;
 }
 
-.br_success-n4 {
+.h\:br_success-n4:hover {
   border-color: hsla(var(--success-h), calc( var( --success-s ) - ( var( --success-s ) * 0.06 ) ), calc( var( --success-l ) - ( var( --success-l ) * 0.6 ) ), 1) !important;
 }
 
-.br_success-n5 {
+.h\:br_success-n5:hover {
   border-color: hsla(var(--success-h), calc( var( --success-s ) - ( var( --success-s ) * 0.075 ) ), calc( var( --success-l ) - ( var( --success-l ) * 0.75 ) ), 1) !important;
 }
 
-.h\:bg_shade:hover,.bg_shade-0 {
+.h\:bg_shade:hover,.h\:bg_shade-0:hover {
   background-color: var(--shade) !important;
 }
 
-.bg_shade-1 {
+.h\:bg_shade-1:hover {
   background-color: hsla(var(--shade-h), calc( var(--shade-s) + ((100% - var(--shade-s)) * 0.015) ), calc( var(--shade-l) + ((100% - var(--shade-l)) * 0.15) ), 1) !important;
 }
 
-.bg_shade-2 {
+.h\:bg_shade-2:hover {
   background-color: hsla(var(--shade-h), calc( var(--shade-s) + ((100% - var(--shade-s)) * 0.037) ), calc( var(--shade-l) + ((100% - var(--shade-l)) * 0.37) ), 1) !important;
 }
 
-.bg_shade-3 {
+.h\:bg_shade-3:hover {
   background-color: hsla(var(--shade-h), calc( var(--shade-s) + ((100% - var(--shade-s)) * 0.06) ), calc( var(--shade-l) + ((100% - var(--shade-l)) * 0.6) ), 1) !important;
 }
 
-.bg_shade-4 {
+.h\:bg_shade-4:hover {
   background-color: hsla(var(--shade-h), calc( var(--shade-s) + ((100% - var(--shade-s)) * 0.078) ), calc( var(--shade-l) + ((100% - var(--shade-l)) * 0.78) ), 1) !important;
 }
 
-.bg_shade-5 {
+.h\:bg_shade-5:hover {
   background-color: hsla(var(--shade-h), calc( var(--shade-s) + ((100% - var(--shade-s)) * 0.09) ), calc( var(--shade-l) + ((100% - var(--shade-l)) * 0.9) ), 1) !important;
 }
 
-.bg_shade-n1 {
+.h\:bg_shade-n1:hover {
   background-color: hsla(var(--shade-h), calc( var( --shade-s ) - ( var( --shade-s ) * 0.01 ) ), calc( var( --shade-l ) - ( var( --shade-l ) * 0.1 ) ), 1) !important;
 }
 
-.bg_shade-n2 {
+.h\:bg_shade-n2:hover {
   background-color: hsla(var(--shade-h), calc( var( --shade-s ) - ( var( --shade-s ) * 0.025 ) ), calc( var( --shade-l ) - ( var( --shade-l ) * 0.25 ) ), 1) !important;
 }
 
-.bg_shade-n3 {
+.h\:bg_shade-n3:hover {
   background-color: hsla(var(--shade-h), calc( var( --shade-s ) - ( var( --shade-s ) * 0.045 ) ), calc( var( --shade-l ) - ( var( --shade-l ) * 0.45 ) ), 1) !important;
 }
 
-.bg_shade-n4 {
+.h\:bg_shade-n4:hover {
   background-color: hsla(var(--shade-h), calc( var( --shade-s ) - ( var( --shade-s ) * 0.06 ) ), calc( var( --shade-l ) - ( var( --shade-l ) * 0.6 ) ), 1) !important;
 }
 
-.bg_shade-n5 {
+.h\:bg_shade-n5:hover {
   background-color: hsla(var(--shade-h), calc( var( --shade-s ) - ( var( --shade-s ) * 0.075 ) ), calc( var( --shade-l ) - ( var( --shade-l ) * 0.75 ) ), 1) !important;
 }
 
-.h\:c_shade:hover,.c_shade-0 {
+.h\:c_shade:hover,.h\:c_shade-0:hover {
   color: var(--shade) !important;
 }
 
-.c_shade-1 {
+.h\:c_shade-1:hover {
   color: hsla(var(--shade-h), calc( var(--shade-s) + ((100% - var(--shade-s)) * 0.015) ), calc( var(--shade-l) + ((100% - var(--shade-l)) * 0.15) ), 1) !important;
 }
 
-.c_shade-2 {
+.h\:c_shade-2:hover {
   color: hsla(var(--shade-h), calc( var(--shade-s) + ((100% - var(--shade-s)) * 0.037) ), calc( var(--shade-l) + ((100% - var(--shade-l)) * 0.37) ), 1) !important;
 }
 
-.c_shade-3 {
+.h\:c_shade-3:hover {
   color: hsla(var(--shade-h), calc( var(--shade-s) + ((100% - var(--shade-s)) * 0.06) ), calc( var(--shade-l) + ((100% - var(--shade-l)) * 0.6) ), 1) !important;
 }
 
-.c_shade-4 {
+.h\:c_shade-4:hover {
   color: hsla(var(--shade-h), calc( var(--shade-s) + ((100% - var(--shade-s)) * 0.078) ), calc( var(--shade-l) + ((100% - var(--shade-l)) * 0.78) ), 1) !important;
 }
 
-.c_shade-5 {
+.h\:c_shade-5:hover {
   color: hsla(var(--shade-h), calc( var(--shade-s) + ((100% - var(--shade-s)) * 0.09) ), calc( var(--shade-l) + ((100% - var(--shade-l)) * 0.9) ), 1) !important;
 }
 
-.c_shade-n1 {
+.h\:c_shade-n1:hover {
   color: hsla(var(--shade-h), calc( var( --shade-s ) - ( var( --shade-s ) * 0.01 ) ), calc( var( --shade-l ) - ( var( --shade-l ) * 0.1 ) ), 1) !important;
 }
 
-.c_shade-n2 {
+.h\:c_shade-n2:hover {
   color: hsla(var(--shade-h), calc( var( --shade-s ) - ( var( --shade-s ) * 0.025 ) ), calc( var( --shade-l ) - ( var( --shade-l ) * 0.25 ) ), 1) !important;
 }
 
-.c_shade-n3 {
+.h\:c_shade-n3:hover {
   color: hsla(var(--shade-h), calc( var( --shade-s ) - ( var( --shade-s ) * 0.045 ) ), calc( var( --shade-l ) - ( var( --shade-l ) * 0.45 ) ), 1) !important;
 }
 
-.c_shade-n4 {
+.h\:c_shade-n4:hover {
   color: hsla(var(--shade-h), calc( var( --shade-s ) - ( var( --shade-s ) * 0.06 ) ), calc( var( --shade-l ) - ( var( --shade-l ) * 0.6 ) ), 1) !important;
 }
 
-.c_shade-n5 {
+.h\:c_shade-n5:hover {
   color: hsla(var(--shade-h), calc( var( --shade-s ) - ( var( --shade-s ) * 0.075 ) ), calc( var( --shade-l ) - ( var( --shade-l ) * 0.75 ) ), 1) !important;
 }
 
-.h\:br_shade:hover,.br_shade-0 {
+.h\:br_shade:hover,.h\:br_shade-0:hover {
   border-color: var(--shade) !important;
 }
 
-.br_shade-1 {
+.h\:br_shade-1:hover {
   border-color: hsla(var(--shade-h), calc( var(--shade-s) + ((100% - var(--shade-s)) * 0.015) ), calc( var(--shade-l) + ((100% - var(--shade-l)) * 0.15) ), 1) !important;
 }
 
-.br_shade-2 {
+.h\:br_shade-2:hover {
   border-color: hsla(var(--shade-h), calc( var(--shade-s) + ((100% - var(--shade-s)) * 0.037) ), calc( var(--shade-l) + ((100% - var(--shade-l)) * 0.37) ), 1) !important;
 }
 
-.br_shade-3 {
+.h\:br_shade-3:hover {
   border-color: hsla(var(--shade-h), calc( var(--shade-s) + ((100% - var(--shade-s)) * 0.06) ), calc( var(--shade-l) + ((100% - var(--shade-l)) * 0.6) ), 1) !important;
 }
 
-.br_shade-4 {
+.h\:br_shade-4:hover {
   border-color: hsla(var(--shade-h), calc( var(--shade-s) + ((100% - var(--shade-s)) * 0.078) ), calc( var(--shade-l) + ((100% - var(--shade-l)) * 0.78) ), 1) !important;
 }
 
-.br_shade-5 {
+.h\:br_shade-5:hover {
   border-color: hsla(var(--shade-h), calc( var(--shade-s) + ((100% - var(--shade-s)) * 0.09) ), calc( var(--shade-l) + ((100% - var(--shade-l)) * 0.9) ), 1) !important;
 }
 
-.br_shade-n1 {
+.h\:br_shade-n1:hover {
   border-color: hsla(var(--shade-h), calc( var( --shade-s ) - ( var( --shade-s ) * 0.01 ) ), calc( var( --shade-l ) - ( var( --shade-l ) * 0.1 ) ), 1) !important;
 }
 
-.br_shade-n2 {
+.h\:br_shade-n2:hover {
   border-color: hsla(var(--shade-h), calc( var( --shade-s ) - ( var( --shade-s ) * 0.025 ) ), calc( var( --shade-l ) - ( var( --shade-l ) * 0.25 ) ), 1) !important;
 }
 
-.br_shade-n3 {
+.h\:br_shade-n3:hover {
   border-color: hsla(var(--shade-h), calc( var( --shade-s ) - ( var( --shade-s ) * 0.045 ) ), calc( var( --shade-l ) - ( var( --shade-l ) * 0.45 ) ), 1) !important;
 }
 
-.br_shade-n4 {
+.h\:br_shade-n4:hover {
   border-color: hsla(var(--shade-h), calc( var( --shade-s ) - ( var( --shade-s ) * 0.06 ) ), calc( var( --shade-l ) - ( var( --shade-l ) * 0.6 ) ), 1) !important;
 }
 
-.br_shade-n5 {
+.h\:br_shade-n5:hover {
   border-color: hsla(var(--shade-h), calc( var( --shade-s ) - ( var( --shade-s ) * 0.075 ) ), calc( var( --shade-l ) - ( var( --shade-l ) * 0.75 ) ), 1) !important;
 }
 
-.h\:bg_warning:hover,.bg_warning-0 {
+.h\:bg_warning:hover,.h\:bg_warning-0:hover {
   background-color: var(--warning) !important;
 }
 
-.bg_warning-1 {
+.h\:bg_warning-1:hover {
   background-color: hsla(var(--warning-h), calc( var(--warning-s) + ((100% - var(--warning-s)) * 0.015) ), calc( var(--warning-l) + ((100% - var(--warning-l)) * 0.15) ), 1) !important;
 }
 
-.bg_warning-2 {
+.h\:bg_warning-2:hover {
   background-color: hsla(var(--warning-h), calc( var(--warning-s) + ((100% - var(--warning-s)) * 0.037) ), calc( var(--warning-l) + ((100% - var(--warning-l)) * 0.37) ), 1) !important;
 }
 
-.bg_warning-3 {
+.h\:bg_warning-3:hover {
   background-color: hsla(var(--warning-h), calc( var(--warning-s) + ((100% - var(--warning-s)) * 0.06) ), calc( var(--warning-l) + ((100% - var(--warning-l)) * 0.6) ), 1) !important;
 }
 
-.bg_warning-4 {
+.h\:bg_warning-4:hover {
   background-color: hsla(var(--warning-h), calc( var(--warning-s) + ((100% - var(--warning-s)) * 0.078) ), calc( var(--warning-l) + ((100% - var(--warning-l)) * 0.78) ), 1) !important;
 }
 
-.bg_warning-5 {
+.h\:bg_warning-5:hover {
   background-color: hsla(var(--warning-h), calc( var(--warning-s) + ((100% - var(--warning-s)) * 0.09) ), calc( var(--warning-l) + ((100% - var(--warning-l)) * 0.9) ), 1) !important;
 }
 
-.bg_warning-n1 {
+.h\:bg_warning-n1:hover {
   background-color: hsla(var(--warning-h), calc( var( --warning-s ) - ( var( --warning-s ) * 0.01 ) ), calc( var( --warning-l ) - ( var( --warning-l ) * 0.1 ) ), 1) !important;
 }
 
-.bg_warning-n2 {
+.h\:bg_warning-n2:hover {
   background-color: hsla(var(--warning-h), calc( var( --warning-s ) - ( var( --warning-s ) * 0.025 ) ), calc( var( --warning-l ) - ( var( --warning-l ) * 0.25 ) ), 1) !important;
 }
 
-.bg_warning-n3 {
+.h\:bg_warning-n3:hover {
   background-color: hsla(var(--warning-h), calc( var( --warning-s ) - ( var( --warning-s ) * 0.045 ) ), calc( var( --warning-l ) - ( var( --warning-l ) * 0.45 ) ), 1) !important;
 }
 
-.bg_warning-n4 {
+.h\:bg_warning-n4:hover {
   background-color: hsla(var(--warning-h), calc( var( --warning-s ) - ( var( --warning-s ) * 0.06 ) ), calc( var( --warning-l ) - ( var( --warning-l ) * 0.6 ) ), 1) !important;
 }
 
-.bg_warning-n5 {
+.h\:bg_warning-n5:hover {
   background-color: hsla(var(--warning-h), calc( var( --warning-s ) - ( var( --warning-s ) * 0.075 ) ), calc( var( --warning-l ) - ( var( --warning-l ) * 0.75 ) ), 1) !important;
 }
 
-.h\:c_warning:hover,.c_warning-0 {
+.h\:c_warning:hover,.h\:c_warning-0:hover {
   color: var(--warning) !important;
 }
 
-.c_warning-1 {
+.h\:c_warning-1:hover {
   color: hsla(var(--warning-h), calc( var(--warning-s) + ((100% - var(--warning-s)) * 0.015) ), calc( var(--warning-l) + ((100% - var(--warning-l)) * 0.15) ), 1) !important;
 }
 
-.c_warning-2 {
+.h\:c_warning-2:hover {
   color: hsla(var(--warning-h), calc( var(--warning-s) + ((100% - var(--warning-s)) * 0.037) ), calc( var(--warning-l) + ((100% - var(--warning-l)) * 0.37) ), 1) !important;
 }
 
-.c_warning-3 {
+.h\:c_warning-3:hover {
   color: hsla(var(--warning-h), calc( var(--warning-s) + ((100% - var(--warning-s)) * 0.06) ), calc( var(--warning-l) + ((100% - var(--warning-l)) * 0.6) ), 1) !important;
 }
 
-.c_warning-4 {
+.h\:c_warning-4:hover {
   color: hsla(var(--warning-h), calc( var(--warning-s) + ((100% - var(--warning-s)) * 0.078) ), calc( var(--warning-l) + ((100% - var(--warning-l)) * 0.78) ), 1) !important;
 }
 
-.c_warning-5 {
+.h\:c_warning-5:hover {
   color: hsla(var(--warning-h), calc( var(--warning-s) + ((100% - var(--warning-s)) * 0.09) ), calc( var(--warning-l) + ((100% - var(--warning-l)) * 0.9) ), 1) !important;
 }
 
-.c_warning-n1 {
+.h\:c_warning-n1:hover {
   color: hsla(var(--warning-h), calc( var( --warning-s ) - ( var( --warning-s ) * 0.01 ) ), calc( var( --warning-l ) - ( var( --warning-l ) * 0.1 ) ), 1) !important;
 }
 
-.c_warning-n2 {
+.h\:c_warning-n2:hover {
   color: hsla(var(--warning-h), calc( var( --warning-s ) - ( var( --warning-s ) * 0.025 ) ), calc( var( --warning-l ) - ( var( --warning-l ) * 0.25 ) ), 1) !important;
 }
 
-.c_warning-n3 {
+.h\:c_warning-n3:hover {
   color: hsla(var(--warning-h), calc( var( --warning-s ) - ( var( --warning-s ) * 0.045 ) ), calc( var( --warning-l ) - ( var( --warning-l ) * 0.45 ) ), 1) !important;
 }
 
-.c_warning-n4 {
+.h\:c_warning-n4:hover {
   color: hsla(var(--warning-h), calc( var( --warning-s ) - ( var( --warning-s ) * 0.06 ) ), calc( var( --warning-l ) - ( var( --warning-l ) * 0.6 ) ), 1) !important;
 }
 
-.c_warning-n5 {
+.h\:c_warning-n5:hover {
   color: hsla(var(--warning-h), calc( var( --warning-s ) - ( var( --warning-s ) * 0.075 ) ), calc( var( --warning-l ) - ( var( --warning-l ) * 0.75 ) ), 1) !important;
 }
 
-.h\:br_warning:hover,.br_warning-0 {
+.h\:br_warning:hover,.h\:br_warning-0:hover {
   border-color: var(--warning) !important;
 }
 
-.br_warning-1 {
+.h\:br_warning-1:hover {
   border-color: hsla(var(--warning-h), calc( var(--warning-s) + ((100% - var(--warning-s)) * 0.015) ), calc( var(--warning-l) + ((100% - var(--warning-l)) * 0.15) ), 1) !important;
 }
 
-.br_warning-2 {
+.h\:br_warning-2:hover {
   border-color: hsla(var(--warning-h), calc( var(--warning-s) + ((100% - var(--warning-s)) * 0.037) ), calc( var(--warning-l) + ((100% - var(--warning-l)) * 0.37) ), 1) !important;
 }
 
-.br_warning-3 {
+.h\:br_warning-3:hover {
   border-color: hsla(var(--warning-h), calc( var(--warning-s) + ((100% - var(--warning-s)) * 0.06) ), calc( var(--warning-l) + ((100% - var(--warning-l)) * 0.6) ), 1) !important;
 }
 
-.br_warning-4 {
+.h\:br_warning-4:hover {
   border-color: hsla(var(--warning-h), calc( var(--warning-s) + ((100% - var(--warning-s)) * 0.078) ), calc( var(--warning-l) + ((100% - var(--warning-l)) * 0.78) ), 1) !important;
 }
 
-.br_warning-5 {
+.h\:br_warning-5:hover {
   border-color: hsla(var(--warning-h), calc( var(--warning-s) + ((100% - var(--warning-s)) * 0.09) ), calc( var(--warning-l) + ((100% - var(--warning-l)) * 0.9) ), 1) !important;
 }
 
-.br_warning-n1 {
+.h\:br_warning-n1:hover {
   border-color: hsla(var(--warning-h), calc( var( --warning-s ) - ( var( --warning-s ) * 0.01 ) ), calc( var( --warning-l ) - ( var( --warning-l ) * 0.1 ) ), 1) !important;
 }
 
-.br_warning-n2 {
+.h\:br_warning-n2:hover {
   border-color: hsla(var(--warning-h), calc( var( --warning-s ) - ( var( --warning-s ) * 0.025 ) ), calc( var( --warning-l ) - ( var( --warning-l ) * 0.25 ) ), 1) !important;
 }
 
-.br_warning-n3 {
+.h\:br_warning-n3:hover {
   border-color: hsla(var(--warning-h), calc( var( --warning-s ) - ( var( --warning-s ) * 0.045 ) ), calc( var( --warning-l ) - ( var( --warning-l ) * 0.45 ) ), 1) !important;
 }
 
-.br_warning-n4 {
+.h\:br_warning-n4:hover {
   border-color: hsla(var(--warning-h), calc( var( --warning-s ) - ( var( --warning-s ) * 0.06 ) ), calc( var( --warning-l ) - ( var( --warning-l ) * 0.6 ) ), 1) !important;
 }
 
-.br_warning-n5 {
+.h\:br_warning-n5:hover {
   border-color: hsla(var(--warning-h), calc( var( --warning-s ) - ( var( --warning-s ) * 0.075 ) ), calc( var( --warning-l ) - ( var( --warning-l ) * 0.75 ) ), 1) !important;
 }
 
-.h\:bg_alert:hover,.bg_alert-0 {
+.h\:bg_alert:hover,.h\:bg_alert-0:hover {
   background-color: var(--alert) !important;
 }
 
-.bg_alert-1 {
+.h\:bg_alert-1:hover {
   background-color: hsla(var(--alert-h), calc( var(--alert-s) + ((100% - var(--alert-s)) * 0.015) ), calc( var(--alert-l) + ((100% - var(--alert-l)) * 0.15) ), 1) !important;
 }
 
-.bg_alert-2 {
+.h\:bg_alert-2:hover {
   background-color: hsla(var(--alert-h), calc( var(--alert-s) + ((100% - var(--alert-s)) * 0.037) ), calc( var(--alert-l) + ((100% - var(--alert-l)) * 0.37) ), 1) !important;
 }
 
-.bg_alert-3 {
+.h\:bg_alert-3:hover {
   background-color: hsla(var(--alert-h), calc( var(--alert-s) + ((100% - var(--alert-s)) * 0.06) ), calc( var(--alert-l) + ((100% - var(--alert-l)) * 0.6) ), 1) !important;
 }
 
-.bg_alert-4 {
+.h\:bg_alert-4:hover {
   background-color: hsla(var(--alert-h), calc( var(--alert-s) + ((100% - var(--alert-s)) * 0.078) ), calc( var(--alert-l) + ((100% - var(--alert-l)) * 0.78) ), 1) !important;
 }
 
-.bg_alert-5 {
+.h\:bg_alert-5:hover {
   background-color: hsla(var(--alert-h), calc( var(--alert-s) + ((100% - var(--alert-s)) * 0.09) ), calc( var(--alert-l) + ((100% - var(--alert-l)) * 0.9) ), 1) !important;
 }
 
-.bg_alert-n1 {
+.h\:bg_alert-n1:hover {
   background-color: hsla(var(--alert-h), calc( var( --alert-s ) - ( var( --alert-s ) * 0.01 ) ), calc( var( --alert-l ) - ( var( --alert-l ) * 0.1 ) ), 1) !important;
 }
 
-.bg_alert-n2 {
+.h\:bg_alert-n2:hover {
   background-color: hsla(var(--alert-h), calc( var( --alert-s ) - ( var( --alert-s ) * 0.025 ) ), calc( var( --alert-l ) - ( var( --alert-l ) * 0.25 ) ), 1) !important;
 }
 
-.bg_alert-n3 {
+.h\:bg_alert-n3:hover {
   background-color: hsla(var(--alert-h), calc( var( --alert-s ) - ( var( --alert-s ) * 0.045 ) ), calc( var( --alert-l ) - ( var( --alert-l ) * 0.45 ) ), 1) !important;
 }
 
-.bg_alert-n4 {
+.h\:bg_alert-n4:hover {
   background-color: hsla(var(--alert-h), calc( var( --alert-s ) - ( var( --alert-s ) * 0.06 ) ), calc( var( --alert-l ) - ( var( --alert-l ) * 0.6 ) ), 1) !important;
 }
 
-.bg_alert-n5 {
+.h\:bg_alert-n5:hover {
   background-color: hsla(var(--alert-h), calc( var( --alert-s ) - ( var( --alert-s ) * 0.075 ) ), calc( var( --alert-l ) - ( var( --alert-l ) * 0.75 ) ), 1) !important;
 }
 
-.h\:c_alert:hover,.c_alert-0 {
+.h\:c_alert:hover,.h\:c_alert-0:hover {
   color: var(--alert) !important;
 }
 
-.c_alert-1 {
+.h\:c_alert-1:hover {
   color: hsla(var(--alert-h), calc( var(--alert-s) + ((100% - var(--alert-s)) * 0.015) ), calc( var(--alert-l) + ((100% - var(--alert-l)) * 0.15) ), 1) !important;
 }
 
-.c_alert-2 {
+.h\:c_alert-2:hover {
   color: hsla(var(--alert-h), calc( var(--alert-s) + ((100% - var(--alert-s)) * 0.037) ), calc( var(--alert-l) + ((100% - var(--alert-l)) * 0.37) ), 1) !important;
 }
 
-.c_alert-3 {
+.h\:c_alert-3:hover {
   color: hsla(var(--alert-h), calc( var(--alert-s) + ((100% - var(--alert-s)) * 0.06) ), calc( var(--alert-l) + ((100% - var(--alert-l)) * 0.6) ), 1) !important;
 }
 
-.c_alert-4 {
+.h\:c_alert-4:hover {
   color: hsla(var(--alert-h), calc( var(--alert-s) + ((100% - var(--alert-s)) * 0.078) ), calc( var(--alert-l) + ((100% - var(--alert-l)) * 0.78) ), 1) !important;
 }
 
-.c_alert-5 {
+.h\:c_alert-5:hover {
   color: hsla(var(--alert-h), calc( var(--alert-s) + ((100% - var(--alert-s)) * 0.09) ), calc( var(--alert-l) + ((100% - var(--alert-l)) * 0.9) ), 1) !important;
 }
 
-.c_alert-n1 {
+.h\:c_alert-n1:hover {
   color: hsla(var(--alert-h), calc( var( --alert-s ) - ( var( --alert-s ) * 0.01 ) ), calc( var( --alert-l ) - ( var( --alert-l ) * 0.1 ) ), 1) !important;
 }
 
-.c_alert-n2 {
+.h\:c_alert-n2:hover {
   color: hsla(var(--alert-h), calc( var( --alert-s ) - ( var( --alert-s ) * 0.025 ) ), calc( var( --alert-l ) - ( var( --alert-l ) * 0.25 ) ), 1) !important;
 }
 
-.c_alert-n3 {
+.h\:c_alert-n3:hover {
   color: hsla(var(--alert-h), calc( var( --alert-s ) - ( var( --alert-s ) * 0.045 ) ), calc( var( --alert-l ) - ( var( --alert-l ) * 0.45 ) ), 1) !important;
 }
 
-.c_alert-n4 {
+.h\:c_alert-n4:hover {
   color: hsla(var(--alert-h), calc( var( --alert-s ) - ( var( --alert-s ) * 0.06 ) ), calc( var( --alert-l ) - ( var( --alert-l ) * 0.6 ) ), 1) !important;
 }
 
-.c_alert-n5 {
+.h\:c_alert-n5:hover {
   color: hsla(var(--alert-h), calc( var( --alert-s ) - ( var( --alert-s ) * 0.075 ) ), calc( var( --alert-l ) - ( var( --alert-l ) * 0.75 ) ), 1) !important;
 }
 
-.h\:br_alert:hover,.br_alert-0 {
+.h\:br_alert:hover,.h\:br_alert-0:hover {
   border-color: var(--alert) !important;
 }
 
-.br_alert-1 {
+.h\:br_alert-1:hover {
   border-color: hsla(var(--alert-h), calc( var(--alert-s) + ((100% - var(--alert-s)) * 0.015) ), calc( var(--alert-l) + ((100% - var(--alert-l)) * 0.15) ), 1) !important;
 }
 
-.br_alert-2 {
+.h\:br_alert-2:hover {
   border-color: hsla(var(--alert-h), calc( var(--alert-s) + ((100% - var(--alert-s)) * 0.037) ), calc( var(--alert-l) + ((100% - var(--alert-l)) * 0.37) ), 1) !important;
 }
 
-.br_alert-3 {
+.h\:br_alert-3:hover {
   border-color: hsla(var(--alert-h), calc( var(--alert-s) + ((100% - var(--alert-s)) * 0.06) ), calc( var(--alert-l) + ((100% - var(--alert-l)) * 0.6) ), 1) !important;
 }
 
-.br_alert-4 {
+.h\:br_alert-4:hover {
   border-color: hsla(var(--alert-h), calc( var(--alert-s) + ((100% - var(--alert-s)) * 0.078) ), calc( var(--alert-l) + ((100% - var(--alert-l)) * 0.78) ), 1) !important;
 }
 
-.br_alert-5 {
+.h\:br_alert-5:hover {
   border-color: hsla(var(--alert-h), calc( var(--alert-s) + ((100% - var(--alert-s)) * 0.09) ), calc( var(--alert-l) + ((100% - var(--alert-l)) * 0.9) ), 1) !important;
 }
 
-.br_alert-n1 {
+.h\:br_alert-n1:hover {
   border-color: hsla(var(--alert-h), calc( var( --alert-s ) - ( var( --alert-s ) * 0.01 ) ), calc( var( --alert-l ) - ( var( --alert-l ) * 0.1 ) ), 1) !important;
 }
 
-.br_alert-n2 {
+.h\:br_alert-n2:hover {
   border-color: hsla(var(--alert-h), calc( var( --alert-s ) - ( var( --alert-s ) * 0.025 ) ), calc( var( --alert-l ) - ( var( --alert-l ) * 0.25 ) ), 1) !important;
 }
 
-.br_alert-n3 {
+.h\:br_alert-n3:hover {
   border-color: hsla(var(--alert-h), calc( var( --alert-s ) - ( var( --alert-s ) * 0.045 ) ), calc( var( --alert-l ) - ( var( --alert-l ) * 0.45 ) ), 1) !important;
 }
 
-.br_alert-n4 {
+.h\:br_alert-n4:hover {
   border-color: hsla(var(--alert-h), calc( var( --alert-s ) - ( var( --alert-s ) * 0.06 ) ), calc( var( --alert-l ) - ( var( --alert-l ) * 0.6 ) ), 1) !important;
 }
 
-.br_alert-n5 {
+.h\:br_alert-n5:hover {
   border-color: hsla(var(--alert-h), calc( var( --alert-s ) - ( var( --alert-s ) * 0.075 ) ), calc( var( --alert-l ) - ( var( --alert-l ) * 0.75 ) ), 1) !important;
 }
 
-.h\:bg_navigation:hover,.bg_navigation-0 {
+.h\:bg_navigation:hover,.h\:bg_navigation-0:hover {
   background-color: var(--navigation) !important;
 }
 
-.bg_navigation-1 {
+.h\:bg_navigation-1:hover {
   background-color: hsla(var(--navigation-h), calc( var(--navigation-s) + ((100% - var(--navigation-s)) * 0.015) ), calc( var(--navigation-l) + ((100% - var(--navigation-l)) * 0.15) ), 1) !important;
 }
 
-.bg_navigation-2 {
+.h\:bg_navigation-2:hover {
   background-color: hsla(var(--navigation-h), calc( var(--navigation-s) + ((100% - var(--navigation-s)) * 0.037) ), calc( var(--navigation-l) + ((100% - var(--navigation-l)) * 0.37) ), 1) !important;
 }
 
-.bg_navigation-3 {
+.h\:bg_navigation-3:hover {
   background-color: hsla(var(--navigation-h), calc( var(--navigation-s) + ((100% - var(--navigation-s)) * 0.06) ), calc( var(--navigation-l) + ((100% - var(--navigation-l)) * 0.6) ), 1) !important;
 }
 
-.bg_navigation-4 {
+.h\:bg_navigation-4:hover {
   background-color: hsla(var(--navigation-h), calc( var(--navigation-s) + ((100% - var(--navigation-s)) * 0.078) ), calc( var(--navigation-l) + ((100% - var(--navigation-l)) * 0.78) ), 1) !important;
 }
 
-.bg_navigation-5 {
+.h\:bg_navigation-5:hover {
   background-color: hsla(var(--navigation-h), calc( var(--navigation-s) + ((100% - var(--navigation-s)) * 0.09) ), calc( var(--navigation-l) + ((100% - var(--navigation-l)) * 0.9) ), 1) !important;
 }
 
-.bg_navigation-n1 {
+.h\:bg_navigation-n1:hover {
   background-color: hsla(var(--navigation-h), calc( var( --navigation-s ) - ( var( --navigation-s ) * 0.01 ) ), calc( var( --navigation-l ) - ( var( --navigation-l ) * 0.1 ) ), 1) !important;
 }
 
-.bg_navigation-n2 {
+.h\:bg_navigation-n2:hover {
   background-color: hsla(var(--navigation-h), calc( var( --navigation-s ) - ( var( --navigation-s ) * 0.025 ) ), calc( var( --navigation-l ) - ( var( --navigation-l ) * 0.25 ) ), 1) !important;
 }
 
-.bg_navigation-n3 {
+.h\:bg_navigation-n3:hover {
   background-color: hsla(var(--navigation-h), calc( var( --navigation-s ) - ( var( --navigation-s ) * 0.045 ) ), calc( var( --navigation-l ) - ( var( --navigation-l ) * 0.45 ) ), 1) !important;
 }
 
-.bg_navigation-n4 {
+.h\:bg_navigation-n4:hover {
   background-color: hsla(var(--navigation-h), calc( var( --navigation-s ) - ( var( --navigation-s ) * 0.06 ) ), calc( var( --navigation-l ) - ( var( --navigation-l ) * 0.6 ) ), 1) !important;
 }
 
-.bg_navigation-n5 {
+.h\:bg_navigation-n5:hover {
   background-color: hsla(var(--navigation-h), calc( var( --navigation-s ) - ( var( --navigation-s ) * 0.075 ) ), calc( var( --navigation-l ) - ( var( --navigation-l ) * 0.75 ) ), 1) !important;
 }
 
-.h\:c_navigation:hover,.c_navigation-0 {
+.h\:c_navigation:hover,.h\:c_navigation-0:hover {
   color: var(--navigation) !important;
 }
 
-.c_navigation-1 {
+.h\:c_navigation-1:hover {
   color: hsla(var(--navigation-h), calc( var(--navigation-s) + ((100% - var(--navigation-s)) * 0.015) ), calc( var(--navigation-l) + ((100% - var(--navigation-l)) * 0.15) ), 1) !important;
 }
 
-.c_navigation-2 {
+.h\:c_navigation-2:hover {
   color: hsla(var(--navigation-h), calc( var(--navigation-s) + ((100% - var(--navigation-s)) * 0.037) ), calc( var(--navigation-l) + ((100% - var(--navigation-l)) * 0.37) ), 1) !important;
 }
 
-.c_navigation-3 {
+.h\:c_navigation-3:hover {
   color: hsla(var(--navigation-h), calc( var(--navigation-s) + ((100% - var(--navigation-s)) * 0.06) ), calc( var(--navigation-l) + ((100% - var(--navigation-l)) * 0.6) ), 1) !important;
 }
 
-.c_navigation-4 {
+.h\:c_navigation-4:hover {
   color: hsla(var(--navigation-h), calc( var(--navigation-s) + ((100% - var(--navigation-s)) * 0.078) ), calc( var(--navigation-l) + ((100% - var(--navigation-l)) * 0.78) ), 1) !important;
 }
 
-.c_navigation-5 {
+.h\:c_navigation-5:hover {
   color: hsla(var(--navigation-h), calc( var(--navigation-s) + ((100% - var(--navigation-s)) * 0.09) ), calc( var(--navigation-l) + ((100% - var(--navigation-l)) * 0.9) ), 1) !important;
 }
 
-.c_navigation-n1 {
+.h\:c_navigation-n1:hover {
   color: hsla(var(--navigation-h), calc( var( --navigation-s ) - ( var( --navigation-s ) * 0.01 ) ), calc( var( --navigation-l ) - ( var( --navigation-l ) * 0.1 ) ), 1) !important;
 }
 
-.c_navigation-n2 {
+.h\:c_navigation-n2:hover {
   color: hsla(var(--navigation-h), calc( var( --navigation-s ) - ( var( --navigation-s ) * 0.025 ) ), calc( var( --navigation-l ) - ( var( --navigation-l ) * 0.25 ) ), 1) !important;
 }
 
-.c_navigation-n3 {
+.h\:c_navigation-n3:hover {
   color: hsla(var(--navigation-h), calc( var( --navigation-s ) - ( var( --navigation-s ) * 0.045 ) ), calc( var( --navigation-l ) - ( var( --navigation-l ) * 0.45 ) ), 1) !important;
 }
 
-.c_navigation-n4 {
+.h\:c_navigation-n4:hover {
   color: hsla(var(--navigation-h), calc( var( --navigation-s ) - ( var( --navigation-s ) * 0.06 ) ), calc( var( --navigation-l ) - ( var( --navigation-l ) * 0.6 ) ), 1) !important;
 }
 
-.c_navigation-n5 {
+.h\:c_navigation-n5:hover {
   color: hsla(var(--navigation-h), calc( var( --navigation-s ) - ( var( --navigation-s ) * 0.075 ) ), calc( var( --navigation-l ) - ( var( --navigation-l ) * 0.75 ) ), 1) !important;
 }
 
-.h\:br_navigation:hover,.br_navigation-0 {
+.h\:br_navigation:hover,.h\:br_navigation-0:hover {
   border-color: var(--navigation) !important;
 }
 
-.br_navigation-1 {
+.h\:br_navigation-1:hover {
   border-color: hsla(var(--navigation-h), calc( var(--navigation-s) + ((100% - var(--navigation-s)) * 0.015) ), calc( var(--navigation-l) + ((100% - var(--navigation-l)) * 0.15) ), 1) !important;
 }
 
-.br_navigation-2 {
+.h\:br_navigation-2:hover {
   border-color: hsla(var(--navigation-h), calc( var(--navigation-s) + ((100% - var(--navigation-s)) * 0.037) ), calc( var(--navigation-l) + ((100% - var(--navigation-l)) * 0.37) ), 1) !important;
 }
 
-.br_navigation-3 {
+.h\:br_navigation-3:hover {
   border-color: hsla(var(--navigation-h), calc( var(--navigation-s) + ((100% - var(--navigation-s)) * 0.06) ), calc( var(--navigation-l) + ((100% - var(--navigation-l)) * 0.6) ), 1) !important;
 }
 
-.br_navigation-4 {
+.h\:br_navigation-4:hover {
   border-color: hsla(var(--navigation-h), calc( var(--navigation-s) + ((100% - var(--navigation-s)) * 0.078) ), calc( var(--navigation-l) + ((100% - var(--navigation-l)) * 0.78) ), 1) !important;
 }
 
-.br_navigation-5 {
+.h\:br_navigation-5:hover {
   border-color: hsla(var(--navigation-h), calc( var(--navigation-s) + ((100% - var(--navigation-s)) * 0.09) ), calc( var(--navigation-l) + ((100% - var(--navigation-l)) * 0.9) ), 1) !important;
 }
 
-.br_navigation-n1 {
+.h\:br_navigation-n1:hover {
   border-color: hsla(var(--navigation-h), calc( var( --navigation-s ) - ( var( --navigation-s ) * 0.01 ) ), calc( var( --navigation-l ) - ( var( --navigation-l ) * 0.1 ) ), 1) !important;
 }
 
-.br_navigation-n2 {
+.h\:br_navigation-n2:hover {
   border-color: hsla(var(--navigation-h), calc( var( --navigation-s ) - ( var( --navigation-s ) * 0.025 ) ), calc( var( --navigation-l ) - ( var( --navigation-l ) * 0.25 ) ), 1) !important;
 }
 
-.br_navigation-n3 {
+.h\:br_navigation-n3:hover {
   border-color: hsla(var(--navigation-h), calc( var( --navigation-s ) - ( var( --navigation-s ) * 0.045 ) ), calc( var( --navigation-l ) - ( var( --navigation-l ) * 0.45 ) ), 1) !important;
 }
 
-.br_navigation-n4 {
+.h\:br_navigation-n4:hover {
   border-color: hsla(var(--navigation-h), calc( var( --navigation-s ) - ( var( --navigation-s ) * 0.06 ) ), calc( var( --navigation-l ) - ( var( --navigation-l ) * 0.6 ) ), 1) !important;
 }
 
-.br_navigation-n5 {
+.h\:br_navigation-n5:hover {
   border-color: hsla(var(--navigation-h), calc( var( --navigation-s ) - ( var( --navigation-s ) * 0.075 ) ), calc( var( --navigation-l ) - ( var( --navigation-l ) * 0.75 ) ), 1) !important;
 }
 
-.h\:bg_accent:hover,.bg_accent-0 {
+.h\:bg_accent:hover,.h\:bg_accent-0:hover {
   background-color: var(--accent) !important;
 }
 
-.bg_accent-1 {
+.h\:bg_accent-1:hover {
   background-color: hsla(var(--accent-h), calc( var(--accent-s) + ((100% - var(--accent-s)) * 0.015) ), calc( var(--accent-l) + ((100% - var(--accent-l)) * 0.15) ), 1) !important;
 }
 
-.bg_accent-2 {
+.h\:bg_accent-2:hover {
   background-color: hsla(var(--accent-h), calc( var(--accent-s) + ((100% - var(--accent-s)) * 0.037) ), calc( var(--accent-l) + ((100% - var(--accent-l)) * 0.37) ), 1) !important;
 }
 
-.bg_accent-3 {
+.h\:bg_accent-3:hover {
   background-color: hsla(var(--accent-h), calc( var(--accent-s) + ((100% - var(--accent-s)) * 0.06) ), calc( var(--accent-l) + ((100% - var(--accent-l)) * 0.6) ), 1) !important;
 }
 
-.bg_accent-4 {
+.h\:bg_accent-4:hover {
   background-color: hsla(var(--accent-h), calc( var(--accent-s) + ((100% - var(--accent-s)) * 0.078) ), calc( var(--accent-l) + ((100% - var(--accent-l)) * 0.78) ), 1) !important;
 }
 
-.bg_accent-5 {
+.h\:bg_accent-5:hover {
   background-color: hsla(var(--accent-h), calc( var(--accent-s) + ((100% - var(--accent-s)) * 0.09) ), calc( var(--accent-l) + ((100% - var(--accent-l)) * 0.9) ), 1) !important;
 }
 
-.bg_accent-n1 {
+.h\:bg_accent-n1:hover {
   background-color: hsla(var(--accent-h), calc( var( --accent-s ) - ( var( --accent-s ) * 0.01 ) ), calc( var( --accent-l ) - ( var( --accent-l ) * 0.1 ) ), 1) !important;
 }
 
-.bg_accent-n2 {
+.h\:bg_accent-n2:hover {
   background-color: hsla(var(--accent-h), calc( var( --accent-s ) - ( var( --accent-s ) * 0.025 ) ), calc( var( --accent-l ) - ( var( --accent-l ) * 0.25 ) ), 1) !important;
 }
 
-.bg_accent-n3 {
+.h\:bg_accent-n3:hover {
   background-color: hsla(var(--accent-h), calc( var( --accent-s ) - ( var( --accent-s ) * 0.045 ) ), calc( var( --accent-l ) - ( var( --accent-l ) * 0.45 ) ), 1) !important;
 }
 
-.bg_accent-n4 {
+.h\:bg_accent-n4:hover {
   background-color: hsla(var(--accent-h), calc( var( --accent-s ) - ( var( --accent-s ) * 0.06 ) ), calc( var( --accent-l ) - ( var( --accent-l ) * 0.6 ) ), 1) !important;
 }
 
-.bg_accent-n5 {
+.h\:bg_accent-n5:hover {
   background-color: hsla(var(--accent-h), calc( var( --accent-s ) - ( var( --accent-s ) * 0.075 ) ), calc( var( --accent-l ) - ( var( --accent-l ) * 0.75 ) ), 1) !important;
 }
 
-.h\:c_accent:hover,.c_accent-0 {
+.h\:c_accent:hover,.h\:c_accent-0:hover {
   color: var(--accent) !important;
 }
 
-.c_accent-1 {
+.h\:c_accent-1:hover {
   color: hsla(var(--accent-h), calc( var(--accent-s) + ((100% - var(--accent-s)) * 0.015) ), calc( var(--accent-l) + ((100% - var(--accent-l)) * 0.15) ), 1) !important;
 }
 
-.c_accent-2 {
+.h\:c_accent-2:hover {
   color: hsla(var(--accent-h), calc( var(--accent-s) + ((100% - var(--accent-s)) * 0.037) ), calc( var(--accent-l) + ((100% - var(--accent-l)) * 0.37) ), 1) !important;
 }
 
-.c_accent-3 {
+.h\:c_accent-3:hover {
   color: hsla(var(--accent-h), calc( var(--accent-s) + ((100% - var(--accent-s)) * 0.06) ), calc( var(--accent-l) + ((100% - var(--accent-l)) * 0.6) ), 1) !important;
 }
 
-.c_accent-4 {
+.h\:c_accent-4:hover {
   color: hsla(var(--accent-h), calc( var(--accent-s) + ((100% - var(--accent-s)) * 0.078) ), calc( var(--accent-l) + ((100% - var(--accent-l)) * 0.78) ), 1) !important;
 }
 
-.c_accent-5 {
+.h\:c_accent-5:hover {
   color: hsla(var(--accent-h), calc( var(--accent-s) + ((100% - var(--accent-s)) * 0.09) ), calc( var(--accent-l) + ((100% - var(--accent-l)) * 0.9) ), 1) !important;
 }
 
-.c_accent-n1 {
+.h\:c_accent-n1:hover {
   color: hsla(var(--accent-h), calc( var( --accent-s ) - ( var( --accent-s ) * 0.01 ) ), calc( var( --accent-l ) - ( var( --accent-l ) * 0.1 ) ), 1) !important;
 }
 
-.c_accent-n2 {
+.h\:c_accent-n2:hover {
   color: hsla(var(--accent-h), calc( var( --accent-s ) - ( var( --accent-s ) * 0.025 ) ), calc( var( --accent-l ) - ( var( --accent-l ) * 0.25 ) ), 1) !important;
 }
 
-.c_accent-n3 {
+.h\:c_accent-n3:hover {
   color: hsla(var(--accent-h), calc( var( --accent-s ) - ( var( --accent-s ) * 0.045 ) ), calc( var( --accent-l ) - ( var( --accent-l ) * 0.45 ) ), 1) !important;
 }
 
-.c_accent-n4 {
+.h\:c_accent-n4:hover {
   color: hsla(var(--accent-h), calc( var( --accent-s ) - ( var( --accent-s ) * 0.06 ) ), calc( var( --accent-l ) - ( var( --accent-l ) * 0.6 ) ), 1) !important;
 }
 
-.c_accent-n5 {
+.h\:c_accent-n5:hover {
   color: hsla(var(--accent-h), calc( var( --accent-s ) - ( var( --accent-s ) * 0.075 ) ), calc( var( --accent-l ) - ( var( --accent-l ) * 0.75 ) ), 1) !important;
 }
 
-.h\:br_accent:hover,.br_accent-0 {
+.h\:br_accent:hover,.h\:br_accent-0:hover {
   border-color: var(--accent) !important;
 }
 
-.br_accent-1 {
+.h\:br_accent-1:hover {
   border-color: hsla(var(--accent-h), calc( var(--accent-s) + ((100% - var(--accent-s)) * 0.015) ), calc( var(--accent-l) + ((100% - var(--accent-l)) * 0.15) ), 1) !important;
 }
 
-.br_accent-2 {
+.h\:br_accent-2:hover {
   border-color: hsla(var(--accent-h), calc( var(--accent-s) + ((100% - var(--accent-s)) * 0.037) ), calc( var(--accent-l) + ((100% - var(--accent-l)) * 0.37) ), 1) !important;
 }
 
-.br_accent-3 {
+.h\:br_accent-3:hover {
   border-color: hsla(var(--accent-h), calc( var(--accent-s) + ((100% - var(--accent-s)) * 0.06) ), calc( var(--accent-l) + ((100% - var(--accent-l)) * 0.6) ), 1) !important;
 }
 
-.br_accent-4 {
+.h\:br_accent-4:hover {
   border-color: hsla(var(--accent-h), calc( var(--accent-s) + ((100% - var(--accent-s)) * 0.078) ), calc( var(--accent-l) + ((100% - var(--accent-l)) * 0.78) ), 1) !important;
 }
 
-.br_accent-5 {
+.h\:br_accent-5:hover {
   border-color: hsla(var(--accent-h), calc( var(--accent-s) + ((100% - var(--accent-s)) * 0.09) ), calc( var(--accent-l) + ((100% - var(--accent-l)) * 0.9) ), 1) !important;
 }
 
-.br_accent-n1 {
+.h\:br_accent-n1:hover {
   border-color: hsla(var(--accent-h), calc( var( --accent-s ) - ( var( --accent-s ) * 0.01 ) ), calc( var( --accent-l ) - ( var( --accent-l ) * 0.1 ) ), 1) !important;
 }
 
-.br_accent-n2 {
+.h\:br_accent-n2:hover {
   border-color: hsla(var(--accent-h), calc( var( --accent-s ) - ( var( --accent-s ) * 0.025 ) ), calc( var( --accent-l ) - ( var( --accent-l ) * 0.25 ) ), 1) !important;
 }
 
-.br_accent-n3 {
+.h\:br_accent-n3:hover {
   border-color: hsla(var(--accent-h), calc( var( --accent-s ) - ( var( --accent-s ) * 0.045 ) ), calc( var( --accent-l ) - ( var( --accent-l ) * 0.45 ) ), 1) !important;
 }
 
-.br_accent-n4 {
+.h\:br_accent-n4:hover {
   border-color: hsla(var(--accent-h), calc( var( --accent-s ) - ( var( --accent-s ) * 0.06 ) ), calc( var( --accent-l ) - ( var( --accent-l ) * 0.6 ) ), 1) !important;
 }
 
-.br_accent-n5 {
+.h\:br_accent-n5:hover {
   border-color: hsla(var(--accent-h), calc( var( --accent-s ) - ( var( --accent-s ) * 0.075 ) ), calc( var( --accent-l ) - ( var( --accent-l ) * 0.75 ) ), 1) !important;
 }
 
-.h\:bg_info:hover,.bg_info-0 {
+.h\:bg_info:hover,.h\:bg_info-0:hover {
   background-color: var(--info) !important;
 }
 
-.bg_info-1 {
+.h\:bg_info-1:hover {
   background-color: hsla(var(--info-h), calc( var(--info-s) + ((100% - var(--info-s)) * 0.015) ), calc( var(--info-l) + ((100% - var(--info-l)) * 0.15) ), 1) !important;
 }
 
-.bg_info-2 {
+.h\:bg_info-2:hover {
   background-color: hsla(var(--info-h), calc( var(--info-s) + ((100% - var(--info-s)) * 0.037) ), calc( var(--info-l) + ((100% - var(--info-l)) * 0.37) ), 1) !important;
 }
 
-.bg_info-3 {
+.h\:bg_info-3:hover {
   background-color: hsla(var(--info-h), calc( var(--info-s) + ((100% - var(--info-s)) * 0.06) ), calc( var(--info-l) + ((100% - var(--info-l)) * 0.6) ), 1) !important;
 }
 
-.bg_info-4 {
+.h\:bg_info-4:hover {
   background-color: hsla(var(--info-h), calc( var(--info-s) + ((100% - var(--info-s)) * 0.078) ), calc( var(--info-l) + ((100% - var(--info-l)) * 0.78) ), 1) !important;
 }
 
-.bg_info-5 {
+.h\:bg_info-5:hover {
   background-color: hsla(var(--info-h), calc( var(--info-s) + ((100% - var(--info-s)) * 0.09) ), calc( var(--info-l) + ((100% - var(--info-l)) * 0.9) ), 1) !important;
 }
 
-.bg_info-n1 {
+.h\:bg_info-n1:hover {
   background-color: hsla(var(--info-h), calc( var( --info-s ) - ( var( --info-s ) * 0.01 ) ), calc( var( --info-l ) - ( var( --info-l ) * 0.1 ) ), 1) !important;
 }
 
-.bg_info-n2 {
+.h\:bg_info-n2:hover {
   background-color: hsla(var(--info-h), calc( var( --info-s ) - ( var( --info-s ) * 0.025 ) ), calc( var( --info-l ) - ( var( --info-l ) * 0.25 ) ), 1) !important;
 }
 
-.bg_info-n3 {
+.h\:bg_info-n3:hover {
   background-color: hsla(var(--info-h), calc( var( --info-s ) - ( var( --info-s ) * 0.045 ) ), calc( var( --info-l ) - ( var( --info-l ) * 0.45 ) ), 1) !important;
 }
 
-.bg_info-n4 {
+.h\:bg_info-n4:hover {
   background-color: hsla(var(--info-h), calc( var( --info-s ) - ( var( --info-s ) * 0.06 ) ), calc( var( --info-l ) - ( var( --info-l ) * 0.6 ) ), 1) !important;
 }
 
-.bg_info-n5 {
+.h\:bg_info-n5:hover {
   background-color: hsla(var(--info-h), calc( var( --info-s ) - ( var( --info-s ) * 0.075 ) ), calc( var( --info-l ) - ( var( --info-l ) * 0.75 ) ), 1) !important;
 }
 
-.h\:c_info:hover,.c_info-0 {
+.h\:c_info:hover,.h\:c_info-0:hover {
   color: var(--info) !important;
 }
 
-.c_info-1 {
+.h\:c_info-1:hover {
   color: hsla(var(--info-h), calc( var(--info-s) + ((100% - var(--info-s)) * 0.015) ), calc( var(--info-l) + ((100% - var(--info-l)) * 0.15) ), 1) !important;
 }
 
-.c_info-2 {
+.h\:c_info-2:hover {
   color: hsla(var(--info-h), calc( var(--info-s) + ((100% - var(--info-s)) * 0.037) ), calc( var(--info-l) + ((100% - var(--info-l)) * 0.37) ), 1) !important;
 }
 
-.c_info-3 {
+.h\:c_info-3:hover {
   color: hsla(var(--info-h), calc( var(--info-s) + ((100% - var(--info-s)) * 0.06) ), calc( var(--info-l) + ((100% - var(--info-l)) * 0.6) ), 1) !important;
 }
 
-.c_info-4 {
+.h\:c_info-4:hover {
   color: hsla(var(--info-h), calc( var(--info-s) + ((100% - var(--info-s)) * 0.078) ), calc( var(--info-l) + ((100% - var(--info-l)) * 0.78) ), 1) !important;
 }
 
-.c_info-5 {
+.h\:c_info-5:hover {
   color: hsla(var(--info-h), calc( var(--info-s) + ((100% - var(--info-s)) * 0.09) ), calc( var(--info-l) + ((100% - var(--info-l)) * 0.9) ), 1) !important;
 }
 
-.c_info-n1 {
+.h\:c_info-n1:hover {
   color: hsla(var(--info-h), calc( var( --info-s ) - ( var( --info-s ) * 0.01 ) ), calc( var( --info-l ) - ( var( --info-l ) * 0.1 ) ), 1) !important;
 }
 
-.c_info-n2 {
+.h\:c_info-n2:hover {
   color: hsla(var(--info-h), calc( var( --info-s ) - ( var( --info-s ) * 0.025 ) ), calc( var( --info-l ) - ( var( --info-l ) * 0.25 ) ), 1) !important;
 }
 
-.c_info-n3 {
+.h\:c_info-n3:hover {
   color: hsla(var(--info-h), calc( var( --info-s ) - ( var( --info-s ) * 0.045 ) ), calc( var( --info-l ) - ( var( --info-l ) * 0.45 ) ), 1) !important;
 }
 
-.c_info-n4 {
+.h\:c_info-n4:hover {
   color: hsla(var(--info-h), calc( var( --info-s ) - ( var( --info-s ) * 0.06 ) ), calc( var( --info-l ) - ( var( --info-l ) * 0.6 ) ), 1) !important;
 }
 
-.c_info-n5 {
+.h\:c_info-n5:hover {
   color: hsla(var(--info-h), calc( var( --info-s ) - ( var( --info-s ) * 0.075 ) ), calc( var( --info-l ) - ( var( --info-l ) * 0.75 ) ), 1) !important;
 }
 
-.h\:br_info:hover,.br_info-0 {
+.h\:br_info:hover,.h\:br_info-0:hover {
   border-color: var(--info) !important;
 }
 
-.br_info-1 {
+.h\:br_info-1:hover {
   border-color: hsla(var(--info-h), calc( var(--info-s) + ((100% - var(--info-s)) * 0.015) ), calc( var(--info-l) + ((100% - var(--info-l)) * 0.15) ), 1) !important;
 }
 
-.br_info-2 {
+.h\:br_info-2:hover {
   border-color: hsla(var(--info-h), calc( var(--info-s) + ((100% - var(--info-s)) * 0.037) ), calc( var(--info-l) + ((100% - var(--info-l)) * 0.37) ), 1) !important;
 }
 
-.br_info-3 {
+.h\:br_info-3:hover {
   border-color: hsla(var(--info-h), calc( var(--info-s) + ((100% - var(--info-s)) * 0.06) ), calc( var(--info-l) + ((100% - var(--info-l)) * 0.6) ), 1) !important;
 }
 
-.br_info-4 {
+.h\:br_info-4:hover {
   border-color: hsla(var(--info-h), calc( var(--info-s) + ((100% - var(--info-s)) * 0.078) ), calc( var(--info-l) + ((100% - var(--info-l)) * 0.78) ), 1) !important;
 }
 
-.br_info-5 {
+.h\:br_info-5:hover {
   border-color: hsla(var(--info-h), calc( var(--info-s) + ((100% - var(--info-s)) * 0.09) ), calc( var(--info-l) + ((100% - var(--info-l)) * 0.9) ), 1) !important;
 }
 
-.br_info-n1 {
+.h\:br_info-n1:hover {
   border-color: hsla(var(--info-h), calc( var( --info-s ) - ( var( --info-s ) * 0.01 ) ), calc( var( --info-l ) - ( var( --info-l ) * 0.1 ) ), 1) !important;
 }
 
-.br_info-n2 {
+.h\:br_info-n2:hover {
   border-color: hsla(var(--info-h), calc( var( --info-s ) - ( var( --info-s ) * 0.025 ) ), calc( var( --info-l ) - ( var( --info-l ) * 0.25 ) ), 1) !important;
 }
 
-.br_info-n3 {
+.h\:br_info-n3:hover {
   border-color: hsla(var(--info-h), calc( var( --info-s ) - ( var( --info-s ) * 0.045 ) ), calc( var( --info-l ) - ( var( --info-l ) * 0.45 ) ), 1) !important;
 }
 
-.br_info-n4 {
+.h\:br_info-n4:hover {
   border-color: hsla(var(--info-h), calc( var( --info-s ) - ( var( --info-s ) * 0.06 ) ), calc( var( --info-l ) - ( var( --info-l ) * 0.6 ) ), 1) !important;
 }
 
-.br_info-n5 {
+.h\:br_info-n5:hover {
   border-color: hsla(var(--info-h), calc( var( --info-s ) - ( var( --info-s ) * 0.075 ) ), calc( var( --info-l ) - ( var( --info-l ) * 0.75 ) ), 1) !important;
 }
 
-.h\:bg_highlight:hover,.bg_highlight-0 {
+.h\:bg_highlight:hover,.h\:bg_highlight-0:hover {
   background-color: var(--highlight) !important;
 }
 
-.bg_highlight-1 {
+.h\:bg_highlight-1:hover {
   background-color: hsla(var(--highlight-h), calc( var(--highlight-s) + ((100% - var(--highlight-s)) * 0.015) ), calc( var(--highlight-l) + ((100% - var(--highlight-l)) * 0.15) ), 1) !important;
 }
 
-.bg_highlight-2 {
+.h\:bg_highlight-2:hover {
   background-color: hsla(var(--highlight-h), calc( var(--highlight-s) + ((100% - var(--highlight-s)) * 0.037) ), calc( var(--highlight-l) + ((100% - var(--highlight-l)) * 0.37) ), 1) !important;
 }
 
-.bg_highlight-3 {
+.h\:bg_highlight-3:hover {
   background-color: hsla(var(--highlight-h), calc( var(--highlight-s) + ((100% - var(--highlight-s)) * 0.06) ), calc( var(--highlight-l) + ((100% - var(--highlight-l)) * 0.6) ), 1) !important;
 }
 
-.bg_highlight-4 {
+.h\:bg_highlight-4:hover {
   background-color: hsla(var(--highlight-h), calc( var(--highlight-s) + ((100% - var(--highlight-s)) * 0.078) ), calc( var(--highlight-l) + ((100% - var(--highlight-l)) * 0.78) ), 1) !important;
 }
 
-.bg_highlight-5 {
+.h\:bg_highlight-5:hover {
   background-color: hsla(var(--highlight-h), calc( var(--highlight-s) + ((100% - var(--highlight-s)) * 0.09) ), calc( var(--highlight-l) + ((100% - var(--highlight-l)) * 0.9) ), 1) !important;
 }
 
-.bg_highlight-n1 {
+.h\:bg_highlight-n1:hover {
   background-color: hsla(var(--highlight-h), calc( var( --highlight-s ) - ( var( --highlight-s ) * 0.01 ) ), calc( var( --highlight-l ) - ( var( --highlight-l ) * 0.1 ) ), 1) !important;
 }
 
-.bg_highlight-n2 {
+.h\:bg_highlight-n2:hover {
   background-color: hsla(var(--highlight-h), calc( var( --highlight-s ) - ( var( --highlight-s ) * 0.025 ) ), calc( var( --highlight-l ) - ( var( --highlight-l ) * 0.25 ) ), 1) !important;
 }
 
-.bg_highlight-n3 {
+.h\:bg_highlight-n3:hover {
   background-color: hsla(var(--highlight-h), calc( var( --highlight-s ) - ( var( --highlight-s ) * 0.045 ) ), calc( var( --highlight-l ) - ( var( --highlight-l ) * 0.45 ) ), 1) !important;
 }
 
-.bg_highlight-n4 {
+.h\:bg_highlight-n4:hover {
   background-color: hsla(var(--highlight-h), calc( var( --highlight-s ) - ( var( --highlight-s ) * 0.06 ) ), calc( var( --highlight-l ) - ( var( --highlight-l ) * 0.6 ) ), 1) !important;
 }
 
-.bg_highlight-n5 {
+.h\:bg_highlight-n5:hover {
   background-color: hsla(var(--highlight-h), calc( var( --highlight-s ) - ( var( --highlight-s ) * 0.075 ) ), calc( var( --highlight-l ) - ( var( --highlight-l ) * 0.75 ) ), 1) !important;
 }
 
-.h\:c_highlight:hover,.c_highlight-0 {
+.h\:c_highlight:hover,.h\:c_highlight-0:hover {
   color: var(--highlight) !important;
 }
 
-.c_highlight-1 {
+.h\:c_highlight-1:hover {
   color: hsla(var(--highlight-h), calc( var(--highlight-s) + ((100% - var(--highlight-s)) * 0.015) ), calc( var(--highlight-l) + ((100% - var(--highlight-l)) * 0.15) ), 1) !important;
 }
 
-.c_highlight-2 {
+.h\:c_highlight-2:hover {
   color: hsla(var(--highlight-h), calc( var(--highlight-s) + ((100% - var(--highlight-s)) * 0.037) ), calc( var(--highlight-l) + ((100% - var(--highlight-l)) * 0.37) ), 1) !important;
 }
 
-.c_highlight-3 {
+.h\:c_highlight-3:hover {
   color: hsla(var(--highlight-h), calc( var(--highlight-s) + ((100% - var(--highlight-s)) * 0.06) ), calc( var(--highlight-l) + ((100% - var(--highlight-l)) * 0.6) ), 1) !important;
 }
 
-.c_highlight-4 {
+.h\:c_highlight-4:hover {
   color: hsla(var(--highlight-h), calc( var(--highlight-s) + ((100% - var(--highlight-s)) * 0.078) ), calc( var(--highlight-l) + ((100% - var(--highlight-l)) * 0.78) ), 1) !important;
 }
 
-.c_highlight-5 {
+.h\:c_highlight-5:hover {
   color: hsla(var(--highlight-h), calc( var(--highlight-s) + ((100% - var(--highlight-s)) * 0.09) ), calc( var(--highlight-l) + ((100% - var(--highlight-l)) * 0.9) ), 1) !important;
 }
 
-.c_highlight-n1 {
+.h\:c_highlight-n1:hover {
   color: hsla(var(--highlight-h), calc( var( --highlight-s ) - ( var( --highlight-s ) * 0.01 ) ), calc( var( --highlight-l ) - ( var( --highlight-l ) * 0.1 ) ), 1) !important;
 }
 
-.c_highlight-n2 {
+.h\:c_highlight-n2:hover {
   color: hsla(var(--highlight-h), calc( var( --highlight-s ) - ( var( --highlight-s ) * 0.025 ) ), calc( var( --highlight-l ) - ( var( --highlight-l ) * 0.25 ) ), 1) !important;
 }
 
-.c_highlight-n3 {
+.h\:c_highlight-n3:hover {
   color: hsla(var(--highlight-h), calc( var( --highlight-s ) - ( var( --highlight-s ) * 0.045 ) ), calc( var( --highlight-l ) - ( var( --highlight-l ) * 0.45 ) ), 1) !important;
 }
 
-.c_highlight-n4 {
+.h\:c_highlight-n4:hover {
   color: hsla(var(--highlight-h), calc( var( --highlight-s ) - ( var( --highlight-s ) * 0.06 ) ), calc( var( --highlight-l ) - ( var( --highlight-l ) * 0.6 ) ), 1) !important;
 }
 
-.c_highlight-n5 {
+.h\:c_highlight-n5:hover {
   color: hsla(var(--highlight-h), calc( var( --highlight-s ) - ( var( --highlight-s ) * 0.075 ) ), calc( var( --highlight-l ) - ( var( --highlight-l ) * 0.75 ) ), 1) !important;
 }
 
-.h\:br_highlight:hover,.br_highlight-0 {
+.h\:br_highlight:hover,.h\:br_highlight-0:hover {
   border-color: var(--highlight) !important;
 }
 
-.br_highlight-1 {
+.h\:br_highlight-1:hover {
   border-color: hsla(var(--highlight-h), calc( var(--highlight-s) + ((100% - var(--highlight-s)) * 0.015) ), calc( var(--highlight-l) + ((100% - var(--highlight-l)) * 0.15) ), 1) !important;
 }
 
-.br_highlight-2 {
+.h\:br_highlight-2:hover {
   border-color: hsla(var(--highlight-h), calc( var(--highlight-s) + ((100% - var(--highlight-s)) * 0.037) ), calc( var(--highlight-l) + ((100% - var(--highlight-l)) * 0.37) ), 1) !important;
 }
 
-.br_highlight-3 {
+.h\:br_highlight-3:hover {
   border-color: hsla(var(--highlight-h), calc( var(--highlight-s) + ((100% - var(--highlight-s)) * 0.06) ), calc( var(--highlight-l) + ((100% - var(--highlight-l)) * 0.6) ), 1) !important;
 }
 
-.br_highlight-4 {
+.h\:br_highlight-4:hover {
   border-color: hsla(var(--highlight-h), calc( var(--highlight-s) + ((100% - var(--highlight-s)) * 0.078) ), calc( var(--highlight-l) + ((100% - var(--highlight-l)) * 0.78) ), 1) !important;
 }
 
-.br_highlight-5 {
+.h\:br_highlight-5:hover {
   border-color: hsla(var(--highlight-h), calc( var(--highlight-s) + ((100% - var(--highlight-s)) * 0.09) ), calc( var(--highlight-l) + ((100% - var(--highlight-l)) * 0.9) ), 1) !important;
 }
 
-.br_highlight-n1 {
+.h\:br_highlight-n1:hover {
   border-color: hsla(var(--highlight-h), calc( var( --highlight-s ) - ( var( --highlight-s ) * 0.01 ) ), calc( var( --highlight-l ) - ( var( --highlight-l ) * 0.1 ) ), 1) !important;
 }
 
-.br_highlight-n2 {
+.h\:br_highlight-n2:hover {
   border-color: hsla(var(--highlight-h), calc( var( --highlight-s ) - ( var( --highlight-s ) * 0.025 ) ), calc( var( --highlight-l ) - ( var( --highlight-l ) * 0.25 ) ), 1) !important;
 }
 
-.br_highlight-n3 {
+.h\:br_highlight-n3:hover {
   border-color: hsla(var(--highlight-h), calc( var( --highlight-s ) - ( var( --highlight-s ) * 0.045 ) ), calc( var( --highlight-l ) - ( var( --highlight-l ) * 0.45 ) ), 1) !important;
 }
 
-.br_highlight-n4 {
+.h\:br_highlight-n4:hover {
   border-color: hsla(var(--highlight-h), calc( var( --highlight-s ) - ( var( --highlight-s ) * 0.06 ) ), calc( var( --highlight-l ) - ( var( --highlight-l ) * 0.6 ) ), 1) !important;
 }
 
-.br_highlight-n5 {
+.h\:br_highlight-n5:hover {
   border-color: hsla(var(--highlight-h), calc( var( --highlight-s ) - ( var( --highlight-s ) * 0.075 ) ), calc( var( --highlight-l ) - ( var( --highlight-l ) * 0.75 ) ), 1) !important;
 }
 
-.h\:bg_acc:hover,.bg_acc-0 {
+.h\:bg_acc:hover,.h\:bg_acc-0:hover {
   background-color: var(--acc) !important;
 }
 
-.bg_acc-1 {
+.h\:bg_acc-1:hover {
   background-color: hsla(var(--acc-h), calc( var(--acc-s) + ((100% - var(--acc-s)) * 0.015) ), calc( var(--acc-l) + ((100% - var(--acc-l)) * 0.15) ), 1) !important;
 }
 
-.bg_acc-2 {
+.h\:bg_acc-2:hover {
   background-color: hsla(var(--acc-h), calc( var(--acc-s) + ((100% - var(--acc-s)) * 0.037) ), calc( var(--acc-l) + ((100% - var(--acc-l)) * 0.37) ), 1) !important;
 }
 
-.bg_acc-3 {
+.h\:bg_acc-3:hover {
   background-color: hsla(var(--acc-h), calc( var(--acc-s) + ((100% - var(--acc-s)) * 0.06) ), calc( var(--acc-l) + ((100% - var(--acc-l)) * 0.6) ), 1) !important;
 }
 
-.bg_acc-4 {
+.h\:bg_acc-4:hover {
   background-color: hsla(var(--acc-h), calc( var(--acc-s) + ((100% - var(--acc-s)) * 0.078) ), calc( var(--acc-l) + ((100% - var(--acc-l)) * 0.78) ), 1) !important;
 }
 
-.bg_acc-5 {
+.h\:bg_acc-5:hover {
   background-color: hsla(var(--acc-h), calc( var(--acc-s) + ((100% - var(--acc-s)) * 0.09) ), calc( var(--acc-l) + ((100% - var(--acc-l)) * 0.9) ), 1) !important;
 }
 
-.bg_acc-n1 {
+.h\:bg_acc-n1:hover {
   background-color: hsla(var(--acc-h), calc( var( --acc-s ) - ( var( --acc-s ) * 0.01 ) ), calc( var( --acc-l ) - ( var( --acc-l ) * 0.1 ) ), 1) !important;
 }
 
-.bg_acc-n2 {
+.h\:bg_acc-n2:hover {
   background-color: hsla(var(--acc-h), calc( var( --acc-s ) - ( var( --acc-s ) * 0.025 ) ), calc( var( --acc-l ) - ( var( --acc-l ) * 0.25 ) ), 1) !important;
 }
 
-.bg_acc-n3 {
+.h\:bg_acc-n3:hover {
   background-color: hsla(var(--acc-h), calc( var( --acc-s ) - ( var( --acc-s ) * 0.045 ) ), calc( var( --acc-l ) - ( var( --acc-l ) * 0.45 ) ), 1) !important;
 }
 
-.bg_acc-n4 {
+.h\:bg_acc-n4:hover {
   background-color: hsla(var(--acc-h), calc( var( --acc-s ) - ( var( --acc-s ) * 0.06 ) ), calc( var( --acc-l ) - ( var( --acc-l ) * 0.6 ) ), 1) !important;
 }
 
-.bg_acc-n5 {
+.h\:bg_acc-n5:hover {
   background-color: hsla(var(--acc-h), calc( var( --acc-s ) - ( var( --acc-s ) * 0.075 ) ), calc( var( --acc-l ) - ( var( --acc-l ) * 0.75 ) ), 1) !important;
 }
 
-.h\:c_acc:hover,.c_acc-0 {
+.h\:c_acc:hover,.h\:c_acc-0:hover {
   color: var(--acc) !important;
 }
 
-.c_acc-1 {
+.h\:c_acc-1:hover {
   color: hsla(var(--acc-h), calc( var(--acc-s) + ((100% - var(--acc-s)) * 0.015) ), calc( var(--acc-l) + ((100% - var(--acc-l)) * 0.15) ), 1) !important;
 }
 
-.c_acc-2 {
+.h\:c_acc-2:hover {
   color: hsla(var(--acc-h), calc( var(--acc-s) + ((100% - var(--acc-s)) * 0.037) ), calc( var(--acc-l) + ((100% - var(--acc-l)) * 0.37) ), 1) !important;
 }
 
-.c_acc-3 {
+.h\:c_acc-3:hover {
   color: hsla(var(--acc-h), calc( var(--acc-s) + ((100% - var(--acc-s)) * 0.06) ), calc( var(--acc-l) + ((100% - var(--acc-l)) * 0.6) ), 1) !important;
 }
 
-.c_acc-4 {
+.h\:c_acc-4:hover {
   color: hsla(var(--acc-h), calc( var(--acc-s) + ((100% - var(--acc-s)) * 0.078) ), calc( var(--acc-l) + ((100% - var(--acc-l)) * 0.78) ), 1) !important;
 }
 
-.c_acc-5 {
+.h\:c_acc-5:hover {
   color: hsla(var(--acc-h), calc( var(--acc-s) + ((100% - var(--acc-s)) * 0.09) ), calc( var(--acc-l) + ((100% - var(--acc-l)) * 0.9) ), 1) !important;
 }
 
-.c_acc-n1 {
+.h\:c_acc-n1:hover {
   color: hsla(var(--acc-h), calc( var( --acc-s ) - ( var( --acc-s ) * 0.01 ) ), calc( var( --acc-l ) - ( var( --acc-l ) * 0.1 ) ), 1) !important;
 }
 
-.c_acc-n2 {
+.h\:c_acc-n2:hover {
   color: hsla(var(--acc-h), calc( var( --acc-s ) - ( var( --acc-s ) * 0.025 ) ), calc( var( --acc-l ) - ( var( --acc-l ) * 0.25 ) ), 1) !important;
 }
 
-.c_acc-n3 {
+.h\:c_acc-n3:hover {
   color: hsla(var(--acc-h), calc( var( --acc-s ) - ( var( --acc-s ) * 0.045 ) ), calc( var( --acc-l ) - ( var( --acc-l ) * 0.45 ) ), 1) !important;
 }
 
-.c_acc-n4 {
+.h\:c_acc-n4:hover {
   color: hsla(var(--acc-h), calc( var( --acc-s ) - ( var( --acc-s ) * 0.06 ) ), calc( var( --acc-l ) - ( var( --acc-l ) * 0.6 ) ), 1) !important;
 }
 
-.c_acc-n5 {
+.h\:c_acc-n5:hover {
   color: hsla(var(--acc-h), calc( var( --acc-s ) - ( var( --acc-s ) * 0.075 ) ), calc( var( --acc-l ) - ( var( --acc-l ) * 0.75 ) ), 1) !important;
 }
 
-.h\:br_acc:hover,.br_acc-0 {
+.h\:br_acc:hover,.h\:br_acc-0:hover {
   border-color: var(--acc) !important;
 }
 
-.br_acc-1 {
+.h\:br_acc-1:hover {
   border-color: hsla(var(--acc-h), calc( var(--acc-s) + ((100% - var(--acc-s)) * 0.015) ), calc( var(--acc-l) + ((100% - var(--acc-l)) * 0.15) ), 1) !important;
 }
 
-.br_acc-2 {
+.h\:br_acc-2:hover {
   border-color: hsla(var(--acc-h), calc( var(--acc-s) + ((100% - var(--acc-s)) * 0.037) ), calc( var(--acc-l) + ((100% - var(--acc-l)) * 0.37) ), 1) !important;
 }
 
-.br_acc-3 {
+.h\:br_acc-3:hover {
   border-color: hsla(var(--acc-h), calc( var(--acc-s) + ((100% - var(--acc-s)) * 0.06) ), calc( var(--acc-l) + ((100% - var(--acc-l)) * 0.6) ), 1) !important;
 }
 
-.br_acc-4 {
+.h\:br_acc-4:hover {
   border-color: hsla(var(--acc-h), calc( var(--acc-s) + ((100% - var(--acc-s)) * 0.078) ), calc( var(--acc-l) + ((100% - var(--acc-l)) * 0.78) ), 1) !important;
 }
 
-.br_acc-5 {
+.h\:br_acc-5:hover {
   border-color: hsla(var(--acc-h), calc( var(--acc-s) + ((100% - var(--acc-s)) * 0.09) ), calc( var(--acc-l) + ((100% - var(--acc-l)) * 0.9) ), 1) !important;
 }
 
-.br_acc-n1 {
+.h\:br_acc-n1:hover {
   border-color: hsla(var(--acc-h), calc( var( --acc-s ) - ( var( --acc-s ) * 0.01 ) ), calc( var( --acc-l ) - ( var( --acc-l ) * 0.1 ) ), 1) !important;
 }
 
-.br_acc-n2 {
+.h\:br_acc-n2:hover {
   border-color: hsla(var(--acc-h), calc( var( --acc-s ) - ( var( --acc-s ) * 0.025 ) ), calc( var( --acc-l ) - ( var( --acc-l ) * 0.25 ) ), 1) !important;
 }
 
-.br_acc-n3 {
+.h\:br_acc-n3:hover {
   border-color: hsla(var(--acc-h), calc( var( --acc-s ) - ( var( --acc-s ) * 0.045 ) ), calc( var( --acc-l ) - ( var( --acc-l ) * 0.45 ) ), 1) !important;
 }
 
-.br_acc-n4 {
+.h\:br_acc-n4:hover {
   border-color: hsla(var(--acc-h), calc( var( --acc-s ) - ( var( --acc-s ) * 0.06 ) ), calc( var( --acc-l ) - ( var( --acc-l ) * 0.6 ) ), 1) !important;
 }
 
-.br_acc-n5 {
+.h\:br_acc-n5:hover {
   border-color: hsla(var(--acc-h), calc( var( --acc-s ) - ( var( --acc-s ) * 0.075 ) ), calc( var( --acc-l ) - ( var( --acc-l ) * 0.75 ) ), 1) !important;
 }
 
@@ -17568,4 +17568,4 @@ Styleguide Interaction.User
   box-shadow: none !important;
   cursor: not-allowed !important;
 }
-/*# sourceMappingURL=maps/acc_uc.css.map */
+
