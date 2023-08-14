@@ -420,8 +420,10 @@ Styleguide Anatomy.ExtraCredit
 }
 
 :where(.reading-typography) {
+  font-weight: var(--font_regular);
   font-size: 16px;
   font-size: 1rem;
+  font-family: var(--font-family_copy);
 }
 :where(.reading-typography) :where(h1,h2,h3,h4,h5,h6) {
   margin-bottom: 12px;
@@ -462,10 +464,12 @@ Styleguide Anatomy.ExtraCredit
   font-size: 1.265625rem;
 }
 :where(.reading-typography) h5 {
+  font-weight: var(--font_bold);
   font-size: 18px;
   font-size: 1.125rem;
 }
 :where(.reading-typography) h6 {
+  font-weight: var(--font_bold);
   font-size: 18px;
   font-size: 1.125rem;
 }
@@ -745,7 +749,7 @@ Weight: -80
   font-weight: var(--font_light, 300);
 }
 
-.font_regular {
+.font_regular, .reading-typography {
   font-weight: var(--font_regular, 400);
 }
 
@@ -753,7 +757,7 @@ Weight: -80
   font-weight: var(--font_medium, 500);
 }
 
-.font_bold {
+.font_bold, strong, b {
   font-weight: var(--font_bold, 700);
 }
 
@@ -788,7 +792,7 @@ You can modify the font family used in your text elements with these simple util
   font-family: "Maven Pro","Muli","Open Sans",Verdana,Helvetica,sans-serif;
 }
 
-.font_copy,.font_ui {
+.font_copy, .reading-typography,.font_ui {
   font-family: "Open Sans",-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
@@ -828,7 +832,7 @@ You can modify the font family used in your text elements with these simple util
   --font-family_copy: "Open Sans",-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-.font_copy {
+.font_copy, .reading-typography {
   --font_light:300;
   --font_regular:400;
   --font_medium:500;

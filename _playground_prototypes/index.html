@@ -3,24 +3,29 @@ layout : playground
 name : "CV Board"
 position : "Single Page - pagelayout"
 ---
-<nav
-	class="bg_white br-b_1 br-b_2 br_primary br_secondary br_soild br_solid flex flex_row items_center justify_center p-x_4 p-x_5:md p-x_6:lg p-y_3 shadow_overlap-light sticky t_0 z_4">
+<nav class="bg_white br-b_1 br-b_2 br_secondary br_soild br_solid shadow_overlap-light sticky t_0 z_4">
 	<!-- <img src="{{" assets/images/playground/logo.svg" | relative_url }}" alt="" style="aspect-ratio: 5/1;"
 		class="max-w_15 m_4"> -->
-		<h2 class="inline font_xbold">CV Board</h2>
-	<ul class="ul_none flex flex_row gap_6 m-l_auto justify_center items_center font_2:lg font_1:md font_0">
-		<li class="p_3">
-			<a href="#section-about" class="">About</a>
-		</li>
-		<li class="p_3"><a href="#section-partners" class="">Partners</a></li>
-		<li class="p_3"><a href="#section-faq">FAQ</a></li>
-		<li class="p_3">
-			<a href="#section-webinars" class="">Learn More</a>
-		</li>
-		<!-- <li class="p_3">
+	<div class="max-w_90 flex flex_row items_center justify_center m_auto flex_wrap">
+		<h2 class="display_none inline-block:md w_100 w_auto:md font_xbold p_3 m_0 font_display text_center text_left:md">CVBoard.org</h2>
+		<ul class="ul_none flex flex_row gap_1 m-l_auto:md justify_center items_center font_2:lg font_1:md font_0 m_0 font_display font_medium">
+			<li class="p_3 p-x_5 relative h:bg_secondary-n2 h:c_white">
+				<a href="#section-about"
+					class="expanded-click-area color_inherit c_inherit-all not-link h:undecorated">About</a>
+			</li>
+			<li class="p_3 p-x_5 relative h:bg_secondary-n2 h:c_white"><a href="#section-partners"
+					class="expanded-click-area color_inherit c_inherit-all not-link h:undecorated">Partners</a></li>
+			<!-- <li class="p_3 p-x_5 relative h:bg_secondary-n2 h:c_white"><a href="#section-faq"
+					class="expanded-click-area color_inherit c_inherit-all not-link h:undecorated">FAQ</a></li> -->
+			<li class="p_3 p-x_5 relative h:bg_secondary-n2 h:c_white">
+				<a href="#section-webinars"
+					class="expanded-click-area color_inherit c_inherit-all not-link h:undecorated">Learn More</a>
+			</li>
+			<!-- <li class="p_3">
                 <a href="#section-actnow" class="bg_secondary bg_secondary-n3 btn btn-primary capitalize h:bg_primary-n3 h:bg_secondary">Learn More</a>
             </li> -->
-	</ul>
+		</ul>
+	</div>
 </nav>
 
 <div data-item="hero-image-cta"
@@ -37,7 +42,9 @@ position : "Single Page - pagelayout"
 		style="--row-1:2.5rem; --row-2:min-content;">
 		<div class="relative row-start_2 row-end_3 col-start_start col-end_3:md col-end_end ">
 			<h1 data-item="page-title"
-				class="flex flex_row flex_wrap c_white z_1 p-t_5:lg p-t_4 font_8:lg font_6:md font_3 p-r_4 lh_0">
+				class="flex flex_row flex_wrap c_white z_1 p-t_5:lg p-t_4 font_10:lg font_7:md font_3 p-r_4 lh_0">
+				<span
+					class="block display_none:md font-size_up-1 font_xbold flex_100 p-b_4"><span class="p-y_3 p-l_3 p-r_4 bg_primary-n2 br_solid br_primary-n2 br_2  font-size_up-2">CVBoard.org</span></span>
 				<span
 					class="p-y_3 p-l_3 p-r_4 bg_primary-n2 br_solid br_primary-n2 br_2 m-t_n3 m-r_n4 inline-block">It’s</span>
 				<span
@@ -59,13 +66,13 @@ position : "Single Page - pagelayout"
 		<div
 			class="relative row-start_2:md row-end_end:md col-start_n3:md  row-start_3 row-end_end col-start_start col-end_end font_n1 font_0:lg">
 			<div data-item="cta-overlay"
-				class="c_white color_inherit m-x_4 m-x_5:lg p_4 p_5:lg reading-typography relative z_1 m-b_5">
-				<h2 data-item="cta-title" class="font_medium">The Value of UX and Member Engagement</h2>
-				<p data-item="cta-description" class="font-size_up-1 lh_2">From MOC to Continuous Competency: Building a
+				class="c_white color_inherit c_inherit m-x_4 m-x_5:lg p_4 p_5:lg reading-typography relative z_1 m-b_5">
+				<h2 data-item="cta-title" class="font_medium">From MOC to Continuous Competency</h2>
+				<p data-item="cta-description" class="font-size_up-1 lh_3">Building a
 					New Board of Cardiovascular Medicine.</p>
 				<div class="grid justify_center">
 					<button
-						class="bg_secondary bg_secondary-n3 btn btn-primary capitalize h:bg_primary-n3 h:bg_secondary">Learn
+						class="bg_secondary bg_secondary-n3 btn btn-primary capitalize h:bg_primary-n3 h:bg_secondary br_none font_medium">Learn
 						More</button>
 				</div>
 				<div
@@ -86,23 +93,33 @@ position : "Single Page - pagelayout"
 		</div>
 	</div>
 </section>
-<section class="p-y_5:lg p-y_4 relative bg_secondary-4" >
-	<div class="max-w_90 m_auto p_4 p_6:lg p_5:md text_center grid columns_3:lg columns_1 gap_6:lg gap_5:md gap_4 text_center">
-		
-		<div class="reading-typography max-w_30">
-			<img class="aspect_1x1 bg_contain m_auto max-w_10" src="{{ '/assets/images/playground/shape-269.svg' | relative_url }}" alt="" srcset="">
-			<h2>Concept A</h2>
-			<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim qui obcaecati laborum impedit facere quia, reiciendis accusantium dolore facilis! Molestiae accusamus atque possimus ullam architecto? Quo commodi et aut in.</p>
+<section class="p-y_5:lg p-y_4 relative bg_secondary-4">
+	<div
+		class="max-w_90 m_auto p_4 p_6:lg p_5:md text_center grid columns_3:lg columns_1 gap_6:lg gap_5:md gap_4 text_center">
+
+		<div class="font-size_up max-w_30 reading-typography" style="--custom-font-size-modifier: 1.15;">
+			<img class="aspect_1x1 bg_contain m_auto max-w_10"
+				src="{{ '/assets/images/playground/shape-269.svg' | relative_url }}" alt="" srcset="">
+			<h2 class="font-light font-size_up-2 font_display">Concept A</h2>
+			<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim qui obcaecati laborum impedit facere quia,
+				reiciendis accusantium dolore facilis! Molestiae accusamus atque possimus ullam architecto? Quo commodi
+				et aut in.</p>
 		</div>
-		<div class="reading-typography max-w_30">
-			<img class="aspect_1x1 bg_contain m_auto max-w_10" src="{{ '/assets/images/playground/shape-278.svg' | relative_url }}" alt="" srcset="">
-			<h2>Concept B</h2>
-			<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim qui obcaecati laborum impedit facere quia, reiciendis accusantium dolore facilis! Molestiae accusamus atque possimus ullam architecto? Quo commodi et aut in.</p>
+		<div class="font-size_up max-w_30 reading-typography" style="--custom-font-size-modifier: 1.15;">
+			<img class="aspect_1x1 bg_contain m_auto max-w_10"
+				src="{{ '/assets/images/playground/shape-278.svg' | relative_url }}" alt="" srcset="">
+			<h2 class="font-light font-size_up-2 font_display">Concept B</h2>
+			<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim qui obcaecati laborum impedit facere quia,
+				reiciendis accusantium dolore facilis! Molestiae accusamus atque possimus ullam architecto? Quo commodi
+				et aut in.</p>
 		</div>
-		<div class="reading-typography max-w_30">
-			<img class="aspect_1x1 bg_contain m_auto max-w_10" src="{{ '/assets/images/playground/shape-270.svg' | relative_url }}" alt="" srcset="">
-			<h2>Concept C</h2>
-			<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim qui obcaecati laborum impedit facere quia, reiciendis accusantium dolore facilis! Molestiae accusamus atque possimus ullam architecto? Quo commodi et aut in.</p>
+		<div class="font-size_up max-w_30 reading-typography" style="--custom-font-size-modifier: 1.15;">
+			<img class="aspect_1x1 bg_contain m_auto max-w_10"
+				src="{{ '/assets/images/playground/shape-270.svg' | relative_url }}" alt="" srcset="">
+			<h2 class="font-light font-size_up-2 font_display">Concept C</h2>
+			<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim qui obcaecati laborum impedit facere quia,
+				reiciendis accusantium dolore facilis! Molestiae accusamus atque possimus ullam architecto? Quo commodi
+				et aut in.</p>
 		</div>
 	</div>
 </section>
@@ -154,14 +171,15 @@ position : "Single Page - pagelayout"
 					style="background-image: url(https://picsum.photos/id/30/350/80); aspect-ratio: 350/80;"></div>
 				<div class="relative">
 					<aside data-type="date"
-						class="float_left m-l_4 m-l_5:lg br-t_0 br_1 br_solid br_black-4 bg_primary-5 p-x_4 p-y_4 font_0 text_center font_display c_black-7 z_3 shadow_overlap-light m-t_n5">
+						class="float_left m-l_4 m-l_5:lg br-t_0 br_1 br_solid br_black-4 bg_info c_white p-x_4 p-y_4 font_0 text_center font_display z_3 shadow_overlap-light m-t_n5">
 						<span class="block font_n1 font_0:md font_medium lh_0 p-x_2:lg">Mar<!----></span>
 						<span class="block font_2 font_4:md font_light lh_0 p-x_2:lg">29-28</span>
 					</aside>
 					<div
 						class="absolute r_4 r_5:lg t_0 text_center flex flex_column:md justify_end align-right font_1:md font_0 overflow_hidden transition_2 z_2">
 						<div class="flex flex_row justify_end transition_2 c_white m-r_1:lg m-r_3 m-r_4">
-							<span class="bg_accent-1 h:bg_accent-n3 flex_shrink p-y_2 p-x_3 br_1 br_solid br_white-7">
+							<span
+								class="c_accent-1 bg_info h:bg_info-n2 flex_shrink p-y_2 p-x_3 br_1 br_solid br_white-7">
 								<span class="p-x_2 m-t_1 m-b_2" style="display: none;">registered</span>
 								<i class="fas fa-fw m-t_1 m-b_2 fa-check-circle"></i>
 							</span>
@@ -169,147 +187,9 @@ position : "Single Page - pagelayout"
 					</div>
 				</div>
 				<header class="clear_both p-x_3 p-x_4:md p-x_5:lg p-t_2">
-					<h2 class="font_display font_3:lg font_2:md font_1 c_secondary-n1 m-t_2 m-t_4:lg m-t_3:md m-b_2 lh_1"
+					<h2 class="font_display font_3:lg font_2:md font_1 c_secondary-n3 m-t_2 m-t_4:lg m-t_3:md m-b_2 lh_1"
 						style="font-weight: 400;">ACC Anywhere: The Cardiology Video Library</h2>
-					<div data-v-5294f1c2="" class="font_ui c_accent-n1 font_medium font_n2 m-t_n2 uppercase">Live
-						Meetings</div><!---->
-				</header><!---->
-				<ul class="m-b_4:md p-t_3 p-x_3 p-x_4:md p-x_5:lg font_n1:lg font_n2 ul_none lh_4">
-					<li class="flex flex_row m-t_2">
-						<i class="fas font-size_up flex_none p-r_3 self_center fa-hourglass-half c_black-5"></i>
-						<span class="m-l_2 flex_auto inline-block self_start lh_1 font_accent">
-							Mar 28 EDT</span>
-					</li>
-				</ul>
-				<footer class="flex justify_around m-t_auto gap-x_3 p-t_4 p-t_3:md p-x_5:lg p-x_3 p-b_4">
-					<!----><!---->
-					<button
-						class="ease_out transition_1 f:outline_none text_center br_none inline-block w_auto font_medium font_ui p-y_3 p-x_3 lh_0 font_n1 font_0:md  c_white h:c_white h:bg_primary-n2 br_primary-n3 bg_primary   shadow_overlap-light br_radius flex_auto text_center max-w_20 m-b_2">
-						<span class="flex block">
-							<span class="flex_grow">Join</span>
-						</span>
-					</button>
-				</footer>
-			</article>
-			<article
-				class="bg_white-9 br_solid br_1 br_black-2 br_radius relative font_copy br_black-3 shadow_overlap-light flex_column flex justify_start flex_none br_radius"
-				eventtypemapping="[object Object]" imglgmapping="[object Object]" imgmdmapping="[object Object]"
-				imgsmmapping="[object Object]">
-				<div data-name="img-header"
-					class="br-tr_radius br-tl_radius bg-blend_multiply br_1 br_solid br_black-3 bg_cover bg_left m-x_n1 m-t_n1 expand-br_1 aspect_custom-sm bg-blend_multiply br_1 br_solid br_black-3 bg_cover bg_left m-x_n1 m-t_n1 flex_none br-tr_radius br-tl_radius"
-					style="background-image: url(https://picsum.photos/id/30/350/80); aspect-ratio: 350/80;"></div>
-				<div class="relative">
-					<aside data-type="date"
-						class="float_left m-l_4 m-l_5:lg br-t_0 br_1 br_solid br_black-4 bg_primary-5 p-x_4 p-y_4 font_0 text_center font_display c_black-7 z_3 shadow_overlap-light m-t_n5">
-						<span class="block font_n1 font_0:md font_medium lh_0 p-x_2:lg">Mar<!----></span>
-						<span class="block font_2 font_4:md font_light lh_0 p-x_2:lg">29-28</span>
-					</aside>
-					<div
-						class="absolute r_4 r_5:lg t_0 text_center flex flex_column:md justify_end align-right font_1:md font_0 overflow_hidden transition_2 z_2">
-						<div class="flex flex_row justify_end transition_2 c_white m-r_1:lg m-r_3 m-r_4">
-							<span class="bg_accent-1 h:bg_accent-n3 flex_shrink p-y_2 p-x_3 br_1 br_solid br_white-7">
-								<span class="p-x_2 m-t_1 m-b_2" style="display: none;">registered</span>
-								<i class="fas fa-fw m-t_1 m-b_2 fa-check-circle"></i>
-							</span>
-						</div>
-					</div>
-				</div>
-				<header class="clear_both p-x_3 p-x_4:md p-x_5:lg p-t_2">
-					<h2 class="font_display font_3:lg font_2:md font_1 c_secondary-n1 m-t_2 m-t_4:lg m-t_3:md m-b_2 lh_1"
-						style="font-weight: 400;">ACC Anywhere: The Cardiology Video Library</h2>
-					<div data-v-5294f1c2="" class="font_ui c_accent-n1 font_medium font_n2 m-t_n2 uppercase">Live
-						Meetings</div><!---->
-				</header><!---->
-				<ul class="m-b_4:md p-t_3 p-x_3 p-x_4:md p-x_5:lg font_n1:lg font_n2 ul_none lh_4">
-					<li class="flex flex_row m-t_2">
-						<i class="fas font-size_up flex_none p-r_3 self_center fa-hourglass-half c_black-5"></i>
-						<span class="m-l_2 flex_auto inline-block self_start lh_1 font_accent">
-							Mar 28 EDT</span>
-					</li>
-				</ul>
-				<footer class="flex justify_around m-t_auto gap-x_3 p-t_4 p-t_3:md p-x_5:lg p-x_3 p-b_4">
-					<!----><!---->
-					<button
-						class="ease_out transition_1 f:outline_none text_center br_none inline-block w_auto font_medium font_ui p-y_3 p-x_3 lh_0 font_n1 font_0:md  c_white h:c_white h:bg_primary-n2 br_primary-n3 bg_primary   shadow_overlap-light br_radius flex_auto text_center max-w_20 m-b_2">
-						<span class="flex block">
-							<span class="flex_grow">Join</span>
-						</span>
-					</button>
-				</footer>
-			</article>
-			<article
-				class="bg_white-9 br_solid br_1 br_black-2 br_radius relative font_copy br_black-3 shadow_overlap-light flex_column flex justify_start flex_none br_radius"
-				eventtypemapping="[object Object]" imglgmapping="[object Object]" imgmdmapping="[object Object]"
-				imgsmmapping="[object Object]">
-				<div data-name="img-header"
-					class="br-tr_radius br-tl_radius bg-blend_multiply br_1 br_solid br_black-3 bg_cover bg_left m-x_n1 m-t_n1 expand-br_1 aspect_custom-sm bg-blend_multiply br_1 br_solid br_black-3 bg_cover bg_left m-x_n1 m-t_n1 flex_none br-tr_radius br-tl_radius"
-					style="background-image: url(https://picsum.photos/id/30/350/80); aspect-ratio: 350/80;"></div>
-				<div class="relative">
-					<aside data-type="date"
-						class="float_left m-l_4 m-l_5:lg br-t_0 br_1 br_solid br_black-4 bg_primary-5 p-x_4 p-y_4 font_0 text_center font_display c_black-7 z_3 shadow_overlap-light m-t_n5">
-						<span class="block font_n1 font_0:md font_medium lh_0 p-x_2:lg">Mar<!----></span>
-						<span class="block font_2 font_4:md font_light lh_0 p-x_2:lg">29-28</span>
-					</aside>
-					<div
-						class="absolute r_4 r_5:lg t_0 text_center flex flex_column:md justify_end align-right font_1:md font_0 overflow_hidden transition_2 z_2">
-						<div class="flex flex_row justify_end transition_2 c_white m-r_1:lg m-r_3 m-r_4">
-							<span class="bg_accent-1 h:bg_accent-n3 flex_shrink p-y_2 p-x_3 br_1 br_solid br_white-7">
-								<span class="p-x_2 m-t_1 m-b_2" style="display: none;">registered</span>
-								<i class="fas fa-fw m-t_1 m-b_2 fa-check-circle"></i>
-							</span>
-						</div>
-					</div>
-				</div>
-				<header class="clear_both p-x_3 p-x_4:md p-x_5:lg p-t_2">
-					<h2 class="font_display font_3:lg font_2:md font_1 c_secondary-n1 m-t_2 m-t_4:lg m-t_3:md m-b_2 lh_1"
-						style="font-weight: 400;">ACC Anywhere: The Cardiology Video Library</h2>
-					<div data-v-5294f1c2="" class="font_ui c_accent-n1 font_medium font_n2 m-t_n2 uppercase">Live
-						Meetings</div><!---->
-				</header><!---->
-				<ul class="m-b_4:md p-t_3 p-x_3 p-x_4:md p-x_5:lg font_n1:lg font_n2 ul_none lh_4">
-					<li class="flex flex_row m-t_2">
-						<i class="fas font-size_up flex_none p-r_3 self_center fa-hourglass-half c_black-5"></i>
-						<span class="m-l_2 flex_auto inline-block self_start lh_1 font_accent">
-							Mar 28 EDT</span>
-					</li>
-				</ul>
-				<footer class="flex justify_around m-t_auto gap-x_3 p-t_4 p-t_3:md p-x_5:lg p-x_3 p-b_4">
-					<!----><!---->
-					<button
-						class="ease_out transition_1 f:outline_none text_center br_none inline-block w_auto font_medium font_ui p-y_3 p-x_3 lh_0 font_n1 font_0:md  c_white h:c_white h:bg_primary-n2 br_primary-n3 bg_primary   shadow_overlap-light br_radius flex_auto text_center max-w_20 m-b_2">
-						<span class="flex block">
-							<span class="flex_grow">Join</span>
-						</span>
-					</button>
-				</footer>
-			</article>
-			<article
-				class="bg_white-9 br_solid br_1 br_black-2 br_radius relative font_copy br_black-3 shadow_overlap-light flex_column flex justify_start flex_none br_radius"
-				eventtypemapping="[object Object]" imglgmapping="[object Object]" imgmdmapping="[object Object]"
-				imgsmmapping="[object Object]">
-				<div data-name="img-header"
-					class="br-tr_radius br-tl_radius bg-blend_multiply br_1 br_solid br_black-3 bg_cover bg_left m-x_n1 m-t_n1 expand-br_1 aspect_custom-sm bg-blend_multiply br_1 br_solid br_black-3 bg_cover bg_left m-x_n1 m-t_n1 flex_none br-tr_radius br-tl_radius"
-					style="background-image: url(https://picsum.photos/id/30/350/80); aspect-ratio: 350/80;"></div>
-				<div class="relative">
-					<aside data-type="date"
-						class="float_left m-l_4 m-l_5:lg br-t_0 br_1 br_solid br_black-4 bg_primary-5 p-x_4 p-y_4 font_0 text_center font_display c_black-7 z_3 shadow_overlap-light m-t_n5">
-						<span class="block font_n1 font_0:md font_medium lh_0 p-x_2:lg">Mar<!----></span>
-						<span class="block font_2 font_4:md font_light lh_0 p-x_2:lg">29-28</span>
-					</aside>
-					<div
-						class="absolute r_4 r_5:lg t_0 text_center flex flex_column:md justify_end align-right font_1:md font_0 overflow_hidden transition_2 z_2">
-						<div class="flex flex_row justify_end transition_2 c_white m-r_1:lg m-r_3 m-r_4">
-							<span class="bg_accent-1 h:bg_accent-n3 flex_shrink p-y_2 p-x_3 br_1 br_solid br_white-7">
-								<span class="p-x_2 m-t_1 m-b_2" style="display: none;">registered</span>
-								<i class="fas fa-fw m-t_1 m-b_2 fa-check-circle"></i>
-							</span>
-						</div>
-					</div>
-				</div>
-				<header class="clear_both p-x_3 p-x_4:md p-x_5:lg p-t_2">
-					<h2 class="font_display font_3:lg font_2:md font_1 c_secondary-n1 m-t_2 m-t_4:lg m-t_3:md m-b_2 lh_1"
-						style="font-weight: 400;">ACC Anywhere: The Cardiology Video Library</h2>
-					<div data-v-5294f1c2="" class="font_ui c_accent-n1 font_medium font_n2 m-t_n2 uppercase">Live
+					<div data-v-5294f1c2="" class="font_ui c_info font_medium font_n2 m-t_n2 uppercase">Live
 						Meetings</div><!---->
 				</header><!---->
 				<ul class="m-b_4:md p-t_3 p-x_3 p-x_4:md p-x_5:lg font_n1:lg font_n2 ul_none lh_4">
