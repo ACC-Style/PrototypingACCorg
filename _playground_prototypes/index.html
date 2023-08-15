@@ -32,11 +32,11 @@ position : "Single Page - pagelayout"
 	class="relative isolation_isolate grid rows_3 rows_2:md columns_4:md columns_5:lg columns_2 isolation_isolate "
 	style="--row-1:2.5rem; --row-2:min-content;">
 	<picture data-item="responsive-hero-image" class="col_all row_all w_100 flex overflow_hidden ">
-		<source srcset="https://picsum.photos/id/56/1400/150" media="(min-width: 1200px)" class="display_none">
-		<source srcset="https://picsum.photos/id/56/1200/300" media="(min-width: 1024px)" class="display_none">
-		<source srcset="https://picsum.photos/id/56/1024/256" media="(min-width: 768px)" class="display_none">
-		<source srcset="https://picsum.photos/id/56/600/300" media="(min-width: 400px)" class="display_none">
-		<img src="https://picsum.photos/id/56/300/450" alt="Hero Image" class="bg_cover flex_100">
+		<source srcset="{{ '/assets/images/playground/hero/1400x150.jpg' | relative_url }}" media="(min-width: 1200px)" class="display_none">
+		<source srcset="{{ '/assets/images/playground/hero/1200x300.jpg' | relative_url }}" media="(min-width: 1024px)" class="display_none">
+		<source srcset="{{ '/assets/images/playground/hero/1024x256.jpg' | relative_url }}" media="(min-width: 768px)" class="display_none">
+		<source  srcset="{{ '/assets/images/playground/hero/600x300.jpg' | relative_url }}"  media="(min-width: 400px)" class="display_none">
+		<img src="{{ '/assets/images/playground/hero/300x450.jpg' | relative_url }}" alt="Hero Image" class="bg_cover flex_100">
 	</picture>
 	<div class="row_all col_all grid rows_3 rows_2:md columns_4:md columns_5:lg columns_2 isolation_isolate m_auto max-w_90 "
 		style="--row-1:2.5rem; --row-2:min-content;">
