@@ -7,8 +7,11 @@ position : "Single Page - pagelayout"
 	<!-- <img src="{{" assets/images/playground/logo.svg" | relative_url }}" alt="" style="aspect-ratio: 5/1;"
 		class="max-w_15 m_4"> -->
 	<div class="max-w_90 flex flex_row items_center justify_center m_auto flex_wrap">
-		<h2 class="display_none inline-block:md w_100 w_auto:md font_xbold p_3 m_0 font_display text_center text_left:md">CVBoard.org</h2>
-		<ul class="ul_none flex flex_row gap_1 m-l_auto:md justify_center items_center font_2:lg font_1:md font_0 m_0 font_display font_medium">
+		<h2
+			class="display_none inline-block:md w_100 w_auto:md font_xbold p_3 m_0 font_display text_center:md text_left:md">
+			CVBoard.org</h2>
+		<ul
+			class="ul_none flex flex_row gap_1 m-l_auto:md justify_center items_center font_2:lg font_1:md font_0 m_0 font_display font_medium">
 			<li class="p_3 p-x_5 relative h:bg_secondary-n2 h:c_white">
 				<a href="#section-about"
 					class="expanded-click-area color_inherit c_inherit-all not-link h:undecorated">About</a>
@@ -27,64 +30,70 @@ position : "Single Page - pagelayout"
 		</ul>
 	</div>
 </nav>
-
-<div data-item="hero-image-cta"
-	class="relative isolation_isolate grid rows_3 rows_2:md columns_4:md columns_5:lg columns_2 isolation_isolate "
-	style="--row-1:2.5rem; --row-2:min-content;">
-	<picture data-item="responsive-hero-image" class="col_all row_all w_100 flex overflow_hidden ">
-		<source srcset="{{ '/assets/images/playground/hero/1400x150.jpg' | relative_url }}" media="(min-width: 1200px)" class="display_none">
-		<source srcset="{{ '/assets/images/playground/hero/1200x300.jpg' | relative_url }}" media="(min-width: 1024px)" class="display_none">
-		<source srcset="{{ '/assets/images/playground/hero/1024x256.jpg' | relative_url }}" media="(min-width: 768px)" class="display_none">
-		<source  srcset="{{ '/assets/images/playground/hero/600x300.jpg' | relative_url }}"  media="(min-width: 400px)" class="display_none">
-		<img src="{{ '/assets/images/playground/hero/300x450.jpg' | relative_url }}" alt="Hero Image" class="bg_cover flex_100">
-	</picture>
-	<div class="row_all col_all grid rows_3 rows_2:md columns_4:md columns_5:lg columns_2 isolation_isolate m_auto max-w_90 "
-		style="--row-1:2.5rem; --row-2:min-content;">
-		<div class="relative row-start_2 row-end_3 col-start_start col-end_3:md col-end_end ">
-			<h1 data-item="page-title"
-				class="flex flex_row flex_wrap c_white z_1 p-t_5:lg p-t_4 font_10:lg font_7:md font_3 p-r_4 lh_0">
-				<span
-					class="block display_none:md font-size_up-1 font_xbold flex_100 p-b_4"><span class="p-y_3 p-l_3 p-r_4 bg_primary-n2 br_solid br_primary-n2 br_2  font-size_up-2">CVBoard.org</span></span>
-				<span
-					class="p-y_3 p-l_3 p-r_4 bg_primary-n2 br_solid br_primary-n2 br_2 m-t_n3 m-r_n4 inline-block">It’s</span>
-				<span
-					class="p-y_3 p-l_3 p-r_4 bg_primary-n2 br_solid br_primary-n2 br_2 m-t_n3 m-r_n4 inline-block">Time</span>
-				<span
-					class="p-y_3 p-l_3 p-r_4 bg_primary-n2 br_solid br_primary-n2 br_2 m-t_n3 m-r_n4 inline-block">for</span>
-				<span
-					class="p-y_3 p-l_3 p-r_4 bg_primary-n2 br_solid br_primary-n2 br_2 m-t_n3 m-r_n4 inline-block">a</span>
-				<span
-					class="p-y_3 p-l_3 p-r_4 bg_primary-n2 br_solid br_primary-n2 br_2 m-t_n3 m-r_n4 inline-block">Board</span>
-				<span
-					class="p-y_3 p-l_3 p-r_4 bg_primary-n2 br_solid br_primary-n2 br_2 m-t_n3 m-r_n4 inline-block">of</span>
-				<span
-					class="p-y_3 p-l_3 p-r_4 bg_primary-n2 br_solid br_primary-n2 br_2 m-t_n3 m-r_n4 inline-block">Our</span>
-				<span
-					class="p-y_3 p-l_3 p-r_4 bg_primary-n2 br_solid br_primary-n2 br_2 m-t_n3 m-r_n4 inline-block">Own</span>
-			</h1>
-		</div>
-		<div
-			class="relative row-start_2:md row-end_end:md col-start_n3:md  row-start_3 row-end_end col-start_start col-end_end font_n1 font_0:lg">
-			<div data-item="cta-overlay"
-				class="c_white color_inherit c_inherit m-x_4 m-x_5:lg p_4 p_5:lg reading-typography relative z_1 m-b_5">
-				<h2 data-item="cta-title" class="font_medium">From MOC to Continuous Competency</h2>
-				<p data-item="cta-description" class="font-size_up-1 lh_3">Building a
-					New Board of Cardiovascular Medicine.</p>
-				<div class="grid justify_center">
-					<button
-						class="bg_secondary bg_secondary-n3 btn btn-primary capitalize h:bg_primary-n3 h:bg_secondary br_none font_medium">Learn
-						More</button>
-				</div>
-				<div
-					class="absolute bg-blend_multiply bg_primary-n1 br_round inset_0 opacity_8 shadow_overlap-bold z_0">
-				</div>
+<!-- START: Hero Image -->
+<div data-item="hero-image-cta" 
+	class="hero relative isolation_isolate grid rows_3 rows_2:md columns_4:md columns_5:lg columns_2 m-t_n4 m-x_n4_2 overflow_hidden "
+	style="--row-1:2.5rem; --row-2:min-content; --hero-overlay-color: #270a64;--hero-overlay-opacity: .6;" >
+		<picture data-item="responsive-hero-image" class="col_all row_all w_100 flex overflow_hidden ">
+			<source srcset="{{ '/assets/images/playground/hero/1400x150.jpg' | relative_url }}" media="(min-width: 1200px)"
+				class="display_none">
+			<source srcset="{{ '/assets/images/playground/hero/1200x300.jpg' | relative_url }}" media="(min-width: 1024px)"
+				class="display_none">
+			<source srcset="{{ '/assets/images/playground/hero/1024x256.jpg' | relative_url }}" media="(min-width: 768px)"
+				class="display_none">
+			<source srcset="{{ '/assets/images/playground/hero/600x300.jpg' | relative_url }}" media="(min-width: 400px)"
+				class="display_none">
+			<img src="{{ '/assets/images/playground/hero/300x450.jpg' | relative_url }}" alt="Hero Image"
+				class="bg_cover flex_100">
+		</picture>
+	<!-- START: Breadcrumb navigation content goes here -->
+	<!-- 
+		<div class="z_1 row-start_start row_end_1 col-start_start col-end_end flex flex_row justify_start">
+		<nav data-item="hero-image-breadcrumb-nav"
+			class=" relative isolation_isolate p-y_3 p-x_4 c_white-8 w_auto font_n1 font_0:md">
+			<a href="#" class="h:c_white h:underline font_bold c_white-8 expanded-click-area h:c_white"><i
+					class="fas fa-arrow-left"></i> Back</a> |
+			The page this was a child of</a>
+		</nav>
+	</div> 
+	-->
+	<!-- END: Breadcrumb -->
+	<div class="relative row-start_2 row-end_3 col-start_start col-end_3:md col-end_end p-y_4 p-y_0:md m-l_4 m-l_0:md">
+		<h1 style="--hero-overlay-color:var(--secondary);" data-item="hero-title" class="display_none:md c_white m-t_5:lg m-t_4 font_5:lg font_4:md font_3 isolation_isolate relative m-b_n4">
+			<span class="font_xbold font-size_up-2">CVBoard.org</span>
+		</h1>
+		<h1 data-item="hero-title" class="c_white m-t_5:lg m-t_4 font_5:lg font_4:md font_3 isolation_isolate relative">
+			<span>It's</span>
+			<span>Time</span>
+			<span>for</span>
+			<span>a</span>
+			<span>Board</span>
+			<span>of</span>
+			<span>Our</span>
+			<span>Own</span>
+		</h1>
+	</div>
+	<div 
+		class="col-end_end col-start_n3:md col-start_start font_0:lg font_n1 p-t_0:md p-t_5 relative row-end_end row-end_end:md row-start_2:md row-start_3">
+		<div data-item="cta-callout"
+			class="c_white color_inherit m-x_4 m-x_5:lg p_4 p_5:lg reading-typography relative z_1 m-b_5 isolation_isolate">
+			<h2 data-item="cta-title" class="font_medium m-t_0">The Value of UX and Member Engagement</h2>
+			<p data-item="cta-description" class="font-size_up-1 lh_2">Accusantium iure non nam quaerat nesciunt ad.
+				Vero nobis ea quo laudantium eum esse. Officiis eum nemo id minus ut itaque et et beatae. Voluptas est
+				incidunt.</p>
+			<div class="grid justify_center">
+				<button class="btn btn-primary capitalize">Get Started</button>
 			</div>
 		</div>
 	</div>
 </div>
+
+
+
+<!-- END: Hero Image -->
 <section class="p-y_5:lg p-y_4 relative">
 	<div class="absolute" style="top:-180px;" id="section-about">&nbsp;</div>
-	<div class="max-w_90 m_auto p_4 p_6:lg p_5:md text_center">
+	<div class="max-w_90 m_auto p_4 p_6:lg p_5:md text_center:md">
 		<div class="reading-typography max-w_50 m_auto font-size_up font_copy font_regular">
 			<h1>About</h1>
 			<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim qui obcaecati laborum impedit facere quia,
@@ -95,7 +104,7 @@ position : "Single Page - pagelayout"
 </section>
 <section class="p-y_5:lg p-y_4 relative bg_secondary-4">
 	<div
-		class="max-w_90 m_auto p_4 p_6:lg p_5:md text_center grid columns_3:lg columns_1 gap_6:lg gap_5:md gap_4 text_center">
+		class="max-w_90 m_auto p_4 p_6:lg p_5:md text_center:md grid columns_3:lg columns_1 gap_6:lg gap_5:md gap_4 text_center:md">
 
 		<div class="font-size_up max-w_30 reading-typography" style="--custom-font-size-modifier: 1.15;">
 			<img class="aspect_1x1 bg_contain m_auto max-w_10"
@@ -125,7 +134,7 @@ position : "Single Page - pagelayout"
 </section>
 <section class="p-y_5:lg p-y_4 relative">
 	<div class="absolute" style="top:-180px;" id="section-partners">&nbsp;</div>
-	<div class="max-w_90 m_auto p_4 p_6:lg p_5:md text_center">
+	<div class="max-w_90 m_auto p_4 p_6:lg p_5:md text_center:md">
 		<div class="reading-typography max-w_50 m_auto font-size_up font_copy font_regular">
 			<h1 class="c_secondary-n3">A Comunity of Support</h1>
 			<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim qui obcaecati laborum impedit facere quia,
@@ -141,7 +150,7 @@ position : "Single Page - pagelayout"
 <!-- <section class="p-y_5:lg p-y_4 relative bg_secondary-4">
 		<div class="absolute" style="top:-180px;" id="section-faq">&nbsp;</div>
 		<div class="max-w_90 m_auto p_4">
-			<div class="max-w_90 m_auto p_4 p_6:lg p_5:md text_center">
+			<div class="max-w_90 m_auto p_4 p_6:lg p_5:md text_center:md">
 				<div class="reading-typography max-w_50 m_auto font-size_up font_copy font_regular">
 				<h1 class="c_secondary-n3">FAQ</h1>
 				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim qui obcaecati laborum impedit facere quia, reiciendis accusantium dolore facilis! Molestiae accusamus atque possimus ullam architecto? Quo commodi et aut in.</p>
@@ -153,7 +162,7 @@ position : "Single Page - pagelayout"
 <section class="p-y_5:lg p-y_4 relative bg_primary-4">
 	<div class="absolute" style="top:-180px;" id="section-webinars">&nbsp;</div>
 	<div class="max-w_90 m_auto p_4">
-		<div class="max-w_90 m_auto p_4 p_6:lg p_5:md text_center">
+		<div class="max-w_90 m_auto p_4 p_6:lg p_5:md text_center:md">
 			<div class="reading-typography max-w_50 m_auto font-size_up font_copy font_regular">
 				<h1 class="c_secondary-n3">Learn More</h1>
 				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim qui obcaecati laborum impedit facere
@@ -171,12 +180,12 @@ position : "Single Page - pagelayout"
 					style="background-image: url(https://picsum.photos/id/30/350/80); aspect-ratio: 350/80;"></div>
 				<div class="relative">
 					<aside data-type="date"
-						class="float_left m-l_4 m-l_5:lg br-t_0 br_1 br_solid br_black-4 bg_info c_white p-x_4 p-y_4 font_0 text_center font_display z_3 shadow_overlap-light m-t_n5">
+						class="float_left m-l_4 m-l_5:lg br-t_0 br_1 br_solid br_black-4 bg_info c_white p-x_4 p-y_4 font_0 text_center:md font_display z_3 shadow_overlap-light m-t_n5">
 						<span class="block font_n1 font_0:md font_medium lh_0 p-x_2:lg">Mar<!----></span>
 						<span class="block font_2 font_4:md font_light lh_0 p-x_2:lg">29-28</span>
 					</aside>
 					<div
-						class="absolute r_4 r_5:lg t_0 text_center flex flex_column:md justify_end align-right font_1:md font_0 overflow_hidden transition_2 z_2">
+						class="absolute r_4 r_5:lg t_0 text_center:md flex flex_column:md justify_end align-right font_1:md font_0 overflow_hidden transition_2 z_2">
 						<div class="flex flex_row justify_end transition_2 c_white m-r_1:lg m-r_3 m-r_4">
 							<span
 								class="c_accent-1 bg_info h:bg_info-n2 flex_shrink p-y_2 p-x_3 br_1 br_solid br_white-7">
@@ -202,7 +211,7 @@ position : "Single Page - pagelayout"
 				<footer class="flex justify_around m-t_auto gap-x_3 p-t_4 p-t_3:md p-x_5:lg p-x_3 p-b_4">
 					<!----><!---->
 					<button
-						class="ease_out transition_1 f:outline_none text_center br_none inline-block w_auto font_medium font_ui p-y_3 p-x_3 lh_0 font_n1 font_0:md  c_white h:c_white h:bg_primary-n2 br_primary-n3 bg_primary   shadow_overlap-light br_radius flex_auto text_center max-w_20 m-b_2">
+						class="ease_out transition_1 f:outline_none text_center:md br_none inline-block w_auto font_medium font_ui p-y_3 p-x_3 lh_0 font_n1 font_0:md  c_white h:c_white h:bg_primary-n2 br_primary-n3 bg_primary   shadow_overlap-light br_radius flex_auto text_center:md max-w_20 m-b_2">
 						<span class="flex block">
 							<span class="flex_grow">Join</span>
 						</span>

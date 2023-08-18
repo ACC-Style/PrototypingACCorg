@@ -192,7 +192,7 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   margin-bottom: 0.5rem;
   font-weight: 300;
   line-height: 1.35;
-  font-family: "Maven Pro","Muli","Open Sans","system",sans-serif;
+  font-family: "Maven Pro","Muli","Open Sans",Verdana,Helvetica,sans-serif;
 }
 
 h1, .h1 {
@@ -533,10 +533,6 @@ legend + * {
 
 ::-webkit-color-swatch-wrapper {
   padding: 0;
-}
-
-::-webkit-file-upload-button {
-  font: inherit;
 }
 
 ::file-selector-button {
@@ -2082,31 +2078,11 @@ progress {
   background-color: #e7e7e7;
   opacity: 1;
 }
-.form-control::-webkit-file-upload-button {
-  margin: -8px -16px;
-  margin: -0.5rem -1rem;
-  -webkit-margin-end: 16px;
-          margin-inline-end: 16px;
-  -webkit-margin-end: 1rem;
-          margin-inline-end: 1rem;
-  padding: 8px 16px;
-  padding: 0.5rem 1rem;
-  border-width: 0;
-  border-style: solid;
-  border-radius: 0;
-  border-inline-end-width: 1px;
-  border-color: inherit;
-  background-color: var(--primary);
-  color: white;
-  pointer-events: none;
-}
 .form-control::file-selector-button {
   margin: -8px -16px;
   margin: -0.5rem -1rem;
-  -webkit-margin-end: 16px;
-          margin-inline-end: 16px;
-  -webkit-margin-end: 1rem;
-          margin-inline-end: 1rem;
+  margin-inline-end: 16px;
+  margin-inline-end: 1rem;
   padding: 8px 16px;
   padding: 0.5rem 1rem;
   border-width: 0;
@@ -2117,9 +2093,6 @@ progress {
   background-color: var(--primary);
   color: white;
   pointer-events: none;
-}
-.form-control:hover:not(:disabled):not([readonly])::-webkit-file-upload-button {
-  background-color: hsla(var(--primary-h), calc( var( --primary-s ) - ( var( --primary-s ) * 0.025 ) ), calc( var( --primary-l ) - ( var( --primary-l ) * 0.25 ) ), 1);
 }
 .form-control:hover:not(:disabled):not([readonly])::file-selector-button {
   background-color: hsla(var(--primary-h), calc( var( --primary-s ) - ( var( --primary-s ) * 0.025 ) ), calc( var( --primary-l ) - ( var( --primary-l ) * 0.25 ) ), 1);
@@ -2127,10 +2100,8 @@ progress {
 .form-control::-webkit-file-upload-button {
   margin: -8px -16px;
   margin: -0.5rem -1rem;
-  -webkit-margin-end: 16px;
-          margin-inline-end: 16px;
-  -webkit-margin-end: 1rem;
-          margin-inline-end: 1rem;
+  margin-inline-end: 16px;
+  margin-inline-end: 1rem;
   padding: 8px 16px;
   padding: 0.5rem 1rem;
   border-width: 0;
@@ -2171,33 +2142,19 @@ progress {
   font-size: 14.222px;
   font-size: 0.8888888889rem;
 }
-.form-control-sm::-webkit-file-upload-button {
-  margin: -4px -8px;
-  margin: -0.25rem -0.5rem;
-  -webkit-margin-end: 8px;
-          margin-inline-end: 8px;
-  -webkit-margin-end: 0.5rem;
-          margin-inline-end: 0.5rem;
-  padding: 4px 8px;
-  padding: 0.25rem 0.5rem;
-}
 .form-control-sm::file-selector-button {
   margin: -4px -8px;
   margin: -0.25rem -0.5rem;
-  -webkit-margin-end: 8px;
-          margin-inline-end: 8px;
-  -webkit-margin-end: 0.5rem;
-          margin-inline-end: 0.5rem;
+  margin-inline-end: 8px;
+  margin-inline-end: 0.5rem;
   padding: 4px 8px;
   padding: 0.25rem 0.5rem;
 }
 .form-control-sm::-webkit-file-upload-button {
   margin: -4px -8px;
   margin: -0.25rem -0.5rem;
-  -webkit-margin-end: 8px;
-          margin-inline-end: 8px;
-  -webkit-margin-end: 0.5rem;
-          margin-inline-end: 0.5rem;
+  margin-inline-end: 8px;
+  margin-inline-end: 0.5rem;
   padding: 4px 8px;
   padding: 0.25rem 0.5rem;
 }
@@ -2210,33 +2167,19 @@ progress {
   font-size: 20.25px;
   font-size: 1.265625rem;
 }
-.form-control-lg::-webkit-file-upload-button {
-  margin: -8px -16px;
-  margin: -0.5rem -1rem;
-  -webkit-margin-end: 16px;
-          margin-inline-end: 16px;
-  -webkit-margin-end: 1rem;
-          margin-inline-end: 1rem;
-  padding: 8px 16px;
-  padding: 0.5rem 1rem;
-}
 .form-control-lg::file-selector-button {
   margin: -8px -16px;
   margin: -0.5rem -1rem;
-  -webkit-margin-end: 16px;
-          margin-inline-end: 16px;
-  -webkit-margin-end: 1rem;
-          margin-inline-end: 1rem;
+  margin-inline-end: 16px;
+  margin-inline-end: 1rem;
   padding: 8px 16px;
   padding: 0.5rem 1rem;
 }
 .form-control-lg::-webkit-file-upload-button {
   margin: -8px -16px;
   margin: -0.5rem -1rem;
-  -webkit-margin-end: 16px;
-          margin-inline-end: 16px;
-  -webkit-margin-end: 1rem;
-          margin-inline-end: 1rem;
+  margin-inline-end: 16px;
+  margin-inline-end: 1rem;
   padding: 8px 16px;
   padding: 0.5rem 1rem;
 }
@@ -5029,7 +4972,6 @@ textarea.form-control-lg {
 }
 
 .toast-container {
-  width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
   max-width: 100%;
@@ -5617,8 +5559,7 @@ textarea.form-control-lg {
   width: 100%;
   margin-right: -100%;
   float: left;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .carousel-item.active,
@@ -5779,12 +5720,6 @@ textarea.form-control-lg {
   color: #131212;
 }
 
-@-webkit-keyframes spinner-border {
-  to {
-    transform: rotate(360deg) /* rtl:ignore */;
-  }
-}
-
 @keyframes spinner-border {
   to {
     transform: rotate(360deg) /* rtl:ignore */;
@@ -5800,8 +5735,7 @@ textarea.form-control-lg {
   border-radius: 50%;
   border-right-color: transparent;
   vertical-align: -0.125em;
-  -webkit-animation: 0.75s linear infinite spinner-border;
-          animation: 0.75s linear infinite spinner-border;
+  animation: 0.75s linear infinite spinner-border;
 }
 
 .spinner-border-sm {
@@ -5810,16 +5744,6 @@ textarea.form-control-lg {
   height: 16px;
   height: 1rem;
   border-width: 0.2em;
-}
-
-@-webkit-keyframes spinner-grow {
-  0% {
-    transform: scale(0);
-  }
-  50% {
-    transform: none;
-    opacity: 1;
-  }
 }
 
 @keyframes spinner-grow {
@@ -5840,8 +5764,7 @@ textarea.form-control-lg {
   border-radius: 50%;
   background-color: currentColor;
   vertical-align: -0.125em;
-  -webkit-animation: 0.75s linear infinite spinner-grow;
-          animation: 0.75s linear infinite spinner-grow;
+  animation: 0.75s linear infinite spinner-grow;
   opacity: 0;
 }
 
@@ -8753,15 +8676,15 @@ Hero Image with CTA
 The "Hero Image with CTA" component signifies a hero section that includes a superimposed call-to-action. This element typically combines a return feature to the main site and should be exclusively used on microsites.
 
 Markup:
-<div data-item="hero-image-cta" class="relative isolation_isolate grid rows_3 rows_2:md columns_4:md columns_5:lg columns_2 m-t_n4 m-x_n4_2 {{modifier_class}}" style="--row-1:2.5rem; --row-2:min-content;">
+<div data-item="hero-image-cta" class="hero relative isolation_isolate grid rows_3 rows_2:md columns_4:md columns_5:lg columns_2 m-t_n4 m-x_n4_2 overflow_hidden {{modifier_class}}" style="--row-1:2.5rem; --row-2:min-content;">
     {{> "Recipes.MicroSite.Sub.HeroImage.BackgroundImage" modifier_class="col_all row_all w_100" }}
     <div class="z_1 row-start_start row_end_1 col-start_start col-end_end flex flex_row justify_start">
         {{> "Recipes.MicroSite.Sub.HeroImage.BreadcrumbNav" modifier_class="" }}
     </div>
-    <div class="relative row-start_2 row-end_3 col-start_start col-end_3:md col-end_end">
-        {{> "Recipes.MicroSite.Sub.PageTitleTreatment" modifier_class="z_1 p-t_5:lg p-t_4"}}
+    <div class="relative row-start_2 row-end_3 col-start_start col-end_3:md col-end_end p-y_4 p-y_0:md m-l_4 m-l_0:md">
+        {{> "Recipes.MicroSite.Sub.PageTitleTreatment" modifier_class="m-t_5:lg m-t_4"}}
     </div>
-    <div class="relative row-start_2:md row-end_end:md col-start_n3:md  row-start_3 row-end_end col-start_start col-end_end font_n1 font_0:lg">
+    <div class="col-end_end col-start_n3:md col-start_start font_0:lg font_n1 p-t_0:md p-t_5 relative row-end_end row-end_end:md row-start_2:md row-start_3">
         {{> "Recipes.MicroSite.Sub.HeroImage.CTAHighlight" modifier_class="z_1" }}
     </div>
 </div>
@@ -8824,13 +8747,12 @@ The CTA Highlight component is used to create a highlighted call-to-action secti
 Modifier: inverted - This modifier class is used to create an inverted version of the CTA Highlight component, which can be applied when a dark background is present.
 
 Markup:
-<div data-item="cta-overlay" class="c_white color_inherit m-x_4 m-x_5:lg p_4 p_5:lg reading-typography relative z_1 m-b_5">
-      <h2 data-item="cta-title" class="font_medium">The Value of UX and Member Engagement</h2>
+<div data-item="cta-callout" class="c_white color_inherit m-x_4 m-x_5:lg p_4 p_5:lg reading-typography relative z_1 m-b_5 isolation_isolate">
+      <h2 data-item="cta-title" class="font_medium m-t_0">The Value of UX and Member Engagement</h2>
       <p data-item="cta-description" class="font-size_up-1 lh_2">Accusantium iure non nam quaerat nesciunt ad. Vero nobis ea quo laudantium eum esse. Officiis eum nemo id minus ut itaque et et beatae. Voluptas est incidunt.</p>
       <div class="grid justify_center">
         <button class="btn btn-primary capitalize">Get Started</button>
       </div>
-      <div class="z_0 bg_acc br_round inset_0 opacity_8 absolute shadow_overlap-bold    bg-blend_multiply"></div>
 </div>
 
 
@@ -8877,7 +8799,6 @@ Markup:
     <!-- Breadcrumb navigation content goes here -->
 	<a href="#" class="h:c_white h:underline font_bold c_white-8 expanded-click-area h:c_white"><i class="fas fa-arrow-left"></i> Back</a> |
 	The page this was a child of</a>
-	<span class="bg_acc opacity_8 absolute inset_0 br-br_radius z_0 bg-blend_multiply"></span>
 </nav>
 
 MarkupWrapperClasses: 
@@ -8892,26 +8813,26 @@ Styleguide  Recipes.MicroSite.Sub.HeroImage.BreadcrumbNav
 
 */
 /*
-Page Title Treatment
+Bespoke: Page Title Treatment
 
 MicroSite Page Title Treatment component is used to style and emphasize page titles.
 
 Modifier: font-color - This modifier class is used to customize the font color of the page title.
 
 Markup:
-<h1 data-item="page-title" class="flex flex_row flex_wrap c_white {{modifier_class}} font_5:lg font_4:md font_3 p-r_4 lh_0">
-<span class="p-y_3 p-l_3 p-r_4 bg_acc br_solid br_acc br_2 m-t_n3 m-r_n4 inline-block">Transformaing</span>
-<span class="p-y_3 p-l_3 p-r_4 bg_acc br_solid br_acc br_2 m-t_n3 m-r_n4 inline-block">Cardiovascular</span>
-<span class="p-y_3 p-l_3 p-r_4 bg_acc br_solid br_acc br_2 m-t_n3 m-r_n4 inline-block">Care</span>
-<span class="p-y_3 p-l_3 p-r_4 bg_acc br_solid br_acc br_2 m-t_n3 m-r_n4 inline-block">For</span>
-<span class="p-y_3 p-l_3 p-r_4 bg_acc br_solid br_acc br_2 m-t_n3 m-r_n4 inline-block">All</span>
-<span class="p-y_3 p-l_3 p-r_4 bg_acc br_solid br_acc br_2 m-t_n3 m-r_n4 inline-block">Around</span>
-<span class="p-y_3 p-l_3 p-r_4 bg_acc br_solid br_acc br_2 m-t_n3 m-r_n4 inline-block">The</span>
-<span class="p-y_3 p-l_3 p-r_4 bg_acc br_solid br_acc br_2 m-t_n3 m-r_n4 inline-block">World</span>
+<h1 data-item="hero-title" class="c_white {{modifier_class}} font_5:lg font_4:md font_3 isolation_isolate relative">
+<span>Transformaing</span>
+<span>Cardiovascular</span>
+<span>Care</span>
+<span>For</span>
+<span>All</span>
+<span>Around</span>
+<span>The</span>
+<span>World</span>
 </h1>
 
 
-MarkupWrapperClasses: 
+MarkupWrapperClasses: bg_hf-2 p_5 hero max-w_40
 
 Weight: 0
 
@@ -8919,9 +8840,66 @@ NOTE: The Page Title Treatment component is ideal for styling and emphasizing pa
 
 caution:  This item is not finalized and might be subject to change
 
-Styleguide  Recipes.MicroSite.Sub.PageTitleTreatment
+Styleguide   Recipes.MicroSite.Sub.PageTitleTreatment
 
 */
+.hero {
+  --hero-overlay-color: var(--acc);
+  --hero-overlay-opacity:.75 ;
+}
+
+[data-item=hero-image-breadcrumb-nav], [data-item=cta-callout], [data-item=hero-title] span {
+  position: relative;
+  isolation: isolate;
+}
+[data-item=hero-image-breadcrumb-nav]::after, [data-item=cta-callout]::after, [data-item=hero-title] span::after {
+  z-index: -1;
+  position: absolute;
+  inset: 0px;
+  background-color: var(--hero-overlay-color);
+  background-blend-mode: multiply;
+  content: "";
+  mix-blend-mode: multiply;
+  opacity: var(--hero-overlay-opacity);
+}
+
+[data-item=hero-title] {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-inline-start: 16px;
+  padding-inline-start: 1rem;
+}
+[data-item=hero-title]::before {
+  z-index: -1;
+  position: absolute;
+  width: 32px;
+  width: 2rem;
+  inset: 0 auto 0 -16px;
+  inset: 0 auto 0 -1rem;
+  background-color: var(--hero-overlay-color);
+  background-blend-mode: multiply;
+  content: "";
+  opacity: var(--hero-overlay-opacity);
+}
+[data-item=hero-title] span {
+  position: relative;
+  flex: 0 1 auto;
+  padding-inline: 0 0.5em;
+  padding-block: 0.25em;
+  isolation: isolate;
+  color: inherit;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+[data-item=hero-image-breadcrumb-nav]::after {
+  border-end-end-radius: 6px;
+}
+
+[data-item=cta-callout]::after {
+  border-radius: 6px;
+}
+
 /*
 Responsive Hero Image
 
@@ -9665,6 +9643,136 @@ caution:  This item is not finalized and might be subject to change
 
 Weight: 0
 */
+/*
+Related References
+
+An organized list of references or citations. This structure helps users to find additional resources or sources related to the content.
+
+Markup:
+<h3>Related References:</h3>
+<ol class="marker_primary">
+    <li>0000000000000000000000</li>
+    <li>0000000000000000000000</li>
+    <li>0000000000000000000000</li>
+</ol>
+
+MarkupWrapperClasses: reading-typography p_4
+
+Styleguide Sitecore.Article.References
+
+Weight: 0
+*/
+/*
+Podcast Player
+
+A styled player for podcasts. Includes a content section, a list of related references, twitter links to the presenters, and an audio player interface with a subscribe button.
+
+Markup:
+<div class="reading-typography">
+    <!-- STARRT: Content -->
+        <p>Content Goes here </p>
+    <!-- END: Content -->
+    <!-- STARRT: Related References -->
+        {{> Sitecore.Article.References }}
+    <!-- END: Related References -->
+    <!-- START: Twitter List -->
+        {{> Sitecore.Twitter.List }}
+    <!-- END: Twitter List -->
+    <!-- START: Player -->
+        {{> Sitecore.Podcast.Player }}
+   <!-- END: Player -->
+</div>
+
+markupwrapperclasses:
+p_4
+
+SubComponents:
+Sitecore.Article.References - Related References
+Sitecore.Twitter.List - TwitterList
+Sitecore.Podcast.Player - Player
+
+Styleguide Sitecore.Podcast
+
+Weight: 0
+*/
+/*
+Podcast Player
+
+A multimedia component designed specifically for audio playback. This player features controls for playing, pausing, adjusting volume, and more. It includes a fallback link for browsers that don't support HTML5 audio, as well as a prominent call to action to encourage podcast subscription.
+
+Markup:
+<div class="bg_black-2 br-solid br_2 br_radius br_solid br_white-5 flex flex_column gap_4 m-b_5 m-t_4 m-y_5:lg p_4 shadow_overlap-light">
+    <audio class="w_100" controls="">
+        <source src="http://traffic.libsyn.com/accelaccorg/00000000.mp3" type="audio/mp3">
+        <p>Your browser doesn't support HTML5 audio. Here is a <a class="link" target="_blank" href="http://traffic.libsyn.com/accelaccorg/00000000.mp3">link to the audio</a> instead.</p>
+    </audio>
+    <div class="grid items_center justify_center">
+        <a href="/Latest-in-Cardiology/Features/Podcasts" class="btn btn-primary font_medium m-b_n5 not-link shadow_overlap-light">Subscribe
+            to the ACCEL Lite Podcast</a>
+    </div>
+</div>
+
+MarkupWrapperClasses: reading-typography p_4
+
+Styleguide Sitecore.Podcast.Player
+
+Weight: 0
+*/
+/*
+Twitter Button
+
+A styled button for linking to a Twitter profile. The button includes a Twitter icon and a username.
+
+Markup:
+<a class="bg_twitter br_twitter btn btn-primary expanded-click-area font-size_down-1 h:bg_secondary-n3 h:c_secondary-n3 h:c_white h:undecorated not-link" href="https://www.twitter.com/Tweat_DrSoda" target="_blank">
+    <i class="br-r_1 br-white-5 br_solid fa-twitter fab m-l_n2 m-r_3 m-y_n2 p-r_3 p-r_3:lg p-y_2"></i>
+    <i class="fa-at fas opacity_8 p-r_1"></i>
+    Tweat_DrSoda
+</a>
+
+MarkupWrapperClasses: reading-typography
+
+Styleguide Sitecore.Twitter.Button
+
+Weight: 100
+*/
+/*
+Twitter Link List
+
+A list of Twitter profiles, each accompanied by a name. Provides an organized display for multiple Twitter links, which could be useful for events, authors, or featured users.
+
+Markup:
+<h3>Twitter Links:</h3>
+<ul class="br-t_1 br_black-2 br_solid max-w_65 ul_none font_0">
+<!-- START: Twitter Link: Duplicate as needed -->
+    <li class="br-b_1 br_black-2 br_solid flex flex_auto flex_column flex_row:md gap_3 gap_5:lg justify_start p-x_4 p-y_2 p-y_3:lg relative">
+        <span class="font_copy font-size_up-1 lh_2 c_secondary-n2 font_medium inline-block self_center"> Pepper H. Soda III, MD, FACC</span>
+        <span class="grid items_center justify_center:md justify_start m-b_0:md m-b_3 m-l_auto:md">
+            {{> Sitecore.Twitter.Button }}
+        </span>
+    </li>
+<!-- END: Twitter Link -->
+<!-- DELETE ME -->
+    <li class="br-b_1 br_black-2 br_solid flex flex_auto flex_column flex_row:md gap_3 gap_5:lg justify_start p-x_4 p-y_2 p-y_3:lg relative">
+        <span class="font_copy font-size_up-1 lh_2 c_secondary-n2 font_medium inline-block self_center"> Pepper H. Soda III, MD, FACC</span>
+        <span class="grid items_center justify_center:md justify_start m-b_0:md m-b_3 m-l_auto:md">
+            {{> Sitecore.Twitter.Button }}
+        </span>
+    </li>
+<!-- END DELETE ME -->
+</ul>
+
+MarkupWrapperClasses: reading-typography
+
+SubComponents:
+Sitecore.Twitter.Button - Twitter Button
+
+
+
+Styleguide Sitecore.Twitter.List
+
+Weight: 0
+*/
 .updateDecoration {
   background-color: hsla(var(--highlight-h), calc( var(--highlight-s) + ((100% - var(--highlight-s)) * 0.06) ), calc( var(--highlight-l) + ((100% - var(--highlight-l)) * 0.6) ), 1) !important;
 }
@@ -9726,7 +9834,7 @@ h5,
 .h5,
 h6,
 .h6 {
-  font-family: "Maven Pro","Muli","Open Sans","system",sans-serif;
+  font-family: "Maven Pro","Muli","Open Sans",Verdana,Helvetica,sans-serif;
 }
 
 p {
@@ -10049,18 +10157,6 @@ Styleguide Recipes.InteractiveExtras.Placeholder Aspect Ratio
   color: #fff;
   animation: Gradient 3s ease infinite;
 }
-
-@-webkit-keyframes Gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
 @keyframes Gradient {
   0% {
     background-position: 0% 50%;
@@ -10332,7 +10428,7 @@ Display: Maven Pro
 <div class="font_display">
 	<h2 class="font_display group-divide-bottom font--name small-12">
 		Maven Pro
-		<span class="sub-line">font-family: "Maven Pro","Muli","Open Sans","system",sans-serif</span>
+		<span class="sub-line">font-family: "Maven Pro","Muli","Open Sans",Verdana,Helvetica,sans-serif</span>
 	</h2>
 	<div class="font flex grid-padding-x grid-padding-y">
 		<div class="bg_primary c_white flex flex_shrink font_10 justify_center m-r_5 p-x_5 text_center"><span class="flex_auto m_auto inline-block text_center self_center">MP<span></span></span></div>
@@ -18140,3 +18236,4 @@ Styleguide Navigation.BrandedNav.Dropdown.List.AltContent
   font-size: 12px;
   line-height: 14px;
 }
+/*# sourceMappingURL=maps/acc_boot.css.map */

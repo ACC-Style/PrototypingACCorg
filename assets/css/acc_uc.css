@@ -572,6 +572,10 @@ Styleguide Anatomy.ExtraCredit
   color: inherit;
   text-decoration: none;
 }
+:where(.reading-typography) a:not(.btn), :where(.reading-typography) a:not(.not-link) {
+  font-weight: var(--font_medium);
+}
+
 :where(.reading-typography):not(.color_inherit) :where(h1,h2,h3,h4,h5,h6) {
   color: var(--custom-color, hsla(var(--primary-h), calc( var( --primary-s ) - ( var( --primary-s ) * 0.01 ) ), calc( var( --primary-l ) - ( var( --primary-l ) * 0.1 ) ), 1));
 }
@@ -788,7 +792,7 @@ You can modify the font family used in your text elements with these simple util
   font-family: "Roboto Slab","Times New Roman","Lucida Bright",Georgia,serif, "slab";
 }
 
-.font_display {
+.font_display, .reading-typography:where(h1,h2,h3,h4,h5,h6) {
   font-family: "Maven Pro","Muli","Open Sans",Verdana,Helvetica,sans-serif;
 }
 
@@ -818,7 +822,7 @@ You can modify the font family used in your text elements with these simple util
   --font-family_display: "Maven Pro","Muli","Open Sans",Verdana,Helvetica,sans-serif;
 }
 
-.font_display {
+.font_display, .reading-typography:where(h1,h2,h3,h4,h5,h6) {
   --font_light:400;
   --font_regular:450;
   --font_medium:550;
