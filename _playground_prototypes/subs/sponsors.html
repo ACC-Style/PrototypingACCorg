@@ -1,11 +1,5 @@
-{% assign alpha_array = 'Diamond,Partner,Sponsor' | split: ',' %}
-{% assign playground-sponsors = site.data.playground-sponsors | sort: 'sortname' %}
-{% assign alpha_categories = playground-sponsors | map: 'grouping' %}
+
 <ul class="grid columns_3:lg columns_2:md columns_1 gap_5:lg gap_4 p-t_0 p_4 ul_none">
- 
-
-
-
   <li class="bg_black-_05 br_1 br_black-_01 br_round br_solid flex flex_column gap-y_3 p-b_4 relative h:bg_black-1">
     <a data-name="newMember__name"
     class="expanded-click-area undecorated" target="_blank"
@@ -14,11 +8,11 @@
       <div class="relative aspect_16x9 grid justify_center items_center"> 
         <img alt="Logo of ACC" class="w_90 m-x_auto self_center bg_contain"
             
-        src="{{ './assets/images/playground/logos/ACC_LOGO.svg' | absolute_url }}"}">
+        src="{{ './assets/images/playground/logos/ACC_LOGO.svg' | absolute_url }}">
           </div>
     </header>
     <div class="c_primary-n3 font_3 font_display font_regular lh_1 p-x_4 text_center undecorated">
-      American Colllege of Cardiology
+      American College of Cardiology
     </div>
     </a>
   </li>
@@ -51,75 +45,12 @@
       <div class="relative aspect_16x9 grid justify_center items_center"> 
         <img alt="Logo of SCAI" class="w_90 m-x_auto self_center bg_contain"
             
-        src="{{ './assets/images/playground/logos/SCAI_LOGO.png' | absolute_url }}"}">
+        src="{{ './assets/images/playground/logos/SCAI_LOGO.png' | absolute_url }}">
           </div>
     </header>
     <div class="c_primary-n3 font_3 font_display font_regular lh_1 p-x_4 text_center undecorated">
-      Heart Failure Society of America
+      The Society for Cardiovascular Angiography & Interventions
     </div>
     </a>
   </li>
-
-
 </ul>
-
-<!-- 
-<section class="relative p-t_2" id="AlphaNavTop">
-  <div class="sticky t_0 r_0 z_1">
-    <div class="absolute r_4 t_0 flex flex_row flex_nowrap gap-x_3">
-      <a class="br-tl_square br-tr_square br_radius btn btn-accent btn-sm grid items_center justify_center m-l_auto self_center shadow_3"
-        href="#AlphaNavTop">
-        <span>
-          <i class="fas fa-arrow-up"></i>
-          top</span>
-      </a>
-    </div>
-  </div>
-  <nav class="bg_white br_radius grid items_center p_3 p_4:lg relative shadow_overlap-light z_2 m-t_n2">
-    <ul
-      class="c_secondary-2 flex:lg flex_row font_bold gap_4 grid columns_5 justify_around:lg justify_center m-x_4 m-y_3 ul_none">
-      {% for alpha in alpha_array %}
-      {% if alpha_categories contains alpha %}
-      <li class="c_black-7 text_center">
-        <a class="bg_primary-4 br_radius h:c_white h:bg_primary-n3 p-x_3 block h:undecorated" href="#{{ alpha }}">
-          {{- alpha -}}
-        </a>
-      </li>
-      {% else %}
-      <li class="c_black-7 text_center">{{ alpha }}</li>
-      {% endif %}
-      {% endfor %}
-
-    </ul>
-  </nav>
-  {% for alpha in alpha_array %}
-  {% if alpha_categories contains alpha %}
-  <div id="{{alpha}}" class="relative br-t_1 br_dotted br_primary-3 w_100 p-y_4 font_0 flex_row flex">
-    <div class="flex_none">
-      <div
-        class="c_white font_8 font_accent font_bold inline-block uppercase shadow_overlap-light bg_primary-n2 lh_0 br_radius p_2 p-x_4 m-x_3 sticky t_5 flex_none">
-        {{ alpha }}
-      </div>
-    </div>
-    <ul class="grid columns_4:lg columns_2:md columns_1 gap_5:lg gap_4 p-t_0 p_4 ul_none">
-      {% for company in playground-sponsors %}
-      {% if company.grouping == alpha %}
-      <li class="bg_black-_05 br_1 br_black-_01 br_round br_solid flex flex_column gap-y_3 p-b_4">
-        <header class="bg_white br_radius m-b_3 m_4 p_3 shadow_overlap-light w_auto">
-          <div class="relative aspect_16x9 grid justify_center items_center"> <a data-name="newMember__name"
-              class="block font_display c_primary-n2 font-size_up-1 lh_1 m-b_2" target="_blank"
-              href="{{ company.exhibitor_url }}"><img alt="Logo of {{ company.exhibitor_name }}"
-                class="absolute inset_3 bg_contain" 
-                src="/PrototypingACCorg/assets/images/playground/{{company.file_name}}"></a></div>
-        </header>
-        <div class="c_primary-n3 font_3 font_display font_regular lh_1 p-x_4 readable-typography text_center">
-          {{ company.exhibitor_name }}
-        </div>
-      </li>
-      {% endif %}
-      {% endfor %}
-    </ul>
-  </div>
-  {% endif %}
-  {% endfor %}
-</section> -->
