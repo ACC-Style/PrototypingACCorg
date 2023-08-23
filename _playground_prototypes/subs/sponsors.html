@@ -2,42 +2,64 @@
 {% assign playground-sponsors = site.data.playground-sponsors | sort: 'sortname' %}
 {% assign alpha_categories = playground-sponsors | map: 'grouping' %}
 <ul class="grid columns_3:lg columns_2:md columns_1 gap_5:lg gap_4 p-t_0 p_4 ul_none">
-  <li class="bg_black-_05 br_1 br_black-_01 br_round br_solid flex flex_column gap-y_3 p-b_4">
+ 
+
+
+
+  <li class="bg_black-_05 br_1 br_black-_01 br_round br_solid flex flex_column gap-y_3 p-b_4 relative h:bg_black-1">
+    <a data-name="newMember__name"
+    class="expanded-click-area undecorated" target="_blank"
+    href="https://acc.org/">
     <header class="bg_white br_radius m-b_3 m_4 p_3 shadow_overlap-light w_auto">
-      <div class="relative aspect_16x9 grid justify_center items_center"> <a data-name="newMember__name"
-          class="block font_display c_primary-n2 font-size_up-1 lh_1 m-b_2" target="_blank"
-          href="https://www.abbott.com/for-healthcare-professionals.html"><img alt="Logo of Abbott"
-            class="absolute t_0 r_0 l_0 b_0 bg_contain" style="object-fit: contain;height: 100%;width: 100%;"
-            src="/PrototypingACCorg/assets/images/playground/logoipsum-220.svg"></a></div>
+      <div class="relative aspect_16x9 grid justify_center items_center"> 
+        <img alt="Logo of ACC" class="w_90 m-x_auto self_center bg_contain"
+            
+        src="{{ './assets/images/playground/logos/ACC_LOGO.svg' | absolute_url }}"}">
+          </div>
     </header>
-    <div class="c_secondary-n3 font_3 font_display font_regular lh_2 p-x_4 readable-typography text_center">
+    <div class="c_primary-n3 font_3 font_display font_regular lh_1 p-x_4 text_center undecorated">
       American Colllege of Cardiology
     </div>
+    </a>
   </li>
-  <li class="bg_black-_05 br_1 br_black-_01 br_round br_solid flex flex_column gap-y_3 p-b_4">
+
+
+  <li class="bg_black-_05 br_1 br_black-_01 br_round br_solid flex flex_column gap-y_3 p-b_4 relative h:bg_black-1">
+    <a data-name="newMember__name"
+    class="expanded-click-area undecorated" target="_blank"
+    href="https://hfsa.org/">
     <header class="bg_white br_radius m-b_3 m_4 p_3 shadow_overlap-light w_auto">
-      <div class="relative aspect_16x9 grid justify_center items_center"> <a data-name="newMember__name"
-          class="block font_display c_primary-n2 font-size_up-1 lh_1 m-b_2" target="_blank"
-          href="https://www.acarix.com"><img alt="Logo of Acarix USA" class="absolute t_0 r_0 l_0 b_0 bg_contain"
-            style="object-fit: contain;height: 100%;width: 100%;"
-            src="/PrototypingACCorg/assets/images/playground/logoipsum-220.svg"></a></div>
+      <div class="relative aspect_16x9 grid justify_center items_center"> 
+        <img alt="Logo of HFSA" class="w_90 m-x_auto self_center bg_contain"
+            
+            src="{{ './assets/images/playground/logos/HFSA_LOGO.jpg' | absolute_url }}">
+          </div>
     </header>
-    <div class="c_secondary-n3 font_3 font_display font_regular lh_2 p-x_4 readable-typography text_center">
+    <div class="c_primary-n3 font_3 font_display font_regular lh_1 p-x_4 text_center undecorated">
       Heart Failure Society of America
     </div>
+    </a>
   </li>
-  <li class="bg_black-_05 br_1 br_black-_01 br_round br_solid flex flex_column gap-y_3 p-b_4">
+
+
+
+  <li class="bg_black-_05 br_1 br_black-_01 br_round br_solid flex flex_column gap-y_3 p-b_4 relative h:bg_black-1">
+    <a data-name="newMember__name"
+    class="expanded-click-area undecorated" target="_blank"
+    href="https://scai.org/">
     <header class="bg_white br_radius m-b_3 m_4 p_3 shadow_overlap-light w_auto">
-      <div class="relative aspect_16x9 grid justify_center items_center"> <a data-name="newMember__name"
-          class="block font_display c_primary-n2 font-size_up-1 lh_1 m-b_2" target="_blank"
-          href="https://www.abiomed.com/products-and-services/impella"><img alt="Logo of ABIOMED"
-            class="absolute t_0 r_0 l_0 b_0 bg_contain" style="object-fit: contain;height: 100%;width: 100%;"
-            src="/PrototypingACCorg/assets/images/playground/logoipsum-297.svg"></a></div>
+      <div class="relative aspect_16x9 grid justify_center items_center"> 
+        <img alt="Logo of SCAI" class="w_90 m-x_auto self_center bg_contain"
+            
+        src="{{ './assets/images/playground/logos/SCAI_LOGO.png' | absolute_url }}"}">
+          </div>
     </header>
-    <div class="c_secondary-n3 font_3 font_display font_regular lh_2 p-x_4 readable-typography text_center">
-      The Society for Cardiovascular Angiography & Interventions
+    <div class="c_primary-n3 font_3 font_display font_regular lh_1 p-x_4 text_center undecorated">
+      Heart Failure Society of America
     </div>
+    </a>
   </li>
+
 
 </ul>
 
@@ -87,10 +109,10 @@
           <div class="relative aspect_16x9 grid justify_center items_center"> <a data-name="newMember__name"
               class="block font_display c_primary-n2 font-size_up-1 lh_1 m-b_2" target="_blank"
               href="{{ company.exhibitor_url }}"><img alt="Logo of {{ company.exhibitor_name }}"
-                class="absolute t_0 r_0 l_0 b_0 bg_contain" style="object-fit: contain;height: 100%;width: 100%;"
+                class="absolute inset_3 bg_contain" 
                 src="/PrototypingACCorg/assets/images/playground/{{company.file_name}}"></a></div>
         </header>
-        <div class="c_secondary-n3 font_3 font_display font_regular lh_2 p-x_4 readable-typography text_center">
+        <div class="c_primary-n3 font_3 font_display font_regular lh_1 p-x_4 readable-typography text_center">
           {{ company.exhibitor_name }}
         </div>
       </li>
