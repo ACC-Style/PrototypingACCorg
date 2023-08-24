@@ -1,0 +1,397 @@
+---
+layout : playground
+name : "CV Board"
+position : "Single Page - pagelayout"
+---
+
+<!-- wp:html -->
+<nav class="bg_white br-b_1 br-b_2 br_secondary-n2 br_soild br_solid shadow_overlap-light sticky t_0 z_4">
+	<!-- <img src="/PrototypingACCorg/%20assets/images/playground/logo.svg" alt="" style="aspect-ratio: 5/1;"
+		class="max-w_15 m_4"> -->
+	<div class="max-w_80 flex flex_row items_center justify_center m_auto flex_wrap">
+		<h2
+			class="display_none inline-block:md w_100 w_auto:md font_xbold p_3 m_0 font_display text_center:md text_left:md">
+			CVBoard.org</h2>
+		<ul
+			class="ul_none flex flex_row gap_1 m-l_auto:md justify_center items_center font_2:lg font_1:md font_0 m_0 font_display font_medium">
+			<li class="relative">
+				<a href="#section-about"
+					class="inline-block p_3 p-x_5 relative h:bg_secondary-n2 c_secondary-n3 h:c_white expanded-click-area undecorated not-link h:undecorated br_radius m_2">About</a>
+			</li>
+			<li class="">
+				<a href="#section-webinars"
+					class="inline-block p_3 p-x_5 relative h:bg_secondary-n2 c_secondary-n3 h:c_white expanded-click-area undecorated not-link h:undecorated br_radius m_2">Learn
+					More</a>
+			</li>
+			<li class=""><a href="#section-partners"
+					class="inline-block p_3 p-x_5 relative h:bg_secondary-n2 c_secondary-n3 h:c_white expanded-click-area undecorated not-link h:undecorated br_radius m_2">Collaborators</a>
+			</li>
+			<!-- <li class=""><a href="#section-faq"
+					class="inline-block p_3 p-x_5 relative h:bg_secondary-n2 c_secondary-n3 h:c_white expanded-click-area undecorated not-link h:undecorated br_radius m_2">FAQ</a></li> -->
+
+		</ul>
+	</div>
+</nav>
+<!-- /wp:html -->
+<!-- wp:html -->
+<!-- START: Hero Image -->
+<div data-item="hero-image-cta"
+	class="hero relative isolation_isolate grid rows_3 rows_2:md columns_4:md columns_5:lg columns_2  overflow_hidden "
+	style="--row-1:2.5rem; --row-2:min-content; --hero-overlay-color: #270a64;--hero-overlay-opacity: .6;">
+	<picture data-item="responsive-hero-image" class="col_all row_all w_100 flex overflow_hidden ">
+		<source srcset="{{ '/assets/images/playground/hero/1400x150.jpg' | absolute_url }}" media="(min-width: 1200px)"
+			class="display_none">
+		<source srcset="{{ '/assets/images/playground/hero/1200x300.jpg' | absolute_url }}" media="(min-width: 1024px)"
+			class="display_none">
+		<source srcset="{{ '/assets/images/playground/hero/1024x256.jpg' | absolute_url }}" media="(min-width: 768px)"
+			class="display_none">
+		<source srcset="{{ '/assets/images/playground/hero/600x300.jpg' | absolute_url }}" media="(min-width: 400px)"
+			class="display_none">
+		<img src="{{ '/assets/images/playground/hero/300x450.jpg' | absolute_url }}" alt="Hero Image"
+			class="bg_cover flex_100">
+	</picture>
+	<!-- START: Breadcrumb navigation content goes here -->
+	<!-- 
+		<div class="z_1 row-start_start row_end_1 col-start_start col-end_end flex flex_row justify_start">
+		<nav data-item="hero-image-breadcrumb-nav"
+			class=" relative isolation_isolate p-y_3 p-x_4 c_white-8 w_auto font_n1 font_0:md">
+			<a href="#" class="h:c_white h:underline font_bold c_white-8 expanded-click-area h:c_white"><i
+					class="fas fa-arrow-left"></i> Back</a> |
+			The page this was a child of</a>
+		</nav>
+	</div> 
+	-->
+	<!-- END: Breadcrumb -->
+	<div class="col-end_end col-start_start grid items_center justify_center row-end_end row-start_start">
+
+		<div class="columns_2 columns_4:md columns_5:lg grid hero isolation_isolate max-w_70 overflow_hidden relative rows_2:md rows_3 w_100"
+			style="--row-1:2.5rem; --row-2:min-content; --hero-overlay-color: #270a64;--hero-overlay-opacity: .6;">
+			<div
+				class="relative row-start_2 row-end_3 col-start_start col-end_3:md col-end_end p-y_4 p-y_0:md m-l_4 m-l_0:md">
+				<h1 style="--hero-overlay-color:var(--secondary);" data-item="hero-title"
+					class="display_none:md c_white m-t_5:lg m-t_4 font_5:lg font_4:md font_3 isolation_isolate relative m-b_n4">
+					<span class="font_xbold font-size_up-2">CVBoard.org</span>
+				</h1>
+				<h1 data-item="hero-title"
+					class="c_white m-t_5:lg m-t_4 font_7:lg font_8:md font_4 isolation_isolate relative">
+					<span>It's</span>
+					<span>Time</span>
+					<span>for</span>
+					<span>a</span>
+					<span>Board</span>
+					<span>of</span>
+					<span>Our</span>
+					<span>Own</span>
+				</h1>
+			</div>
+			<div
+				class="col-end_end col-start_n3:md col-start_start font_0:lg font_n1 p-t_0:md p-t_5 relative row-end_end row-end_end:md row-start_2:md row-start_3">
+				<div data-item="cta-callout"
+					class="c_white color_inherit m-x_4 m-x_5:lg p_4 p_5:lg reading-typography relative z_1 m-b_5 isolation_isolate">
+					<h2 data-item="cta-title" class="font_medium font_display m-t_0 c_white">From MOC to Continuous
+						Competency</h2>
+					<p data-item="cta-description" class="font-size_up-1 lh_2">
+
+						Building a New Board of Cardiovascular Medicine</p>
+					<p>Register for our informational webinars using the links below.</p>
+					<div class="grid justify_center">
+						<a href="#section-webinars"
+							class="c_white bg_primary bg_primary-1 br_1 br_primary br_radius br_solid btn btn-primary capitalize font_2 font_medium h:bg_primary-n2 h:undecorated not-link p-x_5 p-y_4 shadow_overlap-light undecorated">Learn
+							More</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+<!-- END: Hero Image -->
+<!-- /wp:html -->
+<!-- wp:html -->
+
+<section class="p-y_5:lg p-y_4 relative">
+	<div class="absolute" style="top:-180px;" id="section-about">&nbsp;</div>
+	<div class="max-w_90 m_auto p_4 p_6:lg p_5:md ">
+		<div class="font-size_up font_copy font_regular m_auto max-w_65 reading-typography"
+			style="--custom-font-size-modifier: 1.25;">
+			<h1>About</h1>
+			<h4>Building a New Board</h4>
+			<p>Cardiology has evolved into a distinct medical specialty, requiring extensive knowledge and training
+				specific to the prevention, diagnosis and treatment of human cardiovascular system disease that is
+				separate from the field of internal medicine. With this evolution, it is time for a new approach to
+				recognizing and sustaining clinical competency in cardiovascular medicine.</p>
+			<h4>Over the past year</h4>
+			<p>Representatives from the major cardiovascular societies have worked collaboratively to put together
+				concepts for a new board of cardiovascular medicine that understands and recognizes the knowledge,
+				skills, and attitudes required to effectively sustain professional excellence and provide cardiovascular
+				patients with the utmost confidence in their care. In the coming weeks, plans are in place to submit an
+				application to the American Board of Medical Specialties (ABMS) requesting the creation of this new
+				board.</p>
+			<h4>Now is the time to change the conversation!</h2>
+
+		</div>
+	</div>
+</section>
+<!-- /wp:html -->
+<!-- wp:html -->
+<section class="p-y_5:lg p-y_4 relative bg_primary-n4">
+	<div class="absolute" style="top:-180px;" id="section-webinars">&nbsp;</div>
+	<div class="max-w_90 m_auto p_4">
+		<div class="max-w_90 m_auto p_4 p_6:lg p_5:md">
+			<div class="font-size_up font_copy font_regular m_auto max-w_65 reading-typography"
+				style="--custom-font-size-modifier: 1.25;">
+				<h1 class="c_secondary-3">Learn More</h1>
+				<!-- <h4 class="c_secondary-3">Now is the time to change the conversation!</h2> -->
+				<p class="c_white">A series of webinars are taking place this fall to answer your questions about
+					the new board and what it would entail. Register using the links below.</p>
+			</div>
+		</div>
+		<div class="grid columns_2:md columns_1 gap_5:lg gap_4:md gap_5   m_auto max-w_65 ">
+			<article
+				class="bg_white-9 br_solid br_1 br_black-2 br_radius relative font_copy br_black-3 shadow_overlap-light flex_column flex justify_start flex_none br_radius"
+				eventtypemapping="[object Object]" imglgmapping="[object Object]" imgmdmapping="[object Object]"
+				imgsmmapping="[object Object]">
+				<div data-name="img-header"
+					class="br-tr_radius br-tl_radius bg-blend_multiply br_1 br_solid br_black-3 bg_cover bg_left m-x_n1 m-t_n1 expand-br_1 aspect_custom-sm bg-blend_multiply br_1 br_solid br_black-3 bg_cover bg_left m-x_n1 m-t_n1 flex_none br-tr_radius br-tl_radius"
+					style="background-image: url(https://picsum.photos/id/56/350/80);aspect-ratio: 350/80;width: calc(100% + 2px);">
+				</div>
+				<div class="relative">
+					<aside data-type="date"
+						class="float_left m-l_4 m-l_5:lg br-t_0 br_1 br_solid br_black-4 bg_info c_white p-x_4 p-y_4 font_0 text_center:md font_display z_3 shadow_overlap-light m-t_n5">
+						<span class="block font_n1 font_0:md font_medium lh_0 p-x_2:lg">Sept<!----></span>
+						<span class="block font_2 font_4:md font_light lh_0 p-x_2:lg m-t_3">6</span>
+					</aside>
+
+				</div>
+				<header class="clear_both p-x_4 p-x_5:lg p-t_2">
+					<h2
+						class="font_display font_5:lg font_3:md font_2 c_primary-n4 m-t_2 m-t_4:lg m-t_3:md m-b_2 lh_1 font_medium">
+						Informational Session 1</h2>
+					<div data-v-5294f1c2="" class="font_ui c_primary-n2 font_xbold font_n2 m-t_n2 uppercase">Webinar
+					</div><!---->
+				</header><!---->
+				<ul class="m-b_4:md p-t_3 p-x_4 p-x_5:lg font_n1:lg font_n2 ul_none lh_4">
+					<li class="flex flex_row m-t_2">
+						<i class="fas font-size_up flex_none p-r_3 self_center fa-hourglass-half c_black-5"></i>
+						<span class="m-l_2 flex_auto inline-block self_start lh_1 font_accent">
+							Sept. 6 7:00 pm ET</span>
+					</li>
+				</ul>
+				<footer
+					class="flex justify_around:md justify_start m-t_auto gap-x_3 p-t_4 p-t_3:md p-x_5:lg p-x_3 p-b_4">
+					<!----><!---->
+					<a
+						class="bg_primary br_none br_primary-n3 br_radius c_white ease_out f:outline_none flex_auto flex_shrink font_1 font_2:md font_3:lg font_medium font_ui h:bg_primary-n2 h:c_white inline-block lh_0 m-b_2 max-w_20:md p-x_4 p-y_3 shadow_overlap-light text_center:md transition_1 w_auto">
+						<span class="flex">
+							<span class="flex_grow">Register</span>
+						</span>
+					</a>
+				</footer>
+			</article>
+			<article
+				class="bg_white-9 br_solid br_1 br_black-2 br_radius relative font_copy br_black-3 shadow_overlap-light flex_column flex justify_start flex_none br_radius"
+				eventtypemapping="[object Object]" imglgmapping="[object Object]" imgmdmapping="[object Object]"
+				imgsmmapping="[object Object]">
+				<div data-name="img-header"
+					class="br-tr_radius br-tl_radius bg-blend_multiply br_1 br_solid br_black-3 bg_cover bg_left m-x_n1 m-t_n1 expand-br_1 aspect_custom-sm bg-blend_multiply br_1 br_solid br_black-3 bg_cover bg_left m-x_n1 m-t_n1 flex_none br-tr_radius br-tl_radius"
+					style="background-image: url(https://picsum.photos/id/56/350/80);aspect-ratio: 350/80;width: calc(100% + 2px);">
+				</div>
+				<div class="relative">
+					<aside data-type="date"
+						class="float_left m-l_4 m-l_5:lg br-t_0 br_1 br_solid br_black-4 bg_info c_white p-x_4 p-y_4 font_0 text_center:md font_display z_3 shadow_overlap-light m-t_n5">
+						<span class="block font_n1 font_0:md font_medium lh_0 p-x_2:lg">Sept<!----></span>
+						<span class="block font_2 font_4:md font_light lh_0 p-x_2:lg m-t_3">19</span>
+					</aside>
+
+				</div>
+				<header class="clear_both p-x_4 p-x_5:lg p-t_2">
+					<h2
+						class="font_display font_5:lg font_3:md font_2 c_primary-n4 m-t_2 m-t_4:lg m-t_3:md m-b_2 lh_1 font_medium">
+						Informational Session 2</h2>
+					<div data-v-5294f1c2="" class="font_ui c_primary-n2 font_xbold font_n2 m-t_n2 uppercase">Webinar
+					</div><!---->
+				</header><!---->
+				<ul class="m-b_4:md p-t_3 p-x_4 p-x_5:lg font_n1:lg font_n2 ul_none lh_4">
+					<li class="flex flex_row m-t_2">
+						<i class="fas font-size_up flex_none p-r_3 self_center fa-hourglass-half c_black-5"></i>
+						<span class="m-l_2 flex_auto inline-block self_start lh_1 font_accent">
+							Sept. 19 7:00 pm ET</span>
+					</li>
+				</ul>
+				<footer
+					class="flex justify_around:md justify_start m-t_auto gap-x_3 p-t_4 p-t_3:md p-x_5:lg p-x_3 p-b_4">
+					<!----><!---->
+					<a href="webexlink"
+						class="bg_primary br_none br_primary-n3 br_radius c_white ease_out f:outline_none flex_auto flex_shrink font_1 font_2:md font_3:lg font_medium font_ui h:bg_primary-n2 h:c_white inline-block lh_0 m-b_2 max-w_20:md p-x_4 p-y_3 shadow_overlap-light text_center:md transition_1 w_auto">
+						<span class="flex">
+							<span class="flex_grow">Register</span>
+						</span>
+					</a>
+				</footer>
+			</article>
+			<article
+				class="bg_white-9 br_solid br_1 br_black-2 br_radius relative font_copy br_black-3 shadow_overlap-light flex_column flex justify_start flex_none br_radius"
+				eventtypemapping="[object Object]" imglgmapping="[object Object]" imgmdmapping="[object Object]"
+				imgsmmapping="[object Object]">
+				<div data-name="img-header"
+					class="br-tr_radius br-tl_radius bg-blend_multiply br_1 br_solid br_black-3 bg_cover bg_left m-x_n1 m-t_n1 expand-br_1 aspect_custom-sm bg-blend_multiply br_1 br_solid br_black-3 bg_cover bg_left m-x_n1 m-t_n1 flex_none br-tr_radius br-tl_radius"
+					style="background-image: url(https://picsum.photos/id/56/350/80);aspect-ratio: 350/80;width: calc(100% + 2px);">
+				</div>
+				<div class="relative">
+					<aside data-type="date"
+						class="float_left m-l_4 m-l_5:lg br-t_0 br_1 br_solid br_black-4 bg_info c_white p-x_4 p-y_4 font_0 text_center:md font_display z_3 shadow_overlap-light m-t_n5">
+						<span class="block font_n1 font_0:md font_medium lh_0 p-x_2:lg">Oct<!----></span>
+						<span class="block font_2 font_4:md font_light lh_0 p-x_2:lg m-t_3">25</span>
+					</aside>
+
+				</div>
+				<header class="clear_both p-x_4 p-x_5:lg p-t_2">
+					<h2
+						class="font_display font_5:lg font_3:md font_2 c_primary-n4 m-t_2 m-t_4:lg m-t_3:md m-b_2 lh_1 font_medium">
+						Informational Session 3</h2>
+					<div data-v-5294f1c2="" class="font_ui c_primary-n2 font_xbold font_n2 m-t_n2 uppercase">Webinar
+					</div><!---->
+				</header><!---->
+				<ul class="m-b_4:md p-t_3 p-x_4 p-x_5:lg font_n1:lg font_n2 ul_none lh_4">
+					<li class="flex flex_row m-t_2">
+						<i class="fas font-size_up flex_none p-r_3 self_center fa-hourglass-half c_black-5"></i>
+						<span class="m-l_2 flex_auto inline-block self_start lh_1 font_accent">
+							Oct. 25 7:00 pm ET</span>
+					</li>
+				</ul>
+				<footer
+					class="flex justify_around:md justify_start m-t_auto gap-x_3 p-t_4 p-t_3:md p-x_5:lg p-x_3 p-b_4">
+					<!----><!---->
+					<a
+						class="bg_primary br_none br_primary-n3 br_radius c_white ease_out f:outline_none flex_auto flex_shrink font_1 font_2:md font_3:lg font_medium font_ui h:bg_primary-n2 h:c_white inline-block lh_0 m-b_2 max-w_20:md p-x_4 p-y_3 shadow_overlap-light text_center:md transition_1 w_auto">
+						<span class="flex">
+							<span class="flex_grow">Register</span>
+						</span>
+					</a>
+				</footer>
+			</article>
+			<article
+				class="bg_white-9 br_solid br_1 br_black-2 br_radius relative font_copy br_black-3 shadow_overlap-light flex_column flex justify_start flex_none br_radius"
+				eventtypemapping="[object Object]" imglgmapping="[object Object]" imgmdmapping="[object Object]"
+				imgsmmapping="[object Object]">
+				<div data-name="img-header"
+					class="br-tr_radius br-tl_radius bg-blend_multiply br_1 br_solid br_black-3 bg_cover bg_left m-x_n1 m-t_n1 expand-br_1 aspect_custom-sm bg-blend_multiply br_1 br_solid br_black-3 bg_cover bg_left m-x_n1 m-t_n1 flex_none br-tr_radius br-tl_radius"
+					style="background-image: url(https://picsum.photos/id/56/350/80);aspect-ratio: 350/80;width: calc(100% + 2px);">
+				</div>
+				<div class="relative">
+					<aside data-type="date"
+						class="float_left m-l_4 m-l_5:lg br-t_0 br_1 br_solid br_black-4 bg_info c_white p-x_4 p-y_4 font_0 text_center:md font_display z_3 shadow_overlap-light m-t_n5">
+						<span class="block font_n1 font_0:md font_medium lh_0 p-x_2:lg">Nov<!----></span>
+						<span class="block font_2 font_4:md font_light lh_0 p-x_2:lg m-t_3">14</span>
+					</aside>
+
+				</div>
+				<header class="clear_both p-x_4 p-x_5:lg p-t_2">
+					<h2
+						class="font_display font_5:lg font_3:md font_2 c_primary-n4 m-t_2 m-t_4:lg m-t_3:md m-b_2 lh_1 font_medium">
+						Informational Session 3</h2>
+					<div data-v-5294f1c2="" class="font_ui c_primary-n2 font_xbold font_n2 m-t_n2 uppercase">Webinar
+					</div><!---->
+				</header><!---->
+				<ul class="m-b_4:md p-t_3 p-x_4 p-x_5:lg font_n1:lg font_n2 ul_none lh_4">
+					<li class="flex flex_row m-t_2">
+						<i class="fas font-size_up flex_none p-r_3 self_center fa-hourglass-half c_black-5"></i>
+						<span class="m-l_2 flex_auto inline-block self_start lh_1 font_accent">
+							NOv. 14 7:00 pm ET</span>
+					</li>
+				</ul>
+				<footer
+					class="flex justify_around:md justify_start m-t_auto gap-x_3 p-t_4 p-t_3:md p-x_5:lg p-x_3 p-b_4">
+					<!----><!---->
+					<a
+						class="bg_primary br_none br_primary-n3 br_radius c_white ease_out f:outline_none flex_auto flex_shrink font_1 font_2:md font_3:lg font_medium font_ui h:bg_primary-n2 h:c_white inline-block lh_0 m-b_2 max-w_20:md p-x_4 p-y_3 shadow_overlap-light text_center:md transition_1 w_auto">
+						<span class="flex">
+							<span class="flex_grow">Register</span>
+						</span>
+					</a>
+				</footer>
+			</article>
+		</div>
+	</div>
+</section>
+<!-- /wp:html -->
+<!-- wp:html -->
+<section class="p-y_5:lg p-y_4 relative">
+	<div class="absolute" style="top:-180px;" id="section-partners">&nbsp;</div>
+	<div class="max-w_70 m_auto p_4 p_6:lg p_5:md">
+		<div class="font-size_up font_copy font_regular m_auto max-w_65 reading-typography"
+			style="--custom-font-size-modifier: 1.25;">
+			<h1>CV Society Collaborators</h1>
+		</div>
+		<div class="">
+			{% include_relative subs/sponsors.html %}
+		</div>
+	</div>
+	</div>
+</section>
+<!-- /wp:html -->
+<!-- wp:html -->
+<section class="p-y_5:lg p-y_4 relative">
+	<div class="absolute" style="top:-180px;" id="section-faq">&nbsp;</div>
+	<div class="max-w_90 m_auto p_4">
+		<div class="max-w_90 m_auto p_4 p_6:lg p_5:md">
+			<div class="font-size_up font_copy font_regular m_auto max-w_65 reading-typography"
+				style="--custom-font-size-modifier: 1.25;">
+				<h1 class="c_secondary-n3">FAQ</h1>
+				<p>Coming Soon</p>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- /wp:html -->
+<!-- wp:html -->
+<!-- 
+<section class="p-y_5:lg p-y_4 relative bg_secondary-4">
+	<div class="absolute" style="top:-180px;" id="section-faq">&nbsp;</div>
+	<div class="max-w_90 m_auto p_4">
+		<div class="max-w_90 m_auto p_4 p_6:lg p_5:md">
+			<div class="font-size_up font_copy font_regular m_auto max-w_65 reading-typography"
+				style="--custom-font-size-modifier: 1.25;">
+				<h1 class="c_secondary-n3">FAQ</h1>
+				<p>Coming Soon</p>
+			</div>
+		</div>
+		{% include_relative subs/faq.html %}
+	</div>
+</section>
+ -->
+<!-- /wp:html -->
+<!-- wp:html -->
+<!-- 
+<section class="p-y_5:lg p-y_4 relative bg_secondary-4">
+	<div
+		class="columns_1 columns_2:md columns_3:lg gap_4 gap_5:md gap_6:lg grid:md flex flex_column items_center justify_center m_auto max-w_90 p_4 p_5:md p_6:lg text_center">
+
+		<div class="font-size_up max-w_30 reading-typography" style="--custom-font-size-modifier: 1.15;">
+			<img class="aspect_1x1 bg_contain m_auto max-w_10"
+				src="{{ '/assets/images/playground/shape-269.svg' | relative_url }}" alt="" srcset="">
+			<h2 class="font-light font-size_up-2 font_display">Concept A</h2>
+			<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim qui obcaecati laborum impedit facere quia,
+				reiciendis accusantium dolore facilis! Molestiae accusamus atque possimus ullam architecto? Quo commodi
+				et aut in.</p>
+		</div>
+		<div class="font-size_up max-w_30 reading-typography" style="--custom-font-size-modifier: 1.15;">
+			<img class="aspect_1x1 bg_contain m_auto max-w_10"
+				src="{{ '/assets/images/playground/shape-278.svg' | relative_url }}" alt="" srcset="">
+			<h2 class="font-light font-size_up-2 font_display">Concept B</h2>
+			<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim qui obcaecati laborum impedit facere quia,
+				reiciendis accusantium dolore facilis! Molestiae accusamus atque possimus ullam architecto? Quo commodi
+				et aut in.</p>
+		</div>
+		<div class="font-size_up max-w_30 reading-typography" style="--custom-font-size-modifier: 1.15;">
+			<img class="aspect_1x1 bg_contain m_auto max-w_10"
+				src="{{ '/assets/images/playground/shape-270.svg' | relative_url }}" alt="" srcset="">
+			<h2 class="font-light font-size_up-2 font_display">Concept C</h2>
+			<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim qui obcaecati laborum impedit facere quia,
+				reiciendis accusantium dolore facilis! Molestiae accusamus atque possimus ullam architecto? Quo commodi
+				et aut in.</p>
+		</div>
+	</div>
+</section> 
+-->
+<!-- /wp:html -->
