@@ -1,0 +1,70 @@
+---
+layout: default
+
+---
+
+{% include arches-head.html %}
+
+<body
+  id="ng-app"
+  ng-app="AccApp"
+  class="user-not-logged-in ng-scope medium-viewport"
+  style="background-color: #c1d6d9;"
+>
+  <div class="max-w_75 m_auto">
+    <div class="bg_white shadow_overlap-light">
+      {% include arches-header.html %}
+      {% include_relative  {{ page.masthead }} %}
+      <div class="grid columns_1 columns_3:md columns_4:lg">
+        <main
+          class="reading-typography col-end_end col-start_2:md p_5:lg p_4:md p_3"
+        >
+          {{content}}
+        </main>
+        <section
+          class="col-end_2:md col-start_start row-start_1:md row-start_2"
+        >
+          <nav class="nav-sub bg_primary c_white font_2 font_ui">
+            <ul class="ul_none flex_column flex">
+                <li class="nav-item font-size_up" data-nav="parent">
+                  <div class="bg_black-4">
+                    <a
+                      href="{{page.sidebarRootURL}}"
+                      class="text-shadow_black-1 block w_100 c_white p-y_2 p-x_4 w_100 h:c_white inline-block h:underline self_center"
+                      >{{page.sidebarRoot}}</a
+                    >
+                  </div>
+                </li>
+                {% for item in page.sidebarArray %}
+                <li class="nav-item" data-nav="child">
+                    <div class="flex flex_row">
+                      <div class="flex flex_column flex_none justify_start">
+                        <div class="flex_none">
+                          <span class="fa-stack">
+                            <i class="fas fa-spacer fa-stack-1x"></i>
+                          </span>
+                        </div>
+                      </div>
+                      <div class="flex_auto self_center">
+                        <a
+                          href="{{item.url}}"
+                          class="text-shadow_black-1 c_white-9 p-y_2 p-x_3 w_100 h:c_white inline-block h:underline self_center a:bg_black-3  {% if item.active %}active{% endif %}"
+                          >{{item.label}}</a
+                        >
+                      </div>
+                    </div>
+                  </li>
+              {% endfor %}
+            </ul>
+          </nav>
+        </section>
+      </div>
+      {% include arches-footer.html %}
+    </div>
+  </div>
+</body>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+  crossorigin="anonymous"
+></script>
