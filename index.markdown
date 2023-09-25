@@ -6,7 +6,7 @@ layout: home
 ---
 <div class="grid columns_3:lg columns_2:md columns_1 gap_4">
 <div class="">
-<h2 class="font_display">Playground & Geneartors</h2>
+<h2 class="font_display">Playground & Generator</h2>
 {% for playground_prototype in site.playground_prototypes %}
   <ul class="ul_none ">
 <li class="p_3 p-l_0 h:bg_primary-5">    <a href="{{ playground_prototype.url | append: site.github.build_revision | relative_url }}">
