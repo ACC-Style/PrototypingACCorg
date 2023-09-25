@@ -1,0 +1,38 @@
+---
+layout: playground
+name: "Sponsor Blocks"
+position: "Generator"
+---
+
+<div class="p_4 bg_black-1 br_radius m_5">
+
+    <h1 class="font_4 c_primary">Sponsor Blocks</h1>
+    <a href="{{ '/_data/sponsors-sort.csv' |  absolute_url }}" class="link">sponsors-sort.csv</a>
+</div>
+<div class="p_5">
+
+
+
+    {% assign sponsors-sort = site.data.sponsors-sort | sort: 'sortnumber' %}
+    <section>
+        <ul class="grid columns_4:lg columns_3:md columns_1 gap_5:lg gap_4 p-t_0 p_4 ul_none no-marker">
+            {% for sponsor in sponsors-sort  %}
+            <li
+                class="bg_black-_05 br_1 br_black-_01 br_round br_solid flex flex_column gap-y_3 p-b_4 relative h:bg_black-1">
+                <a data-name="sponsor__name" class="expanded-click-area undecorated" target="_blank"
+                    href="{{ sponsor.url | absolute_url }}" rel="noopener">
+                    <header class="bg_white br_radius m-b_3 m_4 p_3 shadow_overlap-light w_auto">
+                        <div class="relative aspect_16x9 grid columns_1 rows_1 items_center">                          
+                            <img decoding="async" alt="Logo of {{ sponsor.name }}" class="w_90 m-x_auto self_center bg_contain"
+                                src="{{ 'assets/images/playground/'| append: sponsor.img  | relative_url }}">
+                        </div>
+                    </header>
+                    <div class="c_primary-n3 font_3 font_display font_regular lh_1 p-x_4 text_center undecorated">
+                        {{ sponsor.name }}
+                    </div>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+</div>

@@ -1,21 +1,17 @@
 ---
 layout: arches
-name: "A to Z List Generator"
+name: "A to Z Industry Generator"
 position: "Home"
 ---
 {% assign alpha_array = 'A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z' | split: ',' %}
-{% assign people = site.data.people | sort: 'sortname' %}
-{% assign alpha_categories = people | map: 'group' %}
-{% assign contains_titles = people | map: 'title' %}
-{% assign contains_titles = contains_titles | uniq %}
-{% assign city_font_size = 'font-size_down-1' %}
-{% if contains_titles.size >= 1 and contains_titles.first != '' %}
-  {% assign city_font_size = 'font-size_down-2' %}
-{% endif %}
-contains titles: {{ contains_titles.size }}
-<h1 class="font_4 c_primary">Alpha List Render</h1>
-<a href="/PrototypingACCorg/_data/people.csv" class="link">People.csv</a>
-<section class="relative p-t_2" id="AlphaNavTop" >
+{% assign industry = site.data.industry | sort: 'sortname' %}
+{% assign alpha_categories = industry | map: 'grouping' %}
+<div class="p_4 bg_black-1 br_radius m_5">
+  <h1 class="font_4 c_primary">Alpha People List Render</h1>
+  <a href="{{ '/_data/industry.cs' |  absolute_url }}" class="link">industry.cs</a>
+</div>
+
+<section class="relative p-t_2"  id="AlphaNavTop">
   <div class="sticky t_0 r_0 z_1">
     <div class="absolute r_4 t_0 flex flex_row flex_nowrap gap-x_3">
       <!-- Helper Jump links -->
@@ -71,38 +67,27 @@ contains titles: {{ contains_titles.size }}
         <ul
           class="flex_auto gap-x_5:lf gap-x_4 gap-y_4 grid columns_1 columns_2:md columns_3:lg p-t_0 p_4 ul_none"
         >
-          {% for person in people %}
-            {% if person.group == alpha %}
-              <li class="lh_1 font_ui">
+          {% for company in industry %}
+            {% if company.grouping == alpha %}
+              <li class="lh_1 font_ui flex flex_column font_ui justify_center lh_1">
+
+          
+                {% if company.exhibitor_url != null and company.exhibitor_url != '' %}
+                <a
+                  data-name="newMember__name"
+                  class="block font_display c_primary-n2 font-size_up-1 lh_1 m-b_2"
+                  target="_blank"
+                  href="{{ company.exhibitor_url }}"
+                >
+                  {{ company.exhibitor_name }}
+                </a>
+                {% else %}
                 <span
                   data-name="newMember__name"
-                  class="block font_display c_primary-n2 font-size_up lh_0 m-b_2"
+                  class="block font_display c_primary-n4 font-size_up-1 lh_1 m-b_2"
                 >
-                  {{ person.fullname }}
+                  {{ company.exhibitor_name }}
                 </span>
-                {% if person.title != null and person.title != '' %}
-                  <span
-                    data-name="newMember__title"
-                    class="block font-size_down-1 lh_1 m-b_2 c_black-8"
-                  >
-                    {{- person.title -}}
-                  </span>
-                {% endif %}
-                {% if person.city != null and person.city != '' %}
-                  <span
-                    data-name="newMember__city"
-                    class="block c_black-6 {{city_font_size}} font_accent"
-                  >
-                    {{ person.city -}}
-                    {%- if person.city != null and person.state != null -%}
-                      ,
-                    {% endif %}
-                    {{ person.state -}}
-                    {%- if person.state != null and person.country != null -%}
-                    ,
-                  {% endif %}
-                  {{ person.country -}}
-                  </span>
                 {% endif %}
               </li>
             {% endif %}
