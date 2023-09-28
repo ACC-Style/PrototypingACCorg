@@ -38,7 +38,7 @@ Below is a list of potential careers within the CV Team, each with their own uni
             </div>
         </div>
     </header>
-    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
+    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_4 reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 <p>As part of an interdisciplinary team, the Advanced Sonographer provides advanced level sonography services based on clinical competency obtained through advanced education and clinical experience.</p>
 
 <p><strong>Education/Pathways to Credentialing:</strong> Graduate of Advanced Cardiac Sonography program or have extensive cardiac ultrasound clinical experience with or without the combination of cardiac ultrasound/echocardiography/health science education.</p>
@@ -60,7 +60,7 @@ Below is a list of potential careers within the CV Team, each with their own uni
             </div>
         </div>
     </header>
-    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
+    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_4 reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
 <p>A Certified Cardiographic Technician is a professional working in the areas of EKG, Holter Monitoring and Stress Testing.</p>
 
@@ -83,7 +83,7 @@ Below is a list of potential careers within the CV Team, each with their own uni
             </div>
         </div>
     </header>
-    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
+    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_4 reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
 
 <p>A Certified Rhythm Analysis Technician is a monitor and device cardiac technician who assists in the diagnosis and treatment of patients, by analyzing cardiac rhythms and implanted device tests, utilizing specialized monitoring equipment.</p>
@@ -108,7 +108,7 @@ Below is a list of potential careers within the CV Team, each with their own uni
             </div>
         </div>
     </header>
-    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
+    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_4 reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
 A Registered Congenital Cardiac Sonographer assists in the care of patients with pediatric and adult congenital cardiac abnormalities by utilizing specialized ultrasound systems to collect and analyze cardiac images.
 
@@ -131,7 +131,7 @@ A Registered Congenital Cardiac Sonographer assists in the care of patients with
             </div>
         </div>
     </header>
-    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
+    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_4 reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
 A Registered Cardiac Sonographer assists in the care of patients utilizing echocardiography/cardiac ultrasound systems to collect and analyze cardiac images.
 
@@ -154,7 +154,7 @@ A Registered Cardiac Sonographer assists in the care of patients utilizing echoc
             </div>
         </div>
     </header>
-    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
+    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_4 reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
 
 
@@ -179,7 +179,7 @@ A Registered Phlebology Sonographer is a professional working in venous ultrasou
             </div>
         </div>
     </header>
-    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
+    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_4 reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
 #### ****
 
@@ -204,7 +204,7 @@ A Registered Vascular Specialist is a professional working in Vascular Technolog
             </div>
         </div>
     </header>
-    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
+    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_4 reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
 
 
@@ -233,7 +233,7 @@ An advanced practice registered nurse with a graduate-level degree in nursing an
             </div>
         </div>
     </header>
-    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
+    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_4 reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
 #### ****
 
@@ -260,7 +260,7 @@ Trained Pharmacist that provides patient care that optimizes the use of medicati
             </div>
         </div>
     </header>
-    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
+    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_4 reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
 #### ****
 
@@ -291,7 +291,7 @@ How can clinical psychologists impact cardiovascular care? Cardiovascular diseas
             </div>
         </div>
     </header>
-    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
+    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_4 reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
 
 
@@ -320,7 +320,7 @@ Cardiovascular disease can be complex and incoorperate multiple co-morbid condit
             </div>
         </div>
     </header>
-    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
+    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_4 reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
 
 
@@ -351,7 +351,7 @@ Exercise physiologists typically function within cardiovascular care in the card
             </div>
         </div>
     </header>
-    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
+    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_4 reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
 
 
@@ -382,7 +382,7 @@ Certain cardiovascular conditions can be hereditary such as cardiomyopathies or 
             </div>
         </div>
     </header>
-    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
+    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_4 reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
 
 
@@ -411,7 +411,7 @@ The application of informatics and information technology to deliver healthcare 
             </div>
         </div>
     </header>
-    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
+    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_4 reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
 
 
@@ -444,7 +444,7 @@ An APRN is a master's or post-masters level nurse and are prepared to assess, di
             </div>
         </div>
     </header>
-    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
+    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_4 reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
 #### ****
 
@@ -467,7 +467,7 @@ oooooo
             </div>
         </div>
     </header>
-    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
+    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_4 reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
 
 
@@ -496,7 +496,7 @@ A cardiovascular perfusionist, clinical perfusionist or perfusiologist, and occa
             </div>
         </div>
     </header>
-    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
+    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_4 reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
 
 
@@ -525,7 +525,7 @@ Physical therapists are movement experts who improve quality of life through pre
             </div>
         </div>
     </header>
-    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
+    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_4 reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
 
 PAs (physician associates/physician assistants) are medical professionals who diagnose illness, develop and manage treatment plans, prescribe medications, and often serve as a patient's principal healthcare provider. With thousands of hours of medical training, PAs are versatile and collaborative.
@@ -555,7 +555,7 @@ PAs practice in every state and in every medical setting and specialty, improvin
             </div>
         </div>
     </header>
-    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
+    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_4 reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
 
 
@@ -586,7 +586,7 @@ RDN's/RD'S are trained by completing an undergraduate degree in food or nutritio
             </div>
         </div>
     </header>
-    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
+    <main id="content_accordion" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_4 reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
 
 
 
