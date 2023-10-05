@@ -15,7 +15,7 @@ sidebarArray:
     -   label: Cardiovascular Administrator
         url: ../Join_CVADMIN
         active: false
-    -   label: Trainees and Students
+    -   label:  Trainees & Students
         url: ../Join_STUDENT
         active: false
     -   label: International
@@ -24,14 +24,14 @@ sidebarArray:
     -   label: Affiliate
         url: ../Join_AFFILIATE
         active: false
-    -   label: Benifits
-        url: ../Join_BENIFITS
+    -   label: Benefits
+        url: ../Join_Benefits
         active: false
 ---
 <div class="relative isolation_isolate grid  columns_4:md columns_5:lg columns_2 p-t_5:lg p-t_4 m-x_n4 m-b_5:lg m-b_4 gap_4">
   <div zone-label="main-content" class="reading-typography  col-start_start col-end_3:md col-end_4:lg col-end_end p-x_5:lg p-x_4">
     <h1>
-      Become an FACC
+      Become an FACC Member
       <small class="block m-t_3">Fellow of the American College of Cardiology</small>
     </h1>
     <p>
@@ -108,7 +108,7 @@ sidebarArray:
     <li class="flex flex_row items_start justify_start gap_3">
       <span class="font-size_up">
         Read about more of our
-        <a href="/Membership/Join-Us/Benefits" target="_blank">Member Benifits</a>
+        <a href="/Membership/Join-Us/Benefits" target="_blank">Member Benefits</a>
       </span>
       <span class="flex flex_row">
         <i class="c_accent font_6 m-t_3 fas fa-solid fa-ellipsis " aria-hidden="true"></i>
@@ -206,23 +206,8 @@ sidebarArray:
       id="BoardCertifiedPhysician"
       class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_4 reading-typography shadow_emboss-light tab-content transition_4 collapse"
       aria-labelledby="accordion_header m-x_3">
-
-      <h3>To apply, candidates must:</h3>
-      <ul>
-        <li>Have completed cardiovascular training</li>
-        <li>Demonstrate that a majority of current professional activities are related to cardiovascular medicine</li>
-      </ul>
-      <h3>What You Need to Apply</h3>
-      <p>Please have the following ready as you begin your online application:</p>
-      <ul>
-        <li>
-          Two signed
-          <a href="https://www.acc.org//-/media/Non-Clinical/Images/Membership/Becoming-a-Member/F17550-AF-Sponsor-Form-Letter.pdf" target="new">sponsorship forms</a>
-          from current FACCs
-        </li>
-        <li>Copy of medical degree diploma, translated to English if received from an institution outside the US</li>
-        <li>Copy of diploma if you have a PhD</li>
-      </ul>
+      {% include_relative JOIN/MembershipCriteria/FACC_Certified.html %}
+      
     </main>
   </div>
   <div class="relative">
@@ -250,42 +235,7 @@ sidebarArray:
       id="CardiovascularTranee"
       class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_4 reading-typography shadow_emboss-light tab-content transition_4 collapse"
       aria-labelledby="accordion_header m-x_3">
-      <div class="grid columns_1 gap_4 gap_5:lg columns_2:md">
-        <div class="">
-          <p>
-            Cardiovascular fellows who are within six months of completing their training or early career cardiologists
-            who have completed training in the last three years are encouraged to apply for Fellowship in the ACC.
-          </p>
-          <p>
-            <a
-              href="http://www.acc.org/membership/features/fit-to-facc"
-              target="new"
-              class="btn btn-primary not-link">Learn more</a>.
-          </p>
-        </div>
-        <div class="bg_acc c_white p_4 br_round reading-typography color_inherit c_white">
-          <h4>ACC's Tiered Dues Program</h4>
-          <p>
-            ACC offers tiered dues for US-based physicians in their first three years out of CV training – and members
-            applying to advance to FACC are STILL eligible to receive these discounts that apply to both national and
-                                                                                                                                                                                                            chapter dues!
-          </p>
-          <ul class="ul_none">
-            <li>
-              <strong>75% OFF</strong>
-              = First Year
-            </li>
-            <li>
-              <strong>50% OFF</strong>
-              = Second Year
-            </li>
-            <li>
-              <strong>25% OFF</strong>
-              = Third Year
-            </li>
-          </ul>
-        </div>
-      </div>
+      {% include_relative JOIN/MembershipCriteria/FACC_Trainee.html %}
     </main>
   </div>
   <div class="relative">
@@ -347,43 +297,7 @@ sidebarArray:
       id="NonBoardCertified"
       class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_4 reading-typography shadow_emboss-light tab-content transition_4 collapse"
       aria-labelledby="accordion_header m-x_3">
-      <h3>Becoming an FACC via professional excellence</h3>
-      <div>
-        <p>
-          The ACC believes in the strength and the necessity of the care team model to transform cardiovascular care.
-          To ensure a greater diversity of voices at the table, Fellowship is now open to those whose education,
-                                                                                                                                                                          professional achievements and involvement in the College merit special consideration.
-        </p>
-        <h4>Fellowship Eligibility Calculator</h4>
-        <p>
-          The ACC invites clinicians, researchers, scientists, cardiovascular team members and cardiovascular
-          administrators to apply for Fellowship in the ACC.
-        </p>
-        <p>The first step is take the Eligibility Survey to make sure you score more then 100 points.</p>
-        <a
-          target="_blank"
-          href="https://www.surveys.acc.org/se/0B87B74466DAF7D8"
-          class="btn btn-primary not-link">Eligibility Survey</a>
-      </div>
-      <div>
-        <p>Please have the following ready as you begin your online application:</p>
-        <ul>
-          <li>Receipt of the Eligiblity Survey with a Score of 100+ points. (<a
-              target="_blank"
-              href="https://www.surveys.acc.org/se/0B87B74466DAF7D8"
-              class="link">Launch Eligibility
-              Survey</a>)</li>
-          <li>
-            Two letters of sponsorship from current FACCs.
-            <a href="/Membership/Join-Us/FACC/What-You-Need-to-Apply" target="_blank">View sponsor letter requirements</a>.
-          </li>
-        </ul>
-
-        <a
-          href="https://memberapp.acc.org/"
-          target="new"
-          class="btn btn-primary not-link">Join Now</a>
-      </div>
+      {% include_relative JOIN/MembershipCriteria/FACC_noneoftheabove.html %}
     </main>
   </div>
 </div>

@@ -15,7 +15,7 @@ sidebarArray:
     -   label: Cardiovascular Administrator
         url: ../Join_CVADMIN
         active: false
-    -   label: Trainees and Students
+    -   label:  Trainees & Students
         url: ../Join_STUDENT
         active: true
     -   label: International
@@ -24,8 +24,8 @@ sidebarArray:
     -   label: Affiliate
         url: ../Join_AFFILIATE
         active: false
-    -   label: Benifits
-        url: ../Join_BENIFITS
+    -   label: Benefits
+        url: ../Join_Benefits
         active: false
 ---
 <div class="relative isolation_isolate grid  columns_4:md columns_5:lg columns_2 p-t_5:lg p-t_4 m-x_n4 m-b_5:lg m-b_4 gap_4">
@@ -124,7 +124,7 @@ sidebarArray:
     <li class="flex flex_row items_start justify_start gap_3">
       <span class="font-size_up">
         Read about more of our
-        <a href="/Membership/Join-Us/Benefits" target="_blank">Member Benifits</a>
+        <a href="/Membership/Join-Us/Benefits" target="_blank">Member Benefits</a>
       </span>
       <span class="flex flex_row">
         <i class="c_accent font_6 m-t_3 fas fa-solid fa-ellipsis " aria-hidden="true"></i>
@@ -197,17 +197,41 @@ sidebarArray:
       id="FellowInTraining_MembershipCriteria"
       class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_4 reading-typography shadow_emboss-light tab-content transition_4 collapse"
       aria-labelledby="accordion_header m-x_3">
-      <ul>
-        <li class="p-b_3">In the US/Canada: Please contact your training program administrator to have them enroll you for ACC membership
-        </li>
-        <li class="p-b_3">
-          Outside the US/Canada: You must provide a formal letter from your institution verifying your enrollment in a cardiovascular-related training program
-        </li>
-      </ul>
-      <a
-        href="https://memberapp.acc.org/"
-        target="new"
-        class="btn btn-primary not-link shadow_overlap-light">Join Now</a>
+      {% include_relative JOIN/MembershipCriteria/FIT.html %}
+
+    </main>
+  </div>
+  <div class="relative">
+    <header id="accordion_header" class="flex flex_row sticky t_n2 bg_white shadow_overlap-light br_solid br_1 br_black-2 z_2 ">
+      <div class="h:bg_primary-5 m_2 c_primary h:c_primary-n2 br_radius">
+        <div
+          class="flex_none collapsed"
+          aria-expanded="false"
+          data-bs-toggle="collapse"
+          data-bs-target="#FellowInTrainingInternational_MembershipCriteria"
+          aria-controls="#FellowInTrainingInternational_MembershipCriteria">
+          <span class="fa-stack">
+            <i class="fas fa-minus fa-stack-1x" aria-hidden="true"></i>
+            <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x " aria-hidden="true"></i>
+          </span>
+        </div>
+      </div>
+      <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
+        <div class="flex_auto self_center reading-typography no-margins">
+          <h3>
+            Fellow in Training International
+          
+            <small class="block font-size_down-2 c_black-7">Outside of US &amp; Canada
+            </small>
+          </h3>
+        </div>
+      </div>
+    </header>
+    <main
+      id="FellowInTrainingInternational_MembershipCriteria"
+      class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_4 reading-typography shadow_emboss-light tab-content transition_4 collapse"
+      aria-labelledby="accordion_header m-x_3">
+      {% include_relative JOIN/MembershipCriteria/FIT_International.html %}
 
     </main>
   </div>
@@ -236,18 +260,7 @@ sidebarArray:
       id="MedicalResident_MembershipCriteria"
       class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_4 reading-typography shadow_emboss-light tab-content transition_4 collapse"
       aria-labelledby="accordion_header m-x_3">
-      <ul>
-        <li class="p-b_3">Applicants must be enrolled in an accredited program
-        </li>
-        <li class="p-b_3">
-          Applicants must also upload a sponsorship letter confirming their interests in cardiovascular medicine
-          from their training director or a current Fellow of the American College of Cardiology
-        </li>
-      </ul>
-      <a
-        href="https://memberapp.acc.org/"
-        target="new"
-        class="btn btn-primary not-link shadow_overlap-light">Join Now</a>
+      {% include_relative  JOIN/MembershipCriteria/RESIDENT.html  %}
     </main>
   </div>
   <div class="relative">
@@ -275,14 +288,8 @@ sidebarArray:
       id="MedicalStudent_MembershipCriteria"
       class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_4 reading-typography shadow_emboss-light tab-content transition_4 collapse"
       aria-labelledby="accordion_header m-x_3">
-      <ul>
-        <li class="p-b_3">Must be enrolled in an accredited medical school
-        </li>
-      </ul>
-      <a
-        href="https://memberapp.acc.org/"
-        target="new"
-        class="btn btn-primary not-link shadow_overlap-light">Join Now</a>
+      
+      {% include_relative  JOIN/MembershipCriteria/STUDENT.html  %}
     </main>
   </div>
   <div class="relative">
@@ -310,30 +317,7 @@ sidebarArray:
       id="CVTeamStudent_MembershipCriteria"
       class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_4 reading-typography shadow_emboss-light tab-content transition_4 collapse"
       aria-labelledby="accordion_header m-x_3">
-      <p>Applicants should be enrolled full-time or half-time in an undergraduate, graduate, trainee, residency
-        or fellowship program for:
-      </p>
-      <ul>
-        <li class="p-b_3">
-          Cardiovascular Technologists
-        </li>
-        <li class="p-b_3">Cardiac Rehabilitation Professionals
-        </li>
-        <li class="p-b_3">
-          Clinical Nurse Specialists</li>
-        <li class="p-b_3">
-          Clinical Pharmacists</li>
-        <li class="p-b_3">
-          Nurse Practitioners</li>
-        <li class="p-b_3">
-          Physician Assistants</li>
-        <li class="p-b_3">
-          Registered Nurses</li>
-      </ul>
-      <a
-        href="https://memberapp.acc.org/"
-        target="new"
-        class="btn btn-primary not-link shadow_overlap-light">Join Now</a>
+      {% include_relative  JOIN/MembershipCriteria/CV_STUDENT.html  %}
     </main>
   </div>
 
