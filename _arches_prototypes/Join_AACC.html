@@ -262,11 +262,41 @@ sidebarArray:
         </main>
     </div>
     <div class="relative">
-        <header id="accordion_header"
+        <header id="accordion_header_iAssociate"
             class="flex flex_row sticky t_n2 bg_white shadow_overlap-light br_solid br_1 br_black-2 z_2 ">
             <div class="h:bg_primary-5 m_2 c_primary h:c_primary-n2 br_radius">
                 <div class="flex_none collapsed" aria-expanded="false" data-bs-toggle="collapse"
-                    data-bs-target="#CardiovascularTranee" aria-controls="#CardiovascularTranee">
+                    data-bs-target="#iAssociate" aria-controls="#iAssociate">
+                    <span class="fa-stack">
+                        <i class="fas fa-minus fa-stack-1x"></i>
+                        <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+                    </span>
+                </div>
+            </div>
+            <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
+                <div class="flex_auto self_center reading-typography no-margins">
+                    <h3> Associate of the ACC
+                        International
+                        <small class="block font-size_down-2 c_black-7">Outside of US &amp; Canada
+                        </small>
+                        <span class="bg_secondary br_radius c_white font-size_down-1 m-l_auto m-r_3 m-t_3 p-x_3 p-y_2 self_center inline-block">
+                          Special Pricing</span>
+                    </h3>
+                </div>
+            </div>
+        </header>
+        <main id="iAssociate"
+            class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_4 reading-typography shadow_emboss-light tab-content transition_4 collapse"
+            aria-labelledby="accordion_header m-x_3">
+            {% include_relative JOIN/MembershipCriteria/Associate_International.html %}
+        </main>
+    </div>
+    <div class="relative">
+        <header id="accordion_header_CVTEAM"
+            class="flex flex_row sticky t_n2 bg_white shadow_overlap-light br_solid br_1 br_black-2 z_2 ">
+            <div class="h:bg_primary-5 m_2 c_primary h:c_primary-n2 br_radius">
+                <div class="flex_none collapsed" aria-expanded="false" data-bs-toggle="collapse"
+                    data-bs-target="#CVTEAM" aria-controls="#CVTEAM">
                     <span class="fa-stack">
                         <i class="fas fa-minus fa-stack-1x"></i>
                         <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
@@ -279,10 +309,39 @@ sidebarArray:
                 </div>
             </div>
         </header>
-        <main id="CardiovascularTranee"
+        <main id="CVTEAM"
             class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_4 reading-typography shadow_emboss-light tab-content transition_4 collapse"
             aria-labelledby="accordion_header m-x_3">
             {% include_relative JOIN/MembershipCriteria/Associate_CVTEAM.html %}
+        </main>
+    </div>
+    <div class="relative">
+        <header id="accordion_header_iCVTEAM"
+            class="flex flex_row sticky t_n2 bg_white shadow_overlap-light br_solid br_1 br_black-2 z_2 ">
+            <div class="h:bg_primary-5 m_2 c_primary h:c_primary-n2 br_radius">
+                <div class="flex_none collapsed" aria-expanded="false" data-bs-toggle="collapse"
+                    data-bs-target="#iCVTEAM" aria-controls="#iCVTEAM">
+                    <span class="fa-stack">
+                        <i class="fas fa-minus fa-stack-1x"></i>
+                        <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+                    </span>
+                </div>
+            </div>
+            <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
+                <div class="flex_auto self_center reading-typography no-margins">
+                    <h3>Cardiovascular TEAM International
+                        <small class="block font-size_down-2 c_black-7">Outside of US &amp; Canada
+                        </small>
+                        <span class="bg_secondary br_radius c_white font-size_down-1 m-l_auto m-r_3 m-t_3 p-x_3 p-y_2 self_center inline-block">
+                          Special Pricing</span>
+                    </h3>
+                </div>
+            </div>
+        </header>
+        <main id="iCVTEAM"
+            class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_4 reading-typography shadow_emboss-light tab-content transition_4 collapse"
+            aria-labelledby="accordion_header m-x_3">
+            {% include_relative JOIN/MembershipCriteria/CVTEAM_International.html %}
         </main>
     </div>
 
