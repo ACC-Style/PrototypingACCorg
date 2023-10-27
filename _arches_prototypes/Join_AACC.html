@@ -91,53 +91,12 @@ sidebarArray:
 <div class="reading-typography bg_black-1 m-x_n4 p_5 m-b_4 m-b_5:lg br_radius">
     <h2>Benefits</h2>
     <ul class="columns_2:md gap-x_6 gap-y_4 grid p-x_4:lg ul_none">
-        <li class="flex flex_row items_start justify_start">
-            <i class="c_accent font_7 m-t_3 p-r_4 far fa-regular fa-newspaper" aria-hidden="true"></i>
-            <span class="font-size_up">
-                <strong>Free</strong> digital access to the <a href="http://www.onlinejacc.org/"
-                    target="_blank"><em>JACC</em> Journals</a>
-            </span>
-        </li>
-        <li class="flex flex_row items_start justify_start">
-            <i class="c_accent font_7 m-t_3 p-r_4 far fa-regular fa-file-text" aria-hidden="true"></i>
-            <span class="font-size_up">
-                <strong>Free</strong> access to <a href="/Guidelines">Clinical Guidelines</a>
-            </span>
-        </li>
-        <li class="flex flex_row items_start justify_start">
-            <i class="c_accent font_7 m-t_3 p-r_4 far fa-regular fa-calendar" aria-hidden="true"></i>
-            <span class="font-size_up">
-                Discounts on live meetings – including the
-                <a href="https://accscientificsession.acc.org/" target="_blank">Annual Scientific Session</a>
-                – and educational products
-            </span>
-
-        </li>
-        <li class="flex flex_row items_start justify_start"><i
-                class="c_accent font_7 m-t_3 p-r_4 far fa-regular fa-users" aria-hidden="true"></i><span
-                class="font-size_up">
-                In-person and online <a
-                    href="/sitecore/service/notfound.aspx?item=web%3a%7bACB3E45E-6F91-4BB2-96D9-3927CE182DA8%7d%40en">networking
-                    opportunities</a>
-            </span>
-        </li>
-        <li class="flex flex_row items_start justify_start">
-            <i class="c_accent font_7 m-t_3 p-r_4 fa-brand fa-connectdevelop fab " aria-hidden="true"></i>
-            <span class="font-size_up">
-                Connect with over 56,000 CV professionals in 21+ specialty
-                <a href="/Membership/Sections-and-Councils" target="_blank">Member Sections</a>
-            </span>
-        </li>
-        <li class="flex flex_row items_start justify_start gap_3">
-            <span class="font-size_up">
-                Read about more of our
-                <a href="/Membership/Join-Us/Benefits" target="_blank">Member Benefits</a>
-            </span>
-            <span class="flex flex_row">
-                <i class="c_accent font_6 m-t_3 fas fa-solid fa-ellipsis " aria-hidden="true"></i>
-                <i class="c_accent fa-chevron-right fa-solid fas font_6 m-l_n3 m-t_3" aria-hidden="true"></i>
-            </span>
-        </li>
+        {% include_relative JOIN/Benefits/JACC.html %}
+        {% include_relative JOIN/Benefits/ClinicalGuidelines.html %}
+        {% include_relative JOIN/Benefits/EducationDiscounts.html %}
+        {% include_relative JOIN/Benefits/Networking.html %}
+        {% include_relative JOIN/Benefits/SectionsCouncils.html %}
+        {% include_relative JOIN/Benefits/__ReadMore.html %}
     </ul>
 </div>
 <div class="reading-typography m-b_5:lg m-b_4">

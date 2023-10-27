@@ -32,7 +32,7 @@ position: "Membership ACC"
     <div class="relative row-start_2 row-end_3 col-start_start col-end_3:md col-end_end p-y_0 p-r_4 m-l_0:md">
         <h1 data-item="hero-title"
             class="c_white m-t_5:lg m-t_4 m-b_0 font_5:lg font_4:md font_3 isolation_isolate relative">
-            <span>Join Us:</span>
+            <span class="">Join Us:</span>
             <span>Become</span>
             <span>an</span>
             <span>ACC</span>
@@ -81,52 +81,11 @@ position: "Membership ACC"
 <div class="reading-typography bg_black-1 m-x_n4 p_5 m-b_4 m-b_5:lg">
     <h2>Benefits</h2>
     <ul class="columns_2:md  gap-x_6 gap-y_4 grid p-x_4:lg ul_none">
-        <li class="flex flex_row start justify_start items_start max-w_30">
-            <i class="c_accent font_7  p-r_4 m-t_3 far fa-regular fa-newspaper" aria-hidden="true"></i>
-            <span class="font-size_up">
-                Multiplatform access to the entire family of <a href="http://www.onlinejacc.org/"
-                    target="_blank"><em>JACC</em> Journals</a>
-            </span>
-        </li>
-        <li class="flex flex_row start justify_start items_start max-w_25">
-            <i class="c_accent font_7  p-r_4 m-t_3 far fa-regular fa-calendar" aria-hidden="true"></i>
-            <span class="font-size_up">
-                Discounts on live meetings – including the
-                <a href="https://accscientificsession.acc.org/" target="_blank">Annual Scientific Session</a>
-                – and educational products
-            </span>
-
-        </li>
-        <li class="flex flex_row start justify_start items_start max-w_25"><i
-                class="c_accent font_7  p-r_4 m-t_3 far fa-regular fa-certificate" aria-hidden="true"></i><span class="font-size_up">
-                Free Continuing Education Credits <small class="block font_italic opacity_8">(<a
-                    href="https://www.acc.org/education-and-meetings/education-catalog#sort=%40originalz32xpostedz32xdate%20descending&amp;f:@educationalactivitycredits=[CME]"
-                    target="_blank">CME</a>, <a
-                    href="https://www.acc.org/education-and-meetings/education-catalog#sort=%40originalz32xpostedz32xdate%20descending&amp;f:@educationalactivitycredits=[MOC]"
-                    target="_blank">MOC</a>, <a
-                    href="https://www.acc.org/education-and-meetings/education-catalog#sort=%40originalz32xpostedz32xdate%20descending&amp;f:@educationalactivitycredits=[CNE]"
-                    target="_blank">CNE</a>, <a
-                    href="https://www.acc.org/education-and-meetings/education-catalog#sort=%40originalz32xpostedz32xdate%20descending&amp;f:@educationalactivitycredits=[ECME]"
-                    target="_blank">ECME</a> &amp; more)</small>
-            </span>
-        </li>
-        <li class="flex flex_row start justify_start items_start max-w_25">
-            <i class="c_accent font_7  p-r_4 m-t_3 fa-brand fa-connectdevelop fab " aria-hidden="true"></i>
-            <span class="font-size_up">
-                Connect with over 56,000 CV professionals in 21+ specialty
-                <a href="/Membership/Sections-and-Councils" target="_blank">Member Sections</a>
-            </span>
-        </li>
-        <li class="flex flex_row items_start justify_start gap_3">
-            <span class="font-size_up">
-                Read about more of our
-                <a href="../Join_BENEFITS" target="_blank">Member Benefits</a>
-            </span>
-            <span class="flex flex_row">
-                <i class="c_accent font_6 m-t_3 fas fa-solid fa-ellipsis " aria-hidden="true"></i>
-                <i class="c_accent fa-chevron-right fa-solid fas font_6 m-l_n3 m-t_3" aria-hidden="true"></i>
-            </span>
-        </li>
+        {% include_relative JOIN/Benefits/JACC.html %}
+        {% include_relative JOIN/Benefits/EducationDiscounts.html %}
+        {% include_relative JOIN/Benefits/FreeCredits.html %}
+        {% include_relative JOIN/Benefits/SectionsCouncils.html %}
+        {% include_relative JOIN/Benefits/__ReadMore.html %}
     </ul>
 </div>
 <div class="reading-typography m-b_5:lg m-b_4">
@@ -140,7 +99,7 @@ position: "Membership ACC"
     <ul class="flex flex_column gap_2 font_0 ul_none">
         <li class="member_type m_0 relative h:bg_primary-5 br_radius flex flex_row:lg flex_column p_3 p-y_4">
             <div class="flex_auto self_center w_30:md">
-                <a class="btn btn-link expanded-click-area font-size_up-1 font_bold font_display h:undecorated not-link undecorated text_left lh_2" href="../Join_FACC">Fellow of the ACC</a>
+                <a class="btn btn-link expanded-click-area font-size_up-1 font_bold font_display h:undecorated not-link undecorated text_left lh_2" href="../Join_FACC">Fellow of the ACC (FACC)</a>
             </div>
             <div class="flex_auto p-x_3 p-y_3 self_center p-l_5 w_70:lg w_85:md">
                 Academic and Clinical Cardiologists (US and International), Fellows Completing Training, Cardiovascular
@@ -150,7 +109,17 @@ position: "Membership ACC"
         </li>
         <li class="member_type m_0 relative h:bg_primary-5 br_radius flex flex_row:lg flex_column bg_black-1 p_3 p-y_4 br_radius">
             <div class="flex_auto self_center w_30:md">
-                <a class="btn btn-link expanded-click-area font-size_up-1 font_bold font_display h:undecorated not-link undecorated text_left lh_2" href="../Join_AACC">Associate of the ACC /<br>
+                <a class="btn btn-link expanded-click-area font-size_up-1 font_bold font_display h:undecorated not-link undecorated text_left lh_2" href="../Join_AACC">Associate of the ACC (AACC)</a>
+            </div>
+            <div class="flex_auto p-x_3 p-y_3 self_center p-l_5 w_70:lg w_85:md">
+                Advanced Practice Nurses, PAs, Clinical Pharmacists, Registered
+                Nurses, CV Technologists, Cardiac Rehabilitation Professionals,
+                Genetic Counselors
+            </div>
+        </li>
+        <li class="member_type m_0 relative h:bg_primary-5 br_radius flex flex_row:lg flex_column bg_black-1 p_3 p-y_4 br_radius">
+            <div class="flex_auto self_center w_30:md">
+                <a class="btn btn-link expanded-click-area font-size_up-1 font_bold font_display h:undecorated not-link undecorated text_left lh_2" href="../Join_AACC">
                     Cardiovascular (CV) Team</a>
             </div>
             <div class="flex_auto p-x_3 p-y_3 self_center p-l_5 w_70:lg w_85:md">
@@ -164,7 +133,7 @@ position: "Membership ACC"
                 <a class="btn btn-link expanded-click-area font-size_up-1 font_bold font_display h:undecorated not-link undecorated text_left lh_2" href="../Join_CVADMIN">Cardiovascular Administrator</a>
             </div>
             <div class="flex_auto p-x_3 p-y_3 self_center p-l_5 w_70:lg w_85:md">
-                Service Line Administrators, Practice Managers, Executives</div>
+                Service Line Administrators, Practice Managers, Industry and Executives</div>
         </li>
         <li class="member_type m_0 relative h:bg_primary-5 br_radius flex flex_row:lg flex_column bg_black-1 p_3 p-y_4 br_radius">
             <div class="flex_auto self_center w_30:md">
@@ -172,7 +141,7 @@ position: "Membership ACC"
                     <small class="block">(Complimentary Membership)</small></a>
             </div>
             <div class="flex_auto p-x_3 p-y_3 self_center p-l_5 w_70:lg w_85:md">
-                Fellows in Training, Medical Residents, CV Team Students, Medical Students
+                Fellows in Training, Medical Residents, CV Team Students, Medical Students, Doctoral Students
             </div>
         </li>
         <li class="member_type m_0 relative h:bg_primary-5 br_radius flex flex_row:lg flex_column p_3 p-y_4">
