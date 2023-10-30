@@ -40,7 +40,7 @@ sidebarArray:
     </p>
   </div>
   <div class="relative col-start_n3:md col-start_start col-end_end font_n1 font_0:lg">
-    <div data-item="cta-overlay" class="bg_primary-n2 br_round c_white color_inherit shadow_overlap-light m-x_4 m-x_5:lg p_4 p_5:lg reading-typography  z_1 sticky t_3">
+    <div data-item="cta-overlay" class="bg_primary-n2 br_round relative c_white color_inherit shadow_overlap-light m-x_4 m-x_5:lg p_4 p_5:lg reading-typography  z_1 sticky t_3">
       <h3 data-item="cta-title" class="font_medium">Already a Member?</h3>
       <div data-item="cta-description" class="font-size_up lh_2">
         <ul class="ul_none">
@@ -64,57 +64,13 @@ sidebarArray:
 <div class="reading-typography bg_black-1 m-x_n4 p_5 m-b_4 m-b_5:lg br_radius">
   <h2>Benefits</h2>
   <ul class="columns_2:md gap-x_6 gap-y_4 grid p-x_4:lg ul_none">
-    <li class="flex flex_row items_start justify_start">
-      <i class="c_accent font_7 m-t_3 p-r_4 far fa-regular fa-newspaper" aria-hidden="true"></i>
-      <span class="font-size_up">
-        <strong>Free</strong>
-        digital access to the
-        <a href="http://www.onlinejacc.org/" target="_blank">
-          <em>JACC</em>
-          Journals</a>
-      </span>
-    </li>
-    <li class="flex flex_row items_start justify_start">
-      <i class="c_accent font_7 m-t_3 p-r_4 far fa-regular fa-file-certificate" aria-hidden="true"></i>
-      <span class="font-size_up">
-        <strong>Free</strong>
-        <a href="/Education-and-Meetings/Education-Catalog">online educational activities</a>
-        to help you expand your knowledge
-      </span>
-    </li>
-    <li class="flex flex_row items_start justify_start">
-      <i class="c_accent font_7 m-t_3 p-r_4 far fa-regular fa-calendar" aria-hidden="true"></i>
-      <span class="font-size_up">
-        Discounts on live meetings – including the
-        <a href="https://accscientificsession.acc.org/" target="_blank">Annual Scientific Session</a>
-        – and educational products
-      </span>
-    </li>
-    <li class="flex flex_row items_start justify_start">
-      <i class="c_accent font_7 m-t_3 p-r_4 far fa-regular fa-certificate" aria-hidden="true"></i>
-      <span class="font-size_up">
-        20+
-        <a href="/Clinical-Topics">clinical topic collections</a>
-        with the latest information on your specialty
-      </span>
-    </li>
-    <li class="flex flex_row items_start justify_start">
-      <i class="c_accent font_7 m-t_3 p-r_4 fa-brand fa-connectdevelop fab " aria-hidden="true"></i>
-      <span class="font-size_up">
-        Connect with over 56,000 CV professionals in 21+ specialty
-        <a href="/Membership/Sections-and-Councils" target="_blank">Member Sections</a>
-      </span>
-    </li>
-    <li class="flex flex_row items_start justify_start gap_3">
-      <span class="font-size_up">
-        Read about more of our
-        <a href="/Membership/Join-Us/Benefits" target="_blank">Member Benefits</a>
-      </span>
-      <span class="flex flex_row">
-        <i class="c_accent font_6 m-t_3 fas fa-solid fa-ellipsis " aria-hidden="true"></i>
-        <i class="c_accent fa-chevron-right fa-solid fas font_6 m-l_n3 m-t_3" aria-hidden="true"></i>
-      </span>
-    </li>
+  {% include_relative JOIN/Benefits/JACC.html %}
+  {% include_relative JOIN/Benefits/FreeCredits.html %}
+  {% include_relative JOIN/Benefits/EducationDiscounts.html %}
+  {% include_relative JOIN/Benefits/SectionsCouncils.html %}
+  {% include_relative JOIN/Benefits/DocMatter.html %}
+  {% include_relative JOIN/Benefits/__ReadMore.html %}
+
   </ul>
 </div>
 <div class="reading-typography m-b_5:lg m-b_4">
@@ -123,7 +79,7 @@ sidebarArray:
   </div>
   <ul class="flex flex_row:lg flex_column gap_5 ul_none font_copy font_0">
     <li>
-      <div data-element="data-table" class="bg_primary-n2 br_round c_white c_white-8 color_inherit inherit_all p_4 p_5:md reading-typography shadow_bevel-light">
+      <div data-element="data-table" class="bg_primary-n2 br_round relative c_white c_white-8 color_inherit inherit_all p_4 p_5:md reading-typography shadow_bevel-light">
         <header class="font_display font_4">
           <h2 data-element="table-title" class="font-size_down-2 font_medium m-b_0 ">U.S. Resident</h2>
           <h3 class="font-size_up-2 lh_2">
@@ -140,12 +96,13 @@ sidebarArray:
           </ul>
         </main>
         <footer class="m-b_n3:md">
-          <a href="" class="bg_white btn btn_primary c_primary-n2 h:bg_white-5 h:undecorated not-link shadow_overlap-light">Join Now</a>
+          <a href="{% include_relative JOIN/JOINURL.txt %}" class="bg_white h:bg_white-5 btn expanded-click-area btn_primary c_primary-n2 h:undecorated not-link shadow_overlap-light">Join Now</a>
         </footer>
+        <abbr title="United States Dollar" class="absolute b_4 block font_n1 font_xbold lh_0 m-r_2 opacity_5 r_4">USD</abbr>
       </div>
     </li>
     <li>
-      <div data-element="data-table" class="br_round bg_white p_5:md p_4 shadow_bevel-light bg_black-1">
+      <div data-element="data-table" class="br_round relative bg_white p_5:md p_4 shadow_bevel-light bg_black-1">
         <header class="font_display font_4">
           <h2 data-element="table-title" class="font-size_down-2 font_medium m-b_0 ">Canadian Resident</h2>
           <h3 class="font-size_up-2 lh_2">
@@ -162,8 +119,9 @@ sidebarArray:
           </ul>
         </main>
         <footer class="m-b_n3:md">
-          <a href="" class="btn btn-primary  h:undecorated not-link shadow_overlap-light">Join Now</a>
+          <a href="{% include_relative JOIN/JOINURL.txt %}" class="btn expanded-click-area btn-primary  h:undecorated not-link shadow_overlap-light">Join Now</a>
         </footer>
+        <abbr title="United States Dollar" class="absolute b_4 block font_n1 font_xbold lh_0 m-r_2 opacity_5 r_4">USD</abbr>
       </div>
     </li>
   </ul>
@@ -175,10 +133,6 @@ sidebarArray:
       Interested in elevating your career and becoming an FACC? You're in the right section. The "Membership Criteria"
       below provides a thorough breakdown on how to apply and the prerequisites to consider.
     </p>
-    <p>
-      Election to Fellowship is based on training and specialty board certification in cardiology. Members are
-      expected to
-      <a href="/About-ACC/Our-Bylaws-and-Code-of-Ethics/Code-of-Ethics" target="_blank">conform to high moral standards</a>.
     </p>
   </div>
   <div class="relative">
@@ -227,7 +181,7 @@ sidebarArray:
       </div>
       <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
         <div class="flex_auto self_center reading-typography no-margins">
-          <h3>Cardiovascular Trainee</h3>
+          <h3>FIT/Early Career Physician</h3>
         </div>
       </div>
     </header>
@@ -255,7 +209,7 @@ sidebarArray:
       </div>
       <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
         <div class="flex_auto self_center reading-typography no-margins">
-          <h3>International Board Certified Physician
+          <h3>International Physician
 
             <small class="block font-size_down-2 c_black-7">Outside of US &amp; Canada
             </small>
@@ -289,7 +243,7 @@ sidebarArray:
       </div>
       <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
         <div class="flex_auto self_center reading-typography no-margins">
-          <h3>None of the Above</h3>
+          <h3>Researchers, Scientists, or Allied Health Professionals</h3>
         </div>
       </div>
     </header>
@@ -309,7 +263,7 @@ sidebarArray:
     cardiovascular care to potential employers and patients.
   </p>
   <a
-    href="https://memberapp.acc.org/"
+    href="{% include_relative JOIN/JOINURL.txt %}" 
     target="new"
     class="btn btn-primary not-link shadow_overlap-light">Join Now</a>
 </div>
