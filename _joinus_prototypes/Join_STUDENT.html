@@ -21,7 +21,7 @@ sidebarArray:
     -   label:  Trainees & Students
         url: ../Join_STUDENT
         active: true
-    -   label: International
+    -   label: Outside US &amp; Canada
         url: ../Join_IA
         active: false
     -   label: Affiliate
@@ -36,7 +36,7 @@ sidebarArray:
     <h1>Trainee or Student Memberships</h1>
     <p>
       The American College of Cardiology is pleased to offer fellows
-      in training,* medical residents, medical students and Cardiovascular
+      in training,* medical residents, doctoral or medical students and Cardiovascular
                                                                                     Team students (nurses, pharmacists, PAs, and cardiovascular technologists) complimentary membership.
     </p>
     <p>
@@ -71,69 +71,12 @@ sidebarArray:
 <div class="reading-typography bg_black-1 m-x_n4 p_5 m-b_4 m-b_5:lg br_radius">
   <h2>Benefits</h2>
   <ul class="columns_2:md gap-x_6 gap-y_4 grid p-x_4:lg ul_none">
-    <li class="flex flex_row items_start justify_start">
-      <i class="c_accent font_7 m-t_3 p-r_4 far fa-regular fa-newspaper" aria-hidden="true"></i>
-      <span class="font-size_up">
-        <strong>Free</strong>
-        digital access to the
-        <a href="http://www.onlinejacc.org/" target="_blank">
-          <em>JACC</em>
-          Journals</a>
-      </span>
-    </li>
-    <li class="flex flex_row items_start justify_start">
-      <i class="c_accent font_7 m-t_3 p-r_4 fa-brand fa-connectdevelop fab " aria-hidden="true"></i>
-      <span class="font-size_up">
-        The
-        <a
-          rel="noopener noreferrer"
-          href="http://memberhub.acc.org/?_ga=2.30664255.1449848179.1695652623-1319813533.1692281309&amp;_gl=1*j046fm*_ga*MTMxOTgxMzUzMy4xNjkyMjgxMzA5*_ga_2V8VW4Y237*MTY5NTczNjIyNS40Ni4xLjE2OTU3NTI3MTQuMjMuMC4w"
-          target="_blank">Member Hub</a>
-        online community, where you can connect with peers and find mentors
-      </span>
-    </li>
-
-    <li class="flex flex_row items_start justify_start">
-      <i class="c_accent font_7 m-t_3 p-r_4 far fa-regular fa-file-certificate" aria-hidden="true"></i>
-      <span class="font-size_up">
-        <strong>Free</strong>
-        <a href="/Education-and-Meetings/Education-Catalog">online educational
-          activities</a>
-        to help you expand your knowledge
-      </span>
-    </li>
-
-    <li class="flex flex_row items_start justify_start">
-      <i class="c_accent font_7 m-t_3 p-r_4 far fa-regular fa-file-text" aria-hidden="true"></i>
-      <span class="font-size_up">
-        <a href="/Guidelines">Guidelines</a>,
-        <a href="/Guidelines">Appropriate Use Criteria</a>
-        and
-        <a href="/Tools-and-Practice-Support/Quality-Programs">quality programs</a>
-        to help you elevate standards
-        of care
-      </span>
-    </li>
-    <li class="flex flex_row items_start justify_start">
-      <i class="c_accent font_7 m-t_3 p-r_4 far fa-regular fa-calendar" aria-hidden="true"></i>
-      <span class="font-size_up">
-        Discounts on live meetings – including the
-        <a href="https://accscientificsession.acc.org/" target="_blank">Annual Scientific Session</a>
-        – and educational products
-      </span>
-
-    </li>
-
-    <li class="flex flex_row items_start justify_start gap_3">
-      <span class="font-size_up">
-        Read about more of our
-        <a href="/Membership/Join-Us/Benefits" target="_blank">Member Benefits</a>
-      </span>
-      <span class="flex flex_row">
-        <i class="c_accent font_6 m-t_3 fas fa-solid fa-ellipsis " aria-hidden="true"></i>
-        <i class="c_accent fa-chevron-right fa-solid fas font_6 m-l_n3 m-t_3" aria-hidden="true"></i>
-      </span>
-    </li>
+    {% include_relative JOIN/Benefits/DocMatter.html %}
+    {% include_relative JOIN/Benefits/ConnectMentors.html %}
+    {% include_relative JOIN/Benefits/BuildRelationships.html %}
+    {% include_relative JOIN/Benefits/FreeEducation.html %}
+    {% include_relative JOIN/Benefits/EducationDiscounts.html %}
+    {% include_relative JOIN/Benefits/__ReadMore.html %}
   </ul>
 </div>
 <div class="reading-typography m-b_5:lg m-b_4">
@@ -143,7 +86,7 @@ sidebarArray:
   <ul class="flex flex_row:lg flex_column gap_5 ul_none font_copy font_0">
 
     <li>
-      <div data-element="data-table" class="bg_primary-n2 br_round c_white c_white-8 color_inherit inherit_all p_4 p_5:md reading-typography shadow_bevel-light">
+      <div data-element="data-table" class="relative bg_primary-n2 br_round c_white c_white-8 color_inherit inherit_all p_4 p_5:md reading-typography shadow_bevel-light">
         <header class="font_display font_4">
 
           <h3 class="font-size_up-2 lh_2">
@@ -151,19 +94,12 @@ sidebarArray:
             <span>/Annual Dues</span>
           </h3>
         </header>
-        <main>
-          <hr class="br_dashed br_solid br_white-4 m-t_2">
-          <ul class="c_white-9 flex flex_column font-size_1 font_medium gap-y_3 m-l_4 p-b_4 p-x_3 ul_none">
-            <li class="text-indent_n1">
-              <i class="fas fa-usd m-r_2 c_primary-5" aria-hidden="true">25</i>Application Fee</li>
-
-
-          </ul>
-        </main>
         <footer class="m-b_n3:md">
           <a href="" class="bg_white btn btn_primary c_primary-n2 h:bg_white-5 h:undecorated not-link shadow_overlap-light">Join
             Now</a>
         </footer>
+        <abbr title="United States Dollar"
+        class="absolute b_4 block font_n1 font_xbold lh_0 m-r_2 opacity_5 r_4 z_1">USD</abbr>
       </div>
     </li>
   </ul>
@@ -192,7 +128,7 @@ sidebarArray:
       <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
         <div class="flex_auto self_center reading-typography no-margins">
           <h3>
-            Fellow in Training</h3>
+            Fellow in Training in US or Canada</h3>
         </div>
       </div>
     </header>
@@ -222,10 +158,7 @@ sidebarArray:
       <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
         <div class="flex_auto self_center reading-typography no-margins">
           <h3>
-            Fellow in Training International
-          
-            <small class="block font-size_down-2 c_black-7">Outside of US &amp; Canada
-            </small>
+            Fellow in Training Outside of US and Canada 
           </h3>
         </div>
       </div>
