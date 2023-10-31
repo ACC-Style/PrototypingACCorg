@@ -59,6 +59,9 @@ collections:
   playground_prototypes:
     output: true
     permalink: /playground/:path/
+  joinus_prototypes:
+    output: true
+    permalink: /joinus/:path/
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
