@@ -1,11 +1,10 @@
 <h2>Membership: International Affiliate</h2>
-<p class="c_alert m_0">International Associates may not use the FACC designation.</p>
+<p class="c_alert m_0">International Affiliate <strong class="font_bold uppercase">may not</strong> use the FACC designation.</p>
 <hr>
 <h3>Pricing</h3>
 <ul class="flex flex_row:lg flex_column gap_5 ul_none font_copy font_0">
-    <li>
-        <div data-element="data-table"
-            class="bg_secondary-n2 br_round c_white c_white-8 color_inherit inherit_all p_4 p_5:md reading-typography shadow_bevel-light">
+    <li data-element="data-table"
+            class="bg_secondary-n2 br_round c_white c_white-8 color_inherit inherit_all p_4 p_5:md reading-typography shadow_bevel-light relative flex flex_column">
             <header class="font_display font_4">
                  <h3 class="font-size_up-2 lh_2">
                     <span class="font_bold c_white">$100</span>
@@ -20,13 +19,14 @@
                     </li>
                 </ul>
             </main>
-            <footer class="m-b_n3:md">
+            <footer class="m-b_n3:md m-t_auto">
                 <a href=""
                     class="bg_white btn btn_primary c_primary-n2 h:bg_white-5 h:undecorated not-link shadow_overlap-light">Join
                     Now</a>
             </footer>
-        </div>
-    </li>
+            <abbr title="United States Dollar"
+                    class="absolute b_4 block font_n1 font_xbold lh_0 m-r_2 opacity_5 r_4 z_1">USD</abbr>
+       </li>
 </ul>
 <h3>
     To apply, candidates must:
@@ -38,7 +38,6 @@
 <h3>What You Need to Apply</h3>
 <ul>
   <li>Have a membership in a recognized medical society in their country – OR – upload a sponsorship letter from a current physician member of the ACC </li>
- 
 </ul>
-<a href="https://memberapp.acc.org/" target="new" class="btn btn-primary not-link">Join Now</a>
+<a href="{% include_relative JOIN/JOINURL.txt %}" class="btn btn-primary not-link">Join Now</a>
 
