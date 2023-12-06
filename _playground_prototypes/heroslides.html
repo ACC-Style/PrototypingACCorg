@@ -1,0 +1,99 @@
+---
+
+layout: playground
+name: "Slideshow"
+position: "Animation"
+
+---
+<script src="https://kit.fontawesome.com/71c9d25c4e.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+<!--[if (lt IE 9)]><script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.helper.ie8.js"></script><![endif]-->
+
+<div class="full-width relative  ">
+    <div id="hero-slider" class="">
+        {% for slide in site.data.heroslides %}
+            <div class="aspect_21x9:lg aspect_16x9:md aspect_2x3  relative h_100">
+                <img src="{{ site.baseurl }}/assets/images/playground/slides/{{ slide.image_src }}" class="z_0 bg_cover h_100 w_100 absolute inset_0">
+                <div class="absolute inset_0 z_0 {{ slide.background_classes }}">
+                </div>
+                <div style="width:100svw;" class="inset_0 z_5 grid justify_center items_center font_10: font_5:md font_3 p_6 h_100 isolation_isolate">
+                    <div class="font-size_up-2 w_100">
+                        <h1 class="font-size_up-2 lh_1 font_display font_medium text_center p_6:lg {{ slide.font_classes }} text-shadow_light">
+                            {{ slide.label }}
+                        <small class="font_8:lg font_3:md font_0 block">{{slide.sublabel}}</small>
+                        </h1>
+                    </div>
+                </div>
+
+            </div>
+        {% endfor %}
+    </div>
+</div>
+<div id="CVHeroSliderControls" class="absolute columns_6 flex inset_0 tns-controls" aria-label="Carousel Navigation" tabindex="0">
+    <button class="bg_transparent br_none btn c_white-4 h:c_white items_start  self_center p_5:lg font_4 font_10:lg | m-r_auto" type="button" data-controls="prev" tabindex="-1"><i class="fa-chevron-left fa-thin fa-sharp" aria-hidden="true"></i></button>
+    <button class="bg_transparent br_none btn c_white-4 h:c_white items_start  self_center p_5:lg font_4 font_10:lg | m-l_auto" type="button" data-controls="next" tabindex="-1"><i class="fa-chevron-right fa-thin fa-sharp" aria-hidden="true"></i></button>
+</div>
+<button id="playButton" class="absolute b_0 z_3 btn btn-link c_secondary-2 font-size_down-1 l_0"><i class="fa-play fas p-r_2" aria-hidden="true"></i> Play</button>
+<button id="stopButton" class="absolute b_0 z_3 btn btn-link c_secondary-2 font-size_down-1 r_0"><i class="fa-stop fas p-r_2" aria-hidden="true"></i> Stop</button>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+<script>
+  var slider = tns({
+    container: '#hero-slider',
+    items: 1,
+    controlsContainer: "#CVHeroSliderControls",
+    autoplay: true,
+    autoHeight: true,
+    arrowKeys:true,
+    loop:true,
+    slideBy: 'page',
+autoplay: true,
+    startIndex: 0,
+    speed: 500,
+    autoplayTimeout: 7000,
+
+  });
+  document.getElementById('playButton').addEventListener('click', function() {
+        slider.play(); // Start the slider autoplay
+    });
+
+    // Custom Stop Button
+    document.getElementById('stopButton').addEventListener('click', function() {
+        slider.pause(); // Stop the slider autoplay
+    });
+</script>
+<style>
+    button[data-action="stop"]{display:none !important;}
+    button[data-action="start"] {
+    display: none !important;
+}
+    .tns-nav{ 
+        position:absolute;
+        top:auto;
+        bottom:3rem;
+        flex-direction:row;
+        display:flex;
+        gap:.5rem;
+        z-index: 1000;
+        justify-content: center;
+        width:100%;
+    }
+    .tns-nav > button{
+        width:1rem;
+        height:1rem;
+        overflow:hidden;
+        line-height:0;
+        background-color: hsla(0,0%,100%,.25)!important;
+        border:none;
+        transition:.5s;
+    }
+    .tns-nav > button:hover{
+
+        background-color: hsla(0,0%,100%,1)!important;
+
+    }
+    .tns-nav > button.tns-nav-active{
+        width:3rem;
+        background-color: hsla(0,0%,100%, .75)!important;
+    }
+</style>
