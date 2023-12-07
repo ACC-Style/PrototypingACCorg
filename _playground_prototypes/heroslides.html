@@ -21,7 +21,7 @@ position: "Animation"
                         <div class="font-size_up-2">
                             <h1 class="font-size_up-2 lh_1 font_display font_medium text_center p_6:lg {{ slide.font_classes }} text-shadow_light">
                                 {{ slide.label }}
-                                <small class="font_8:lg font_3:md font_0 block p-t_5">{{slide.sublabel}}</small>
+                                <small class="font_8:lg font_regular font_3:md font_0 block p-t_5">{{slide.sublabel}}</small>
                             </h1>
                         </div>
                     </div>
@@ -96,7 +96,19 @@ autoplay: true,
         document.getElementById("fullscreen").addEventListener("click", toggleFullscreen);
 
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
 <style>
+    :root{
+            --font-family_display: 'Montserrat', sans-serif;
+
+           --font-family_copy: 'Montserrat', sans-serif;
+
+            --font-family_ui: 'Montserrat', sans-serif;
+
+    }
     button[data-action="stop"]{display:none !important;}
     button[data-action="start"] {
     display: none !important;
