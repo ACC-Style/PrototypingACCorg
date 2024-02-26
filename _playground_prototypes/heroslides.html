@@ -18,10 +18,12 @@ position: "Animation"
                 </div>
                 <div style="width:100svw;" class="inset_0 z_5 grid justify_center items_center font_10: font_5:md font_3 p_6 h_100 isolation_isolate">
                     <div class="font-size_up-2 w_100">
-                        <h1 class="font-size_up-2 lh_1 font_display font_medium text_center p_6:lg {{ slide.font_classes }} text-shadow_light">
-                            {{ slide.label }}
-                        <small class="font_8:lg font_3:md font_0 block">{{slide.sublabel}}</small>
-                        </h1>
+                        <div class="font-size_up-2">
+                            <h1 class="font-size_up-2 lh_1 font_display font_medium text_center p_6:lg {{ slide.font_classes }} text-shadow_light">
+                                {{ slide.label }}
+                                <small class="font_8:lg font_regular font_3:md font_0 block p-t_5">{{slide.sublabel}}</small>
+                            </h1>
+                        </div>
                     </div>
                 </div>
 
@@ -34,7 +36,9 @@ position: "Animation"
     <button class="bg_transparent br_none btn c_white-4 h:c_white items_start  self_center p_5:lg font_4 font_10:lg | m-l_auto" type="button" data-controls="next" tabindex="-1"><i class="fa-chevron-right fa-thin fa-sharp" aria-hidden="true"></i></button>
 </div>
 <button id="playButton" class="absolute b_0 z_3 btn btn-link c_secondary-2 font-size_down-1 l_0"><i class="fa-play fas p-r_2" aria-hidden="true"></i> Play</button>
-<button id="stopButton" class="absolute b_0 z_3 btn btn-link c_secondary-2 font-size_down-1 r_0"><i class="fa-stop fas p-r_2" aria-hidden="true"></i> Stop</button>
+<button id="stopButton" class="absolute b_0 z_3 btn btn-link c_secondary-2 font-size_down-1 r_0"><i
+        class="fa-stop fas p-r_2" aria-hidden="true"></i> Stop</button>
+<button id="fullscreen" class="absolute t_0 z_3 btn btn-link c_secondary-2 font-size_down-1 r_0"><i class="fa-solid fa-maximize"></i> Fullscreen</button>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
 <script>
@@ -61,8 +65,50 @@ autoplay: true,
     document.getElementById('stopButton').addEventListener('click', function() {
         slider.pause(); // Stop the slider autoplay
     });
+    var elem = document.documentElement;
+
+    // Function to toggle fullscreen on and off
+    function toggleFullscreen() {
+        if (!document.fullscreenElement) {
+            // If not in fullscreen, enter it
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.mozRequestFullScreen) { // Firefox
+                elem.mozRequestFullScreen();
+            } else if (elem.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) { // IE/Edge
+                elem.msRequestFullscreen();
+            }
+        } else {
+            // If in fullscreen, exit it
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.mozCancelFullScreen) { // Firefox
+                document.mozCancelFullScreen();
+            } else if (document.webkitExitFullscreen) { // Chrome, Safari, and Opera
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) { // IE/Edge
+                document.msExitFullscreen();
+            }
+        }
+    }
+        document.getElementById("fullscreen").addEventListener("click", toggleFullscreen);
+
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
 <style>
+    :root{
+            --font-family_display: 'Montserrat', sans-serif;
+
+           --font-family_copy: 'Montserrat', sans-serif;
+
+            --font-family_ui: 'Montserrat', sans-serif;
+
+    }
     button[data-action="stop"]{display:none !important;}
     button[data-action="start"] {
     display: none !important;
