@@ -4,7 +4,7 @@ name: "UX Micro Site"
 position: "About"
 ---
 
-{% include_relative MicroSite/heroimage.html %}
+{% include_relative MicroSite/heroimage.ux.html %}
 
 <div class="relative isolation_isolate grid  columns_4:md columns_5:lg columns_2 p-t_5:lg p-t_4 m-x_n4">
   <div zone-label="main-content" class="reading-typography  col-start_start col-end_3:md col-end_4:lg col-end_end p-x_5:lg p-x_4">
@@ -14,10 +14,10 @@ position: "About"
   </div>
   <div class="relative col-start_n3:md col-start_start col-end_end font_n1 font_0:lg">
     <div data-item="cta-overlay" class="bg_primary-n2 br_round c_white color_inherit shadow_overlap-light m-x_4 m-x_5:lg p_4 p_5:lg reading-typography relative z_1">
-      <h3 data-item="cta-title" class="font_medium">Join us on this exciting journey with the UX Team</h3>
-      <p data-item="cta-description" class="font-size_up lh_2">Together we will build and develop more engaging, intuitive, and rewarding member experience and digital products.</p>
+      <h3 data-item="cta-title" class="font_medium">The Power of Community at ACC.org: Where Your Voice Shapes Our Future.</h3>
+      <p data-item="cta-description" class="font-size_up lh_2">Join us in a collaborative journey where each member is not just a part of the American College of Cardiology but the driving force behind our innovations and initiatives.</p>
       <div class="grid justify_center">
-        <button class="btn btn-secondary capitalize">Get Started</button>
+        <button class="btn btn-secondary capitalize">Join Us</button>
       </div>
     </div>
   </div>
@@ -29,15 +29,15 @@ position: "About"
   </div>
   <div class="relative col-start_n3:md col-start_start col-end_end font_n1 font_0:lg">
     <div data-item="cta-overlay" class="bg_accent-n2 br_round c_white color_inherit shadow_overlap-light m-x_4 m-x_5:lg p_4 p_5:lg reading-typography relative z_1">
-      <h3 data-item="cta-title" class="font_medium">Give Us Your Opinion Today</h3>
-      <p data-item="cta-description" class="font-size_up lh_2">We are currently running a survey about your experience with JACC.org.  We ask only 5 minutes or your time if you have it to spare.</p>
+      <h3 data-item="cta-title" class="font_medium">Your Opinion is Valuable and so is Your Time</h3>
+      <p data-item="cta-description" class="font-size_up lh_2">We are currently running a short survey about your experience with JACC.org.  We ask only 2 minutes or your time if you have it to spare.</p>
       <div class="grid justify_center">
-        <button class="btn btn-secondary capitalize">Get Started</button>
+        <button class="btn btn-secondary capitalize">Take Survey</button>
       </div>
     </div>
   </div>
 </div>
-<h2 class="c_primary-n1 flex flex_column flex_row:md font_display font_medium m_0 p-y_5:md p-y_4 p-x_4">
+<!-- <h2 class="c_primary-n1 flex flex_column flex_row:md font_display font_medium m_0 p-y_5:md p-y_4 p-x_4">
   <span class="flex_auto grid">
     <span class="br-t_1 br-tl_radius br_inherit br_solid self_center"></span>
   </span>
@@ -71,4 +71,4 @@ position: "About"
     <p>We recognize that your time is invaluable, and we're committed to making your interaction with ACC as efficient and fruitful as possible. Even with a busy schedule, there are three simple yet powerful ways you can help shape our user-centric designs: contributing to our behavior-informed solutions, participating in the creation of member personas, and providing feedback to enhance user satisfaction. Each step is a testament to our belief that the best user experience is built together, with our members leading the way.</p>
   </div>
 </div>
-<div class="bg_black-3 m-x_n4 p_4 grid columns_3 gap_4"></div>
+<div class="bg_black-3 m-x_n4 p_4 grid columns_3 gap_4"></div> -->

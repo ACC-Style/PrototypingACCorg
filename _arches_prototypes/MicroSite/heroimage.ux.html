@@ -1,0 +1,279 @@
+<div grid-template="hero-image-cta" id="hero" class="font_3:lg font_2:md font_1 m-t_n4 m-x_n4">
+    <div grid-area="background" class="col_all overflow_hidden row_all relative">
+        <picture data-item="responsive-hero-image" class="absolute bg_cover flex flex_column inset_0">
+            <source srcset="{{  'assets/images/MicroSite/HeroShot_1200x300.png' | relative_url }}" media="(min-width: 1024px)"
+                class="display_none">
+            <source srcset="{{  'assets/images/MicroSite/HeroShot_1024x256.png' | relative_url }}" media="(min-width: 768px)"
+                class="display_none">
+            <source srcset="{{  'assets/images/MicroSite/HeroShot_600x300.png' | relative_url }}" media="(min-width: 400px)"
+                class="display_none">
+            <img src="{{  'assets/images/MicroSite/HeroShot_320x300.png' | relative_url }}" alt="Hero Image" class="bg_cover flex_100">
+        </picture>
+    </div>
+    <div grid-area="breadcrumb" class="z_1 flex flex_row justify_start">
+        <nav data-item="hero-image-breadcrumb-nav" class="font-size_down-2 relative isolation_isolate p-y_3 p-x_4 c_white-8">
+        	<a href="#" class="h:c_white h:underline font_bold c_white-8 expanded-click-area h:c_white"><i class="fas fa-arrow-left"></i> Back |
+        	About ACC</a>
+        </nav>    </div>
+    <div grid-area="title" class="relative font-size_up-2 m-y_6:lg m-y_5:md">
+        <h1 data-item="hero-title"
+          class="font-size_up-2 lh_1 m_0 c_white isolation_isolate relative">
+          <span class="text">User</span>
+          <span class="text">Experience</span>
+          <span class="text">(UX)</span>
+          <span class="text">Empowering</span>
+          <span class="text">Heart</span>
+          <span class="text">Health,</span>
+          <span class="text">Together</span>
+        </h1>
+    </div>
+    <div grid-area="cta" class="relative font-size_down-1 grid justify_center items_center">
+        <div data-item="cta-callout" class="z_1 font-size_0 c_white color_inherit font-size_0 isolation_isolate p_4 p_5:lg relative z_1">
+              <h2 data-item="cta-title" class="font_medium m-t_0 m-b_3 font_display font-size_up-2">The Value of UX and Member Engagement</h2>
+              <p data-item="cta-description" class="font-size_up-0 lh_3">At ACC.org, we're not just building tools and resources; we're crafting the future of cardiology together with you, for you.</p>
+              <div class="grid justify_center items_center ">
+                <a href="https://www.surveymonkey.com/r/66ZMZBC" class="br_white-3 btn btn-primary c_white expanded-click-area shadow_overlap-bold">Join the UX Feedback Group</a>
+              </div></div>    </div>
+</div>
+
+
+
+<style>
+    :root {
+        --custom-font-size-modifier: 1.125;
+        --page-padding: 8px;
+        --page-padding: 0.5rem;
+        --outer-content-padding: 0;
+        --inner-content-padding: 8px;
+        --inner-content-padding: 0.5rem;
+        --sidebar-width: 100%;
+        --content-max-width: calc(100% - (var(--page-padding) * 2));
+        --content-min-width: calc(100% - (var(--page-padding) * 2));
+    }
+
+    @media only screen and (min-width : 768px) {
+        :root {
+            --inner-content-padding: 1rem;
+            --page-padding: 1rem;
+            --outer-content-padding: 0;
+            --sidebar-width: calc(300px + (var(--inner-content-padding) * 2));
+        }
+    }
+
+    @media only screen and (min-width : 1024px) {
+        :root {
+            --outer-content-padding: 1rem;
+            --sidebar-width: 300px;
+        }
+    }
+
+    [grid-template=page-layout] {
+        display: grid;
+        grid-template-rows: [fullscreen-start all-end] var(--page-padding) [center-start content-start] auto [center-end content-end sidebar-secondary-start] auto [sidebar-secondary-end sidebar-primary-start] auto [sidebar-primary-end] var(--page-padding) [fullscreen-end all-end];
+        grid-template-columns: [all-start fullscreen-start sidebar-secondary-start sidebar-primary-start] var(--page-padding) [content-start center-start] 1fr [content-end center-end] var(--page-padding) [fullscreen-end all-end sidebar-secondary-end sidebar-primary-end];
+        row-gap: var(--page-padding);
+        width: 100%;
+        margin-bottom: var(--page-padding);
+    }
+
+    @media only screen and (min-width : 768px) {
+        [grid-template=page-layout] {
+            grid-template-rows: [all-start fullscreen-start content-start center-start sidebar-primary-start] auto [content-end sidebar-secondary-start center-end sidebar-primary-end] auto [sidebar-secondary-end fullscreen-end all-end];
+            grid-template-columns: [fullscreen-start all-start sidebar-primary-start sidebar-secondary-start] var(--page-padding) [content-start] var(--sidebar-width) [sidebar-primary-end] var(--page-padding) [center-start] 1fr [center-end content-end] var(--page-padding) [fullscreen-end all-end sidebar-secondary-end];
+        }
+    }
+
+    @media only screen and (min-width : 1024px) {
+        [grid-template=page-layout] {
+            grid-template-rows: [all-start fullscreen-start content-start center-start sidebar-primary-start sidebar-secondary-start] auto [all-end fullscreen-end content-end center-end sidebar-primary-end sidebar-secondary-end];
+            grid-template-columns: [fullscreen-start all-start sidebar-primary-start] var(--page-padding) [content-start] var(--sidebar-width) [sidebar-primary-end] var(--page-padding) [center-start] 1fr [center-end] var(--page-padding) [sidebar-secondary-start] var(--sidebar-width) [content-end] var(--page-padding) [fullscreen-end all-end sidebar-secondary-end];
+        }
+    }
+
+    @media only screen and (min-width : 768px) {
+        [grid-template=page-layout][template-option=reverse] {
+            grid-template-columns: [fullscreen-start all-start sidebar-secondary-start] var(--page-padding) [content-start center-start] 1fr [center-end] var(--page-padding) [sidebar-primary-start] var(--sidebar-width) [content-end] var(--page-padding) [fullscreen-end all-end sidebar-primary-end sidebar-secondary-end];
+        }
+    }
+
+    @media only screen and (min-width : 1024px) {
+        [grid-template=page-layout][template-option=reverse] {
+            grid-template-rows: [all-start fullscreen-start content-start center-start sidebar-primary-start sidebar-secondary-start] auto [all-end fullscreen-end content-end center-end sidebar-primary-end sidebar-secondary-end];
+            grid-template-columns: [fullscreen-start all-start sidebar-secondary-start] var(--page-padding) [content-start] var(--sidebar-width) [sidebar-secondary-end] var(--page-padding) [center-start] 1fr [center-end] var(--page-padding) [sidebar-primary-start] var(--sidebar-width) [content-end] var(--page-padding) [fullscreen-end all-end sidebar-primary-end];
+        }
+    }
+
+    [grid-template=page-layout]>[grid-area=fullscreen],
+    [grid-template=page-layout]>[grid-area=document] {
+        grid-row: fullscreen;
+        grid-column: fullscreen;
+    }
+
+    [grid-template=page-layout]>[grid-area=sidebar-primary] {
+        grid-row: sidebar-primary;
+        grid-column: sidebar-primary;
+    }
+
+    [grid-template=page-layout]>[grid-area=sidebar-secondary] {
+        grid-row: sidebar-secondary;
+        grid-column: sidebar-secondary;
+    }
+
+    [grid-area=content] {
+        grid-row: content;
+        grid-column: content;
+    }
+
+    [grid-template=page-layout]:has([grid-area=sidebar-primary])>[grid-area=content],
+    [grid-template=page-layout][template-option=reverse]:has([grid-area=sidebar-secondary])>[grid-area=content] {
+        grid-row: content;
+        grid-column: center-start/content-end;
+    }
+
+    [grid-template=page-layout]:has([grid-area=sidebar-secondary])>[grid-area=content],
+    [grid-template=page-layout][template-option=reverse]:has([grid-area=sidebar-primary])>[grid-area=content] {
+        grid-row: content;
+        grid-column: content-start/center-end;
+    }
+
+    [grid-template=page-layout]:has([grid-area=sidebar-secondary]):has([grid-area=sidebar-primary]) [grid-area=content] {
+        grid-row: center;
+        grid-column: center;
+    }
+
+    @media only screen and (min-width : 768px) and (max-width : 1024px) {
+        [grid-template=page-layout]:has([grid-area=sidebar-secondary]):has([grid-area=sidebar-primary]) [grid-area=sidebar-secondary] {
+            grid-column-start: center-start;
+        }
+
+        [grid-template=page-layout]:has([grid-area=sidebar-secondary]):has([grid-area=sidebar-primary])[template-option=reverse] [grid-area=sidebar-secondary] {
+            grid-column-end: center-end;
+        }
+
+        [grid-template=page-layout]:has([grid-area=sidebar-secondary]):has([grid-area=sidebar-primary]) [grid-area=sidebar-primary] {
+            grid-row-end: sidebar-secondary-end;
+        }
+    }
+
+    
+[grid-template] {
+  display: grid;
+}
+
+[grid-template=hero-image-cta] {
+  --container-padding: 8px;
+  --container-padding: 0.5rem;
+  --hero-overlay-color: var(--acc);
+  --hero-overlay-opacity:.85;
+  --breadcrumb-height: 40px;
+  --breadcrumb-height: 2.5rem;
+  grid-template-rows: [all-start breadcrumb-start] minmax(var(--breadcrumb-height, 2.5rem), min-content) [breadcrumb-end] var(--container-padding, 0) [title-start content-start] auto [title-end] calc(var(--container-padding, 0) * 0.5) [cta-start] auto [cta-end content-end] var(--container-padding, 0) [all-end];
+  grid-template-columns: [all-start breadcrumb-start title-start] var(--container-padding, 0) [content-start cta-start] 1fr [cta-end title-end content-end] var(--container-padding, 0) [all-end breadcrumb-end];
+}
+@media (min-width : 768px) {
+  [grid-template=hero-image-cta] {
+    --container-padding: 1rem;
+    grid-template-rows: [all-start breadcrumb-start] var(--breadcrumb-height, 2.5rem) [breadcrumb-end] calc(var(--container-padding, 0) * 0.5) [title-start cta-start content-start] auto [title-end cta-end content-end] var(--container-padding, 0) [all-end];
+    grid-template-columns: [all-start breadcrumb-start title-start] var(--container-padding, 0) [content-start] 1fr [title-end] var(--container-padding, 0) [cta-start] 1fr [cta-end content-end] var(--container-padding, 0) [all-end breadcrumb-end];
+  }
+}
+@media (min-width : 1024px) {
+  [grid-template=hero-image-cta] {
+    --container-padding: 2rem;
+    grid-template-columns: [all-start breadcrumb-start title-start] var(--container-padding, 0) [content-start] 3fr [title-end] 1fr [cta-start] 3fr [cta-end content-end] var(--container-padding, 0) [all-end breadcrumb-end];
+  }
+}
+[grid-template=hero-image-cta][template-option=micro] {
+  grid-template-rows: [all-start] var(--container-padding, 0) [title-start content-start] auto [title-end] calc(var(--container-padding, 0) * 0.5) [cta-start] auto [cta-end content-end] var(--container-padding, 0) [all-end];
+  grid-template-columns: [all-start title-start] var(--container-padding, 0) [content-start cta-start] 1fr [cta-end title-end content-end] var(--container-padding, 0) [all-end];
+}
+@media (min-width : 768px) {
+  [grid-template=hero-image-cta][template-option=micro] {
+    grid-template-rows: [all-start] calc(var(--container-padding, 0) * 0.5) [title-start cta-start content-start] auto [title-end cta-end content-end] calc(var(--container-padding, 0) * 0.5) [all-end];
+    grid-template-columns: [all-start title-start] var(--container-padding, 0) [content-start] 1fr [title-end] var(--container-padding, 0) [cta-start] min-content [cta-end content-end] var(--container-padding, 0) [all-end];
+  }
+}
+@media (min-width : 1024px) {
+  [grid-template=hero-image-cta][template-option=micro] {
+    grid-template-columns: [all-start title-start] var(--container-padding, 0) [content-start] 1fr [title-end] var(--container-padding, 0) [cta-start] min-content [cta-end content-end] var(--container-padding, 0) [all-end];
+  }
+}
+
+[grid-template=hero-image-cta] {
+  overflow: clip;
+  isolation: isolate;
+}
+[grid-template=hero-image-cta] [grid-area] {
+  z-index: 1;
+}
+[grid-template=hero-image-cta] [grid-area=background] {
+  z-index: -1;
+  grid-row: all;
+  grid-column: all;
+}
+[grid-template=hero-image-cta] [grid-area=breadcrumb] {
+  grid-row: breadcrumb;
+  grid-column: breadcrumb;
+}
+[grid-template=hero-image-cta] [grid-area=title] {
+  grid-row: title;
+  grid-column: title;
+}
+[grid-template=hero-image-cta] [grid-area=cta] {
+  grid-row: cta;
+  grid-column: cta;
+}
+
+[data-item=hero-image-breadcrumb-nav], [data-item=cta-callout], [data-item=hero-title] span {
+  position: relative;
+  isolation: isolate;
+}
+[data-item=hero-image-breadcrumb-nav]::after, [data-item=cta-callout]::after, [data-item=hero-title] span::after {
+  z-index: -1;
+  position: absolute;
+  inset: 0px;
+  background-color: var(--hero-overlay-color);
+  background-blend-mode: multiply;
+  content: "";
+  mix-blend-mode: multiply;
+  opacity: var(--hero-overlay-opacity);
+}
+
+[data-item=hero-title] {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-inline-start: 16px;
+  padding-inline-start: 1rem;
+  overflow: clip;
+}
+[data-item=hero-title]::before {
+  z-index: -1;
+  position: absolute;
+  width: 32px;
+  width: 2rem;
+  inset: 0 auto 0 -16px;
+  inset: 0 auto 0 -1rem;
+  background-color: var(--hero-overlay-color);
+  background-blend-mode: multiply;
+  content: "";
+  opacity: var(--hero-overlay-opacity);
+}
+[data-item=hero-title] span {
+  position: relative;
+  flex: 0 1 auto;
+  padding-inline: 0 0.25em;
+  padding-block: 0.125em;
+  isolation: isolate;
+  color: inherit;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+[data-item=hero-image-breadcrumb-nav]::after {
+  border-end-end-radius: 6px;
+}
+
+[data-item=cta-callout]::after {
+  border-radius: 6px;
+}
+</style>
