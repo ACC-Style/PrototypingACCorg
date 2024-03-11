@@ -1,46 +1,163 @@
 ---
-layout: arches
+layout: arches-sidebar
 name: "Engage"
 position: "Membership"
+sidebarRoot: Membership
+sidebarRootURL: ../Engage
+masthead: Microsite/heroimage.micro.member.html
+sidebarArray:
+  - label: Engagement
+    url: ../Engage
+    active: true
+  - label: Futher Education
+    url: ../Join_AACC
+  - label: Membership Benifits
+    url: ../Join_CVTEAM
+sidebarArraySub:
+  - label: Build Community 
+    url: ../Engage_Knowledge
+    active: false
+  - label: Advance Science 
+    url: ../Engage_Knowledge
+    active: false
+  - label: Deliver Actionable Knowledge 
+    url: ../Engage_Knowledge
+    active: false
+  - label: Advocate for the Profession 
+    url: ../Engage_Knowledge
+    active: false
+  - label: Mentor and Champion 
+    url: ../Engage_Knowledge
+    active: false
+  - label: Enhance Communication   
+    url: ../Engage_Knowledge
+    active: false
 ---
-
-{% include_relative MicroSite/heroimage.micro.member.html %}
-
-<div class="reading-typography font-size_up m-t_5:lg m-t_4:md m-t_3" grid-template="page-layout">
-    <div grid-area="content">
-        <h1>Member Involvement Matters.
-        </h1>
-        <p>
-        Regardless of your interests, level of experience, career level or professional role—ACC has an option for you to get involved. Explore the options in the areas below to find an opportunity. 
-        </p>
-        <p>   
-        Whether you have a few minutes a month or hours each week—you can shape the future of the College with your voice.         </p>
-    </div>
-</div>      
-        <style>
-            .shade-odd > *:nth-child(2n + 1){
-                background-color: rgba(19, 18, 18, 0.025);
-
-            }
-        </style>
-<div class="m-t_5:lg m-t_4:md m-t_3" grid-template="page-layout">
-    <section grid-area="content" class="reading-typography">
-
-
-    </section>
-   
+<div class="reading-typography font-size_up m-t_5:lg m-t_4:md m-t_3">
+ <h1>Member Involvement Matters.</h1>
+    <p>
+      Regardless of your interests, level of experience, career level or professional role—ACC has an option for you to
+      get involved. Explore the options in the areas below to find an opportunity.
+    </p>
+    <p>
+      Whether you have a few minutes a month or hours each week—you can shape the future of the College with your voice.
+    </p> 
 </div>
-<cite grid-template="page-layout">
-    <ul grid-area="content" class="ul_none flex flex_column gap_3">
-        <li>
-            &dagger;You can access ACC Anywhere with your ACC.org login information.
+<div class="bg_black-1 br_radius m-b_4 m-b_5:lg m-x_n4 p_5">
+    <h2>How do you want to engage</h2>
+    <ul class="columns_2:md gap-x_4 gap-y_4 grid p-x_4:lg ul_none">
+        <li class="bg_accent-n2 br_radius h:bg_primary relative min-h_10 shadow_overlap-light max-w_30 c_white " style="">
+          <div class="flex flex_row self_stretch" style="min-height: 11rem;">
+                <div class="bg_black-2 flex flex_column flex_none justify_around p_4 shadow_n1 text_center">
+                    <div class="flex_shrink lh_1 self_center">
+                        <i class="fa-users fad font_8 m-b_2 fa-fw"></i>
+
+                    </div>
+                </div>
+            <div class="flex flex_column flex_shrink justify_around p-b_5 p_4">
+                <div class="flex_shrink">
+                    <div class="font_5:lg font_3:md lh_1  m-b_2 overflow_hidden font_accent ">Build a Community</div>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute inline-block b_3 h:opacity opacity_7 r_3 m-r_3">
+                <span class="m-r_2 uppercase font_n1 font_ui inline m-t_n2">learn more</span>
+                <i class="block fa-arrow-alt-circle-right fas font_0"></i>
+            </div>
         </li>
-        <li>
-            &Dagger; This content was developed independently from the content
-            developed for ACC.org. This content was not reviewed by the ACC and is
-            provided on an "as is" basis. Inclusion on ACC.org does not constitute a
-            guarantee or endorsement by the ACC and ACC makes no warranty that the
-            content is accurate, complete or error-free.
+        <li class="bg_accent-n2 br_radius h:bg_primary relative min-h_10 shadow_overlap-light max-w_30 c_white " style="">
+          <div class="flex flex_row self_stretch" style="min-height: 11rem;">
+            <div class="bg_black-2 flex flex_column flex_none justify_around p_4 shadow_n1 text_center">
+              <div class="flex_shrink lh_1 self_center">
+                <i class="fa-atom fad font_8 m-b_2 fa-fw"></i>
+              </div>
+            </div>
+            <div class="flex flex_column flex_shrink justify_around p-b_5 p_4">
+              <div class="flex_shrink">
+                <div class="font_5:lg font_3:md lh_1 m-b_2 overflow_hidden font_accent ">Advance Science</div>
+              </div>
+            </div>
+          </div>
+          <div class="absolute inline-block b_3 h:opacity opacity_7 r_3 m-r_3">
+            <span class="m-r_2 uppercase font_n1 font_ui inline m-t_n2">learn more</span>
+            <i class="block fa-arrow-alt-circle-right fas font_0"></i>
+          </div>
         </li>
+
+        <li class="bg_accent-n2 br_radius h:bg_primary relative min-h_10 shadow_overlap-light max-w_30 c_white " style="">
+  <div class="flex flex_row self_stretch" style="min-height: 11rem;">
+    <div class="bg_black-2 flex flex_column flex_none justify_around p_4 shadow_n1 text_center">
+      <div class="flex_shrink lh_1 self_center">
+        <i class="fa-lightbulb fad font_8 m-b_2 fa-fw"></i>
+      </div>
+    </div>
+    <div class="flex flex_column flex_shrink justify_around p-b_5 p_4">
+      <div class="flex_shrink">
+        <div class="font_5:lg font_3:md lh_1 m-b_2 overflow_hidden font_accent ">Deliver Actionable Knowledge </div>
+      </div>
+    </div>
+  </div>
+  <div class="absolute inline-block b_3 h:opacity opacity_7 r_3 m-r_3">
+    <span class="m-r_2 uppercase font_n1 font_ui inline m-t_n2">learn more</span>
+    <i class="block fa-arrow-alt-circle-right fas font_0"></i>
+  </div>
+</li>
+
+<li class="bg_accent-n2 br_radius h:bg_primary relative min-h_10 shadow_overlap-light max-w_30 c_white " style="">
+  <div class="flex flex_row self_stretch" style="min-height: 11rem;">
+    <div class="bg_black-2 flex flex_column flex_none justify_around p_4 shadow_n1 text_center">
+      <div class="flex_shrink lh_1 self_center">
+        <i class="fa-balance-scale fad font_8 m-b_2 fa-fw"></i>
+      </div>
+    </div>
+    <div class="flex flex_column flex_shrink justify_around p-b_5 p_4">
+      <div class="flex_shrink">
+        <div class="font_5:lg font_3:md lh_1 m-b_2 overflow_hidden font_accent ">Advocate for the Profession </div>
+      </div>
+    </div>
+  </div>
+  <div class="absolute inline-block b_3 h:opacity opacity_7 r_3 m-r_3">
+    <span class="m-r_2 uppercase font_n1 font_ui inline m-t_n2">learn more</span>
+    <i class="block fa-arrow-alt-circle-right fas font_0"></i>
+  </div>
+</li>
+<li class="bg_accent-n2 br_radius h:bg_primary relative min-h_10 shadow_overlap-light max-w_30 c_white " style="">
+  <div class="flex flex_row self_stretch" style="min-height: 11rem;">
+    <div class="bg_black-2 flex flex_column flex_none justify_around p_4 shadow_n1 text_center">
+      <div class="flex_shrink lh_1 self_center">
+        <i class="fa-user-friends fad font_8 m-b_2 fa-fw"></i>
+      </div>
+    </div>
+    <div class="flex flex_column flex_shrink justify_around p-b_5 p_4">
+      <div class="flex_shrink">
+        <div class="font_5:lg font_3:md lh_1 m-b_2 overflow_hidden font_accent ">Mentor and Champion </div>
+      </div>
+    </div>
+  </div>
+  <div class="absolute inline-block b_3 h:opacity opacity_7 r_3 m-r_3">
+    <span class="m-r_2 uppercase font_n1 font_ui inline m-t_n2">learn more</span>
+    <i class="block fa-arrow-alt-circle-right fas font_0"></i>
+  </div>
+</li>
+<li class="bg_accent-n2 br_radius h:bg_primary relative min-h_10 shadow_overlap-light max-w_30 c_white " style="">
+  <div class="flex flex_row self_stretch" style="min-height: 11rem;">
+    <div class="bg_black-2 flex flex_column flex_none justify_around p_4 shadow_n1 text_center">
+      <div class="flex_shrink lh_1 self_center">
+        <i class="fa-comments fad font_8 m-b_2 fa-fw"></i>
+      </div>
+    </div>
+    <div class="flex flex_column flex_shrink justify_around p-b_5 p_4">
+      <div class="flex_shrink">
+        <div class="font_5:lg font_3:md lh_1 m-b_2 overflow_hidden font_accent ">Enhance Communication </div>
+      </div>
+    </div>
+  </div>
+  <div class="absolute inline-block b_3 h:opacity opacity_7 r_3 m-r_3">
+    <span class="m-r_2 uppercase font_n1 font_ui inline m-t_n2">learn more</span>
+    <i class="block fa-arrow-alt-circle-right fas font_0"></i>
+  </div>
+</li>
+
     </ul>
-</cite>
+</div>
+
