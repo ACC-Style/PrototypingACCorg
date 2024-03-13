@@ -22,7 +22,7 @@ sidebarArraySub:
     active: false
   - label: Deliver Actionable Knowledge 
     url: ../Engage_Knowledge
-    active: false
+    active: true
   - label: Advocate for the Profession 
     url: ../Engage_Knowledge
     active: false
@@ -32,6 +32,26 @@ sidebarArraySub:
   - label: Enhance Communication   
     url: ../Engage_Knowledge
     active: false
+action_blocks:
+  - label: Deliver Actionable Knowledge
+    icon: fa-lightbulb
+    url: "#"
+  - label: Build a Community
+    icon: fa-users
+    url: "#"
+  - label: Advance Science
+    icon: fa-atom
+    url: "#"
+  - label: Advocate for the Profession
+    icon: fa-balance-scale
+    url: "#"  
+  - label: Mentor and Champion
+    icon: fa-users-friends
+    url: "#"       
+  - label: Enhance Communication
+    icon: fa-comments 
+    url: "#"   
+
 ---
 <div class="reading-typography font-size_up m-t_5:lg m-t_4:md m-t_3">
  <h1>Member Involvement Matters.</h1>
@@ -46,118 +66,28 @@ sidebarArraySub:
 <div class="bg_black-1 br_radius m-b_4 m-b_5:lg m-x_n4 p_5">
     <h2>How do you want to engage</h2>
     <ul class="columns_2:md gap-x_4 gap-y_4 grid p-x_4:lg ul_none">
-        <li class="bg_accent-n2 br_radius h:bg_primary relative min-h_10 shadow_overlap-light max-w_30 c_white " style="">
-          <div class="flex flex_row self_stretch" style="min-height: 11rem;">
-                <div class="bg_black-2 flex flex_column flex_none justify_around p_4 shadow_n1 text_center">
-                    <div class="flex_shrink lh_1 self_center">
-                        <i class="fa-users fad font_8 m-b_2 fa-fw"></i>
-
-                    </div>
-                </div>
-            <div class="flex flex_column flex_shrink justify_around p-b_5 p_4">
-                <div class="flex_shrink">
-                    <div class="font_5:lg font_3:md lh_1  m-b_2 overflow_hidden font_accent ">Build a Community</div>
-                    </div>
-                </div>
-            </div>
-            <div class="absolute inline-block b_3 h:opacity opacity_7 r_3 m-r_3">
-                <span class="m-r_2 uppercase font_n1 font_ui inline m-t_n2">learn more</span>
-                <i class="block fa-arrow-alt-circle-right fas font_0"></i>
-            </div>
-        </li>
-        <li class="bg_accent-n2 br_radius h:bg_primary relative min-h_10 shadow_overlap-light max-w_30 c_white " style="">
-          <div class="flex flex_row self_stretch" style="min-height: 11rem;">
-            <div class="bg_black-2 flex flex_column flex_none justify_around p_4 shadow_n1 text_center">
-              <div class="flex_shrink lh_1 self_center">
-                <i class="fa-atom fad font_8 m-b_2 fa-fw"></i>
-              </div>
-            </div>
-            <div class="flex flex_column flex_shrink justify_around p-b_5 p_4">
-              <div class="flex_shrink">
-                <div class="font_5:lg font_3:md lh_1 m-b_2 overflow_hidden font_accent ">Advance Science</div>
-              </div>
+      {% for block in page.action_blocks %}
+        <li class="bg_accent-n2 br_radius h:bg_primary relative min-h_10 shadow_overlap-light rows_1 c_white h:c_white grid columns_4">
+          <div class="bg_black-2 col-start_start col-end_2 row_all p_4 shadow_n1 grid items_center justify_center">
+            <div class="flex_shrink lh_1 self_center">
+              <i class="{{ block.icon }} fad font_8 m-b_2 fa-fw"></i>
             </div>
           </div>
-          <div class="absolute inline-block b_3 h:opacity opacity_7 r_3 m-r_3">
-            <span class="m-r_2 uppercase font_n1 font_ui inline m-t_n2">learn more</span>
-            <i class="block fa-arrow-alt-circle-right fas font_0"></i>
+          <div class="col-start_2 col-end_end row_all grid justify_start items_center p-y_5 p-x_4">
+            <div class="flex_shrink">
+              <div class="font_5:lg font_3:md lh_1 m-b_3 overflow_hidden font_accent ">{{ block.label }}</div>
+            </div>
+          </div>
+          <div class="col_all row_all relative p_3 grid items_end justify_end">
+            <a class="c_inherit-all h:opacity opacity_5 expanded-click-area self_end h:undecorated" href="{{ block.url }}">
+              <span class="m-r_2 uppercase font_n1 font_ui inline m-t_n2">learn more</span>
+              <i class="block fa-arrow-alt-circle-right fas font_0"></i>
+            </a>
           </div>
         </li>
-
-        <li class="bg_accent-n2 br_radius h:bg_primary relative min-h_10 shadow_overlap-light max-w_30 c_white " style="">
-  <div class="flex flex_row self_stretch" style="min-height: 11rem;">
-    <div class="bg_black-2 flex flex_column flex_none justify_around p_4 shadow_n1 text_center">
-      <div class="flex_shrink lh_1 self_center">
-        <i class="fa-lightbulb fad font_8 m-b_2 fa-fw"></i>
-      </div>
-    </div>
-    <div class="flex flex_column flex_shrink justify_around p-b_5 p_4">
-      <div class="flex_shrink">
-        <div class="font_5:lg font_3:md lh_1 m-b_2 overflow_hidden font_accent ">Deliver Actionable Knowledge </div>
-      </div>
-    </div>
-  </div>
-  <div class="absolute inline-block b_3 h:opacity opacity_7 r_3 m-r_3">
-    <span class="m-r_2 uppercase font_n1 font_ui inline m-t_n2">learn more</span>
-    <i class="block fa-arrow-alt-circle-right fas font_0"></i>
-  </div>
-</li>
-
-<li class="bg_accent-n2 br_radius h:bg_primary relative min-h_10 shadow_overlap-light max-w_30 c_white " style="">
-  <div class="flex flex_row self_stretch" style="min-height: 11rem;">
-    <div class="bg_black-2 flex flex_column flex_none justify_around p_4 shadow_n1 text_center">
-      <div class="flex_shrink lh_1 self_center">
-        <i class="fa-balance-scale fad font_8 m-b_2 fa-fw"></i>
-      </div>
-    </div>
-    <div class="flex flex_column flex_shrink justify_around p-b_5 p_4">
-      <div class="flex_shrink">
-        <div class="font_5:lg font_3:md lh_1 m-b_2 overflow_hidden font_accent ">Advocate for the Profession </div>
-      </div>
-    </div>
-  </div>
-  <div class="absolute inline-block b_3 h:opacity opacity_7 r_3 m-r_3">
-    <span class="m-r_2 uppercase font_n1 font_ui inline m-t_n2">learn more</span>
-    <i class="block fa-arrow-alt-circle-right fas font_0"></i>
-  </div>
-</li>
-<li class="bg_accent-n2 br_radius h:bg_primary relative min-h_10 shadow_overlap-light max-w_30 c_white " style="">
-  <div class="flex flex_row self_stretch" style="min-height: 11rem;">
-    <div class="bg_black-2 flex flex_column flex_none justify_around p_4 shadow_n1 text_center">
-      <div class="flex_shrink lh_1 self_center">
-        <i class="fa-user-friends fad font_8 m-b_2 fa-fw"></i>
-      </div>
-    </div>
-    <div class="flex flex_column flex_shrink justify_around p-b_5 p_4">
-      <div class="flex_shrink">
-        <div class="font_5:lg font_3:md lh_1 m-b_2 overflow_hidden font_accent ">Mentor and Champion </div>
-      </div>
-    </div>
-  </div>
-  <div class="absolute inline-block b_3 h:opacity opacity_7 r_3 m-r_3">
-    <span class="m-r_2 uppercase font_n1 font_ui inline m-t_n2">learn more</span>
-    <i class="block fa-arrow-alt-circle-right fas font_0"></i>
-  </div>
-</li>
-<li class="bg_accent-n2 br_radius h:bg_primary relative min-h_10 shadow_overlap-light max-w_30 c_white " style="">
-  <div class="flex flex_row self_stretch" style="min-height: 11rem;">
-    <div class="bg_black-2 flex flex_column flex_none justify_around p_4 shadow_n1 text_center">
-      <div class="flex_shrink lh_1 self_center">
-        <i class="fa-comments fad font_8 m-b_2 fa-fw"></i>
-      </div>
-    </div>
-    <div class="flex flex_column flex_shrink justify_around p-b_5 p_4">
-      <div class="flex_shrink">
-        <div class="font_5:lg font_3:md lh_1 m-b_2 overflow_hidden font_accent ">Enhance Communication </div>
-      </div>
-    </div>
-  </div>
-  <div class="absolute inline-block b_3 h:opacity opacity_7 r_3 m-r_3">
-    <span class="m-r_2 uppercase font_n1 font_ui inline m-t_n2">learn more</span>
-    <i class="block fa-arrow-alt-circle-right fas font_0"></i>
-  </div>
-</li>
-
+      {% endfor %} 
     </ul>
 </div>
+
+
 

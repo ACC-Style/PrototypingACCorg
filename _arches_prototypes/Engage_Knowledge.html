@@ -1,0 +1,285 @@
+---
+layout: arches-sidebar
+name: "Engage - Knowledge"
+position: "Membership"
+sidebarRoot: Membership
+sidebarRootURL: ../Engage
+masthead: Microsite/heroimage.micro.member.html
+sidebarArray:
+  - label: Engagement
+    url: ../Engage
+    active: true
+  - label: Futher Education
+    url: ../Join_AACC
+  - label: Membership Benefits
+    url: ../Join_CVTEAM
+sidebarArraySub:
+  - label: Build Community
+    url: ../Engage_Knowledge
+    active: false
+  - label: Advance Science
+    url: ../Engage_Knowledge
+    active: false
+  - label: Deliver Actionable Knowledge
+    url: ../Engage_Knowledge
+    active: false
+  - label: Advocate for the Profession
+    url: ../Engage_Knowledge
+    active: false
+  - label: Mentor and Champion
+    url: ../Engage_Knowledge
+    active: false
+  - label: Enhance Communication
+    url: ../Engage_Knowledge
+    active: false
+action_blocks:
+  - heading: Engagement Opportunities
+    copy: Whether you have minutes or hours, you can make an impact.
+    anchor: "#Engage"
+    cta: "Engage"
+  - heading: Learning Opportunities
+    copy: "A myriad of opportunities to engage with our educational content, faculty, and peers. "
+    anchor: "#Learning"
+    cta: "Learn"
+  - heading: Member Benefits
+    copy: "Your membership connects you to the latest science and learning below and over $3,500 worth of benefits."
+    anchor: "#Benefits"
+    cta: "Benefits"
+benefit_blocks:
+  - heading: "Access to all <em>JACC</em> Journals"
+    copy: "ACC members stay on top of the latest science with FREE access to all 10 JACC Journals"
+    url: "http://www.onlinejacc.org/"
+    icon: "fa-newspaper"
+  - heading: Discounts on ACC Education
+    copy: "Save hundreds on the Annual Scientific Session, ACC’s SAP products and more."
+    url: "#"
+    icon: "fa-calendar"
+  - heading: "Free CME/MOC"
+    copy: "Access hundreds of free online educational activities that offer CME, CNE and MOC"
+    url: "#"
+    icon: "fa-certificate"
+  - heading: "Peer Support on Clinical Cases"
+    copy: "Access DocMatter, ACC’s members-only collaboration portal and ask (or answer!) questions on clinical cases."
+    url: "#"
+    icon: "fa-users"
+---
+
+<div class="reading-typography font-size_up m-t_5:lg m-t_4:md m-t_3">
+  <h1>Deliver Actionable Knowledge</h1>
+  <p>
+    When you get involved, you can help us deliver actionable knowledge and
+    support clinicians worldwide as they make sense of the latest science and
+    put it into practice. From submitting an abstract to serving as faculty, or
+    helping with question writing for one of our self-assessment programs—we
+    have an opportunity for you.
+  </p>
+</div>
+<div class="bg_black-1 br_radius m-b_4 m-b_5:lg m-x_n3 p_5">
+  <ul class="columns_3:md gap-x_4 gap-y_4 grid p-x_4:lg ul_none">
+    {% for block in page.action_blocks %}
+    <div
+      class="br_radius flex flex_column justify_between p-x_5:lg p_4 shadow_overlap-light br_black-3 br_solid br_1 bg_white-9"
+    >
+      <h2 class="font_bold c_primary m-t_0 block">{{block.heading}}</h2>
+      <p class="lh_3">{{block.copy}}</p>
+      <a
+        class="block br_radius btn btn-block btn-lg btn-secondary btn_lg m-b_3 m_auto shadow_overlap-light w_100"
+        href="{{block.anchor}}"
+        >{{block.cta}}</a
+      >
+    </div>
+    {% endfor %}
+  </ul>
+</div>
+<div id="Engage" class="reading-typography">
+  <header class="flex flex_row justify_center">
+    <h2>Engagement Opportunities</h2>
+    <span
+      class="block br-b_1 br_primary-n2 br_solid flex_grow lh_0 m-l_4 self_center"
+    ></span>
+  </header>
+  <p>
+    ACC provides a myriad of opportunities for engagement with educational
+    content. Learn more about those below.
+  </p>
+  <div>
+    <h3>Just Beginning My Engagement Journey</h3>
+    <ul>
+      <li>
+        Attend How to Become a Cardiovascular Investigator - This course
+        provides essential skills to Fellows in Training and Medical Residents
+        on how to get started in career of clinical investigation and research.
+        Get the skills you need to start your research career. Learn more.
+      </li>
+      <li>
+        Attend a Teaching Skills Workshop - Teaching skills workshops for
+        emerging faculty, FITs and the cardiovascular team provide mentorship
+        and guidance on advancing this skill set.
+      </li>
+      <li>
+        Apply for the Emerging Faculty Program - Hone your skills as a faculty
+        member, build your network and get noticed as part of this program
+        designed to help identify future faculty leaders of the College.
+      </li>
+      <li>
+        Submit an Abstract - Submit an abstract for an upcoming course and see
+        your idea in action.
+      </li>
+      <li>
+        Join a Clinical Member Section & Work Group - ACC’s clinical member
+        sections influence the development of education and the dissemination of
+        science. Get involved with a Section to help write for one of ACC’s
+        clinical topic collections, plan specialty focused courses related to
+        your area of expertise and work on submissions to ACC’s JACC journals.
+      </li>
+    </ul>
+    <h3>Able to Give a Some Time</h3>
+    <ul>
+      <li>
+        Assist with Question Writing - Help write and edit questions for ACC’s
+        educational programs and products and provide an opportunity for others
+        to learn and fill their knowledge gaps.
+      </li>
+      <li>
+        Provide Peer-to-Peer Support - Mentor an up-and-coming faculty member
+        and provide guidance and advice.
+      </li>
+      <li>
+        Answer Clinical Questions in DocMatter - When members submit clinical
+        questions to DocMatter for help—you can be there to assist! Serve as a
+        subject matter expert and provide guidance and mentorship on clinical
+        cases.
+      </li>
+    </ul>
+    <h3>Able to Give a Lot of Time</h3>
+    <ul>
+      <li>
+        Apply for SAP Product Content Development - As a content developer, you
+        will work closely to outline and develop ACC’s future self-assessment
+        and educational products.
+      </li>
+      <li>
+        Serve as Faculty on a Course - As a faculty member, you’ll shape the
+        content of a live course, plan educational opportunities and present the
+        latest learning and science.
+      </li>
+      <li>
+        Work on a Grant-Related Product - You can help us on grant related
+        products and building them out.
+      </li>
+      <li>
+        Apply for the ACC.org Editorial Board - As an editorial Board member,
+        you’ll help influence the clinical and educational content on ACC.org,
+        our flagship website.
+      </li>
+      <li>
+        Submit a Session Proposal for ACC.25 - Help us create a vibrant space
+        for learning and growing at our next Annual Scientific Session by
+        submitting your own proposal for content.
+      </li>
+    </ul>
+    <h3>Open Positions</h3>
+    Sample list of open positions—
+    <ul>
+      <li>Question Writer: ACCSAP</li>
+      <li>Call for Posters: 2024 New York Cardiovascular Symposium</li>
+      <li>Mentor Needed: Emerging Faculty Program</li>
+    </ul>
+  </div>
+</div>
+<div id="Learning" class="reading-typography">
+  <header class="flex flex_row justify_center">
+    <h2>Learning Opportunities</h2>
+    <span
+      class="block br-b_1 br_primary-n2 br_solid flex_grow lh_0 m-l_4 self_center"
+    ></span>
+  </header>
+  <p>
+    ACC members gain access to benefits worth more than $3,500 per year that
+    help them transform cardiovascular care and improve patient outcomes. Learn
+    more about how your membership connects you to the latest science and
+    learning below:
+  </p>
+  <div>
+    <ul>
+      <li>ACC Webinars</li>
+      <li>Educational Courses</li>
+      <li>Earn Credit</li>
+      <li>Annual Scientific Session</li>
+      <li>ACC Mobile Apps</li>
+      <li>Clinical Topic Hubs</li>
+    </ul>
+  </div>
+</div>
+
+<div
+  id="Benefits"
+  class="reading-typography bg_black-1 m-x_n3 p_5 m-b_4 m-b_5:lg"
+>
+  <h2>Benefits</h2>
+  <p>
+    ACC members gain access to benefits worth more than $3,500 per year that
+    help them transform cardiovascular care and improve patient outcomes. Learn
+    more about how your membership connects you to the latest science and
+    learning below:
+  </p>
+
+  <ul class="columns_2:md gap-x_6 gap-y_4 grid p-x_4:lg ul_none">
+    <li class="flex flex_row items_start justify_start isolate relative">
+      <i
+        class="c_accent font_7 m-t_3 p-r_4 far fa-regular fa-newspaper"
+        aria-hidden="true"
+      ></i>
+      <span class="font-size_up">
+        <a
+          class="font_bold link lh_3 expanded-click-area-afteralt"
+          href="http://www.onlinejacc.org/"
+          target="_blank"
+          >Access to all <em>JACC</em> Journals</a
+        >
+        <span class="block font-size_down opacity_8"
+          >ACC members stay on top of the latest science with FREE access to all
+          10 JACC Journals</span
+        >
+      </span>
+    </li>
+    {% for benefit_block in page.benefit_blocks %}
+    <li class="flex flex_row items_start justify_start isolate relative">
+      <i
+        class="c_accent font_7 m-t_3 p-r_4 far fa-regular {{benefit_block.icon}}"
+        aria-hidden="true"
+      ></i>
+      <span class="font-size_up">
+        <a
+          class="font_bold link lh_3 expanded-click-area-afteralt"
+          href="{{benefit_block.url}}"
+          target="_blank"
+          >{{benefit_block.heading | html}}</a
+        >
+        <span class="block font-size_down opacity_8"
+          >{{benefit_block.copy}}</span
+        >
+      </span>
+    </li>
+    {% endfor %}
+
+    <li
+      class="flex flex_row items_start justify_start isolate relative gap_3 relative isolate"
+    >
+      <span class="font-size_up">
+        Read about more of our
+        <a href="/Membership/Join-Us/Benefits">Member Benefits</a>&nbsp;
+      </span>
+      <span class="flex flex_row">
+        <i
+          class="c_accent font_6 m-t_3 fas fa-solid fa-ellipsis"
+          aria-hidden="true"
+        ></i>
+        <i
+          class="c_accent fa-chevron-right fa-solid fas font_6 m-l_n3 m-t_3"
+          aria-hidden="true"
+        ></i>
+      </span>
+    </li>
+  </ul>
+</div>
