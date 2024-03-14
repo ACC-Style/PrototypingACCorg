@@ -7,11 +7,13 @@ position: "About"
 {% include_relative MicroSite/heroimage.ux.html %}
 
 <div
-  class="relative isolation_isolate grid columns_4:md columns_5:lg columns_2 p-t_5:lg p-t_4 m-x_n4"
+   grid-template="page-layout"
+   class="m-y_5:lg m-y_4"
 >
   <div
+    grid-area="content"
     zone-label="main-content"
-    class="reading-typography col-start_start col-end_3:md col-end_4:lg col-end_end p-x_5:lg p-x_4"
+    class="reading-typography font-size_up"
   >
     <h2>UX &amp; You: Unlocking Better Member Experiences</h2>
     <p>
@@ -27,11 +29,12 @@ position: "About"
     </p>
   </div>
   <div
-    class="relative col-start_n3:md col-start_start col-end_end font_n1 font_0:lg"
+    grid-area="sidebar-secondary"
+    class="relative font_n1 font_0:lg"
   >
     <div
       data-item="cta-overlay"
-      class="bg_primary-n2 br_round c_white color_inherit shadow_overlap-light m-x_4 m-x_5:lg p_4 p_5:lg reading-typography relative z_1"
+      class="bg_primary-n2 br_round c_white color_inherit shadow_overlap-light p_4 p_5:lg reading-typography relative z_1"
     >
       <h3 data-item="cta-title" class="font_medium">
         The Power of Community at <em>ACC.org</em>: Your Voice Shapes Our
@@ -53,11 +56,9 @@ position: "About"
   </div>
 </div>
 <div
-  class="relative isolation_isolate grid columns_4:md columns_5:lg columns_2 p-t_5:lg p-t_4 m-x_n4"
->
+grid-template="page-layout" class="m-y_5:lg m-y_4">
   <div
-    zone-label="main-content"
-    class="reading-typography col-start_start col-end_3:md col-end_4:lg col-end_end p-x_5:lg p-x_4 m-b_5:lg m-b_4"
+    grid-area="content" class="reading-typography"
   >
     <h2>Members Like You are Crucial</h2>
     <p>
@@ -69,11 +70,11 @@ position: "About"
     </p>
   </div>
   <div
-    class="relative col-start_n3:md col-start_start col-end_end font_n1 font_0:lg"
+    grid-area="sidebar-secondary"
   >
     <div
       data-item="cta-overlay"
-      class="bg_accent-n2 br_round c_white color_inherit shadow_overlap-light m-x_4 m-x_5:lg p_4 p_5:lg reading-typography relative z_1"
+      class="bg_accent-n2 br_round c_white color_inherit shadow_overlap-light p_4 p_5:lg reading-typography relative z_1"
     >
       <h3 data-item="cta-title" class="font_medium">
         Your Opinion is Valuable and so is Your Time
