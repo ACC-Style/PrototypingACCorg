@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="en-US"> 
+ <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cmp Basic - Arches</title>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-9ZfPnbegQSumzaE7mks2IYgHoayLtuto3AS6ieArECeaR8nCfliJVuLh/GaQ1gyM" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://assets.acc.org/Arches/Latest/dist/css/acc_boot.css">
+  <link rel="stylesheet" href="https://assets.acc.org/Arches/Latest/dist/css/acc_uc.css">
+  <link rel="stylesheet" href="https://assets.acc.org/Arches/Latest/dist/css/color-code_credits.css">
+  <link rel="stylesheet" href="https://assets.acc.org/Arches/Latest/dist/css/color-code_LOE_COR.css">
+  <link rel="stylesheet" href="https://assets.acc.org/Arches/Latest/dist/css/color-code_journals.css">
+  <link rel="stylesheet" href="https://assets.acc.org/Arches/Latest/dist/css/color-code_social.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto+Slab:wght@200..900&amp;display=swap">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Maven+Pro:wght@400..900&amp;display=swap">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+San:wght@300..800&amp;display=swap">
+
+<script src="https://kit.fontawesome.com/71c9d25c4e.js" crossorigin="anonymous"></script>
+</head>
+
+<body id="ng-app" ng-app="AccApp" class="user-not-logged-in ng-scope medium-viewport" style="background-color: #c1d6d9;">
+    <div class="max-w_75 m_auto">
+        <div class="bg_white shadow_overlap-light"> 
+            <header id="header">
+    <div class="flex flex_column flex_row:lg relative">
+        <div class="flex_auto p-t_3">
+            <h1 id="header-logo" role="banner">
+    <a href="/PrototypingACCorg/">
+            <img src="https://www.acc.org/-/media/Non-Clinical/Images/System-Images/Logos/ACC-Logo-altered.png" alt="American College of Cardiology" class="display_none inline-block:md m_3">
+
+            <svg class="display_none:md h_3lh m-l_3 m-t_3 mobile-logo-svg">
+                <image href="https://www.acc.org/-/media/Non-Clinical/Images/System-Images/Logos/ACC-Logo-Large-svg.svg" class="h_3lh mobile-logo-image"></image>
+            </svg>
+
+    </a>
+</h1>
+        </div>
+        
+        <div class="flex_grow m-l_auto p-t_3 p-x_3 w_100 w_auto:lg">
+            <div class="block:lg display_none m-b_3">
+                
+<div id="nav-utility-holder" class="p-b_3">
+    
+<ul id="nav-utility" class="ul_none flex justify_end">
+            <li class="header-link m-r_3 p-l_3 "><a href="https://www.acc.org/Guidelines" title="Access ACC guidelines and clinical policy documents as well as related resources">Guidelines</a></li>
+            <li class="header-link m-r_3 p-l_3 br_solid br-l_1 br_black-5"><a href="https://www.jacc.org/" target="_blank" title="JACC.org">JACC</a></li>
+            <li class="header-link m-r_3 p-l_3 br_solid br-l_1 br_black-5"><a href="https://accscientificsession.acc.org/" target="_blank" title="ACC Annual Scientific Session">ACC.22</a></li>
+            <li class="header-link m-r_3 p-l_3 br_solid br-l_1 br_black-5"><a href="https://www.acc.org/membership/current-members">Members</a></li>
+            <li class="header-link m-r_3 p-l_3 br_solid br-l_1 br_black-5"><a href="https://www.acc.org/About-ACC">About</a></li>
+            <li class="header-link m-r_3 p-l_3 br_solid br-l_1 br_black-5"><a href="https://www.acc.org/membership/join-us">Join</a></li>
+    </ul></div>
+            </div>
+            
+            
+
+<div>
+    <div class="absolute c_primary display_none:lg font_3 p_3 r_3 t_3 collapsed" data-bs-toggle="collapse" aria-expanded="false" href="#eqzbcyqb"><i class="fas fa-search fa-fw"></i></div>
+    <div id="eqzbcyqb" class="display_none block:lg max-w_20:lg m-l_auto" data-v-app=""><div class="br_1 br_black-3 br_radius br_solid clear_both flex input-holder m-r_3:lg self_end shadow_emboss-light"><input type="text" class="bg_white-0 f:outline_none br_none c_black inline-block lh_2 p-y_2"><!--v-if--><label class="value-space br_none p_2 c_black-7 h:bg_black-2 m-b_0 font_n1 h:cursor"><i class="fas fa-search fa-fw"></i></label></div><!--v-if--></div>
+
+    <style scoped="">
+        .slide-left-enter-active, .slide-left-leave-active {
+            transition: 0.3s;
+        }
+
+        .slide-left-enter-from, .slide-left-leave-to {
+            overflow: hidden;
+            max-width: 0;
+        }
+
+        .slide-left-enter-to, .slide-left-leave-from {
+            max-width: 40px;
+            overflow: hidden;
+        }
+    </style>
+</div>
+
+
+        </div>
+    </div>
+    
+    <div id="nav-primary-holder" class="m-t_n3 m-t_n5:lg">
+        <!-- main navigation -->
+<div class="text_right relative p_3 p-r_5">
+        <span><a href="/preregistration">Create Free Account</a> or</span>
+</div>
+
+<div class="flex relative c_white">
+    <nav class="flex_auto navbar navbar-primary navbar-expand-lg navbar-dark bg_acc font_2 font_0:lg relative p_0">
+        <div class="relative">
+            <button class="br_solid br_2 br_white-2 collapsed m-l_3 m-y_3 navbar-toggler p_2 expanded-click-area collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navBarMainNav" aria-controls="navBarMainNav" aria-expanded="true" aria-label="Toggle navigation">
+                <i class="icon-toggle_bars-times fas fa a:c_acc-2 c_white"></i>
+                <span class="a:c_acc-2 c_white p-x_3 uppercase font_accent">Menu</span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navBarMainNav">
+            <!-- <div id="nav-utility-handheld"></div> -->
+            <ul class="navbar-nav flex flex_row:lg flex_column justify_around w_100">
+                <li class="nav-item relative text_left text_center:lg flex_shrink">
+                    <a class="nav-link expanded-click-area nowrap p-l_4 p-l_3:lg" href="//www.acc.org/" title="Home of the American College of Cardiology">
+                        <i class="fas fa-home"></i><span class="display_none:lg">&nbsp;Home</span>
+                    </a>
+                </li>
+
+                    <li class="nav-item relative text_left text_center:lg flex_auto dropdown">
+                        <a class="nav-link nowrap p-l_4 p-l_0:lg dropdown-toggle a:c_white display_none:lg inline-block float_left" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa icon-toggle_plus-minus m-l_n2 m-r_2 "></i></a>
+                        <a href="/Clinical-Topics" class="nav-link nowrap p-l_0  a:c_white inline-block">Clinical Topics</a>
+                            <div class="dropdown-menu font_copy w_auto:lg w_100 br-t_0 br_none br_solid:lg br_square m-t_0 m-t_2:lg">
+                                <div class="flex flex_column flex_row:md p-x_2:lg m-x_n1 m-x_0:lg">
+                                            <div class="p-x_2 p-y_0 p-y_2:md dropdown_column w_50:md ">
+                                                <ul class="ul_none lh_2 m_0">
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <a href="/Clinical-Topics/Acute-Coronary-Syndromes" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3">Acute Coronary Syndromes</a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <a href="/Clinical-Topics/Anticoagulation-Management" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3" title="Anticoagulation Management">Anticoagulation Management</a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <a href="/Clinical-Topics/Arrhythmias-and-Clinical-EP" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3">Arrhythmias and Clinical EP</a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <a href="/Clinical-Topics/Cardiac-Surgery" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3">Cardiac Surgery</a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <a href="/Clinical-Topics/Cardio-Oncology" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3">Cardio-Oncology</a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <a href="/Clinical-Topics/Cardiovascular-Care-Team" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3">Cardiovascular Care Team</a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <a href="/Clinical-Topics/Congenital-Heart-Disease-Pediatric-Cardiology" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3">Congenital Heart Disease and Pediatric Cardiology</a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <a href="/Latest-in-Cardiology/Features/ACCs-Coronavirus-Disease-2019-COVID-19-Hub" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3">COVID-19 Hub</a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <a href="/Clinical-Topics/Diabetes-and-Cardiometabolic-Disease" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3">Diabetes and Cardiometabolic Disease</a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <a href="/Clinical-Topics/Dyslipidemia" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3" title="Dyslipidemia">Dyslipidemia</a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <a href="/Clinical-Topics/Geriatric-Cardiology" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3">Geriatric Cardiology</a>
+                                                                </div>
+                                                            </li>
+                                                </ul>
+                                            </div>
+                                            <div class="p-x_2 p-y_0 p-y_2:md dropdown_column w_50:md br-l_1 br_none br_shade-4 br_solid:lg br_solid:md ">
+                                                <ul class="ul_none lh_2 m_0">
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <a href="/Clinical-Topics/Heart-Failure-and-Cardiomyopathies" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3" title="Heart Failure and Cardiomyopathies">Heart Failure and Cardiomyopathies</a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <a href="/Clinical-Topics/Invasive-Cardiovascular-Angiography-and-Intervention" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3" title="Invasive Cardiovascular Angiography and Intervention">Invasive Cardiovascular Angiography and Intervention</a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <a href="/Clinical-Topics/Noninvasive-Imaging" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3" title="Noninvasive Imaging">Noninvasive Imaging</a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <a href="/Clinical-Topics/Pericardial-Disease" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3" title="Pericardial Disease">Pericardial Disease</a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <a href="/Clinical-Topics/Prevention" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3" title="Prevention">Prevention</a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <a href="/Clinical-Topics/Pulmonary-Hypertension-and-Venous-Thromboembolism" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3">Pulmonary Hypertension and Venous Thromboembolism</a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <a href="/Clinical-Topics/Sports-and-Exercise-Cardiology" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3">Sports and Exercise Cardiology</a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <a href="/Clinical-Topics/Stable-Ischemic-Heart-Disease" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3" title="Stable Ischemic Heart Disease">Stable Ischemic Heart Disease</a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <a href="/Clinical-Topics/Valvular-Heart-Disease" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3">Valvular Heart Disease</a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <a href="/Clinical-Topics/Vascular-Medicine" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3">Vascular Medicine</a>
+                                                                </div>
+                                                            </li>
+                                                </ul>
+                                            </div>
+
+                                </div>
+                            </div>
+                    </li>
+                    <li class="nav-item relative text_left text_center:lg flex_auto dropdown">
+                        <a class="nav-link nowrap p-l_4 p-l_0:lg dropdown-toggle a:c_white display_none:lg inline-block float_left" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa icon-toggle_plus-minus m-l_n2 m-r_2 "></i></a>
+                        <a href="/Latest-in-Cardiology" class="nav-link nowrap p-l_0  a:c_white inline-block">Latest In Cardiology</a>
+                            <div class="dropdown-menu font_copy w_auto:lg w_100 br-t_0 br_none br_solid:lg br_square m-t_0 m-t_2:lg">
+                                <div class="flex flex_column flex_row:md p-x_2:lg m-x_n1 m-x_0:lg">
+                                    <div class="p-x_2 p-y_0 p-y_2:md dropdown_column w_50:md">
+                                        <ul class="ul_none lh_2 m_0">
+                                                <li class="m-b_2">
+                                                    <div class="flex justify_start transition_4 dropdown-item">
+                                                        <a href="/Latest-in-Cardiology#theme=Clinical Updates and Discoveries" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3">Clinical Updates &amp; Discoveries</a>
+                                                    </div>
+                                                </li>
+                                                <li class="m-b_2">
+                                                    <div class="flex justify_start transition_4 dropdown-item">
+                                                        <a href="/Latest-in-Cardiology#theme=Advocacy and Policy" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3">Advocacy &amp; Policy</a>
+                                                    </div>
+                                                </li>
+                                                <li class="m-b_2">
+                                                    <div class="flex justify_start transition_4 dropdown-item">
+                                                        <a href="/Latest-in-Cardiology#theme=Perspectives and Analysis" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3">Perspectives &amp; Analysis</a>
+                                                    </div>
+                                                </li>
+                                                <li class="m-b_2">
+                                                    <div class="flex justify_start transition_4 dropdown-item">
+                                                        <a href="/Latest-in-Cardiology/Features/ACC-meeting-coverage" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3">Meeting Coverage</a>
+                                                    </div>
+                                                </li>
+                                                <li class="m-b_2">
+                                                    <div class="flex justify_start transition_4 dropdown-item">
+                                                        <a href="/Membership/Join-Us/Benefits/ACC-Member-Publications" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3">ACC Member Publications</a>
+                                                    </div>
+                                                </li>
+                                                <li class="m-b_2">
+                                                    <div class="flex justify_start transition_4 dropdown-item">
+                                                        <a href="/Latest-in-Cardiology/Features/podcasts" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3">ACC Podcasts</a>
+                                                    </div>
+                                                </li>
+                                                <li class="m-b_2">
+                                                    <div class="flex justify_start transition_4 dropdown-item">
+                                                        <a href="/Latest-in-Cardiology" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3">View All Cardiology Updates</a>
+                                                    </div>
+                                                </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                    </li>
+                    <li class="nav-item relative text_left text_center:lg flex_auto dropdown">
+                        <a class="nav-link nowrap p-l_4 p-l_0:lg dropdown-toggle a:c_white display_none:lg inline-block float_left" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa icon-toggle_plus-minus m-l_n2 m-r_2 "></i></a>
+                        <a href="/Education-and-Meetings" class="nav-link nowrap p-l_0  a:c_white inline-block">Education and Meetings</a>
+                            <div class="dropdown-menu font_copy w_auto:lg w_100 br-t_0 br_none br_solid:lg br_square m-t_0 m-t_2:lg">
+                                <div class="flex flex_column flex_row:md p-x_2:lg m-x_n1 m-x_0:lg">
+                                            <div class="p-x_2 p-y_0 p-y_2:md dropdown_column w_50:md ">
+                                                <ul class="ul_none lh_2 m_0">
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <button class="flex_none p-r_2 p_0 self_center toggler inline-block br_none bg_tansparent c_inherit-all h:undecorated collapsed display_none:lg" data-bs-toggle="collapse" role="button" aria-expanded="true" aria-controls="m77e3cb85-64e1-47bd-ae30-e480b4d5cc07" data-bs-target="#m77e3cb85-64e1-47bd-ae30-e480b4d5cc07" onclick="event.stopPropagation()">
+                                                                        <i class="far fa icon-toggle_plus-minus-sub display_none:lg m-l_n2 m-r_2"></i>
+                                                                    </button>
+                                                                    <a href="/Education-and-Meetings/Education-Catalog" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3">Online Learning Catalog</a>
+                                                                </div>
+                                                                    <ul class="ul_none lh_3 font-size_down collapse transition_4 block:lg" id="m77e3cb85-64e1-47bd-ae30-e480b4d5cc07">
+                                                                            <li><a href="/earncredit" class="dropdown-item transition_4 wrap p-x_5">Earn Credit</a></li>
+                                                                            <li><a href="https://www.acc.org/BoardPrep" class="dropdown-item transition_4 wrap p-x_5">Board Prep Offerings</a></li>
+                                                                            <li><a href="/Education-and-Meetings/Education-Catalog" class="dropdown-item transition_4 wrap p-x_5">View the Entire Catalog</a></li>
+                                                                    </ul>
+                                                            </li>
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <button class="flex_none p-r_2 p_0 self_center toggler inline-block br_none bg_tansparent c_inherit-all h:undecorated collapsed display_none:lg" data-bs-toggle="collapse" role="button" aria-expanded="true" aria-controls="m5a86639a-a77c-41f4-81d9-bd843a2426b2" data-bs-target="#m5a86639a-a77c-41f4-81d9-bd843a2426b2" onclick="event.stopPropagation()">
+                                                                        <i class="far fa icon-toggle_plus-minus-sub display_none:lg m-l_n2 m-r_2"></i>
+                                                                    </button>
+                                                                    <a href="/Education-and-Meetings/Education-Catalog" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3">Products</a>
+                                                                </div>
+                                                                    <ul class="ul_none lh_3 font-size_down collapse transition_4 block:lg" id="m5a86639a-a77c-41f4-81d9-bd843a2426b2">
+                                                                            <li><a href="/Education-and-Meetings/Products-and-Resources/ACCSAP" class="dropdown-item transition_4 wrap p-x_5">ACCSAP</a></li>
+                                                                            <li><a href="/Education-and-Meetings/Products-and-Resources/ACCEL-Audio" class="dropdown-item transition_4 wrap p-x_5">ACCEL</a></li>
+                                                                            <li><a href="/Education-and-Meetings/Products-and-Resources/CardioSource-Plus" class="dropdown-item transition_4 wrap p-x_5">CardioSource Plus for Institutions and Practices</a></li>
+                                                                            <li><a href="/Education-and-Meetings/Products-and-Resources/CathSAP" class="dropdown-item transition_4 wrap p-x_5">CathSAP</a></li>
+                                                                            <li><a href="/Education-and-Meetings/Products-and-Resources/ECG-Drill-and-Practice" class="dropdown-item transition_4 wrap p-x_5" title="ECG Drill and Practice">ECG Drill and Practice</a></li>
+                                                                            <li><a href="/Education-and-Meetings/Products-and-Resources/EchoSAP" class="dropdown-item transition_4 wrap p-x_5">EchoSAP</a></li>
+                                                                            <li><a href="/Education-and-Meetings/Products-and-Resources/EPSAP" class="dropdown-item transition_4 wrap p-x_5">EP SAP</a></li>
+                                                                            <li><a href="/Education-and-Meetings/Products-and-Resources/HFSAP" class="dropdown-item transition_4 wrap p-x_5">HF SAP</a></li>
+                                                                            <li><a href="/Education-and-Meetings/Products-and-Resources/Heart-Songs-5" class="dropdown-item transition_4 wrap p-x_5">Heart Songs</a></li>
+                                                                            <li><a href="/Education-and-Meetings/Online-Courses" class="dropdown-item transition_4 wrap p-x_5">Online Courses</a></li>
+                                                                    </ul>
+                                                            </li>
+                                                </ul>
+                                            </div>
+                                            <div class="p-x_2 p-y_0 p-y_2:md dropdown_column w_50:md br-l_1 br_none br_shade-4 br_solid:lg br_solid:md ">
+                                                <ul class="ul_none lh_2 m_0">
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <a href="/Education-and-Meetings/Maintenance-of-Certification-Information-Hub/Collaborative-Maintenance-Pathway" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3">Collaborative Maintenance Pathway (CMP)</a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <a href="/Education-and-Meetings/Products-and-Resources" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3">Resources</a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <a href="/Education-and-Meetings/Products-and-Resources/Guideline-Education" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3">Guideline Education</a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <a href="/Education-and-Meetings/Maintenance-of-Certification-Information-Hub" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3">Understanding MOC</a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <a href="/Education-and-Meetings/Image-and-Slide-Gallery" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3">Image and Slide Gallery</a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <button class="flex_none p-r_2 p_0 self_center toggler inline-block br_none bg_tansparent c_inherit-all h:undecorated collapsed display_none:lg" data-bs-toggle="collapse" role="button" aria-expanded="true" aria-controls="m6ca07c45-bfbc-49a4-9221-c0ba0ca52fca" data-bs-target="#m6ca07c45-bfbc-49a4-9221-c0ba0ca52fca" onclick="event.stopPropagation()">
+                                                                        <i class="far fa icon-toggle_plus-minus-sub display_none:lg m-l_n2 m-r_2"></i>
+                                                                    </button>
+                                                                    <a href="/Education-and-Meetings/Meetings" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3">Meetings</a>
+                                                                </div>
+                                                                    <ul class="ul_none lh_3 font-size_down collapse transition_4 block:lg" id="m6ca07c45-bfbc-49a4-9221-c0ba0ca52fca">
+                                                                            <li><a href="http://accscientificsession.acc.org" class="dropdown-item transition_4 wrap p-x_5" target="_blank">Annual Scientific Session and Related Events</a></li>
+                                                                            <li><a href="https://www.acc.org/education-and-meetings/meetings?w_nav=MN#type=Chapter Meetings" class="dropdown-item transition_4 wrap p-x_5">Chapter Meetings</a></li>
+                                                                            <li><a href="https://www.acc.org/education-and-meetings/meetings?w_nav=MN#type=Live Meetings" class="dropdown-item transition_4 wrap p-x_5">Live Meetings</a></li>
+                                                                            <li><a href="https://www.acc.org/education-and-meetings/meetings?w_nav=MN#type=Live Meetings - International" class="dropdown-item transition_4 wrap p-x_5">Live Meetings - International</a></li>
+                                                                            <li><a href="/Education-and-Meetings/Meetings#type=Webinars - Live" class="dropdown-item transition_4 wrap p-x_5">Webinars - Live</a></li>
+                                                                            <li><a href="/education-and-meetings/meetings?view=archive&amp;#type=Webinars - OnDemand" class="dropdown-item transition_4 wrap p-x_5">Webinars - OnDemand</a></li>
+                                                                    </ul>
+                                                            </li>
+                                                </ul>
+                                            </div>
+
+                                </div>
+                            </div>
+                    </li>
+                    <li class="nav-item relative text_left text_center:lg flex_auto dropdown">
+                        <a class="nav-link nowrap p-l_4 p-l_0:lg dropdown-toggle a:c_white display_none:lg inline-block float_left" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa icon-toggle_plus-minus m-l_n2 m-r_2 "></i></a>
+                        <a href="/Tools-and-Practice-Support" class="nav-link nowrap p-l_0  a:c_white inline-block">Tools and Practice Support</a>
+                            <div class="dropdown-menu font_copy w_auto:lg w_100 br-t_0 br_none br_solid:lg br_square m-t_0 m-t_2:lg dropdown-menu-end">
+                                <div class="flex flex_column flex_row:md p-x_2:lg m-x_n1 m-x_0:lg">
+                                            <div class="p-x_2 p-y_0 p-y_2:md dropdown_column w_50:md ">
+                                                <ul class="ul_none lh_2 m_0">
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <a href="http://cvquality.acc.org" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3" target="_blank">ACC Quality Improvement for Institutions Program</a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <a href="https://cvquality.acc.org/NCDR-Home.aspx" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3" target="_blank">National Cardiovascular Data Registry (NCDR)</a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <a href="https://www.medaxiom.com/" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3" target="_blank">MedAxiom</a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <a href="http://www.cardiosmart.org" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3" target="_blank">CardioSmart</a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <a href="http://accreditation.acc.org/" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3" target="_blank">ACC Accreditation Services</a>
+                                                                </div>
+                                                            </li>
+                                                </ul>
+                                            </div>
+                                            <div class="p-x_2 p-y_0 p-y_2:md dropdown_column w_50:md br-l_1 br_none br_shade-4 br_solid:lg br_solid:md ">
+                                                <ul class="ul_none lh_2 m_0">
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <a href="/Tools-and-Practice-Support/Advocacy-at-the-ACC" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3">Advocacy at the ACC</a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <a href="http://www.healthecareers.com/acc" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3" target="_blank">Cardiology Careers</a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <a href="https://cardiovascularbuyersguide.com/" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3" target="_blank">Cardiovascular Buyers Guide</a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <a href="/Tools-and-Practice-Support/Clinical-Toolkits" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3">Clinical Toolkits</a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <a href="/Features/2019/07/clinican-well-being-portal" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3" title="Clinician Well-Being Portal">Clinician Well-Being Portal</a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <a href="/About-ACC/Diversity-and-Inclusion" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3" title="Diversity and Inclusion">Diversity and Inclusion</a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <a href="/Tools-and-Practice-Support/Expert-Consensus-Decision-Pathways" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3">Expert Consensus Decision Pathways</a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <a href="/Tools-and-Practice-Support/Infographics" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3">Infographics</a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <a href="/Tools-and-Practice-Support/Mobile-Resources" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3">Mobile and Web Apps</a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="m-b_2">
+                                                                <div class="flex justify_start transition_4 dropdown-item">
+                                                                    <a href="/Tools-and-Practice-Support/Quality-Programs" class="flex_grow self_center wrap w_100 text-indent_n1 inline-block m-l_4 c_inherit-all h:undecorated p-r_3">Quality Programs</a>
+                                                                </div>
+                                                            </li>
+                                                </ul>
+                                            </div>
+
+                                </div>
+                            </div>
+                    </li>
+            </ul>
+        </div>
+    </nav>
+    <nav class="absolute bg_primary br-t_1 br-b_1  br_primary br_solid br_none flex_shrink font_0 font_0:lg m-l_auto navbar navbar-dark navbar-expand p-y_2 r_0 t_0 relative:lg">
+    <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="/login?returnUrl=https://www.acc.org/" class="nav-link nowrap"><i class="fas fa-sign-in-alt"></i> Log in to MyACC </a>
+            </li>
+
+    </ul>
+</nav>
+
+
+</div>
+<!-- main-nav -->
+        
+    </div>
+</header>
+            <div class="p_4">
+                <div
+  data-item="hero-image-cta"
+  class="relative isolation_isolate grid rows_3 rows_2:md columns_4:md columns_5:lg columns_2 m-t_n4 m-x_n4"
+  style="--row-1:2.5rem; --row-2:min-content;">
+  <picture data-item="responsive-hero-image" class="col_all row_all w_100 flex overflow_hidden ">
+    <source
+      srcset="/PrototypingACCorg/assets/images/CMP/1200x300.png"
+      media="(min-width: 1024px)"
+      class="display_none">
+    <source
+      srcset="/PrototypingACCorg/assets/images/CMP/1024x256.png"
+      media="(min-width: 768px)"
+      class="display_none">
+    <source
+      srcset="/PrototypingACCorg/assets/images/CMP/600x300.png"
+      media="(min-width: 400px)"
+      class="display_none">
+    <img
+      src="/PrototypingACCorg/assets/images/CMP/320x300.png"
+      alt="Hero Image"
+      class="bg_cover flex_100">
+  </picture>
+  <div class="z_1 row-start_start row_end_1 col-start_start col-end_end flex flex_row justify_start">
+    <nav data-item="hero-image-breadcrumb-nav" class=" relative isolation_isolate p-y_3 p-x_4 c_white-8 w_auto font_n1 font_0:md">
+      <!-- Breadcrumb navigation content goes here -->
+      <a href="#" class="h:c_white h:underline font_bold c_white-8 expanded-click-area h:c_white">
+        <i class="fas fa-arrow-left"></i>
+        Back |
+        The page this was a child of</a>
+      <span class="bg_acc opacity_6 absolute inset_0 br-br_radius z_0 bg-blend_multiply"></span>
+    </nav>
+  </div>
+  <div class="relative row-start_2 row-end_3 col-start_start col-end_3:md col-end_end">
+    <h1 data-item="page-title" class="flex flex_row flex_wrap c_white z_1 p-t_5:lg p-t_4 font_7:lg font_5:md font_3 p-r_4 lh_0 font_xbold text-shadow_black-1 lh_0">
+      <span class="p-y_3 p-l_3 p-r_4 bg_acc br_solid br_acc br_2 m-t_n3 m-r_n4 inline-block">Collaborative</span>
+      <span class="p-y_3 p-l_3 p-r_4 bg_acc br_solid br_acc br_2 m-t_n3 m-r_n4 inline-block">Maintenance</span>
+      <span class="p-y_3 p-l_3 p-r_4 bg_acc br_solid br_acc br_2 m-t_n3 m-r_n4 inline-block">Pathway</span>
+    </h1>
+  </div>
+  <div class="relative row-start_2:md row-end_end:md col-start_n3:md  row-start_3 row-end_end col-start_start col-end_end font_n1 font_0:lg">
+    <div data-item="cta-overlay" class="c_white color_inherit m-x_4 m-x_5:lg p_4 p_5:lg reading-typography relative z_1 m-b_5">
+      <h2 data-item="cta-title" class="font_medium">Streamline Your MOC Journey</h2>
+      <p data-item="cta-description" class="font-size_up-1 lh_2">
+        Stay 100% certified by focusing on 20% of the field each year. Over 5 years, cover your entire knowledge base. Simplify your MOC journey with CMP.</p>
+      <div class="grid justify_center">
+        <button class="btn btn-primary capitalize">Get Started</button>
+      </div>
+      <div class="z_0 bg_acc br_round inset_0 opacity_8 absolute shadow_overlap-bold bg-blend_multiply"></div>
+    </div>
+  </div>
+</div>
+
+<div class="grid:md fles flex_column columns_5:lg columns_4:md gap-y_4 m-t_4 m-x_n4:md" >
+	<main main-content class="col-start_start col-end_n3 reading-typography p-x_4 p-x_5:lg">
+		
+			<p>The ABIM/ACC Collaborative Maintenance Pathway (CMP) is an alternative Maintenance of Certification (MOC) assessment option where you can stay 100% certified by focusing on just 20% of the field each year. Over a span of 5 years, your entire knowledge base is covered. It's delivered through ACC's SAPs, so you will also get access to all the comprehensive educational material, annual updates and CME/MOC credit needed.</p>
+
+			<h2>Annual participation requires:</h2>
+			
+			<ul>
+				<li>Reviewing the CMP topic(s) for the year. New for 2022, you may choose how much time to spend learning about the year's CMP topic(s).</li>
+				<li>Completing the practice questions for the year's CMP topic(s) and score 70% or better.</li>
+				<li>Taking and passing a Performance Assessment (a 60-question online test) for that year's topic(s).</li>
+			</ul>
+
+			
+			<p>A passing score on the Performance Assessment satisfies your MOC assessment requirement. As a simplified option for refreshing your knowledge, staying licensed, AND maintaining your certification, the CMP delivers everything you need annually through one single program.</p>
+			<h3>Have Questions and want to talk to someone about CMP?</h3>
+			<p>
+			Please join us for one of our informational CMP webinars. ACC staff will walk you through the process and answer questions at the end of the presentation.</p>
+			<ul class="br-t_2 br-b_2 br_primary br_solid p_0 ul_none ">
+				<li class="flex flex_row:md flex_column">
+					<h5 class="">Tuesday, October 3, 2022
+						<small class="block">@5:30 pm EST</small>
+					</h5>
+					<button class="btn btn-primary m-l_auto btn-sm self_center">Register</button>
+				</li>
+				<li class="flex flex_row:md flex_column br-t_1 br_black-3 br_solid ">
+					<h5 class="">Thursday, October 19, 2022
+						<small class="block">@5:30 pm EST</small>
+					</h5>
+					<button class="btn btn-primary m-l_auto btn-sm self_center">Register</button>
+				</li>
+			</ul>
+
+	</main>
+	<aside sidebar class="col-start_n3:md col-end_end flex flex_column gap_4 p-x_4:md p-x_5:lg">
+		<div data-element="cmp-widget">
+    <div class="br_radius br_black-3 br_solid bg_black-_05 shadow_overlap-light flex flex_column p_4 m_3 m_0:md">
+        <nav class='m-x_n3 m-t_n3 wizard-nav_w-chevrons br_solid br_black-3 w_auto font_display font_bold font-size_down-1 c_black br_1 p_0 m_0 items_center flex flex_row lh_0 c_black-6 bg_black-2 disabled'>
+            <span class="flex flex_row gap_3 inline-block items_center justify_center p_4 self_stretch vertical-align-middle">
+                <i class="fas fa-lock inline"></i>
+                <span class="Login">Login</span>
+            </span>
+            <span class="flex flex_row gap_3 inline-block items_center justify_center p_4 self_stretch vertical-align-middle">
+                <i class="fas fa-lock inline"></i>
+                <span class="Login">Eligibility Check</span>
+            </span>
+            <span class="flex flex_row gap_3 inline-block items_center justify_center p_4 self_stretch vertical-align-middle">
+                <i class="fas fa-lock inline"></i>
+                <span class="Login">Progress Check</span>
+            </span>
+            <span class="flex flex_row gap_3 inline-block items_center justify_center p_4 self_stretch vertical-align-middle">
+                <i class="fas fa-lock inline"></i>
+                <span class="Login m-r_3">CMP Status</span>
+            </span>
+        </nav>
+        <h4 class="font-size_up-2 font_display font_bold c_primary m-t_4">Start Your CMP Journey</h4>
+        <p class="">Let us help you understand where you are in your journey from start to finish by logging in.</p>
+        <a href="" class="btn btn-primary">Login</a>
+    </div>
+</div>
+<div data-element="cmp-widget">
+    <div class="br_radius br_black-3 br_solid bg_black-_05 shadow_overlap-light flex flex_column p_4 m_3 m_0:md">
+        <nav class='m-x_n3 m-t_n3 wizard-nav_w-chevrons br_solid br_black-4 w_auto font_display font_bold font-size_down-1 c_black br_1 p_0 m_0 items_center flex flex_row lh_0 shadow_overlap-light bg_white'>
+            <span class="flex flex_row gap_3 inline-block items_center justify_center p_4 self_stretch vertical-align-middle">
+                <i class="fas fa-check inline c_success"></i>
+                <span class="Login">Login</span>
+            </span>
+            <span class="flex flex_row gap_3 inline-block items_center justify_center p_4 self_stretch vertical-align-middle">
+                <i class="fas fa-exchange inline"></i>
+                <span class="Login">Eligibility Check</span>
+            </span>
+            <span class="flex flex_row gap_3 inline-block items_center justify_center p_4 self_stretch vertical-align-middle">
+                <i class="fas fa-lock inline"></i>
+                <span class="Login">Progress Check</span>
+            </span>
+            <span class="flex flex_row gap_3 inline-block items_center justify_center p_4 self_stretch vertical-align-middle">
+                <i class="fas fa-lock inline"></i>
+                <span class="Login m-r_3">CMP Status</span>
+            </span>
+        </nav>
+        <h4 class="font-size_up-2 font_display font_bold c_primary m-t_4">Checking Your Eligibility</h4>
+        <p class="">Sending information to ABIM and checking Eligibility</p>
+        <h5 class="font_accent font_bold">
+            <i class="fas fa-spinner fa-spin"></i>
+            Loading</h5>
+        <a href="" class="btn btn-primary disabled">Login</a>
+    </div>
+</div>
+<div data-element="cmp-widget">
+    <div class="br_radius br_black-3 br_solid bg_black-_05 shadow_overlap-light flex flex_column p_4 m_3 m_0:md">
+        <nav class='m-x_n3 m-t_n3 wizard-nav_w-chevrons br_solid br_black-4 w_auto font_display font_bold font-size_down-1 c_black br_1 p_0 m_0 items_center flex flex_row lh_0 shadow_overlap-light bg_white'>
+            <span class="flex flex_row gap_3 inline-block items_center justify_center p_4 self_stretch vertical-align-middle">
+                <i class="fas fa-check inline c_success"></i>
+                <span class="Login">Login</span>
+            </span>
+            <span class="flex flex_row gap_3 inline-block items_center justify_center p_4 self_stretch vertical-align-middle">
+                <i class="fas fa-check inline c_success"></i>
+                <span class="Login">Eligibility Check</span>
+            </span>
+            <span class="flex flex_row gap_3 inline-block items_center justify_center p_4 self_stretch vertical-align-middle">
+                <i class="fas fa-exchange inline"></i>
+                <span class="Login">Progress Check</span>
+            </span>
+            <span class="flex flex_row gap_3 inline-block items_center justify_center p_4 self_stretch vertical-align-middle">
+                <i class="fas fa-lock inline"></i>
+                <span class="Login m-r_3">CMP Status</span>
+            </span>
+        </nav>
+        <h4 class="font-size_up-2 font_display font_bold c_primary m-t_4">Calculating where you are in the process</h4>
+        <p class="">Collecting your products and current enrollments</p>
+        <h5 class="font_accent font_bold">
+            <i class="fas fa-spinner fa-spin"></i>
+            Loading</h5>
+        <a href="" class="btn btn-primary disabled">Login</a>
+    </div>
+</div>
+<div data-element="cmp-widget">
+    <div class="br_radius br_black-3 br_solid bg_black-_05 shadow_overlap-light flex flex_column p_4 m_3 m_0:md">
+        <nav class='m-x_n3 m-t_n3 wizard-nav_w-chevrons br_solid br_black-4 w_auto font_display font_bold font-size_down-1 c_black br_1 p_0 m_0 items_center flex flex_row lh_0 shadow_overlap-light bg_white'>
+            <span class="flex flex_row gap_3 inline-block items_center justify_center p_4 self_stretch vertical-align-middle">
+                <i class="fas fa-check inline c_success"></i>
+                <span class="Login">Login</span>
+            </span>
+            <span class="flex flex_row gap_3 inline-block items_center justify_center p_4 self_stretch vertical-align-middle">
+                <i class="fas fa-check inline c_success"></i>
+                <span class="Login">Eligibility Check</span>
+            </span>
+            <span class="flex flex_row gap_3 inline-block items_center justify_center p_4 self_stretch vertical-align-middle">
+                <i class="fas fa-check c_success inline"></i>
+                <span class="Login">Progress Check</span>
+            </span>
+            <span class="flex flex_row gap_3 inline-block items_center justify_center p_4 self_stretch vertical-align-middle">
+                <i class="fas  inline"></i>
+                <span class="Login m-r_3">CMP Status</span>
+            </span>
+        </nav>
+        <h4 class="font-size_up-2 font_display font_bold c_primary m-t_4">Current CMP Status
+        </h4>
+        <p class="">Review all the ACC products offering CMP and your current status for each product.</p>
+        <div id="cghnvtux" class="flex_row flex flex_column:lg gap-x_3 flex_wrap gap-x_3 gap-y_3 justify_around" data-v-app="">
+	<article class="br_solid br-t_1 br_0 br_black-3 relative font_copy flex_column flex justify_start w_100 relative isolation_isolate" amsproductid="ACCSAPSUB">
+		<header class="relative">
+			<div class="">
+				<div class="br_1 br-t_0 br_solid br_black-4 bg_cover font_4 h_lh_2 text-shadow_black-1 font_display p_3 c_white bg-blend_multiply bg_right" style="background-image: url(https://www.acc.org/-/media/Non-Clinical/Homepage/Products/F21153-Product-Section_ACCSAP.jpg);"><span class="uppercase font_xbold">ACC</span><span class="uppercase font_light">SAP</span></div>
+			</div>
+		</header>
+		<main class="relative p-t_4 flex flex_row gap-x_5">
+			<p class="font_0:lg font_n1 p-r_3 p-r_4:lg p-l_3 lh_2"><span>ACC's flagship self-assessment program covering the entire field of adult clinical cardiology.</span></p>
+<ul class="flex_none font-size_down-2 p-r_2 text_right ul_none">
+				<li class="c_primary-n2 font-size_up font_bold">Product Status</li>
+				<li><i class="fas fa-check m-r_3 c_success"></i> Purchased</li>
+				<li><i class="fas fa-check m-r_3 c_success"></i>Enrolled in CMP</li>
+			</ul>
+		</main>
+		<footer class="flex flex_row justify_center items_center p-x_3 p-b_4 gap_4">
+			<a href="" class="btn w_30 btn-primary inline-block shadow_overlap-light"> Launch SAP</a>
+		</footer>
+	</article>
+	<article class="br_solid br-t_1 br_0 br_black-3 relative font_copy flex_column flex justify_start w_100 relative isolation_isolate" amsproductid="CATHSAPSUB">
+		<header class="relative">
+			<div class="">
+				<div class="br_1 br-t_0 br_solid br_black-4 bg_cover font_4 h_lh_2 text-shadow_black-1 font_display p_3 c_white bg-blend_multiply bg_right" style="background-image: url(https://www.acc.org/-/media/Non-Clinical/Homepage/Products/F21153-Product-Section_CathSAP.jpg);"><span class="uppercase font_xbold">Cath</span><span class="uppercase font_light">SAP</span></div>
+			</div>
+		</header>
+		<main class="relative p-t_4 flex flex_row gap-x_5">
+			<p class="font_0:lg font_n1 p-r_3 p-r_4:lg p-l_3 lh_2"><span>Comprehensive program covering the entire field of interventional cardiology. Perfect your knowledge with 540+ case-based questions and more.</span></p>
+
+<ul class="flex_none font-size_down-2 p-r_2 text_right ul_none">
+				<li class="c_primary-n2 font-size_up font_bold">Product Status</li>
+				<li><i class="fas fa-check m-r_3 c_success"></i> Purchased</li>
+				<li><i class="fas fa-times m-r_3 c_alert"></i>Enrolled in CMP</li>
+			</ul>
+		</main>
+		<footer class="flex flex_row justify_center items_center p-x_3 p-b_4 gap_4">
+			<a href="" class="btn w_30 btn-secondary inline-block">Launch SAP</a>
+			<a href="" class="btn w_30 btn-primary inline-block shadow_overlap-light"> Enroll in CMP</a>
+		</footer>
+	</article>
+	<article class="br_solid br-t_1 br_0 br_black-3 relative font_copy flex_column flex justify_start w_100 relative isolation_isolate" amsproductid="ECHOSAPSUB">
+		<header class="relative">
+			<div class="">
+				<div class="br_1 br-t_0 br_solid br_black-4 bg_cover font_4 h_lh_2 text-shadow_black-1 font_display p_3 c_white bg-blend_multiply bg_right" style="background-image: url(https://www.acc.org/-/media/Non-Clinical/Homepage/Products/F21153-Product-Section_EchoSAP.jpg);"><span class="uppercase font_xbold">EP</span><span class="uppercase font_light">SAP</span></div>
+			</div>
+		</header>
+		<main class="relative p-t_4 flex flex_row gap-x_5">
+			<p class="font_0:lg font_n1 p-r_3 p-r_4:lg p-l_3 lh_2"><span>Comprehensive program covering the entire field of echocardiography. Thorough coverage of the field including valvular heart disease, chamber size and function, congenital heart disease, pericardial disease and more.</span></p>
+<ul class="flex_none font-size_down-2 p-r_2 text_right ul_none">
+				<li class="c_primary-n2 font-size_up font_bold">Product Status</li>
+				<li><i class="fas fa-times m-r_3 c_alert"></i> Purchased</li>
+				<li><i class="fas fa-times m-r_3 c_alert"></i>Enrolled in CMP</li>
+			</ul>
+		</main>
+		<footer class="flex flex_row justify_center items_center p-x_3 p-b_4 gap_4">
+			<a href="" class="btn w_30 btn-secondary inline-block">Learn More</a>
+			<a href="" class="btn w_30 btn-primary inline-block shadow_overlap-light">Purchase</a>
+		</footer>
+	</article>
+	<article class="br_solid br-t_1 br_0 br_black-3 relative font_copy flex_column flex justify_start w_100 relative isolation_isolate" amsproductid="ECHOSAPSUB">
+		<header class="relative">
+			<div class="">
+				<div class="br_1 br-t_0 br_solid br_black-4 bg_cover font_4 h_lh_2 text-shadow_black-1 font_display p_3 c_white bg-blend_multiply bg_right" style="background-image: url(https://www.acc.org/-/media/Non-Clinical/Homepage/Products/F21153-Product-Section_CMP.jpg);"><span class="uppercase font_xbold">HF</span><span class="uppercase font_light">SAP</span></div>
+			</div>
+		</header>
+		<main class="relative p-t_4 flex flex_row gap-x_5">
+			<p class="font_0:lg font_n1 p-r_3 p-r_4:lg p-l_3 lh_2"><span>Comprehensive program covering the entire field of echocardiography. Thorough coverage of the field including valvular heart disease, chamber size and function, congenital heart disease, pericardial disease and more.</span></p>
+<ul class="flex_none font-size_down-2 p-r_2 text_right ul_none">
+				<li class="c_primary-n2 font-size_up font_bold">Product Status</li>
+				<li><i class="fas fa-check m-r_3 c_success"></i> Purchased</li>
+				<li><i class="fas fa-times m-r_3 c_alert"></i>Enrolled in CMP</li>
+			</ul>
+		</main>
+		<footer class="flex flex_row justify_center items_center p-x_3 p-b_4 gap_4">
+			<a href="" class="btn w_30 btn-secondary inline-block">Launch SAP</a>
+			<a href="" class="btn w_30 btn-primary inline-block shadow_overlap-light"> Enroll in CMP</a>
+		</footer>
+	</article>
+</div>
+
+<!-- background-image: url("/-/media/Non-Clinical/Homepage/Products/F21153-Product-Section_CMP.jpg"); -->
+    </div>
+</div>
+<style lang="">
+
+
+  .wizard-nav_w-chevrons {
+    text-decoration:none;
+    margin:0;
+    padding:0;
+    overflow:hidden;
+    isolation: isolate;
+  }
+  .wizard-nav_w-chevrons>* {
+      position:relative;
+    text-decoration:none;
+  }
+  .wizard-nav_w-chevrons>*:not(:first-child) {
+    padding-left:1.5em;
+  }
+  .wizard-nav_w-chevrons>*:before, .wizard-nav_w-chevrons>*:after {
+    display:block;
+    position:absolute;
+    z-index:-1;
+    width:auto;
+    height:50%;
+    left:0;
+    right:0;
+    content:'';
+    border-right:1px solid rgba(0, 0, 0, 0.3);
+  }
+  .wizard-nav_w-chevrons>*:before {
+  
+    top:0;
+    transform:matrix(1,0,0.5,1,0,0);
+    border-bottom:none;
+  }
+  .wizard-nav_w-chevrons>*:after {
+  
+    bottom:0;
+    transform:matrix(1,0,-0.5,1,0,0);
+    border-top:none;
+  }
+  .wizard-nav_w-chevrons>*:hover:before {
+  
+  }
+  .wizard-nav_w-chevrons>*:hover:after {
+  
+  }
+  .wizard-nav_w-chevrons>*:first-child:before, .wizard-nav_w-chevrons>*:first-child:after {
+    left:-1em;
+  }
+  .wizard-nav_w-chevrons>*:last-child:before, .wizard-nav_w-chevrons>*:last-child:after {
+    right:-1em;
+  }
+  </style>
+	</aside>
+</div>
+<div class="p_4:lg p-y_4">
+
+	<div secondary-content="">
+		<div class="relative">
+			<header id="accordion_header" class="flex flex_row sticky t_n2 bg_white shadow_overlap-light br_solid br_1 br_black-2 z_2 ">
+				<div class="h:bg_primary-5 m_2 c_primary h:c_primary-n2 br_radius">
+					<div class="flex_none collapsed" aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#content_accordion_1" aria-controls="#content_accordion_1">
+							<span class="fa-stack">
+							<i class="fas fa-minus fa-stack-1x"></i>
+							<i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+							</span>
+					</div>        </div>
+				<div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
+					<div class="flex_auto self_center reading-typography no-margins">
+					   <h3>Important Dates</h3>
+					</div>
+				</div>
+			</header>
+			<main id="content_accordion_1" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_4 reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
+			<h2>HTML Ipsum Presents</h2>
+			 </main>
+		</div>
+		<div class="relative">
+			<header id="accordion_header" class="flex flex_row sticky t_n2 bg_white shadow_overlap-light br_solid br_1 br_black-2 z_2 ">
+				<div class="h:bg_primary-5 m_2 c_primary h:c_primary-n2 br_radius">
+					<div class="flex_none collapsed" aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#content_accordion_2" aria-controls="#content_accordion_2">
+							<span class="fa-stack">
+							<i class="fas fa-minus fa-stack-1x"></i>
+							<i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+							</span>
+					</div>        </div>
+				<div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
+					<div class="flex_auto self_center reading-typography no-margins">
+					   <h3> Pricing</h3>
+					</div>
+				</div>
+			</header>
+			<main id="content_accordion_2" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_4 reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
+			<h2>HTML Ipsum Presents</h2>
+			</main>
+		</div>
+		<div class="relative">
+			<header id="accordion_header" class="flex flex_row sticky t_n2 bg_white shadow_overlap-light br_solid br_1 br_black-2 z_2 ">
+				<div class="h:bg_primary-5 m_2 c_primary h:c_primary-n2 br_radius">
+					<div class="flex_none collapsed" aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#content_accordion_3" aria-controls="#content_accordion_3">
+							<span class="fa-stack">
+							<i class="fas fa-minus fa-stack-1x"></i>
+							<i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+							</span>
+					</div>        </div>
+				<div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
+					<div class="flex_auto self_center reading-typography no-margins">
+					   <h3> CMP Resources</h3>
+					</div>
+				</div>
+			</header>
+			<main id="content_accordion_3" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_4 reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
+			<h2>HTML Ipsum Presents</h2>
+			<p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+			</main>
+		</div>
+		<div class="relative">
+			<header id="accordion_header" class="flex flex_row sticky t_n2 bg_white shadow_overlap-light br_solid br_1 br_black-2 z_2 ">
+				<div class="h:bg_primary-5 m_2 c_primary h:c_primary-n2 br_radius">
+					<div class="flex_none collapsed" aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#content_accordion_3" aria-controls="#content_accordion_3">
+							<span class="fa-stack">
+							<i class="fas fa-minus fa-stack-1x"></i>
+							<i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+							</span>
+					</div>        </div>
+				<div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
+					<div class="flex_auto self_center reading-typography no-margins">
+					   <h3>Accreditation Information</h3>
+					</div>
+				</div>
+			</header>
+			<main id="content_accordion_3" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_4 reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
+			<h2>HTML Ipsum Presents</h2>
+			<p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+			</main>
+		</div>
+				<div class="relative">
+			<header id="accordion_header" class="flex flex_row sticky t_n2 bg_white shadow_overlap-light br_solid br_1 br_black-2 z_2 ">
+				<div class="h:bg_primary-5 m_2 c_primary h:c_primary-n2 br_radius">
+					<div class="flex_none collapsed" aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#content_accordion_3" aria-controls="#content_accordion_3">
+							<span class="fa-stack">
+							<i class="fas fa-minus fa-stack-1x"></i>
+							<i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+							</span>
+					</div>        </div>
+				<div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
+					<div class="flex_auto self_center reading-typography no-margins">
+					   <h3>Performance Assessment</h3>
+					</div>
+				</div>
+			</header>
+			<main id="content_accordion_3" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_4 reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
+			<h2>HTML Ipsum Presents</h2>
+			<p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+			</main>
+		</div>
+				<div class="relative">
+			<header id="accordion_header" class="flex flex_row sticky t_n2 bg_white shadow_overlap-light br_solid br_1 br_black-2 z_2 ">
+				<div class="h:bg_primary-5 m_2 c_primary h:c_primary-n2 br_radius">
+					<div class="flex_none collapsed" aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#content_accordion_3" aria-controls="#content_accordion_3">
+							<span class="fa-stack">
+							<i class="fas fa-minus fa-stack-1x"></i>
+							<i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+							</span>
+					</div>        </div>
+				<div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
+					<div class="flex_auto self_center reading-typography no-margins">
+					   <h3>CardioSource Plus Users Planning to Participate in the CMP</h3>
+					</div>
+				</div>
+			</header>
+			<main id="content_accordion_3" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_4 reading-typography shadow_emboss-light tab-content transition_4 collapse"  aria-labelledby="accordion_header m-x_3" >
+			<h2>HTML Ipsum Presents</h2>
+			<p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+			</main>
+		</div>
+	</div>
+</div>
+
+            </div>
+            <div id="footer-wrap">
+
+    <!-- ********************************** breadcrumbs ********************************** -->
+    <div id="breadcrumbs" class="bg_acc breadcrumbs-container c_white font_0 font_ui p-x_4 p_3">
+    
+    <b class="breadcrumbs-title">YOU ARE HERE: </b>
+<a class="c_white" href="/PrototypingACCorg/">Home </a>   
+</div>
+    
+
+<div id="footer" role="contentinfo" class="flex bg_shade-n3 flex_column flex_inline flex_wrap flex_row:md p-x_3 p-y_4 p-y_0:lg w_100">
+    
+        <div class="flex_auto p-x_3 p-y_4:lg w_25:lg w_50:md font_ui">
+                <h2 class="font_0:lg font_accent font_n1 m-b_0 m-b_2:md">
+                    <a href="https://www.acc.org/Guidelines" class="c_white h:c_primary-3" target="_parent" title="Guidelines">Guidelines</a>
+                </h2>
+                <h2 class="font_0:lg font_accent font_n1 m-b_0 m-b_2:md">
+                    <a href="https://www.acc.org/JACC-Journals" class="c_white h:c_primary-3">JACC Journals on ACC.org</a>
+                </h2>
+                <ul class="block:md display_none font_n2:lg font_n3 m-b_4 ul_none">
+                        <li class="reverse-indent"><a href="https://www.acc.org/jacc-journals?w_nav=FN#journal=Journal of the American College of Cardiology" class="c_white-9 h:c_primary-3">JACC</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/jacc-journals?w_nav=FN#journal=JACC: Asia" class="c_white-9 h:c_primary-3" title="JACC Asia">JACC: Asia</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/jacc-journals?w_nav=FN#journal=JACC: Basic to Translational Science" class="c_white-9 h:c_primary-3">JACC: Basic to Translational Science</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/jacc-journals?w_nav=FN#journal=JACC: CardioOncology" class="c_white-9 h:c_primary-3">JACC: CardioOncology</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/jacc-journals?w_nav=FN#journal=JACC: Cardiovascular Imaging" class="c_white-9 h:c_primary-3" target="_parent" title="JACC: Cardiovascular Imaging">JACC: Cardiovascular Imaging </a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/jacc-journals?w_nav=FN#journal=JACC: Cardiovascular Interventions" class="c_white-9 h:c_primary-3" target="_parent" title="JACC: Cardiovascular Interventions">JACC: Cardiovascular Interventions </a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/jacc-journals?w_nav=FN#journal=JACC: Case Reports" class="c_white-9 h:c_primary-3">JACC: Case Reports</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/jacc-journals?w_nav=FN#journal=JACC: Clinical Electrophysiology" class="c_white-9 h:c_primary-3">JACC: Clinical Electrophysiology</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/jacc-journals?w_nav=FN#journal=JACC: Heart Failure" class="c_white-9 h:c_primary-3" target="_parent" title="JACC Heart Failure">JACC: Heart Failure</a></li>
+                </ul>
+                <h2 class="font_0:lg font_accent font_n1 m-b_0 m-b_2:md">
+                    <a href="https://www.acc.org/Membership" class="c_white h:c_primary-3" target="_parent" title="Membership ">Membership </a>
+                </h2>
+                <ul class="block:md display_none font_n2:lg font_n3 m-b_4 ul_none">
+                        <li class="reverse-indent"><a href="https://www.acc.org/Membership/Current-Members" class="c_white-9 h:c_primary-3">Current Members</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/About-ACC/Campaign-Future" class="c_white-9 h:c_primary-3">Campaign for the Future</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/membership/join-us" class="c_white-9 h:c_primary-3">Become a Member</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/Membership/Renew-Your-Membership" class="c_white-9 h:c_primary-3">Renew Your Membership</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/membership/join-us/benefits" class="c_white-9 h:c_primary-3">Member Benefits and Resources</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/Membership/Sections-and-Councils" class="c_white-9 h:c_primary-3">Member Sections</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/Membership/Chapters" class="c_white-9 h:c_primary-3">Chapters</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/Membership/Member-Directory" class="c_white-9 h:c_primary-3" title="ACC Member Directory">ACC Member Directory</a></li>
+                </ul>
+                <h2 class="font_0:lg font_accent font_n1 m-b_0 m-b_2:md">
+                    <a href="https://www.acc.org/About-ACC" class="c_white h:c_primary-3" title="About ACC">About ACC</a>
+                </h2>
+                <ul class="block:md display_none font_n2:lg font_n3 m-b_4 ul_none">
+                        <li class="reverse-indent"><a href="https://www.acc.org/About-ACC/Innovation" class="c_white-9 h:c_primary-3">ACC Innovation Program</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/About-ACC/Our-Strategic-Direction" class="c_white-9 h:c_primary-3">Our Strategic Direction</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/About-ACC/Diversity-and-Inclusion" class="c_white-9 h:c_primary-3">Diversity and Inclusion</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/About-ACC/Our-History" class="c_white-9 h:c_primary-3" target="_parent" title="Our History ">Our History </a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/About-ACC/Our-Bylaws-and-Code-of-Ethics" class="c_white-9 h:c_primary-3">Our Bylaws and Code of Ethics</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/About-ACC/Leadership" class="c_white-9 h:c_primary-3">Leadership and Governance</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/About-ACC/Industry-Relations" class="c_white-9 h:c_primary-3">Industry Relations</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/About-ACC/Support-the-ACC" class="c_white-9 h:c_primary-3">Support the ACC</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/About-ACC/Jobs-at-the-ACC" class="c_white-9 h:c_primary-3">Jobs at the ACC</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/About-ACC/Press-Releases" class="c_white-9 h:c_primary-3">Press Releases</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/About-ACC/Social-Media" class="c_white-9 h:c_primary-3">Social Media</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/About-ACC/Book-Our-Conference-Center" class="c_white-9 h:c_primary-3">Book Our Conference Center</a></li>
+                </ul>
+    </div>
+    <div class="flex_auto p-x_3 p-y_4:lg w_25:lg w_50:md font_ui">
+                <h2 class="font_0:lg font_accent font_n1 m-b_0 m-b_2:md">
+                    <a href="https://www.acc.org/Clinical-Topics" class="c_white h:c_primary-3">Clinical Topics</a>
+                </h2>
+                <ul class="block:md display_none font_n2:lg font_n3 m-b_4 ul_none">
+                        <li class="reverse-indent"><a href="https://www.acc.org/Clinical-Topics/Acute-Coronary-Syndromes" class="c_white-9 h:c_primary-3">Acute Coronary Syndromes</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/Clinical-Topics/Anticoagulation-Management" class="c_white-9 h:c_primary-3">Anticoagulation Management</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/Clinical-Topics/Arrhythmias-and-Clinical-EP" class="c_white-9 h:c_primary-3">Arrhythmias and Clinical EP</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/Clinical-Topics/Cardiac-Surgery" class="c_white-9 h:c_primary-3">Cardiac Surgery</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/Clinical-Topics/Cardio-Oncology" class="c_white-9 h:c_primary-3">Cardio-Oncology</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/Clinical-Topics/Stable-Ischemic-Heart-Disease/Chronic-Angina" class="c_white-9 h:c_primary-3">Chronic Angina</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/Clinical-Topics/Congenital-Heart-Disease-Pediatric-Cardiology" class="c_white-9 h:c_primary-3">Congenital Heart Disease and &nbsp; &nbsp;&nbsp;Pediatric Cardiology</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/Latest-in-Cardiology/Features/ACCs-Coronavirus-Disease-2019-COVID-19-Hub" class="c_white-9 h:c_primary-3">COVID-19 Hub</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/Clinical-Topics/Diabetes-and-Cardiometabolic-Disease" class="c_white-9 h:c_primary-3">Diabetes and Cardiometabolic &nbsp;&nbsp;&nbsp; Disease</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/Clinical-Topics/Dyslipidemia" class="c_white-9 h:c_primary-3">Dyslipidemia</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/Clinical-Topics/Geriatric-Cardiology" class="c_white-9 h:c_primary-3">Geriatric Cardiology</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/Clinical-Topics/Heart-Failure-and-Cardiomyopathies" class="c_white-9 h:c_primary-3">Heart Failure and Cardiomyopathies</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/Clinical-Topics/Dyslipidemia/Hypertriglyceridemia" class="c_white-9 h:c_primary-3">Hypertriglyceridemia</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/Clinical-Topics/Invasive-Cardiovascular-Angiography-and-Intervention" class="c_white-9 h:c_primary-3">Invasive Cardiovascular Angiography &nbsp; &nbsp;and Intervention</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/Clinical-Topics/Noninvasive-Imaging" class="c_white-9 h:c_primary-3">Noninvasive Imaging</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/Clinical-Topics/Pericardial-Disease" class="c_white-9 h:c_primary-3">Pericardial Disease</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/Clinical-Topics/Prevention" class="c_white-9 h:c_primary-3">Prevention</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/Clinical-Topics/Pulmonary-Hypertension-and-Venous-Thromboembolism" class="c_white-9 h:c_primary-3">Pulmonary Hypertension and Venous &nbsp; &nbsp; Thromboembolism</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/Clinical-Topics/Sports-and-Exercise-Cardiology" class="c_white-9 h:c_primary-3">Sports and Exercise Cardiology</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/Clinical-Topics/Stable-Ischemic-Heart-Disease" class="c_white-9 h:c_primary-3">Stable Ischemic Heart Disease</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/Clinical-Topics/Valvular-Heart-Disease" class="c_white-9 h:c_primary-3">Valvular Heart Disease</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/Clinical-Topics/Vascular-Medicine" class="c_white-9 h:c_primary-3">Vascular Medicine</a></li>
+                </ul>
+    </div>
+    <div class="flex_auto p-x_3 p-y_4:lg w_25:lg w_50:md font_ui">
+                <h2 class="font_0:lg font_accent font_n1 m-b_0 m-b_2:md">
+                    <a href="https://www.acc.org/Latest-in-Cardiology" class="c_white h:c_primary-3">Latest in Cardiology</a>
+                </h2>
+                <ul class="block:md display_none font_n2:lg font_n3 m-b_4 ul_none">
+                        <li class="reverse-indent"><a href="https://www.acc.org/Latest-in-Cardiology#theme=Clinical Updates and Discoveries" class="c_white-9 h:c_primary-3">Clinical Updates &amp; Discoveries</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/Latest-in-Cardiology#theme=Advocacy and Policy" class="c_white-9 h:c_primary-3">Advocacy &amp; Policy</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/Latest-in-Cardiology#theme=Perspectives and Analysis" class="c_white-9 h:c_primary-3">Perspectives &amp; Analysis</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/Latest-in-Cardiology#theme=Meeting Coverage" class="c_white-9 h:c_primary-3">Meeting Coverage</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/Membership/Join-Us/Benefits/ACC-Member-Publications" class="c_white-9 h:c_primary-3">ACC Member Publications</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/Latest-in-Cardiology/Features/podcasts" class="c_white-9 h:c_primary-3">ACC Podcasts</a></li>
+                </ul>
+                <h2 class="font_0:lg font_accent font_n1 m-b_0 m-b_2:md">
+                    <a href="https://www.acc.org/Education-and-Meetings" class="c_white h:c_primary-3">Education and Meetings</a>
+                </h2>
+                <ul class="block:md display_none font_n2:lg font_n3 m-b_4 ul_none">
+                        <li class="reverse-indent"><a href="https://www.acc.org" class="c_white-9 h:c_primary-3">Online Learning Catalog</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/Education-and-Meetings/Maintenance-of-Certification-Information-Hub" class="c_white-9 h:c_primary-3">Understanding MOC</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/Education-and-Meetings/Products-and-Resources" class="c_white-9 h:c_primary-3">Products and Resources</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/Education-and-Meetings/Image-and-Slide-Gallery" class="c_white-9 h:c_primary-3">Image and Slide Gallery</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/Education-and-Meetings/Meetings" class="c_white-9 h:c_primary-3">Meetings</a></li>
+                        <li class="reverse-indent"><a href="https://accscientificsession.acc.org/" class="c_white-9 h:c_primary-3" target="_blank">Annual Scientific Session</a></li>
+                </ul>
+                <h2 class="font_0:lg font_accent font_n1 m-b_0 m-b_2:md">
+                    <a href="https://www.acc.org/Tools-and-Practice-Support" class="c_white h:c_primary-3">Tools and Practice Support</a>
+                </h2>
+                <ul class="block:md display_none font_n2:lg font_n3 m-b_4 ul_none">
+                        <li class="reverse-indent"><a href="http://cvquality.acc.org/" class="c_white-9 h:c_primary-3">Quality Improvement for Institutions</a></li>
+                        <li class="reverse-indent"><a href="https://www.ncdr.com/webncdr/" class="c_white-9 h:c_primary-3" target="_blank">NCDR</a></li>
+                        <li class="reverse-indent"><a href="https://www.cardiosmart.org/" class="c_white-9 h:c_primary-3" target="_blank">CardioSmart</a></li>
+                        <li class="reverse-indent"><a href="https://cvquality.acc.org/Accreditation" class="c_white-9 h:c_primary-3" target="_blank">Accreditation Services</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/Tools-and-Practice-Support/Clinical-Toolkits" class="c_white-9 h:c_primary-3">Clinical Toolkits</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/Features/2019/07/clinican-well-being-portal" class="c_white-9 h:c_primary-3" title="Clinician Well-Being Portal">Clinician Well-Being Portal</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/About-ACC/Diversity-and-Inclusion" class="c_white-9 h:c_primary-3">Diversity and Inclusion</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/Tools-and-Practice-Support/Mobile-Resources" class="c_white-9 h:c_primary-3">Mobile and Web Apps</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/Tools-and-Practice-Support/Advocacy-at-the-ACC" class="c_white-9 h:c_primary-3" target="_parent">Advocacy at the ACC</a></li>
+                        <li class="reverse-indent"><a href="http://www.healthecareers.com/acc" class="c_white-9 h:c_primary-3" target="_blank">Cardiology Careers</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/Tools-and-Practice-Support/Practice-Solutions" class="c_white-9 h:c_primary-3">Practice Solutions</a></li>
+                        <li class="reverse-indent"><a href="https://www.acc.org/Tools-and-Practice-Support/Quality-Programs" class="c_white-9 h:c_primary-3">Quality Programs</a></li>
+                </ul>
+    </div>
+
+    
+    <div class="flex_auto p-x_3 p-y_4:lg w_25:lg w_50:md relative">
+        <section class="acc-websites m-y_3">
+    <nav class="clearfix block font_bold font_ui w_100">
+        <ul class="font_1 lh_4 ul_none">
+            <li>
+                <a href="https://www.jacc.org/" class="c_white block flex h:bg_black-2 h:c_white" target="_blank">JACC</a>
+            </li>
+            <li>
+                <a href="http://cvquality.acc.org/" class="c_white block flex h:bg_black-2 h:c_white" target="_blank">Quality Improvement for Institutions</a>
+            </li>
+            <li>
+                <a href="http://cvquality.acc.org/NCDR-Home" class="c_white block flex h:bg_black-2 h:c_white" target="_blank">NCDR</a>
+            </li>
+            <li>
+                <a href="https://www.cardiosmart.org/For-Clinicians" class="c_white block flex h:bg_black-2 h:c_white" target="_blank">CardioSmart</a>
+            </li>
+            <li>
+                <a href="https://www.medaxiom.com/" class="c_white block flex h:bg_black-2 h:c_white" target="_blank">MedAxiom</a>
+            </li>
+            <li>
+                <a href="https://cvquality.acc.org/accreditation" class="c_white block flex h:bg_black-2 h:c_white" target="_blank">Accreditation Services </a>
+            </li>
+            <li>
+                <a href="/About-ACC/Contact-Us" class="c_white block flex h:bg_black-2 h:c_white">Contact Us</a>
+            </li>
+        </ul>
+    </nav>
+</section>
+        <section class="address c_white">
+    <address>
+				<!-- http://microformats.org/wiki/hcard -->
+				<h4 class="m-b_0 font_bold font_copy font_normal font_1 m-t_4:md">Heart House</h4>
+				<div class="font_ui font_0">
+					<ul class="ul_none  lh_2">
+						<li class="m-b_1 m-b_3:md font_normal">
+							<span class="street-address">2400 N. St. NW</span>
+						</li>
+						<li class="m-b_1 m-b_3:md font_normal">
+							<span class="locality ">Washington</span>,
+							<span class="city-name ">
+								<abbr title="District of Colombia">DC</abbr>
+							</span>
+							<span class="postal-code">20037</span>
+						</li>
+						<li class="m-b_1 m-b_3:md font_normal">
+							<a href="mailto:MemberCare@acc.org" class="email c_white text_underline  h:c_white ">
+								<strong class="p-r_2 inline block:md inline:lg">Email:</strong>
+								<span class="inline block:md inline:lg">MemberCare@acc.org</span></a>
+						</li>
+					</ul>
+					<ul class="ul_none lh_2">
+						<li class="m-b_1 m-b_3:md font_normal">
+							<a tel="+12023756000" href="tel:+12023756000" class="tel c_white h:c_white h:underline">
+								<strong class="p-r_2 block:md inline:lg">Phone:</strong><span class=" block:md inline:lg">(202) 375-6000, ext. 5603</span></a>
+						</li>
+						<li class="m-b_1 m-b_3:md font_normal">
+							<a tel="+18002574737" href="tel:+18002534636.5603" class="tel c_white h:c_white h:underline">
+								<strong class="p-r_2 block:md inline:lg">Toll Free:</strong><span class=" block:md inline:lg">(800) 253-4636, ext. 5603</span></a>
+						</li>
+						<li class="m-b_1 m-b_3:md font_normal">
+							<a fax="+12023757000" href="fax:+12023757000" class="fax c_white h:c_white h:underline">
+								<strong class="p-r_2 block:md inline:lg">Fax:</strong>
+								<span class="block:md inline:lg">(202) 375-7000</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</address>
+</section>
+            <p id="logo-footer">
+        <a href="/PrototypingACCorg/">
+            <img src="https://www.acc.org/-/media/Images/Logos/UPDATED-OCT-3-2014/ACC-Footer.svg" width="142" height="45" alt="ACC Logo Footer">
+        </a>
+    </p>
+
+        <section class="absolute:md b_4 l_0 m-t_4 p-t_0:md p-t_5 r_0 relative social">
+    <ul class="flex social_bar ul_none c_white h:c_white m_0">
+        <li class="flex_auto m-r_3"><a class="c_white" href="https://www.youtube.com/user/ACCinTouch" target="_blank"><i class="fab fa-2x fa-youtube"></i></a></li>
+        <li class="flex_auto m-r_3"><a class="c_white" href="https://www.linkedin.com/company/american-college-of-cardiology/" target="_blank"><i class="fab fa-2x fa-linkedin"></i></a></li>
+        <li class="flex_auto m-r_3"><a class="c_white" href="https://www.facebook.com/AmericanCollegeofCardiology" target="_blank"><i class="fab fa-2x fa-facebook"></i></a></li>
+        <li class="flex_auto m-r_3"><a class="c_white" href="https://twitter.com/accintouch" target="_blank"><i class="fab fa-2x fa-twitter"></i></a></li>
+        <li class="flex_auto m-r_3"><a class="c_white" href="https://www.instagram.com/americancollegeofcardiology/" target="_blank">
+                <i class="fab fa-2x fa-instagram"></i>
+            </a></li>
+    </ul>
+</section>
+
+
+    </div>
+</div>
+<div id="subfooter bg_primary-n1 c_white" class="bg_primary c_white font_n2 p-x_4 p-y_4">
+    <ul class="block footer-bottom-links ul_none">
+            <li class="inline p_2"><a href="https://www.acc.org/Footer-Pages/Media-Center" class="c_white-6 h:c_white">Media Center</a></li>
+            <li class="inline p_2"><a href="https://www.acc.org/Footer-Pages/Quick-Start-Guide" class="c_white-6 h:c_white">ACC.org Quick Start Guide</a></li>
+            <li class="inline p_2"><a href="https://www.acc.org/Footer-Pages/Advertising-and-Sponsorship-Policy" class="c_white-6 h:c_white">Advertising &amp; Sponsorship Policy</a></li>
+            <li class="inline p_2"><a href="https://www.acc.org/Footer-Pages/Clinical-Content-Disclaimer" class="c_white-6 h:c_white">Clinical Content Disclaimer</a></li>
+            <li class="inline p_2"><a href="https://www.acc.org/Footer-Pages/Editorial-Board" class="c_white-6 h:c_white">Editorial Board</a></li>
+            <li class="inline p_2"><a href="https://www.acc.org/Footer-Pages/Privacy-Policy" class="c_white-6 h:c_white">Privacy Policy</a></li>
+            <li class="inline p_2"><a href="https://www.acc.org/Footer-Pages/Registered-User-Agreement" class="c_white-6 h:c_white">Registered User Agreement</a></li>
+            <li class="inline p_2"><a href="https://www.acc.org/Footer-Pages/Terms-and-Conditions" class="c_white-6 h:c_white">Terms of Service</a></li>
+            <li class="inline p_2"><a href="https://www.acc.org/Footer-Pages/Cookie-Policy" class="c_white-6 h:c_white">Cookie Policy</a></li>
+            <li class="inline p_2"><a href="https://www.acc.org/Footer-Pages/Member-Hub-Terms-of-Use" class="c_white-6 h:c_white">Member Hub Terms of Use</a></li>
+            <li class="inline p_2"><a href="https://www.acc.org/sitemap-acc.xml" class="c_white-6 h:c_white">Site Map</a></li>
+    </ul><!-- /footer-bottom-links -->
+    <p class="legal p-t_3 font_n2">© 2021 American College of Cardiology Foundation. All rights reserved.</p>
+</div><!-- /subfooter -->
+   
+</div>
+        </div>
+    </div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</html>

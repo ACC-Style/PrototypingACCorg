@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en-US"> 
+ <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pagelayout - Arches</title>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-9ZfPnbegQSumzaE7mks2IYgHoayLtuto3AS6ieArECeaR8nCfliJVuLh/GaQ1gyM" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://assets.acc.org/Arches/Latest/docs/css/acc_boot.css">
+  <link rel="stylesheet" href="https://assets.acc.org/Arches/Latest/docs/css/acc_uc.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family==Montserrat,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+</head>
+
+<body id="ng-app" ng-app="AccApp" class="user-not-logged-in ng-scope medium-viewport font_copy"></body>
+<style>
+.grid-page-layout {
+  --padding-inline: .5rem;
+  --content-max-width: 70rem;
+  --content-min-width: calc( 100% - ( var(--padding-inline) * 2 ) );
+  --breakout-max-width: 80rem;
+
+  --breakout-size: calc(
+    (var(--breakout-max-width) - var(--content-max-width)) / 2
+  );
+  --sidebar-width:25rem;
+
+  display: grid;
+  grid-template-columns:
+        [full-width-start] minmax(var(--padding-inline), 1fr)
+        [breakout-start] minmax(0, var(--breakout-size))
+        [content-start sidebar-left-start] min(100%, var(--sidebar-width))
+        [sidebar-left-end content-minus-sidebar-left-start center-start] min(
+            calc( var(--content-min-width) - var(--sidebar-width) *2 ),
+            calc( var(--content-max-width) - var(--sidebar-width) *2 )
+        )
+        [sidebar-right-start content-minus-sidebar-right-start center-end] 
+        min(100%, var(--sidebar-width))
+        [content-end sidebar-right-end]
+        minmax(0, var(--breakout-size)) [breakout-end]
+        minmax(var(--padding-inline), 1fr) [full-width-end];
+}
+
+
+.grid-page-layout > :not(.breakout, .full-width),
+.full-width > :not(.breakout, .full-width) {
+  grid-column: content;
+}
+
+.grid-page-layout > .breakout {
+  grid-column: breakout;
+}
+.grid-page-layout > .sidebar-left {
+  grid-column: sidebar-left;
+}
+.grid-page-layout > .sidebar-right {
+  grid-column: sidebar-right;
+}
+.grid-page-layout > .center {
+  grid-column: center;
+}
+.grid-page-layout > .center {
+    grid-column: center;
+}
+.grid-page-layout > .center-to-right {
+  grid-column: center-start/content-end;
+}.grid-page-layout > .center-to-left {
+  grid-column: content-start/center-end;
+}
+.grid-page-layout > .right-breakout-to-center {
+  grid-column: center-end/breakout-end;
+}.grid-page-layout > .left-breakout-to-center {
+  grid-column: breakout-start/center-start;
+}
+
+.grid-page-layout > .full-width  {
+  grid-column: full-width;
+  display: grid;
+  grid-template-columns: inherit;
+}
+
+@media (max-width: 50rem){
+    .grid-page-layout {
+        grid-template-columns:
+        [full-width-start] minmax(var(--padding-inline), 1fr)
+        [breakout-start] minmax(0, var(--breakout-size))
+        [content-start center-start sidebar-left-start sidebar-right-start content-minus-sidebar-right-start] min(
+            calc( var(--content-min-width) ),
+            calc( var(--content-max-width) )
+        )
+
+        [content-end sidebar-right-end sidebar-left-end content-minus-sidebar-left-start center-end]
+        minmax(0, var(--breakout-size)) [breakout-end]
+        minmax(var(--padding-inline), 1fr) [full-width-end];
+    }
+.grid-page-layout > .right-breakout-to-center {
+  grid-column: content;
+}
+.grid-page-layout > .left-breakout-to-center {
+  grid-column: content;
+}
+}
+img.full-width {
+  width: 100%;
+  max-height: 45vh;
+  object-fit: cover;
+}
+
+
+
+</style>
+<div class="grid-page-layout">
+    <div class="full-width bg_primary">Fullscreen</div>
+    <div class="pagecontainer">Page Container</div>
+    <div class="breakout">Break Out</div>  
+    <div class="contentedge">Content Edge</div>  
+    <div class="sidebar-left">sidebar left</div> 
+    <div class="center-to-right">center to right</div> 
+    <div class="center-to-left">center to left</div>
+    <div class="sidebar-right">sidebar right</div>
+    <div class="left-breakout-to-center">breakout</div>
+    <div class="center">center</div>
+    <div class="right-breakout-to-center">breakout</div>
+
+</div>
+
+
+<style>
+div:not(.grid-page-layout){min-height: 50px; color:white; padding:10px;}
+.grid-page-layout>div:nth-child(1) {background-color: salmon;}
+        .grid-page-layout>div:nth-child(2) {background-color: sandybrown;}
+        .grid-page-layout>div:nth-child(3) {background-color: seagreen;}
+        .grid-page-layout>div:nth-child(4) {background-color: skyblue;}
+        .grid-page-layout>div:nth-child(5) {background-color: slateblue;}
+        .grid-page-layout>div:nth-child(6) {background-color: tomato;}
+        .grid-page-layout>div:nth-child(7) {background-color: salmon;}
+        .grid-page-layout>div:nth-child(8) {background-color: sandybrown;}
+        .grid-page-layout>div:nth-child(9) {background-color: seagreen;}
+        .grid-page-layout>div:nth-child(10) {background-color: skyblue;}
+        .grid-page-layout>div:nth-child(11) {background-color: slateblue;}
+        .grid-page-layout>div:nth-child(12) {background-color: tomato;}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+</body>
+</html>

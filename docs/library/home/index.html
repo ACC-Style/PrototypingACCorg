@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en-US"> 
+ <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home - Arches@1.1</title>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-9ZfPnbegQSumzaE7mks2IYgHoayLtuto3AS6ieArECeaR8nCfliJVuLh/GaQ1gyM" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ACC-Style/Arches/dist/css/library_boot.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ACC-Style/Arches/dist/css/library_uc.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ACC-Style/Arches/dist/css/color-code_credits.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ACC-Style/Arches/dist/css/color-code_social.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto+Slab:wght@200..900&amp;display=swap">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Maven+Pro:wght@400..900&amp;display=swap">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+San:wght@300..800&amp;display=swap">
+
+<script src="https://kit.fontawesome.com/71c9d25c4e.js" crossorigin="anonymous"></script>
+  <base href="/PrototypingACCorg/library/">
+</head>
+
+
+<body class="BODY_TAG-stand-in bg_black-4 w_100 p_3:md p_2 grid:md min-h_100">
+<div class="page-wrapper grid:md p_2 p_3:md isolation_isolate br_radius bg_white-7">
+	<div class="grid:md grid-template_page flex flex_column gap_4:md gap_3">
+		<div style="height: calc(100vh - 1.5rem);" class="display_none flex:md sticky t_3  grid-area_menuArea z_4">
+			<nav style="height: calc(100vh - 1.5rem); width: 35rem;" id="navigation" class="absolute h_100vh shadow_emboss-light filter_blur overflow_hidden br_radius bg_black-7 flex:md flex_column:md justify_between p-t_0 p-b_3 p-l_3 p-r_3 p-b_4:md p-t_4:md p-r_0:md font_4:lg font_3:md font_2 transition_3 font_display nav-mined">
+				<ul class="flex flex_column:md flex_row ul_none justify_around justify_start:md gap_3 w_100 w_auto:md">
+					<li id="mainDesktopNavTouchToggle" class="display_none flex:touch flex_row justify_end p-x_3 m-l_n3 " onclick="toggleMainDesktopNav()">
+						<span class="aspect_1x1 bg_accent br_round c_inherit-all c_white-8 grid h:c_white justify_center p_3 self_center text_center w_auto shadow_n3"><i class="block fa-chevron-circle-right fa-fw fas icon [rotate_180] self_center text-shadow_black-1 transition_2"></i></span>
+					</li>
+					<li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light active">
+						<a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md" href="./home"><i class="icon fas fa-fw fa-home-heart p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center p-l_3:md p-l_4:lg lowercase lh_0 active font_n2 font_3:md font_4:lg display_none:md opacity_0">Home</span></a>
+					</li>
+					<li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light  ">
+						<a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md " href="./search"><i class="icon fas fa-fw fa-search p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center p-l_3:md p-l_4:lg lowercase lh_0 font_n2 font_3:md font_4:lg display_none:md opacity_0 ">Search</span></a>
+					</li>
+					<li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light  ">
+						<a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md" href="./saved"><i class="icon fas fa-fw fa-heart p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center p-l_3:md p-l_4:lg lowercase lh_0 font_n2 font_3:md font_4:lg display_none:md opacity_0 ">Saved</span></a>
+					</li>
+					<li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light  ">
+						<a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md" href="./credits"><i class="icon fas fa-fw fa-award p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center p-l_3:md p-l_4:lg lowercase lh_0 font_n2 font_3:md font_4:lg display_none:md opacity_0 ">Credits</span></a>
+					</li>
+					<li class="nav-item flex_none br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light    cursor_not-allowed opacity_3 disabled ">
+						<a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md" href="./presentation"><i class="icon fas fa-fw fa-play p-x_2:md p-y_3 p-y_0:md self_center"></i><span class="label self_center p-l_3:md p-l_4:lg lowercase lh_0 font_n2 font_3:md font_4:lg display_none:md opacity_0 ">Watching</span></a>
+					</li>
+				</ul>
+				<ul class="flex_column:md flex_row ul_none justify_center gap_3 flex">
+					<li class="nav-item flex_auto br_radius p-t_3 m-t_n3 m-t_0:md p-t_0:md p-r_4:md m-r_n4:md c_white-8 bg_acc-n1 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light">
+						<a class="p_3 c_inherit-all h:undecorated flex flex_column flex_row:md" href="../"><i class="icon fas fa-fw fa-sign-out-alt p-x_2 p-y_3 p-y_0:md self_center"></i><span class="label self_center p-l_3:md p-l_4:lg lowercase lh_0 font_n2 font_3:md font_4:lg display_none:md opacity_0">Log Out</span></a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<nav id="navigation_mobile" class="block display_none:md shadow_emboss-light filter_blur br_radius bg_black-6 p_2 sticky t_3 z_4">
+			<ul class="flex flex_row ul_none justify_between">
+				<li class="nav-item flex_auto br_radius c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light active">
+					<a class="c_inherit-all flex flex_column h:undecorated p_3" href="./home"><i class="icon fas fa-fw fa-home-heart p-y_2 self_center"></i><span class="label self_center  lowercase lh_0 active font_n2 h_1h">Home</span></a>
+				</li>
+				<li class="nav-item flex_auto br_radius c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light ">
+					<a class="c_inherit-all flex flex_column h:undecorated p_3" href="./search"><i class="icon fas fa-fw fa-search p-y_2 self_center"></i><span class="label self_center  lowercase lh_0 font_n2 h_1h ">Search</span></a>
+				</li>
+				<li class="nav-item flex_auto br_radius c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light ">
+					<a class="c_inherit-all flex flex_column h:undecorated p_3" href="./saved"><i class="icon fas fa-fw fa-heart p-y_2 self_center"></i><span class="label self_center  lowercase lh_0 font_n2 h_1h nowrap ">Saved</span></a>
+				</li>
+				<li class="nav-item flex_auto br_radius c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light ">
+					<a class="c_inherit-all flex flex_column h:undecorated p_3" href="./credits"><i class="icon fas fa-fw fa-award p-y_2 self_center"></i><span class="label self_center  lowercase lh_0 font_n2 h_1h ">Credits</span></a>
+				</li>
+				<li class="nav-item flex_auto br_radius c_white-8 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light   disabled opacity_3 cursor_not-allowed  ">
+					<a class="c_inherit-all flex flex_column h:undecorated p_3" href="./presentation"><i class="icon fas fa-fw fa-play p-y_2 self_center"></i><span class="label self_center lowercase lh_0 font_n2 h_1h ">Watching</span></a>
+				</li>
+				<li class="nav-item flex_auto br_radius c_white-8 bg_acc-n1 h:bg_black-9 h:c_white a:c_white a:bg_primary h:shadow_overlap-light a:shadow_overlap-light">
+					<a href="../" class="c_inherit-all flex flex_column h:undecorated p_3"><i class="icon fas fa-fw fa-sign-out-alt p-y_2 self_center"></i><span class="label self_center lowercase lh_0 font_n2 nowrap h_1h">Log Out</span></a>
+				</li>
+			</ul>
+		</nav>
+		<header class="p_3 p_0:md ">
+	<section class="br_radius overflow_hidden relative z_1">
+		<picture class="w_100">
+			<source class="w_100" srcset="https://acc-style.github.io/PrototypingACCorg/assets/images/lib/J22043_1440x250.jpg" media="(min-width: 1200px)">
+			<source class="w_100" srcset="https://acc-style.github.io/PrototypingACCorg/assets/images/lib/J22043_1200x250.jpg" media="(min-width: 1024px)">
+			<source class="w_100" srcset="https://acc-style.github.io/PrototypingACCorg/assets/images/lib/J22043_768x200.jpg" media="(min-width: 768px)">
+			<source class="w_100" srcset="https://acc-style.github.io/PrototypingACCorg/assets/images/lib/J22043_600x225.jpg" media="(min-width: 400px)">
+			<img src="https://acc-style.github.io/PrototypingACCorg/assets/images/lib/J22043_400x300.jpg" class="w_100" alt="">
+		</picture>
+	</section>
+	<div class="m_auto m-t_n4 t_n4 t_n5:lg m-t_n5:lg max-w_60:lg max-w_40:md p-x_3 p-x_5:md z_2 relative">
+		<div class="inset-level_up-1 bg_white br_radius shadow_overlap-light relative br_solid br_1 br_black-2  p_4 p_5:lg">
+			<div class="input-holder flex flex_row self_end relative w_100 p_2 p_3:md">
+				<input id="input_uniqueTextAndButton" name="input_uniqueTextAndButton" type="text" placeholder="Search" class="br_2 flex_auto p-y_2 br_solid flex_auto p-l_4 lh_3 br_radius bg_white c_black bg_white f:bg_primary br_black-2  font_2 br-tr_square br-br_square" />
+				<button class="disabled b_0 br-br_radius br-tr_radius br_none br_square btn btn-primary c_white ease_out f:outline_none font_2 font_regular font_ui h:br_primary-n3 h:underline inline-block r_0 t_0 text_center transition_1 undecorated w_auto">
+					<i class="fas fa-search"></i>
+					<span class="inline-block:md display_none">Search</span>
+				</button>
+			</div>
+			<nav class="utility-nav p-t_3 p-t_4:lg font_n3 font_0:md font_1:lg ">
+				<ul class="flex flex_row ul_none justify_center">
+					<li class="text_center p-x_2 block p-x_4:md lh_1">
+						<a class="h:undecorated c_primary block h:c_secondary-n3 p_3 p_0:md"><i class="fal fa-star  block inline:md"></i><span class="block p-t_2 inline:md"> Featured</span></a>
+					</li>
+					<li class="text_center p-x_2 block p-x_4:md lh_1 br-l_1 br_solid br_black-4">
+						<a class="h:undecorated c_primary block h:c_secondary-n3 p_3 p_0:md"><i class="fal fa-sitemap  block inline:md"></i><span class="block p-t_2 inline:md"> Hot Topics</span></a>
+					</li>
+					<li class="text_center p-x_2 block p-x_4:md lh_1 text_center  br-l_1 br_solid br_black-4">
+						<a class="h:undecorated c_primary block h:c_secondary-n3 p_3 p_0:md"><i class="fal fa-heart block inline:md"></i><span class="block p-t_2 inline:md"> Saved</span></a>
+					</li>
+					<li class="text_center p-x_2 block p-x_4:md lh_1 br-l_1 br_solid br_black-4">
+						<a class="h:undecorated c_primary block h:c_secondary-n3 p_3 p_0:md"><i class="fal fa-play  block inline:md"></i><span class="block p-t_2 inline:md"> Continue Watching</span></a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</header> 
+<section class="grid:md flex flex_column columns_5 gap_4  grid-area_mainArea p-y_3 p-
+y_0:md font_1:lg font_0 w_100">
+	<div class="flex flex_column col-start col-end_5:lg col-end_4 font_0 font_1:lg font_ui font_regular w_100 inset-level_up-1 bg_white br_radius shadow_overlap-light relative br_solid br_1 br_black-2 p_2 p_3:md p_4:lg">
+		<header class="font_display font_regular  c_primary-n1 m-b_3 lh_1 m-b_4:lg m-t_3 ">
+			<h2 class="lh_1 m_0 font_regular   font_3:lg font_2:md font_1">Featured</h2>
+		</header>
+		<div class="relative isolation_isolate overflow_hidden m-x_n2 m-x_n3:md m-x_n4:lg">
+			<!-- Start of the javascript Widget -->
+			<!-- javascript documentation: http://ganlanyuan.github.io/tiny-slider/#2-add-markup -->
+			<div id="slider1" class="flex flex_nowrap flex_row justify_stretch p-y_4 p-x_3 overflow_hidden m-y_3 inset-level_down-1 bg_black-1 shadow_emboss-light br_solid br_1 br_black-2 br_radius texture_light ">
+				<div class="flex tns-holder-design flex_grow p-x_3">
+					<article class="flex flex_grow w_100 inset-level_up-1 bg_white br_radius shadow_overlap-light relative br_solid br_1 br_black-2">
+						<div class="flex flex_row font_ui justify_start relative w_100">
+							<main class="flex flex_column flex_auto justify_between flex_auto relative w_100 isolation_isolate p_4 gap_3">
+								<h2 class="font-size_up-1 font_display font_regular lh_2 h:underline c_primary-n3 m-t_2">
+									<a href="./sessions" class="c_inherit-all expanded-click-area z_1"> Clinical Update for the Chest Pain Arrhythmia Valvular Heart Disease Pharmacologic Clinical Chest Pain </a>
+								</h2>
+								<ul class="ul_none flex flex_row flex_wrap justify_start font-size_down-1 c_black-7 m-t_auto lh_0 items_end gap_2">
+									<li class="inline-block p-r_3 p_2 lh_0">
+										<span class="font-size_up c_accent-n2 block"><i class="fal fa-clock"></i> 15</span> minutes
+									</li>
+									<li class="inline-block p-r_3 p_2 lh_0">
+										<span class="font-size_up c_accent-n2 block">4</span> presentations
+									</li>
+									<li class="inline-block br_radius p-x_3 m-l_n3 p_2 z_3 self_end relative h:bg_black-2 lh_0">
+										<a href="" class="undecorated h:undecorated expanded-click-area">
+											<span class="font-size_up c_primary-n2 block"><i class="fal fa-paperclip"></i><span class="p-r_3">ZIP</span></span> Attachments </a>
+									</li>
+								</ul>										
+								<ul class="flex flex_row font_n3 gap_2 justify_start flex_wrap  self_start ul_none uppercase">
+									<li class="lh_0 flex_none">
+										<span class="bg_MOC-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> MOC </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_ABPMOCII-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> ABPMOCII </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_CME-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> CME </span>
+									</li>
+								</ul>
+							</main>
+							<aside class="flex_none p-x_3:md p-b_3">
+								<ul class="b_3 flex flex_column flex_wrap font_n3 gap_2 justify_end:md justify_start r_4 self_center ul_none uppercase p-x_3 m-t_n2 items_center">
+									<li class="flex_auto p-b_3 m-b_auto">
+										<button class="bg_transparent br_0 font-size_up inline-block m-t_n1 m-x_n3 p_0">
+											<span class="fa-stack fa-2x a:c_alert-n2 c_secondary-2 h:c_alert-n3 ">
+												<i class="fas fa-bookmark fa-stack-2x c_inherit-all text-shadow_black-1"></i>
+												<i class="fa-heart c_black-4 h:c_white a:c_white fa-stack-1x fas font-size_down-1  text-shadow_black-n1"></i>
+											</span>
+										</button>
+									</li>
+								</ul>
+							</aside>
+						</div>
+					</article>
+				</div>
+				<div class="flex tns-holder-design flex_grow p-x_3">
+					<article class="flex flex_grow w_100 inset-level_up-1 bg_white br_radius shadow_overlap-light relative br_solid br_1 br_black-2">
+						<div class="flex flex_row font_ui justify_start relative w_100">
+							<main class="flex flex_column flex_auto justify_between flex_auto relative w_100 isolation_isolate p_4 gap_3">
+								<h2 class="font-size_up-1 font_display font_regular lh_2 h:underline c_primary-n3 m-t_2">
+									<a href="./sessions" class="c_inherit-all expanded-click-area z_1"> Clinical Update for the Chest Pain Arrhythmia Valvular Heart Disease Pharmacologic Clinical Chest Pain </a>
+								</h2>
+								<ul class="ul_none flex flex_row flex_wrap justify_start font-size_down-1 c_black-7 m-t_auto lh_0 items_end gap_2">
+									<li class="inline-block p-r_3 p_2 lh_0">
+										<span class="font-size_up c_accent-n2 block"><i class="fal fa-clock"></i> 15</span> minutes
+									</li>
+									<li class="inline-block p-r_3 p_2 lh_0">
+										<span class="font-size_up c_accent-n2 block">4</span> presentations
+									</li>
+									<li class="inline-block br_radius p-x_3 m-l_n3 p_2 z_3 self_end relative h:bg_black-2 lh_0">
+										<a href="" class="undecorated h:undecorated expanded-click-area">
+											<span class="font-size_up c_primary-n2 block"><i class="fal fa-paperclip"></i><span class="p-r_3">ZIP</span></span> Attachments </a>
+									</li>
+								</ul>										
+								<ul class="flex flex_row font_n3 gap_2 justify_start flex_wrap  self_start ul_none uppercase">
+									<li class="lh_0 flex_none">
+										<span class="bg_MOC-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> MOC </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_CPE-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> CPE </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_ECME-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> ECME </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_AAPA-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> AAPA </span>
+									</li>
+								</ul>
+							</main>
+							<aside class="flex_none p-x_3:md p-b_3">
+								<ul class="b_3 flex flex_column flex_wrap font_n3 gap_2 justify_end:md justify_start r_4 self_center ul_none uppercase p-x_3 m-t_n2 items_center">
+									<li class="flex_auto p-b_3 m-b_auto">
+										<button class="bg_transparent br_0 font-size_up inline-block m-t_n1 m-x_n3 p_0">
+											<span class="fa-stack fa-2x a:c_alert-n2 c_secondary-2 h:c_alert-n3 ">
+												<i class="fas fa-bookmark fa-stack-2x c_inherit-all text-shadow_black-1"></i>
+												<i class="fa-heart c_black-4 h:c_white a:c_white fa-stack-1x fas font-size_down-1  text-shadow_black-n1"></i>
+											</span>
+										</button>
+									</li>
+								</ul>
+							</aside>
+						</div>
+					</article>
+				</div>
+				<div class="flex tns-holder-design flex_grow p-x_3">
+					<article class="flex flex_grow w_100 inset-level_up-1 bg_white br_radius shadow_overlap-light relative br_solid br_1 br_black-2">
+						<div class="flex flex_row font_ui justify_start relative w_100">
+							<main class="flex flex_column flex_auto justify_between flex_auto relative w_100 isolation_isolate p_4 gap_3">
+								<h2 class="font-size_up-1 font_display font_regular lh_2 h:underline c_primary-n3 m-t_2">
+									<a href="./sessions" class="c_inherit-all expanded-click-area z_1"> Clinical Update for the Chest Pain Arrhythmia Valvular Heart Disease Pharmacologic Clinical Chest Pain </a>
+								</h2>
+								<ul class="ul_none flex flex_row flex_wrap justify_start font-size_down-1 c_black-7 m-t_auto lh_0 items_end gap_2">
+									<li class="inline-block p-r_3 p_2 lh_0">
+										<span class="font-size_up c_accent-n2 block"><i class="fal fa-clock"></i> 15</span> minutes
+									</li>
+									<li class="inline-block p-r_3 p_2 lh_0">
+										<span class="font-size_up c_accent-n2 block">4</span> presentations
+									</li>
+									<li class="inline-block br_radius p-x_3 m-l_n3 p_2 z_3 self_end relative h:bg_black-2 lh_0">
+										<a href="" class="undecorated h:undecorated expanded-click-area">
+											<span class="font-size_up c_primary-n2 block"><i class="fal fa-paperclip"></i><span class="p-r_3">ZIP</span></span> Attachments </a>
+									</li>
+								</ul>										
+								<ul class="flex flex_row font_n3 gap_2 justify_start flex_wrap  self_start ul_none uppercase">
+									<li class="lh_0 flex_none">
+										<span class="bg_MOC-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> MOC </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_CME-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> CME </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_CNE-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> CNE </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_COP-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> COP </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_CPE-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> CPE </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_ECME-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> ECME </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_AAPA-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> AAPA </span>
+									</li>
+								</ul>
+							</main>
+							<aside class="flex_none p-x_3:md p-b_3">
+								<ul class="b_3 flex flex_column flex_wrap font_n3 gap_2 justify_end:md justify_start r_4 self_center ul_none uppercase p-x_3 m-t_n2 items_center">
+									<li class="flex_auto p-b_3 m-b_auto">
+										<button class="bg_transparent br_0 font-size_up inline-block m-t_n1 m-x_n3 p_0">
+											<span class="fa-stack fa-2x a:c_alert-n2 c_secondary-2 h:c_alert-n3 ">
+												<i class="fas fa-bookmark fa-stack-2x c_inherit-all text-shadow_black-1"></i>
+												<i class="fa-heart c_black-4 h:c_white a:c_white fa-stack-1x fas font-size_down-1  text-shadow_black-n1"></i>
+											</span>
+										</button>
+									</li>
+								</ul>
+							</aside>
+						</div>
+					</article>
+				</div>
+				<div class="flex tns-holder-design flex_grow p-x_3">
+					<article class="flex flex_grow w_100 inset-level_up-1 bg_white br_radius shadow_overlap-light relative br_solid br_1 br_black-2">
+						<div class="flex flex_row font_ui justify_start relative w_100">
+							<main class="flex flex_column flex_auto justify_between flex_auto relative w_100 isolation_isolate p_4 gap_3">
+								<h2 class="font-size_up-1 font_display font_regular lh_2 h:underline c_primary-n3 m-t_2">
+									<a href="./sessions" class="c_inherit-all expanded-click-area z_1"> Clinical Update for the Chest Pain Arrhythmia Valvular Heart Disease Pharmacologic Clinical Chest Pain </a>
+								</h2>
+								<ul class="ul_none flex flex_row flex_wrap justify_start font-size_down-1 c_black-7 m-t_auto lh_0 items_end gap_2">
+									<li class="inline-block p-r_3 p_2 lh_0">
+										<span class="font-size_up c_accent-n2 block"><i class="fal fa-clock"></i> 15</span> minutes
+									</li>
+									<li class="inline-block p-r_3 p_2 lh_0">
+										<span class="font-size_up c_accent-n2 block">4</span> presentations
+									</li>
+									<li class="inline-block br_radius p-x_3 m-l_n3 p_2 z_3 self_end relative h:bg_black-2 lh_0">
+										<a href="" class="undecorated h:undecorated expanded-click-area">
+											<span class="font-size_up c_primary-n2 block"><i class="fal fa-paperclip"></i><span class="p-r_3">ZIP</span></span> Attachments </a>
+									</li>
+								</ul>										
+								<ul class="flex flex_row font_n3 gap_2 justify_start flex_wrap  self_start ul_none uppercase">
+									<li class="lh_0 flex_none">
+										<span class="bg_MOC-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> MOC </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_ABPMOCII-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> ABPMOCII </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_CME-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> CME </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_CNE-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> CNE </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_COP-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> COP </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_CPE-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> CPE </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_ECME-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> ECME </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_AAPA-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> AAPA </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_MOC-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> MOC </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_ABPMOCII-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> ABPMOCII </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_CME-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> CME </span>
+									</li>
+								</ul>
+							</main>
+							<aside class="flex_none p-x_3:md p-b_3">
+								<ul class="b_3 flex flex_column flex_wrap font_n3 gap_2 justify_end:md justify_start r_4 self_center ul_none uppercase p-x_3 m-t_n2 items_center">
+									<li class="flex_auto p-b_3 m-b_auto">
+										<button class="bg_transparent br_0 font-size_up inline-block m-t_n1 m-x_n3 p_0">
+											<span class="fa-stack fa-2x a:c_alert-n2 c_secondary-2 h:c_alert-n3 ">
+												<i class="fas fa-bookmark fa-stack-2x c_inherit-all text-shadow_black-1"></i>
+												<i class="fa-heart c_black-4 h:c_white a:c_white fa-stack-1x fas font-size_down-1  text-shadow_black-n1"></i>
+											</span>
+										</button>
+									</li>
+								</ul>
+							</aside>
+						</div>
+					</article>
+				</div>
+				<div class="flex tns-holder-design flex_grow p-x_3">
+					<article class="flex flex_grow w_100 inset-level_up-1 bg_white br_radius shadow_overlap-light relative br_solid br_1 br_black-2">
+						<div class="flex flex_row font_ui justify_start relative w_100">
+							<main class="flex flex_column flex_auto justify_between flex_auto relative w_100 isolation_isolate p_4 gap_3">
+								<h2 class="font-size_up-1 font_display font_regular lh_2 h:underline c_primary-n3 m-t_2">
+									<a href="./sessions" class="c_inherit-all expanded-click-area z_1"> Clinical Update for the Chest Pain Arrhythmia Valvular Heart Disease Pharmacologic Clinical Chest Pain </a>
+								</h2>
+								<ul class="ul_none flex flex_row flex_wrap justify_start font-size_down-1 c_black-7 m-t_auto lh_0 items_end gap_2">
+									<li class="inline-block p-r_3 p_2 lh_0">
+										<span class="font-size_up c_accent-n2 block"><i class="fal fa-clock"></i> 15</span> minutes
+									</li>
+									<li class="inline-block p-r_3 p_2 lh_0">
+										<span class="font-size_up c_accent-n2 block">4</span> presentations
+									</li>
+									<li class="inline-block br_radius p-x_3 m-l_n3 p_2 z_3 self_end relative h:bg_black-2 lh_0">
+										<a href="" class="undecorated h:undecorated expanded-click-area">
+											<span class="font-size_up c_primary-n2 block"><i class="fal fa-paperclip"></i><span class="p-r_3">ZIP</span></span> Attachments </a>
+									</li>
+								</ul>										
+								<ul class="flex flex_row font_n3 gap_2 justify_start flex_wrap  self_start ul_none uppercase">
+									<li class="lh_0 flex_none">
+										<span class="bg_MOC-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> MOC </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_ABPMOCII-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> ABPMOCII </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_CME-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> CME </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_CNE-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> CNE </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_COP-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> COP </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_CPE-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> CPE </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_ECME-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> ECME </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_AAPA-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> AAPA </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_MOC-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> MOC </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_ABPMOCII-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> ABPMOCII </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_CME-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> CME </span>
+									</li>
+								</ul>
+							</main>
+							<aside class="flex_none p-x_3:md p-b_3">
+								<ul class="b_3 flex flex_column flex_wrap font_n3 gap_2 justify_end:md justify_start r_4 self_center ul_none uppercase p-x_3 m-t_n2 items_center">
+									<li class="flex_auto p-b_3 m-b_auto">
+										<button class="bg_transparent br_0 font-size_up inline-block m-t_n1 m-x_n3 p_0">
+											<span class="fa-stack fa-2x a:c_alert-n2 c_secondary-2 h:c_alert-n3 ">
+												<i class="fas fa-bookmark fa-stack-2x c_inherit-all text-shadow_black-1"></i>
+												<i class="fa-heart c_black-4 h:c_white a:c_white fa-stack-1x fas font-size_down-1  text-shadow_black-n1"></i>
+											</span>
+										</button>
+									</li>
+								</ul>
+							</aside>
+						</div>
+					</article>
+				</div>
+				<div class="flex tns-holder-design flex_grow p-x_3">
+					<article class="flex flex_grow w_100 inset-level_up-1 bg_white br_radius shadow_overlap-light relative br_solid br_1 br_black-2">
+						<div class="flex flex_row font_ui justify_start relative w_100">
+							<main class="flex flex_column flex_auto justify_between flex_auto relative w_100 isolation_isolate p_4 gap_3">
+								<h2 class="font-size_up-1 font_display font_regular lh_2 h:underline c_primary-n3 m-t_2">
+									<a href="./sessions" class="c_inherit-all expanded-click-area z_1"> Clinical Update for the Chest Pain Arrhythmia Valvular Heart Disease Pharmacologic Clinical Chest Pain </a>
+								</h2>
+								<ul class="ul_none flex flex_row flex_wrap justify_start font-size_down-1 c_black-7 m-t_auto lh_0 items_end gap_2">
+									<li class="inline-block p-r_3 p_2 lh_0">
+										<span class="font-size_up c_accent-n2 block"><i class="fal fa-clock"></i> 15</span> minutes
+									</li>
+									<li class="inline-block p-r_3 p_2 lh_0">
+										<span class="font-size_up c_accent-n2 block">4</span> presentations
+									</li>
+									<li class="inline-block br_radius p-x_3 m-l_n3 p_2 z_3 self_end relative h:bg_black-2 lh_0">
+										<a href="" class="undecorated h:undecorated expanded-click-area">
+											<span class="font-size_up c_primary-n2 block"><i class="fal fa-paperclip"></i><span class="p-r_3">ZIP</span></span> Attachments </a>
+									</li>
+								</ul>										
+								<ul class="flex flex_row font_n3 gap_2 justify_start flex_wrap  self_start ul_none uppercase">
+									<li class="lh_0 flex_none">
+										<span class="bg_MOC-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> MOC </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_ABPMOCII-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> ABPMOCII </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_CME-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> CME </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_CNE-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> CNE </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_COP-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> COP </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_CPE-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> CPE </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_ECME-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> ECME </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_AAPA-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> AAPA </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_MOC-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> MOC </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_ABPMOCII-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> ABPMOCII </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_CME-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> CME </span>
+									</li>
+								</ul>
+							</main>
+							<aside class="flex_none p-x_3:md p-b_3">
+								<ul class="b_3 flex flex_column flex_wrap font_n3 gap_2 justify_end:md justify_start r_4 self_center ul_none uppercase p-x_3 m-t_n2 items_center">
+									<li class="flex_auto p-b_3 m-b_auto">
+										<button class="bg_transparent br_0 font-size_up inline-block m-t_n1 m-x_n3 p_0">
+											<span class="fa-stack fa-2x a:c_alert-n2 c_secondary-2 h:c_alert-n3 ">
+												<i class="fas fa-bookmark fa-stack-2x c_inherit-all text-shadow_black-1"></i>
+												<i class="fa-heart c_black-4 h:c_white a:c_white fa-stack-1x fas font-size_down-1  text-shadow_black-n1"></i>
+											</span>
+										</button>
+									</li>
+								</ul>
+							</aside>
+						</div>
+					</article>
+				</div>
+				<div class="flex tns-holder-design flex_grow p-x_3">
+					<article class="flex flex_grow w_100 inset-level_up-1 bg_white br_radius shadow_overlap-light relative br_solid br_1 br_black-2">
+						<div class="flex flex_row font_ui justify_start relative w_100">
+							<main class="flex flex_column flex_auto justify_between flex_auto relative w_100 isolation_isolate p_4 gap_3">
+								<h2 class="font-size_up-1 font_display font_regular lh_2 h:underline c_primary-n3 m-t_2">
+									<a href="./sessions" class="c_inherit-all expanded-click-area z_1"> Clinical Update for the Chest Pain Arrhythmia Valvular Heart Disease Pharmacologic Clinical Chest Pain </a>
+								</h2>
+								<ul class="ul_none flex flex_row flex_wrap justify_start font-size_down-1 c_black-7 m-t_auto lh_0 items_end gap_2">
+									<li class="inline-block p-r_3 p_2 lh_0">
+										<span class="font-size_up c_accent-n2 block"><i class="fal fa-clock"></i> 15</span> minutes
+									</li>
+									<li class="inline-block p-r_3 p_2 lh_0">
+										<span class="font-size_up c_accent-n2 block">4</span> presentations
+									</li>
+									<li class="inline-block br_radius p-x_3 m-l_n3 p_2 z_3 self_end relative h:bg_black-2 lh_0">
+										<a href="" class="undecorated h:undecorated expanded-click-area">
+											<span class="font-size_up c_primary-n2 block"><i class="fal fa-paperclip"></i><span class="p-r_3">ZIP</span></span> Attachments </a>
+									</li>
+								</ul>										
+								<ul class="flex flex_row font_n3 gap_2 justify_start flex_wrap  self_start ul_none uppercase">
+									<li class="lh_0 flex_none">
+										<span class="bg_MOC-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> MOC </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_ABPMOCII-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> ABPMOCII </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_CME-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> CME </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_CNE-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> CNE </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_COP-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> COP </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_CPE-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> CPE </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_ECME-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> ECME </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_AAPA-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> AAPA </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_MOC-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> MOC </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_ABPMOCII-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> ABPMOCII </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_CME-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> CME </span>
+									</li>
+								</ul>
+							</main>
+							<aside class="flex_none p-x_3:md p-b_3">
+								<ul class="b_3 flex flex_column flex_wrap font_n3 gap_2 justify_end:md justify_start r_4 self_center ul_none uppercase p-x_3 m-t_n2 items_center">
+									<li class="flex_auto p-b_3 m-b_auto">
+										<button class="bg_transparent br_0 font-size_up inline-block m-t_n1 m-x_n3 p_0">
+											<span class="fa-stack fa-2x a:c_alert-n2 c_secondary-2 h:c_alert-n3 ">
+												<i class="fas fa-bookmark fa-stack-2x c_inherit-all text-shadow_black-1"></i>
+												<i class="fa-heart c_black-4 h:c_white a:c_white fa-stack-1x fas font-size_down-1  text-shadow_black-n1"></i>
+											</span>
+										</button>
+									</li>
+								</ul>
+							</aside>
+						</div>
+					</article>
+				</div>
+				<div class="flex tns-holder-design flex_grow p-x_3">
+					<article class="flex flex_grow w_100 inset-level_up-1 bg_white br_radius shadow_overlap-light relative br_solid br_1 br_black-2">
+						<div class="flex flex_row font_ui justify_start relative w_100">
+							<main class="flex flex_column flex_auto justify_between flex_auto relative w_100 isolation_isolate p_4 gap_3">
+								<h2 class="font-size_up-1 font_display font_regular lh_2 h:underline c_primary-n3 m-t_2">
+									<a href="./sessions" class="c_inherit-all expanded-click-area z_1"> Clinical Update for the Chest Pain Arrhythmia Valvular Heart Disease Pharmacologic Clinical Chest Pain </a>
+								</h2>
+								<ul class="ul_none flex flex_row flex_wrap justify_start font-size_down-1 c_black-7 m-t_auto lh_0 items_end gap_2">
+									<li class="inline-block p-r_3 p_2 lh_0">
+										<span class="font-size_up c_accent-n2 block"><i class="fal fa-clock"></i> 15</span> minutes
+									</li>
+									<li class="inline-block p-r_3 p_2 lh_0">
+										<span class="font-size_up c_accent-n2 block">4</span> presentations
+									</li>
+									<li class="inline-block br_radius p-x_3 m-l_n3 p_2 z_3 self_end relative h:bg_black-2 lh_0">
+										<a href="" class="undecorated h:undecorated expanded-click-area">
+											<span class="font-size_up c_primary-n2 block"><i class="fal fa-paperclip"></i><span class="p-r_3">ZIP</span></span> Attachments </a>
+									</li>
+								</ul>										
+								<ul class="flex flex_row font_n3 gap_2 justify_start flex_wrap  self_start ul_none uppercase">
+									<li class="lh_0 flex_none">
+										<span class="bg_MOC-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> MOC </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_ABPMOCII-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> ABPMOCII </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_CME-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> CME </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_CNE-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> CNE </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_COP-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> COP </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_CPE-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> CPE </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_ECME-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> ECME </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_AAPA-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> AAPA </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_MOC-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> MOC </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_ABPMOCII-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> ABPMOCII </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_CME-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> CME </span>
+									</li>
+								</ul>
+							</main>
+							<aside class="flex_none p-x_3:md p-b_3">
+								<ul class="b_3 flex flex_column flex_wrap font_n3 gap_2 justify_end:md justify_start r_4 self_center ul_none uppercase p-x_3 m-t_n2 items_center">
+									<li class="flex_auto p-b_3 m-b_auto">
+										<button class="bg_transparent br_0 font-size_up inline-block m-t_n1 m-x_n3 p_0">
+											<span class="fa-stack fa-2x a:c_alert-n2 c_secondary-2 h:c_alert-n3 ">
+												<i class="fas fa-bookmark fa-stack-2x c_inherit-all text-shadow_black-1"></i>
+												<i class="fa-heart c_black-4 h:c_white a:c_white fa-stack-1x fas font-size_down-1  text-shadow_black-n1"></i>
+											</span>
+										</button>
+									</li>
+								</ul>
+							</aside>
+						</div>
+					</article>
+				</div>
+				<div class="flex tns-holder-design flex_grow p-x_3">
+					<article class="flex flex_grow w_100 inset-level_up-1 bg_white br_radius shadow_overlap-light relative br_solid br_1 br_black-2">
+						<div class="flex flex_row font_ui justify_start relative w_100">
+							<main class="flex flex_column flex_auto justify_between flex_auto relative w_100 isolation_isolate p_4 gap_3">
+								<h2 class="font-size_up-1 font_display font_regular lh_2 h:underline c_primary-n3 m-t_2">
+									<a href="./sessions" class="c_inherit-all expanded-click-area z_1"> Clinical Update for the Chest Pain Arrhythmia Valvular Heart Disease Pharmacologic Clinical Chest Pain </a>
+								</h2>
+								<ul class="ul_none flex flex_row flex_wrap justify_start font-size_down-1 c_black-7 m-t_auto lh_0 items_end gap_2">
+									<li class="inline-block p-r_3 p_2 lh_0">
+										<span class="font-size_up c_accent-n2 block"><i class="fal fa-clock"></i> 15</span> minutes
+									</li>
+									<li class="inline-block p-r_3 p_2 lh_0">
+										<span class="font-size_up c_accent-n2 block">4</span> presentations
+									</li>
+									<li class="inline-block br_radius p-x_3 m-l_n3 p_2 z_3 self_end relative h:bg_black-2 lh_0">
+										<a href="" class="undecorated h:undecorated expanded-click-area">
+											<span class="font-size_up c_primary-n2 block"><i class="fal fa-paperclip"></i><span class="p-r_3">ZIP</span></span> Attachments </a>
+									</li>
+								</ul>										
+								<ul class="flex flex_row font_n3 gap_2 justify_start flex_wrap  self_start ul_none uppercase">
+									<li class="lh_0 flex_none">
+										<span class="bg_MOC-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> MOC </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_ABPMOCII-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> ABPMOCII </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_CME-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> CME </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_CNE-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> CNE </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_COP-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> COP </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_CPE-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> CPE </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_ECME-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> ECME </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_AAPA-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> AAPA </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_MOC-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> MOC </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_ABPMOCII-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> ABPMOCII </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_CME-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> CME </span>
+									</li>
+								</ul>
+							</main>
+							<aside class="flex_none p-x_3:md p-b_3">
+								<ul class="b_3 flex flex_column flex_wrap font_n3 gap_2 justify_end:md justify_start r_4 self_center ul_none uppercase p-x_3 m-t_n2 items_center">
+									<li class="flex_auto p-b_3 m-b_auto">
+										<button class="bg_transparent br_0 font-size_up inline-block m-t_n1 m-x_n3 p_0">
+											<span class="fa-stack fa-2x a:c_alert-n2 c_secondary-2 h:c_alert-n3 ">
+												<i class="fas fa-bookmark fa-stack-2x c_inherit-all text-shadow_black-1"></i>
+												<i class="fa-heart c_black-4 h:c_white a:c_white fa-stack-1x fas font-size_down-1  text-shadow_black-n1"></i>
+											</span>
+										</button>
+									</li>
+								</ul>
+							</aside>
+						</div>
+					</article>
+				</div>
+				<div class="flex tns-holder-design flex_grow p-x_3">
+					<article class="flex flex_grow w_100 inset-level_up-1 bg_white br_radius shadow_overlap-light relative br_solid br_1 br_black-2">
+						<div class="flex flex_row font_ui justify_start relative w_100">
+							<main class="flex flex_column flex_auto justify_between flex_auto relative w_100 isolation_isolate p_4 gap_3">
+								<h2 class="font-size_up-1 font_display font_regular lh_2 h:underline c_primary-n3 m-t_2">
+									<a href="./sessions" class="c_inherit-all expanded-click-area z_1"> Clinical Update for the Chest Pain Arrhythmia Valvular Heart Disease Pharmacologic Clinical Chest Pain </a>
+								</h2>
+								<ul class="ul_none flex flex_row flex_wrap justify_start font-size_down-1 c_black-7 m-t_auto lh_0 items_end gap_2">
+									<li class="inline-block p-r_3 p_2 lh_0">
+										<span class="font-size_up c_accent-n2 block"><i class="fal fa-clock"></i> 15</span> minutes
+									</li>
+									<li class="inline-block p-r_3 p_2 lh_0">
+										<span class="font-size_up c_accent-n2 block">4</span> presentations
+									</li>
+									<li class="inline-block br_radius p-x_3 m-l_n3 p_2 z_3 self_end relative h:bg_black-2 lh_0">
+										<a href="" class="undecorated h:undecorated expanded-click-area">
+											<span class="font-size_up c_primary-n2 block"><i class="fal fa-paperclip"></i><span class="p-r_3">ZIP</span></span> Attachments </a>
+									</li>
+								</ul>										
+								<ul class="flex flex_row font_n3 gap_2 justify_start flex_wrap  self_start ul_none uppercase">
+									<li class="lh_0 flex_none">
+										<span class="bg_MOC-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> MOC </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_ABPMOCII-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> ABPMOCII </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_CME-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> CME </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_CNE-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> CNE </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_COP-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> COP </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_CPE-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> CPE </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_ECME-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> ECME </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_AAPA-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> AAPA </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_MOC-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> MOC </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_ABPMOCII-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> ABPMOCII </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_CME-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> CME </span>
+									</li>
+								</ul>
+							</main>
+							<aside class="flex_none p-x_3:md p-b_3">
+								<ul class="b_3 flex flex_column flex_wrap font_n3 gap_2 justify_end:md justify_start r_4 self_center ul_none uppercase p-x_3 m-t_n2 items_center">
+									<li class="flex_auto p-b_3 m-b_auto">
+										<button class="bg_transparent br_0 font-size_up inline-block m-t_n1 m-x_n3 p_0">
+											<span class="fa-stack fa-2x a:c_alert-n2 c_secondary-2 h:c_alert-n3 ">
+												<i class="fas fa-bookmark fa-stack-2x c_inherit-all text-shadow_black-1"></i>
+												<i class="fa-heart c_black-4 h:c_white a:c_white fa-stack-1x fas font-size_down-1  text-shadow_black-n1"></i>
+											</span>
+										</button>
+									</li>
+								</ul>
+							</aside>
+						</div>
+					</article>
+				</div>
+				<div class="flex tns-holder-design flex_grow p-x_3">
+					<article class="flex flex_grow w_100 inset-level_up-1 bg_white br_radius shadow_overlap-light relative br_solid br_1 br_black-2">
+						<div class="flex flex_row font_ui justify_start relative w_100">
+							<main class="flex flex_column flex_auto justify_between flex_auto relative w_100 isolation_isolate p_4 gap_3">
+								<h2 class="font-size_up-1 font_display font_regular lh_2 h:underline c_primary-n3 m-t_2">
+									<a href="./sessions" class="c_inherit-all expanded-click-area z_1"> Clinical Update for the Chest Pain Arrhythmia Valvular Heart Disease Pharmacologic Clinical Chest Pain </a>
+								</h2>
+								<ul class="ul_none flex flex_row flex_wrap justify_start font-size_down-1 c_black-7 m-t_auto lh_0 items_end gap_2">
+									<li class="inline-block p-r_3 p_2 lh_0">
+										<span class="font-size_up c_accent-n2 block"><i class="fal fa-clock"></i> 15</span> minutes
+									</li>
+									<li class="inline-block p-r_3 p_2 lh_0">
+										<span class="font-size_up c_accent-n2 block">4</span> presentations
+									</li>
+									<li class="inline-block br_radius p-x_3 m-l_n3 p_2 z_3 self_end relative h:bg_black-2 lh_0">
+										<a href="" class="undecorated h:undecorated expanded-click-area">
+											<span class="font-size_up c_primary-n2 block"><i class="fal fa-paperclip"></i><span class="p-r_3">ZIP</span></span> Attachments </a>
+									</li>
+								</ul>										
+								<ul class="flex flex_row font_n3 gap_2 justify_start flex_wrap  self_start ul_none uppercase">
+									<li class="lh_0 flex_none">
+										<span class="bg_MOC-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> MOC </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_ABPMOCII-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> ABPMOCII </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_CME-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> CME </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_CNE-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> CNE </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_COP-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> COP </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_CPE-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> CPE </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_ECME-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> ECME </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_AAPA-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> AAPA </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_MOC-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> MOC </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_ABPMOCII-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> ABPMOCII </span>
+									</li>
+									<li class="lh_0 flex_none">
+										<span class="bg_CME-n2 block br_1 br_black-3 br_round br_solid c_white font_bold font_ui lh_1 p-y_1 p_2 text-shadow_black-1 text_center"> CME </span>
+									</li>
+								</ul>
+							</main>
+							<aside class="flex_none p-x_3:md p-b_3">
+								<ul class="b_3 flex flex_column flex_wrap font_n3 gap_2 justify_end:md justify_start r_4 self_center ul_none uppercase p-x_3 m-t_n2 items_center">
+									<li class="flex_auto p-b_3 m-b_auto">
+										<button class="bg_transparent br_0 font-size_up inline-block m-t_n1 m-x_n3 p_0">
+											<span class="fa-stack fa-2x a:c_alert-n2 c_secondary-2 h:c_alert-n3 ">
+												<i class="fas fa-bookmark fa-stack-2x c_inherit-all text-shadow_black-1"></i>
+												<i class="fa-heart c_black-4 h:c_white a:c_white fa-stack-1x fas font-size_down-1  text-shadow_black-n1"></i>
+											</span>
+										</button>
+									</li>
+								</ul>
+							</aside>
+						</div>
+					</article>
+				</div>
+			</div>
+			<div class="customize-tools">
+				<ul class="controls ul_none font-size_up-2 c_black-6" id="slider1-customize-controls" aria-label="Carousel Navigation" tabindex="0">
+					<li class="prev bg_white-8 h:bg_black-1 h:c_black-9 filter_blur absolute t_1 b_1 l_0 p_3 flex_column flex justify_center items_center br_primary-3 br_solid br_1 br-l_0 br-br_radius br-tr_radius shadow_overlap-light" aria-controls="slider1" tabindex="-1" data-controls="prev">
+						<i class="fal fa-chevron-left"></i>
+					</li>
+					<li class="next bg_white-8 h:bg_black-1 h:c_black-9 filter_blur absolute t_1 b_1 r_0 p_3 flex_column flex justify_center items_center br_primary-3 br_solid br_1 br-r_0 br-bl_radius br-tl_radius shadow_overlap-light" aria-controls="slider1" tabindex="-1" data-controls="next">
+						<i class="fal fa-chevron-right"></i>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<script>
+		// let fadeInSlides = function(selector) {
+		// 			let selectorSlides = selector + ' .display_none';
+		// 			console.log(selectorSlides);
+		// 			let els = document.querySelectorAll(selectorSlides);
+		// 			setTimeout(function() {
+		// 				for(i=0; i<els.length; i++){
+		// 				els[i].classList.add("opacity_none");
+		// 				els[i].classList.remove("display_none");
+		// 				els[i].classList.remove("opacity_0");
+		// 			}
+		// 			}, 500);
+
+					
+		// 	}
+			window.addEventListener("load", function (event) {			
+
+				let args = {
+					items: 1,
+					mouseDrag: true,
+					slideBy: "page",
+					swipeAngle: false,
+					autoplay: false,
+					controls: true,
+					nav: false,
+					loop: true,
+					edgePadding: 48,
+					center: false,
+
+					// onInit: fadeInSlides("#slider1"),
+					responsive: {
+						1: {
+							items: 1
+						},
+						768: {
+							items: 1
+						},
+						1200: {
+							items: 2
+						},
+						1400: {
+							items: 3
+						}
+					}
+				};
+
+				
+				
+				
+			let slider1 = tns({ container: '#slider1', controlsContainer: "#slider1-customize-controls", ...args });
+
+			});
+
+		</script>
+<style>.tns-holder-design{ width:30%;}</style>
+		<!-- End of widget. -->
+		<footer class="flex flex_row-reverse p-t_3 p-b_4"><a href="" class="link self_end   ">view all from "Featured" <i class="fal fa-chevron-circle-right m-r_3"></i></a></footer>
+		<header class="font_display font_regular  c_primary-n1 m-b_3 lh_1 m-b_4:lg m-t_3 ">
+			<h2 class="lh_1 m_0 font_regular   font_3:lg font_2:md font_1">Hot Topics</h2>
+		</header>
+		<div class="p-y_3 relative m-x_n2 m-x_n3:md m-x_n4:lg">
+			<div class="tns-outer inset-level_down-1 bg_black-1 shadow_emboss-light br_solid br_1 br_black-2 br_radius texture_light  font_0 font_ui font_regular">
+				<div class="tns-ovh">
+					<div class="tns-inner">
+						<div id="slider3" class=" flex flex_row justify_stretch p-y_4 p-x_3 overflow_hidden  tns-slider tns-carousel tns-subpixel tns-calc tns-horizontal">
+							<div class="tns-item  tns-slide-active p-x_5">
+								<article class="bg_white br_1 br_black-1 br_radius br_solid flex flex_grow shadow_overlap-light w_100">
+									<div class="flex flex_row justify_start relative w_100">
+										<main class="flex flex_column flex_auto justify_between flex_auto p-l_4 p-x_4:md  p-y_3 p-y_3:lg relative w_100 isolation_isolate reading-typography">
+											<h2 class=""> You don't have any previously Hot Topics presentations. </h2>
+											<p>This collection is based off of your watching history. Come back here when you want to review or re-watch what you have previously viewed.</p>
+										</main>
+									</div>
+								</article>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="customize-tools">
+				<ul class="controls ul_none font-size_up-2 c_black-6" id="slider3-customize-controls" aria-label="Carousel Navigation" tabindex="0">
+					<li class="disabled prev bg_white-8 filter_blur absolute t_1 b_1 l_0 p_3 flex_column flex justify_center items_center br_primary-3 br_solid br_1 br-l_0 br-br_radius br-tr_radius shadow_overlap-light" aria-controls="slider3" tabindex="-1" data-controls="prev">
+						<i class="fal fa-chevron-left opacity_3"></i>
+					</li>
+					<li class="disabled next bg_white-8  filter_blur absolute t_1 b_1 r_0 p_3 flex_column flex justify_center items_center br_primary-3 br_solid br_1 br-r_0 br-bl_radius br-tl_radius shadow_overlap-light" aria-controls="slider3" tabindex="-1" data-controls="next">
+						<i class="fal fa-chevron-right opacity_3"></i>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<footer class="flex flex_row-reverse p-t_3 p-b_4"><a href="" class="link self_end   ">view all from "Hot Topics" <i class="fal fa-chevron-circle-right m-r_3"></i></a></footer>
+	</div>
+	<div class="flex flex_column col-start_5:lg col-end col-start_4 w_100">
+		<section class="font_0 font_1:lg font_ui font_regular flex_100 flex_auto inset-level_up-1 bg_white br_radius shadow_overlap-light relative br_solid br_1 br_black-2 p_2 p_3:md p_4:lg">
+			<header class="font_display font_regular  c_primary-n1 m-b_3 lh_1 m-b_4:lg m-t_3 ">
+				<h2 class="lh_1 m_0 font_regular   font_3:lg font_2:md font_1">Continue Watching</h2>
+			</header>
+			<div class="font_n2 font_n1:lg relative isolation_isolate">
+				<ul class="flex flex_column justify_stretch gap_0 ul_none inset-level_down-1 bg_black-1 shadow_emboss-light br_solid br_1 br_black-2 br_radius texture_light p_2 p_3:md p_4:lg">
+					<li class="flex flex_row font_ui justify_between br-t_1 br-b_1  br_solid br_black-1 m-b_n1 items_center relative w_100 gap_3 p_2 p_3:md h:bg_white-8 br_radius relative">
+						<h3 class="font-size_up-1 lh_2 font_display font_regular lh_1 c_primary-n3 m_0 flex_auto"> Presentation of the findings Valvular Heart Disease </h3>
+						<span class="flex_none flex flex_column items_center justify_center ">
+							<a class="font-size_up-2 self_center block lh_0 c_primary br_radius aspect_1x1 text_center expanded-click-area nowrap p_4 h:bg_primary-n2 h:c_white bg_white-5 shadow_bevel-light" href="./presentation">
+								<i class="fas fa-play"></i>
+							</a>
+						</span>
+					</li>
+					<li class="flex flex_row font_ui justify_between br-t_1 br-b_1  br_solid br_black-1 m-b_n1 items_center relative w_100 gap_3 p_2 p_3:md h:bg_white-8 br_radius relative">
+						<h3 class="font-size_up-1 lh_2 font_display font_regular lh_1 c_primary-n3 m_0 flex_auto"> Presentation of the findings Arteriosclerosis Valvular Heart Disease Pericardial </h3>
+						<span class="flex_none flex flex_column items_center justify_center ">
+							<a class="font-size_up-2 self_center block lh_0 c_primary br_radius aspect_1x1 text_center expanded-click-area nowrap p_4 h:bg_primary-n2 h:c_white bg_white-5 shadow_bevel-light" href="./presentation">
+								<i class="fas fa-play"></i>
+							</a>
+						</span>
+					</li>
+					<li class="flex flex_row font_ui justify_between br-t_1 br-b_1  br_solid br_black-1 m-b_n1 items_center relative w_100 gap_3 p_2 p_3:md h:bg_white-8 br_radius relative">
+						<h3 class="font-size_up-1 lh_2 font_display font_regular lh_1 c_primary-n3 m_0 flex_auto"> Presentation of the findings Cardiovascular Valvular Heart Disease Cardiovascular Electrocardiographic Chest Pain Blood Vessel Valvular Heart Disease Blood Vessel Chest Pain </h3>
+						<span class="flex_none flex flex_column items_center justify_center ">
+							<a class="font-size_up-2 self_center block lh_0 c_primary br_radius aspect_1x1 text_center expanded-click-area nowrap p_4 h:bg_primary-n2 h:c_white bg_white-5 shadow_bevel-light" href="./presentation">
+								<i class="fas fa-play"></i>
+							</a>
+						</span>
+					</li>
+					<li class="flex flex_row font_ui justify_between br-t_1 br-b_1  br_solid br_black-1 m-b_n1 items_center relative w_100 gap_3 p_2 p_3:md h:bg_white-8 br_radius relative">
+						<h3 class="font-size_up-1 lh_2 font_display font_regular lh_1 c_primary-n3 m_0 flex_auto"> Presentation of the findings Pharmacologic Arrhythmia Electrocardiogram Valvular Pericardial Electrocardiogram </h3>
+						<span class="flex_none flex flex_column items_center justify_center ">
+							<a class="font-size_up-2 self_center block lh_0 c_primary br_radius aspect_1x1 text_center expanded-click-area nowrap p_4 h:bg_primary-n2 h:c_white bg_white-5 shadow_bevel-light" href="./presentation">
+								<i class="fas fa-play"></i>
+							</a>
+						</span>
+					</li>
+					<li class="flex flex_row font_ui justify_between br-t_1 br-b_1  br_solid br_black-1 m-b_n1 items_center relative w_100 gap_3 p_2 p_3:md h:bg_white-8 br_radius relative">
+						<h3 class="font-size_up-1 lh_2 font_display font_regular lh_1 c_primary-n3 m_0 flex_auto"> Presentation of the findings Cardiovascular Pericardial </h3>
+						<span class="flex_none flex flex_column items_center justify_center ">
+							<a class="font-size_up-2 self_center block lh_0 c_primary br_radius aspect_1x1 text_center expanded-click-area nowrap p_4 h:bg_primary-n2 h:c_white bg_white-5 shadow_bevel-light" href="./presentation">
+								<i class="fas fa-play"></i>
+							</a>
+						</span>
+					</li>
+				</ul>
+			</div>
+			<footer class="flex flex_row-reverse p-t_3 p-b_4"><a href="" class="link self_end   ">view all from "continue watching" <i class="fal fa-chevron-circle-right m-r_3"></i></a></footer>
+		</section>
+	</div>
+	<div class="col-start col-end w_100">
+		<section class="font_0 font_1:lg font_ui font_regular flex_100 flex_auto inset-level_up bg_white-7 br_radius br_solid br_1 br_black-2 p_2 p_3:md p_4:lg">
+			<header class="font_display font_regular  c_primary-n1 m-b_3 lh_1 m-b_4:lg m-t_3 ">
+				<h2 class="lh_1 m_0 font_regular   font_3:lg font_2:md font_1">watch again</h2>
+			</header>
+			<div class="p-y_3 relative m-x_n2 m-x_n3:md m-x_n4:lg">
+				<div class="tns-outer inset-level_down-1 bg_black-1 shadow_emboss-light br_solid br_1 br_black-2 br_radius texture_light  font_0 font_ui font_regular">
+					<div class="tns-ovh">
+						<div class="tns-inner">
+							<div id="slider3" class=" flex flex_row justify_stretch p-y_4 p-x_3 overflow_hidden  tns-slider tns-carousel tns-subpixel tns-calc tns-horizontal">
+								<div class="tns-item  tns-slide-active p-x_5">
+									<article class="bg_white br_1 br_black-1 br_radius br_solid flex flex_grow shadow_overlap-light w_100">
+										<div class="flex flex_row justify_start relative w_100">
+											<main class="flex flex_column flex_auto justify_between flex_auto p-l_4 p-x_4:md  p-y_3 p-y_3:lg relative w_100 isolation_isolate reading-typography">
+												<h2 class=""> You don't have any previously watch again presentations. </h2>
+												<p>This collection is based off of your watching history. Come back here when you want to review or re-watch what you have previously viewed.</p>
+											</main>
+										</div>
+									</article>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="customize-tools">
+					<ul class="controls ul_none font-size_up-2 c_black-6" id="slider3-customize-controls" aria-label="Carousel Navigation" tabindex="0">
+						<li class="disabled prev bg_white-8 filter_blur absolute t_1 b_1 l_0 p_3 flex_column flex justify_center items_center br_primary-3 br_solid br_1 br-l_0 br-br_radius br-tr_radius shadow_overlap-light" aria-controls="slider3" tabindex="-1" data-controls="prev">
+							<i class="fal fa-chevron-left opacity_3"></i>
+						</li>
+						<li class="disabled next bg_white-8  filter_blur absolute t_1 b_1 r_0 p_3 flex_column flex justify_center items_center br_primary-3 br_solid br_1 br-r_0 br-bl_radius br-tl_radius shadow_overlap-light" aria-controls="slider3" tabindex="-1" data-controls="next">
+							<i class="fal fa-chevron-right opacity_3"></i>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<footer class="flex flex_row-reverse p-t_3 p-b_4"><a href="" class="link self_end   ">view all from "watch again" <i class="fal fa-chevron-circle-right m-r_3"></i></a></footer>
+			<header class="font_display font_regular  c_primary-n1 m-b_3 lh_1 m-b_4:lg m-t_3 ">
+				<h2 class="lh_1 m_0 font_regular   font_3:lg font_2:md font_1">saved</h2>
+			</header>
+			<div class="p-y_3 relative m-x_n2 m-x_n3:md m-x_n4:lg">
+				<div class="tns-outer inset-level_down-1 bg_black-1 shadow_emboss-light br_solid br_1 br_black-2 br_radius texture_light  font_0 font_ui font_regular">
+					<div class="tns-ovh">
+						<div class="tns-inner">
+							<div id="slider3" class=" flex flex_row justify_stretch p-y_4 p-x_3 overflow_hidden  tns-slider tns-carousel tns-subpixel tns-calc tns-horizontal">
+								<div class="tns-item  tns-slide-active p-x_5">
+									<article class="bg_white br_1 br_black-1 br_radius br_solid flex flex_grow shadow_overlap-light w_100">
+										<div class="flex flex_row justify_start relative w_100">
+											<main class="flex flex_column flex_auto justify_between flex_auto p-l_4 p-x_4:md  p-y_3 p-y_3:lg relative w_100 isolation_isolate reading-typography">
+												<h2 class=""> You don't have any previously saved presentations. </h2>
+												<p>This collection is based off of your watching history. Come back here when you want to review or re-watch what you have previously viewed.</p>
+											</main>
+										</div>
+									</article>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="customize-tools">
+					<ul class="controls ul_none font-size_up-2 c_black-6" id="slider3-customize-controls" aria-label="Carousel Navigation" tabindex="0">
+						<li class="disabled prev bg_white-8 filter_blur absolute t_1 b_1 l_0 p_3 flex_column flex justify_center items_center br_primary-3 br_solid br_1 br-l_0 br-br_radius br-tr_radius shadow_overlap-light" aria-controls="slider3" tabindex="-1" data-controls="prev">
+							<i class="fal fa-chevron-left opacity_3"></i>
+						</li>
+						<li class="disabled next bg_white-8  filter_blur absolute t_1 b_1 r_0 p_3 flex_column flex justify_center items_center br_primary-3 br_solid br_1 br-r_0 br-bl_radius br-tl_radius shadow_overlap-light" aria-controls="slider3" tabindex="-1" data-controls="next">
+							<i class="fal fa-chevron-right opacity_3"></i>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<footer class="flex flex_row-reverse p-t_3 p-b_4"><a href="" class="link self_end   ">view all from "saved" <i class="fal fa-chevron-circle-right m-r_3"></i></a></footer>
+		</section>
+	</div>
+</section>
+
+<style>.tns-inner{margin: 0px 16px 0px 32px;}</style>
+		<!-- These Styles are just for the styleguide and are not to be included with the pattern. -->
+		<footer class="flex flex_column gap_4 grid-area_footerArea columns_5 grid:md m-t_auto p-y_0:md p-y_3">
+			<div id="subfooter" class="bg_primary-1 flex_auto font_n1 z_1 br_radius texture_dust shadow_emboss-light p_2 p_3:md p_4:lg col-start col-end_4">
+				<ul class="m_auto footer-bottom-links ul_none max-w_80">
+					<li class="inline p_2"><a href="//www.acc.org/footer-pages/media-center" class="c_white-6 h:c_white">Media Center</a></li>
+					<li class="inline p_2"><a href="//www.acc.org/footer-pages/quick-start-guide" class="c_white-6 h:c_white">ACC.org Quick Start Guide</a></li>
+					<li class="inline p_2"><a class="c_white-6 h:c_white" href="//www.acc.org/footer-pages/advertising-and-sponsorship-policy">Advertising &amp; Sponsorship Policy</a></li>
+					<li class="inline p_2"><a class="c_white-6 h:c_white" href="//www.acc.org/footer-pages/clinical-content-disclaimer">Clinical Content Disclaimer</a> </li>
+					<li class="inline p_2"><a class="c_white-6 h:c_white" href="//www.acc.org/footer-pages/editorial-board">Editorial Board</a></li>
+					<li class="inline p_2"><a class="c_white-6 h:c_white" href="//www.acc.org/footer-pages/privacy-policy">Privacy Policy</a></li>
+					<li class="inline p_2"><a class="c_white-6 h:c_white" href="//www.acc.org/footer-pages/registered-user-agreement">Registered User Agreement</a></li>
+					<li class="inline p_2"><a class="c_white-6 h:c_white" href="//www.acc.org/footer-pages/terms-and-conditions">Terms of Service</a></li>
+					<li class="inline p_2"><a class="c_white-6 h:c_white" href="//www.acc.org/footer-pages/cookie-policy">Cookie Policy</a></li>
+					<li class="inline p_2"><a class="c_white-6 h:c_white" href="//www.acc.org/footer-pages/member-hub-terms-of-use">Member Hub Terms of Use</a></li>
+					<li class="inline p_2"><a class="c_white-6 h:c_white" href="//www.acc.org/sitemap-acc.xml">Site Map</a> </li>
+				</ul> <!-- /footer-bottom-links -->
+			</div><!-- /subfooter -->
+			<div id="logo" class="bg_white br_1 br_black-1 br_round br-br_radius br-tl_radius  br_solid flex flex_none flex_row items_center justify_center  shadow_bevel-light p_2 p_3:md p_4:lg col-start_4 col-end ">
+				<h2 class="logo_condensed w_100 max-w_20">American College of Cardiology</h2>
+			</div>
+		</footer>
+	</div>
+</div>
+</div>
+
+<script src="/PrototypingACCorg/assets/js/lib/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- Slider CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
+<!-- Slider JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+</body>
+</html>
