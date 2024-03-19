@@ -1,0 +1,35 @@
+---
+layout: arches
+name: "Header Description Link"
+position: "Page"
+---
+
+<ul class="ul_none shade-odd c_black no-target-blank">
+    <style>
+        .shade-odd > *:nth-child(2n + 1){
+            background-color: rgba(19, 18, 18, 0.025);
+        }
+       .no-target-blank .expanded-click-area::after{ content:'' !important;}
+    </style>
+    {% assign collection = site.data.header-description-links  %}
+    {% for item in collection %}
+        {% if item.header %}
+            <li class="m_0 p-x_4 p-y_3 relative h:bg_accemt-5 br_radius">
+                <a  
+                    class="block font_display link expanded-click-area c_primary-n2 font_bold"
+                    {% if item.targetBlank %}
+                        target="_blank"
+                    {% endif %}
+                    href="{{ item.url }}">
+                    {{ item.header }}
+                    </a>
+                    <span>
+                        {{ item.description }}
+                    </span>
+            </li>
+            
+        {% else %}
+            </ul><ul class="ul_none shade-odd c_black no-target-blank">
+        {% endif %}
+    {% endfor %}
+</ul>
