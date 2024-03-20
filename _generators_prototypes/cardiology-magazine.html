@@ -1,0 +1,19 @@
+---
+layout: playground
+name: "Cardiology Magazine"
+position: "Generator"
+csv_file: "cardiology-magazine"
+---
+<section class="wrapper-container">
+<ul class="reading-typography ul_none flex flex_column grid:md gap_5:lg gap_4:md gap-y_5:lg gap-y_4 columns_1 columns_2:md columns_3:lg" style="--col-1: 1fr;--col-2: 1fr;">
+    {% assign collection = site.data.cardiology-magazine  %}
+    {% for item in collection %}
+<li class="isolation_isolate relative">
+    <img src="https://www.acc.org//{{item.img}}" alt="Feature Honoring Excellence: Recognizing AHA, ABC Achievements in Improving Heart Health">
+    <a class="block expanded-click-area lh_2 not-link p-y_3" href="{{item.url}}">
+        <span class="block w_auto p_3 absolute t_0 r_0 bg_acc font_accent font-size_down c_white">{{item.label}}</span>
+        {{item.title}}</a>
+</li>
+{% endfor %}
+</ul>
+</section>

@@ -1,76 +1,72 @@
 ---
-
 layout: playground
 name: "Video Blocks"
 position: "Generator"
+csv_file: "videos"
 ---
+<div class="columns_1 columns_2:md columns_3:lg gap_4:md gap_5 gap_5:lg grid">
+    {% for video in site.data.videos %}
+    {% assign year = "2000" %} <!-- Any year is fine since you just want the month abbreviation -->
+    {% assign day = "01" %} <!-- Use the first day of the month -->
+    {% assign month = video.video_month | plus: 0 %} <!-- Ensure video.video_month is treated as a number -->
+    {% assign date_string = year | append: "-" | append: month | append: "-" | append: day %}
 
-<div class="p_4 bg_black-1 br_radius m_5">
-
-    <h1 class="font_4 c_primary">Video Blocks</h1>
-    <a href="{{ '/_data/videos.csv' |  absolute_url }}" class="link">videos.csv</a>
-  </div>
-<div class="columns_1 columns_2:md columns_3:lg gap_4:md gap_5 gap_5:lg grid m_auto max-w_65">
-{% for video in site.data.videos %}
-{% assign year = "2000" %}  <!-- Any year is fine since you just want the month abbreviation -->
-{% assign day = "01" %}     <!-- Use the first day of the month -->
-{% assign month = video.video_month | plus: 0 %}  <!-- Ensure video.video_month is treated as a number -->
-{% assign date_string = year | append: "-" | append: month | append: "-" | append: day %}
-
-<article
-    class="bg_white-9 br_1 br_black-2 br_black-3 br_radius br_solid flex flex_column font_copy relative shadow_overlap-light font_0 font_1:md font_2:lg">
-    <div data-type="img-header"
-        class="br-tr_radius br-tl_radius bg-blend_multiply br_1 br_solid br_black-3 bg_cover bg_left m-x_n1 m-t_n1 expand-br_1 aspect_custom-sm bg-blend_multiply br_1 br_solid br_black-3 bg_cover bg_left m-x_n1 m-t_n1 flex_none br-tr_radius br-tl_radius"
-        style='background-image: url({{ video.image_url }}); aspect-ratio: 350/80;width: calc(100% + 2px);'>
-    </div>
-    <div class="relative">
-        {% if video.is_past == "true" %}
-        <aside data-type="date"
-            class="float_left m-l_4 m-l_5:lg br-t_0 br_1 br_solid br_black-4 bg_info c_white p-x_4 p-y_4  text_center:md font_display z_3 shadow_overlap-light m-t_n5">
-            <span class="block font-size_down-1 font_xbold lh_0 p-x_2:lg uppercase">Watch</span>
-            <span class="block font-size_up-1 font_light lh_0 p-x_2:lg m-t_2 uppercase">Now</span>
-        </aside>
-        {% else %}
-        <aside data-type="date"
-            class="float_left m-l_4 m-l_5:lg br-t_0 br_1 br_solid br_black-4 bg_info c_white p-x_4 p-y_4  text_center:md font_display z_3 shadow_overlap-light m-t_n5">
-            <span class="block font-size_down-1 font_xbold lh_0 p-x_2:lg uppercase">{{ date_string | date: "%b" }} </span>
-            <span class="block font-size_up-1 font_light lh_0 p-x_2:lg m-t_2 uppercase">{{ video.video_day }}</span>
-        </aside>
-        {% endif %}
-    </div>
-    <header class="clear_both p-x_4 p-x_5:lg p-t_2">
-        <span data-type="sub-header"
-            class="font_display font-size_up-1 c_primary-1 m-t_2 m-t_4:lg m-t_3:md m-b_2 lh_0 font_medium block">{{
-            video.sub_header }}</span>
-
-        <h2 data-type="header" class="font_display font-size_up-2 c_primary-n4 m-t_2 m-b_2 lh_1 font_medium">{{
-            video.title }}</h2>
-        <div class="font_ui c_primary-n2 font_xbold font_n2 m-t_n2 uppercase" data-type="type">{{ video.type }}</div>
-    </header>
-    <ul class="m-b_4:md p-t_3 p-x_4 p-x_5:lg font-size_down-1 ul_none lh_4 no-marker">
-        <li class="flex flex_row m-t_2">
-            <i class="fas font-size_up flex_none p-r_3 self_center fa-clock c_black-5"></i>
+    <article
+        class="bg_white-9 br_1 br_black-2 br_black-3 br_radius br_solid flex flex_column font_copy relative shadow_overlap-light font_0 font_1:md font_2:lg">
+        <div data-type="img-header"
+            class="br-tr_radius br-tl_radius bg-blend_multiply br_1 br_solid br_black-3 bg_cover bg_left m-x_n1 m-t_n1 expand-br_1 aspect_custom-sm bg-blend_multiply br_1 br_solid br_black-3 bg_cover bg_left m-x_n1 m-t_n1 flex_none br-tr_radius br-tl_radius"
+            style='background-image: url({{ video.image_url }}); aspect-ratio: 350/80;width: calc(100% + 2px);'>
+        </div>
+        <div class="relative">
             {% if video.is_past == "true" %}
-            <span class="m-l_2 flex_auto inline-block self_start lh_1 font_accent">On Demand</span>
+            <aside data-type="date"
+                class="float_left m-l_4 m-l_5:lg br-t_0 br_1 br_solid br_black-4 bg_info c_white p-x_4 p-y_4  text_center:md font_display z_3 shadow_overlap-light m-t_n5">
+                <span class="block font-size_down-1 font_xbold lh_0 p-x_2:lg uppercase">Watch</span>
+                <span class="block font-size_up-1 font_light lh_0 p-x_2:lg m-t_2 uppercase">Now</span>
+            </aside>
             {% else %}
-            <span class="m-l_2 flex_auto inline-block self_start lh_1 font_accent">{{ date_string | date: "%b" }} {{
-                video.video_day }}, {{ video.video_year }} @ {{video.video_time}}</span>
+            <aside data-type="date"
+                class="float_left m-l_4 m-l_5:lg br-t_0 br_1 br_solid br_black-4 bg_info c_white p-x_4 p-y_4  text_center:md font_display z_3 shadow_overlap-light m-t_n5">
+                <span class="block font-size_down-1 font_xbold lh_0 p-x_2:lg uppercase">{{ date_string | date: "%b" }}
+                </span>
+                <span class="block font-size_up-1 font_light lh_0 p-x_2:lg m-t_2 uppercase">{{ video.video_day }}</span>
+            </aside>
             {% endif %}
-        </li>
-    </ul>
-    <footer class="flex justify_around:md justify_start m-t_auto gap-x_3 p-t_4 p-t_3:md p-x_5:lg p-x_3 p-b_4">
-        <a data-type="url" href="{{ video.url }}" target="_blank"
-            class="bg_primary br_none br_primary-n3 br_radius c_white ease_out f:outline_none flex_auto flex_shrink  font_medium font_ui h:bg_primary-n2 h:c_white inline-block lh_0 m-b_2 max-w_20:md p-x_4 p-y_3 shadow_overlap-light text_center:md transition_1 w_auto"
-            rel="noopener">
-            <span class="flex">
+        </div>
+        <header class="clear_both p-x_4 p-x_5:lg p-t_2">
+            <span data-type="sub-header"
+                class="font_display font-size_up-1 c_primary-1 m-t_2 m-t_4:lg m-t_3:md m-b_2 lh_0 font_medium block">{{
+                video.sub_header }}</span>
+
+            <h2 data-type="header" class="font_display font-size_up-2 c_primary-n4 m-t_2 m-b_2 lh_1 font_medium">{{
+                video.title }}</h2>
+            <div class="font_ui c_primary-n2 font_xbold font_n2 m-t_n2 uppercase" data-type="type">{{ video.type }}
+            </div>
+        </header>
+        <ul class="m-b_4:md p-t_3 p-x_4 p-x_5:lg font-size_down-1 ul_none lh_4 no-marker">
+            <li class="flex flex_row m-t_2">
+                <i class="fas font-size_up flex_none p-r_3 self_center fa-clock c_black-5"></i>
                 {% if video.is_past == "true" %}
-                <span class="flex_grow">Watch</span>
+                <span class="m-l_2 flex_auto inline-block self_start lh_1 font_accent">On Demand</span>
                 {% else %}
-                <span class="flex_grow">Register</span>
+                <span class="m-l_2 flex_auto inline-block self_start lh_1 font_accent">{{ date_string | date: "%b" }} {{
+                    video.video_day }}, {{ video.video_year }} @ {{video.video_time}}</span>
                 {% endif %}
-            </span>
-        </a>
-    </footer>
+            </li>
+        </ul>
+        <footer class="flex justify_around:md justify_start m-t_auto gap-x_3 p-t_4 p-t_3:md p-x_5:lg p-x_3 p-b_4">
+            <a data-type="url" href="{{ video.url }}" target="_blank"
+                class="bg_primary br_none br_primary-n3 br_radius c_white ease_out f:outline_none flex_auto flex_shrink  font_medium font_ui h:bg_primary-n2 h:c_white inline-block lh_0 m-b_2 max-w_20:md p-x_4 p-y_3 shadow_overlap-light text_center:md transition_1 w_auto"
+                rel="noopener">
+                <span class="flex">
+                    {% if video.is_past == "true" %}
+                    <span class="flex_grow">Watch</span>
+                    {% else %}
+                    <span class="flex_grow">Register</span>
+                    {% endif %}
+                </span>
+            </a>
+        </footer>
     </article>
-{% endfor %}
+    {% endfor %}
 </div>

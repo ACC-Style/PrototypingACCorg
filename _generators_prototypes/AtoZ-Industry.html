@@ -1,17 +1,14 @@
 ---
-layout: arches
+layout: playground
 name: "A to Z Industry"
 position: "Generator"
+csv_file: "industry"
 ---
+     
 {% assign alpha_array = 'A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z' | split: ',' %}
 {% assign industry = site.data.industry | sort: 'sortname' %}
 {% assign alpha_categories = industry | map: 'grouping' %}
-<div class="p_4 bg_black-1 br_radius m_5">
-  <h1 class="font_4 c_primary">Alpha People List Render</h1>
-  <a href="{{ '/_data/industry.cs' |  absolute_url }}" class="link">industry.cs</a>
-</div>
-
-<section class="relative p-t_2"  id="AlphaNavTop">
+<div class="relative p-t_2"  id="AlphaNavTop">
   <div class="sticky t_0 r_0 z_1">
     <div class="absolute r_4 t_0 flex flex_row flex_nowrap gap-x_3">
       <!-- Helper Jump links -->
@@ -28,10 +25,10 @@ position: "Generator"
     </div>
   </div>
   <nav
-    class="bg_white br_radius grid items_center p_3 p_4:lg relative shadow_overlap-light z_2 m-t_n2"
+    class="bg_white br_radius grid items_center p_3 p_4:lg relative shadow_overlap-light z_2 m-t_n2 wrapper-container"
   >
     <ul
-      class="c_secondary-2 flex:lg flex_row font_bold gap_4 grid columns_5 justify_around:lg justify_center m-x_4 m-y_3 ul_none"
+      class="c_secondary-2 flex:lg flex_row font_bold gap_4 grid columns_5 wrap justify_center m-x_4 m-y_3 ul_none flex_wrap"
     >
       <!-- Loop -->
       {% for alpha in alpha_array %}
@@ -55,7 +52,7 @@ position: "Generator"
     {% if alpha_categories contains alpha %}
       <div
         id="{{alpha}}"
-        class="relative br-t_1 br_dotted br_primary-3 w_100 p-y_4 font_0 flex_row flex"
+        class="relative br-t_1 br_dotted br_primary-3 w_100 p-y_4 font_0 flex_row flex wrapper-container"
       >
         <div class="flex_none">
           <div
@@ -96,4 +93,5 @@ position: "Generator"
       </div>
     {% endif %}
   {% endfor %}
-</section>
+</div>
+

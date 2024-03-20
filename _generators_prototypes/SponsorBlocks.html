@@ -2,16 +2,8 @@
 layout: playground
 name: "Sponsor Blocks"
 position: "Generator"
+csv_file: "sponsors-sort"
 ---
-
-<div class="p_4 bg_black-1 br_radius m_5">
-
-    <h1 class="font_4 c_primary">Sponsor Blocks</h1>
-    <a href="{{ '/_data/sponsors-sort.csv' |  absolute_url }}" class="link">sponsors-sort.csv</a>
-</div>
-<div class="p_5">
-
-
 
     {% assign sponsors-sort = site.data.sponsors-sort | sort: 'sortnumber' %}
     <section>
@@ -35,4 +27,3 @@ position: "Generator"
             {% endfor %}
         </ul>
     </section>
-</div>

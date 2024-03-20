@@ -1,41 +1,32 @@
 ---
-layout: arches
+layout: playground
 name: "Header + Description Link List"
 position: "Generator"
+csv_file: "header-description-links"
 ---
-<div class="p_4 bg_black-1 br_radius m_5">
-
-    <h1 class="font_4 c_primary">Header Description Link List</h1>
-    <a href="{{ '/_data/header-description-links.csv' |  absolute_url }}" class="link">header-description-links.csv</a>
-  </div>
-<ul class="ul_none shade-odd c_black no-target-blank">
-    <style>
-        .shade-odd > *:nth-child(2n + 1){
-            background-color: rgba(19, 18, 18, 0.025);
-        }
-       .no-target-blank .expanded-click-area::after{ content:'' !important;}
-    </style>
-    {% assign collection = site.data.header-description-links  %}
-    {% for item in collection %}
-        {% if item.header %}
-            <li class="m_0  relative h:bg_accent-5 br_radius">
-                <span class="p-x_4 p-y_3 block">
-                    <a
-                        class="block font_display link expanded-click-area c_primary-n2 font_bold h:undecorated"
-                        {% if item.targetBlank %}
-                            target="_blank"
-                        {% endif %}
-                        href="{{ item.url }}">
-                        {{ item.header }}
-                        </a>
-                        <span class="font-size_down opacity_8">
-                            {{ item.description }}
-                        </span>
-                </span>
-            </li>
-            
-        {% else %}
-            </ul><ul class="ul_none shade-odd c_black no-target-blank">
-        {% endif %}
-    {% endfor %}
+<ul class="ul_none shade-odd c_black no-target-blank flex flex_column gap_2">
+<style>
+    .shade-odd > *:nth-child(2n + 1){
+        background-color: rgba(19, 18, 18, 0.025);
+    }
+    .no-target-blank .expanded-click-area::after{ content:'' !important;}
+</style>
+{% assign collection = site.data.header-description-links  %}
+{% for item in collection %}
+{% if item.header %}
+    <li class="m_0  relative h:bg_accent-5 br_radius">
+        <span class="p-x_4 p-y_3 block">
+            <a class="block font_display link expanded-click-area c_primary-n2 font_bold h:undecorated" {% if item.targetBlank %} target="_blank"  {% endif %} href="{{ item.url }}">
+                {{ item.header }}
+            </a>
+            <span class="font-size_down opacity_8">
+                {{ item.description }}
+            </span>
+        </span>
+    </li>
+{% else %}
+</ul>
+<ul class="ul_none shade-odd c_black no-target-blank flex flex_column gap_2">
+{% endif %}
+{% endfor %}
 </ul>

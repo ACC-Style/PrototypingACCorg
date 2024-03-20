@@ -2,42 +2,33 @@
 layout: playground
 name: "FAQ"
 position: "Generator"
+csv_file: "faqs"
 ---
 
-<div class="p_4 bg_black-1 br_radius m_5">
-
-    <h1 class="font_4 c_primary">FAQ Generator</h1>
-    <a href="{{ '/_data/faqs.csv' |  absolute_url }}" class="link">faqs.csv</a>
-</div>
-<div class="p_5">
-
-
-
-    <div class="relative" COPY_ME >
-    {% assign faqs = site.data.faqs | sort: "sortnumber" %}
-    {% for faq in faqs  %}
-        <header id="accordion_header" class="flex flex_row sticky t_n2 bg_white shadow_overlap-light br_solid br_1 br_black-2 z_2 collapsed relative" aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#content_accordion-{{faq.sortnumber}}" aria-controls="#content_accordion-{{faq.sortnumber}}">
-            <div class="h:bg_primary-5 m_2 c_primary-n2 h:c_primary-n4 br_radius expanded-click-area">
-                <div class="flex_none" >
-                    <span class="fa-stack">
-                        <i class="fas fa-minus fa-stack-1x"></i>
-                        <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
-                    </span>
-                </div>
+<div class="relative" COPY_ME >
+{% assign faqs = site.data.faqs | sort: "sortnumber" %}
+{% for faq in faqs  %}
+    <header id="accordion_header" class="flex flex_row sticky t_n2 bg_white shadow_overlap-light br_solid br_1 br_black-2 z_2 collapsed relative" aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#content_accordion-{{faq.sortnumber}}" aria-controls="#content_accordion-{{faq.sortnumber}}">
+        <div class="h:bg_primary-5 m_2 c_primary-n2 h:c_primary-n4 br_radius expanded-click-area">
+            <div class="flex_none" >
+                <span class="fa-stack">
+                    <i class="fas fa-minus fa-stack-1x"></i>
+                    <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+                </span>
             </div>
-            <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
-                <div class="flex_auto self_center reading-typography no-margins">
-                    <h3 class="lh_2 max-w_50 c_primary-n2">{{faq.question}}</h3>
-                </div>
+        </div>
+        <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
+            <div class="flex_auto self_center reading-typography no-margins">
+                <h3 class="lh_2 max-w_50 c_primary-n2">{{faq.question}}</h3>
             </div>
-        </header>
-        <main  id="content_accordion-{{faq.sortnumber}}"
-            class="bg_white-9 br-bl_radius br-br_radius m-x_0 m-x_3:md p_4 reading-typography shadow_emboss-light tab-content transition_4 collapse"
-            aria-labelledby="accordion_header m-x_3">
-            <div class="reading-typography">
-                {{faq.answer | html}}
-            </div>
-        </main>
-        {% endfor %}
-    </div>
+        </div>
+    </header>
+    <main  id="content_accordion-{{faq.sortnumber}}"
+        class="bg_white-9 br-bl_radius br-br_radius m-x_0 m-x_3:md p_4 reading-typography shadow_emboss-light tab-content transition_4 collapse"
+        aria-labelledby="accordion_header m-x_3">
+        <div class="reading-typography">
+            {{faq.answer | html}}
+        </div>
+    </main>
+    {% endfor %}
 </div>

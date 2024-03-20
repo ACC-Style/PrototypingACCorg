@@ -2,19 +2,11 @@
 layout: playground
 name: "Sponsor Blocks - Tiers"
 position: "Generator"
+csv_file: "sponsors-teir"
 ---
-
-<div class="p_4 bg_black-1 br_radius m_5">
-
-    <h1 class="font_4 c_primary">Sponsor Teired Blocks</h1>
-    <a href="{{ '/_data/sponsors-teir.csv' |  absolute_url }}" class="link">sponsors-teir.csv</a>
-  </div>
-<div class="p_5">
-    
-
 {% assign alpha_array = 'Diamond,Partner,Sponsor' | split: ',' %}
-{% assign sponsors-teir = site.data.sponsors-teir | sort: 'exhibitor_name' %}
-{% assign alpha_categories = sponsors-teir | map: 'grouping' %}
+{% assign sponsors-teir = site.data.sponsors-teir | sort: 'name' %}
+{% assign alpha_categories = sponsors-teir | map: 'tiers' %}
 
 <section class="relative p-t_2" id="AlphaNavTop">
   <div class="sticky t_0 r_0 z_1">
@@ -55,17 +47,17 @@ position: "Generator"
     </div>
     <ul class="grid columns_4:lg columns_2:md columns_1 gap_5:lg gap_4 p-t_0 p_4 ul_none">
       {% for company in sponsors-teir %}
-      {% if company.grouping == alpha %}
+      {% if company.tiers == alpha %}
       <li class="bg_black-_05 br_1 br_black-_01 br_round br_solid flex flex_column gap-y_3 p-b_4">
         <header class="bg_white br_radius m-b_3 m_4 p_3 shadow_overlap-light w_auto">
           <div class="relative aspect_16x9 grid justify_center items_center columns_1 rows_1"> <a data-name="newMember__name"
               class="display_contents" target="_blank"
-              href="{{ company.exhibitor_url }}"><img alt="Logo of {{ company.exhibitor_name }}"
+              href="{{ company.url }}"><img alt="Logo of {{ company.name }}"
                 class="bg_contain m_auto w_100" 
-                src="/PrototypingACCorg/assets/images/playground/{{company.file_name}}"></a></div>
+                src="/PrototypingACCorg/assets/images/playground/{{company.img}}"></a></div>
         </header>
         <div class="c_primary-n3 font_3 font_display font_regular lh_1 p-x_4 readable-typography text_center">
-          {{ company.exhibitor_name }}
+          {{ company.name }}
         </div>
       </li>
       {% endif %}
@@ -75,4 +67,3 @@ position: "Generator"
   {% endif %}
   {% endfor %}
 </section> 
-</div>

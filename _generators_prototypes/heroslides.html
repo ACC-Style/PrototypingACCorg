@@ -3,26 +3,29 @@
 layout: playground
 name: "Slideshow"
 position: "Generator"
-
+csv_file: "heroslides"
 ---
+<section class="relative isolate_isolation m_auto  aspect_21x9:lg aspect_16x9:md aspect_2x">
 <script src="https://kit.fontawesome.com/71c9d25c4e.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
 <!--[if (lt IE 9)]><script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.helper.ie8.js"></script><![endif]-->
 
-<div class="full-width relative  ">
+<div class=" 3">
     <div id="hero-slider" class="">
         {% for slide in site.data.heroslides %}
-            <div class="aspect_21x9:lg aspect_16x9:md aspect_2x3  relative h_100">
-                <img src="{{ site.baseurl }}/assets/images/playground/slides/{{ slide.image_src }}" class="z_0 bg_cover h_100 w_100 absolute inset_0">
-                <div class="absolute inset_0 z_0 {{ slide.background_classes }}">
-                </div>
-                <div style="width:100svw;" class="inset_0 z_5 grid justify_center items_center font_10: font_5:md font_3 p_6 h_100 isolation_isolate">
-                    <div class="font-size_up-2 w_100">
-                        <div class="font-size_up-2">
-                            <h1 class="font-size_up-2 lh_1 font_display font_medium text_center p_6:lg {{ slide.font_classes }} text-shadow_light">
-                                {{ slide.label }}
-                                <small class="font_8:lg font_regular font_3:md font_0 block p-t_5">{{slide.sublabel}}</small>
-                            </h1>
+            <div class="aspect_21x9:lg aspect_16x9:md aspect_2x3 relative isolate_isolation">
+                <div class="absolute inset_0 grid columns_1 bg_no-repeat bg_cover rows_1 bg_black" style="background-position:center center; background-image: url({{ site.baseurl }}/assets/images/playground/slides/{{ slide.image_src }});">
+                    <!-- <img src="" class="z_1 bg_cover row_all self_center col_all inset_0 "> -->
+                    <div class="row_all col_all  inset_0 z_2 {{ slide.background_classes }}">
+                    </div>
+                    <div class="row_all col_all  z_3 grid justify_center items_center font_10:lg font_5:md font_3 p_6 isolation_isolate">
+                        <div class="font-size_up-2:lg">
+                            <div class="font-size_up-2">
+                                <h1 class="font-size_up-2 lh_1 font_display font_medium text_center p_6:lg {{ slide.font_classes }} text-shadow_light">
+                                    {{ slide.label }}
+                                    <small class="font_8:lg font_regular font_3:md font_0 block p-t_5">{{slide.sublabel}}</small>
+                                </h1>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -143,3 +146,4 @@ autoplay: true,
         background-color: hsla(0,0%,100%, .75)!important;
     }
 </style>
+</section>

@@ -3,9 +3,39 @@ layout: default
 ---
 
 {% include playground-head.html %}
+<body id="ng-app" ng-app="AccApp" class="">
+    <h1 class="font_4 c_primary p-x_4 p-y_3 lh_2 br-b_1 br_solid c_primary-n2 ">{{page.name}}</h1>
+<section grid-template="page-layout" class="p-t_4 p-b_6">
+    <aside grid-area="sidebar-primary" class="flex_column flex gap_4 p-x_4 reading-typography">
+        <a href="../../" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Back</a>
+        <div class="p_4 bg_black-2 br_radius">     
+            <h2 class="font_2 c_primary">CSV Data File</h2>
+            <a href="https://raw.githubusercontent.com/ACC-Style/PrototypingACCorg/main/_data/{{page.csv_file}}.csv" class="link" target="_blank" >{{page.csv_file}}.csv</a>
+        </div>
+            <div  class="p_4 bg_black-2 br_radius ">
+                {% assign data_file = site.data[page.csv_file] %}
+                {% if data_file.size > 0 %}
+                    {% assign row = data_file[0] %}
+                    {% if row.size > 0 %}
+                    <h2 class="font_2 c_primary">CSV Data Elements</h2>
+                        <ol class="marker_primary">
+                        {% for pair in row %}
+                        <li>{{ pair[0] }}</li>
+                        {% endfor %}
+                        </ol>
+                    {% endif %}                   
+                {% endif %}
+        </div>
+    </aside>
+    <main grid-area="content">
+        {{content}}
+    </main>
+</section>
 
-<body id="ng-app" ng-app="AccApp" class="user-not-logged-in ng-scope medium-viewport font_copy"></body>
-{{content}}
+
+
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
