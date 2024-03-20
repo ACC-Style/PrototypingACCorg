@@ -4,6 +4,12 @@ layout: playground
 name: "Video Blocks"
 position: "Generator"
 ---
+
+<div class="p_4 bg_black-1 br_radius m_5">
+
+    <h1 class="font_4 c_primary">Video Blocks</h1>
+    <a href="{{ '/_data/videos.csv' |  absolute_url }}" class="link">videos.csv</a>
+  </div>
 <div class="columns_1 columns_2:md columns_3:lg gap_4:md gap_5 gap_5:lg grid m_auto max-w_65">
 {% for video in site.data.videos %}
 {% assign year = "2000" %}  <!-- Any year is fine since you just want the month abbreviation -->

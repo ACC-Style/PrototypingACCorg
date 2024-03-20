@@ -3,6 +3,7 @@ layout: playground
 name: "A to Z List"
 position: "Generator"
 ---
+
 {% assign alpha_array = 'A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z' | split: ',' %}
 {% assign people = site.data.people | sort: 'sortname' %}
 {% assign alpha_categories = people | map: 'group' %}

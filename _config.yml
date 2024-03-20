@@ -25,6 +25,7 @@ baseurl: "/PrototypingACCorg" # the subpath of your site, e.g. /blog
 url: "https://acc-style.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: mattwatier
 # Build settings
+
 theme: jekyll-theme-minimal
 plugins:
   - jekyll-feed
@@ -33,6 +34,7 @@ destination: "docs"
 github: [metadata]
 port: 4001
 #collections_dir: prototypes
+
 collections:
   legacy_prototypes:
     output: true
@@ -55,13 +57,14 @@ collections:
   jacc_prototypes:
     output: true
     permalink: /jacc/:path/
-  playground_prototypes:
+  generators_prototypes:
     output: true
     permalink: /playground/:path/
   joinus_prototypes:
     output: true
     permalink: /joinus/:path/
 # Exclude from processing.
+
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
 # the internal "default list".
