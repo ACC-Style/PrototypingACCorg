@@ -1,0 +1,91 @@
+---
+layout: playground
+name: "Engagement Opportunities"
+position: "Generator"
+csv_file: "engage-results"
+---
+
+<section class="wrapper-container">
+  <ul class="reading-typography ul_none">
+    {% assign collection = site.data.engage-results %}
+     {% for item in collection %}
+        {% if item.effort == "low" %}
+            {% assign effort_color = "accent" %}         
+        {% elsif  item.effort == "medium"  %}
+            {% assign effort_color = "acc" %}      
+        {% else %}
+            {% assign effort_color = "primary" %}     
+        {% endif %}
+
+
+    <li class="isolation_isolate relative">
+      <article
+        class="z_2 m-y_2:md br_1 m-b_4 br_black-3 br_radius br_solid c_black flex flex_column isolation_isolate shadow_overlap-light bg_white h:bg_primary-5 m-x_3 relative overflow_hidden"
+      >
+        <div
+          class="br-b_0 br-t_3 br-tl_radius br-tr_radius br_black-3 br_{{effort_color}} br_solid flex flex_column font_ui m-b_n2 m-x_n1 m-t_n1 m-b_0 opacity_none p_0"
+        ></div>
+        <div
+          class="p_2 bg_{{effort_color}} p-x_4 m-x_4 inline-block br-br_radius br-bl_radius c_white font_bold self_start"
+        >
+          <ul class="ul_inline-pipe font-size_down-1">
+            {% if item.effort == "low" %}
+                <li class="">Low Effort Opportunity</li>               
+            {% elsif  item.effort == "medium"  %}
+                <li class="">Medium Effort Opportunity</li>
+            {% else %}
+                <li class="">High Effort Opportunity</li>
+            {% endif %}
+          </ul>
+        </div>
+        <div class="flex flex_auto flex_column gap-y_3 p-b_3 p_4">
+          <header class="font_display m-b_3 lh_2 c_primary-n2 p-r_4:lg lh_1">
+            <a class="expanded-click-area h:undecorated"
+              ><strong class="font_bold p-r_2 block font-size_up-1"
+                >Attend How to Become a Cardiovascular Investigator
+              </strong>
+            </a>
+            This course provides essential skills to Fellows in Training and
+            Medical Residents on how to get started in career of clinical
+            investigation and research. Get the skills you need to start your
+            research career.
+          </header>
+        </div>
+        <div
+          class="bg_black-2 br-bl_radius br-br_radius br-t_0 br_1 br_black-3 br_solid c_black m-b_n1 m-x_n1 p_3 relative self_stretch"
+        >
+          <div class="uppercase flex flex_wrap font-size_down-2 justify_start">
+            <ul
+              class="gap-x_3 gap-y_3 justify_end:md justify_start self_center opacity_8 ul_inline-pipe uppercase font-size_down-2"
+            >
+              <li class="lh_0">
+                Build Community
+              </li>
+              <li class="lh_0">
+                Deliver Actionable Knowledge
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="absolute r_n1:md r_4 t_n1 t_4:md text_center flex flex_column:md justify_end align-right font_n2:md font_n3 overflow_hidden transition_2 z_3">
+          <div class="c_white flex flex_column flex_columnn gap_1 justify_end transition_2">
+            {% if item.good_for_new %}
+                <span class="bg_acc-1 h:bg_acc-n3 flex_shrink p-y_2 p-x_3 br_1 br_solid br_white-7"> 
+                    <span class="p-x_2 m-t_1 m-b_2 display_none">Starting Out</span>
+                    <i class="fa-solid fas fa-fw m-t_1 m-b_2 fa-sparkles" aria-hidden="true"></i>
+                </span>
+            {% endif %}
+            {% if item.membership_required %}
+                <span class="bg_accent-1 h:bg_accent-n3 flex_shrink p-y_2 p-x_3 br_1 br_solid br_white-7"> 
+                    <span class="p-x_2 m-t_1 m-b_2 display_none">Member Only</span>
+                    <i class="fa-solid fas fa-fw m-t_1 m-b_2  fa-users-medical" aria-hidden="true"></i>
+                </span>
+            {% endif %}
+
+          </div>
+        </div>
+      </article>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
