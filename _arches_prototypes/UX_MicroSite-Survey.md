@@ -20,29 +20,14 @@ sidebarArray:
     zone-label="main-content"
     class="reading-typography col-start_start col-end_3:md col-end_4:lg col-end_end p-x_5:lg p-x_4"
   >
-    <h2>Understanding Your Experience Through Surveys</h2>
-    <p>At the American College of Cardiology, we're dedicated to not just advancing cardiology but also enhancing the way our members interact with our range of services and resources. Your experience, insights, and satisfaction are at the heart of what we do. This is why we employ User Experience (UX) surveys as a cornerstone of our ongoing efforts to refine and elevate our offerings.</p>
     <h3>What is a User Experience Survey?</h3>
-    <p>A UX survey is more than just a questionnaire. It's a bridge between your thoughts and our actions. Designed for user testing and UX research, these surveys help us capture your feedback on our services—from digital tools to educational resources. Whether you're navigating our latest digital offerings or participating in continuing education, your responses guide us in making informed enhancements that matter to you.</p>
-    </main>
+  <p>A UX survey is more than just a questionnaire. It's a bridge between your thoughts and our actions. Designed for user testing and UX research, these surveys help us capture your feedback on our services—from digital tools to educational resources. Whether you're navigating our latest digital offerings or participating in continuing education, your responses guide us in making informed enhancements that matter to you.</p>
+  </main>
 <aside  class="relative col-start_n3:md col-start_start col-end_end font_n1 font_0:lg p-r_4:md p-r_5:lg" >
-    <div
-      data-item="cta-overlay"
-      class="bg_accent-n2 br_round c_white color_inherit shadow_overlap-light p_4 p_5:lg reading-typography relative z_1"
-    >
- <h3>Join Us in Shaping the Future</h3>
-    <p>Together, we can achieve our shared goal of advancing cardiovascular care and education.</p>
-      <div class="grid justify_center">
-        <a
-          class="btn btn-secondary capitalize"
-          href="https://www.surveymonkey.com/r/JACCpodcasts"
-          target="_blank"
-          >Take Survey</a
-        >
-      </div>
-    </div>
+  {% include_relative UX/snackable-cta-alt.html %} 
 </aside>  
 <section class="col_all  p-x_5:lg p-x_4 reading-typography">
+
     <h3>Why We Conduct UX Surveys</h3>
     <p>Our commitment to excellence is mirrored in our approach to UX surveys. They are a vital tool in our research arsenal for several reasons:</p>
     <ul>
@@ -58,5 +43,6 @@ sidebarArray:
         <li><strong>Product Development</strong>: Shaping the future of our offerings to ensure they're both impactful and user-friendly.</li>
         <li><strong>User Satisfaction</strong>: Enhancing your overall experience, making your interactions with our services more seamless and rewarding.</li>
     </ul>
+
 </section>
 </div>
