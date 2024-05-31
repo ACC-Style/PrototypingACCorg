@@ -1,14 +1,14 @@
 ---
 layout: arches_empty
-name: "StarBurst Zoom"
+name: "StarBurst Zoom - 4lvl"
 position: "Non ACC"
 ---
-<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/arches/zoomable-sunburst/inspector.css">
+<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/arches/zoomable-sunburst-4-levels/inspector.css">
 
 <script type="module">
 
-import define from "{{ site.baseurl }}/arches/zoomable-sunburst/index.js";
-import {Runtime, Library, Inspector} from "{{ site.baseurl }}/arches/zoomable-sunburst/runtime.js";
+import define from "{{ site.baseurl }}/arches/zoomable-sunburst-4-levels/index.js";
+import {Runtime, Library, Inspector} from "{{ site.baseurl }}/arches/zoomable-sunburst-4-levels/runtime.js";
 
 const runtime = new Runtime();
 const main = runtime.module(define, Inspector.into(document.body));
