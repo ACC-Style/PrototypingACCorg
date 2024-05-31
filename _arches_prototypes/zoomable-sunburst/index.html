@@ -1,0 +1,16 @@
+---
+layout: arches_empty
+name: "StarBurst Zoom"
+position: "Non ACC"
+---
+<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/arches/zoomable-sunburst/inspector.css">
+
+<script type="module">
+
+import define from "{{ site.baseurl }}/arches/zoomable-sunburst/index.js";
+import {Runtime, Library, Inspector} from "{{ site.baseurl }}/arches/zoomable-sunburst/runtime.js";
+
+const runtime = new Runtime();
+const main = runtime.module(define, Inspector.into(document.body));
+
+</script>
