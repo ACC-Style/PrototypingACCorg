@@ -1,0 +1,500 @@
+{
+  "name": "root",
+  "children": [
+    {
+      "name": "acc.org/",
+      "children": [
+        {
+          "name": "/my-acc/",
+          "children": [
+            {
+              "name": "/",
+              "children": [],
+              "size": 4
+            },
+            {
+              "name": "/my-training-program/",
+              "children": [],
+              "size": 4
+            },
+            {
+              "name": "/my-privacy-and-notifications/",
+              "children": [],
+              "size": 4
+            },
+            {
+              "name": "/my-membership/",
+              "children": [],
+              "size": 280
+            },
+            {
+              "name": "/personalization",
+              "children": [],
+              "size": 760
+            },
+            {
+              "name": "/demographics/",
+              "children": [],
+              "size": 1663
+            },
+            {
+              "name": "/my-profile",
+              "children": [],
+              "size": 13865
+            }
+          ]
+        },
+        {
+          "name": "/footer-pages/",
+          "children": [
+            {
+              "name": "/cookie-policy/",
+              "children": [],
+              "size": 4
+            },
+            {
+              "name": "/registered-user-agreement/",
+              "children": [],
+              "size": 16
+            },
+            {
+              "name": "/quick-start-guide/",
+              "children": [],
+              "size": 249
+            },
+            {
+              "name": "/media-center/",
+              "children": [],
+              "size": 355
+            }
+          ]
+        },
+        {
+          "name": "/seatmanagement/",
+          "children": [
+            {
+              "name": "/order/",
+              "children": [],
+              "size": 4
+            },
+            {
+              "name": "/acceptuser/",
+              "children": [],
+              "size": 12
+            }
+          ]
+        },
+        {
+          "name": "/clinical-topics/",
+          "children": [
+            {
+              "name": "/",
+              "children": [],
+              "size": 4
+            },
+            {
+              "name": "/features/",
+              "children": [],
+              "size": 16
+            },
+            {
+              "name": "/cardio-oncology/",
+              "children": [],
+              "size": 27
+            },
+            {
+              "name": "/pulmonary-hypertension-and-venous-thromboembolism/",
+              "children": [],
+              "size": 39
+            },
+            {
+              "name": "/valvular-heart-disease/",
+              "children": [],
+              "size": 43
+            },
+            {
+              "name": "/stable-ischemic-heart-disease/",
+              "children": [],
+              "size": 55
+            },
+            {
+              "name": "/sports-and-exercise-cardiology/",
+              "children": [],
+              "size": 58
+            },
+            {
+              "name": "/congenital-heart-disease-pediatric-cardiology/",
+              "children": [],
+              "size": 121
+            },
+            {
+              "name": "/invasive-cardiovascular-angiography-and-intervention/",
+              "children": [],
+              "size": 156
+            },
+            {
+              "name": "/cardiac-surgery/",
+              "children": [],
+              "size": 156
+            },
+            {
+              "name": "/prevention/",
+              "children": [],
+              "size": 222
+            },
+            {
+              "name": "/noninvasive-imaging/",
+              "children": [],
+              "size": 234
+            },
+            {
+              "name": "/arrhythmias-and-clinical-ep/",
+              "children": [],
+              "size": 257
+            },
+            {
+              "name": "/acute-coronary-syndromes/",
+              "children": [],
+              "size": 312
+            },
+            {
+              "name": "/anticoagulation-management/",
+              "children": [],
+              "size": 339
+            },
+            {
+              "name": "/dyslipidemia/",
+              "children": [],
+              "size": 666
+            },
+            {
+              "name": "/heart-failure-and-cardiomyopathies/",
+              "children": [],
+              "size": 740
+            }
+          ]
+        },
+        {
+          "name": "/about-acc/",
+          "children": [
+            {
+              "name": "/campaign-future/",
+              "children": [],
+              "size": 12
+            },
+            {
+              "name": "/support-the-acc/",
+              "children": [],
+              "size": 16
+            },
+            {
+              "name": "/annual-report/",
+              "children": [],
+              "size": 164
+            },
+            {
+              "name": "/industry-relations/",
+              "children": [],
+              "size": 203
+            },
+            {
+              "name": "/innovation/",
+              "children": [],
+              "size": 464
+            },
+            {
+              "name": "/our-bylaws-and-code-of-ethics/",
+              "children": [],
+              "size": 479
+            },
+            {
+              "name": "/diversity-and-inclusion/",
+              "children": [],
+              "size": 1870
+            },
+            {
+              "name": "/leadership/",
+              "children": [],
+              "size": 2785
+            },
+            {
+              "name": "/press-releases/",
+              "children": [],
+              "size": 28010
+            }
+          ]
+        },
+        {
+          "name": "/education-and-meetings/",
+          "children": [
+            {
+              "name": "/",
+              "children": [],
+              "size": 27
+            },
+            {
+              "name": "/image-and-slide-gallery",
+              "children": [],
+              "size": 1441
+            },
+            {
+              "name": "/features/",
+              "children": [],
+              "size": 2123
+            },
+            {
+              "name": "/online-courses",
+              "children": [],
+              "size": 2376
+            },
+            {
+              "name": "/education-catalog",
+              "children": [],
+              "size": 12237
+            },
+            {
+              "name": "/maintenance-of-certification-information-hub/",
+              "children": [],
+              "size": 17048
+            },
+            {
+              "name": "/meetings/",
+              "children": [],
+              "size": 20679
+            },
+            {
+              "name": "/patient-case-quizzes/",
+              "children": [],
+              "size": 23004
+            },
+            {
+              "name": "/products-and-resources/",
+              "children": [],
+              "size": 49464
+            }
+          ]
+        },
+        {
+          "name": "/guidelines/",
+          "children": [
+            {
+              "name": "/guidelines/",
+              "children": [],
+              "size": 62
+            },
+            {
+              "name": "/",
+              "children": [],
+              "size": 117
+            },
+            {
+              "name": "/about-guidelines-and-clinical-documents/",
+              "children": [],
+              "size": 499
+            },
+            {
+              "name": "/hubs/",
+              "children": [],
+              "size": 10631
+            }
+          ]
+        },
+        {
+          "name": "/tools-and-practice-support/",
+          "children": [
+            {
+              "name": "/",
+              "children": [],
+              "size": 70
+            },
+            {
+              "name": "/clinical-toolkits/",
+              "children": [],
+              "size": 230
+            },
+            {
+              "name": "/cardiology-as-a-career-path/",
+              "children": [],
+              "size": 658
+            },
+            {
+              "name": "/features/",
+              "children": [],
+              "size": 1134
+            },
+            {
+              "name": "/advocacy-at-the-acc/",
+              "children": [],
+              "size": 1613
+            },
+            {
+              "name": "/quality-programs/",
+              "children": [],
+              "size": 1730
+            },
+            {
+              "name": "/mobile-resources/",
+              "children": [],
+              "size": 5929
+            },
+            {
+              "name": "/practice-solutions/",
+              "children": [],
+              "size": 9934
+            }
+          ]
+        },
+        {
+          "name": "/features/",
+          "children": [
+            {
+              "name": "/2019/",
+              "children": [],
+              "size": 121
+            }
+          ]
+        },
+        {
+          "name": "/membership/",
+          "children": [
+            {
+              "name": "/current-members/",
+              "children": [],
+              "size": 249
+            },
+            {
+              "name": "/convocation/",
+              "children": [],
+              "size": 269
+            },
+            {
+              "name": "/chapters/",
+              "children": [],
+              "size": 814
+            },
+            {
+              "name": "/features/",
+              "children": [],
+              "size": 2396
+            },
+            {
+              "name": "/join-us/",
+              "children": [],
+              "size": 30375
+            },
+            {
+              "name": "/sections-and-councils/",
+              "children": [],
+              "size": 52959
+            }
+          ]
+        },
+        {
+          "name": "/latest-in-cardiology/",
+          "children": [
+            {
+              "name": "/",
+              "children": [],
+              "size": 3152
+            },
+            {
+              "name": "/features/",
+              "children": [],
+              "size": 7363
+            },
+            {
+              "name": "/journal-scans/",
+              "children": [],
+              "size": 125135
+            },
+            {
+              "name": "/clinical-trials/",
+              "children": [],
+              "size": 135701
+            },
+            {
+              "name": "/ten-points-to-remember/",
+              "children": [],
+              "size": 190050
+            },
+            {
+              "name": "/articles/",
+              "children": [],
+              "size": 336102
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "acc.org.mcas.ms/",
+      "children": [
+        {
+          "name": "/latest-in-cardiology/",
+          "children": [
+            {
+              "name": "/ten-points-to-remember/",
+              "children": [],
+              "size": 8
+            },
+            {
+              "name": "/journal-scans/",
+              "children": [],
+              "size": 12
+            },
+            {
+              "name": "/articles/",
+              "children": [],
+              "size": 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "accscientificsession.acc.org/",
+      "children": [
+        {
+          "name": "/features/",
+          "children": [
+            {
+              "name": "/2015/",
+              "children": [],
+              "size": 12
+            },
+            {
+              "name": "/2020/",
+              "children": [],
+              "size": 12
+            }
+          ]
+        },
+        {
+          "name": "/meeting-destinations/",
+          "children": [
+            {
+              "name": "/learning-destinations/",
+              "children": [],
+              "size": 27
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "memberapp.acc.org/",
+      "children": [
+        {
+          "name": "/application/",
+          "children": [
+            {
+              "name": "/index/",
+              "children": [],
+              "size": 11013
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
