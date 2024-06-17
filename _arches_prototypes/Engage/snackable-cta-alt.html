@@ -1,0 +1,50 @@
+<div
+  data-item="cta-overlay"
+  class="bg_primary-n2 br_round c_white color_inherit shadow_overlap-light p_4 p_5:lg reading-typography relative z_1"
+>
+  <h2 data-item="cta-title" class="m-b_3 lh_1 font_medium font_display">
+    <strong class="font-size_up m-b_2 block">Snackable Surveys</strong>
+    <small class="font-size_down block"> We are hungry for your feedback!</small>
+  </h2>
+  <div class="p-t_2 p-b_3" data-item="cta-description" >
+    <p class="font-size_up">
+        Great insights for us that only take 2 minutes to complete. 
+        <strong class="block">Share a quick bite of insight with us!</strong>
+    </p>
+  </div>
+  <div class="grid justify_center">
+    <button id="randomUrlButton"
+    class="btn btn-secondary capitalize m-b_n2 shadow_1"
+    >Take Survey</button
+  >
+  </div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const urls = [
+          "page1",
+          "page2",
+          "page3",
+          // Add more URLs as needed
+      ];
+  
+      const baseURL = "https://www.surveymonkey.com/r/";
+  
+      // Function to navigate to a random URL
+      function goToRandomURL() {
+          // Generate a random index to select a random URL from the array
+          const randomIndex = Math.floor(Math.random() * urls.length);
+          const randomURL = urls[randomIndex];
+  
+          // Construct the full URL
+          const fullURL = baseURL + randomURL;
+  
+          // Navigate to the random URL
+          window.location.href = fullURL;
+      }
+  
+      // Add event listener to the button
+      const randomUrlButton = document.getElementById('randomUrlButton');
+      randomUrlButton.addEventListener('click', goToRandomURL);
+  });
+  </script>
+</div>
