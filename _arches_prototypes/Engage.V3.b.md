@@ -25,17 +25,17 @@ position: "Membership"
 </div>
 
 <div class="reading-typography bg_black-1 m-x_n4 p_5 m-b_4 m-b_5:lg">
-  <h2>Benefits</h2>
+  <h2>Featured Benefits</h2>
   <ul class="columns_2:md  gap-x_6 gap-y_4 gap_5 grid p-x_4:lg ul_none">
-    <li class="flex flex_row items_start justify_start isolate relative">
-      <em class="c_accent font_7 m-t_3 p-r_4 far fa-regular fa-newspaper" aria-hidden="true"></em>
+    <li class="flex flex_row:md flex_column items_start justify_start isolate relative">
+      <em class="c_accent font_7 self_center self_start:md p_4 p_0:md m-t_4 m-t_3:md p-r_4:md far fa-regular fa-newspaper" aria-hidden="true"></em>
       <span class="font-size_up">
         Access to all <a rel="noopener noreferrer" class="link" href="http://www.onlinejacc.org/"
           target="_blank"><em>JACC</em> Journals</a>
       </span>
     </li>
-    <li class="flex flex_row items_start justify_start isolate relative">
-      <em class="c_accent font_7 m-t_3 p-r_4 far fa-regular fa-calendar" aria-hidden="true"></em>
+    <li class="flex flex_row:md flex_column items_start justify_start isolate relative">
+      <em class="c_accent font_7 self_center self_start:md p_4 p_0:md m-t_4 m-t_3:md p-r_4:md far fa-regular fa-calendar" aria-hidden="true"></em>
       <span class="font-size_up">
         Discounts on education, including the
         <a rel="noopener noreferrer" class="link"
@@ -43,26 +43,25 @@ position: "Membership"
           target="_blank">Annual Scientific Session</a>
       </span>
     </li>
-    <li class="flex flex_row start justify_start items_start max-w_25"><em
-        class="c_accent font_7  p-r_4 m-t_3 far fa-regular fa-certificate" aria-hidden="true"></em><span
+    <li class="flex flex_row:md flex_column items_start justify_start isolate relative"><em
+        class="c_accent font_7 self_center self_start:md p_4 p_0:md m-t_4 m-t_3:md p-r_4:md far fa-regular  fa-certificate" aria-hidden="true"></em><span
         class="font-size_up">
         Opportunities to earn free continuing education credits
       </span>
     </li>
-    <li class="flex flex_row items_start justify_start isolate relative">
-      <em class="c_accent font_7 m-t_3 p-r_4 fa-brand fa-connectdevelop fab " aria-hidden="true"></em>
+    <li class="flex flex_row:md flex_column items_start justify_start isolate relative">
+      <em class="c_accent font_7 self_center self_start:md p_4 p_0:md m-t_4 m-t_3:md p-r_4:md fa-brand fa-connectdevelop fab " aria-hidden="true"></em>
       <span class="font-size_up">
         Connect with members that match your specialty, career stage or interest area, in 24+
         <a href="/Membership/Sections-and-Councils">Member Sections.</a>&nbsp; </span>
     </li>
-    <li class="flex flex_row items_start justify_start isolate relative gap_3 relative isolate ">
+    <li class="flex flex_row:md flex_column items_start justify_start isolate relative">
       <span class="font-size_up">
         Read about more of our
-        <a href="/Membership/Join-Us/Benefits">Member Benefits</a>&nbsp; </span>
-      <span class="flex flex_row">
-        <em class="c_accent font_6 m-t_3 fas fa-solid fa-ellipsis " aria-hidden="true"></em>
-        <em class="c_accent fa-chevron-right fa-solid fas font_6 m-l_n3 m-t_3" aria-hidden="true"></em>
-      </span>
+        <a href="#FullBenefits" class="expanded-click-area">Member Benefits</a>&nbsp; </span>
+        <span class="flex flex_column self_center items_center justify_center">
+          <i class="c_accent fa-chevron-down fa-solid fas font_6" aria-hidden="true"></i>
+        </span>
     </li>
   </ul>
 </div>
@@ -91,7 +90,7 @@ position: "Membership"
           for all, advances patient care and builds the next generation of cardiovascular professionals. You can strengthen
           your
           network and the profession.&nbsp;</p>
-        <ul class="columns_2:lg columns_1 grid column_1 gap_5">
+        <ul class="columns_2:lg columns_1 grid column_1 gap_5 ul_none">
           <li data-element="data-table" class="bg_shade-n2 br_round c_white-8 color_inherit flex flex_column justify_start p_4 p_5:md reading-typography shadow_bevel-bold">
               <header class="c_white font-size_up-2 font_display">
                   <h2 data-element="table-title" class="font-size_down-2 font_medium m-b_0 ">First Steps</h2>
@@ -113,23 +112,23 @@ position: "Membership"
           </li>
           <li data-element="data-table" class="bg_primary-n2 br_round c_white-8 color_inherit flex flex_column justify_start p_4 p_5:md reading-typography shadow_bevel-bold">
               <header class="font_display font-size_up-2">
-                  <h2 data-element="table-title" class="font-size_down-2 font_medium m-b_0 ">More</h2>
+                  <h2 data-element="table-title" class="font-size_down-2 font_medium m-b_0 ">Next Steps</h2>
                   <h3 class="font-size_up-1 lh_2">Advanced Opportunities</h3>
               </header>
               <main>
                   <ul class="ul_none flex flex_column gap-y_3 p-b_4 p-x_3 font-size_1 font_medium c_white-9">
-                      <li><a class="block" href="https://www.acc.org/Membership/Sections-and-Councils">Join an ACC Member
-                          Section</a>Explore ACC’s 23+ Member Sections and connect with peers that share your
+                      <li><a class="block" href="https://www.acc.org/Membership/Sections-and-Councils"><h4>Join an ACC Member
+                          Section</h4></a>Explore ACC’s 23+ Member Sections and connect with peers that share your
                       interest, specialty, career stage or professional role on projects that interest you—from advocacy to
                       education.&nbsp;</li>
-                    <li><a class="block" href="https://www.acc.org/Membership/Chapters">Join an ACC
-                          Chapter</a>(Stephanie
+                    <li><a class="block" href="https://www.acc.org/Membership/Chapters"><h4>Join an ACC
+                      Chapter</h4></a>(Stephanie
                       with working with Sarah/Miriam on language)</li>
-                    <li><a class="block" href="https://www.acc.org/Membership/ACC-DocMatter-Community">Contribute to
-                          ACC’s DocMatter
-                          Community</a>Connect with peers, colleagues and mentors in ACC’s members-only
+                    <li><a class="block" href="https://www.acc.org/Membership/ACC-DocMatter-Community"><h4>Contribute to
+                      ACC’s DocMatter
+                      Community</h4></a>Connect with peers, colleagues and mentors in ACC’s members-only
                       collaboration portal. Ask questions, contribute your expertise and share your experiences.&nbsp;</li>
-                    <li><span class="block">Become a Mentor Apply to become a mentor for our</span> <a href="https://www.acc.org/Tools-and-Practice-Support/Cardiology-as-a-Career-Path/Leadership-Development-Programs">leadership
+                    <li><h4 class="block">Become a Mentor Apply to become a mentor for our</h4> <a href="https://www.acc.org/Tools-and-Practice-Support/Cardiology-as-a-Career-Path/Leadership-Development-Programs">leadership
                         development programs</a>—including our Internal Medicine Cardiology Program.</li>
                   </ul>
               </main>
@@ -154,7 +153,7 @@ position: "Membership"
       </header>
       <main id="accordion_advance_quality" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_4 reading-typography shadow_emboss-light tab-content transition_4 collapse" aria-labelledby="accordion_advance_quality" >
         <p>Advance ACC&rsquo;s mission to support clinicians worldwide as they make sense of the latest science and put it into practice, through education, knowledge sharing and exchanging ideas.&nbsp;</p>  
-        <ul class="columns_2:lg columns_1 grid column_1 gap_5">
+        <ul class="columns_2:lg columns_1 grid column_1 gap_5 ul_none">
           <li data-element="data-table" class="bg_shade-n2 br_round c_white-8 color_inherit flex flex_column justify_start p_4 p_5:md reading-typography shadow_bevel-bold">
               <header class="c_white font-size_up-2 font_display">
                   <h2 data-element="table-title" class="font-size_down-2 font_medium m-b_0 ">First Steps</h2>
@@ -176,7 +175,7 @@ position: "Membership"
           </li>
           <li data-element="data-table" class="bg_primary-n2 br_round c_white-8 color_inherit flex flex_column justify_start p_4 p_5:md reading-typography shadow_bevel-bold">
               <header class="font_display font-size_up-2">
-                  <h2 data-element="table-title" class="font-size_down-2 font_medium m-b_0 ">More</h2>
+                  <h2 data-element="table-title" class="font-size_down-2 font_medium m-b_0 ">Next Steps</h2>
                   <h3 class="font-size_up-1 lh_2">Advanced Opportunities</h3>
               </header>
               <main>
@@ -219,7 +218,7 @@ position: "Membership"
       </header>
       <main id="accordion_advocate" class="bg_black-_05 br-bl_radius br-br_radius m-x_0 m-x_3:md p_4 reading-typography shadow_emboss-light tab-content transition_4 collapse" aria-labelledby="accordion_advocate" >
        <p>You strengthen our collective voice to advocate for our profession and our patients.&nbsp;</p>
-        <ul class="columns_2:lg columns_1 grid column_1 gap_5">
+        <ul class="columns_2:lg columns_1 grid column_1 gap_5 ul_none">
           <li data-element="data-table" class="bg_shade-n2 br_round c_white-8 color_inherit flex flex_column justify_start p_4 p_5:md reading-typography shadow_bevel-bold">
               <header class="c_white font-size_up-2 font_display">
                   <h2 data-element="table-title" class="font-size_down-2 font_medium m-b_0 ">First Steps</h2>
@@ -240,7 +239,7 @@ position: "Membership"
           </li>
           <li data-element="data-table" class="bg_primary-n2 br_round c_white-8 color_inherit flex flex_column justify_start p_4 p_5:md reading-typography shadow_bevel-bold">
               <header class="font_display font-size_up-2">
-                  <h2 data-element="table-title" class="font-size_down-2 font_medium m-b_0 ">More</h2>
+                  <h2 data-element="table-title" class="font-size_down-2 font_medium m-b_0 ">Next Steps</h2>
                   <h3 class="font-size_up-1 lh_2">Advanced Opportunities</h3>
               </header>
               <main>
@@ -265,8 +264,97 @@ position: "Membership"
       </main>
   </div>
 </section>
-<section class="grid columns_3:lg columns_2:md columns_1 gap_4 m_4 p_4">
-    
+{% include_relative MicroSite/heroimage.micro.engage.html %}
+<ul class="columns_3:lg columns_2:md gap-x_6 gap-y_4 grid p-x_4:lg ul_none m_4 p_4">
+    <li class="flex flex_row:md flex_column items_start justify_start">
+    <em class="c_accent font_7 self_center self_start:md p_4 p_0:md m-t_4 m-t_3:md p-r_4:md far fa-regular fa-newspaper" aria-hidden="true"></em>
+    <div>
+    <strong class="block">Clinical Support</strong>
+    <ul class="ul_square marker_accent">
+        <li>Learn from evidence-based <a class="link" href="/Guidelines">clinical
+        guidelines</a>&nbsp;</li>
+        <li>Explore 21 clinical topic hubs.</li>
+        <li>Access to 12+ point-of-care <a class="link" href="/Tools-and-Practice-Support/Mobile-Resources">Mobile
+        Apps</a>&nbsp;</li>
+        <li>Receive timely updates on the latest clinical guidance </li>
+    </ul>
+    </div>
+    </li>
+    <li class="flex flex_row:md flex_column items_start justify_start">
+    <em class="c_accent font_7 self_center self_start:md p_4 p_0:md m-t_4 m-t_3:md p-r_4:md far fa-regular fa-users" aria-hidden="true"></em>
+    <div>
+    <strong class="block">Connections &amp; Networking</strong>
+    <ul class="ul_square marker_accent">
+        <li>
+        <strong>DocMatter</strong> ACC's Member-only collaboration portal.
+        </li>
+        <li> Connect with your specialty in a <a class="link" href="/Membership/Sections-and-Councils">Member Section</a>&nbsp;<em class="fa fa-lock" aria-hidden="true"></em>
+        </li>
+        <li> Get involved in your local <a class="link" href="/Membership/Chapters">ACC Chapter</a>&nbsp;</li>
+        <!--<li> Find mentors and mentees on the <a rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" href="https://memberhub.acc.org/dashboard" target="_blank">Member Hub</a> <em class="fa fa-lock" aria-hidden="true"></em>
+                </li>-->
+        <li>Build your professional profile by participating in ACC committees, councils and workgroups
+        </li>
+        <li> Participate in <a class="link" href="/Tools-and-Practice-Support/Advocacy-at-the-ACC">ACC advocacy
+        activities</a>&nbsp;        </li>
+    </ul>
+    </div>
+    </li>
+    <li class="flex flex_row:md flex_column items_start justify_start">
+    <em class="c_accent font_7 self_center self_start:md p_4 p_0:md m-t_4 m-t_3:md p-r_4:md far fa-regular fa-calendar" aria-hidden="true"></em>
+    <div>
+    <strong class="block">Educational Discounts</strong>
+    <ul class="ul_square marker_accent">
+        <li><a rel="noopener noreferrer" href="https://accscientificsession.acc.org/" target="_blank">Annual Scientific Session</a></li>
+        <li><a rel="noopener noreferrer" href="https://www.acc.org/education-and-meetings/meetings#sort=%40fstartz32xdatetime90022%20ascending&amp;f:@fmeetingtypedescription90022_37ee935ad78640a6a80b0f73e4f203b0=[Live%20Meetings]" target="_blank">Live meetings</a></li>
+        <li><a rel="noopener noreferrer" href="https://www.acc.org/education-and-meetings/education-catalog#sort=%40foriginalz32xpostedz32xdate90022%20descending&amp;f:EducationActivityTypeSearchFacet=[Self-Assessment%20Programs,Drill%20and%20Practice]" target="_blank">Digital products</a></li>
+    </ul>
+    </div>
+    </li>
+    <li class="flex flex_row:md flex_column items_start justify_start">
+    <em class="c_accent font_7 self_center self_start:md p_4 p_0:md m-t_4 m-t_3:md p-r_4:md far fa-regular fa-suitcase-medical" aria-hidden="true"></em>
+    <div>
+    <strong class="block">Career Advancement</strong>
+    <ul class="ul_square marker_accent">
+        <li>View <a rel="noopener noreferrer" href="https://www.acc.org/education-and-meetings/meetings#sort=%40fstartz32xdatetime90022%20ascending&amp;f:@fmeetingtypedescription90022_034dc1bf9a924fe4846393fec0c89d57=[Webinars%20-%20Live]" target="_blank">live</a> and <a href="https://www.acc.org/education-and-meetings/meetings?view=archive&amp;#sort=%40fstartz32xdatetime90022%20ascending&amp;f:@fmeetingtypedescription90022_692b3e99f8874696829d72d17744c7dc=[Webinars%20-%20OnDemand]">on-demand
+        webinars</a> </li>
+        <li>Expand your networking using ACC Connect <a class="link" href="/Tools-and-Practice-Support/Mobile-Resources">mobile app</a>&nbsp;</li>
+        <li><a class="link" href="/Tools-and-Practice-Support/Cardiology-as-a-Career-Path/Leadership-Development-Programs">Hone your leadership skills</a> in programs designed for young professionals</li>
+    </ul>
+    </div>
+    </li>
+    <li class="flex flex_row:md flex_column items_start justify_start">
+    <em class="c_accent font_7 self_center self_start:md p_4 p_0:md m-t_4 m-t_3:md p-r_4:md far fa-regular fa-star" aria-hidden="true"></em>
+    <div>
+    <strong class="block">Professional Recognition</strong>
+    <ul class="ul_square marker_accent">
+        <li>Achieve global recognition with the FACC or AACC designation</li>
+        <li>Nominate colleagues for <a class="link" href="/Membership/Join-Us/Benefits/Award-Programs">Distinguished
+        Awards</a></li>
+        <li>Apply for <a class="link" href="/Membership/Join-Us/Benefits/Award-Programs">Research and Career Development
+        Awards</a></li>
+    </ul>
+    </div>
+    </li>
+    <li class="flex flex_row:md flex_column items_start justify_start">
+    <em class="c_accent font_7 self_center self_start:md p_4 p_0:md m-t_4 m-t_3:md p-r_4:md far fa-regular fa-badge-dollar" aria-hidden="true"></em>
+    <div>
+    <strong class="block">Partner Discounts</strong>
+    <ul class="ul_square marker_accent">
+        <li><a class="link" href="/Membership/Join-Us/Benefits/Additional-Member-Only-Benefits/Contract-Diagnostics-Physician-Contract-Reviews-and-Negotiations">Contract
+        Diagnostics</a></li>
+        <li><a class="link" href="/sitecore/service/notfound.aspx?item=web%3a%7b839D4862-01F9-4A0D-934D-98CACE07C0A3%7d%40en">HeartBeat
+        Health</a></li>
+        <li><a class="link" href="/Membership/Join-Us/Benefits/Additional-Member-Only-Benefits/ACC-and-The-Doctors-Company">The
+        Doctors Company</a></li>
+        <li><a target="_blank" href="https://www.acc.org/Latest-in-Cardiology/Articles/2023/04/06/13/44/New-DEA-Letter-Explains-One-Time-Training-Requirem">DEA
+        training course</a></li>
+    </ul>
+    </div>
+    </li>
+</ul>
+
+<!-- <section class="grid columns_3:lg columns_2:md columns_1 gap_4 m_4 p_4"> 
 <div >
     <h5>Get Connected</h5>
     <ul class="marker_primary">
@@ -312,4 +400,4 @@ position: "Membership"
     <li>Nominate colleagues for <a href="/Membership/Join-Us/Benefits/Award-Programs">Distinguished Awards</a></li>
     <li>Apply for <a href="/Membership/Join-Us/Benefits/Award-Programs">Research and Career Development Awards</a></li>
     </div>
-</section>
+</section> -->
