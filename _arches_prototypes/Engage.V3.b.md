@@ -108,12 +108,12 @@ position: "Membership"
         <li data-element="data-table"
           class="bg_shade-n2 br_round c_white-8 color_inherit flex flex_column justify_start p_4 p_5:md reading-typography shadow_bevel-bold">
           <header class="c_white font-size_up-2 font_display">
-            <h2 data-element="table-title" class="font-size_down-2 font_medium m-b_0 ">First Steps</h2>
-            <h3 class="font-size_up-1 lh_2">Basic to Engagement</h3>
+            <h2 data-element="table-title" class="font-size_down-2 font_medium m-b_3">First Steps</h2>
+            <h3 class="font-size_up-1 lh_1">Basic to Engagement</h3>
           </header>
           <main>
             <ul
-              class="ul_none flex flex_column gap-y_3 p-b_4 p-x_3 font-size_1 font_medium c_white-9 br-t_1 br_solid br_white-6">
+              class="ul_none flex flex_column gap-y_3 p-b_4 p-x_2 p-x_3:md font-size_1 font_medium c_white-9 br-t_1 br_solid br_white-6">
               <li class="p-t_4"><a class="block link"
                   href="https://www.acc.org/education-and-meetings/meetings#sort=@startz32xdatetime%20ascending">
                   <h4>Attend
@@ -136,13 +136,13 @@ position: "Membership"
         </li>
         <li data-element="data-table"
           class="bg_primary-n2 br_round c_white-8 color_inherit flex flex_column justify_start p_4 p_5:md reading-typography shadow_bevel-bold">
-          <header class="font_display font-size_up-2">
-            <h2 data-element="table-title" class="font-size_down-2 font_medium m-b_0 ">Next Steps</h2>
-            <h3 class="font-size_up-1 lh_2">Advanced Opportunities</h3>
+          <header class="font_display font-size_up-2 p-x_2">
+            <h2 data-element="table-title" class="font-size_down-2 font_medium m-b_3">Next Steps</h2>
+            <h3 class="font-size_up-1 lh_1">Advanced Opportunities</h3>
           </header>
           <main>
             <ul
-              class="ul_none flex flex_column gap-y_3 p-b_4 p-x_3 font-size_1 font_medium c_white-9 br-t_1 br_solid br_white-6">
+              class="ul_none flex flex_column gap-y_3 p-b_4 p-x_2 p-x_3:md font-size_1 font_medium c_white-9 br-t_1 br_solid br_white-6">
               <li class="p-t_4"><a class="block" href="https://www.acc.org/Membership/Sections-and-Councils">
                   <h4>Join an ACC Member
                     Section</h4>
@@ -200,12 +200,12 @@ position: "Membership"
         <li data-element="data-table"
           class="bg_shade-n2 br_round c_white-8 color_inherit flex flex_column justify_start p_4 p_5:md reading-typography shadow_bevel-bold">
           <header class="c_white font-size_up-2 font_display">
-            <h2 data-element="table-title" class="font-size_down-2 font_medium m-b_0 ">First Steps</h2>
-            <h3 class="font-size_up-1 lh_2">Basic to Engagement</h3>
+            <h2 data-element="table-title" class="font-size_down-2 font_medium m-b_3">First Steps</h2>
+            <h3 class="font-size_up-1 lh_1">Basic to Engagement</h3>
           </header>
           <main>
             <ul
-              class="ul_none flex flex_column gap-y_3 p-b_4 p-x_3 font-size_1 font_medium c_white-9 br-t_1 br_solid br_white-6">
+              class="ul_none flex flex_column gap-y_3 p-b_4 p-x_2 p-x_3:md font-size_1 font_medium c_white-9 br-t_1 br_solid br_white-6">
               <li class="p-t_4">
                 <h4 class="block">Attend the event &ldquo;How to Become a Cardiovascular
                   Investigator&rdquo;</h4>Get the skills you need to start your research career.&nbsp;
@@ -227,13 +227,13 @@ position: "Membership"
         </li>
         <li data-element="data-table"
           class="bg_primary-n2 br_round c_white-8 color_inherit flex flex_column justify_start p_4 p_5:md reading-typography shadow_bevel-bold">
-          <header class="font_display font-size_up-2">
-            <h2 data-element="table-title" class="font-size_down-2 font_medium m-b_0 ">Next Steps</h2>
-            <h3 class="font-size_up-1 lh_2">Advanced Opportunities</h3>
+          <header class="font_display font-size_up-2 p-x_2">
+            <h2 data-element="table-title" class="font-size_down-2 font_medium m-b_3">Next Steps</h2>
+            <h3 class="font-size_up-1 lh_1">Advanced Opportunities</h3>
           </header>
           <main>
             <ul
-              class="ul_none flex flex_column gap-y_3 p-b_4 p-x_3 font-size_1 font_medium c_white-9 br-t_1 br_solid br_white-6">
+              class="ul_none flex flex_column gap-y_3 p-b_4 p-x_2 p-x_3:md font-size_1 font_medium c_white-9 br-t_1 br_solid br_white-6">
               <li class="p-t_4"><a class="block"
                   href="https://www.acc.org/Membership/Sections-and-Councils">
                   <h4>Join a Clinical Member
@@ -290,12 +290,12 @@ position: "Membership"
         <li data-element="data-table"
           class="bg_shade-n2 br_round c_white-8 color_inherit flex flex_column justify_start p_4 p_5:md reading-typography shadow_bevel-bold">
           <header class="c_white font-size_up-2 font_display">
-            <h2 data-element="table-title" class="font-size_down-2 font_medium m-b_0 ">First Steps</h2>
-            <h3 class="font-size_up-1 lh_2">Basic to Engagement</h3>
+            <h2 data-element="table-title" class="font-size_down-2 font_medium m-b_3">First Steps</h2>
+            <h3 class="font-size_up-1 lh_1">Basic to Engagement</h3>
           </header>
           <main>
             <ul
-              class="ul_none flex flex_column gap-y_3 p-b_4 p-x_3 font-size_1 font_medium c_white-9 br-t_1 br_solid br_white-6">
+              class="ul_none flex flex_column gap-y_3 p-b_4 p-x_2 p-x_3:md font-size_1 font_medium c_white-9 br-t_1 br_solid br_white-6">
               <li class="p-t_4">
                 <h4 class="block">Conduct Grassroots Outreach</h4>Reach out to your local officials and lawmakers to
                 advocate for the profession.&nbsp;
@@ -315,13 +315,13 @@ position: "Membership"
         </li>
         <li data-element="data-table"
           class="bg_primary-n2 br_round c_white-8 color_inherit flex flex_column justify_start p_4 p_5:md reading-typography shadow_bevel-bold">
-          <header class="font_display font-size_up-2">
-            <h2 data-element="table-title" class="font-size_down-2 font_medium m-b_0 ">Next Steps</h2>
-            <h3 class="font-size_up-1 lh_2">Advanced Opportunities</h3>
+          <header class="font_display font-size_up-2 p-x_2">
+            <h2 data-element="table-title" class="font-size_down-2 font_medium m-b_3">Next Steps</h2>
+            <h3 class="font-size_up-1 lh_1">Advanced Opportunities</h3>
           </header>
           <main>
             <ul
-              class="ul_none flex flex_column gap-y_3 p-b_4 p-x_3 font-size_1 font_medium c_white-9 br-t_1 br_solid br_white-6">
+              class="ul_none flex flex_column gap-y_3 p-b_4 p-x_2 p-x_3:md font-size_1 font_medium c_white-9 br-t_1 br_solid br_white-6">
               <li class="p-t_4"><a class="block"
                   href="https://www.acc.org/Tools-and-Practice-Support/Advocacy-at-the-ACC/ACC-Legislative-Conference/About-the-Conference">
                   <h4>Attend
