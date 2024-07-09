@@ -85,7 +85,7 @@
         display:block;
         filter: blur(100px);
         background-color:  hsla(var(--acc-h), var(--acc-s), var(--acc-l), 50%);
-        inset:-100px 100px;
+        inset:-100px 100px 0px;
         position: absolute;
         z-index: -1;
     }
@@ -97,6 +97,13 @@
     inset: 1rem 5rem 1rem;
     position: absolute;
     z-index: -1;
+    background-blend-mode: screen;
+    }
+    .dark.section-glow::before{
+        background-color: hsla(var(--acc-h), var(--acc-s), 5%, 50%);
+    inset: -20px 0 -30px;
+    filter: blur(100px);
+    background-blend-mode: multiply;
     }
     .reading-typography{
         color: var(--primary);
