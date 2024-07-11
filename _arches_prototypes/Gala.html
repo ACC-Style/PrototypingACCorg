@@ -7,37 +7,45 @@ position: "AboutUs/Feature"
 {% include_relative Gala/hero-branding-area.html %}
 
 {% include_relative Gala/intro.html %}
-<span id="tickets"></span>
-<h2 class="c_primary flex items_center opacity_7 m-b_n4">  
-	<span class="br-b_1 br_solid br_primary flex_grow"></span>  
-	<div class="aspect_16x9 flex_100 max-w_30 m-x_5:lg m-x_4:md m-b_n5:md p-t_4">
-    {% include_relative Gala/tickets.svg %}
-	</div>
-	<span class="br-b_1 br_solid br_primary flex_grow"></span> 
-</h2>
-{% include_relative Gala/tickets.html %}
-<h2 class="c_primary flex items_center opacity_7 m-b_n4">  
-	<span class="br-b_1 br_solid br_primary flex_grow"></span>  
-	<div class="aspect_16x9 flex_100 max-w_30 m-x_5:lg m-x_4:md m-b_n5:md p-t_4">
-        {% include_relative Gala/details.svg %}
-	</div>
-	<span class="br-b_1 br_solid br_primary flex_grow"></span> 
-</h2>
-{% include_relative Gala/event-details.html %}
-<h2 class="c_primary flex items_center opacity_7 m-b_n4">  
-	<span class="br-b_1 br_solid br_primary flex_grow"></span>  
-	<div class="aspect_16x9 flex_100 max-w_30 m-x_5:lg m-x_4:md m-b_n5:md p-t_4">
-        {% include_relative Gala/tables.svg %}
-	</div>
-	<span class="br-b_1 br_solid br_primary flex_grow"></span> 
-</h2>
-{% include_relative Gala/tables.html %}
-<h2 class="c_primary flex items_center opacity_7 m-b_n4">  
-	<span class="br-b_1 br_solid br_primary flex_grow"></span>  
-	<div class="aspect_16x9 flex_100 max-w_30 m-x_5:lg m-x_4:md m-b_n5:md p-t_4">
-        {% include_relative Gala/sponsors.svg %}
-	</div>
-	<span class="br-b_1 br_solid br_primary flex_grow"></span> 
-</h2>
-{% include_relative Gala/sponsorship-opp-more.html %}
+<section id="sectionTicket">
+	<span id="tickets"></span>
+	<h2 class="c_primary flex items_center opacity_7 m-b_n4">
+		<span class="br-b_1 br_solid br_primary flex_grow"></span>
+		<div class="aspect_16x9 flex_100 max-w_30 m-x_5:lg m-x_4:md m-b_n5:md p-t_4">
+		{% include_relative Gala/tickets.svg %}
+		</div>
+		<span class="br-b_1 br_solid br_primary flex_grow"></span>
+	</h2>
+	{% include_relative Gala/tickets.html %}
+</section>
+<section id="detailsSection">
+	<h2 class="c_primary flex items_center opacity_7 m-b_n4">
+		<span class="br-b_1 br_solid br_primary flex_grow"></span>
+		<div class="aspect_16x9 flex_100 max-w_30 m-x_5:lg m-x_4:md m-b_n5:md p-t_4">
+			{% include_relative Gala/details.svg %}
+		</div>
+		<span class="br-b_1 br_solid br_primary flex_grow"></span>
+	</h2>
+	{% include_relative Gala/event-details.html %}
+</section>
+<section id="tablesSection">
+	<h2 class="c_primary flex items_center opacity_7 m-b_n4">
+		<span class="br-b_1 br_solid br_primary flex_grow"></span>
+		<div class="aspect_16x9 flex_100 max-w_30 m-x_5:lg m-x_4:md m-b_n5:md p-t_4">
+			{% include_relative Gala/tables.svg %}
+		</div>
+		<span class="br-b_1 br_solid br_primary flex_grow"></span>
+	</h2>
+	{% include_relative Gala/tables.html %}
+</section>
+<sections id="sponsorSection">
+	<h2 class="c_primary flex items_center opacity_7 m-b_n4">
+		<span class="br-b_1 br_solid br_primary flex_grow"></span>
+		<div class="aspect_16x9 flex_100 max-w_30 m-x_5:lg m-x_4:md m-b_n5:md p-t_4">
+			{% include_relative Gala/sponsors.svg %}
+		</div>
+		<span class="br-b_1 br_solid br_primary flex_grow"></span>
+	</h2>
+	{% include_relative Gala/sponsorship-opp-more.html %}
+</sections>
 {% include_relative Gala/footer.html %}
