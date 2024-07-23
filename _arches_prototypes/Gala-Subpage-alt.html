@@ -1,0 +1,29 @@
+---
+layout: arches-nobrand
+name: "Gala-Sub Alt"
+position: "AboutUs/Feature/Gala"
+---
+{% include_relative Gala/style-override.html %}
+{% include_relative Gala/sub/hero-branding.html %}
+{% include_relative Gala/sub/intro.html %}
+<section id="detailsSection">
+	<h2 class="c_primary flex items_center opacity_7 m-b_n4">
+		<span class="br-b_1 br_solid br_primary flex_grow"></span>
+		<div class="aspect_16x9 flex_100 max-w_30 m-x_5:lg m-x_4:md m-b_n5:md p-t_4">
+			{% include_relative Gala/details.svg %}
+		</div>
+		<span class="br-b_1 br_solid br_primary flex_grow"></span>
+	</h2>
+</section>
+{% include_relative Gala/sub/cores-alt.html %}
+<sections id="sponsorSection">
+	<h2 class="c_primary flex items_center opacity_7 m-b_n4">
+		<span class="br-b_1 br_solid br_primary flex_grow"></span>
+		<div class="aspect_16x9 flex_100 max-w_30 m-x_5:lg m-x_4:md m-b_n5:md p-t_4">
+			{% include_relative Gala/sponsors.svg %}
+		</div>
+		<span class="br-b_1 br_solid br_primary flex_grow"></span>
+	</h2>
+	{% include_relative Gala/sponsorship-opp-more.html %}
+</sections>
+{% include_relative Gala/footer.html %}
