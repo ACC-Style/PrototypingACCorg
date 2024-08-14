@@ -60,9 +60,9 @@ collections:
   generators_prototypes:
     output: true
     permalink: /playground/:path/
-  joinus_prototypes:
+  arches_ui_playground:
     output: true
-    permalink: /joinus/:path/
+    permalink: /UI/:path/
 # Exclude from processing.
 
 # The following items will not be processed, by default.

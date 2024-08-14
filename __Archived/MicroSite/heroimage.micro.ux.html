@@ -1,0 +1,21 @@
+<div grid-template="hero-image-cta" template-option="micro" class="isolation_isolate overflow_hidden relative">
+    <picture data-item="responsive-hero-image" class="absolute bg_cover flex flex_column inset_0 ">
+        <source srcset="{{  'assets/images/MicroSite/HeroShot_1200x300.png' | relative_url }}" media="(min-width: 1024px)" class="display_none">
+        <source srcset="{{  'assets/images/MicroSite/HeroShot_1024x256.png' | relative_url }}" media="(min-width: 768px)" class="display_none">
+        <source srcset="{{  'assets/images/MicroSite/HeroShot_600x300.png' | relative_url }}" media="(min-width: 400px)" class="display_none">
+        <img src="{{  'assets/images/MicroSite/HeroShot_320x300.png' | relative_url }}" alt="Hero Image" class="flex_100">
+    </picture>  <div grid-area="title">
+    <h1 data-item="hero-title"
+      class="lh_3 m_0 m-y_3 m-y_0:lg c_white isolation_isolate relative">
+      <span class="display_none:md"><a href="https://www.acc.org/About-ACC/ux" class="h:c_white h:underline font_bold c_white-8 expanded-click-area h:c_white"><i class="fas fa-solid fa-arrow-left m-l_n3" aria-hidden="true"></i></a></span>
+      <span>UX:</span>
+      <span class="text">Empowering</span>
+      <span class="text">Heart</span>
+      <span class="text">Health,</span>
+      <span class="text">Together</span>
+    </h1>    </div>
+    <div grid-area="cta" class="relative font-size_down-1 grid justify_center items_center">
+      <div class="grid justify_center items_center ">
+        <a  href="https://www.surveymonkey.com/r/66ZMZBC"  class="br_white-3 btn btn-primary c_white expanded-click-area shadow_overlap-bold">Sign Up</a>
+      </div>  </div>
+</div>

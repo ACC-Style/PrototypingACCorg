@@ -1,6 +1,6 @@
 ---
 layout: arches-cardiology
-name: "Careers"
+name: "Careers in Cardiology"
 position: "Why Cardiology"
 ---
 # Why Cardiology: Personal Stories of Passion and Purpose
