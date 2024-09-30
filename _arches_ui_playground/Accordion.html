@@ -1,0 +1,100 @@
+---
+layout: arches_empty
+name: "Accordion"
+position: "HTML and CSS Only"
+---
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #f5f5f5;
+    }
+
+    .accordion {
+        max-width: 600px;
+        margin: 0 auto;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .accordion details {
+        border-bottom: 1px solid #ccc;
+        display: grid;
+        transition: height 0.3s ease;
+        grid-template-rows: auto;
+    }
+
+    .accordion summary {
+        padding: 15px;
+        cursor: pointer;
+        font-weight: bold;
+        background-color: #e7e7e7;
+        border-bottom: 1px solid #ccc;
+        transition: background-color 0.3s ease;
+    }
+
+    .accordion summary:hover {
+        background-color: #d6d6d6;
+    }
+
+    .accordion details[open] summary {
+        background-color: #ccc;
+    }
+
+    .accordion details .content {
+        overflow: hidden;
+        height: 0;
+
+    }
+
+    .accordion details[open] .content {
+        height: auto;
+        padding: 15px;
+    }
+</style>
+
+<div class="accordion w_100 grid">
+    <details class="w_100 grid transition_4 rows_2 relative">
+        <summary class="sticky t_0">Section 1</summary>
+        <div class="content transition_4 overflow_hidden">
+            <p>This is the content of section 1. It is revealed when the section is expanded. Nihil vel corporis qui
+                repudiandae quis perspiciatis molestiae. Reiciendis repellat nemo fugit nam aut modi. Nobis ut similique
+                unde ut ducimus dolores quasi. Ut laboriosam quo molestias.
+            </p>
+            <p>
+                Velit nostrum molestias odio dolor consequatur nostrum repudiandae facilis nobis. Molestiae et dolor.
+                Repellat molestiae repudiandae aperiam in dicta. Natus culpa et expedita odit modi vel. Laboriosam illo
+                aut laborum.
+            </p>
+            <p>
+                Voluptas inventore ut temporibus architecto voluptas officia eius at. Iste pariatur quae veritatis.
+                Ratione sequi ut voluptas doloribus et. Laboriosam dicta ipsa vel blanditiis. Ut adipisci commodi
+                voluptatum porro est.</p>
+            <p>This is the content of section 1. It is revealed when the section is expanded. Nihil vel corporis qui
+                repudiandae quis perspiciatis molestiae. Reiciendis repellat nemo fugit nam aut modi. Nobis ut similique
+                unde ut ducimus dolores quasi. Ut laboriosam quo molestias.
+
+                Velit nostrum molestias odio dolor consequatur nostrum repudiandae facilis nobis. Molestiae et dolor.
+                Repellat molestiae repudiandae aperiam in dicta. Natus culpa et expedita odit modi vel. Laboriosam illo
+                aut laborum.
+
+                Voluptas inventore ut temporibus architecto voluptas officia eius at. Iste pariatur quae veritatis.
+                Ratione sequi ut voluptas doloribus et. Laboriosam dicta ipsa vel blanditiis. Ut adipisci commodi
+                voluptatum porro est.</p>
+        </div>
+    </details>
+    <details>
+        <summary>Section 2</summary>
+        <div class="content">
+            <p>This is the content of section 2. It is revealed when the section is expanded.</p>
+        </div>
+    </details>
+    <details>
+        <summary>Section 3</summary>
+        <div class="content">
+            <p>This is the content of section 3. It is revealed when the section is expanded.</p>
+        </div>
+    </details>
+</div>

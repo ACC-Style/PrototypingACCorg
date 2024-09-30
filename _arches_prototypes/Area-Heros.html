@@ -1,0 +1,65 @@
+---
+layout: arches
+name: "Area Hero Banner"
+position: "About"
+---
+
+<div class="area-hero br_square columns_5 grid isolation_isolate overflow_clip p-b_6 p-t_5:lg p-t_4 relative rows_1 w_100">
+    <div class="apspect_16x9:lg aspect_21x9:md aspect_3x2:sm aspect_8x10 br_square col-end_n1 col-start_2 image-holder overflow_clip relative row-end_n1 row-start_1 z_n1">
+        <img class="absolute l_0 r_0 t_0 b_0 z_0 br_square" src="https://images.unsplash.com/photo-1486848538113-ce1a4923fbc5?q=80&amp;w=2865&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" srcset="">
+    </div>
+    <div class="col-end_4:lg col-end_5 col-start_1 m-y_6:lg m-y_5 row_all z_2 max-w_35">
+        <h1>
+            <span class="p-l_5:md font_8:lg font_6:md font_2 bg_white br_square c_black hero-text inline font_display font_medium">
+              About<br> The ACC  
+            </span>
+        </h1>
+        <p>
+            <span class="p-l_5:md font_3:lg font_2:md font_0 font_bold font_copy bg_white br_square c_black hero-text inline ">Celebrating 75 look into the next 75</span> 
+        </p>
+    </div>
+
+</div>
+
+<style>
+@media (min-width: 425px) {
+  /* Styles for larger phones in portrait mode */
+  .aspect_3x2\:sm {
+        aspect-ratio: 3 / 2;
+    }
+
+}
+.hero-text{-webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    position: relative;
+    padding:calc(1em * .55);
+    isolation: isolate;
+    line-height: 1.8;
+    text-wrap: pretty;
+
+}
+  .hero-text::before  {
+  content: '';
+  display: block;
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  position: absolute; /* Ensures positioning relative to parent */
+  top: -25px; /* Adjust as needed */
+  left:2rem; /* Adjust as needed */
+  clip-path: path("M 0 0 Q 0 25, 25 25 L 0 25 Z");
+}
+
+.hero-text::after  {
+  content: '';
+  display: block;
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  position: absolute; /* Ensures positioning relative to parent */
+  bottom: -25px; /* Adjust as needed */
+  left:2rem; /* Adjust as needed */
+  clip-path: path("M 0 25 L 0 0 L 25 0 Q 0 0, 0 25 Z"); /* Sharp top-left, curve from top-right to bottom-left */
+}
+
+</style>
