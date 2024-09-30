@@ -1,0 +1,6 @@
+name,hex,font_color,AA,AAA,contrast
+1,#79c78d,c_black,,,10.36
+2a,#ffda68,c_black,,,15.48
+2b,#faa74b,c_black,,,10.69
+3:No-Benefit,#FF7F7F,c_black,,,8.59
+3:Harm,#af1c08,c_white,,,7.01
