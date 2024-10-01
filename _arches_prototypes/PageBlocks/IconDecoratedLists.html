@@ -1,4 +1,4 @@
-<div class="IconDecoratedList reading-typography columns_3:lg columns_2:md columns_1 grid gap_5:md gap_4 p_4 p_5:md">
+<div class="IconDecoratedList reading-typography columns_3:lg columns_2:md columns_1 grid gap_5:md gap_4 p_4 p_5:md {% if include.modifier_class %}{{ include.modifier_class }}{% endif %}">
     {% assign current_section = nil %}
     {% assign current_icon = nil %}
     
@@ -7,39 +7,40 @@
       {% if row.section_title and row.section_title != "" %}
         <!-- Close previous section's list if it's open -->
         {% if current_section %}
-          </ul></div>
+          </ul>
+          </div> <!-- Closing the previous section div -->
         {% endif %}
         
         <!-- New section header -->
-         <div>
-        <div class="section-header flex flex_row:md flex_column items_start justify_start m-b_4">
-          <em class="c_accent font_7 self_center self_start:md p_4 p_0:md m-t_4 m-t_3:md p-r_4:md far fa-regular {{ row.icon_class }}" aria-hidden="true"></em>
-          <div>
-            <strong class="block">{{ row.section_title }}</strong>
+        <div class="grid-cell">
+          <div class="section-header flex flex_row:md flex_column items_start justify_start m-b_4">
+            <em class="c_accent font_7 self_center self_start:md p_4 p_0:md m-t_4 m-t_3:md p-r_4:md far fa-regular {{ row.icon_class }}" aria-hidden="true"></em>
+            <div>
+              <strong class="block">{{ row.section_title }}</strong>
+            </div>
           </div>
-        </div>
-        <ul class="ul_square marker_accent m-b_6">
-        
-        <!-- Set the current section and icon to use for subsequent rows -->
-        {% assign current_section = row.section_title %}
-        {% assign current_icon = row.icon_class %}
+          <ul class="ul_square marker_accent m-b_6">
+          
+          <!-- Set the current section and icon to use for subsequent rows -->
+          {% assign current_section = row.section_title %}
+          {% assign current_icon = row.icon_class %}
       {% endif %}
       
       <!-- Render the list item for the current section -->
-      
-        <li class="list-item m-b_3">
-          {% if row.link_url != "" %}
-            <a class="link" href="{{ row.link_url }}">{{ row.link_text }}</a>
-          {% else %}
-            {{ row.link_text }}
-          {% endif %}
-        </li>
-
+      <li class="list-item m-b_3">
+        {% if row.link_url != "" %}
+          <a class="link" href="{{ row.link_url }}">{{ row.link_text }}</a>
+        {% else %}
+          {{ row.link_text }}
+        {% endif %}
+      </li>
+    
     {% endfor %}
     
     <!-- Close the last section's list -->
     {% if current_section %}
       </ul>
+      </div> <!-- Closing the final section div -->
     {% endif %}
   </div>
   

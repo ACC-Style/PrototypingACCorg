@@ -1,0 +1,12 @@
+<div class="columns_3:lg columns_1 gap_5:lg gap_4 grid reading-typography font-size_up {% if include.modifier_class %}{{ include.modifier_class }}{% endif %}" style="--custom-font-size-modifier: 1.125;">
+{% for card in site.data.Cards %}
+      <div class="br_solid br_black-3 br_1 br_radius p_4 p_5:lg flex flex_column gap_3 bg_white shadow_bevel-bold">
+        <h3 class="">{{ card.title }}
+          <small class="block font-size_down-2 font_medium m-t_3">{{ card.subtitle }}</small>
+        </h3>
+        <p>{{ card.description }}</p>
+        <a href="{{ card.link_url }}" class="btn m-x_auto {% if include.button_class %}{{ include.button_class }}{% else %}btn-secondary{% endif %} m-t_auto">{{ card.link_text }}</a>
+      </div>
+{% endfor %}
+</div>
+  
