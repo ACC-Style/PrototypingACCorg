@@ -1,8 +1,14 @@
-<div class="IconDecoratedList reading-typography columns_3:lg columns_2:md columns_1 grid gap_5:md gap_4 p_4 p_5:md {% if include.modifier_class %}{{ include.modifier_class }}{% endif %}">
+<!-- 
+container_modifier: class slot to change the row mechanizm.
+custom_fontsize:  change the base sizing for the reading typography defaults to 1.
+-->
+
+
+<section section-label="IconDecoratedList" class="reading-typography columns_3:lg columns_2:md columns_1 grid gap_5:md gap_4 p_4 p_5:md {% if include.container_modifier %}{{ include.container_modifier }}{% endif %}" style="--custom-font-size-modifier: {% if include.custom_fontsize %}{{ include.custom_fontsize }}{% else %} 1 {% endif %} ;">
     {% assign current_section = nil %}
     {% assign current_icon = nil %}
     
-    {% for row in site.data.IconDecoratedLists %}
+    {% for row in site.data.Blocks.IconDecoratedLists %}
       <!-- Start a new section if section_title is present -->
       {% if row.section_title and row.section_title != "" %}
         <!-- Close previous section's list if it's open -->
@@ -13,11 +19,11 @@
         
         <!-- New section header -->
         <div class="grid-cell">
-          <div class="section-header flex flex_row:md flex_column items_start justify_start m-b_4">
+          <div class="section-header flex flex_row:md flex_column items_center justify_start m-b_4 text_center text_left:md">
             <em class="c_accent font_7 self_center self_start:md p_4 p_0:md m-t_4 m-t_3:md p-r_4:md far fa-regular {{ row.icon_class }}" aria-hidden="true"></em>
-            <div>
-              <strong class="block">{{ row.section_title }}</strong>
-            </div>
+            <h3 class="m_0">
+             {{ row.section_title }}
+            </h3>
           </div>
           <ul class="ul_square marker_accent m-b_6">
           
@@ -42,5 +48,5 @@
       </ul>
       </div> <!-- Closing the final section div -->
     {% endif %}
-  </div>
+</section>
   

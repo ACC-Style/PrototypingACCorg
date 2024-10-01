@@ -1,12 +1,20 @@
-<div class="columns_3:lg columns_1 gap_5:lg gap_4 grid reading-typography font-size_up {% if include.modifier_class %}{{ include.modifier_class }}{% endif %}" style="--custom-font-size-modifier: 1.125;">
-{% for card in site.data.Cards %}
-      <div class="br_solid br_black-3 br_1 br_radius p_4 p_5:lg flex flex_column gap_3 bg_white shadow_bevel-bold">
+
+<!-- 
+container_modifier: class slot to change the row mechanizm.
+custom_fontsize:  change the base sizing for the reading typography defaults to 1.
+button_type: this is looking for the bootstrap buton decorator class and defaults to btn-secondary
+-->
+
+
+<section section-label="Cards" class="columns_3:lg  columns_2:md columns_1 gap_5:lg gap_4 grid reading-typography font-size_up {% if include.container_modifier %}{{ include.container_modifier}}{% endif %}" style="--custom-font-size-modifier: {% if include.custom_fontsize %}{{ include.custom_fontsize }}{% else %} 1 {% endif %} ;">
+{% for card in site.data.Blocks.Cards %}
+      <div grid-area="card" class="br_solid br_black-3 br_1 br_radius p_4 p_5:lg flex flex_column gap_3 bg_white shadow_bevel-bold {% if forloop.last %}col-end_n1{% endif %}">
         <h3 class="">{{ card.title }}
-          <small class="block font-size_down-2 font_medium m-t_3">{{ card.subtitle }}</small>
+          <small class="block font-size_down-1 font_medium m-t_3">{{ card.subtitle }}</small>
         </h3>
         <p>{{ card.description }}</p>
-        <a href="{{ card.link_url }}" class="btn m-x_auto {% if include.button_class %}{{ include.button_class }}{% else %}btn-secondary{% endif %} m-t_auto">{{ card.link_text }}</a>
+        <a href="{{ card.link_url }}" class="btn m-x_auto {% if include.button_type %}{{ include.button_type }}{% else %}btn-secondary{% endif %} m-t_auto">{{ card.link_text }}</a>
       </div>
 {% endfor %}
-</div>
+</section>
   

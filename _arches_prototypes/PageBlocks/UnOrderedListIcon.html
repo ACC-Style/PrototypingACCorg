@@ -1,7 +1,14 @@
-<div class="reading-typography bg_black-1 m-x_n4 p_5 m-b_4 m-b_5:lg">
+<!-- 
+container_modifier: class slot to change the row mechanizm.
+custom_fontsize:  change the base sizing for the reading typography defaults to 1.
+button_type: this is looking for the bootstrap buton decorator class and defaults to btn-secondary
+-->
+
+
+<section section-label="UnOrderedListWithIcon" class="reading-typography p_5 m-b_4 m-b_5:lg {% if include.container_modifier %}{{ include.container_modifier }}{% endif %}" style="--custom-font-size-modifier: {% if include.custom_fontsize %}{{ include.custom_fontsize }}{% else %} 1 {% endif %} ;">
     <h2>Benefits</h2>
     <ul class="columns_2:md  gap-x_6 gap-y_4 grid p-x_4:lg ul_none">
-      {% for benefit in site.data.UnOrderedListIcon %}
+      {% for benefit in site.data.Blocks.UnOrderedListWithIcon %}
       {% if forloop.last %}
         <!-- Custom pattern for the last item -->
         <li class="flex flex_row items_start justify_start isolate relative gap_3 relative isolate">
@@ -28,5 +35,5 @@
       {% endif %}
       {% endfor %}
     </ul>
-  </div>
+</section>
   
