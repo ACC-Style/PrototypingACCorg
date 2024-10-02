@@ -20,17 +20,20 @@ custom_fontsize:  change the base sizing for the reading typography defaults to 
     <div grid-area="title"
         class="colum_all row-start_1 row-end_3 reading-typography color_inherit c_white font-size_up z_1 ">
         <h1> About<br> The ACC</h1>
-        <p>
-            Celebrating 75 yeas <br> and look forward to the next 75
+        <p class="opacity_7 font_light">
+            Celebrating 75 years <br> and look forward to the next 75
         </p>
     </div>
     <div class="bg_white p-t_4 p-l_4 br-tl_round" grid-area="cta">
-        <div class="reading-typography color_inherit c_white bg_acc p_4 p-y_5:lg br_round">
-            <h2>Celebrate at our 75th Gala.</h2>
-           <p>For 75 years, the ACC has been the global leader in transforming cardiovascular care and improving heart health for all. Celebrate with us</p>
-           <div class="grid items_center justify_center">
-            <a href="" class="btn btn-secondary item_center self_center inline-block">Buy Tickets Today</a>
-           </div>
+        <div class="reading-typography color_inherit c_white linear-gradient_custom p_4 p-y_5:lg br_round" style="--start-color:#0c152a; --end-color:#172d65; --orgin:to left top;">
+            <h2 class="grid items_center justify_center p-x_5  m-b_n5"><img class="inline-block m-auto m-x_auto max-w_15 r_3 relative w_100" src="{{ './assets/images/ACC/75Gala-lockup.png'  | append: site.github.build_revision |  relative_url }}" alt="75th Glas"></h2>
+            <div class="p-x_4:lg p-x_3:md">
+                <h3 class="opacity_9">Celebrate with us.</h3>
+            <p class="opacity_7">For 75 years, the ACC has been the global leader in transforming cardiovascular care and improving heart health for all. Celebrate with us</p>
+            <div class="grid items_center justify_center">
+                <a href="" class="btn bg_acc-5 h:bg_acc-3 c_acc h:c_acc-n3 item_center self_center inline-block">Buy Tickets Today</a>
+            </div>
+            </div>
         </div>
 
     </div>
@@ -39,8 +42,8 @@ custom_fontsize:  change the base sizing for the reading typography defaults to 
             The American College of Cardiology (ACC) envisions a world where innovation and knowledge optimize cardiovascular care and outcomes. As the professional home for the entire cardiovascular care team, the mission of the College and its more than 56,000 members is to transform cardiovascular care and to improve heart health. 
         </p>
     </div>
-    <span class="curve row-start_4 row-end_5 col-start_n2 col-end_n1 bg_white rotate_270 b_0 r_0"></span>
-    <span class="curve row-start_n3 row-end_n2 col-start_3 col-end_4 bg_white rotate_270 b_0 r_0"></span>
+    <span class="curve row-start_4 row-end_5 col-start_n2 col-end_n1 bg_white rotate_270 b_n1 r_0"></span>
+    <span class="curve row-start_n3 row-end_n2 col-start_3 col-end_4 bg_white rotate_270 b_n1 r_0"></span>
 </div>
 
 
@@ -50,7 +53,7 @@ custom_fontsize:  change the base sizing for the reading typography defaults to 
     }
 
     .hero-color-splash {
-        background-image: url( "{{ './assets/images/ACC/acc-repeat-pattern.png'  | append: site.github.build_revision |  relative_url }}" ) , linear-gradient(to right top, #051c3d, #123865, #1b5690, #1e77bc, #129aeb) ;
+        background-image: url( "{{ './assets/images/ACC/acc-repeat-pattern.png'  | append: site.github.build_revision |  relative_url }}" ) , linear-gradient(to left top, #061a37, #022450, #012d69, #083683, #1a3f9d);;
         background-position: right center, center center;
         background-size: contain, contain;
         background-repeat: no-repeat, no-repeat;
@@ -97,7 +100,7 @@ custom_fontsize:  change the base sizing for the reading typography defaults to 
     grid-template-columns: [all-start backgroundHERO-start breadcrumb-start  introtext-start] 
     var(--container-padding, 0) 
     [paddedContent-start title-start]
-    3fr
+    4fr
     [title-end introtext-end]
     calc(2* var(--container-padding, 0) )
     [backgroundCTA-start]
