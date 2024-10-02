@@ -21,6 +21,7 @@ position: "About"
 
 </div>
 
+<div class="grid grid-test bg_alert"></div>
 <style>
 @media (min-width: 425px) {
   /* Styles for larger phones in portrait mode */
@@ -60,6 +61,27 @@ position: "About"
   bottom: -25px; /* Adjust as needed */
   left:2rem; /* Adjust as needed */
   clip-path: path("M 0 25 L 0 0 L 25 0 Q 0 0, 0 25 Z"); /* Sharp top-left, curve from top-right to bottom-left */
+}
+.gridtest{
+    grid-template-rows:
+    [all-start breadcrumb-start]
+    var(--container-padding, 0) 
+    [container-start]
+    cacl(200px - var(--container-padding, 0) )
+    [breadcrumb-end]
+    var(--container-padding, 0) 
+    [title-start]
+    auto
+    [backgroundCTA-start]
+    auto
+    [title-end]
+    var(--container-padding, 0) 
+    [container-end]
+    var(--container-padding, 0) 
+    [background-end]
+    auto
+    [all-end backgroundCTA-start]
+    ;
 }
 
 </style>

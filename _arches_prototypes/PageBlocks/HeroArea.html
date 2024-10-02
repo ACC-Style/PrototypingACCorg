@@ -1,15 +1,131 @@
-<div class="grid columns_5 rows_4 gap_4 br_round">
-    <div class="colum_all row-start_1 row-end_3 hero-color-splash eading-typography font-size_up    w">
+<div grid-template="hero-area" class="grid columns_5 rows_4 gap_4 br_round relative m-b_5:lg m-b_4 isolation_isolate">
+    <div grid-area="background" class=" hero-color-splash br_round relative z_0">
+
+    </div>
+    <div grid-area="breadcrumb" class="grid justify_start relative">
+        <nav
+            class="bg_white br-br_round flex font-size_down-2 inline-block isolation_isolate items_center p-r_5:lg p-x_4 p-y_3 relative">
+            <a href="#" class="h:c_acc h:underline font_bold c_acc expanded-click-area "><i class="fas fa-arrow-left"
+                    aria-hidden="true"></i> Back</a> |
+            <strong>Home</strong>
+            <span class="curve"></span>
+            <span class="curve alt"></span>
+        </nav>
+
+    </div>
+    <div grid-area="title"
+        class="colum_all row-start_1 row-end_3 reading-typography color_inherit c_white font-size_up z_1 ">
         <h1> About<br> The ACC</h1>
         <p>
-          Celebrating 75 yeas <br> and look forward to  the next 75
+            Celebrating 75 yeas <br> and look forward to the next 75
         </p>
+    </div>
+    <div class="bg_white p-t_4 p-l_4 br-tl_round" grid-area="cta">
+        <div class="reading-typography color_inherit c_white bg_acc p_4 br_round">
+            <h2>Ratione asperiores ut incidunt quis natus laborum enim ipsam.</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet, expedita excepturi harum architecto vero, quia fugiat, quidem suscipit ad tempora esse odit inventore est? Ipsam eaque praesentium fugiat iste sequi.</p>
+    
+        </div>
+        <span class="curve"></span>
+        <span class="curve alt"></span>
     </div>
 </div>
 
 
 <style>
-    .hero-color-splash{
-     background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+    .bg_white {
+        background-color: white;
+    }
+
+    .hero-color-splash {
+        background-image: linear-gradient(to right top, #051c3d, #123865, #1b5690, #1e77bc, #129aeb);
+    }
+
+    .curve {
+
+        display: block;
+        width: 25px;
+        height: 25px;
+        position: absolute;
+        /* Ensures positioning relative to parent */
+        clip-path: path("M 0 0 Q 0 25, 25 25 L 0 25 Z");
+    }
+
+    [grid-template] {
+        display: grid;
+    }
+
+    [grid-template="hero-area"] {
+        --hero-overlay-color: var(--acc);
+        --hero-overlay-opacity: .85;
+        --breadcrumb-height: 50px;
+        --container-padding: 2rem;
+        grid-template-rows:
+    [all-start breadcrumb-start backgroundHERO-start]
+        var(--container-padding, 0) 
+    [paddedContent-start]
+    minmax(var(--breadcrumb-height, 2.5rem), min-content)
+    [breadcrumb-end]
+        var(--container-padding, 0) 
+    [title-start]
+        auto
+    [backgroundCTA-start]
+        auto
+    [title-end]
+        var(--container-padding, 0) 
+    [paddedContent-end]
+        var(--container-padding, 0) 
+    [backgroundHERO-end]
+        auto
+    [all-end backgroundCTA-end]
+    ;
+    grid-template-columns: [all-start backgroundHERO-start breadcrumb-start] 
+    var(--container-padding, 0) 
+    [paddedContent-start title-start]
+    3fr
+    [title-end]
+    calc(2* var(--container-padding, 0) )
+    [backgroundCTA-start]
+    2fr
+    [paddedContent-end breadcrumb-end]
+    var(--container-padding, 0) 
+    [all-end backgroundCTA-start backgroundHERO-end];    }
+
+    [grid-area="background"] {
+        grid-area: backgroundHERO;
+    }
+
+    [grid-area="title"] {
+        grid-area: title;
+    }
+
+    [grid-area="breadcrumb"] {
+        grid-area: breadcrumb;
+        position: relative;
+    }
+
+    [grid-area="breadcrumb"] .curve {
+        z-index: 100;
+        top: 0;
+        right: -25px;
+        rotate: 90deg;
+        background: white;
+    }
+
+    [grid-area="breadcrumb"] .curve.alt {
+        z-index: 100;
+    /* bottom: 25px; */
+    left: 0;
+    /* top: 25px; */
+    bottom: -25px;
+    position: absolute;
+    rotate: 90deg;
+    background: #ffffff;
+    top: auto;
+    }
+    [grid-area="cta"]{
+        grid-area: backgroundCTA;
+        
     }
 </style>
+
