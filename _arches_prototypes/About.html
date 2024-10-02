@@ -3,7 +3,14 @@ layout: arches
 name: "About"
 position: "About"
 ---
-{% include_relative  PageBlocks/HeroArea.html %}
+{% include_relative  PageBlocks/HeroArea.html  custom_fontsize="1.125" %}
+
+<section class="reading-typography p-x_4:lg m-b_5:lg" style="--custom-font-size-modifier: 1.0125">
+  <h2>ACC Mission</h2>
+  <p>ACC's strategic plan and major initiatives aim to transform the field of cardiology for generations to come. </p>
+</section>
+
+
 {% include_relative  PageBlocks/UnOrderedListIcon.html container_modifier="m-x_n4 bg_black-2 p_5:lg p_4"  %}
 {% include_relative  PageBlocks/IconDecoratedLists.html %}
 {% include_relative  PageBlocks/Cards.html container_modifier="m-x_n4 bg_black-2 p_5:lg p_4" button_class="btn-primary" %}

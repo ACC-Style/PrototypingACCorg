@@ -1,13 +1,17 @@
-<div grid-template="hero-area" class="grid columns_5 rows_4 gap_4 br_round relative m-b_5:lg m-b_4 isolation_isolate">
+
+<!-- 
+custom_fontsize:  change the base sizing for the reading typography defaults to 1.
+-->
+
+<div grid-template="hero-area" class="grid columns_5 rows_4 br_round relative m-b_5:lg m-b_4 isolation_isolate">
     <div grid-area="background" class=" hero-color-splash br_round relative z_0">
 
     </div>
     <div grid-area="breadcrumb" class="grid justify_start relative">
         <nav
-            class="bg_white br-br_round flex font-size_down-2 inline-block isolation_isolate items_center p-r_5:lg p-x_4 p-y_3 relative">
-            <a href="#" class="h:c_acc h:underline font_bold c_acc expanded-click-area "><i class="fas fa-arrow-left"
-                    aria-hidden="true"></i> Back</a> |
-            <strong>Home</strong>
+            class="bg_white br-br_round grid  inline-block isolation_isolate items_center p-r_5:lg p-x_4 p-r_5  p-y_3 relative">
+            <a href="#" class="h:c_acc h:underline font_bold c_acc expanded-click-area "><i class="fas fa-chevron-left"
+                    aria-hidden="true"></i> <i class="fas fa-home"></i></a> 
             <span class="curve"></span>
             <span class="curve alt"></span>
         </nav>
@@ -21,14 +25,22 @@
         </p>
     </div>
     <div class="bg_white p-t_4 p-l_4 br-tl_round" grid-area="cta">
-        <div class="reading-typography color_inherit c_white bg_acc p_4 br_round">
-            <h2>Ratione asperiores ut incidunt quis natus laborum enim ipsam.</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet, expedita excepturi harum architecto vero, quia fugiat, quidem suscipit ad tempora esse odit inventore est? Ipsam eaque praesentium fugiat iste sequi.</p>
-    
+        <div class="reading-typography color_inherit c_white bg_acc p_4 p-y_5:lg br_round">
+            <h2>Celebrate at our 75th Gala.</h2>
+           <p>For 75 years, the ACC has been the global leader in transforming cardiovascular care and improving heart health for all. Celebrate with us</p>
+           <div class="grid items_center justify_center">
+            <a href="" class="btn btn-secondary item_center self_center inline-block">Buy Tickets Today</a>
+           </div>
         </div>
-        <span class="curve"></span>
-        <span class="curve alt"></span>
+
     </div>
+    <div grid-area="introtext" class="reading-typography font-size_up p-t_5 p-x_4"  style="--custom-font-size-modifier: {% if include.custom_fontsize %}{{ include.custom_fontsize }}{% else %} 1 {% endif %} ;" >
+        <p>
+            The American College of Cardiology (ACC) envisions a world where innovation and knowledge optimize cardiovascular care and outcomes. As the professional home for the entire cardiovascular care team, the mission of the College and its more than 56,000 members is to transform cardiovascular care and to improve heart health. 
+        </p>
+    </div>
+    <span class="curve row-start_4 row-end_5 col-start_n2 col-end_n1 bg_white rotate_270 b_0 r_0"></span>
+    <span class="curve row-start_n3 row-end_n2 col-start_3 col-end_4 bg_white rotate_270 b_0 r_0"></span>
 </div>
 
 
@@ -38,9 +50,12 @@
     }
 
     .hero-color-splash {
-        background-image: linear-gradient(to right top, #051c3d, #123865, #1b5690, #1e77bc, #129aeb);
+        background-image: url( "{{ './assets/images/ACC/acc-repeat-pattern.png'  | append: site.github.build_revision |  relative_url }}" ) , linear-gradient(to right top, #051c3d, #123865, #1b5690, #1e77bc, #129aeb) ;
+        background-position: right center, center center;
+        background-size: contain, contain;
+        background-repeat: no-repeat, no-repeat;
     }
-
+   
     .curve {
 
         display: block;
@@ -64,7 +79,7 @@
     [all-start breadcrumb-start backgroundHERO-start]
         var(--container-padding, 0) 
     [paddedContent-start]
-    minmax(var(--breadcrumb-height, 2.5rem), min-content)
+        calc( var(--breadcrumb-height, 2.5rem) - var(--container-padding))
     [breadcrumb-end]
         var(--container-padding, 0) 
     [title-start]
@@ -75,21 +90,24 @@
         var(--container-padding, 0) 
     [paddedContent-end]
         var(--container-padding, 0) 
-    [backgroundHERO-end]
+    [backgroundHERO-end  introtext-start]
         auto
-    [all-end backgroundCTA-end]
+    [all-end backgroundCTA-end introtext-end]
     ;
-    grid-template-columns: [all-start backgroundHERO-start breadcrumb-start] 
+    grid-template-columns: [all-start backgroundHERO-start breadcrumb-start  introtext-start] 
     var(--container-padding, 0) 
     [paddedContent-start title-start]
     3fr
-    [title-end]
+    [title-end introtext-end]
     calc(2* var(--container-padding, 0) )
     [backgroundCTA-start]
     2fr
     [paddedContent-end breadcrumb-end]
     var(--container-padding, 0) 
     [all-end backgroundCTA-start backgroundHERO-end];    }
+    [grid-area="introtext"]{
+        grid-area: introtext;
+    }
 
     [grid-area="background"] {
         grid-area: backgroundHERO;
@@ -103,6 +121,7 @@
         grid-area: breadcrumb;
         position: relative;
     }
+
 
     [grid-area="breadcrumb"] .curve {
         z-index: 100;
