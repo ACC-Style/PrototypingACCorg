@@ -27,14 +27,14 @@ position: "About"
 </div>
 
 </section>
-<section class="reading-typography p-x_4:lg m-b_5:lg m-x_n4 p-t_1 p-b_1" style="--custom-font-size-modifier: 1.0125">
+<section class="reading-typography font-size_up color_inherit m-x_n4:lg m-t_n5:lg m-b_5:lg p-t_1 p-b_1" style="--custom-font-size-modifier: 1.0125">
  <div class="grid columns_3:lg columns_2 rows_2:lg rows_3 gap_1" style="
  --row-1: auto;
  --row-2: auto;
  --row-3: auto;
 ">
 
-<div class="bg_primary-n2 c_white col-end_3 col-start_start color_inherit columns_1 font-size_up grid reading-typography relative rows_1">
+<div class="bg_primary-n2 c_white col-end_3 col-start_start color_inherit columns_1 relative rows_1 ">
   <div class="row_all col_all p_4 p_5:lg">
   <h2>Steeped in Tradition, Posed for the Future </h2>
   <p>In 1949, 13 cardiologists founded the ACC, creating a professional home for cardiovascular clinicians. The College has since evolved into a global cardiovascular leader, uniting more than 56,000 members spanning the entire cardiovascular care team. </p>
@@ -50,7 +50,7 @@ position: "About"
   <div class="bg-blend_darken bg_black-5 col_all row_all z_1"></div>
   <a class="c_white col_all expanded-click-area font_2 font_bold font_copy grid h:bg_black-5 items_end justify_end not-link p_4 row_all z_2 text_right" href=""><span>Leadership & Governance <i class="p-l_3 far fa-arrow-right"></i></span> </a>
 </div>
-<div class="bg_acc-n3 c_white col-end_end col-start_n3 color_inherit columns_1 font-size_up grid reading-typography relative rows_1">
+<div class="bg_acc-n3 c_white col-end_end col-start_n3 color_inherit columns_1 relative rows_1 grid">
   <div class="row_all col_all p_4 p-b_4:lg p-b_6 p_5:lg">
     <h2>75 Years of Innovation: Join Us for the ACC’s Anniversary Gala. </h2>
     <p>The ACC is celebrating its 75th Anniversary and its remarkable achievements, culminating with a 75th Anniversary Gala on March 28, 2025 as part of ACC.25 in Chicago, IL. </p>
@@ -66,5 +66,17 @@ position: "About"
 </section>
 
 
+<section class="reading-typography p-x_4:lg m-b_5:lg m-x_n4 p-t_1 p-b_1" style="--custom-font-size-modifier: 1.0125">
+
+  <h2>ACC is a Collection of Voices and Points of View </h2>
+  <p>Incorporating unique perspectives shapes a more comprehensive, inclusive, and forward-thinking future for the cardiovascular community.  </p>
+  {% include_relative  PageBlocks/UnOrderedListIcon.html header="" %}
+  </section>
+  <section class="reading-typography p-x_4:lg m-b_5:lg m-x_n4 p-t_1 p-b_1" style="--custom-font-size-modifier: 1.0125">
+
+    <h2>Make an Impact with ACC   </h2>
+    <p>Join the long tradition of innovative, collaborative and driven individuals dedicated to transforming cardiovascular care and improve heart health for all.  </p>
+    {% include_relative  PageBlocks/Cards.html container_modifier="m-x_n4 bg_black-2 p_5:lg p_4" button_class="btn-primary" %}
+    </section>
+
 {% include_relative  PageBlocks/IconDecoratedLists.html %}
-{% include_relative  PageBlocks/Cards.html container_modifier="m-x_n4 bg_black-2 p_5:lg p_4" button_class="btn-primary" %}
