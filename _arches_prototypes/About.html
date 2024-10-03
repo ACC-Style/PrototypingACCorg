@@ -3,9 +3,9 @@ layout: arches
 name: "About"
 position: "About"
 ---
-{% include_relative  PageBlocks/HeroArea.html  custom_fontsize="1.125" %}
+{% include_relative  PageBlocks/HeroArea.html  custom_fontsize="1.02" %}
 
-<section class="reading-typography p-x_4:lg m-b_5:lg bg_black-2 m-x_n4 p-t_1 p-b_1 shadow_emboss-light" style="--custom-font-size-modifier: 1.0125">
+<section class="reading-typography font-size_up p-x_4:lg m-b_5:lg bg_black-2 m-x_n4 p-t_1 p-b_1 shadow_emboss-light" style="--custom-font-size-up: 1.06;">
   <div class="grid columns_2:md columns_1 m-y_5:md m-y_4 text_center">
     <div class="p-x_5:lg p-x_4:md p_4 shadow_overlap-light m_4 m-x_6:lg m-x_5:md br_radius bg_white">
       <h2 class="c_white font_medium lh_2 bg_primary-n2 m-t_n4 m-x_n5:lg m-x_n4 p_3 m-b_5">Mission</h2>
@@ -16,18 +16,18 @@ position: "About"
       <p> A world where science, knowledge and innovation optimize patient care and outcomes </p>
     </div>
   </div>
-  <div class="p_4 m_auto text_left text_center:md reading-typography shadow_overlap-light m_4 m-x_6:lg m-x_5:md m-x_4 m-b_4 m-b_5:lg br_radius bg_white" >
+  <div class="p_4 m_auto text_left text_center:md shadow_overlap-light m_4 m-x_6:lg m-x_5:md m-x_4 m-b_4 m-b_5:lg br_radius bg_white" >
     <h2 class="c_white font_medium lh_2 bg_acc-n2 m-t_n4 m-x_n4 p_3 m-b_5" >Core Values</h2>
     <div class="max-w_45 m_auto">
     <p>
       We will achieve the mission and vision through our core values: patient-centered; teamwork and collaboration; and professionalism, excellence, and equity.  
     </p>
     </div>
-    {% include_relative  PageBlocks/UnOrderedListIcon.html header="" %}
+    {% include_relative  PageBlocks/UnOrderedListIcon.html header="" custom_fontsize="1.02" %}
 </div>
 
 </section>
-<section class="reading-typography font-size_up color_inherit m-x_n4:lg m-t_n5:lg m-b_5:lg p-t_1 p-b_1" style="--custom-font-size-modifier: 1.0125">
+<section class="reading-typography font-size_up color_inherit m-x_n4 m-t_n5:lg m-b_5:lg m-b_4 p-t_1 p-b_1" style="--custom-font-size-up: 1.02;">
  <div class="grid columns_3:lg columns_2 rows_2:lg rows_3 gap_1" style="
  --row-1: auto;
  --row-2: auto;
@@ -66,7 +66,7 @@ position: "About"
 </section>
 
 
-<section class="reading-typography p-x_4:lg m-b_5:lg  p-t_1 p-b_1" style="--custom-font-size-modifier: 1.0125">
+<section class="reading-typography p-x_4:lg m-b_4 m-b_5:lg  p-t_1 p-b_1" style="--custom-font-size-up: 1.02;">
 
   <h2>ACC is a Collection of Voices and Points of View </h2>
   <p>Incorporating unique perspectives shapes a more comprehensive, inclusive, and forward-thinking future for the cardiovascular community.  </p>
@@ -131,35 +131,35 @@ position: "About"
   
 </ul>
   </section>
-  <section class="reading-typography p-x_4:lg m-b_5:lg p-t_1 p-b_1" style="--custom-font-size-modifier: 1.0125">
 
+  <section section-label="Cards" class="reading-typography font-size_up m-x_n4 bg_black-2 p_5:lg p_4  m-b_4 m-b_5:lg" style="--custom-font-size-up:  1  ;">
     <h2>Make an Impact with ACC   </h2>
     <p>Join the long tradition of innovative, collaborative and driven individuals dedicated to transforming cardiovascular care and improve heart health for all.  </p>
-  </section>
-  <section section-label="Cards" class="columns_2:md columns_1 gap_6:lg gap_4 grid reading-typography font-size_up m-x_n4:lg bg_black-2 p_5:lg p_4" style="--custom-font-size-modifier:  1  ;">
 
-    <div grid-area="card" class="br_solid br_black-3 br_1 br_radius p_4 p_5:lg flex flex_column gap_3 bg_white shadow_bevel-bold ">
-      <h3 class="m-b_0">Interested in Membership? 
-      </h3>
-      <p>Be part of a global community of cardiovascular professionals. </p>
-      <div class="flex_row justify_around flex gap_4 w_auto m-x_auto">
-        <a href="/About-ACC/UX/Surveys" class="btn m-x_auto btn-secondary m-t_auto">Learn More</a>
-        <a href="/About-ACC/UX/Surveys" class="btn m-x_auto btn-primary m-t_auto">Join Now</a>
+    <div grid-label="card-holder" class="columns_2:md columns_1 gap_6:lg gap_4 grid ">
+      <div grid-area="card" class="br_solid br_black-3 br_1 br_radius p_4 p_5:lg flex flex_column gap_3 bg_white shadow_bevel-bold text_center">
+        <h3 class="m-b_0">Interested in Membership?
+        </h3>
+        <p>Be part of a global community of cardiovascular professionals. </p>
+        <div class="flex_row justify_around flex gap_4 w_auto m-x_auto m-t_auto">
+          <a href="/About-ACC/UX/Surveys" class="btn m-x_auto btn-secondary m-t_auto">Learn More</a>
+          <a href="/About-ACC/UX/Surveys" class="btn m-x_auto btn-primary m-t_auto">Join Now</a>
+        </div>
+        <a href="" class="font-size_down-1 m-t_4">Already a Member? Login.</a>
       </div>
-      <a href="" class="font-size_down-1 m-t_4">Already a Member? Login.</a>
-    </div>
-    <div grid-area="card" class="br_solid br_black-3 br_1 br_radius p_4 p_5:lg flex flex_column gap_3 bg_white shadow_bevel-bold ">
-      <h3 class="m-b_0">Work at ACC 
-      </h3>
-      <p>Join a team dedicated to supporting the cardiovascular community. </p>
-      <div class="flex_row justify_around flex gap_4 w_auto m-x_auto">      
-        <a href="/About-ACC/UX/Surveys" class="btn m-x_auto btn-secondary m-t_auto">Learn More</a> 
-        <a href="/About-ACC/UX/Surveys" class="btn m-x_auto btn-primary m-t_auto">Search Open Jobs</a>
+      <div grid-area="card" class="br_solid br_black-3 br_1 br_radius p_4 p_5:lg flex flex_column gap_3 bg_white shadow_bevel-bold text_center">
+        <h3 class="m-b_0">Want to Work at the ACC?
+        </h3>
+        <p>Join a team dedicated to supporting the cardiovascular community. </p>
+        <div class="flex_row justify_around flex gap_4 w_auto m-x_auto m-t_auto">
+          <a href="/About-ACC/UX/Surveys" class="btn m-x_auto btn-secondary m-t_auto">Learn More</a>
+          <a href="/About-ACC/UX/Surveys" class="btn m-x_auto btn-primary m-t_auto">Search Open Jobs</a>
+        </div>
       </div>
-    </div>
+      </div>
     </div>
 
 
 </section>
   
-{% include_relative  PageBlocks/IconDecoratedLists.html %}
+{% include_relative  PageBlocks/IconDecoratedLists.html custom_fontsize="1.02" %}

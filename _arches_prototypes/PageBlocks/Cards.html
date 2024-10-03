@@ -6,7 +6,7 @@ button_type: this is looking for the bootstrap buton decorator class and default
 -->
 
 
-<section section-label="Cards" class="columns_3:lg  columns_2:md columns_1 gap_5:lg gap_4 grid reading-typography font-size_up {% if include.container_modifier %}{{ include.container_modifier}}{% endif %}" style="--custom-font-size-modifier: {% if include.custom_fontsize %}{{ include.custom_fontsize }}{% else %} 1 {% endif %} ;">
+<section section-label="Cards" class="columns_3:lg  columns_2:md columns_1 gap_5:lg gap_4 grid reading-typography font-size_up {% if include.container_modifier %}{{ include.container_modifier}}{% endif %}" style="--custom-font-size-up: {% if include.custom_fontsize %}{{ include.custom_fontsize }}{% else %} 1 {% endif %} ;">
 {% for card in site.data.Blocks.Cards %}
       <div grid-area="card" class="br_solid br_black-3 br_1 br_radius p_4 p_5:lg flex flex_column gap_3 bg_white shadow_bevel-bold {% if forloop.last %}col-end_n1{% endif %}">
         <h3 class="">{{ card.title }}

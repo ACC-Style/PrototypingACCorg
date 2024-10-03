@@ -6,7 +6,7 @@ button_type: this is looking for the bootstrap buton decorator class and default
 -->
 
 
-<section section-label="UnOrderedListWithIcon" class="reading-typography p_5 {% if include.container_modifier %}{{ include.container_modifier }}{% endif %}" style="--custom-font-size-modifier: {% if include.custom_fontsize %}{{ include.custom_fontsize }}{% else %} 1 {% endif %} ;">
+<section section-label="UnOrderedListWithIcon" class="reading-typography p_5 {% if include.container_modifier %}{{ include.container_modifier }}{% endif %}" style="--custom-font-size-up: {% if include.custom_fontsize %}{{ include.custom_fontsize }}{% else %} 1 {% endif %} ;">
     {% if include.header %}<h2>{{ include.header }}</h2>{% endif %}
     <ul class="columns_2:md  gap-x_6 gap-y_4 grid p-x_4:lg ul_none">
       {% for benefit in site.data.Blocks.UnOrderedListWithIcon %}
@@ -18,7 +18,7 @@ button_type: this is looking for the bootstrap buton decorator class and default
             <a href="{{ benefit.link_url }}">{{ benefit.link_text }}</a>&nbsp;
           </span>
           <span class="flex flex_row">
-            <em class="c_accent font_6  fas fa-solid fa-ellipsis" aria-hidden="true"></em>
+            <em class="c_accent font_6 fas fa-solid fa-ellipsis" aria-hidden="true"></em>
             <em class="c_accent fa-chevron-right fa-solid fas font_6 m-l_n3 " aria-hidden="true"></em>
           </span>
         </li>
