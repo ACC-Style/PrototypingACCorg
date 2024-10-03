@@ -1,0 +1,33 @@
+
+<!-- 
+container_modifier: class slot to change the row mechanizm.
+custom_fontsize:  change the base sizing for the reading typography defaults to 1.
+button_type: this is looking for the bootstrap buton decorator class and defaults to btn-secondary
+-->
+
+
+<section section-label="Cards" class="reading-typography font-size_up {% if include.container_modifier %}{{ include.container_modifier}}{% endif %}" style="--custom-font-size-up: {% if include.custom_fontsize %}{{ include.custom_fontsize }}{% else %} 0.8 {% endif %} ;">
+
+
+    <div grid-label="card-holder" class="columns_3:lg  columns_2:md   columns_1 gap_5:lg gap_4 grid ">
+{% for card in site.data.Blocks.Cards %}
+    <div grid-area="card" class="br_solid br_black-3 br_1 br_radius p_4 flex flex_column gap_3 bg_white shadow_bevel-bold ">
+        <header class="grid">
+            <a href="http://www.onlinejacc.org/?_ga=2.33760423.724520244.1695820465-1288622140.1646239941" target="_blank"  class="aspect-2x3 bg_black-3 grid items_center justify_center m-x_auto max-w_25 overflow-clip"><img alt="JACC" lazy-load="true"   src="/PrototypingACCorg/assets/images/ACC/Innovation_3x2.png"></a>
+        </header>
+        <main class="m_auto max-w_25">
+            <h3 class="">{{ card.title }}
+              <small class="block font-size_down-1 font_medium m-t_3">{{ card.subtitle }}</small>
+            </h3>
+            <p>{{ card.description }}</p>
+        </main>
+        <footer class="flex flex_row justify_start gap_3 m-t_auto m_auto max-w_25">
+            <a href="{{ card.link_url }}" class="btn m-x_auto {% if include.button_type %}{{ include.button_type }}{% else %}btn-secondary{% endif %} m-t_auto">{{ card.link_text }}</a>
+        </footer>
+        
+      </div>
+
+      {% endfor %}
+    </div>
+</section>
+  

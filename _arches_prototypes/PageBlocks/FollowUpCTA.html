@@ -1,0 +1,22 @@
+
+<!-- 
+container_modifier: class slot to change the row mechanizm.
+container_type: [ full-screen, beveled, shaded ]
+custom_fontsize:  change the base sizing for the reading typography defaults to 1.
+button_type: this is looking for the bootstrap buton decorator class and defaults to btn-secondary
+-->
+
+<div data-item="cta-overlay" class="br_round font-size_up m-t_6:lg m-y_4 m-y_5:md m_auto max-w_65 p_4 p_5:lg reading-typography relative shadow_bevel-light text_center z_1reading-typography font-size_up {% if include.container_modifier %}{{ include.container_modifier}}{% endif %}" style="--custom-font-size-up: {% if include.custom_fontsize %}{{ include.custom_fontsize }}{% else %} 0.8 {% endif %} ;"> 
+    {% for cta in site.data.Blocks.FollowUpCTA %}
+        <h2 data-item="cta-title" class="m-b_3 lh_1 font_medium font_display">
+            <strong class="font-size_up m-b_2 block">{{ cta.title }}</strong>
+            <small class="font-size_down block">{{ cta.subtitle }}</small>
+        </h2>
+        <div class="p-t_2 p-b_3" data-item="cta-description">
+            <p class="font-size_up">{{ cta.description }}</p>
+        </div>
+        <div class="grid justify_center">
+            <a rel="noopener noreferrer" href="{{ cta.link_url }}" target="_blank" class="br_primary-n1 br_solid btn btn-lg btn-primary capitalize m-b_n2 shadow_1 shadow_overlap-bold">{{ cta.link_text }}</a>
+        </div>
+    {% endfor %}
+</div>
