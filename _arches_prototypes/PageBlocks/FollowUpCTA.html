@@ -5,6 +5,10 @@ container_type: [ bevel, border ]
 custom_fontsize:  change the base sizing for the reading typography defaults to 1.
 button_type: this is looking for the bootstrap buton decorator class and defaults to btn-secondary
 -->
+{% assign data_path = "FollowUpCTA" %}
+{% if include.data_path %}
+    {% assign data_path = include.data_path %}
+{% endif %}
 {% assign container_styles = "" %}
 {% if include.container_type %}
     {% if include.container_type == "bevel" %}
@@ -15,8 +19,8 @@ button_type: this is looking for the bootstrap buton decorator class and default
 {% endif %}
 
 <div data-item="cta-overlay" class="{% if include.container_modifier %}{{ include.container_modifier}}{% endif %}">
-<div data-item="cta" class="{{ container_styles }} font-size_up m-t_6:lg m-y_4 m-y_5:md m_auto max-w_60 reading-typography relative text_center font-size_up " style="--custom-font-size-up: {% if include.custom_fontsize %}{{ include.custom_fontsize }}{% else %} 1 {% endif %} ;"> 
-    {% for cta in site.data.Blocks.FollowUpCTA %}
+<div data-item="cta" class="{{ container_styles }} font-size_up m-t_6:lg m-y_4 m-y_5:md m_auto max-w_60 reading-typography relative text_center font-size_up relative" style="--custom-font-size-up: {% if include.custom_fontsize %}{{ include.custom_fontsize }}{% else %} 1 {% endif %} ;"> 
+    {% for cta in site.data.Blocks[data_path] %}
         <h2 data-item="cta-title" class="m-b_3 lh_1 font_medium font_display">
             <strong class="font-size_up m-b_2 block">{{ cta.title }}</strong>
             <small class="font-size_down block">{{ cta.subtitle }}</small>
@@ -25,7 +29,7 @@ button_type: this is looking for the bootstrap buton decorator class and default
             <p class="font-size_up">{{ cta.description }}</p>
         </div>
         <div class="grid justify_center">
-            <a rel="noopener noreferrer" href="{{ cta.link_url }}" target="_blank" class="{% if include.button_type %}{{ include.button_type }}{% else %}btn-primary{% endif %}  br_solid btn btn-lg capitalize m-b_n2 shadow_1 shadow_overlap-bold">{{ cta.link_text }}</a>
+            <a rel="noopener noreferrer" href="{{ cta.link_url }}" target="_blank" class="{% if include.button_type %}{{ include.button_type }}{% else %}btn-primary{% endif %} expanded-click-area br_solid btn btn-lg capitalize m-b_n2 shadow_1  {% if include.container_type != "bevel" %} shadow_overlap-bold {% endif  %}">{{ cta.link_text }}</a>
         </div>
     {% endfor %}
 </div>

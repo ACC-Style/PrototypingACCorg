@@ -1,14 +1,18 @@
 <!-- 
+ data_path: the data path for the csv
 container_modifier: class slot to change the row mechanizm.
 custom_fontsize:  change the base sizing for the reading typography defaults to 1.
 -->
-
+{% assign data_path = "IconDecoratedLists" %}
+{% if include.data_path %}
+    {% assign data_path = include.data_path %}
+{% endif %}
 
 <section section-label="IconDecoratedList" class="reading-typography columns_3:lg columns_2:md columns_1 grid gap_5:md gap_4 p_4 p_5:md {% if include.container_modifier %}{{ include.container_modifier }}{% endif %}" style="--custom-font-size-up: {% if include.custom_fontsize %}{{ include.custom_fontsize }}{% else %} 1 {% endif %} ;">
     {% assign current_section = nil %}
     {% assign current_icon = nil %}
     
-    {% for row in site.data.Blocks.IconDecoratedLists %}
+    {% for row in site.data.Blocks[data_path] %}
       <!-- Start a new section if section_title is present -->
       {% if row.section_title and row.section_title != "" %}
         <!-- Close previous section's list if it's open -->
