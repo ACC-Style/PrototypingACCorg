@@ -27,13 +27,13 @@ custom_fontsize:  change the base sizing for the reading typography defaults to 
 {% if include.container_modifier %}
   <section
     label="IconDecoratedList"
-    class="reading-typography font-size_up p_4 p_5:md {{ include.container_modifier }} {{ grid_styles }}"
+    class="reading-typography font-size_up p_4 p_5:md grid {{ include.container_modifier }} {{ grid_styles }}"
     style="--custom-font-size-up: {{font_size}} ;"
   >
 {% else %}
   <div
     label="IconDecoratedList"
-    class="reading-typography font-size_up {{ grid_styles }}"
+    class="reading-typography font-size_up grid {{ grid_styles }}"
     style="--custom-font-size-up: {{font_size}} ;"
   >
 {% endif %}
