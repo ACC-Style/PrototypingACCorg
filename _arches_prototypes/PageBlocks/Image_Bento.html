@@ -13,6 +13,8 @@
   {% assign grid_styles = include.grid_modifier %}
 {% endif %} 
 
+{% assign text_size_style = "font_3:lg font_1:md font_n2" %}
+
 {% assign font_size = 1.02 %}
 {% if include.custom_fontsize %}
   {% assign font_size = include.custom_fontsize %}
@@ -59,7 +61,7 @@
       />
       <div class="bg-blend_darken bg_black-5 col_all row_all z_1"></div>
       <a
-        class="c_white col_all expanded-click-area font_2 font_bold font_copy grid h:bg_black-5 items_end justify_end not-link p_4 row_all z_2 text_right"
+        class="{{text_size_style}}  c_white col_all expanded-click-area font_2 font_bold font_copy grid h:bg_black-5 items_end justify_end not-link p_4 row_all z_2 text_right"
         href
         ><span>History <i class="p-l_3 far fa-arrow-right"></i></span>
       </a>
@@ -72,7 +74,7 @@
       />
       <div class="bg-blend_darken bg_black-5 col_all row_all z_1"></div>
       <a
-        class="c_white col_all expanded-click-area font_2 font_bold font_copy grid h:bg_black-5 items_end justify_end not-link p_4 row_all z_2 text_right"
+        class="{{text_size_style}}  c_white col_all expanded-click-area font_2 font_bold font_copy grid h:bg_black-5 items_end justify_end not-link p_4 row_all z_2 text_right"
         href
         ><span
           >Leadership & Governance <i class="p-l_3 far fa-arrow-right"></i
@@ -87,7 +89,7 @@
       />
       <div class="bg-blend_darken bg_black-5 col_all row_all z_1"></div>
       <a
-        class="c_white col_all expanded-click-area font_2 font_bold font_copy grid h:bg_black-5 items_end justify_end not-link p_4 row_all z_2 text_right"
+        class="{{text_size_style}}  c_white col_all expanded-click-area font_2 font_bold font_copy grid h:bg_black-5 items_end justify_end not-link p_4 row_all z_2 text_right"
         href
         ><span
           >Innovation <i class="p-l_3 far fa-arrow-right"></i
@@ -98,16 +100,16 @@
       class="bg_acc-n3 c_white aspect_1x1 color_inherit columns_1 relative rows_1 grid"
     >
       <div class="row_all col_all p_4 p-b_4:lg p-b_6 p_5:lg">
-        <h3>75 Years of Innovation</h3>
-        <p class="">
-          <span class="font-size_down-1">
+        <div class="{{text_size_style}}">
+          <span class="font-size_up-1 font_display">75 Years of Innovation</span>
+          <span class="font-size_down-1 block">
             Join Us for the ACC’s Anniversary Gala. on March 28,
             2025 as part of ACC.25 in Chicago, IL.
           </span>
-        </p>
+        </div>
       </div>
       <a
-        class="c_white col_all expanded-click-area font_2 font_bold font_copy grid h:bg_black-5 items_end justify_end not-link p_4 row_all z_2 text_right"
+        class="{{text_size_style}}  c_white col_all expanded-click-area font_2 font_bold font_copy grid h:bg_black-5 items_end justify_end not-link p_4 row_all z_2 text_right"
         href
         ><span
           >See You
