@@ -3,16 +3,44 @@
 container_modifier: class slot to change the row mechanizm.
 custom_fontsize:  change the base sizing for the reading typography defaults to 1.
 -->
-{% assign data_path = "IconDecoratedLists" %}
+
+{% assign path_parts = 'Blocks.IconDecoratedLists' | split: '.' %}
 {% if include.data_path %}
-    {% assign data_path = include.data_path %}
+  {% assign path_parts = include.data_path | split: '.' %}
 {% endif %}
 
-<section section-label="IconDecoratedList" class="reading-typography columns_3:lg columns_2:md columns_1 grid gap_5:md gap_4 p_4 p_5:md {% if include.container_modifier %}{{ include.container_modifier }}{% endif %}" style="--custom-font-size-up: {% if include.custom_fontsize %}{{ include.custom_fontsize }}{% else %} 1 {% endif %} ;">
+{% assign data_object = site.data %}
+{% for part in path_parts %}
+  {% assign data_object = data_object[part] %}
+{% endfor %}
+
+{% assign grid_styles = " columns_2:md columns_1 gap-x_6:md gap_4 " %}
+{% if include.grid_modifier %}
+  {% assign grid_styles = include.grid_modifier %}
+{% endif %} 
+
+{% assign font_size = .8 %}
+{% if include.custom_fontsize %}
+  {% assign font_size = include.custom_fontsize %}
+{% endif %} 
+
+{% if include.container_modifier %}
+  <section
+    label="IconDecoratedList"
+    class="reading-typography font-size_up p_4 p_5:md {{ include.container_modifier }} {{ grid_styles }}"
+    style="--custom-font-size-up: {{font_size}} ;"
+  >
+{% else %}
+  <div
+    label="IconDecoratedList"
+    class="reading-typography font-size_up {{ grid_styles }}"
+    style="--custom-font-size-up: {{font_size}} ;"
+  >
+{% endif %}
     {% assign current_section = nil %}
     {% assign current_icon = nil %}
     
-    {% for row in site.data.Blocks[data_path] %}
+    {% for row in data_object %}
       <!-- Start a new section if section_title is present -->
       {% if row.section_title and row.section_title != "" %}
         <!-- Close previous section's list if it's open -->
@@ -52,5 +80,9 @@ custom_fontsize:  change the base sizing for the reading typography defaults to 
       </ul>
       </div> <!-- Closing the final section div -->
     {% endif %}
-</section>
-  
+
+{% if include.container_modifier %}
+  </section>
+{% else %}
+  </div>
+{% endif %}

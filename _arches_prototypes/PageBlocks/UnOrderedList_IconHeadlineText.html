@@ -15,22 +15,33 @@
   {% assign data_object = data_object[part] %}
 {% endfor %}
 
+{% assign grid_styles = " columns_2:md columns_1 gap-x_6:md gap_4 " %}
+{% if include.grid_modifier %}
+  {% assign grid_styles = include.grid_modifier %}
+{% endif %} 
+
+{% assign font_size = .8 %}
+{% if include.custom_fontsize %}
+  {% assign font_size = include.custom_fontsize %}
+{% endif %} 
+
+
 {% if include.container_modifier %}
   <section
     label="UnOrderedListWithIcon"
-    class="reading-typography p_5 {{ include.container_modifier }}"
-    style="--custom-font-size-up: {% if include.custom_fontsize %}{{ include.custom_fontsize }}{% else %} 1 {% endif %} ;"
+    class="reading-typography font-size_up p_4 {{ include.container_modifier }}"
+    style="--custom-font-size-up: {{font_size}} ;"
   >
 {% else %}
   <div
     label="UnOrderedListWithIcon"
-    class="reading-typography"
-    style="--custom-font-size-up: {% if include.custom_fontsize %}{{ include.custom_fontsize }}{% else %} 1 {% endif %} ;"
+    class="reading-typography font-size_up"
+    style="--custom-font-size-up: {{font_size}} ;"
   >
 {% endif %}
 
 <ul
-  class="{% if include.grid_modifier %}{{ include.grid_modifier }}{% else %} columns_2:md columns_1 gap-x_6 gap-y_4 {% endif %}  grid p-x_4:lg ul_none text_left"
+  class=" {{ grid_styles }}  grid p-x_4:lg ul_none text_left"
 >
   {% for listItem in data_object %}
     {% if forloop.last and include.lastItem %}

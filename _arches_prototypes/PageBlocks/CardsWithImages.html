@@ -5,15 +5,46 @@ custom_fontsize:  change the base sizing for the reading typography defaults to 
 button_type: this is looking for the bootstrap buton decorator class and defaults to btn-secondary
 -->
 
+{% assign path_parts = 'Blocks.Cards' | split: '.' %}
+{% if include.data_path %}
+  {% assign path_parts = include.data_path | split: '.' %}
+{% endif %}
 
-<section section-label="Cards" class="reading-typography font-size_up {% if include.container_modifier %}{{ include.container_modifier}}{% endif %}" style="--custom-font-size-up: {% if include.custom_fontsize %}{{ include.custom_fontsize }}{% else %} 0.8 {% endif %} ;">
+{% assign data_object = site.data %}
+{% for part in path_parts %}
+  {% assign data_object = data_object[part] %}
+{% endfor %}
+
+{% assign grid_styles = " columns_3:lg  columns_2:md columns_1 gap_5:lg gap_4 grid " %}
+{% if include.grid_modifier %}
+  {% assign grid_styles = include.grid_modifier %}
+{% endif %} 
+
+{% assign font_size = .8 %}
+{% if include.custom_fontsize %}
+  {% assign font_size = include.custom_fontsize %}
+{% endif %} 
+
+{% if include.container_modifier %}
+  <section
+    label="Cards"
+    class="reading-typography font-size_up p_4 p_5:md {{ include.container_modifier }} "
+    style="--custom-font-size-up: {{font_size}} ;"
+  >
+{% else %}
+  <div
+    label="Cards"
+    class="reading-typography font-size_up "
+    style="--custom-font-size-up: {{font_size}} ;"
+  >
+{% endif %}
 
 
-    <div grid-label="card-holder" class="columns_3:lg  columns_2:md   columns_1 gap_5:lg gap_4 grid ">
-{% for card in site.data.Blocks.Cards %}
+<div grid-label="card-holder" class="{{ grid_styles }} grid ">
+    {% for card in data_object %}
     <div grid-area="card" class="br_solid br_black-3 br_1 br_radius p_4 flex flex_column gap_3 bg_white shadow_bevel-bold ">
         <header class="grid">
-            <a href="http://www.onlinejacc.org/?_ga=2.33760423.724520244.1695820465-1288622140.1646239941" target="_blank"  class="aspect-2x3 bg_black-3 grid items_center justify_center m-x_auto max-w_25 overflow-clip"><img alt="JACC" lazy-load="true"   src="/PrototypingACCorg/assets/images/ACC/Innovation_3x2.png"></a>
+            <a href="{{ card.link_url }}" target="_blank"  class="aspect-2x3 bg_black-3 grid items_center justify_center m-x_auto max-w_25 overflow-clip"><img alt="JACC" lazy-load="true"   src="{{card.img_url}}"></a>
         </header>
         <main class="m_auto max-w_25">
             <h3 class="">{{ card.title }}
@@ -29,5 +60,8 @@ button_type: this is looking for the bootstrap buton decorator class and default
 
       {% endfor %}
     </div>
+{% if include.container_modifier %}
 </section>
-  
+    {% else %}
+</div>
+{% endif %}
