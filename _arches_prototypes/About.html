@@ -65,7 +65,7 @@ position: "About"
     gap-y_4" custom_fontsize="1.02" data_path="Blocks.About.IconDecoratedList_PointsOfView" %}
 </section>
 
-<section section-label="Cards" class="reading-typography font-size_up m-x_n4 bg_black-2 p_5:lg p_4  m-b_4 m-b_5:lg"
+<section section-label="Cards" class="reading-typography font-size_up m-x_n4 bg_black-2 p_5:lg p_4  m-t_4 m-t_5:lg"
     style="--custom-font-size-up:  1  ;">
     <h2>Make an Impact with ACC</h2>
     <p>Join the long tradition of innovative, collaborative and driven individuals dedicated to transforming
@@ -105,23 +105,33 @@ position: "About"
         </div>
     </div>
 </section>
-<section label="footer" class="grid columns_2:md columns_3:lg columns_1 p-b_4 p-b_5:lg p-x_4:lg">
-    {% include_relative PageBlocks/IconDecoratedLists.html custom_fontsize="1.0125" data_path="Blocks.About.Tools"
-    container_modifier="col-start_start col-end_n2" grid_modifier="columns_2:md columns_1 grid" %}
-   
-   
-   
-   
-    <div class="col-start_n2 col-end_end bg_black-2 shadow_emboss-light br_round p_4 p_5:lg reading-typography font-size_up flex flex_column"
-        style="--custom-font-size-up:.8">
-        <h4>The Heart of our Organization</h4>
-        <img src="https://lh3.googleusercontent.com/p/AF1QipOSIG9rJPChnoUhPjkRSkGIApDMAWzISJQ1Me4-=s680-w680-h510"
-            alt="The Heart House">
-        <h5>The Conference Center at Heart House</h5>
-            <p>Discover how we can elevate your
-            next event with its modern amenities and premier location in <a href="https://maps.app.goo.gl/3NJdfG7R1ydG5wer8">Washington, DC's West End <i class="fa-solid fa-map-location-dot p-r_3"></i></a>.</p>
-        <div class="flex_row justify_around flex gap_4 w_auto m-x_auto m-t_auto">
-            <a href="https://www.acc.org/About-ACC/Book-Our-Conference-Center" class="btn btn-secondary">Learn More</a>
+<section label="footer" class="reading-typography font-size_up m-x_n4  m-t_5:lg m-t_4 p_5:lg p_4 m-b_n4" style="--custom-font-size-up:  1 ;">
+    <div grid-label="card-holder" class="columns_2:md columns_1 gap_6:lg gap_4 grid ">
+
+    <div grid-area="card" class="relative br_solid br_black-3 br_1 br_radius flex flex_column gap_3 bg_white shadow_bevel-bold text_center">
+        <header class="aspect_21x9 bg_cover bg_center overflow_clip"><img src="https://pbs.twimg.com/media/GKzyULRWkAAMw3_?format=jpg&amp;name=medium" alt="A new clinician becoming a Fellow of the ACC"></header>
+        <div label="content" class="p_4 p_5:lg">
+            <h4 class="m-b_0">Annual Report
+            </h4>
+            <p>In 2023, we worked diligently to enhance membership value and engagement among all members. </p>
+        </div>
+        <div class="flex_row justify_around flex gap_4 w_auto m-x_auto m-t_auto m-b_5 m-b_5 p-b_3">
+            <a href="https://www.acc.org/About-ACC/Annual-Report" class="btn btn-secondary m-l_auto">Read the Annual Report</a>
         </div>
     </div>
+    <div grid-area="card" class="relative br_solid br_black-3 br_1 br_radius flex flex_column gap_3 bg_white shadow_bevel-bold text_center">
+        <header class="aspect_21x9 bg_cover bg_center overflow_clip"><img src="https://lh4.googleusercontent.com/p/AF1QipOSIG9rJPChnoUhPjkRSkGIApDMAWzISJQ1Me4-=s680-w680-h510" alt="A new clinician becoming a Fellow of the ACC"></header>
+        <div label="content" class="p_4 p_5:lg">
+            <h4 class="m-b_0">The Conference Center at Heart House
+            </h4>
+            <p>Discover how we can elevate your
+                next event with its modern amenities and premier location in <a href="https://maps.app.goo.gl/3NJdfG7R1ydG5wer8">Washington, DC's West End <i class="fa-solid fa-map-location-dot p-r_3"></i></a>.</p>
+        </div>
+        <div class="flex_row justify_around flex gap_4 w_auto m-x_auto m-t_auto m-b_5 m-b_5 p-b_3">
+            <div class="flex_row justify_around flex gap_4 w_auto m-x_auto m-t_auto">
+                <a href="https://www.acc.org/About-ACC/Book-Our-Conference-Center" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </div>
+</div>
 </section>
