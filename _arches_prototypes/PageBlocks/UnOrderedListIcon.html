@@ -35,25 +35,24 @@
   {% for listItem in data_object %}
     {% if forloop.last and include.lastItem %}
       <!-- Custom pattern for the last item -->
-      <li class="flex flex_row items_center justify_start isolate relative">
-        <em class="c_accent font_7 p-r_4 far fa-regular fa-check opacity_0" aria-hidden="true"></em>  
-      <span class="font-size_up font_medium">
+      <li class="flex flex_row items_center justify_start isolate relative c_accent-n1 h:c_accent-n3">
+      <span class="font-size_up font_medium c_black">
           Read about more of our
-          <a href="{{ listItem.link_url }}">{{ listItem.link_text }}</a>&nbsp;
+          <a class="expanded-click-area c_inherit" href="{{ listItem.link_url }}">{{ listItem.link_text }}</a>&nbsp;
         </span>
         <span class="flex flex_row p-l_4">
-          <em class="c_accent font_6 fas fa-solid fa-ellipsis" aria-hidden="true"></em>
-          <em class="c_accent fa-chevron-right fa-solid fas font_6 m-l_n3 " aria-hidden="true"></em>
+          <em class="c_inherit font_6 fas fa-solid fa-ellipsis" aria-hidden="true"></em>
+          <em class="c_inherit fa-chevron-right fa-solid fas font_6 m-l_n3 " aria-hidden="true"></em>
         </span>
       </li>
     {% else %}
       <!-- Default pattern for other items -->
-      <li class="flex flex_row items_center justify_start isolate relative">
-        <em class="c_accent font_7 p-r_4 far fa-regular {{ listItem.icon_class }}" aria-hidden="true"></em>
+      <li class="flex flex_row items_center justify_start isolate relative  {% if listItem.link_url %}c_accent-n1 h:c_accent-n3{% endif %} ">
+        <em class="{% if listItem.link_url %}c_inherit{% else %}c_accent-n1{% endif %} font_7 p-r_4 far fa-regular {{ listItem.icon_class }}" aria-hidden="true"></em>
         <span class="font-size_up font_medium">
           {{ listItem.description }}
           {% if listItem.link_url %}
-            <a rel="noopener noreferrer" class="link self_center" href="{{ listItem.link_url }}" target="_blank">
+            <a rel="noopener noreferrer" class="link self_center expanded-click-area" href="{{ listItem.link_url }}" target="_blank">
               {{- listItem.link_text -}}
             </a>
           {% endif %}
