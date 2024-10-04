@@ -1,0 +1,69 @@
+{% assign seed ="1556433.241" %}
+
+
+{% assign path_parts = 'Blocks.Testimonial' | split: '.' %}
+{% if include.data_path %}
+  {% assign path_parts = include.data_path | split: '.' %}
+{% endif %}
+
+{% assign data_object = site.data %}
+{% for part in path_parts %}
+  {% assign data_object = data_object[part] %}
+{% endfor %}
+
+{% assign grid_styles = " columns_3:lg  columns_2:md columns_1 gap_5:lg gap_4 grid " %}
+{% if include.grid_modifier %}
+  {% assign grid_styles = include.grid_modifier %}
+{% endif %} 
+
+{% assign font_size = .8 %}
+{% if include.custom_fontsize %}
+  {% assign font_size = include.custom_fontsize %}
+{% endif %} 
+
+{% if include.container_modifier %}
+  <section
+    label="Testimonial"
+    class="reading-typography font-size_up p_4 p_5:md {{ include.container_modifier }}"
+    style="--custom-font-size-up: {{font_size}} ;"
+  >
+{% else %}
+  <div
+    label="Testimonial"
+    class="reading-typography font-size_up"
+    style="--custom-font-size-up: {{font_size}} ;"
+  >
+{% endif %}
+
+<div grid-label="card-holder" class="{{ grid_styles }} grid ">
+
+<blockquote class="flex block p_4 p-y_5:md br_round relative z1 m-x_4:md m-x_5 shadow_bevel-light br_1 br_solid br_white-5 bg_black-_05 font_display" aria-label="Testimonial from Dr. Ainsley Conolly">
+    <i class="absolute font_5 font_7:md t_2 t_3:md l_n5 m-l_n3 fas fa-quote-left fa-fw c_accent-n1 z_1 text-shadow_black-1" aria-hidden="true"></i>
+    
+    <div class="flex_auto p-x_5:md  p-x_3 c_black z_2" role="article">
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Numquam consequuntur delectus vero. Ratione fugit totam
+            ipsum aperiam modi! Quas facilis consequuntur totam quod
+            inventore atque magnam deleniti labore quae minus?
+        </p>
+        <cite class="c_accent-n3 flex flex_row font_normal m-t_n3 m-x_0:md m-x_n3" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+          <img src="https://i.pravatar.cc/80?u=1556433.241" alt="Headshot of Dr. Ainsley Conolly" class="aspect_1x1 br_2 br_circle br_solid br_white-1 flex_none max-w_5 shadow_overlap-light" itemprop="image" style="
+  width: 50px;
+">
+          <span class="flex_auto lh_2 m-l_3 self_center">
+            <span class="block font-size_down-1 font_accent font_bold" itemprop="name">Dr. Ainsley Conolly, FACC</span>
+          <span class="font-size_down-2 opacity_8 font_ui block" itemprop="jobTitle">Corrupti odit harum</span>
+          </span>
+      </cite>
+    </div>
+    <i class="absolute b_3:md b_4 c_accent-n1 fa-fw fa-quote-right fas font_5 font_7:md m-r_n3 r_n5 text-shadow_black-1 z_1" aria-hidden="true"></i>
+</blockquote>
+
+
+</div>
+{% if include.container_modifier %}
+  </section>
+{% else %}
+  </div>
+{% endif %}

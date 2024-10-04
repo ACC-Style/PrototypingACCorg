@@ -15,7 +15,7 @@ button_type: this is looking for the bootstrap buton decorator class and default
   {% assign data_object = data_object[part] %}
 {% endfor %}
 
-{% assign grid_styles = " columns_3:lg  columns_2:md columns_1 gap_5:lg gap_4 grid " %}
+{% assign grid_styles = " columns_3:lg columns_2:md columns_1 gap_5:lg gap_4 grid " %}
 {% if include.grid_modifier %}
   {% assign grid_styles = include.grid_modifier %}
 {% endif %} 
@@ -24,7 +24,14 @@ button_type: this is looking for the bootstrap buton decorator class and default
 {% if include.custom_fontsize %}
   {% assign font_size = include.custom_fontsize %}
 {% endif %} 
-
+{% assign cta_styles = "" %}
+{% if include.cta_type %}
+    {% if include.cta_type == "bevel" %}
+        {% assign cta_styles = "shadow_bevel-light p_4 p_5:lg bg_white br_round" %}
+    {% elsif include.cta_type == "border" %}
+        {% assign cta_styles = "p_4 p-t_6 p-x_5:lg bg_white br-t_1 br_solid br_primary-1" %}
+    {% endif %}
+{% endif %}
 
 <div
     label="CTA_follow_up"
@@ -33,14 +40,7 @@ button_type: this is looking for the bootstrap buton decorator class and default
   >
 
 
-{% assign cta_styles = "" %}
-{% if include.cta_type %}
-    {% if include.cta_type == "bevel" %}
-        {% assign cta_styles = "shadow_bevel-light p_4 p_5:lg bg_white br_round" %}
-    {% elsif include.cta_type == "border" %}
-        {% assign cta_styles = "p_4 p-t_6 p-x_5:lg bg_white br-t_2 br_solid br_primary" %}
-    {% endif %}
-{% endif %}
+
     <div data-item="cta" class="{{ cta_styles }} font-size_up m-t_6:lg m-y_4 m-y_5:md m_auto max-w_60 relative text_center relative" > 
         {% for cta in data_object %}
             <h2 data-item="cta-title" class="m-b_3 lh_1 font_medium font_display">
