@@ -20,16 +20,16 @@ button_type: this is looking for the bootstrap buton decorator class and default
   {% assign grid_styles = include.grid_modifier %}
 {% endif %} 
 
-{% assign font_size = .8 %}
+{% assign font_size = .8 | append: '; ' %}
 {% if include.custom_fontsize %}
-  {% assign font_size = include.custom_fontsize %}
+  {% assign font_size = include.custom_fontsize | append: '; ' %}
 {% endif %} 
 
 {% if include.container_modifier %}
   <section
     label="Cards"
     class="reading-typography font-size_up p_4 p_5:md {{ include.container_modifier }} "
-    style="--custom-font-size-up: {{font_size}} ;"
+    style="--custom-font-size-up: {{font_size}}"
   >
 {% else %}
   <div

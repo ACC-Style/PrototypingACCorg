@@ -1,0 +1,59 @@
+{% assign path_parts = 'Blocks.UL_IconHeadlineText' | split: '.' %}
+{% if include.data_path %}
+  {% assign path_parts = include.data_path | split: '.' %}
+{% endif %}
+
+{% assign data_object = site.data %}
+{% for part in path_parts %}
+  {% assign data_object = data_object[part] %}
+{% endfor %}
+
+{% assign grid_styles = "columns_2:md columns_1 gap-x_5:lg gap_4 grid" %}
+{% if include.grid_modifier %}
+  {% assign grid_styles = include.grid_modifier %}
+{% endif %} 
+
+{% assign font_size = .8 | append: "; " %}
+{% if include.custom_fontsize %}
+  {% assign font_size = include.custom_fontsize | append: "; " %}
+{% endif %} 
+
+{% if include.container_modifier %}
+  <section
+    label="UL_IconHeadlineText"
+    class="reading-typography font-size_up p_4 {{ include.container_modifier }}"
+    style="--custom-font-size-up: {{ font_size }}"
+  >
+{% else %}
+  <div
+    label="UL_IconHeadlineText"
+    class="reading-typography font-size_up"
+    style="--custom-font-size-up: {{ font_size }}"
+  >
+{% endif %}
+
+<ul class="{{ grid_styles }} p-x_4:lg ul_none text_left">
+  {% for listItem in data_object %}
+    <li class="flex flex_row:md flex_column items_start justify_start isolate relative c_accent {% if listItem.url %} p-x_4 h:bg_accent-5 {% endif %} p_3 br_radius">
+      <i class="c_inherit-all font_7 m-t_3 p-r_4 fas {{ listItem.icon_class }}" aria-hidden="true"></i>
+      <div class="font-size_up">
+        <div class="font_bold not-link c_inherit-all lh_3">
+          {% if listItem.url %}
+            <a href="{{ listItem.url }}" class="not-link c_accent-n1 h:c_accent-n3 h:underline expanded-click-area" target="_blank" rel="noopener noreferrer">{{ listItem.headline }}</a>
+          {% else %}
+            {{ listItem.headline }}
+          {% endif %}
+        </div>
+        <span class="block font-size_down opacity_8 c_black">
+          {{ listItem.description }}
+        </span>
+      </div>
+    </li>
+  {% endfor %}
+</ul>
+
+{% if include.container_modifier %}
+  </section>
+{% else %}
+  </div>
+{% endif %}

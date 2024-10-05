@@ -21,35 +21,35 @@ button_type: this is looking for the bootstrap buton decorator class and default
   {% assign grid_styles = include.grid_modifier %}
 {% endif %} 
 
-{% assign font_size = .8 %}
+{% assign font_size = .8 | append "; "  %}
 {% if include.custom_fontsize %}
-  {% assign font_size = include.custom_fontsize %}
+  {% assign font_size = include.custom_fontsize | append "; "  %}
 {% endif %} 
 
 {% if include.container_modifier %}
   <section
     label="Cards"
     class="reading-typography font-size_up p_4 p_5:md {{ include.container_modifier }}"
-    style="--custom-font-size-up: {{font_size}} ;"
+    style="--custom-font-size-up: {{font_size}}"
   >
 {% else %}
   <div
     label="Cards"
     class="reading-typography font-size_up"
-    style="--custom-font-size-up: {{font_size}} ;"
+    style="--custom-font-size-up: {{font_size}}"
   >
 {% endif %}
 
 <div grid-label="card-holder" class="{{ grid_styles }} grid "></div>
-{% for card in data_object %}
-      <div grid-area="card" class="relative br_solid br_black-3 br_1 br_radius p_4 p_5:lg flex flex_column gap_3 bg_white shadow_bevel-bold">
-        <h3 class="">{{ card.title }}
-          <small class="block font-size_down-1 font_medium m-t_3">{{ card.subtitle }}</small>
-        </h3>
-        <p>{{ card.description }}</p>
-        <a href="{{ card.link_url }}" class="expanded-click-area btn m-x_auto {% if include.button_type %}{{ include.button_type }}{% else %}btn-secondary{% endif %} m-t_auto">{{ card.link_text }}</a>
-      </div>
-{% endfor %}
+  {% for card in data_object %}
+        <div grid-area="card" class="relative br_solid br_black-3 br_1 br_radius p_4 p_5:lg flex flex_column gap_3 bg_white shadow_bevel-bold">
+          <h3 class="">{{ card.title }}
+            <small class="block font-size_down-1 font_medium m-t_3">{{ card.subtitle }}</small>
+          </h3>
+          <p>{{ card.description }}</p>
+          <a href="{{ card.link_url }}" class="expanded-click-area btn m-x_auto {% if include.button_type %}{{ include.button_type }}{% else %}btn-secondary{% endif %} m-t_auto">{{ card.link_text }}</a>
+        </div>
+  {% endfor %}
 </div>
 {% if include.container_modifier %}
   </section>

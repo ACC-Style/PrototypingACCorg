@@ -5,7 +5,7 @@
   button_type: this is looking for the bootstrap buton decorator class and defaults to btn-secondary
   grid_modifier: you can pass in  rules to change the grid from its default.
 -->
-{% assign path_parts = 'Blocks.UnOrderedListWithIcon' | split: '.' %}
+{% assign path_parts = 'Blocks.UL_IconText' | split: '.' %}
 {% if include.data_path %}
   {% assign path_parts = include.data_path | split: '.' %}
 {% endif %}
@@ -17,13 +17,13 @@
 
 {% if include.container_modifier %}
   <section
-    label="UnOrderedListWithIcon"
+    label="UL_IconText"
     class="reading-typography p_5 {{ include.container_modifier }}"
     style="--custom-font-size-up: {% if include.custom_fontsize %}{{ include.custom_fontsize }}{% else %} 1 {% endif %} ;"
   >
 {% else %}
   <div
-    label="UnOrderedListWithIcon"
+    label="UL_IconText"
     class="reading-typography"
     style="--custom-font-size-up: {% if include.custom_fontsize %}{{ include.custom_fontsize }}{% else %} 1 {% endif %} ;"
   >
@@ -38,7 +38,7 @@
       <li class="flex flex_row items_center justify_start isolate relative c_accent-n1 h:c_accent-n3">
       <span class="font-size_up font_medium c_black">
           Read about more of our
-          <a class="expanded-click-area c_inherit" href="{{ listItem.link_url }}">{{ listItem.link_text }}</a>&nbsp;
+          <a class="expanded-click-area c_inherit not-link h:underline" target="self" href="{{ listItem.link_url }}">{{ listItem.link_text }}</a>&nbsp;
         </span>
         <span class="flex flex_row p-l_4">
           <em class="c_inherit font_6 fas fa-solid fa-ellipsis" aria-hidden="true"></em>
@@ -52,7 +52,7 @@
         <span class="font-size_up font_medium">
           {{ listItem.description }}
           {% if listItem.link_url %}
-            <a rel="noopener noreferrer" class="link self_center expanded-click-area" href="{{ listItem.link_url }}" target="_blank">
+            <a rel="noopener noreferrer" class="expanded-click-area c_inherit not-link h:underline" target="_self" href="{{ listItem.link_url }}" >
               {{- listItem.link_text -}}
             </a>
           {% endif %}
