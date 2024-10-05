@@ -1,0 +1,55 @@
+{% assign path_parts = 'Blocks.CTA_Callout' | split: '.' %}
+{% if include.data_path %}
+  {% assign path_parts = include.data_path | split: '.' %}
+{% endif %}
+
+{% assign data_object = site.data %}
+{% for part in path_parts %}
+  {% assign data_object = data_object[part] %}
+{% endfor %}
+
+{% assign container_styles = 'bg_black-1 m-y_5:lg m-y_4' %}
+{%
+  if include.container_modifier}
+  {% assign container_styles =  include.container_modifier
+%}
+{% endif %}
+
+{% assign font_size = 1 | append: ';' %}
+{% if include.custom_fontsize %}
+  {% assign font_size = include.custom_fontsize | append: ';' %}
+{% endif %}
+
+{% for callout in data_object %}
+  {% assign grid_dimenstions = '--col-1:auto; --col-2:1fr;' %}
+  {% if callout.reverse %}
+    {% assign grid_dimenstions = '--col-1:1fr; --col-2:auto;' %}
+  {% endif %}
+  <div
+    label="CTA-Callout"
+    class="reading-typography font-size_up br_radius {{ container_styles }} grid columns_2:md columns_1 gap_5:lg gap_4:md gap_3 max-w_25 max-w_80:md m-x_auto"
+    style="--custom-font-size-up: {{font_size}} {{ grid_dimenstions }} -row-1:375px;"
+  >
+    <!-- Image Section -->
+    <div grid-label="image" class="max-w_25 flex_grow {% if callout.reverse  %} order_2 {% endif %}">
+      <img src="{{ callout.image_url }}" alt="{{ callout.title }}" class="w_100 aspect_3x2 ">
+    </div>
+
+    <!-- Content Section -->
+    <div
+      grid-label="content-container"
+      class="flex_auto grid columns_1 rows_1 self_center p-y_4 p-y_5:lg {% if callout.reverse  %}  order_1 {% endif %}"
+    >
+      <div grid-label="content" class="max-w_30 p-x_4 m_auto w_100 ">
+        <h4 class="c_black lh_1 m-b_4 font_accent max-w_25">{{ callout.title }}</h4>
+        <p class="lh_2">{{ callout.description }}</p>
+        <a
+          href="{{ callout.link_url }}"
+          class="float_right btn btn-sm {% if include.button_type %}{{ include.button_type }}{% else %}btn-primary{% endif %}"
+        >
+          {{- callout.link_text -}}
+        </a>
+      </div>
+    </div>
+  </div>
+{% endfor %}
