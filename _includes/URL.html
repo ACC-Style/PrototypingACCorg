@@ -13,9 +13,9 @@ url: an alternative URL to use if neither GUID nor MEDIA is provided. Example: "
 {% endif %}
 
 {% if include.media %}
-  {% assign url = "~/media/" | append: cleaned_media | append: ".ashx" %}
+  {% assign url = "https://www.acc.org/~/media/" | append: cleaned_media | append: ".ashx" %}
 {% elsif include.guid %}
-  {% assign url = "~/link.aspx?_id=" | append: cleaned_guid | append: "&amp;_z=z" %}
+  {% assign url = "https://www.acc.org/~/link.aspx?_id=" | append: cleaned_guid | append: "&amp;_z=z" %}
 {% elsif include.url %}
   {% assign url = include.url %}
 {% else %}
