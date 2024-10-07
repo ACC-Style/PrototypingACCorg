@@ -1,0 +1,24 @@
+{% comment %}
+guid: a unique identifier to generate a URL. Example: "{12345-abcd-67890}"
+type: the type of GUID URL to generate. Options: [MEDIA_GUID, GUID]. Example: "MEDIA_GUID"
+url: an alternative URL to use if GUID is not provided. Example: "https://www.example.com"
+{% endcomment %}
+
+{% assign cleaned_guid = include.guid | remove: '{' | remove: '}' | remove: '-' | strip %}
+
+{% if include.guid %}
+  {% case include.type %}
+    {% when 'MEDIA_GUID' %}
+      {% assign url = "https://www.acc.org/~/media/" | append: cleaned_guid | append: ".ashx" %}
+    {% when 'GUID' %}
+      {% assign url = "~/link.aspx?_id=" | append: cleaned_guid | append: "&amp;_z=z" %}
+    {% else %}
+      {% assign url = "" %}
+  {% endcase %}
+{% elsif include.url %}
+  {% assign url = include.url %}
+{% else %}
+  {% assign url = "" %}
+{% endif %}
+
+"{{ url }}"

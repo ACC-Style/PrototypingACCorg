@@ -1,3 +1,10 @@
+<!--
+container_modifier: class slot to change the container style. Example: "custom-container-class"
+custom_fontsize: change the base sizing for the reading typography. Defaults to 1. Example: "1.2"
+button_type: specifies the button style. Defaults to btn-primary. Example: "secondary", "link"
+data_path: specifies the path for data to be used in the CTA callouts. Example: "Blocks.CTA_Callout.CustomData"
+-->
+
 {% assign path_parts = 'Blocks.CTA_Callout' | split: '.' %}
 {% if include.data_path %}
   {% assign path_parts = include.data_path | split: '.' %}
@@ -9,10 +16,8 @@
 {% endfor %}
 
 {% assign container_styles = 'bg_black-1 m-y_5:lg m-y_4' %}
-{%
-  if include.container_modifier}
-  {% assign container_styles =  include.container_modifier
-%}
+{% if include.container_modifier %}
+  {% assign container_styles = include.container_modifier %}
 {% endif %}
 
 {% assign font_size = 1 | append: ';' %}
@@ -43,12 +48,22 @@
       <div grid-label="content" class="max-w_30 p-x_4 m_auto w_100 ">
         <h4 class="c_black lh_1 m-b_4 font_accent max-w_25">{{ callout.title }}</h4>
         <p class="lh_2">{{ callout.description }}</p>
-        <a
-          href="{{ callout.link_url }}"
-          class="float_right btn btn-sm {% if include.button_type %}{{ include.button_type }}{% else %}btn-primary{% endif %}"
-        >
-          {{- callout.link_text -}}
-        </a>
+        {% if callout.guid != blank and callout.guid != nil and callout.guid != "" %}
+          {% assign cleaned_guid = callout.guid | remove: '{' | remove: '}' | remove: '-' | strip %}
+          <a
+            href="~/link.aspx?_id={{ cleaned_guid }}&amp;_z=z"
+            class="float_right btn {% if include.button_custom_classes %}{{ include.button_custom_classes }}{% else %}btn-sm{% endif %} {% case include.button_type %}{% when 'primary' %}btn btn-primary{% when 'secondary' %}btn btn-secondary{% when 'link' %}btn btn-link link{% else %}btn btn-primary{% endcase %} capitalize m-b_n0 {% if include.button_type != 'link' %}shadow_1{% endif %}"
+          >
+            {{- callout.link_text -}}
+          </a>
+        {% else %}
+          <a
+            href="{{ callout.link_url }}"
+            class="float_right {% if include.button_custom_classes %}{{ include.button_custom_classes }}{% else %}btn-sm{% endif %} {% case include.button_type %}{% when 'primary' %}btn btn-primary{% when 'secondary' %}btn btn-secondary{% when 'link' %}btn btn-link link{% else %}btn btn-primary{% endcase %} capitalize m-b_n0 {% if include.button_type != 'link' %}shadow_1{% endif %}"
+          >
+            {{- callout.link_text -}}
+          </a>
+        {% endif %}
       </div>
     </div>
   </div>

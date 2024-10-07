@@ -1,4 +1,4 @@
-image_url,title,description,link_text,link_url,reverse
-https://placehold.co/375x250/000000/FFFFFF/png,Discover a better work-life balance with us.,Join a thriving organization that prioritizes and respects work-life balance.,Search for Jobs,https://example.com/jobs,
-https://placehold.co/375x250/FF5733/FFFFFF/png,Explore Your Career Opportunities,Start building your dream career today.,Explore Jobs,https://example.com/jobs,true
-https://placehold.co/375x250/33FF57/000000/png,Join a Global Community,Collaborate with like-minded professionals.,Join Us,https://example.com/community,
+image_url,title,description,link_text,link_url,guid,reverse
+https://placehold.co/375x250/000000/FFFFFF/png,Discover a better work-life balance with us.,Join a thriving organization that prioritizes and respects work-life balance.,Search for Jobs,https://example.com/jobs,,
+https://placehold.co/375x250/FF5733/FFFFFF/png,Explore Your Career Opportunities,Start building your dream career today.,Explore Jobs,https://example.com/jobs,,true
+https://placehold.co/375x250/33FF57/000000/png,Join a Global Community,Collaborate with like-minded professionals.,Join Us,https://example.com/community,,

@@ -1,14 +1,21 @@
+<!--
+container_modifier: class slot to change the row mechanism. Example: "custom-container-class"
+container_type: specify the style of container. Options: [bevel, border]. Example: "bevel"
+custom_fontsize: change the base sizing for the reading typography. Defaults to 1. Example: "1.2"
+button_type: specifies the button style. Defaults to btn-secondary. Options: [primary, secondary, link]. Example: "primary"
+button_custom_classes: additional classes to add to the button. Example: "extra-class another-class"
+data_path: specifies the path for data to be used in the CTA follow-up. Example: "Blocks.FollowUpCTA.CustomData"
 
-<!-- 
-container_modifier: class slot to change the row mechanizm.
-container_type: [ bevel, border ]
-custom_fontsize:  change the base sizing for the reading typography defaults to 1.
-button_type: this is looking for the bootstrap buton decorator class and defaults to btn-secondary
+
+
+grid_modifier: modify the grid styles for CTA layout. Example: "columns_4:lg columns_2:md columns_1 gap_6:lg gap_3"
 -->
+
 {% assign path_parts = 'Blocks.FollowUpCTA' | split: '.' %}
 {% if include.data_path %}
   {% assign path_parts = include.data_path | split: '.' %}
 {% endif %}
+
 
 {% assign data_object = site.data %}
 {% for part in path_parts %}
@@ -51,7 +58,26 @@ button_type: this is looking for the bootstrap buton decorator class and default
                 <p class="font-size_up">{{ cta.description }}</p>
             </div>
             <div class="grid justify_center">
-                <a rel="noopener noreferrer" href="{{ cta.link_url }}" target="_blank" class="{% if include.button_type %}{{ include.button_type }}{% else %}btn-primary{% endif %} expanded-click-area br_solid btn btn-lg capitalize m-b_n2 shadow_1  {% if include.container_type != "bevel" %} shadow_overlap-bold {% endif  %}">{{ cta.link_text }}</a>
+        {% if cta.guid != blank and cta.guid != nil and cta.guid != "" %}
+          {% assign cleaned_guid = cta.guid | remove: '{' | remove: '}' | remove: '-' | strip %}
+          <a
+            rel="noopener noreferrer"
+            href="~/link.aspx?_id={{ cleaned_guid }}&amp;_z=z"
+            target="_blank"
+            class="{% if include.button_custom_classes %}{{ include.button_custom_classes }}{% else %}btn-lg{% endif %} {% case include.button_type %}{% when 'primary' %}btn btn-primary{% when 'secondary' %}btn btn-secondary{% when 'link' %}btn btn-link link{% else %}btn btn-primary{% endcase %} expanded-click-area br_solid btn btn-lg capitalize m-b_n2 {% if include.container_type != 'bevel' %}shadow_overlap-bold{% else %}shadow_1{% endif %}"
+          >
+            {{ cta.link_text }}
+          </a>
+        {% else %}
+          <a
+            rel="noopener noreferrer"
+            href="{{ cta.link_url }}"
+            target="_blank"
+            class="{% if include.button_custom_classes %}{{ include.button_custom_classes }}{% else %}btn-lg{% endif %} {% case include.button_type %}{% when 'primary' %}btn btn-primary{% when 'secondary' %}btn btn-secondary{% when 'link' %}btn btn-link link{% else %}btn btn-primary{% endcase %} expanded-click-area br_solid btn btn-lg capitalize m-b_n2 {% if include.container_type != 'bevel' %}shadow_overlap-bold{% else %}shadow_1{% endif %}"
+          >
+            {{ cta.link_text }}
+          </a>
+        {% endif %}
             </div>
         {% endfor %}
     </div>

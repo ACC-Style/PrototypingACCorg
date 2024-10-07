@@ -1,10 +1,16 @@
 <!--
-  header: the h2 tag in this space
-  container_modifier: class slot to change the row mechanizm.
-  custom_fontsize:  change the base sizing for the reading typography defaults to 1.
-  button_type: this is looking for the bootstrap buton decorator class and defaults to btn-secondary
-  grid_modifier: you can pass in  rules to change the grid from its default.
+header: specifies the text for the h2 tag at the top of the section. Example: "Our Features"
+container_modifier: class slot to change the row mechanism. Example: "custom-container-class"
+custom_fontsize: change the base sizing for the reading typography. Defaults to 1. Example: "1.2"
+button_type: specifies the button style. Defaults to btn-secondary. Options: [primary, secondary, link]. Example: "primary"
+grid_modifier: allows you to pass in rules to change the grid layout from its default. Example: "columns_3:lg columns_1 gap_6:lg"
+data_path: specifies the path for data to be used in the UL IconText list. Example: "Blocks.UL_IconText.CustomData"
+lastItem: specifies whether to include a custom pattern for the last list item. Example: "true"
 -->
+
+
+
+
 {% assign path_parts = 'Blocks.UL_IconText' | split: '.' %}
 {% if include.data_path %}
   {% assign path_parts = include.data_path | split: '.' %}
@@ -38,7 +44,17 @@
       <li class="flex flex_row items_center justify_start isolate relative c_accent-n1 h:c_accent-n3">
       <span class="font-size_up font_medium c_black">
           Read about more of our
-          <a class="expanded-click-area c_inherit not-link h:underline" target="self" href="{{ listItem.link_url }}">{{ listItem.link_text }}</a>&nbsp;
+          {% if listItem.guid != blank and listItem.guid != nil and listItem.guid != "" %}
+          {% assign cleaned_guid = listItem.guid | remove: '{' | remove: '}' | remove: '-' | strip %}
+          <a rel="noopener noreferrer" class="expanded-click-area c_inherit not-link h:underline" target="_self" href="~/link.aspx?_id={{ cleaned_guid }}&amp;_z=z">
+            {{- listItem.link_text -}}
+          </a>
+        {% elsif listItem.url %}
+          <a rel="noopener noreferrer" class="expanded-click-area c_inherit not-link h:underline" target="_self" href="{{ listItem.url }}">
+            {{- listItem.link_text -}}
+          </a>
+        {% endif %}
+          &nbsp;
         </span>
         <span class="flex flex_row p-l_4">
           <em class="c_inherit font_6 fas fa-solid fa-ellipsis" aria-hidden="true"></em>
@@ -47,15 +63,20 @@
       </li>
     {% else %}
       <!-- Default pattern for other items -->
-      <li class="flex flex_row items_center justify_start isolate relative  {% if listItem.link_url %}c_accent-n1 h:c_accent-n3{% endif %} ">
-        <em class="{% if listItem.link_url %}c_inherit{% else %}c_accent-n1{% endif %} font_7 p-r_4 far fa-regular {{ listItem.icon_class }}" aria-hidden="true"></em>
+      <li class="flex flex_row items_center justify_start isolate relative  {% if listItem.url %}c_accent-n1 h:c_accent-n3{% endif %} ">
+        <em class="{% if listItem.url %}c_inherit{% else %}c_accent-n1{% endif %} font_7 p-r_4 far fa-regular {{ listItem.icon_class }}" aria-hidden="true"></em>
         <span class="font-size_up font_medium">
           {{ listItem.description }}
-          {% if listItem.link_url %}
-            <a rel="noopener noreferrer" class="expanded-click-area c_inherit not-link h:underline" target="_self" href="{{ listItem.link_url }}" >
-              {{- listItem.link_text -}}
-            </a>
-          {% endif %}
+          {% if listItem.guid != blank and listItem.guid != nil and listItem.guid != "" %}
+          {% assign cleaned_guid = listItem.guid | remove: '{' | remove: '}' | remove: '-' | strip %}
+          <a rel="noopener noreferrer" class="expanded-click-area c_inherit not-link h:underline" target="_self" href="~/link.aspx?_id={{ cleaned_guid }}&amp;_z=z">
+            {{- listItem.link_text -}}
+          </a>
+        {% elsif listItem.url %}
+          <a rel="noopener noreferrer" class="expanded-click-area c_inherit not-link h:underline" target="_self" href="{{ listItem.url }}">
+            {{- listItem.link_text -}}
+          </a>
+        {% endif %}
         </span>
       </li>
     {% endif %}
