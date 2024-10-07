@@ -8,9 +8,9 @@ url: an alternative URL to use if GUID is not provided. Example: "https://www.ex
 
 {% if include.guid %}
   {% case include.type %}
-    {% when 'MEDIA_GUID' %}
+    {% when 'media' %}
       {% assign url = "https://www.acc.org/~/media/" | append: cleaned_guid | append: ".ashx" %}
-    {% when 'GUID' %}
+    {% when 'guid' %}
       {% assign url = "~/link.aspx?_id=" | append: cleaned_guid | append: "&amp;_z=z" %}
     {% else %}
       {% assign url = "" %}
@@ -21,4 +21,4 @@ url: an alternative URL to use if GUID is not provided. Example: "https://www.ex
   {% assign url = "" %}
 {% endif %}
 
-"{{ url }}"
+{{ url }}
