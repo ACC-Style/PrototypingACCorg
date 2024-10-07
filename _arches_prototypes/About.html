@@ -73,8 +73,8 @@ position: "About"
                 <p>Be part of a global community of cardiovascular professionals. </p>
             </div>
             <div class="flex_row:md flex_column justify_around flex gap_4 w_auto m-x_auto m-t_auto m-b_5 m-b_5 p-b_3">
-                <a href="/About-ACC/UX/Surveys" class="btn btn-secondary m-l_auto:md">Learn More</a>
-                <a href="/About-ACC/UX/Surveys" class="btn btn-primary m-r_auto:md">Join Now</a>
+                <a href="{% include URL.html guid='{JoinUS-xxxx-xxxx-xxxx}' %}" class="btn btn-secondary m-l_auto:md">Learn More</a>
+                <a href="{% include URL.html url='https://my.acc.org/s/join?language=en_US' %}" class="btn btn-primary m-r_auto:md">Join Now</a>
             </div>
             <a href="" class="font-size_down-1 m-t_4 absolute b_3 l_0 r_0">Already a Member? Login.</a>
         </div>
@@ -89,9 +89,9 @@ position: "About"
                 <p>Join a team dedicated to supporting the cardiovascular community. </p>
             </div>
             <div class="flex_row:md flex_column items_center justify_around flex gap_4 w_auto m-x_auto m-t_auto m-b_5 m-b_5 p-b_3">
-                <a href="/About-ACC/UX/Surveys" class="btn btn-secondary m-l_auto:md">Learn More</a>
-                <a href="/About-ACC/UX/Surveys" class="btn btn-primary m-r_auto:md">Search for Jobs</a>
-            </div>
+                <a href="{% include URL.html guid='{Careers-xxxx-xxxx-xxxx}' %}" class="btn btn-secondary m-l_auto:md">Learn More</a>
+                <a href="{% include URL.html url='https://phf.tbe.taleo.net/phf03/ats/careers/v2/searchResults?org=ACC&cws=42' %}">Search for Jobs</a>
+            </div> 
         </div>
     </div>
 </section>
@@ -106,7 +106,7 @@ position: "About"
             <p>In 2023, we worked diligently to enhance membership value and engagement among all members. </p>
         </div>
         <div class="flex_row justify_around flex gap_4 w_auto m-x_auto m-t_auto m-b_4 m-b_5:lg p-b_3 ">
-            <a href="https://www.acc.org/About-ACC/Book-Our-Conference-Center" class="btn btn-secondary br_1 br_solid br_white-2 shadow_overlap-light">Annual Report</a>
+            <a href="{% include URL.html guid='{Report-xxxx-xxxx-xxxx}' %}" class="btn btn-secondary br_1 br_solid br_white-2 shadow_overlap-light">Annual Report</a>
         </div>
     </div>
     <div grid-area="card" class="relative items_center bg_accent-n3 br_solid br_black-3 br_1 br_round flex flex_column gap_3 bg_white shadow_bevel-bold text_center">
@@ -118,7 +118,7 @@ position: "About"
                 next event with its modern amenities and premier location in <a href="https://maps.app.goo.gl/3NJdfG7R1ydG5wer8">Washington, DC's West End <i class="fa-solid fa-map-location-dot p-r_3"></i></a>.</p>
         </div>
         <div class="flex_row justify_around flex gap_4 w_auto m-x_auto m-t_auto m-b_4 m-b_5:lg p-b_3 ">
-            <a href="https://www.acc.org/About-ACC/Book-Our-Conference-Center" class="btn btn-secondary br_1 br_solid br_white-2 shadow_overlap-light">Learn More</a>
+            <a href="{% include URL.html guid='{Book-xxxx-xxxx-xxxx}' %}" class="btn btn-secondary br_1 br_solid br_white-2 shadow_overlap-light">Learn More</a>
         </div>
     </div>
 </div>
