@@ -4,7 +4,8 @@ name: "Career Blocks"
 position: "Generators"
 ---
 
-{% include_relative PageBlocks/CardsWithImages.html container_modifier="bg_acc m-x_n4:lg m-y_5 p-y_4 p-x_5:lg p-x_4"   custom_fontsize=".8" button_type="btn-sm btn-secondary" %}
+{% include_relative PageBlocks/Cards.html     data_path="Blocks.Cards_without_IMG"          container_modifier="m-x_n4:lg m-y_5 p-y_4 p-x_5:lg p-x_4"           custom_fontsize=".8"    button_type="primary" %}
+{% include_relative PageBlocks/Cards.html    data_path="Blocks.Cards" container_modifier="bg_acc m-x_n4:lg m-y_5 p-y_4 p-x_5:lg p-x_4"    custom_fontsize=".8" button_custom_classes="btn-sm"    button_type="secondary" %}
 {% include_relative PageBlocks/FollowUpCTA.html container_modifier="" cta_type="" %}
 {% include_relative PageBlocks/FollowUpCTA.html container_modifier="m-x_n4 bg_black-2 p_4 p-y_5:md p-y_6:lg"  cta_type="bevel" %}
 {% include_relative PageBlocks/FollowUpCTA.html container_modifier="p_4 p-y_5:md p-y_6:lg" cta_type="border" %}

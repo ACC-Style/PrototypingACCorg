@@ -1,10 +1,11 @@
-
-<!-- 
-container_modifier: class slot to change the row mechanizm.
-custom_fontsize:  change the base sizing for the reading typography defaults to 1.
-button_type: this is looking for the bootstrap buton decorator class and defaults to btn-secondary
+<!--
+  container_modifier: class slot to change the row mechanizm. Example: "custom-container-class"
+  custom_fontsize: change the base sizing for the reading typography defaults to 1. Example: "1.2"
+  button_type: this is looking for the bootstrap button decorator class and defaults to btn-secondary. Example: "primary", "secondary", "link"
+  data_path: specifies the path for data to be used in the cards. Example: "Blocks.Cards.CustomData"
+  grid_modifier: modify the grid styles for card layout. Example: "columns_4:lg columns_2:md columns_1 gap_6:lg gap_3"
+  button_custom_classes: additional classes to add to the buttons. Example: "extra-class another-class"
 -->
-
 
 {% assign path_parts = 'Blocks.Cards' | split: '.' %}
 {% if include.data_path %}
@@ -16,15 +17,15 @@ button_type: this is looking for the bootstrap buton decorator class and default
   {% assign data_object = data_object[part] %}
 {% endfor %}
 
-{% assign grid_styles = " columns_3:lg  columns_2:md columns_1 gap_5:lg gap_4 grid " %}
+{% assign grid_styles = ' columns_3:lg  columns_2:md  ' %}
 {% if include.grid_modifier %}
   {% assign grid_styles = include.grid_modifier %}
-{% endif %} 
+{% endif %}
 
-{% assign font_size = .8 | append "; "  %}
+{% assign font_size = .8 | append: "; " %}
 {% if include.custom_fontsize %}
-  {% assign font_size = include.custom_fontsize | append "; "  %}
-{% endif %} 
+  {% assign font_size = include.custom_fontsize | append: '; ' %}
+{% endif %}
 
 {% if include.container_modifier %}
   <section
@@ -40,15 +41,52 @@ button_type: this is looking for the bootstrap buton decorator class and default
   >
 {% endif %}
 
-<div grid-label="card-holder" class="{{ grid_styles }} grid "></div>
+<div grid-label="card-holder" class="{{ grid_styles }} columns_1 gap_5:lg gap_4 grid">
   {% for card in data_object %}
-        <div grid-area="card" class="relative br_solid br_black-3 br_1 br_radius p_4 p_5:lg flex flex_column gap_3 bg_white shadow_bevel-bold">
-          <h3 class="">{{ card.title }}
-            <small class="block font-size_down-1 font_medium m-t_3">{{ card.subtitle }}</small>
-          </h3>
-          <p>{{ card.description }}</p>
-          <a href="{{ card.link_url }}" class="expanded-click-area btn m-x_auto {% if include.button_type %}{{ include.button_type }}{% else %}btn-secondary{% endif %} m-t_auto">{{ card.link_text }}</a>
-        </div>
+    <div
+      grid-area="card"
+      class="br_solid br_black-3 br_1 br_radius p_4 flex flex_column gap_3 bg_white shadow_bevel-bold relative"
+    >
+      {% if card.img_guid != blank and card.img_guid != null and card.img_guid != '' %}
+        {% assign cleaned_img_guid = card.img_guid | remove: '{' | remove: '}' | remove: '-' | strip %}
+        <header class="aspect_3x2 grid w_100 bg_black-2 items_center justify_center m-x_auto max-w_25 overflow-clip">
+            <img
+              alt="{{ card.img_alt }}"
+              lazy-load="true"
+              src="https://www.acc.org/~/media/{{ cleaned_img_guid }}.ashx"
+            >
+        </header>
+      {% elsif card.img_src != blank and card.img_src != null and card.img_src != '' %}
+        <header class="aspect_3x2 grid w_100 bg_black-2 items_center justify_center m-x_auto max-w_25 overflow-clip">
+          <img alt="{{ card.img_alt }}" lazy-load="true" src="{{ card.img_src }}">
+          </header>
+      {% endif %}
+      <main class="m_auto max-w_25">
+        <h3 class="">
+          {{ card.title }}
+          <small class="block font-size_down-1 font_medium m-t_3">{{ card.subtitle }}</small>
+        </h3>
+        <p>{{ card.description }}</p>
+      </main>
+      <footer class="flex flex_row justify_start gap_3 m-t_auto m_auto max-w_25">
+        {% if card.guid != '' %}
+          {% assign cleaned_guid = card.guid | remove: '{' | remove: '}' | remove: '-' | strip %}
+          <a
+            href="~/link.aspx?_id={{ cleaned_guid }}&amp;_z=z"
+            class="btn m-x_auto {% case include.button_type %}{% when 'primary' %}btn btn-primary{% when 'secondary' %}btn btn-secondary{% when 'link' %}btn btn-link link{% else %}btn btn-secondary{% endcase %} capitalize m-b_n0 {% if include.button_type != 'link' %}shadow_1{% endif %} {{ include.button_custom_classes }}"
+          >
+            {{- card.link_text -}}
+          </a>
+        {% else %}
+          <a
+            href="{{ card.link_url }}"
+            class="btn m-x_auto {% case include.button_type %}{% when 'primary' %}btn btn-primary{% when 'secondary' %}btn btn-secondary{% when 'link' %}btn btn-link link{% else %}btn btn-secondary{% endcase %} capitalize m-b_n0 {% if include.button_type != 'link' %}shadow_1{% endif %} {{ include.button_custom_classes }}"
+          >
+            {{- card.link_text -}}
+          </a>
+        {% endif %}
+      </footer>
+    </div>
   {% endfor %}
 </div>
 {% if include.container_modifier %}

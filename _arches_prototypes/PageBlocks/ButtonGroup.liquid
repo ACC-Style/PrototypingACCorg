@@ -1,0 +1,36 @@
+{% assign path_parts = 'Blocks.GroupedButtons' | split: '.' %}
+{% if include.data_path %}
+  {% assign path_parts = include.data_path | split: '.' %}
+{% endif %}
+
+{% assign data_object = site.data %}
+{% for part in path_parts %}
+  {% assign data_object = data_object[part] %}
+{% endfor %}
+
+{% assign container_styles = "" %}
+{% if include.container_modifier %}
+  {% assign container_styles = include.container_modifier %}
+{% endif %}
+
+{% if include.center == "true" %}
+  {% assign container_styles = container_styles | append: " justify_center" %}
+{% endif %}
+
+<div class="flex flex_row:md flex_column gap_4 {{ container_styles }}">
+  {% for button in data_object %}
+    {% assign guid = button.guid | strip %}
+    {% if guid != "" %}
+      {% assign cleaned_guid = guid | remove: '{' | remove: '}' | remove: '-' | strip %}
+      <a rel="noopener noreferrer" href="~/link.aspx?_id={{ cleaned_guid }}&amp;_z=z" target="_blank"
+        class="{% case button.type %}{% when 'primary' %}btn btn-primary{% when 'secondary' %}btn btn-secondary{% when 'link' %}btn btn-link link{% else %}btn btn-secondary{% endcase %} m-b_n0 {% if button.type != 'link' %}shadow_1{% endif %} {{ button.custom_classes }} {% if forloop.first %}m-l_auto:md{% endif %} {% if forloop.last %}m-r_auto:md{% endif %}">
+        {{ button.label }}
+      </a>
+    {% else %}
+      <a rel="noopener noreferrer" href="{{ button.url }}" target="_blank"
+        class="{% case button.type %}{% when 'primary' %}btn btn-primary{% when 'secondary' %}btn btn-secondary{% when 'link' %}btn btn-link link{% else %}btn btn-secondary{% endcase %} capitalize m-b_n0 {% if button.type != 'link' %}shadow_1{% endif %} {{ button.custom_classes }} {% if forloop.first %}m-l_auto:md{% endif %} {% if forloop.last %}m-r_auto:md{% endif %}">
+        {{ button.label }}
+      </a>
+    {% endif %}
+  {% endfor %}
+</div>

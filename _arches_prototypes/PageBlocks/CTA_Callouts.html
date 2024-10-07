@@ -31,14 +31,14 @@
     style="--custom-font-size-up: {{font_size}} {{ grid_dimenstions }} -row-1:375px;"
   >
     <!-- Image Section -->
-    <div grid-label="image" class="max-w_25 flex_grow {% if callout.reverse  %} order_2 {% endif %}">
+    <div grid-label="image" class="max-w_25 flex_grow {% if callout.reverse  %} order_2:lg {% endif %}">
       <img src="{{ callout.image_url }}" alt="{{ callout.title }}" class="w_100 aspect_3x2 ">
     </div>
 
     <!-- Content Section -->
     <div
       grid-label="content-container"
-      class="flex_auto grid columns_1 rows_1 self_center p-y_4 p-y_5:lg {% if callout.reverse  %}  order_1 {% endif %}"
+      class="flex_auto grid columns_1 rows_1 self_center p-y_4 p-y_5:lg {% if callout.reverse  %}  order_1:lg {% endif %}"
     >
       <div grid-label="content" class="max-w_30 p-x_4 m_auto w_100 ">
         <h4 class="c_black lh_1 m-b_4 font_accent max-w_25">{{ callout.title }}</h4>

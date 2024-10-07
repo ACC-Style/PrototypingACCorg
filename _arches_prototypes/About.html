@@ -39,17 +39,7 @@ position: "About"
                 <strong class="font-size_up m-b_2 block">The Power of Community</strong>
                 <small class="font-size_down block">Your Voice Shapes Our Future</small>
             </h2>
-            <div class="flex flex_row:md flex_column justify_center gap_4">
-                <a rel="noopener noreferrer" href="https://www.surveymonkey.com/r/66ZMZBC" target="_blank"
-                    class="btn-secondary br_solid btn  capitalize m-b_n2 shadow_1 m-l_auto:md  shadow_overlap-bold ">Support
-                    the ACC </a>
-                <a rel="noopener noreferrer" href="https://www.surveymonkey.com/r/66ZMZBC" target="_blank"
-                    class="btn-secondary br_solid btn  capitalize m-b_n2 shadow_1 shadow_overlap-bold ">Campaign for the
-                    Future </a>
-                <a rel="noopener noreferrer" href="https://www.surveymonkey.com/r/66ZMZBC" target="_blank"
-                    class="btn-secondary br_solid btn  capitalize m-b_n2 shadow_1 m-r_auto:md shadow_overlap-bold ">Advocacy
-                </a>
-            </div>
+            {% include_relative PageBlocks/ButtonGroup.liquid data_path="Blocks.About.ButtonGroup_Community"  %}
 
         </div>
     </div>
