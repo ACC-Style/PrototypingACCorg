@@ -22,7 +22,7 @@
     {% assign guid = button.guid | strip %}
     {% if guid != "" %}
       {% assign cleaned_guid = guid | remove: '{' | remove: '}' | remove: '-' | strip %}
-      <a rel="noopener noreferrer" href="~/link.aspx?_id={{ cleaned_guid }}&amp;_z=z" target="_blank"
+      <a rel="noopener noreferrer" href="https://www.acc.org/~/link.aspx?_id={{ cleaned_guid }}&amp;_z=z" target="_blank"
         class="{% case button.type %}{% when 'primary' %}btn btn-primary{% when 'secondary' %}btn btn-secondary{% when 'link' %}btn btn-link link{% else %}btn btn-secondary{% endcase %} m-b_n0 {% if button.type != 'link' %}shadow_1{% endif %} {{ button.custom_classes }} {% if forloop.first %}m-l_auto:md{% endif %} {% if forloop.last %}m-r_auto:md{% endif %}">
         {{ button.label }}
       </a>
