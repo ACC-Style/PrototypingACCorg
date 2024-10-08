@@ -3,123 +3,238 @@ layout: arches
 name: "About"
 position: "About"
 ---
+
 {% include_relative PageBlocks/HeroArea.html custom_fontsize="1.02" %}
 
-<section class="reading-typography font-size_up p-x_4:lg m-b_5:lg bg_black-2 m-x_n4 p-t_1 p-b_1 shadow_emboss-light"
-    style="--custom-font-size-up: 1.06;">
-    <div class="grid columns_2:md columns_1 m-y_5:md m-y_4 text_center">
-        <div class="p-x_5:lg p-x_4:md p_4 shadow_overlap-light m_4 m-x_6:lg m-x_5:md br_radius bg_white">
-            <h2 class="c_white font_medium lh_2 bg_primary-n2 m-t_n4 m-x_n5:lg m-x_n4 p_3 m-b_5">Mission</h2>
-            <p>To transform cardiovascular care and improve heart health for all </p>
-        </div>
-        <div class="p-x_5:lg p-x_4:md p_4 shadow_overlap-light m_4 m-x_6:lg m-x_5:md br_radius bg_white">
-            <h2 class="c_white font_medium lh_2 bg_accent-n2 m-t_n4 m-x_n5:lg m-x_n4 p_3 m-b_5">Vision</h2>
-            <p> A world where science, knowledge and innovation optimize patient care and outcomes </p>
-        </div>
+<section
+  class="reading-typography font-size_up p-x_4:lg m-b_5:lg bg_black-2 m-x_n4 p-t_1 p-b_1 shadow_emboss-light"
+  style="--custom-font-size-up: 1.06;"
+>
+  <div class="grid columns_2:md columns_1 m-y_5:md m-y_4 text_center">
+    <div
+      class="p-x_5:lg p-x_4:md p_4 shadow_overlap-light m_4 m-x_6:lg m-x_5:md br_radius bg_white"
+    >
+      <h2
+        class="c_white font_medium lh_2 bg_primary-n2 m-t_n4 m-x_n5:lg m-x_n4 p_3 m-b_5"
+      >
+        Mission
+      </h2>
+      <p>To transform cardiovascular care and improve heart health for all</p>
     </div>
     <div
-        class="p_4 m_auto text_left text_center:md shadow_overlap-light m_4 m-x_6:lg m-x_5:md m-x_4 m-b_4 m-b_5:lg br_radius bg_white">
-        <h2 class="c_white font_medium lh_2 bg_acc-n2 m-t_n4 m-x_n4 p_3 m-b_5">Core Values</h2>
-        <div class="max-w_45 m_auto">
-            <p>
-                We will achieve our mission and vision through our core values.
-            </p>
-        </div>
-        {% include_relative PageBlocks/UL_IconText.html custom_fontsize="1.02"
-        data_path="Blocks.About.UL_IconText_Core" grid_modifier="columns_3:lg columns_2:md columns_1 gap_5:lg gap_4" lastItem="true" %}
+      class="p-x_5:lg p-x_4:md p_4 shadow_overlap-light m_4 m-x_6:lg m-x_5:md br_radius bg_white"
+    >
+      <h2
+        class="c_white font_medium lh_2 bg_accent-n2 m-t_n4 m-x_n5:lg m-x_n4 p_3 m-b_5"
+      >
+        Vision
+      </h2>
+      <p>
+        A world where science, knowledge and innovation optimize patient care
+        and outcomes
+      </p>
     </div>
-    <div label="CTA_follow_up" class="reading-typography font-size_up p_4 p_5:md " style="--custom-font-size-up: 1 ;">
-
-
-
-
-        <div data-item="cta" class=" font-size_up m-y_4 m-y_5:md m_auto max-w_60 relative text_center relative">
-
-            <h2 data-item="cta-title" class="m-b_4 lh_1 font_medium font_display">
-                <strong class="font-size_up m-b_2 block">The Power of Community</strong>
-                <small class="font-size_down block">Your Voice Shapes Our Future</small>
-            </h2>
-            {% include_relative PageBlocks/ButtonGroup.liquid data_path="Blocks.About.ButtonGroup_Community"  %}
-
-        </div>
+  </div>
+  <div
+    class="p_4 m_auto text_left text_center:md shadow_overlap-light m_4 m-x_6:lg m-x_5:md m-x_4 m-b_4 m-b_5:lg br_radius bg_white"
+  >
+    <h2 class="c_white font_medium lh_2 bg_acc-n2 m-t_n4 m-x_n4 p_3 m-b_5">
+      Core Values
+    </h2>
+    <div class="max-w_45 m_auto">
+      <p>
+        We will achieve our mission and vision through our core values.
+      </p>
     </div>
+    {% include_relative PageBlocks/UL_IconText.html custom_fontsize="1.02"
+    data_path="Blocks.About.UL_IconText_Core" grid_modifier="columns_3:lg
+    columns_2:md columns_1 gap_5:lg gap_4" lastItem="true" %}
+  </div>
+  <div
+    label="CTA_follow_up"
+    class="reading-typography font-size_up p_4 p_5:md"
+    style="--custom-font-size-up: 1;"
+  >
+    <div
+      data-item="cta"
+      class="font-size_up m-y_4 m-y_5:md m_auto max-w_60 relative text_center relative"
+    >
+      <h2 data-item="cta-title" class="m-b_4 lh_1 font_medium font_display">
+        <strong class="font-size_up m-b_2 block">The Power of Community</strong>
+        <small class="font-size_down block">Your Voice Shapes Our Future</small>
+      </h2>
+      {% include_relative PageBlocks/ButtonGroup.liquid
+      data_path="Blocks.About.ButtonGroup_Community" %}
+    </div>
+  </div>
 </section>
-{% include_relative PageBlocks/Image_Bento.html container_modifier="m-x_n4 m-t_n5:lg m-b_5:lg m-b_4 p-t_1 p-b_1" %}
+{% include_relative PageBlocks/Image_Bento.html container_modifier="m-x_n4
+m-t_n5:lg m-b_5:lg m-b_4 p-t_1 p-b_1" %}
 
-
-<section class="reading-typography p-x_4:lg m-b_4 m-b_5:lg  p-t_1 p-b_1" style="--custom-font-size-up: 1.02;">
-    <h2>ACC is a Collection of Voices and Points of View </h2>
-    <p>Incorporating unique perspectives shapes a more comprehensive, inclusive, and forward-thinking future for the
-        cardiovascular community. </p>
-    {% include_relative PageBlocks/UL_IconText.html grid_modifier="columns_3:lg columns_2:md columns_1 gap-x_6
-    gap-y_4" custom_fontsize="1.02" data_path="Blocks.About.UL_IconText_PointsOfView" %}
+<section
+  class="reading-typography p-x_4:lg m-b_4 m-b_5:lg p-t_1 p-b_1"
+  style="--custom-font-size-up: 1.02;"
+>
+  <h2>ACC is a Collection of Voices and Points of View</h2>
+  <p>
+    Incorporating unique perspectives shapes a more comprehensive, inclusive,
+    and forward-thinking future for the cardiovascular community.
+  </p>
+  {% include_relative PageBlocks/UL_IconText.html grid_modifier="columns_3:lg
+  columns_2:md columns_1 gap-x_6 gap-y_4" custom_fontsize="1.02"
+  data_path="Blocks.About.UL_IconText_PointsOfView" %}
 </section>
 
-<section section-label="Cards" class="reading-typography font-size_up m-x_n4 bg_black-2 p_5:lg p_4  m-t_4 m-t_5:lg"
-    style="--custom-font-size-up:  1  ;">
-    <h2>Make an Impact with ACC</h2>
-    <p>Join the long tradition of innovative, collaborative and driven individuals dedicated to transforming
-        cardiovascular care and improve heart health for all. </p>
+<section
+  section-label="Cards"
+  class="reading-typography font-size_up m-x_n4 bg_black-2 p_5:lg p_4 m-t_4 m-t_5:lg"
+  style="--custom-font-size-up: 1;"
+>
+  <h2>Make an Impact with ACC</h2>
+  <p>
+    Join the long tradition of innovative, collaborative and driven individuals
+    dedicated to transforming cardiovascular care and improve heart health for
+    all.
+  </p>
 
-    <div grid-label="card-holder" class="columns_2:md columns_1 gap_6:lg gap_4 grid ">
-        <div grid-area="card"
-            class="relative br_solid br_black-3 br_1 br_radius flex flex_column gap_3 bg_white shadow_bevel-bold text_center">
-            <header class="aspect_21x9 bg_cover bg_center overflow_clip"><img
-                    src="https://pbs.twimg.com/media/GKzyULRWkAAMw3_?format=jpg&name=medium"
-                    alt="A new clinician becoming a Fellow of the ACC"></header>
-            <div label="content" class="p_4 p_5:lg">
-                <h3 class="m-b_0">Interested in Membership?
-                </h3>
-                <p>Be part of a global community of cardiovascular professionals. </p>
-            </div>
-            <div class="flex_row:md flex_column justify_around flex gap_4 w_auto m-x_auto m-t_auto m-b_5 m-b_5 p-b_3">
-                <a href="{% include URL.html guid='{JoinUS-xxxx-xxxx-xxxx}' %}" class="btn btn-secondary m-l_auto:md">Learn More</a>
-                <a href="{% include URL.html url='https://my.acc.org/s/join?language=en_US' %}" class="btn btn-primary m-r_auto:md">Join Now</a>
-            </div>
-            <a href="" class="font-size_down-1 m-t_4 absolute b_3 l_0 r_0">Already a Member? Login.</a>
-        </div>
-        <div grid-area="card"
-        class="relative br_solid br_black-3 br_1 br_radius flex flex_column gap_3 bg_white shadow_bevel-bold text_center">
-            <header class="aspect_21x9 bg_cover bg_center overflow_clip"><img
-                    src="https://bwhclinicalandresearchnews.org/wp-content/uploads/2023/03/ACC-2023-BWH-Pharm.jpg"
-                    alt="A new clinician becoming a Fellow of the ACC"></header>
-            <div label="content" class="p_4 p_5:lg">
-                <h3 class="m-b_0">Want to Work at the ACC?
-                </h3>
-                <p>Join a team dedicated to supporting the cardiovascular community. </p>
-            </div>
-            <div class="flex_row:md flex_column items_center justify_around flex gap_4 w_auto m-x_auto m-t_auto m-b_5 m-b_5 p-b_3">
-                <a href="{% include URL.html guid='{Careers-xxxx-xxxx-xxxx}' %}" class="btn btn-secondary m-l_auto:md">Learn More</a>
-                <a href="{% include URL.html url='https://phf.tbe.taleo.net/phf03/ats/careers/v2/searchResults?org=ACC&cws=42' %}">Search for Jobs</a>
-            </div> 
-        </div>
+  <div
+    grid-label="card-holder"
+    class="columns_2:md columns_1 gap_6:lg gap_4 grid"
+  >
+    <div
+      grid-area="card"
+      class="relative br_solid br_black-3 br_1 br_radius flex flex_column gap_3 bg_white shadow_bevel-bold text_center"
+    >
+      <header class="aspect_21x9 bg_cover bg_center overflow_clip">
+        <img
+          src="https://pbs.twimg.com/media/GKzyULRWkAAMw3_?format=jpg&name=medium"
+          alt="A new clinician becoming a Fellow of the ACC"
+        />
+      </header>
+
+      <div label="content" class="p_4 p_5:lg">
+        <h3 class="m-b_0">Interested in Membership?</h3>
+        <p>Be part of a global community of cardiovascular professionals.</p>
+      </div>
+      <div
+        class="flex_row:md flex_column justify_around flex gap_4 w_auto m-x_auto m-t_auto m-b_5 m-b_5 p-b_3"
+      >
+        <a
+          href="{% include URL.html guid='{JoinUS-xxxx-xxxx-xxxx}' %}"
+          class="btn btn-secondary m-l_auto:md"
+          >Learn More</a
+        >
+        <a
+          href="{% include URL.html url='https://my.acc.org/s/join?language=en_US' %}"
+          class="btn btn-primary m-r_auto:md"
+          >Join Now</a
+        >
+      </div>
+      <a href="" class="font-size_down-1 m-t_4 absolute b_3 l_0 r_0"
+        >Already a Member? Login.</a
+      >
     </div>
+    <div
+      grid-area="card"
+      class="relative br_solid br_black-3 br_1 br_radius flex flex_column gap_3 bg_white shadow_bevel-bold text_center"
+    >
+      <header class="aspect_21x9 bg_cover bg_center overflow_clip">
+        <img
+          src="https://bwhclinicalandresearchnews.org/wp-content/uploads/2023/03/ACC-2023-BWH-Pharm.jpg"
+          alt="A new clinician becoming a Fellow of the ACC"
+        />
+      </header>
+
+      <div label="content" class="p_4 p_5:lg">
+        <h3 class="m-b_0">Want to Work at the ACC?</h3>
+        <p>Join a team dedicated to supporting the cardiovascular community.</p>
+      </div>
+      <div
+        class="flex_row:md flex_column items_center justify_around flex gap_4 w_auto m-x_auto m-t_auto m-b_5 m-b_5 p-b_3"
+      >
+        <a
+          href="{% include URL.html guid='{Careers-xxxx-xxxx-xxxx}' %}"
+          class="btn btn-secondary m-l_auto:md"
+          >Learn More</a
+        >
+        <a
+          href="{% include URL.html url='https://phf.tbe.taleo.net/phf03/ats/careers/v2/searchResults?org=ACC&cws=42' %}"
+          >Search for Jobs</a
+        >
+      </div>
+    </div>
+  </div>
 </section>
-<section label="footer" class="reading-typography font-size_up m-x_n4 color_inherit c_white  m-t_5:lg m-t_4 p_5:lg p_4 m-b_n4" style="--custom-font-size-up:  1 ;">
-    <div grid-label="card-holder" class="columns_2:md columns_1 gap_6:lg gap_4 grid ">
-
-    <div grid-area="card" class="relative br_solid br_black-3 br_1 br_round bg_acc  flex flex_column gap_3 bg_white shadow_bevel-bold text_center">
-        <header class="aspect_21x9 bg_cover bg_center overflow_clip br-tr_round br-tl_round"><img src="https://pbs.twimg.com/media/GKzyULRWkAAMw3_?format=jpg&amp;name=medium" alt="A new clinician becoming a Fellow of the ACC"></header>
-        <div label="content" class="p_4 p_5:lg">
-            <h4 class="m-b_0">Annual Report
-            </h4>
-            <p>In 2023, we worked diligently to enhance membership value and engagement among all members. </p>
-        </div>
-        <div class="flex_row justify_around flex gap_4 w_auto m-x_auto m-t_auto m-b_4 m-b_5:lg p-b_3 ">
-            <a href="{% include URL.html guid='{Report-xxxx-xxxx-xxxx}' %}" class="btn btn-secondary br_1 br_solid br_white-2 shadow_overlap-light">Annual Report</a>
-        </div>
+<section
+  label="footer"
+  class="reading-typography font-size_up m-x_n4 color_inherit c_white m-t_5:lg m-t_4 p_5:lg p_4 m-b_n4"
+  style="--custom-font-size-up: 1;"
+>
+  <div
+    grid-label="card-holder"
+    class="columns_2:md columns_1 gap_6:lg gap_4 grid"
+  >
+    <div
+      grid-area="card"
+      class="relative br_solid br_black-3 br_1 br_round bg_acc flex flex_column gap_3 bg_white shadow_bevel-bold text_center"
+    >
+      <header
+        class="aspect_21x9 bg_cover bg_center overflow_clip br-tr_round br-tl_round"
+      >
+        <img
+          src="https://pbs.twimg.com/media/GKzyULRWkAAMw3_?format=jpg&amp;name=medium"
+          alt="A new clinician becoming a Fellow of the ACC"
+        />
+      </header>
+      <div label="content" class="p_4 p_5:lg">
+        <h4 class="m-b_0">Annual Report</h4>
+        <p>
+          In 2023, we worked diligently to enhance membership value and
+          engagement among all members.
+        </p>
+      </div>
+      <div
+        class="flex_row justify_around flex gap_4 w_auto m-x_auto m-t_auto m-b_4 m-b_5:lg p-b_3"
+      >
+        <a
+          href="{% include URL.html guid='{Report-xxxx-xxxx-xxxx}' %}"
+          class="btn btn-secondary br_1 br_solid br_white-2 shadow_overlap-light"
+          >Annual Report</a
+        >
+      </div>
     </div>
-    <div grid-area="card" class="relative items_center bg_accent-n3 br_solid br_black-3 br_1 br_round flex flex_column gap_3 bg_white shadow_bevel-bold text_center">
-        <header class="aspect_21x9 bg_cover bg_center overflow_clip br-tr_round br-tl_round"><img src="https://lh4.googleusercontent.com/p/AF1QipOSIG9rJPChnoUhPjkRSkGIApDMAWzISJQ1Me4-=s680-w680-h510" alt="A new clinician becoming a Fellow of the ACC"></header>
-        <div label="content" class="p_4 p_5:lg">
-            <h4 class="m-b_0">The Conference Center at Heart House
-            </h4>
-            <p>Discover how we can elevate your
-                next event with its modern amenities and premier location in <a href="https://maps.app.goo.gl/3NJdfG7R1ydG5wer8">Washington, DC's West End <i class="fa-solid fa-map-location-dot p-r_3"></i></a>.</p>
-        </div>
-        <div class="flex_row justify_around flex gap_4 w_auto m-x_auto m-t_auto m-b_4 m-b_5:lg p-b_3 ">
-            <a href="{% include URL.html guid='{Book-xxxx-xxxx-xxxx}' %}" class="btn btn-secondary br_1 br_solid br_white-2 shadow_overlap-light">Learn More</a>
-        </div>
+    <div
+      grid-area="card"
+      class="relative items_center bg_accent-n3 br_solid br_black-3 br_1 br_round flex flex_column gap_3 bg_white shadow_bevel-bold text_center"
+    >
+      <header
+        class="aspect_21x9 bg_cover bg_center overflow_clip br-tr_round br-tl_round"
+      >
+        <img
+          src="https://lh4.googleusercontent.com/p/AF1QipOSIG9rJPChnoUhPjkRSkGIApDMAWzISJQ1Me4-=s680-w680-h510"
+          alt="A new clinician becoming a Fellow of the ACC"
+        />
+      </header>
+      <div label="content" class="p_4 p_5:lg">
+        <h4 class="m-b_0">The Conference Center at Heart House</h4>
+        <p>
+          Discover how we can elevate your next event with its modern amenities
+          and premier location in
+          <a href="https://maps.app.goo.gl/3NJdfG7R1ydG5wer8"
+            >Washington, DC's West End
+            <i class="fa-solid fa-map-location-dot p-r_3"></i></a
+          >.
+        </p>
+      </div>
+      <div
+        class="flex_row justify_around flex gap_4 w_auto m-x_auto m-t_auto m-b_4 m-b_5:lg p-b_3"
+      >
+        <a
+          href="{% include URL.html guid='{Book-xxxx-xxxx-xxxx}' %}"
+          class="btn btn-secondary br_1 br_solid br_white-2 shadow_overlap-light"
+          >Learn More</a
+        >
+      </div>
     </div>
-</div>
+  </div>
 </section>
