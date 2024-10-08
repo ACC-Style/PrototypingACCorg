@@ -5,3 +5,5 @@ _site/
 .vscode
 docs/
 Gemfile.lock
+
+.DS_Store
