@@ -3,19 +3,19 @@ guid: a unique identifier to generate a GUID URL. Example: "{12345-abcd-67890}"
 media: a unique media identifier to generate a media URL. Example: "{1231212-12312312-asfdas-1342}"
 url: an alternative URL to use if neither GUID nor MEDIA is provided. Example: "https://www.example.com"
 {% endcomment %}
-{% if include.guid %}
-  {% assign cleaned_guid = include.guid | remove: '{' | remove: '}' | remove: '-' | strip %}
-{% endif %}
-{% if include.media %}
-  {% assign cleaned_media = include.media | remove: '{' | remove: '}' | remove: '-' | strip %}
-{% endif %}
-{% if include.media %}
-  {% assign url = "https://www.acc.org/~/media/" | append: cleaned_media | append: ".ashx" %}
-{% elsif include.guid %}
-  {% assign url = "https://www.acc.org/~/link.aspx?_id=" | append: cleaned_guid | append: "&amp;_z=z" %}
-{% elsif include.url %}
-  {% assign url = include.url %}
-{% else %}
-  {% assign url = "" %}
-{% endif %}
-{{ url -}}
+{%- if include.guid -%}
+  {%- assign cleaned_guid = include.guid | remove: '{' | remove: '}' | remove: '-' | strip -%}
+{%- endif -%}
+{%- if include.media -%}
+  {%- assign cleaned_media = include.media | remove: '{' | remove: '}' | remove: '-' | strip -%}
+{%- endif -%}
+{%- if include.media -%}
+  {%- assign url = "https://www.acc.org/~/media/" | append: cleaned_media | append: ".ashx" -%}
+{%- elsif include.guid -%}
+  {%- assign url = "https://www.acc.org/~/link.aspx?_id=" | append: cleaned_guid | append: "&amp;_z=z" -%}
+{%- elsif include.url -%}
+  {%- assign url = include.url -%}
+{%- else -%}
+  {%- assign url = "" -%}
+{%- endif -%}
+{{- url -}}
