@@ -46,7 +46,7 @@ lastItem: specifies whether to include a custom pattern for the last list item. 
           Read about more of our
           {% if listItem.guid != blank and listItem.guid != nil and listItem.guid != "" %}
           {% assign cleaned_guid = listItem.guid | remove: '{' | remove: '}' | remove: '-' | strip %}
-          <a rel="noopener noreferrer" class="expanded-click-area c_inherit not-link h:underline" target="_self" href="~/link.aspx?_id={{ cleaned_guid }}&amp;_z=z">
+          <a rel="noopener noreferrer" class="expanded-click-area c_inherit not-link h:underline" target="_self" href="{4D0477AD-A5BE-455B-863B-638A5C056B29}~/link.aspx?_id={{ cleaned_guid }}&amp;_z=z">
             {{- listItem.link_text -}}
           </a>
         {% elsif listItem.url %}
@@ -69,7 +69,7 @@ lastItem: specifies whether to include a custom pattern for the last list item. 
           {{ listItem.description }}
           {% if listItem.guid != blank and listItem.guid != nil and listItem.guid != "" %}
           {% assign cleaned_guid = listItem.guid | remove: '{' | remove: '}' | remove: '-' | strip %}
-          <a rel="noopener noreferrer" class="expanded-click-area c_inherit not-link h:underline" target="_self" href="~/link.aspx?_id={{ cleaned_guid }}&amp;_z=z">
+          <a rel="noopener noreferrer" class="expanded-click-area c_inherit not-link h:underline" target="_self" href="{4D0477AD-A5BE-455B-863B-638A5C056B29}~/link.aspx?_id={{ cleaned_guid }}&amp;_z=z">
             {{- listItem.link_text -}}
           </a>
         {% elsif listItem.url %}
