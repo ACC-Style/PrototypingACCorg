@@ -57,14 +57,14 @@ lastItem: specifies whether to include a custom pattern for the last list item. 
           &nbsp;
         </span>
         <span class="flex flex_row p-l_4">
-          <em class="c_inherit font_6 fas fa-solid fa-ellipsis" aria-hidden="true"></em>
-          <em class="c_inherit fa-chevron-right fa-solid fas font_6 m-l_n3 " aria-hidden="true"></em>
+          <i class="c_inherit font_6 fas fa-solid fa-ellipsis" aria-hidden="true"></i>
+          <i class="c_inherit fa-chevron-right fa-solid fas font_6 m-l_n3 " aria-hidden="true"></i>
         </span>
       </li>
     {% else %}
       <!-- Default pattern for other items -->
       <li class="flex flex_row items_center justify_start isolate relative  {% if listItem.url %}c_accent-n1 h:c_accent-n3{% endif %} ">
-        <em class="{% if listItem.url %}c_inherit{% else %}c_accent-n1{% endif %} font_7 p-r_4 far fa-regular {{ listItem.icon_class }}" aria-hidden="true"></em>
+        <em class="{% if listItem.url %}c_inherit{% else %}c_accent-n1{% endif %} font_7 p-r_4 far fa-solid {{ listItem.icon_class }}" aria-hidden="true"></em>
         <span class="font-size_up font_medium">
           {{ listItem.description }}
           {% if listItem.guid != blank and listItem.guid != nil and listItem.guid != "" %}
