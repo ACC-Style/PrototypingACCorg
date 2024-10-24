@@ -1,0 +1,35 @@
+---
+layout: playground
+name: "State Agenda"
+position: "Generator"
+csv_file: "state-agenda"
+---
+
+{% assign agendas = site.data.state-agenda | sort: 'state' %}
+<div class="reading-typography bg_black-1 br_round p_5:lg p_4:md p_3">
+  <ul class="ul_none grid columns_1 columns_2:md columns_3:lg gap_4:md gap_5:lg gap_3">
+    {% for agenda in agendas %}
+    <li class="bg_white-6 br_radius flex flex_column  p_4 shadow_overlap-light h:bg_white-9 br_solid br_white-9 br_1 relative">
+      <h3 class="m-b_2">{{ agenda.state }}</h3>
+      <div class="font-size_down-1 c_accent-n3 font_italic">
+        <time datetime="{{ agenda.start-date }}"
+          >{{ agenda.start-date | date: "%B %d" }}</time
+        >
+        -
+        <time datetime="{{ agenda.end-date }}"
+          >{{ agenda.end-date | date: "%B %d" }}</time
+        >
+      </div>
+      <ul class="c_secondary-2 font-size_down-2 font_copy font_medium m-x_n2 p-y_2 ul_inline-pipe m-b_3">
+        {% assign themes = agenda.themes | split: '|' %} {% for theme in themes
+        %}
+        <li>{{ theme }}</li>
+        {% endfor %}
+      </ul>
+      <a href="{{ agenda.file-name }}" target="_blank" download class="block btn btn-outline-secondary expanded-click-area font-size_down-1 m-x_auto m-t_auto max-w_15"
+        >Download Agenda</a
+      >
+    </li>
+    {% endfor %}
+  </ul>
+</div>
