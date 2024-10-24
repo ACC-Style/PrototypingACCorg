@@ -6,7 +6,7 @@ csv_file: "state-agenda"
 ---
 {% assign agendas = site.data.state-agenda | sort: 'state' %}
 <div class="reading-typography bg_black-1 br_radius br-br_round br-bl_round p_5:lg p_4:md p_3 overflow_hidden ">
-  <div class="m-x_n5 m-t_n5 m-b_4 p-x_4 p-y_3 bg_black-3 br_radius br-br_square br-bl_square shadow_2">
+  <div class="m-x_n5:lg m-t_n5:lg m-x_n4:md m-t_n4:md m-x_n3 m-t_n3 m-b_4 p-x_4 p-y_3 bg_black-3 br_radius br-br_square br-bl_square shadow_2">
     <button id="sort-state" onclick="sortAgendas('state')" class="btn btn-secondary a:bg_accent-n2 ">State</button>
     <button id="sort-date" onclick="sortAgendas('date')" class="btn btn-secondary a:bg_accent-n2 ">Date</button>
   </div>
