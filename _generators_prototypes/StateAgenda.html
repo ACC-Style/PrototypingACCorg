@@ -4,32 +4,96 @@ name: "State Agenda"
 position: "Generator"
 csv_file: "state-agenda"
 ---
-
 {% assign agendas = site.data.state-agenda | sort: 'state' %}
-<div class="reading-typography bg_black-1 br_round p_5:lg p_4:md p_3">
-  <ul class="ul_none grid columns_1 columns_2:md columns_3:lg gap_4:md gap_5:lg gap_3">
+<div class="reading-typography bg_black-1 br_radius br-br_round br-bl_round p_5:lg p_4:md p_3 overflow_hidden ">
+  <div class="m-x_n5 m-t_n5 m-b_4 p-x_4 p-y_3 bg_black-3 br_radius br-br_square br-bl_square shadow_2">
+    <button id="sort-state" onclick="sortAgendas('state')" class="btn btn-secondary a:bg_accent-n2 ">State</button>
+    <button id="sort-date" onclick="sortAgendas('date')" class="btn btn-secondary a:bg_accent-n2 ">Date</button>
+  </div>
+  <ul id="agenda-list" class="ul_none grid columns_1 columns_2:md columns_3:lg gap_4:md gap-x_5:lg gap_3">
     {% for agenda in agendas %}
-    <li class="bg_white-6 br_radius flex flex_column  p_4 shadow_overlap-light h:bg_white-9 br_solid br_white-9 br_1 relative">
+    <li data-state="{{ agenda.state }}" data-start="{{ agenda.start-date }}" class="bg_white-6 br_radius flex flex_column p_4 shadow_overlap-light h:bg_white-9 br_solid br_white-9 br_1 relative agenda-item">
       <h3 class="m-b_2">{{ agenda.state }}</h3>
       <div class="font-size_down-1 c_accent-n3 font_italic">
-        <time datetime="{{ agenda.start-date }}"
-          >{{ agenda.start-date | date: "%B %d" }}</time
-        >
+        <time datetime="{{ agenda.start-date }}">{{ agenda.start-date | date: "%B %d" }}</time>
         -
-        <time datetime="{{ agenda.end-date }}"
-          >{{ agenda.end-date | date: "%B %d" }}</time
-        >
+        <time datetime="{{ agenda.end-date }}">{{ agenda.end-date | date: "%B %d" }}</time>
       </div>
       <ul class="c_secondary-2 font-size_down-2 font_copy font_medium m-x_n2 p-y_2 ul_inline-pipe m-b_3">
-        {% assign themes = agenda.themes | split: '|' %} {% for theme in themes
-        %}
+        {% assign themes = agenda.themes | split: '|' %}
+        {% for theme in themes %}
         <li>{{ theme }}</li>
         {% endfor %}
       </ul>
-      <a href="{{ agenda.file-name }}" target="_blank" download class="block btn btn-outline-secondary expanded-click-area font-size_down-1 m-x_auto m-t_auto max-w_15"
-        >Download Agenda</a
-      >
+      <a href="{{ agenda.file-name }}" target="_blank" download class="block btn btn-outline-secondary expanded-click-area font-size_down-1 m-x_auto m-t_auto max-w_15">Download Agenda</a>
     </li>
     {% endfor %}
   </ul>
 </div>
+
+<script>
+  function sortAgendas(criteria) {
+    const agendaList = document.getElementById('agenda-list');
+    const agendas = Array.from(agendaList.getElementsByClassName('agenda-item'));
+    const stateButton = document.getElementById('sort-state');
+    const dateButton = document.getElementById('sort-date');
+    let sortedAgendas;
+
+    // Remove active class from both buttons
+    stateButton.classList.remove('active');
+    dateButton.classList.remove('active');
+
+    // Set active class based on the criteria
+    if (criteria === 'state') {
+      stateButton.classList.add('active');
+      sortedAgendas = agendas.sort((a, b) => 
+        a.dataset.state.localeCompare(b.dataset.state)
+      );
+    } else if (criteria === 'date') {
+      dateButton.classList.add('active');
+      sortedAgendas = agendas.sort((a, b) => 
+        new Date(a.dataset.start) - new Date(b.dataset.start)
+      );
+    }
+
+    agendaList.innerHTML = ''; // Clear the current list
+
+    let currentDivider = '';
+
+    // Render sorted agendas and add appropriate dividers
+    sortedAgendas.forEach(agenda => {
+      if (criteria === 'state') {
+        const firstLetter = agenda.dataset.state.charAt(0).toUpperCase();
+
+        // Add alphabetic divider if the first letter changes
+        if (firstLetter !== currentDivider) {
+          currentDivider = firstLetter;
+
+          const alphaDivider = document.createElement('h2');
+          alphaDivider.textContent = currentDivider;
+          alphaDivider.className = 'alpha-divider font-weight_bold p_0 col_all m_0 p-b_2 lh_0 br_solid br-b_2 br_primary';
+          agendaList.appendChild(alphaDivider);
+        }
+      } else if (criteria === 'date') {
+        const agendaDate = new Date(agenda.dataset.start);
+        const monthLabel = agendaDate.toLocaleString('default', { month: 'long' });
+
+        // Add month divider if the month changes
+        if (monthLabel !== currentDivider) {
+          currentDivider = monthLabel;
+
+          const monthDivider = document.createElement('h2');
+          monthDivider.textContent = currentDivider;
+          monthDivider.className = 'month-divider font-weight_bold p_0 col_all m_0 p-b_2 lh_0 br_solid br-b_2 br_primary';
+          agendaList.appendChild(monthDivider);
+        }
+      }
+
+      agendaList.appendChild(agenda);
+    });
+  }
+
+  // Initial sort by state on page load without adding month dividers
+  document.addEventListener('DOMContentLoaded', () => sortAgendas('state'));
+</script>
+
