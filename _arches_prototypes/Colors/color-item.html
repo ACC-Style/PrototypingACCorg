@@ -2,7 +2,7 @@
     style="background-color: {{ color.hex }};">
     <header class="flex flex_row">
         <h2 class="p-b_3 m_0 lh_0 {{ color.font_color }} "><span class="font_xbold font_display">{{ color.name }}</span> <br> <small class=" uppercase font_n2">COR</small></h2>
-        <div class=" flex_shrink m-l_auto font_ui font_xbold {{ color.font_color }} flex flex_column items_end gap_3 font_n1">
+        <div class="{{ color.font_color }} flex flex_column flex_shrink font_n1 font_ui font_xbold gap_3 items_end justify_between m-l_auto m-y_auto">
             {% assign contrast_value = color.contrast | plus: 0 %}
             <span class="AA-true flex flex_row gap_2">
                 {% if contrast_value >= 4.5 %}
