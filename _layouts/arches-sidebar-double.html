@@ -87,6 +87,11 @@ layout: default
             </ul>
           </nav>
         </section>
+        {% if page.sidebar-secondary %}
+        <section grid-area="sidebar-secondary" class="reading-typography">
+            {% include_relative {{ page.sidebar-secondary }} id=page.sidebar-secondary-id %}
+        </section>
+        {% endif %}
       </div>
       {% include arches-footer.html %}
     </div>

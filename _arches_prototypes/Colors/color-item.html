@@ -1,0 +1,30 @@
+<li class="relative br_1 br_solid br_black-3 p_3 br_radius relative"
+    style="background-color: {{ color.hex }};">
+    <header class="flex flex_row">
+        <h2 class="p-b_3 m_0 lh_0 {{ color.font_color }} "><span class="font_xbold font_display">{{ color.name }}</span> <br> <small class=" uppercase font_n2">COR</small></h2>
+        <div class=" flex_shrink m-l_auto font_ui font_xbold {{ color.font_color }} flex flex_column items_end gap_3 font_n1">
+            {% assign contrast_value = color.contrast | plus: 0 %}
+            <span class="AA-true flex flex_row gap_2">
+                {% if contrast_value >= 4.5 %}
+                    <i class="fas fa-check"></i> <i class="fa-solid fa-circle-a"></i><i class="fa-solid fa-circle-a"></i>
+                {% else %}
+                    <i class="fas fa-times"></i> <i class="fa-solid fa-circle-a"></i><i class="fa-solid fa-circle-a"></i>
+                {% endif %}
+            </span>
+            <span class="AAA-true flex flex_row gap_2">
+                {% if contrast_value >= 7 %}
+                    <i class="fas fa-check"></i> <i class="fa-solid fa-square-a"></i><i class="fa-solid fa-square-a"></i><i class="fa-solid fa-square-a"></i>
+                {% else %}
+                    <i class="fas fa-times"></i> <i class="fa-solid fa-square-a"></i><i class="fa-solid fa-square-a"></i><i class="fa-solid fa-square-a"></i>
+                {% endif %}
+            </span>
+        </div>
+    </header>
+    
+    <ul class="b_2 l_2 r_2 ul_none font_0 flex_column flex gap_2">
+        <li class="hex block p_3 bg_white-7 br_radius relative"><strong class="absolute t_2 l_2 font_n3">HEX:</strong> <span class="user-select_all inset_0 block  p-t_4">{{ color.hex }}</span></li>
+        <li class="cmyk block p_3 bg_white-7 br_radius relative"><strong class="absolute t_2 l_2 font_n3">CMYK:</strong> <span class="user-select_all inset_0 block  p-t_4">{{ color.cmyk }}</span></li>
+        <li class="rgb block p_3 bg_white-7 br_radius relative"><strong class="absolute t_2 l_2 font_n3">RGB:</strong> <span class="user-select_all inset_0 block  p-t_4">{{ color.rgb }}</span></li>
+    </ul>
+
+</li>

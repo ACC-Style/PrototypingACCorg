@@ -1,0 +1,58 @@
+{% if include.id == nil or include.id == '' %}
+  <p class="c_alert font_5">Missing Course ID</p>
+{% else %}
+
+<!-- NCD Academy Logo -->
+{% if site.data.Blocks.NCD.sidebar %}
+  {% assign ncd_logo = site.data.Blocks.NCD.sidebar | where: "section", "ncd_logo" | first %}
+
+  <div class="ncd-logo p-r_4:lg m-t_5:lg m-t_4">
+    <img class="w_100 br_radius" src="{{ ncd_logo.image }}" alt="{{ ncd_logo.alt }}">
+    <p>{{ ncd_logo.title }}</p>
+  </div>
+
+{% endif %}
+
+<!-- Loop Through Certification Section -->
+{% if site.data.Blocks.NCD.sidebar_certifications %}
+  {% for certification in site.data.Blocks.NCD.sidebar_certifications %}
+    {% if certification.id == include.id %}
+    <div class="certification p-r_4:lg">
+      <hr class="bg_primary m-y_5:lg m-y_4">
+      <h3>Certification</h3>
+      <p><a href="{{ certification.link }}">{{ certification.description }}</a></p>
+    </div>
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+<!-- Loop Through Badge Section -->
+{% if site.data.Blocks.NCD.sidebar_badges %}
+  {% for badge in site.data.Blocks.NCD.sidebar_badges %}
+    {% if badge.id == include.id %}
+    <div class="ncd-badge p-r_4:lg">
+      <hr class="bg_primary m-y_5:lg m-y_4">
+      <h3>Badge</h3>
+      <img class="w_100 br_circle" src="{{ badge.image }}" alt="{{ badge.alt }}">
+    </div>
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+<!-- Loop Through Related Education Section -->
+{% if site.data.Blocks.NCD.sidebar_related_education %}
+<div class="related-education p-r_4:lg">
+  <hr class="bg_primary m-y_5:lg m-y_4">
+  <h3>Related Education</h3>
+  {% for item in site.data.Blocks.NCD.sidebar_related_education %}
+    {% if item.id == include.id %}
+    <div class="related-item p-r_4:lg">
+      <img class="w_100 br_radius" src="{{ item.image }}" alt="{{ item.alt }}">
+      <p>{{ item.title }}</p>
+      <a href="{{ item.link }}">{{ item.course }}</a>
+    </div>
+    {% endif %}
+  {% endfor %}
+</div>
+{% endif %}
+{% endif %}
