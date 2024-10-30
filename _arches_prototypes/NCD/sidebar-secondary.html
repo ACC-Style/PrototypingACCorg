@@ -39,25 +39,32 @@
   {% endfor %}
 {% endif %}
 <!-- Loop Through Related Education Section -->
-{% if site.data.Blocks.NCD.related_education %}
+{% assign has_related_education = false %}
+{% for item in site.data.Blocks.NCD.related_education %}
+  {% if item.id == include.id %}
+    {% assign has_related_education = true %}
+  {% endif %}
+{% endfor %}
+
+{% if has_related_education %}
 <div class="related-education p-x_4 p-l_0:lg wrapper-container warpper@container">
   <hr class="bg_primary m-y_5:lg m-y_4">
   <h4>Related Education</h4>
   {% for item in site.data.Blocks.NCD.related_education %}
     {% if item.id == include.id %}
     <div class="related-item relative p-x_4 p-l_0:lg flex flex_column flex_row:md gap-x_4 gap-y_3 m-b_5 m-b_4:md">
-      {% if badge.image_guid %}
+      {% if item.image_guid %}
         <img class="w_100 br_radius aspect_3x2 max-w_10" src="{% include URL.html media=item.image_guid %}" alt="{{ item.alt }}">
-        {% else %}
+      {% else %}
         <img class="w_100 br_radius aspect_3x2 max-w_10" src="{% include URL.html url=item.image %}" alt="{{ item.alt }}">
       {% endif %}
       <div>
-          <div class="c_black lh_1 m-b_2">{{ item.title }}</div>
-          {% if certification.link_guid %}
-            <a class="link expanded-click-area"  href="{% include URL.html guid=item.link_guid %}">{{ item.course }} <i class="fa-solid fa-arrow-right p-l_2"></i></a>
-            {% else %}        
-            <a class="link expanded-click-area"  href="{{ item.link }}">{{ item.course }} <i class="fa-solid fa-arrow-right p-l_2"></i></a>
-          {% endif %}
+        <div class="c_black lh_1 m-b_2">{{ item.title }}</div>
+        {% if item.link_guid %}
+          <a class="link expanded-click-area" href="{% include URL.html guid=item.link_guid %}">{{ item.course }} <i class="fa-solid fa-arrow-right p-l_2"></i></a>
+        {% else %}        
+          <a class="link expanded-click-area" href="{{ item.link }}">{{ item.course }} <i class="fa-solid fa-arrow-right p-l_2"></i></a>
+        {% endif %}
       </div>
     </div>
     {% endif %}

@@ -26,9 +26,7 @@ sidebarArray:
   </div>
 </header>
 <section class="course-listing grid columns_1 columns_2:md columns_3:lg bg_black-2 p_4:md p_3 br_radius gap_4 m-t_5:lg m-t_4" id="course-listing" aria-labelledby="course-listing-title">
-{% if site.data.Blocks.NCD.main_content %}
-
-    {% for course in site.data.Blocks.NCD.main_content %}
+{% if site.data.Blocks.NCD.main_content %}    {% for course in site.data.Blocks.NCD.main_content %}
     <div class="card-wrapper grid wrapper-container" aria-labelledby="course-title-{{ forloop.index }}">
       <div class="course-card p_4 br_1 br_solid br_black-5 br_radius bg_white flex flex_column flex_row:md gap_4 justify_between" role="article" >
         <div class="course-trailer-preview flex flex_column">
@@ -64,30 +62,20 @@ sidebarArray:
 {% else %}
   <p>No courses available at the moment.</p>
 {% endif %}
-</section>
-
-<script>
+</section><script>
 function toggleView(viewType) {
   const courseListing = document.getElementById('course-listing');
   const toggleGridButton = document.getElementById('toggleGrid');
-  const toggleListButton = document.getElementById('toggleList');
-
-  if (viewType === 'grid') {
+  const toggleListButton = document.getElementById('toggleList');  if (viewType === 'grid') {
     updateView(courseListing, toggleGridButton, toggleListButton, ['grid-view','grid', 'columns_1', 'gap_4', 'columns_2:md', 'columns_3:lg'], ['list-view' ,'grid', 'gap_3', 'columns_1']);
   } else if (viewType === 'list') {
     updateView(courseListing, toggleListButton, toggleGridButton, ['list-view', 'grid', 'gap_3', 'columns_1'], ['grid-view','grid', 'gap_4', 'columns_1', 'columns_2:md', 'columns_3:lg']);
   }
-}
-
-function addClasses(element, classes) {
+}function addClasses(element, classes) {
   classes.forEach(cls => element.classList.add(cls));
-}
-
-function removeClasses(element, classes) {
+}function removeClasses(element, classes) {
   classes.forEach(cls => element.classList.remove(cls));
-}
-
-function updateView(courseListing, activeButton, inactiveButton, addClassesList, removeClassesList) {
+}function updateView(courseListing, activeButton, inactiveButton, addClassesList, removeClassesList) {
   removeClasses(courseListing, removeClassesList);
   addClasses(courseListing, addClassesList);
   activeButton.classList.add('active');
