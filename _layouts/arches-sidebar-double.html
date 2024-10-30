@@ -9,7 +9,7 @@ layout: default
   <div class="max-w_75 m_auto">
     <div class="bg_white shadow_overlap-light">
       {% include arches-header.html %}
-      {% include_relative {{ page.masthead }} %}
+      {% include_relative {{ page.masthead }} hero_title=page.hero-title cta_text=page.hero-cta-text cta_link=page.hero-cta-link %}
       <div  grid-template="page-layout">
         <main grid-area="content" class="reading-typography p_4:lg">
           {{content}}
