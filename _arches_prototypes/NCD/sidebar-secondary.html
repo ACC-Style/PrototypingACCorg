@@ -1,55 +1,64 @@
 {% if include.id == nil or include.id == '' %}
   <p class="c_alert font_5">Missing Course ID</p>
 {% else %}
-
 <!-- NCD Academy Logo -->
-{% if site.data.Blocks.NCD.sidebar %}
-  {% assign ncd_logo = site.data.Blocks.NCD.sidebar | where: "section", "ncd_logo" | first %}
-
-  <div class="ncd-logo p-r_4:lg m-t_5:lg m-t_4">
-    <img class="w_100 br_radius" src="{{ ncd_logo.image }}" alt="{{ ncd_logo.alt }}">
-    <p>{{ ncd_logo.title }}</p>
-  </div>
-
-{% endif %}
-
+<div class="ncd-logo p-x_4 p-l_0:lg m-t_5:lg m-t_4">
+  <img class="w_100 br_radius" src="{% include URL.html url='https://placehold.co/600x400?text=NCD+Academy' %}" alt="NCD Academy Logo">
+</div>
 <!-- Loop Through Certification Section -->
-{% if site.data.Blocks.NCD.sidebar_certifications %}
-  {% for certification in site.data.Blocks.NCD.sidebar_certifications %}
+{% if site.data.Blocks.NCD.certifications %}
+  {% for certification in site.data.Blocks.NCD.certifications %}
     {% if certification.id == include.id %}
-    <div class="certification p-r_4:lg">
+    <div class="certification p-x_4 p-l_0:lg">
       <hr class="bg_primary m-y_5:lg m-y_4">
-      <h3>Certification</h3>
-      <p><a href="{{ certification.link }}">{{ certification.description }}</a></p>
+      <h4>Certification</h4>
+      <p>
+        {% if certification.link_guid %}
+          <a href="{% include URL.html guid=certification.link_guid %}">{{ certification.description }}</a></p>
+          {% else %}        
+          <a href="{{ certification.link }}">{{ certification.description }}</a></p>
+        {% endif %}
     </div>
     {% endif %}
   {% endfor %}
 {% endif %}
-
 <!-- Loop Through Badge Section -->
-{% if site.data.Blocks.NCD.sidebar_badges %}
-  {% for badge in site.data.Blocks.NCD.sidebar_badges %}
+{% if site.data.Blocks.NCD.badges %}
+  {% for badge in site.data.Blocks.NCD.badges %}
     {% if badge.id == include.id %}
-    <div class="ncd-badge p-r_4:lg">
+    <div class="ncd-badge p-x_4 p-l_0:lg">
       <hr class="bg_primary m-y_5:lg m-y_4">
-      <h3>Badge</h3>
-      <img class="w_100 br_circle" src="{{ badge.image }}" alt="{{ badge.alt }}">
+      <h4>Badge</h4>
+      {% if badge.image_guid %}
+        <img class="block br_circle m-x_auto m_auto max-w_10 w_100" src="{% include URL.html media=badge.image_guid %}" alt="{{ badge.alt }}">
+        {% else %}
+        <img class="block br_circle m-x_auto m_auto max-w_10 w_100" src="{% include URL.html url=badge.image %}" alt="{{ badge.alt }}">
+      {% endif %}
     </div>
     {% endif %}
   {% endfor %}
 {% endif %}
-
 <!-- Loop Through Related Education Section -->
-{% if site.data.Blocks.NCD.sidebar_related_education %}
-<div class="related-education p-r_4:lg">
+{% if site.data.Blocks.NCD.related_education %}
+<div class="related-education p-x_4 p-l_0:lg wrapper-container warpper@container">
   <hr class="bg_primary m-y_5:lg m-y_4">
-  <h3>Related Education</h3>
-  {% for item in site.data.Blocks.NCD.sidebar_related_education %}
+  <h4>Related Education</h4>
+  {% for item in site.data.Blocks.NCD.related_education %}
     {% if item.id == include.id %}
-    <div class="related-item p-r_4:lg">
-      <img class="w_100 br_radius" src="{{ item.image }}" alt="{{ item.alt }}">
-      <p>{{ item.title }}</p>
-      <a href="{{ item.link }}">{{ item.course }}</a>
+    <div class="related-item relative p-x_4 p-l_0:lg flex flex_column flex_row:md gap-x_4 gap-y_3 m-b_5 m-b_4:md">
+      {% if badge.image_guid %}
+        <img class="w_100 br_radius aspect_3x2 max-w_10" src="{% include URL.html media=item.image_guid %}" alt="{{ item.alt }}">
+        {% else %}
+        <img class="w_100 br_radius aspect_3x2 max-w_10" src="{% include URL.html url=item.image %}" alt="{{ item.alt }}">
+      {% endif %}
+      <div>
+          <div class="c_black lh_1 m-b_2">{{ item.title }}</div>
+          {% if certification.link_guid %}
+            <a class="link expanded-click-area"  href="{% include URL.html guid=item.link_guid %}">{{ item.course }} <i class="fa-solid fa-arrow-right p-l_2"></i></a>
+            {% else %}        
+            <a class="link expanded-click-area"  href="{{ item.link }}">{{ item.course }} <i class="fa-solid fa-arrow-right p-l_2"></i></a>
+          {% endif %}
+      </div>
     </div>
     {% endif %}
   {% endfor %}

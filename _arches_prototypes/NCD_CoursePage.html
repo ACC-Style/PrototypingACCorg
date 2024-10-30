@@ -9,50 +9,99 @@ sidebar-secondary: NCD/sidebar-secondary.html
 course_id: Cancer
 sidebarArray:
   - label: Courses
-    url: ../Engage
+    url: #
+    active: false
+  - label: Course A
+    url: #
     active: true
 ---
 
 {% if page.course_id == nil or page.course_id == '' %}
-  <p>Missing Course ID</p>
+<p>Missing Course ID</p>
 {% else %}
-
 <!-- Main Content Section -->
-{% if site.data.Blocks.NCD.main_content %}
-  {% assign content_data = site.data.Blocks.NCD.main_content | where: "id", page.course_id | first %}
-  {% if content_data %}
-  <div class="main-content">
-    <h2>{{ content_data.title }}</h2>
-    <p>{{ content_data.description }}</p>
+{% if site.data.Blocks.NCD.main_content %} {% assign content_data =
+site.data.Blocks.NCD.main_content | where: "id", page.course_id | first %} {% if
+content_data %}
+<div class="main-content">
+<section class="reading-typography font-size_up m-y_4" id="introduction"  style="--custom-font-size-up: 1;">
+  <h2 class="lh_2">
+    {{ content_data.title }}
 
-    <!-- Course Trailer Section -->
-    <div class="course-trailer">
-      <h3>Course Trailer</h3>
-      <iframe class="w_100 br_radius" width="560" height="315" src="https://www.youtube.com/embed/{{ content_data.trailer_url }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <small class="font_n2 c_black-7 block">
+      {% if content_data.credits %} 
+      <strong>Avaliable Creds:</strong> {{ content_data.credits }} {% endif %} {% if
+      content_data.credits and content_data.duration %} | {% endif %} {% if
+      content_data.duration %} <strong>Course Duration:</strong> {{ content_data.duration }} {% endif %}
+    </small>
+  </h2>
+
+  <p class="lh_2">{{ content_data.description }}</p>
+</section>
+  <!-- Course Trailer Section -->
+  <div class="course-trailer">
+    <h3>Course Trailer</h3>
+    <iframe
+      class="w_100 br_radius"
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/{{ content_data.trailer_url }}"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+  </div>
+  <!-- Start Course Section -->
+  <div class="items_center bg_black-2 p_4 br_radius m-t_5:lg m-t__4">
+    <h3 class="font_display font_bold text_center c_black m-y_3:md">
+      Start Course
+    </h3>
+    {% assign main_button = site.data.Blocks.NCD.buttons | where: "id",
+    page.course_id | where: "language", "main" | first %} {% if main_button %}
+    <div
+      class="main-language grid columns_1 columns_3:md gap-x_4 gap-y_5:lg gap-y_4"
+    >
+      <a
+        class="btn btn-primary max-w_20 col-start_2:md col-end_3:md"
+        href="{{ main_button.href }}"
+        >{{ main_button.label }}</a
+      >
     </div>
-
-    <!-- Star Course Section -->
-    <div class="star-course items_center">
-      <h3>{{ content_data.star_course_title }}</h3>
-      {% assign main_button = site.data.Blocks.NCD.buttons | where: "id", page.course_id | where: "language", "main" | first %}
-      {% if main_button %}
-        <a class="btn btn-primary" href="{{ main_button.href }}">{{ main_button.label }}</a>
-      {% endif %}
-      <p>or in these languages</p>
-      <div class="other-languages grid columns_2 columns_3:md gap-x_4 gap-y_5:lg gap-y_4">
-        {% assign other_buttons = site.data.Blocks.NCD.buttons | where: "id", page.course_id | where_exp: "item", "item.language != 'main'" %}
-        {% for button in other_buttons %}
-          <a class="btn btn-secondary" href="{{ button.href }}">{{ button.label }}</a>
-        {% endfor %}
-      </div>
-    </div>
-
-    <!-- Back to Catalog Link -->
-    <div class="back-link">
-      <a href="{{ content_data.catalog_link }}">Back to full catalog</a>
+    {% endif %}
+    <h4
+      class="c_black-9 flex flex_column flex_row:md font_display font_medium m_0 p-y_5:md p-y_4"
+    >
+      <span class="flex_auto grid">
+        <span
+          class="br-t_1 br-tl_radius br_inherit br_solid self_center"
+        ></span>
+      </span>
+      <span class="flex_auto flex_shrink p-x_3 lh_1 text_center">
+        Users are the Center of it All
+      </span>
+      <span class="flex_auto grid">
+        <span
+          class="br_primary-1 br-tl_radius br-t_1 br_solid br_inherit self_center"
+        ></span>
+      </span>
+    </h4>
+    <div
+      class="other-languages grid columns_2 columns_3:md gap-x_4 gap-y_4:lg gap-y_4 m-b_3"
+    >
+      {% assign other_buttons = site.data.Blocks.NCD.buttons | where: "id",
+      page.course_id | where_exp: "item", "item.language != 'main'" %} {% for
+      button in other_buttons %}
+      <a class="btn btn-secondary" href="{{ button.href }}"
+        >{{ button.label }}</a
+      >
+      {% endfor %}
     </div>
   </div>
-  {% endif %}
-{% endif %}
-
-{% endif %}
+  <!-- Back to Catalog Link -->
+  <div class="back-link p_3 text_center">
+    <a href="{{ content_data.catalog_link }}"
+      ><i class="fa-solid fa-arrow-left p-r_3"></i> Back to full catalog</a
+    >
+  </div>
+</div>
+{% endif %} {% endif %} {% endif %}
