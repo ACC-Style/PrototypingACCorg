@@ -11,7 +11,7 @@ layout: default
       {% include arches-header.html %}
       {% include_relative {{ page.masthead }} %}
       <div  grid-template="page-layout">
-        <main grid-area="content">
+        <main grid-area="content" class="reading-typography p_4:lg">
           {{content}}
         </main>
         <section grid-area="sidebar-primary">
@@ -89,7 +89,7 @@ layout: default
         </section>
         {% if page.sidebar-secondary %}
         <section grid-area="sidebar-secondary" class="reading-typography">
-            {% include_relative {{ page.sidebar-secondary }} id=page.sidebar-secondary-id %}
+            {% include_relative {{ page.sidebar-secondary }} id=page.course_id %}
         </section>
         {% endif %}
       </div>

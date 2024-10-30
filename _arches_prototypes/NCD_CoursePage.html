@@ -6,10 +6,53 @@ sidebarRoot: NCD Academy
 sidebarRootURL: ../NCD_Home
 masthead: MicroSite/heroimage.micro.dynamic.html
 sidebar-secondary: NCD/sidebar-secondary.html
-sidebar-secondary-id: Cancer
+course_id: Cancer
 sidebarArray:
   - label: Courses
     url: ../Engage
     active: true
 ---
 
+{% if page.course_id == nil or page.course_id == '' %}
+  <p>Missing Course ID</p>
+{% else %}
+
+<!-- Main Content Section -->
+{% if site.data.Blocks.NCD.main_content %}
+  {% assign content_data = site.data.Blocks.NCD.main_content | where: "id", page.course_id | first %}
+  {% if content_data %}
+  <div class="main-content">
+    <h2>{{ content_data.title }}</h2>
+    <p>{{ content_data.description }}</p>
+
+    <!-- Course Trailer Section -->
+    <div class="course-trailer">
+      <h3>Course Trailer</h3>
+      <iframe class="w_100 br_radius" width="560" height="315" src="https://www.youtube.com/embed/{{ content_data.trailer_url }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <!-- Star Course Section -->
+    <div class="star-course items_center">
+      <h3>{{ content_data.star_course_title }}</h3>
+      {% assign main_button = site.data.Blocks.NCD.buttons | where: "id", page.course_id | where: "language", "main" | first %}
+      {% if main_button %}
+        <a class="btn btn-primary" href="{{ main_button.href }}">{{ main_button.label }}</a>
+      {% endif %}
+      <p>or in these languages</p>
+      <div class="other-languages grid columns_2 columns_3:md gap-x_4 gap-y_5:lg gap-y_4">
+        {% assign other_buttons = site.data.Blocks.NCD.buttons | where: "id", page.course_id | where_exp: "item", "item.language != 'main'" %}
+        {% for button in other_buttons %}
+          <a class="btn btn-secondary" href="{{ button.href }}">{{ button.label }}</a>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Back to Catalog Link -->
+    <div class="back-link">
+      <a href="{{ content_data.catalog_link }}">Back to full catalog</a>
+    </div>
+  </div>
+  {% endif %}
+{% endif %}
+
+{% endif %}
