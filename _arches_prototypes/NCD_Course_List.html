@@ -48,21 +48,20 @@ sidebarArray:
   <li><strong class="c_black-6">Badge:</strong> <i class="fa fa-check" aria-hidden="true"></i></li>
   {% endif %}
 </ul>
-        </div>
+      </div>
       <div class="flex flex_column items_center items_end:md self_center">
         <a class="btn btn-secondary font_n1 font_0:md" href="{{ course.catalog_link }}" role="button">View Course</a>
-        {% assign main_button = site.data.Blocks.NCD.buttons | where: "id", course.id | where: "language", "main" | first %}
-        {% if main_button %}
-        <a class="btn btn-link font_n2 font_n1:md font_0:lg" href="{{ main_button.href }}" role="button">Start Now in English</a>
+        {% assign main_button = site.data.Blocks.NCD.buttons | where: "id", course.id | where: "language", "main" | first %}      
       </div>
-        {% endif %}
       </div>
     </div>
     {% endfor %}
 {% else %}
   <p>No courses available at the moment.</p>
 {% endif %}
-</section><script>
+</section>
+
+<script>
 function toggleView(viewType) {
   const courseListing = document.getElementById('course-listing');
   const toggleGridButton = document.getElementById('toggleGrid');
