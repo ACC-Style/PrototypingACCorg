@@ -21,10 +21,14 @@
         </div>
     </header>
     
-    <ul class="b_2 l_2 r_2 ul_none font_0 flex_column flex gap_2">
-        <li class="hex block p_3 bg_white-7 br_radius relative"><strong class="absolute t_2 l_2 font_n3">HEX:</strong> <span class="user-select_all inset_0 block  p-t_4">{{ color.hex }}</span></li>
-        <li class="cmyk block p_3 bg_white-7 br_radius relative"><strong class="absolute t_2 l_2 font_n3">CMYK:</strong> <span class="user-select_all inset_0 block  p-t_4">{{ color.cmyk }}</span></li>
-        <li class="rgb block p_3 bg_white-7 br_radius relative"><strong class="absolute t_2 l_2 font_n3">RGB:</strong> <span class="user-select_all inset_0 block  p-t_4">{{ color.rgb }}</span></li>
+    <ul class="b_2 l_2 r_2 ul_none font_0 flex_column flex gap_2 {{ color.font_color }}">
+        {% assign bg_color = "bg_black-3" %}    
+        {% if color.font_color == "c_black" %}
+            {% assign bg_color = "bg_white-3" %}
+        {% endif %}
+        <li class="hex block p_3 {{bg_color}} br_radius relative"><strong class="absolute t_2 l_2 font_n3">HEX:</strong> <span class="user-select_all inset_0 block  p-t_4">{{ color.hex }}</span></li>
+        <li class="cmyk block p_3 {{bg_color}} br_radius relative"><strong class="absolute t_2 l_2 font_n3">CMYK:</strong> <span class="user-select_all inset_0 block  p-t_4">{{ color.cmyk }}</span></li>
+        <li class="rgb block p_3 {{bg_color}} br_radius relative"><strong class="absolute t_2 l_2 font_n3">RGB:</strong> <span class="user-select_all inset_0 block  p-t_4">{{ color.rgb }}</span></li>
     </ul>
 
 </li>

@@ -1,0 +1,11 @@
+name,hex,font_color,contrast,cmyk,rgb,type
+A,#4e8abf,c_black,5.71,"(61, 28, 0, 25)","(78, 138, 191)",current
+B-R,#85add1,c_black,8.89,"(36, 17, 0, 18)","(133, 173, 209)",current
+B-NR,#85add1,c_black,8.89,"(36, 17, 0, 18)","(133, 173, 209)",current
+C-LD,#c4d9f0,c_black,14.53,"(18, 9, 0, 6)","(196, 217, 240)",current
+C-EO,#c4d9f0,c_black,14.53,"(18, 9, 0, 6)","(196, 217, 240)",current
+A,#065D93,c_white,7.01,"(95, 37, 0, 42)","(6, 93, 147)",proposed
+B-R,#659BC2,c_black,7.02,"(48, 20, 0, 24)","(101, 155, 194)",proposed
+B-NR,#659BC2,c_black,7.02,"(48, 20, 0, 24)","(101, 155, 194)",proposed
+C-LD,#c4d9f0,c_black,14.53,"(18, 9, 0, 6)","(196, 217, 240)",proposed
+C-EO,#c4d9f0,c_black,14.53,"(18, 9, 0, 6)","(196, 217, 240)",proposed

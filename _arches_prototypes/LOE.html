@@ -1,0 +1,29 @@
+---
+layout: arches
+name: "Colors Current vs Proposed"
+position: "LOE"
+---
+<h1>Colors LOEs</h1>
+<div class="p_5:lg p_4 grid columns_2:md columns_1 gap_5:lg gap_4">
+
+    <section>
+        <h2>Current</h2>
+        <ul class="gap-x_4 gap-y_3 grid columns_1 ul_none">
+            {% for color in site.data.colors-loe %}
+            {% if color.type == "current" %}
+            {% include_relative Colors/color-item.html color=color %}
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </section>
+    <section>
+        <h2>Proposed</h2>
+        <ul class="gap-x_4 gap-y_3 grid columns_1 ul_none">
+            {% for color in site.data.colors-loe %}
+            {% if color.type == "proposed" %}
+            {% include_relative Colors/color-item.html color=color %}
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </section>
+</div>
