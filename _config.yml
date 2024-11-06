@@ -63,6 +63,9 @@ collections:
   arches_ui_playground:
     output: true
     permalink: /UI/:path/
+  member_section_prototype:
+    output: true
+    permalink: /MemberSection/:path/
 # Exclude from processing.
 
 # The following items will not be processed, by default.
