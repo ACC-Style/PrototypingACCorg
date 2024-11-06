@@ -11,10 +11,10 @@ Variables that can be used in the tag:
   - cta_link: URL for the call-to-action button (default: '#').
   - cta_button_text: Text for the call-to-action button (default: 'Get Started').
 -->
-{% assign hero_image_base = include.hero_image_base | default: 'HeroShot' %}
+{% assign hero_image_base = include.hero_image_base | default: 'Dynamic' %}
 <div
   data-item="hero-image-cta"
-  class="relative isolation_isolate grid rows_3 rows_2:md columns_4:md columns_5:lg columns_2 m-t_n4 m-x_n4"
+  class="relative isolation_isolate grid rows_3 rows_2:md columns_4:md columns_5:lg columns_2 m-t_n4 "
   style="--row-1:2.5rem; --row-2:min-content;">
   <picture data-item="responsive-hero-image" class="col_all row_all w_100 flex overflow_hidden ">
     <source
@@ -30,7 +30,7 @@ Variables that can be used in the tag:
       media="(min-width: 400px)"
       class="display_none">
     <img
-      src="{{ 'assets/images/MicroSite/' | append: hero_image_base | append: '_320x200.png' | relative_url }}"
+      src="{{ 'assets/images/MicroSite/' | append: hero_image_base | append: '_320x300.png' | relative_url }}"
       alt="{{ include.hero_image_alt | default: 'Hero Image' }}"
       class="bg_cover flex_100">
   </picture>
