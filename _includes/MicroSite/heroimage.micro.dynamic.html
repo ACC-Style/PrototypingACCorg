@@ -1,10 +1,23 @@
+{% assign hero_image_base = include.hero_image_base | default: 'Dynamic' %}
 <div grid-template="hero-image-cta" template-option="micro" class="isolation_isolate overflow_hidden relative">
-    <picture data-item="responsive-hero-image" class="absolute bg_cover flex flex_column inset_0">
-        <source srcset="{{ 'assets/images/MicroSite/HeroShot_1200x300.png' | relative_url }}" media="(min-width: 1024px)" class="display_none">
-        <source srcset="{{ 'assets/images/MicroSite/HeroShot_1024x256.png' | relative_url }}" media="(min-width: 768px)" class="display_none">
-        <source srcset="{{ 'assets/images/MicroSite/HeroShot_600x300.png' | relative_url }}" media="(min-width: 400px)" class="display_none">
-        <img src="{{ 'assets/images/MicroSite/HeroShot_320x200.png' | relative_url }}" alt="Hero Image" class="flex_100">
-    </picture>  
+    <picture data-item="responsive-hero-image" class="absolute bg_cover flex flex_column inset_0 ">
+        <source
+          srcset="{{ 'assets/images/MicroSite/' | append: hero_image_base | append: '_1200x300.png' | relative_url }}"
+          media="(min-width: 1024px)"
+          class="display_none">
+        <source
+          srcset="{{ 'assets/images/MicroSite/' | append: hero_image_base | append: '_1024x256.png' | relative_url }}"
+          media="(min-width: 768px)"
+          class="display_none">
+        <source
+          srcset="{{ 'assets/images/MicroSite/' | append: hero_image_base | append: '_600x300.png' | relative_url }}"
+          media="(min-width: 400px)"
+          class="display_none">
+        <img
+          src="{{ 'assets/images/MicroSite/' | append: hero_image_base | append: '_320x300.png' | relative_url }}"
+          alt="{{ include.hero_image_alt | default: 'Hero Image' }}"
+          class="bg_cover flex_100">
+      </picture> 
     <div grid-area="title">
         <h1 data-item="hero-title" class="lh_3 m_0 m-y_3 m-y_0:lg c_white isolation_isolate relative">
             <span class="display_none:md">
@@ -12,7 +25,7 @@
                     <i class="fas fa-solid fa-arrow-left m-l_n3" aria-hidden="true"></i>
                 </a>
             </span>
-            {% assign title_parts = include.hero_title | default: 'Page Title Goes Here' | split: ' ' %}
+            {% assign title_parts = include.hero_title | default: 'Section Title Goes Here' | split: ' ' %}
             {% for part in title_parts %}
                 <span class="text">{{ part }}</span>
             {% endfor %}
