@@ -14,15 +14,15 @@ Variables to be passed in to this include:
     <h3>Log In to Access Member Section</h3>
     <p>To access the <strong>{{ section_name }} Member Section</strong> you need to be a member of both College and the section,<br><strong class="m-t_3 inline-block">First Step is to log in.</strong></p>
     <ul class="ul_none flex flex_row flex_wrap">
-      <li><a class="btn btn-primary btn-sm" href="https://www.acc.org/login?returnUrl={{ section_url }}">Log In</a></li>
+      <li><a class="btn btn-primary " href="https://www.acc.org/login?returnUrl={{ section_url }}">Log In</a></li>
     </ul>
 
   {% elsif user_state == 'logged_in_not_college_member' %}
     <h3>Membership Required</h3>
     <p>You must be a member of the American College of Cardiology first to gain access to <strong>{{ section_name }}: Member Section</strong>.</p>
     <ul class="ul_none flex flex_row flex_wrap gap_3 items_center">
-      <li class="m_0 p_0"><a class="btn btn-secondary btn-sm" href="https://www.acc.org/membership/join-us">Learn More</a></li>
-      <li class="m_0 p_0"><a class="btn btn-primary btn-sm" href="https://memberapp.acc.org/">Join the College</a></li>
+      <li class="m_0 p_0"><a class="btn btn-secondary " href="https://www.acc.org/membership/join-us">Learn More</a></li>
+      <li class="m_0 p_0"><a class="btn btn-primary " href="https://memberapp.acc.org/">Join the College</a></li>
     </ul>
     <div class="m-t_4 m-x_n4:lg m-b_n4:lg p_4 bg_white-4 br_radius"><h4>Need Help?
       <small class="block">Something Not Right?</small>
@@ -38,7 +38,7 @@ Variables to be passed in to this include:
    <h3>{{ section_name }} Members Exclusive Content</h3>
     <p>You are a member of the American College of Cardiology, but you do not yet have access to the <strong>{{ section_name }} Member Section</strong>. Join the {{ section_name }} by managing your membership.</p>
     <ul class="ul_none flex flex_row flex_wrap">
-      <li><a class="btn btn-primary btn-sm" href="https://www.acc.org/dues">Manage Membership</a></li>
+      <li><a class="btn btn-primary " href="https://www.acc.org/dues">Manage Membership</a></li>
     </ul>
     <div class="m-t_4 m-x_n4:lg m-b_n4:lg p_4 bg_white-4 br_radius"><h4>Need Help?
       <small class="block">Something Not Right?</small>

@@ -1,0 +1,110 @@
+---
+layout: arches
+name: "Home"
+position: "Logged Out"
+section_name: "Women in Cardiology"
+section_url: "https://www.acc.org/Membership/Sections-and-Councils/Women-in-Cardiology-Section"
+user_state: "not_logged_in"
+---
+
+{% include_relative PageBlocks/heroimage.dynamic.html parent_link ='#'
+parent_page_name ='Member Sections' page_title ="Women in Cardiology: Member
+Section" cta_title ="Empower. Connect. Lead." cta_description ="Unlock exclusive
+resources, expand your influence, and support our mission. Join the Women in
+Cardiology section today!" cta_link ="" cta_button_text ="Join Today" %}
+
+<section grid-template="page-layout" class="">
+  <div
+    grid-area="content"
+    class="reading-typography font-size_up p-l_4:lg max-w_65 p-t_5:lg p-t_4"
+    style="--custom-font-size-up: 1.06"
+  >
+    <h2 class="lh_2 m-b_4 flex flex_row">
+      <div class="flex_shrink font_10 grid items_center justify_center m-r_4">
+        <i class="fas fa-lock-alt font-size_up-2" aria-hidden="true"></i>
+      </div>
+      <strong class="flex_grow"
+        >Exclusive Member Benefits<small class="block">
+          Log In Now!</small
+        ></strong
+      >
+    </h2>
+    <p>
+      You've arrived at a Member Section page, a gateway to our exclusive member
+      benefits. These benefits, designed specifically for cardiovascular
+      professionals, offer access to specialized communities, valuable content,
+      and exciting opportunities to make a real impact in your field.
+    </p>
+    <p class="font_bold">
+      Log in to unlock these resources and start benefiting from our exclusive
+      member perks.
+    </p>
+    <a href="" class="btn btn-primary"
+      >Login <i class="fa-solid fa-sign-in-alt" aria-hidden="true"></i
+    ></a>
+  </div>
+  <aside grid-area="sidebar-secondary">
+    <div
+      data-item="cta-overlay"
+      class="bg_black-3 br_1 br_black-3 br_solid br-r_0 br-tl_round br-bl_round c_black color_inherit shadow_bevel-light p_4 p_5:lg reading-typography relative z_1 m-t_4 m-l_4"
+    >
+      <h4>
+        Need Help?
+        <small class="block">Something Not Right?</small>
+      </h4>
+      <ul class="ul_none">
+        <li>
+          <a href="https://my.acc.org/s/ContactUsMemberCare"
+            >Contact ACC Member Care</a
+          >
+        </li>
+        <li><a href="tel:800-253-4636">800-253-4636, ext. 5603</a></li>
+        <li><a href="tel:202-375-6000">202-375-6000</a></li>
+      </ul>
+    </div>
+  </aside>
+</section>
+<hr>
+
+<section grid-template="page-layout" class="">
+  <div
+    grid-area="content"
+    class="reading-typography font-size_up p_4:lg"
+    style="--custom-font-size-up: 1"
+  >
+    <h2>{{page.section_name}}: Member Section Details</h2>
+    <h3>We champion women’s leadership, professional growth, and wellness.</h3>
+    <p>
+      The Women in Cardiology Section of the ACC offers women cardiologists
+      opportunities to strengthen their professional support system and skills
+      through networking events, professional development and mentoring
+      programs. In addition, membership and active involvement in the Section
+      provides a training ground for developing leadership skills and
+      understanding the governance structure and avenues to leadership within
+      the College.
+    </p>
+    <p>
+      Our mission is to foster a supportive community that advocates for gender
+      and career equity, empowering women cardiologists across all specialties
+      and career stages. Join us in creating a more inclusive and dynamic field
+      in cardiovascular medicine.
+    </p>
+  </div>
+</section>
+<section grid-template="page-layout" class="">
+  <div
+    grid-area="fullscreen"
+    class="m-t_5:lg m-t_4 bg_black-1 reading-typography font-size_up p_5:lg p_4"
+    style="--custom-font-size-up: 1"
+  >
+    <h3>Member Section Benefits</h3>
+    {% include_relative PageBlocks/UL_IconText.html
+    data_path="Blocks.MemberSection.UL_IconText_SecttionBenefits" %}
+  </div>
+</section>
+<section grid-template="page-layout" class="">
+  <div grid-area="content">
+    {% include_relative PageBlocks/FollowUpCTA.html
+    data_path="Blocks.MemberSection.FollowUpCTA_Login" cta_type="bevel" %}
+  </div>
+</section>

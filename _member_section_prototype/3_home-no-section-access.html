@@ -1,0 +1,170 @@
+---
+layout: arches
+name: "Home"
+position: "No Section Access"
+---
+
+{% include MicroSite/heroimage.dynamic.html parent_link ="#" parent_page_name
+="Member Sections" page_title ="Women in Cardiology: Member Section" cta_title
+="Empower. Connect. Lead." cta_description ="Unlock exclusive resources,
+expand your influence, and support our mission. Join the Women in Cardiology
+section today!" cta_link ="" cta_button_text ="Join Today" %}
+
+<section grid-template="page-layout" class="">
+  <div grid-area="sidebar-primary">
+    <nav class="nav-sub bg_primary c_white font_2 font_ui">
+      <ul class="ul_none flex_column flex">
+        <li class="nav-item font-size_up" data-nav="parent">
+          <div class="bg_black-4">
+            <a
+              href="../index/"
+              class="text-shadow_black-1 block w_100 c_white p-y_2 p-x_4 w_100 h:c_white inline-block h:underline self_center active"
+              >Women in Cardiology</a
+            >
+          </div>
+        </li>
+
+        <li class="nav-item" data-nav="child">
+          <div class="flex flex_row">
+            <div class="flex flex_column flex_none justify_start">
+              <div class="flex_none">
+                <span class="fa-stack">
+                  <i class="fas fa-spacer fa-stack-1x" aria-hidden="true"></i>
+                </span>
+              </div>
+            </div>
+            <div class="flex_auto self_center">
+              <a
+                href="../about/"
+                class="text-shadow_black-1 c_white-9 p-y_2 p-x_3 w_100 h:c_white inline-block h:underline self_center a:bg_black-3 "
+                >About</a
+              >
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item" data-nav="child">
+          <div class="flex flex_row">
+            <div class="flex flex_column flex_none justify_start">
+              <div class="flex_none">
+                <span class="fa-stack">
+                  <i class="fas fa-spacer fa-stack-1x" aria-hidden="true"></i>
+                </span>
+              </div>
+            </div>
+            <div class="flex_auto self_center">
+              <a
+                href="../announcements.html"
+                class="text-shadow_black-1 c_white-9 p-y_2 p-x_3 w_100 h:c_white inline-block h:underline self_center a:bg_black-3"
+                >Announcements</a
+              >
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item" data-nav="child">
+          <div class="flex flex_row">
+            <div class="flex flex_column flex_none justify_start">
+              <div class="flex_none">
+                <span class="fa-stack">
+                  <i class="fas fa-spacer fa-stack-1x" aria-hidden="true"></i>
+                </span>
+              </div>
+            </div>
+            <div class="flex_auto self_center">
+              <a
+                href="../webinars"
+                class="text-shadow_black-1 c_white-9 p-y_2 p-x_3 w_100 h:c_white inline-block h:underline self_center a:bg_black-3"
+                >Webinars</a
+              >
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item" data-nav="child">
+          <div class="flex flex_row">
+            <div class="flex flex_column flex_none justify_start">
+              <div class="flex_none">
+                <span class="fa-stack">
+                  <i class="fas fa-spacer fa-stack-1x" aria-hidden="true"></i>
+                </span>
+              </div>
+            </div>
+            <div class="flex_auto self_center">
+              <a
+                href="../resources"
+                class="text-shadow_black-1 c_white-9 p-y_2 p-x_3 w_100 h:c_white inline-block h:underline self_center a:bg_black-3"
+                >Resources</a
+              >
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item" data-nav="child">
+          <div class="flex flex_row">
+            <div class="flex flex_column flex_none justify_start">
+              <div class="flex_none">
+                <span class="fa-stack">
+                  <i class="fas fa-spacer fa-stack-1x" aria-hidden="true"></i>
+                </span>
+              </div>
+            </div>
+            <div class="flex_auto self_center">
+              <a
+                href="../members_area"
+                class="text-shadow_black-1 c_white-9 p-y_2 p-x_3 w_100 h:c_white inline-block h:underline self_center a:bg_black-3"
+                >Members Area</a
+              >
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <aside grid-area="sidebar-secondary">
+    <div
+      data-item="cta-overlay"
+      class="bg_black-3 br_1 br_black-3 br_solid br-r_0 br-tl_round br-bl_round c_black color_inherit shadow_bevel-light p_4 p_5:lg reading-typography relative z_1 m-t_4 m-l_4"
+    >
+    {% include_relative PageBlocks/section-access-check.html section_name="Women in Cardiology" section_url="https://www.acc.org/Membership/Sections-and-Councils/Women-in-Cardiology-Section"  %}
+    </div>
+    <div
+    data-item="cta-overlay"
+    class="bg_black-3 br_1 br_black-3 br_solid br-r_0 br-tl_round br-bl_round c_black color_inherit shadow_bevel-light p_4 p_5:lg reading-typography relative z_1 m-t_4 m-l_4"
+  >
+  {% include_relative PageBlocks/section-access-check.html section_name="Women in Cardiology" section_url="https://www.acc.org/Membership/Sections-and-Councils/Women-in-Cardiology-Section" user_state='logged_in_not_college_member' %}
+  </div>
+  <div
+  data-item="cta-overlay"
+  class="bg_black-3 br_1 br_black-3 br_solid br-r_0 br-tl_round br-bl_round c_black color_inherit shadow_bevel-light p_4 p_5:lg reading-typography relative z_1 m-t_4 m-l_4"
+>
+{% include_relative PageBlocks/section-access-check.html section_name="Women in Cardiology" section_url="https://www.acc.org/Membership/Sections-and-Councils/Women-in-Cardiology-Section" user_state='logged_in_college_member_no_section_access' %}
+</div>
+<div
+data-item="cta-overlay"
+class="bg_black-3 br_1 br_black-3 br_solid br-r_0 br-tl_round br-bl_round c_black color_inherit shadow_bevel-light p_4 p_5:lg reading-typography relative z_1 m-t_4 m-l_4"
+>
+{% include_relative PageBlocks/section-access-check.html section_name="Women in Cardiology" section_url="https://www.acc.org/Membership/Sections-and-Councils/Women-in-Cardiology-Section" user_state='logged_in_college_member_with_section_access' %}
+</div>
+  </aside>
+  <div
+    grid-area="content"
+    class="reading-typography font-size_up p-l_4:lg max-w_65 p-t_5:lg p-t_4"
+    style="--custom-font-size-up: 1.06"
+  >
+    <h2 class="lh_2 m-b_4">
+     The Women in Cardiology: Member Section
+      <small class="block font-size_down-1"
+        >Where we champion women’s leadership, professional growth, and
+        wellness.</small
+      >
+    </h2>
+    <p>The Women in Cardiology Section of the ACC offers women cardiologists opportunities to strengthen their professional support system and skills through networking events, professional development and mentoring programs. In addition, membership and active involvement in the Section provides a training ground for developing leadership skills and understanding the governance structure and avenues to leadership within the College.</p>
+    <p>
+      Our mission is to foster a supportive community that advocates for gender
+      and career equity, empowering women cardiologists across all specialties and
+      career stages. Join us in creating a more inclusive and dynamic field in
+      cardiovascular medicine.
+    </p>
+  </div>
+</section>

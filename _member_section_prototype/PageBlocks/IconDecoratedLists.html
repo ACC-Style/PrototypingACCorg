@@ -1,0 +1,88 @@
+<!-- 
+ data_path: the data path for the csv
+container_modifier: class slot to change the row mechanizm.
+custom_fontsize:  change the base sizing for the reading typography defaults to 1.
+-->
+
+{% assign path_parts = 'Blocks.IconDecoratedLists' | split: '.' %}
+{% if include.data_path %}
+  {% assign path_parts = include.data_path | split: '.' %}
+{% endif %}
+
+{% assign data_object = site.data %}
+{% for part in path_parts %}
+  {% assign data_object = data_object[part] %}
+{% endfor %}
+
+{% assign grid_styles = " columns_2:md columns_1 gap-x_6:md gap_4 " %}
+{% if include.grid_modifier %}
+  {% assign grid_styles = include.grid_modifier %}
+{% endif %} 
+
+{% assign font_size = .8 %}
+{% if include.custom_fontsize %}
+  {% assign font_size = include.custom_fontsize %}
+{% endif %} 
+
+{% if include.container_modifier %}
+  <section
+    label="IconDecoratedList"
+    class="reading-typography font-size_up grid {{ include.container_modifier }} {{ grid_styles }}"
+    style="--custom-font-size-up: {{font_size}} ;"
+  >
+{% else %}
+  <div
+    label="IconDecoratedList"
+    class="reading-typography font-size_up grid {{ grid_styles }}"
+    style="--custom-font-size-up: {{font_size}} ;"
+  >
+{% endif %}
+    {% assign current_section = nil %}
+    {% assign current_icon = nil %}
+    
+    {% for row in data_object %}
+      <!-- Start a new section if section_title is present -->
+      {% if row.section_title and row.section_title != "" %}
+        <!-- Close previous section's list if it's open -->
+        {% if current_section %}
+          </ul>
+          </div> <!-- Closing the previous section div -->
+        {% endif %}
+        
+        <!-- New section header -->
+        <div class="grid-cell">
+          <div class="section-header flex flex_row:md flex_column items_center justify_start m-b_4 text_center text_left:md">
+            <em class="c_accent font_7 self_center self_start:md p_4 p_0:md m-t_4 m-t_3:md p-r_4:md far fa-regular {{ row.icon_class }}" aria-hidden="true"></em>
+            <h3 class="m_0">
+             {{ row.section_title }}
+            </h3>
+          </div>
+          <ul class="ul_square marker_accent m-b_6">
+          
+          <!-- Set the current section and icon to use for subsequent rows -->
+          {% assign current_section = row.section_title %}
+          {% assign current_icon = row.icon_class %}
+      {% endif %}
+      
+      <!-- Render the list item for the current section -->
+      <li class="list-item m-b_3">
+        {% if row.link_url != "" %}
+          <a class="link" href="{{ row.link_url }}">{{ row.link_text }}</a>
+        {% else %}
+          {{ row.link_text }}
+        {% endif %}
+      </li>
+    
+    {% endfor %}
+    
+    <!-- Close the last section's list -->
+    {% if current_section %}
+      </ul>
+      </div> <!-- Closing the final section div -->
+    {% endif %}
+
+{% if include.container_modifier %}
+  </section>
+{% else %}
+  </div>
+{% endif %}
