@@ -77,7 +77,7 @@ content_data %}
     {% assign other_buttons = site.data.Blocks.NCD.buttons 
       | where: "id", page.course_id 
       | where_exp: "item", "item.language != 'main'" 
-      | sort: "language" %}{% for
+      | sort: "label" %}{% for
       button in other_buttons %} 
       <a class="btn btn-secondary" href="{{ button.href }}"
         >{{ button.label }}</a
