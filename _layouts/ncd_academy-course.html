@@ -22,7 +22,7 @@ content_data %}
     </small>
   </h2>
 
-  <p class="lh_2">{{ content_data.description }}</p>
+  <div class="lh_2">{{ content_data.description }}</div>
 </section>
   <!-- Course Trailer Section -->
   <div class="course-trailer">
@@ -74,9 +74,11 @@ content_data %}
     <div
       class="other-languages grid columns_2 columns_3:md gap-x_4 gap-y_4:lg gap-y_4 m-b_3"
     >
-      {% assign other_buttons = site.data.Blocks.NCD.buttons | where: "id",
-      page.course_id | where_exp: "item", "item.language != 'main'" %} {% for
-      button in other_buttons %}
+    {% assign other_buttons = site.data.Blocks.NCD.buttons 
+      | where: "id", page.course_id 
+      | where_exp: "item", "item.language != 'main'" 
+      | sort: "language" %}{% for
+      button in other_buttons %} 
       <a class="btn btn-secondary" href="{{ button.href }}"
         >{{ button.label }}</a
       >
