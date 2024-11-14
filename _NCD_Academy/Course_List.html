@@ -17,15 +17,15 @@ sidebarArray:
 <header class="flex flex_row flex_wrap m-t_4 m-t_5:md" aria-label="Course Listing Header">
   <h2 id="course-listing-title" class="flex_shrink font_display">Available Courses</h2>
   <div class="view-toggle self_center flex_shrink flex flex_row flex_nowrap gap_2 bg_black-3 br_1 br_solid br_black-5 p_2 br_radius m-l_auto" aria-label="View Toggle Controls">
-    <button id="toggleGrid" onclick="toggleView('grid')" aria-pressed="true" aria-label="Switch to Grid View" role="switch" class="a:bg_accent-n1 active btn">
+    <button id="toggleGrid" onclick="toggleView('grid')" aria-pressed="false" aria-label="Switch to Grid View" role="switch" class="a:bg_accent-n2 a:c_white  btn">
       <i class="fa fa-solid fa-grid" aria-hidden="true"></i>
     </button>
-    <button id="toggleList" onclick="toggleView('list')" aria-pressed="false" aria-label="Switch to List View" role="switch" class="a:bg_accent-n1 btn">
+    <button id="toggleList" onclick="toggleView('list')" aria-pressed="true" aria-label="Switch to List View" role="switch" class="a:bg_accent-n2 a:c_white active btn">
       <i class="fa fa-solid fa-list" aria-hidden="true"></i>
     </button>
   </div>
 </header>
-<section class="course-listing grid columns_1 columns_2:md columns_3:lg bg_black-2 p_4:md p_3 br_radius gap_4 m-t_5:lg m-t_4" id="course-listing" aria-labelledby="course-listing-title">
+<section class="course-listing bg_black-2 p_4:md p_3 br_radius m-t_5:lg m-t_4 list-view gap_3 grid columns_1" id="course-listing" aria-labelledby="course-listing-title">
 {% if site.data.Blocks.NCD.main_content %}    {% for course in site.data.Blocks.NCD.main_content %}
     <div class="card-wrapper grid wrapper-container" aria-labelledby="course-title-{{ forloop.index }}">
       <div class="course-card p_4 br_1 br_solid br_black-5 br_radius bg_white flex flex_column flex_row:md gap_4 justify_between" role="article" >
