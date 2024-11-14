@@ -21,8 +21,14 @@ content_data %}
       content_data.duration %} <strong>Course Duration:</strong> {{ content_data.duration }} {% endif %}
     </small>
   </h2>
-
-  <div class="lh_2">{{ content_data.description }}</div>
+  {% assign paragraphs = content_data.description | split: '<p>' %}
+    <div class="lh_2">
+      {% for paragraph in paragraphs %}
+        {% unless paragraph == '' %}
+          <p>{{ paragraph | strip_html }}</p>
+        {% endunless %}
+      {% endfor %}
+    </div>
 </section>
   <!-- Course Trailer Section -->
   <div class="course-trailer">
@@ -54,6 +60,14 @@ content_data %}
       >
     </div>
     {% endif %}
+    {% assign other_buttons = site.data.Blocks.NCD.buttons 
+      | where: "id", page.course_id 
+      | where_exp: "item", "item.language != 'main'" 
+      | sort: "label" %}
+      {% if other_buttons.size > 0 %}
+        
+
+
     <h4
       class="c_black-9 flex flex_column flex_row:md font_display font_medium m_0 p-y_5:md p-y_4"
     >
@@ -63,7 +77,7 @@ content_data %}
         ></span>
       </span>
       <span class="flex_auto flex_shrink p-x_3 lh_1 text_center">
-        Users are the Center of it All
+        Course Available in These Language(s)
       </span>
       <span class="flex_auto grid">
         <span
@@ -74,22 +88,28 @@ content_data %}
     <div
       class="other-languages grid columns_2 columns_3:md gap-x_4 gap-y_4:lg gap-y_4 m-b_3"
     >
-    {% assign other_buttons = site.data.Blocks.NCD.buttons 
-      | where: "id", page.course_id 
-      | where_exp: "item", "item.language != 'main'" 
-      | sort: "label" %}{% for
-      button in other_buttons %} 
+
+      {% for button in other_buttons %} 
       <a class="btn btn-secondary" href="{{ button.href }}"
         >{{ button.label }}</a
       >
       {% endfor %}
     </div>
+  {% endif %}
   </div>
   <!-- Back to Catalog Link -->
-  <div class="back-link p_3 text_center">
-    <a href="{{ content_data.catalog_link }}"
-      ><i class="fa-solid fa-arrow-left p-r_3"></i> Back to full catalog</a
-    >
-  </div>
+  {% if content_data.catalog_guid %}
+    <div class="back-link p_3 text_center">
+      <a href="{% include URL.html guid=content_data.catalog_link  %} ">
+        <i class="fa-solid fa-arrow-left p-r_3"></i> Back to full catalog
+      </a>
+    </div>
+  {% else %}
+    <div class="back-link p_3 text_center">
+      <a href="{% include URL.html url=content_data.catalog_link  %} ">
+        <i class="fa-solid fa-arrow-left p-r_3"></i> Back to full catalog
+      </a>
+    </div>
+  {% endif %}
 </div>
 {% endif %} {% endif %} {% endif %}

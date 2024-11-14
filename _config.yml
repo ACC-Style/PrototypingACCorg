@@ -66,6 +66,9 @@ collections:
   member_section_prototype:
     output: true
     permalink: /MemberSection/:path/
+  NCD_Academy:
+    output: true
+    permalink: /NCD/:path/
 # Exclude from processing.
 
 # The following items will not be processed, by default.
