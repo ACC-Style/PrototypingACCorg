@@ -1,7 +1,7 @@
 ---
 layout: arches-sidebar
-name: "NCD Academy"
-position: "Course List"
+name: "Course List"
+position: ""
 masthead: MicroSite/heroimage.micro.dynamic.html
 sidebarRoot: NCD Academy
 sidebarRootURL: ../NCD_Home
@@ -13,73 +13,162 @@ sidebarArray:
     url: #
     active: true
 ---
+
 <!-- Course Listing Page -->
-<header class="flex flex_row flex_wrap m-t_4 m-t_5:md" aria-label="Course Listing Header">
-  <h2 id="course-listing-title" class="flex_shrink font_display">Available Courses</h2>
-  <div class="view-toggle self_center flex_shrink flex flex_row flex_nowrap gap_2 bg_black-3 br_1 br_solid br_black-5 p_2 br_radius m-l_auto" aria-label="View Toggle Controls">
-    <button id="toggleGrid" onclick="toggleView('grid')" aria-pressed="false" aria-label="Switch to Grid View" role="switch" class="a:bg_accent-n2 a:c_white  btn">
+<header
+  class="flex flex_row flex_wrap m-t_4 m-t_5:md"
+  aria-label="Course Listing Header"
+>
+  <h2 id="course-listing-title" class="flex_shrink font_display">
+    Available Courses
+  </h2>
+  <div
+    class="view-toggle self_center flex_shrink flex flex_row flex_nowrap gap_2 bg_black-3 br_1 br_solid br_black-5 p_2 br_radius m-l_auto"
+    aria-label="View Toggle Controls"
+  >
+    <button
+      id="toggleGrid"
+      onclick="toggleView('grid')"
+      aria-pressed="false"
+      aria-label="Switch to Grid View"
+      role="switch"
+      class="a:bg_accent-n2 a:c_white btn"
+    >
       <i class="fa fa-solid fa-grid" aria-hidden="true"></i>
     </button>
-    <button id="toggleList" onclick="toggleView('list')" aria-pressed="true" aria-label="Switch to List View" role="switch" class="a:bg_accent-n2 a:c_white active btn">
+    <button
+      id="toggleList"
+      onclick="toggleView('list')"
+      aria-pressed="true"
+      aria-label="Switch to List View"
+      role="switch"
+      class="a:bg_accent-n2 a:c_white active btn"
+    >
       <i class="fa fa-solid fa-list" aria-hidden="true"></i>
     </button>
   </div>
 </header>
-<section class="course-listing bg_black-2 p_4:md p_3 br_radius m-t_5:lg m-t_4 list-view gap_3 grid columns_1" id="course-listing" aria-labelledby="course-listing-title">
-{% if site.data.Blocks.NCD.main_content %}    {% for course in site.data.Blocks.NCD.main_content %}
-    <div class="card-wrapper grid wrapper-container" aria-labelledby="course-title-{{ forloop.index }}">
-      <div class="course-card p_4 br_1 br_solid br_black-5 br_radius bg_white flex flex_column flex_row:md gap_4 justify_between" role="article" >
-        <div class="course-trailer-preview flex flex_column">
-          <h3 id="course-title-{{ forloop.index }}" class="font_display c_primary m-b_3">{{ course.title }}</h3>
-          <p class="font_copy m-b_2">{{ course.teaser }}</p>
-          <ul class="c_primary-n2 font_n2:md font_n3 ul_inline-pipe m-t_auto m-x_n2">
-  {% if course.credits %}
-  <li><strong class="c_black-6">Available Credits:</strong> {{ course.credits }}</li>
-  {% endif %}
-  {% if course.duration %}
-  <li><strong class="c_black-6">Course Duration:</strong> {{ course.duration }}</li>
-  {% endif %}
-  {% assign cert_info = site.data.Blocks.NCD.certifications | where: "id", course.id | first %}
-  {% if cert_info %}
-  <li><strong class="c_black-6">Certificate:</strong> <i class="fa fa-check" aria-hidden="true"></i></li>
-  {% endif %}
-  {% assign badge_info = site.data.Blocks.NCD.badges | where: "id", course.id | first %}
-  {% if badge_info %}
-  <li><strong class="c_black-6">Badge:</strong> <i class="fa fa-check" aria-hidden="true"></i></li>
-  {% endif %}
-</ul>
+<section
+  class="course-listing bg_black-2 p_4:md p_3 br_radius m-t_5:lg m-t_4 list-view gap_3 grid columns_1"
+  id="course-listing"
+  aria-labelledby="course-listing-title"
+>
+  {% if site.data.Blocks.NCD.main_content %} {% for course in
+  site.data.Blocks.NCD.main_content %}
+  <div
+    class="card-wrapper grid wrapper-container relative"
+    aria-labelledby="course-title-{{ forloop.index }}"
+  >
+    <div
+      class="course-card p_4 br_1 br_solid br_black-5 br_radius bg_white flex flex_column flex_row:md gap_4 justify_between relative"
+      role="article"
+    >
+      <div class="course-trailer-preview flex flex_column">
+        <h3
+          id="course-title-{{ forloop.index }}"
+          class="font_display c_primary m-b_3"
+        >
+          {{ course.title }}
+        </h3>
+        <p class="font_copy m-b_2">{{ course.teaser }}</p>
+        <ul
+          class="c_primary-n2 font_n2:md font_n3 ul_inline-pipe m-t_auto m-x_n2"
+        >
+          {% if course.credits %}
+          <li>
+            <strong class="c_black-6">Available Credits:</strong> {{
+            course.credits }}
+          </li>
+          {% endif %} {% if course.duration %}
+          <li>
+            <strong class="c_black-6">Course Duration:</strong> {{
+            course.duration }}
+          </li>
+          {% endif %} {% assign cert_info = site.data.Blocks.NCD.certifications
+          | where: "id", course.id | first %} {% if cert_info %}
+          <li>
+            <strong class="c_black-6">Certificate:</strong>
+            <i class="fa fa-check" aria-hidden="true"></i>
+          </li>
+          {% endif %} {% assign badge_info = site.data.Blocks.NCD.badges |
+          where: "id", course.id | first %} {% if badge_info %}
+          <li>
+            <strong class="c_black-6">Badge:</strong>
+            <i class="fa fa-check" aria-hidden="true"></i>
+          </li>
+          {% endif %}
+        </ul>
       </div>
       <div class="flex flex_column items_center items_end:md self_center">
-        <a class="btn btn-secondary font_n1 font_0:md" href="{{ course.catalog_link }}" role="button">View Course</a>
-        {% assign main_button = site.data.Blocks.NCD.buttons | where: "id", course.id | where: "language", "main" | first %}      
-      </div>
+        <a
+          class="btn btn-secondary font_n1 font_0:md expanded-click-area"
+          href="{{ course.catalog_link }}"
+          role="button"
+          ><i class="fa fa-chevron-right"></i></a
+        >
       </div>
     </div>
-    {% endfor %}
-{% else %}
+  </div>
+  {% endfor %} {% else %}
   <p>No courses available at the moment.</p>
-{% endif %}
+  {% endif %}
 </section>
 
 <script>
-function toggleView(viewType) {
-  const courseListing = document.getElementById('course-listing');
-  const toggleGridButton = document.getElementById('toggleGrid');
-  const toggleListButton = document.getElementById('toggleList');  if (viewType === 'grid') {
-    updateView(courseListing, toggleGridButton, toggleListButton, ['grid-view','grid', 'columns_1', 'gap_4', 'columns_2:md', 'columns_3:lg'], ['list-view' ,'grid', 'gap_3', 'columns_1']);
-  } else if (viewType === 'list') {
-    updateView(courseListing, toggleListButton, toggleGridButton, ['list-view', 'grid', 'gap_3', 'columns_1'], ['grid-view','grid', 'gap_4', 'columns_1', 'columns_2:md', 'columns_3:lg']);
+  function toggleView(viewType) {
+    const courseListing = document.getElementById("course-listing");
+    const toggleGridButton = document.getElementById("toggleGrid");
+    const toggleListButton = document.getElementById("toggleList");
+    if (viewType === "grid") {
+      updateView(
+        courseListing,
+        toggleGridButton,
+        toggleListButton,
+        [
+          "grid-view",
+          "grid",
+          "columns_1",
+          "gap_4",
+          "columns_2:md",
+          "columns_3:lg",
+        ],
+        ["list-view", "grid", "gap_3", "columns_1"]
+      );
+    } else if (viewType === "list") {
+      updateView(
+        courseListing,
+        toggleListButton,
+        toggleGridButton,
+        ["list-view", "grid", "gap_3", "columns_1"],
+        [
+          "grid-view",
+          "grid",
+          "gap_4",
+          "columns_1",
+          "columns_2:md",
+          "columns_3:lg",
+        ]
+      );
+    }
   }
-}function addClasses(element, classes) {
-  classes.forEach(cls => element.classList.add(cls));
-}function removeClasses(element, classes) {
-  classes.forEach(cls => element.classList.remove(cls));
-}function updateView(courseListing, activeButton, inactiveButton, addClassesList, removeClassesList) {
-  removeClasses(courseListing, removeClassesList);
-  addClasses(courseListing, addClassesList);
-  activeButton.classList.add('active');
-  activeButton.setAttribute('aria-pressed', 'true');
-  inactiveButton.classList.remove('active');
-  inactiveButton.setAttribute('aria-pressed', 'false');
-}
+  function addClasses(element, classes) {
+    classes.forEach((cls) => element.classList.add(cls));
+  }
+  function removeClasses(element, classes) {
+    classes.forEach((cls) => element.classList.remove(cls));
+  }
+  function updateView(
+    courseListing,
+    activeButton,
+    inactiveButton,
+    addClassesList,
+    removeClassesList
+  ) {
+    removeClasses(courseListing, removeClassesList);
+    addClasses(courseListing, addClassesList);
+    activeButton.classList.add("active");
+    activeButton.setAttribute("aria-pressed", "true");
+    inactiveButton.classList.remove("active");
+    inactiveButton.setAttribute("aria-pressed", "false");
+  }
 </script>

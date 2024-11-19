@@ -1,6 +1,6 @@
 ---
 layout: ncd_academy-course
-name: "NCD Academy:Vaccine"
+name: "Vaccine"
 position: "Course"
 course_id: Vaccine
 masthead: MicroSite/heroimage.micro.dynamic.html
