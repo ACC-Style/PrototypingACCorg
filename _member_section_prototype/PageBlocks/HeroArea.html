@@ -1,0 +1,231 @@
+<!-- 
+custom_fontsize:  change the base sizing for the reading typography defaults to 1.
+-->
+
+<div grid-template="hero-area" class="grid columns_5 rows_4 br_round relative m-b_5:lg m-b_4 isolation_isolate reading-typography font-size_up p_4" style="--custom-font-size-up: 1.125;">
+    <div grid-area="background" class=" hero-color-splash br_round relative z_0">
+
+    </div>
+    <div grid-area="breadcrumb" class="grid justify_start relative">
+        <nav
+            class="bg_white br-br_round grid  inline-block isolation_isolate items_center p-r_5:lg p-x_4 p-r_5  p-y_3 relative">
+            <a href="{% include URL.html url='https://www.acc.org/' %}" class="h:c_acc h:underline font_bold c_acc expanded-click-area "><i class="fas fa-chevron-left"
+                    aria-hidden="true"></i> <i class="fas fa-home"></i></a>
+            <span class="curve"></span>
+            <span class="curve alt"></span>
+        </nav>
+    </div>
+    <div grid-area="title"
+        class="colum_all row-start_1 row-end_3 color_inherit reading-typography color_inherit c_white z_1 font-size_up"  style="--custom-font-size-up: 1.125;">
+        <h1> Member Sections<br> for Members of American College of Cardiology</h1>
+        <p class="opacity_7 font_light">
+            Celebrating 75 Years <br>of Transforming CV Care For All   
+        </p>
+    </div>
+    <div class="bg_white p-t_4 p-l_4 br-tl_round" grid-area="cta">
+        <div class="reading-typography color_inherit c_white linear-gradient_custom p_4 p-y_5:lg br_round"
+            style="--start-color:#0c152a; --end-color:#172d65; --orgin:to left top;  --custom-font-size-up: 1.06;">
+            <h2 class="grid items_center justify_center p-x_5  m-b_n5:md m-b_n4"><img
+                    class="inline-block m-auto m-x_auto max-w_10 max-w_15:md r_3 relative w_100"
+                    src="{% include URL.html media='{60F584CA-6E0C-4532-B85F-112660F5B843}' %}"
+                    alt="75th Gala"></h2>
+            <div class="p-x_4:lg p-x_3:md">
+                <h3 class="opacity_9">Celebrate with Us</h3>
+                <p class="opacity_7">Transforming cardiovascular care and improving heart health takes collaboration – the sort of collaboration ACC's Member Sections and Communities are designed for.</p>
+                <div class="grid items_center justify_center">
+                    <a href="{% include URL.html guid='{EB36364F-5872-4A67-BBBA-5DFF26BEFD71}' %}" class="btn bg_acc-5 h:bg_acc-3 c_acc h:c_acc-n3 item_center self_center inline-block">Manage your membershipe</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div grid-area="introtext" class="reading-typography p-t_5 p-x_4:md" style="--custom-font-size-up: 1.02;">
+            <p>The American College of Cardiology (ACC) envisions a world where science, knowledge and innovation optimize cardiovascular care and outcomes.  </p>
+            <p>We believe in the power of community. With more than 56,000 members worldwide spanning the entire cardiovascular team, we serve as the professional home for clinicians and researchers seeking the latest science, research and education. United with our members, chapters and global cardiovascular partners, we are focused on transforming cardiovascular care and improving heart health for all. </p>
+        
+    </div>
+    <span grid-area="CTA-curve-tr" class="curve row-end_n5 row-end_4:md col-end_n1 bg_white rotate_270 b_n1 r_n1"></span>
+    <span grid-area="CTA-curve-bl" class="b_n1 bg_white col-end_4:md col-end_n4  curve r_n1 rotate_270 row-end_n2:md row-end_n3 "></span>
+</div>
+
+
+<style>
+
+
+
+
+
+    .hero-color-splash {
+        background-image: url("{% include URL.html media='{3654A6F4-E725-4D18-9F34-750090781B77}'%}"),
+        linear-gradient(to left top, #061a37, #022450, #012d69, #083683, #1a3f9d);
+        background-position: right top, center center;
+        background-size: contain, contain;
+        background-repeat: no-repeat, no-repeat;
+    }
+
+    
+    [grid-template="hero-area"]
+     {
+
+        --hero-overlay-color: var(--acc);
+        --hero-overlay-opacity: .85;
+        --breadcrumb-height: 50px;
+        --container-padding: 2rem;
+        grid-template-rows:
+            
+        [all-start breadcrumb-start backgroundHERO-start]
+                var(--container-padding, 0) 
+        [paddedContent-start]
+                calc(var(--breadcrumb-height, 2.5rem) - var(--container-padding)) 
+        [breadcrumb-end]
+                var(--container-padding, 0) 
+        [title-start]
+                auto 
+        [title-end]
+                var(--container-padding, 0) 
+        [backgroundCTA-start]
+                auto 
+        [paddedContent-end]
+                var(--container-padding, 0) 
+        [backgroundHERO-end ]
+        var(--container-padding, 0) 
+        [backgroundCTA-end introtext-start]
+                auto 
+        [all-end  introtext-end]
+            ;
+        grid-template-columns: 
+            [all-start backgroundHERO-start breadcrumb-start]
+               calc(.5 * var(--container-padding, 0)  ) 
+               [introtext-start]
+               calc(1 * var(--container-padding, 0)  )    
+            [paddedContent-start title-start  backgroundCTA-start]
+               1fr
+            [title-end]
+                var(--container-padding, 0)
+            [introtext-end paddedContent-end breadcrumb-end]
+                calc(.5*var(--container-padding, 0) )
+            [all-end backgroundCTA-start backgroundHERO-end]
+        ;
+    }
+
+    @media only screen and (min-width : 768px) {
+        [grid-template="hero-area"]
+        {
+            --_title-space : 3fr;
+            --_cta-space : 2fr;
+            grid-template-rows:
+                
+            [all-start breadcrumb-start backgroundHERO-start]
+                    var(--container-padding, 0) 
+            [paddedContent-start]
+                    calc(var(--breadcrumb-height, 2.5rem) - var(--container-padding)) 
+            [breadcrumb-end]
+                    var(--container-padding, 0) 
+            [title-start backgroundCTA-start]
+                    auto 
+            [title-end]
+                    var(--container-padding, 0) 
+            [paddedContent-end]
+                    var(--container-padding, 0) 
+            [backgroundHERO-end introtext-start]
+                    auto 
+            [all-end backgroundCTA-end introtext-end]
+                ;
+            grid-template-columns: 
+            [all-start backgroundHERO-start breadcrumb-start introtext-start]
+                var(--container-padding, 0) 
+        [paddedContent-start title-start]
+               var(--_title-space)
+        [title-end introtext-end]
+                calc(2* var(--container-padding, 0)) 
+        [backgroundCTA-start]
+                var(--_cta-space)
+        [paddedContent-end breadcrumb-end]
+                var(--container-padding, 0) 
+        [all-end backgroundCTA-start backgroundHERO-end]
+            ;
+        }
+    }
+
+    @media only screen and (min-width : 1024) {
+        /* Styles for small laptops and larger devices */
+        [grid-template="hero-area"]
+        {
+            --_title-space : 2fr;
+            --_cta-space : 1fr;
+        }
+    }
+
+    .curve {
+
+        display: block;
+        width: 25px;
+        height: 25px;
+        position: absolute;
+        /* Ensures positioning relative to parent */
+        clip-path: path("M 0 0 Q 0 25, 25 25 L 0 25 Z");
+    }
+
+    
+    [grid-template]
+     {
+        display: grid;
+    }
+
+
+    
+    [grid-area="introtext"]
+     {
+        grid-area: introtext;
+    }
+
+    
+    [grid-area="background"]
+     {
+        grid-area: backgroundHERO;
+    }
+
+    
+    [grid-area="title"]
+     {
+        grid-area: title;
+    }
+
+    
+    [grid-area="breadcrumb"]
+     {
+        grid-area: breadcrumb;
+        position: relative;
+    }
+
+
+    
+    [grid-area="breadcrumb"]
+     .curve {
+        z-index: 100;
+        top: 0;
+        right: -25px;
+        rotate: 90deg;
+        background: white;
+    }
+
+    
+    [grid-area="breadcrumb"]
+     .curve.alt {
+        z-index: 100;
+        /* bottom: 25px; */
+        left: 0;
+        /* top: 25px; */
+        bottom: -25px;
+        position: absolute;
+        rotate: 90deg;
+        background: #ffffff;
+        top: auto;
+    }
+
+    
+    [grid-area="cta"]
+     {
+        grid-area: backgroundCTA;
+
+    }
+</style>
