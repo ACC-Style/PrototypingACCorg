@@ -4,52 +4,51 @@ name: "Home"
 position: "NCD Academy"
 ---
 {% include MicroSite/heroimage.dynamic.html %}
-<!-- Main Section -->
-<main data-element="main-content" class="columns_2:md columns_1 grid gap_5:md p_5:lg p_4 gap_4">
+<div class="p_4">
+  <!-- Main Section -->
+  <main data-element="main-content" class="columns_5:lg columns_2:md columns_1 grid gap_5:md p_5:lg p_4 gap_4">
 
 
-  <!-- Key Benefits -->
-  <section data-element="introduciton">
-    <div>
-      <p>NCD Academy is an online platform designed to empower the global primary care community with the knowledge,
-        tools, and skills required to effectively address and mitigate the leading risk factors of non-communicable
-        diseases (NCDs).
-      </p>
-      <p>
-        By fostering a deeper understanding of prevention, early detection, and comprehensive care strategies, we aim to
-        improve outcomes and reduce the burden of NCDs worldwide. </p>
-    </div>
-    <ul>
-      <li data-element="benefit">Learn on-demand, anywhere, on any device.</li>
-      <li data-element="benefit">Make a global impact with up-to-date clinical guidance.</li>
-      <li data-element="benefit">Connect with a global professional community.</li>
-      <li data-element="benefit">100% free.</li>
-    </ul>
-  </section>
-<aside>
-  <!-- Login Section -->
-  <section data-element="login-section">
-    <div class="bg_black-_05 br_1 br_solid br_black-3 br_radius grid items_center justify_center m-l_0:lg m-t_4 m-t_5:lg m-x_4 ncd-logo shadow_bevel-light">
-      <img class="bg-blend_multiply p_4 w_100"  src="{% include URL.html media='{B94EDF85-2BB6-4B94-8B04-14A2AAD18F9E}' %}" alt="NCD Academy Logo">
-    </div>
-  </section>
-  <section data-element="course-trailer">
-    <h3>Course Trailer</h3>
-    <iframe
-      class="w_100 br_radius"
-      width="560"
-      height="315"
-      src="https://www.youtube.com/embed/{{ content_data.trailer_url }}"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-    ></iframe>
-  </section>
-</aside>
+    <!-- Key Benefits -->
+    <section data-element="introduciton" class="col-start_start:lg col-end_n3:lg reading-typography font-size_up"
+      style="--custom-font-size-up:1.125;">
+      <div>
+        <p>NCD Academy is an online platform designed to empower the global primary care community with the knowledge,
+          tools, and skills required to effectively address and mitigate the leading risk factors of non-communicable
+          diseases (NCDs).
+        </p>
+        <p>
+          By fostering a deeper understanding of prevention, early detection, and comprehensive care strategies, we aim
+          to
+          improve outcomes and reduce the burden of NCDs worldwide. </p>
+      </div>
+      <ul>
+        <li data-element="benefit">Learn on-demand, anywhere, on any device.</li>
+        <li data-element="benefit">Make a global impact with up-to-date clinical guidance.</li>
+        <li data-element="benefit">Connect with a global professional community.</li>
+        <li data-element="benefit">100% free.</li>
+      </ul>
+    </section>
+    <aside class="col-start_n3:lg col-end_end reading-typography">
+      <!-- Login Section -->
+      <section data-element="login-section m-b_5:lg m-b_4">
+        <div
+          class="bg_black-_05 br_1 br_solid br_black-3 p_4 br_radius grid items_center justify_center m-l_0:lg ncd-logo shadow_bevel-light">
+          <img class="bg-blend_multiply w_100"
+            src="{% include URL.html media='{B94EDF85-2BB6-4B94-8B04-14A2AAD18F9E}' %}" alt="NCD Academy Logo">
+        </div>
+      </section>
+      <section data-element="course-trailer">
+        <h3>Course Trailer</h3>
+        <iframe class="w_100 br_radius aspect_16x9" 
+          src="https://www.youtube.com/embed/bVEgFwHLeSs" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </section>
+    </aside>
 
-
-</main>
-<div  class="columns_2:md columns_1 grid gap_5:md p_5:lg p_4 gap_4">
+  </main>
+  <div class="columns_2:md columns_1 grid gap_5:md p_5:lg p_4 gap_4 m-x_n4 p_4 p_5:md p_6:lg bg_black-3">
     <!-- Spotlight -->
     <section data-element="course-spotlight">
       <div>
@@ -66,39 +65,40 @@ position: "NCD Academy"
         <button data-element="play-store">Play Store</button>
       </div>
     </section>
-</div>
-<!-- Resources Section -->
-<section data-element="resources-section">
-  <h2>NCD Academy's Learning Resources</h2>
-  <article data-element="quick-content">
-    <h3>Quick Content</h3>
-    <p>Short, introductory videos covering critical health topics.</p>
-    <button data-element="quick-content-button">View Quick Content</button>
-  </article>
-  <article data-element="courses">
-    <h3>Courses</h3>
-    <p>Comprehensive courses addressing the five leading NCDs.</p>
-    <button data-element="courses-button">View Full Catalog</button>
-  </article>
-</section>
+  </div>
+  <!-- Resources Section -->
+  <section data-element="resources-section">
+    <h2>NCD Academy's Learning Resources</h2>
+    <article data-element="quick-content">
+      <h3>Quick Content</h3>
+      <p>Short, introductory videos covering critical health topics.</p>
+      <button data-element="quick-content-button">View Quick Content</button>
+    </article>
+    <article data-element="courses">
+      <h3>Courses</h3>
+      <p>Comprehensive courses addressing the five leading NCDs.</p>
+      <button data-element="courses-button">View Full Catalog</button>
+    </article>
+  </section>
 
-<!-- Footer Section -->
-<footer data-element="footer">
-  <div data-element="partners">
-    <h3>Course Partners</h3>
-    <div>
-      <span data-element="partner-icon">Icon A</span>
-      <span data-element="partner-icon">Icon B</span>
-      <span data-element="partner-icon">Icon C</span>
+  <!-- Footer Section -->
+  <footer data-element="footer">
+    <div data-element="partners">
+      <h3>Course Partners</h3>
+      <div>
+        <span data-element="partner-icon">Icon A</span>
+        <span data-element="partner-icon">Icon B</span>
+        <span data-element="partner-icon">Icon C</span>
+      </div>
     </div>
-  </div>
-  <div data-element="supported-by">
-    <h3>Supported By</h3>
-    <div>
-      <span data-element="support-icon">Icon 1</span>
-      <span data-element="support-icon">Icon 2</span>
-      <span data-element="support-icon">Icon 3</span>
+    <div data-element="supported-by">
+      <h3>Supported By</h3>
+      <div>
+        <span data-element="support-icon">Icon 1</span>
+        <span data-element="support-icon">Icon 2</span>
+        <span data-element="support-icon">Icon 3</span>
+      </div>
     </div>
-  </div>
-  <p data-element="footer-text">Available free of charge worldwide through support from:</p>
-</footer>
+    <p data-element="footer-text">Available free of charge worldwide through support from:</p>
+  </footer>
+</div>
