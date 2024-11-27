@@ -1,11 +1,18 @@
 {% if include.id == nil or include.id == '' %}
   <p class="c_alert font_5">Missing Course ID</p>
 {% else %}
-<!-- NCD Academy Logo -->
+<!-- NCD Academy Logo & Login -->
 
-<div class="bg_black-_05 br_1 br_solid br_black-3 br_radius grid items_center justify_center m-l_0:lg m-t_4 m-t_5:lg m-x_4 ncd-logo shadow_bevel-light">
-  <img class="bg-blend_multiply p_4 w_100"  src="{% include URL.html media='{B94EDF85-2BB6-4B94-8B04-14A2AAD18F9E}' %}" alt="NCD Academy Logo">
-</div>
+<section zone-label="login-section" class="m-b_5:lg m-b_4">
+  <div
+    class="relative m-r_4:lg m-t_5:lg h:bg_primary-5 isolate_isolation bg_black-_05 br_1 br_solid br_black-3 p_4 br_radius grid items_center justify_center m-l_0:lg ncd-logo shadow_bevel-light relative">
+   <div class="col_all row_all">
+     <img class="w_100 bg-blend_multiply"
+     src="{% include URL.html media='{B94EDF85-2BB6-4B94-8B04-14A2AAD18F9E}' %}" alt="NCD Academy Logo">
+     </div>
+      <a href="https://ncdacademy.acc.org/Public/Login.aspx" class="b_0 bg_primary br-tl_radius br_square c_white col_all expanded-click-area h:bg_primary-n2 l_auto m-b_n4 m-l_auto m-r_n4 not-link p-x_4 p-y_3 r_0 row_all self_end t_auto">Login <i class="fa-solid fa-arrow-right"></i></a>
+   </div>
+</section>
 <!-- Loop Through Certification Section -->
 <!-- After Review the BL is suppressing the Section, but I am keeping the code but clearing the data because I bet it will be back -->
 {% if site.data.Blocks.NCD.certifications %}
