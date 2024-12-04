@@ -10,26 +10,30 @@ layout: arches-sidebar-double
 site.data.Blocks.NCD.main_content | where: "id", page.course_id | first %} {% if
 content_data %}
 <div class="main-content">
-<section class="reading-typography font-size_up m-y_4" id="introduction"  style="--custom-font-size-up: 1;">
-  <h2 class="lh_2">
-    {{ content_data.title }}
+  <section
+    class="reading-typography font-size_up m-y_4"
+    id="introduction"
+    style="--custom-font-size-up: 1"
+  >
+    <h2 class="lh_2">
+      {{ content_data.title }}
 
-    <small class="font_n2 c_black-7 block">
-      {% if content_data.credits %} 
-      <strong>Avaliable Creds:</strong> {{ content_data.credits }} {% endif %} {% if
-      content_data.credits and content_data.duration %} | {% endif %} {% if
-      content_data.duration %} <strong>Course Duration:</strong> {{ content_data.duration }} {% endif %}
-    </small>
-  </h2>
-  {% assign paragraphs = content_data.description | split: '<p>' %}
+      <small class="font_n2 c_black-7 block">
+        {% if content_data.credits %}
+        <strong>Avaliable Creds:</strong> {{ content_data.credits }} {% endif %}
+        {% if content_data.credits and content_data.duration %} | {% endif %} {%
+        if content_data.duration %} <strong>Course Duration:</strong> {{
+        content_data.duration }} {% endif %}
+      </small>
+    </h2>
+    {% assign paragraphs = content_data.description | split: '
+    <p>' %}</p>
     <div class="lh_2">
-      {% for paragraph in paragraphs %}
-        {% unless paragraph == '' %}
-          <p>{{ paragraph | strip_html }}</p>
-        {% endunless %}
-      {% endfor %}
+      {% for paragraph in paragraphs %} {% unless paragraph == '' %}
+      <p>{{ paragraph | strip_html }}</p>
+      {% endunless %} {% endfor %}
     </div>
-</section>
+  </section>
   <!-- Course Trailer Section -->
   <div class="course-trailer">
     <h3>Course Trailer</h3>
@@ -44,29 +48,27 @@ content_data %}
     ></iframe>
   </div>
   <!-- Start Course Section -->
+  {% assign main_button = site.data.Blocks.NCD.buttons | where: "id",
+  page.course_id | where: "language", "main" | first %}
+  {% if main_button and main_button.link and main_button.link != "#" %}
   <div class="items_center bg_black-2 p_4 br_radius m-t_5:lg m-t__4">
     <h3 class="font_display font_bold text_center c_black m-y_3:md">
       Start Course
     </h3>
-    {% assign main_button = site.data.Blocks.NCD.buttons | where: "id",
-    page.course_id | where: "language", "main" | first %} {% if main_button %}
+   
     <div
       class="main-language grid columns_1 columns_3:md gap-x_4 gap-y_5:lg gap-y_4"
     >
       <a
         class="btn btn-primary max-w_20 col-start_2:md col-end_3:md"
-        href="{{ main_button.href }}"
+        href="{{ main_button.link }}"
         >{{ main_button.label }}</a
       >
     </div>
-    {% endif %}
-    {% assign other_buttons = site.data.Blocks.NCD.buttons 
-      | where: "id", page.course_id 
-      | where_exp: "item", "item.language != 'main'" 
-      | sort: "label" %}
-      {% if other_buttons.size > 0 %}
-        
 
+    {% assign other_buttons = site.data.Blocks.NCD.buttons | where:
+    "id", page.course_id | where_exp: "item", "item.language != 'main'" | sort:
+    "label" %} {% if other_buttons.size > 0 %}
 
     <h4
       class="c_black-9 flex flex_column flex_row:md font_display font_medium m_0 p-y_5:md p-y_4"
@@ -88,28 +90,27 @@ content_data %}
     <div
       class="other-languages grid columns_2 columns_3:md gap-x_4 gap-y_4:lg gap-y_4 m-b_3"
     >
-
-      {% for button in other_buttons %} 
-      <a class="btn btn-secondary" href="{{ button.href }}"
+      {% for button in other_buttons %}
+      {% if button.link and button.link != "#" %}
+        <a class="btn btn-secondary" href="{{ button.link }}"
         >{{ button.label }}</a
       >
+      {% endif %}
       {% endfor %}
     </div>
-  {% endif %}
+    {% endif %}
   </div>
+  {% else  %}
+  <div class="items_center bg_black-2 p_4 br_radius m-t_5:lg m-t__4">
+    <h3 class="font_display font_bold text_center c_black m-y_3:md">
+      Course Coming Soon
+    </h3></div>
+{% endif %} 
   <!-- Back to Catalog Link -->
-  {% if content_data.catalog_guid %}
-    <div class="back-link p_3 text_center">
-      <a href="{% include URL.html guid=content_data.catalog_link  %} ">
-        <i class="fa-solid fa-arrow-left p-r_3"></i> Back to full catalog
-      </a>
-    </div>
-  {% else %}
-    <div class="back-link p_3 text_center">
-      <a href="{% include URL.html url=content_data.catalog_link  %} ">
-        <i class="fa-solid fa-arrow-left p-r_3"></i> Back to full catalog
-      </a>
-    </div>
-  {% endif %}
+  <div class="back-link p_3 text_center">
+    <a href="{% include URL.html url="../Course_List/"  %} ">
+      <i class="fa-solid fa-arrow-left p-r_3"></i> Back to full catalog
+    </a>
+  </div>
 </div>
 {% endif %} {% endif %} {% endif %}

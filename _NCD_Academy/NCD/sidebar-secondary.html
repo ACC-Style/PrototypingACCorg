@@ -22,11 +22,12 @@
       <hr class="bg_primary m-y_5:lg m-y_4">
       <h4>Certification</h4>
       <p>
-        {% if certification.link_guid %}
-          <a href="{% include URL.html guid=certification.link_guid %}">{{ certification.description }}</a></p>
-          {% else %}        
-          <a href="{{ certification.link }}">{{ certification.description }}</a></p>
+        {% if certification.link_guid and certification.link_guid != "{sitecore-guid-from-web-team}"  %}
+          <a href="{% include URL.html guid=certification.link_guid %}">{{ certification.description }}</a>
+          {% elsif  certification.link and  certification.link != "#" %}        
+          <a href="{{ certification.link }}">{{ certification.description }}</a>
         {% endif %}
+      </p>
     </div>
     {% endif %}
   {% endfor %}
@@ -67,7 +68,12 @@
 {% assign has_related_education = false %}
 {% for item in site.data.Blocks.NCD.related_education %}
   {% if item.id == include.id %}
-    {% assign has_related_education = true %}
+    {% if item.link != null and item.link != "#" %}
+      {% assign has_related_education = true %}
+    {% endif %}
+    {% if item.link_guid and item.link_guid != "{sitecore-guid-from-web-team}" %}
+      {% assign has_related_education = true %}
+    {% endif %}
   {% endif %}
 {% endfor %}
 
@@ -75,27 +81,29 @@
 <div class="related-education p-x_4 p-l_0:lg ">
   <hr class="bg_primary m-y_5:lg m-y_4">
   <h4>Related Education</h4>
-  <div class="wrapper-container">
+  <ul class="wrapper-container ul_none">
     {% for item in site.data.Blocks.NCD.related_education %}
       {% if item.id == include.id %}
-      <div class="related-item relative  flex flex_column flex_row:md gap-x_4 gap-y_3 m-b_5 m-b_4:md">
-        {% if item.image_guid %}
-          <img class="w_100 br_radius aspect_3x2 max-w_10" src="{% include URL.html media=item.image_guid %}" alt="{{ item.alt }}">
-        {% else %}
-          <img class="w_100 br_radius aspect_3x2 max-w_10" src="{% include URL.html url=item.image %}" alt="{{ item.alt }}">
-        {% endif %}
-        <div>
-          <div class="c_black lh_1 m-b_2">{{ item.title }}</div>
-          {% if item.link_guid %}
-            <a class="link expanded-click-area" href="{% include URL.html guid=item.link_guid %}">{{ item.course }} <i class="fa-solid fa-arrow-right p-l_2"></i></a>
-          {% else %}
-            <a class="link expanded-click-area" href="{{ item.link }}">{{ item.course }} <i class="fa-solid fa-arrow-right p-l_2"></i></a>
+        {% if item.link_guid and item.link_guid != "{sitecore-guid-from-web-team}" %}
+          <li class="related-item relative m-b_5 m-b_4:md h:bg_primary-5 br_radius m-x_n3 p_4">
+              <h5 class="c_black lh_1 m-b_2">{{ item.title }}
+                <br>
+                <small class="c_primary-n2">{{ item.type }}</small>
+              </h5>
+              <a class="not-link h:c_primary-n3 expanded-click-area" target="_blank" href="{% include URL.html guid=item.link_guid %}">{{ item.type }}<i class="fa-solid fa-arrow-right p-l_2"></i></a>
+            </li>
+          {% elsif item.link and item.link != "#" %}
+            <li class="related-item relative m-b_5 m-b_4:md h:bg_primary-5 br_radius m-x_n3 p_4">
+                <h5 class="c_black lh_1 m-b_2">{{ item.title }}
+                  <br>
+                  <small class="c_primary-n2">{{ item.type }}</small>
+                </h5>
+                <a class="not-link h:c_primary-n3 expanded-click-area" target="_blank" href="{{ item.link }}">{{ item.type }}<i class="fa-solid fa-arrow-right p-l_2"></i></a>
+              </li>
           {% endif %}
-        </div>
-      </div>
       {% endif %}
     {% endfor %}
-  </div>
+      </ul>
 </div>
 {% endif %}
 {% endif %}
