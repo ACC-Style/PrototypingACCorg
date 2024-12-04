@@ -1,14 +1,14 @@
 ---
 layout: arches
-name: Home
+name: Home Access
 position: "WIC Prototype"
 ---
 
 {% include MicroSite/heroimage.dynamic.html parent_link ="#" parent_page_name
 ="Member Sections" page_title ="Women in Cardiology: Member Section" cta_title
-="Empower. Connect. Lead." cta_description ="Unlock exclusive resources,
+="DocMater where the conversation matters. " cta_description ="Unlock exclusive resources,
 expand your influence, and support our mission. Join the Women in Cardiology
-section today!" cta_link ="" cta_button_text ="Join Today" %}
+section today!" cta_link ="" cta_button_text ="Join the Conversation" %}
 
 <section grid-template="page-layout" class="">
   <div grid-area="sidebar-primary">
@@ -121,50 +121,35 @@ section today!" cta_link ="" cta_button_text ="Join Today" %}
       </ul>
     </nav>
   </div>
-  <aside grid-area="sidebar-secondary">
-    <div
-      data-item="cta-overlay"
-      class="bg_black-3 br_1 br_black-3 br_solid br-r_0 br-tl_round br-bl_round c_black color_inherit shadow_bevel-light p_4 p_5:lg reading-typography relative z_1 m-t_4 m-l_4"
-    >
-    {% include_relative PageBlocks/section-access-check.html section_name="Women in Cardiology" section_url="https://www.acc.org/Membership/Sections-and-Councils/Women-in-Cardiology-Section"  %}
-    </div>
-    <div
-    data-item="cta-overlay"
-    class="bg_black-3 br_1 br_black-3 br_solid br-r_0 br-tl_round br-bl_round c_black color_inherit shadow_bevel-light p_4 p_5:lg reading-typography relative z_1 m-t_4 m-l_4"
-  >
-  {% include_relative PageBlocks/section-access-check.html section_name="Women in Cardiology" section_url="https://www.acc.org/Membership/Sections-and-Councils/Women-in-Cardiology-Section" user_state='logged_in_not_college_member' %}
-  </div>
-  <div
-  data-item="cta-overlay"
-  class="bg_black-3 br_1 br_black-3 br_solid br-r_0 br-tl_round br-bl_round c_black color_inherit shadow_bevel-light p_4 p_5:lg reading-typography relative z_1 m-t_4 m-l_4"
->
-{% include_relative PageBlocks/section-access-check.html section_name="Women in Cardiology" section_url="https://www.acc.org/Membership/Sections-and-Councils/Women-in-Cardiology-Section" user_state='logged_in_college_member_no_section_access' %}
-</div>
-<div
-data-item="cta-overlay"
-class="bg_black-3 br_1 br_black-3 br_solid br-r_0 br-tl_round br-bl_round c_black color_inherit shadow_bevel-light p_4 p_5:lg reading-typography relative z_1 m-t_4 m-l_4"
->
-{% include_relative PageBlocks/section-access-check.html section_name="Women in Cardiology" section_url="https://www.acc.org/Membership/Sections-and-Councils/Women-in-Cardiology-Section" user_state='logged_in_college_member_with_section_access' %}
-</div>
-  </aside>
   <div
     grid-area="content"
-    class="reading-typography font-size_up p-l_4:lg max-w_65 p-t_5:lg p-t_4"
-    style="--custom-font-size-up: 1.06"
+    class="wrapper-container"
+
+    
   >
-    <h2 class="lh_2 m-b_4">
-     The Women in Cardiology: Member Section
-      <small class="block font-size_down-1"
-        >Where we champion women’s leadership, professional growth, and
-        wellness.</small
-      >
-    </h2>
-    <p>The Women in Cardiology Section of the ACC offers women cardiologists opportunities to strengthen their professional support system and skills through networking events, professional development and mentoring programs. In addition, membership and active involvement in the Section provides a training ground for developing leadership skills and understanding the governance structure and avenues to leadership within the College.</p>
-    <p>
-      Our mission is to foster a supportive community that advocates for gender
-      and career equity, empowering women cardiologists across all specialties and
-      career stages. Join us in creating a more inclusive and dynamic field in
-      cardiovascular medicine.
-    </p>
+  <section class="grid columns_1 columns_3:lg">
+    <main zone-label="introduction" class="reading-typography font-size_up p-l_4:lg max-w_65 p-t_5:lg p-t_4 col-start_start col-end_end col-end_n2:lg " style="--custom-font-size-up: 1.06">
+      <h2 class="lh_2 m-b_4">
+        The Women in Cardiology: Member Section
+         <small class="block font-size_down-1"
+           >Where we champion women’s leadership, professional growth, and
+           wellness.</small
+         >
+       </h2>
+       <p>The Women in Cardiology Section of the ACC offers women cardiologists opportunities to strengthen their professional support system and skills through networking events, professional development and mentoring programs. In addition, membership and active involvement in the Section provides a training ground for developing leadership skills and understanding the governance structure and avenues to leadership within the College.</p>
+      </main>
+    <aside class="col-end_end col-start_start col-start_n2:lg reading-typography wrapper-container">
+      <div class="m-t_4:lg m-r_4:lg bg_white br_1 br_black-3 br_radius br_solid grid columns_2 columns_3:md gap_4 items_start justify_start p_4 shadow_overlap-light">
+        <img src="https://www.acc.org//-/media/Non-Clinical/Images/2019/07/01/Lundberg-Gina-600x600.jpg" class="aspect_1x1 bg_secondary-4 br_radius m_auto max-w_20 self_center w_100 col_all col-end_2:md">
+        <div class="font_display lh_1 c_secondary-n1 col-start_2:md col_all">
+          Gina Price Lundberg, MD, FACC
+          <strong class="block font-size_down-1 c_primary font_bold">Chair</strong>
+          <div class="col_all items_center justify_center grid">
+            <a href="#about" class="btn btn-secondary col_all">Message from Chair</a>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </section>
   </div>
 </section>
