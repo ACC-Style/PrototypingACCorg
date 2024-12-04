@@ -1,7 +1,7 @@
 ---
 layout: arches
 name: Home Access
-position: "WIC Prototype"
+position: "Section Member"
 ---
 
 {% include MicroSite/heroimage.dynamic.html parent_link ="#" parent_page_name
@@ -29,8 +29,9 @@ section today!" cta_link ="" cta_button_text ="Join the Conversation" %}
             <div class="flex flex_column flex_none justify_start">
               <div class="flex_none">
                 <span class="fa-stack">
-                  <i class="fas fa-spacer fa-stack-1x" aria-hidden="true"></i>
-                </span>
+                  <i class="fas fa-minus fa-stack-1x"></i>
+                  <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+                  </span>
               </div>
             </div>
             <div class="flex_auto self_center">
@@ -86,8 +87,9 @@ section today!" cta_link ="" cta_button_text ="Join the Conversation" %}
             <div class="flex flex_column flex_none justify_start">
               <div class="flex_none">
                 <span class="fa-stack">
-                  <i class="fas fa-spacer fa-stack-1x" aria-hidden="true"></i>
-                </span>
+                  <i class="fas fa-minus fa-stack-1x"></i>
+                  <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+                  </span>
               </div>
             </div>
             <div class="flex_auto self_center">
@@ -110,10 +112,10 @@ section today!" cta_link ="" cta_button_text ="Join the Conversation" %}
               </div>
             </div>
             <div class="flex_auto self_center">
-              <a
+              <a target="blank"
                 href="../members_area"
                 class="text-shadow_black-1 c_white-9 p-y_2 p-x_3 w_100 h:c_white inline-block h:underline self_center a:bg_black-3"
-                >Members Area</a
+                >Doc Matter <i class="fa-solid fa-external-link-alt font-size_down m-l_3"></i></a
               >
             </div>
           </div>
@@ -138,18 +140,28 @@ section today!" cta_link ="" cta_button_text ="Join the Conversation" %}
        </h2>
        <p>The Women in Cardiology Section of the ACC offers women cardiologists opportunities to strengthen their professional support system and skills through networking events, professional development and mentoring programs. In addition, membership and active involvement in the Section provides a training ground for developing leadership skills and understanding the governance structure and avenues to leadership within the College.</p>
       </main>
-    <aside class="col-end_end col-start_start col-start_n2:lg reading-typography wrapper-container">
+    <aside class="col-end_end col-start_start col-start_n2:lg reading-typography wrapper-container p-l_4:lg">
       <div class="m-t_4:lg m-r_4:lg bg_white br_1 br_black-3 br_radius br_solid grid columns_2 columns_3:md gap_4 items_start justify_start p_4 shadow_overlap-light">
         <img src="https://www.acc.org//-/media/Non-Clinical/Images/2019/07/01/Lundberg-Gina-600x600.jpg" class="aspect_1x1 bg_secondary-4 br_radius m_auto max-w_20 self_center w_100 col_all col-end_2:md">
         <div class="font_display lh_1 c_secondary-n1 col-start_2:md col_all">
           Gina Price Lundberg, MD, FACC
           <strong class="block font-size_down-1 c_primary font_bold">Chair</strong>
-          <div class="col_all items_center justify_center grid">
+          <div class="col_all items_center justify_center grid m-t_3 ">
             <a href="#about" class="btn btn-secondary col_all">Message from Chair</a>
           </div>
         </div>
       </div>
     </aside>
+  </section>
+  <section class="columns_1 grid columns_2:lg gap_5:lg gap_4 reading-typography ">
+    <div>
+      <h3>Mission</h3>
+      <div class="wrapper-container">{% include_relative PageBlocks/UL_IconHeadlineText.html %}</div>
+    </div>
+    <div>
+      <h3>Initiatives</h3>
+      <div class="wrapper-container">{% include_relative PageBlocks/UL_IconHeadlineText.html %}</div>
+    </div> 
   </section>
   </div>
 </section>
