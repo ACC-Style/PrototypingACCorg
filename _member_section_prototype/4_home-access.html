@@ -3,165 +3,356 @@ layout: arches
 name: Home Access
 position: "Section Member"
 ---
-
-{% include MicroSite/heroimage.dynamic.html parent_link ="#" parent_page_name
-="Member Sections" page_title ="Women in Cardiology: Member Section" cta_title
-="DocMater where the conversation matters. " cta_description ="Unlock exclusive resources,
-expand your influence, and support our mission. Join the Women in Cardiology
-section today!" cta_link ="" cta_button_text ="Join the Conversation" %}
-
-<section grid-template="page-layout" class="">
+{%
+  include MicroSite/heroimage.dynamic.html parent_link ="#" parent_page_name
+  ="Member Sections" page_title ="Women in Cardiology: Member Section" cta_title
+  ="DocMater where the conversation matters. " cta_description ="Unlock exclusive resources,
+  expand your influence, and support our mission. Join the Women in Cardiology
+  section today!" cta_link ="" cta_button_text ="Join the Conversation"
+%}
+{% comment %} Not using the page layout but this is what the nav would be. {% endcomment %}
+{% comment %}
+  <section grid-template="page-layout" class="">
   <div grid-area="sidebar-primary">
-    <nav class="nav-sub bg_primary c_white font_2 font_ui">
-      <ul class="ul_none flex_column flex">
-        <li class="nav-item font-size_up" data-nav="parent">
-          <div class="bg_black-4">
-            <a
-              href="../index/"
-              class="text-shadow_black-1 block w_100 c_white p-y_2 p-x_4 w_100 h:c_white inline-block h:underline self_center active"
-              >Women in Cardiology</a
-            >
-          </div>
-        </li>
+      <nav class="nav-sub bg_primary c_white font_2 font_ui">
+        <ul class="ul_none flex_column flex">
+          <li class="nav-item font-size_up" data-nav="parent">
+            <div class="bg_black-4">
+              <a
+                href="../index/"
+                class="text-shadow_black-1 block w_100 c_white p-y_2 p-x_4 w_100 h:c_white inline-block h:underline self_center active"
+                >Women in Cardiology</a
+              >
+            </div>
+          </li>
 
-        <li class="nav-item" data-nav="child">
-          <div class="flex flex_row">
-            <div class="flex flex_column flex_none justify_start">
-              <div class="flex_none">
-                <span class="fa-stack">
-                  <i class="fas fa-minus fa-stack-1x"></i>
-                  <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+          <li class="nav-item" data-nav="child">
+            <div class="flex flex_row">
+              <div class="flex flex_column flex_none justify_start">
+                <div class="flex_none">
+                  <span class="fa-stack">
+                    <i class="fas fa-minus fa-stack-1x"></i>
+                    <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+                    </span>
+                </div>
+              </div>
+              <div class="flex_auto self_center">
+                <a
+                  href="../about/"
+                  class="text-shadow_black-1 c_white-9 p-y_2 p-x_3 w_100 h:c_white inline-block h:underline self_center a:bg_black-3 "
+                  >About</a
+                >
+              </div>
+            </div>
+          </li>
+
+          <li class="nav-item" data-nav="child">
+            <div class="flex flex_row">
+              <div class="flex flex_column flex_none justify_start">
+                <div class="flex_none">
+                  <span class="fa-stack">
+                    <i class="fas fa-spacer fa-stack-1x" aria-hidden="true"></i>
                   </span>
+                </div>
+              </div>
+              <div class="flex_auto self_center">
+                <a
+                  href="../announcements.html"
+                  class="text-shadow_black-1 c_white-9 p-y_2 p-x_3 w_100 h:c_white inline-block h:underline self_center a:bg_black-3"
+                  >Announcements</a
+                >
               </div>
             </div>
-            <div class="flex_auto self_center">
-              <a
-                href="../about/"
-                class="text-shadow_black-1 c_white-9 p-y_2 p-x_3 w_100 h:c_white inline-block h:underline self_center a:bg_black-3 "
-                >About</a
-              >
-            </div>
-          </div>
-        </li>
+          </li>
 
-        <li class="nav-item" data-nav="child">
-          <div class="flex flex_row">
-            <div class="flex flex_column flex_none justify_start">
-              <div class="flex_none">
-                <span class="fa-stack">
-                  <i class="fas fa-spacer fa-stack-1x" aria-hidden="true"></i>
-                </span>
-              </div>
-            </div>
-            <div class="flex_auto self_center">
-              <a
-                href="../announcements.html"
-                class="text-shadow_black-1 c_white-9 p-y_2 p-x_3 w_100 h:c_white inline-block h:underline self_center a:bg_black-3"
-                >Announcements</a
-              >
-            </div>
-          </div>
-        </li>
-
-        <li class="nav-item" data-nav="child">
-          <div class="flex flex_row">
-            <div class="flex flex_column flex_none justify_start">
-              <div class="flex_none">
-                <span class="fa-stack">
-                  <i class="fas fa-spacer fa-stack-1x" aria-hidden="true"></i>
-                </span>
-              </div>
-            </div>
-            <div class="flex_auto self_center">
-              <a
-                href="../webinars"
-                class="text-shadow_black-1 c_white-9 p-y_2 p-x_3 w_100 h:c_white inline-block h:underline self_center a:bg_black-3"
-                >Webinars</a
-              >
-            </div>
-          </div>
-        </li>
-
-        <li class="nav-item" data-nav="child">
-          <div class="flex flex_row">
-            <div class="flex flex_column flex_none justify_start">
-              <div class="flex_none">
-                <span class="fa-stack">
-                  <i class="fas fa-minus fa-stack-1x"></i>
-                  <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+          <li class="nav-item" data-nav="child">
+            <div class="flex flex_row">
+              <div class="flex flex_column flex_none justify_start">
+                <div class="flex_none">
+                  <span class="fa-stack">
+                    <i class="fas fa-spacer fa-stack-1x" aria-hidden="true"></i>
                   </span>
+                </div>
+              </div>
+              <div class="flex_auto self_center">
+                <a
+                  href="../webinars"
+                  class="text-shadow_black-1 c_white-9 p-y_2 p-x_3 w_100 h:c_white inline-block h:underline self_center a:bg_black-3"
+                  >Webinars</a
+                >
               </div>
             </div>
-            <div class="flex_auto self_center">
-              <a
-                href="../resources"
-                class="text-shadow_black-1 c_white-9 p-y_2 p-x_3 w_100 h:c_white inline-block h:underline self_center a:bg_black-3"
-                >Resources</a
-              >
-            </div>
-          </div>
-        </li>
+          </li>
 
-        <li class="nav-item" data-nav="child">
-          <div class="flex flex_row">
-            <div class="flex flex_column flex_none justify_start">
-              <div class="flex_none">
-                <span class="fa-stack">
-                  <i class="fas fa-spacer fa-stack-1x" aria-hidden="true"></i>
-                </span>
+          <li class="nav-item" data-nav="child">
+            <div class="flex flex_row">
+              <div class="flex flex_column flex_none justify_start">
+                <div class="flex_none">
+                  <span class="fa-stack">
+                    <i class="fas fa-minus fa-stack-1x"></i>
+                    <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+                    </span>
+                </div>
+              </div>
+              <div class="flex_auto self_center">
+                <a
+                  href="../resources"
+                  class="text-shadow_black-1 c_white-9 p-y_2 p-x_3 w_100 h:c_white inline-block h:underline self_center a:bg_black-3"
+                  >Resources</a
+                >
               </div>
             </div>
-            <div class="flex_auto self_center">
-              <a target="blank"
-                href="../members_area"
-                class="text-shadow_black-1 c_white-9 p-y_2 p-x_3 w_100 h:c_white inline-block h:underline self_center a:bg_black-3"
-                >Doc Matter <i class="fa-solid fa-external-link-alt font-size_down m-l_3"></i></a
-              >
-            </div>
-          </div>
-        </li>
-      </ul>
-    </nav>
-  </div>
-  <div
-    grid-area="content"
-    class="wrapper-container"
+          </li>
 
-    
+          <li class="nav-item" data-nav="child">
+            <div class="flex flex_row">
+              <div class="flex flex_column flex_none justify_start">
+                <div class="flex_none">
+                  <span class="fa-stack">
+                    <i class="fas fa-spacer fa-stack-1x" aria-hidden="true"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="flex_auto self_center">
+                <a target="blank"
+                  href="../members_area"
+                  class="text-shadow_black-1 c_white-9 p-y_2 p-x_3 w_100 h:c_white inline-block h:underline self_center a:bg_black-3"
+                  >Doc Matter <i class="fa-solid fa-external-link-alt font-size_down m-l_3"></i></a
+                >
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div
+      grid-area="content"
+      class="wrapper-container"
+
+
+    >
+
+    </div>
+  </section>
+{% endcomment %}
+<section zone-label="startingSection" class="grid columns_1 columns_3:lg p_4 gap_5:lg gap_4">
+  <main
+    zone-label="introduction"
+    class="reading-typography font-size_up p-l_4:lg max-w_65 p-t_5:lg p-t_4 col-start_start col-end_end col-end_n2:lg "
+    style="--custom-font-size-up: 1.06"
   >
-  <section class="grid columns_1 columns_3:lg">
-    <main zone-label="introduction" class="reading-typography font-size_up p-l_4:lg max-w_65 p-t_5:lg p-t_4 col-start_start col-end_end col-end_n2:lg " style="--custom-font-size-up: 1.06">
-      <h2 class="lh_2 m-b_4">
-        The Women in Cardiology: Member Section
-         <small class="block font-size_down-1"
-           >Where we champion women’s leadership, professional growth, and
-           wellness.</small
-         >
-       </h2>
-       <p>The Women in Cardiology Section of the ACC offers women cardiologists opportunities to strengthen their professional support system and skills through networking events, professional development and mentoring programs. In addition, membership and active involvement in the Section provides a training ground for developing leadership skills and understanding the governance structure and avenues to leadership within the College.</p>
-      </main>
-    <aside class="col-end_end col-start_start col-start_n2:lg reading-typography wrapper-container p-l_4:lg">
-      <div class="m-t_4:lg m-r_4:lg bg_white br_1 br_black-3 br_radius br_solid grid columns_2 columns_3:md gap_4 items_start justify_start p_4 shadow_overlap-light">
-        <img src="https://www.acc.org//-/media/Non-Clinical/Images/2019/07/01/Lundberg-Gina-600x600.jpg" class="aspect_1x1 bg_secondary-4 br_radius m_auto max-w_20 self_center w_100 col_all col-end_2:md">
-        <div class="font_display lh_1 c_secondary-n1 col-start_2:md col_all">
-          Gina Price Lundberg, MD, FACC
-          <strong class="block font-size_down-1 c_primary font_bold">Chair</strong>
-          <div class="col_all items_center justify_center grid m-t_3 ">
-            <a href="#about" class="btn btn-secondary col_all">Message from Chair</a>
-          </div>
+    <h2 class="lh_2 m-b_4">
+      The Women in Cardiology: Member Section
+      <small class="block font-size_down-1"
+        >Where we champion women’s leadership, professional growth, and wellness.</small
+      >
+    </h2>
+    <p>
+      The Women in Cardiology Section of the ACC offers women cardiologists opportunities to strengthen their
+      professional support system and skills through networking events, professional development and mentoring programs.
+      In addition, membership and active involvement in the Section provides a training ground for developing leadership
+      skills and understanding the governance structure and avenues to leadership within the College.
+    </p>
+  </main>
+  <aside class="col-end_end col-start_start col-start_n2:lg reading-typography wrapper-container p-l_4:lg">
+    <div class="m-t_4:lg m-r_4:lg bg_white br_1 br_black-3 br_radius br_solid grid columns_2 columns_3:md gap_4 items_start justify_start p_4 shadow_overlap-light">
+      <img
+        src="https://www.acc.org//-/media/Non-Clinical/Images/2019/07/01/Lundberg-Gina-600x600.jpg"
+        class="aspect_1x1 bg_secondary-4 br_radius m_auto max-w_20 self_center w_100 col_all col-end_2:md"
+      >
+      <div class="font_display lh_1 c_secondary-n1 col-start_2:md col_all">
+        Gina Price Lundberg, MD, FACC
+        <strong class="block font-size_down-1 c_primary font_bold">Chair</strong>
+        <div class="col_all items_center justify_center grid m-t_3 ">
+          <a href="#about" class="btn btn-secondary expanded-click-area col_all">Message from Chair</a>
         </div>
       </div>
-    </aside>
-  </section>
-  <section class="columns_1 grid columns_2:lg gap_5:lg gap_4 reading-typography ">
-    <div>
-      <h3>Mission</h3>
-      <div class="wrapper-container">{% include_relative PageBlocks/UL_IconHeadlineText.html %}</div>
     </div>
-    <div>
-      <h3>Initiatives</h3>
-      <div class="wrapper-container">{% include_relative PageBlocks/UL_IconHeadlineText.html %}</div>
-    </div> 
-  </section>
+  </aside>
+</section>
+
+<section
+  zone-label="mission and about"
+  class="columns_1 grid columns_2:lg gap_5:lg gap_4 p_4 p_5:lg reading-typography bg_black-1"
+>
+  <div class="wrapper-container">
+    <h3 class="c_primary-n3 font_bold text_center text_left:md">Mission</h3>
+    {% include_relative PageBlocks/UL_IconHeadlineText.html data_path="Blocks.MemberSection.UL_IconHeadlineText_Mission" grid_modifier="columns_2:lg columns_1 gap-x_5:lg gap_4 grid" %}
+  </div>
+
+  <div class="wrapper-container">
+    <h3 class="c_primary-n3 font_bold text_center text_left:md">Initiatives</h3>
+    {% include_relative PageBlocks/UL_IconHeadlineText.html data_path="Blocks.MemberSection.UL_IconHeadlineText_Initatives" grid_modifier="columns_2:lg columns_1 gap-x_5:lg gap_4 grid" %}
+    <h3 class="c_primary-n3 font_bold text_center text_left:md">About WIC</h3>
+    <ul class="ul_none text_left relative">
+      <li class="flex flex_row gap_3 isolate justify_center justify_start:md m-l_0:md m_auto relative">
+        <span class="font-size_up">
+          Learn More about this
+          <a href="/Membership/Join-Us/Benefits" class="expanded-click-area"> Member Section</a>&nbsp;
+        </span>
+        <span class="flex flex_row">
+          <em class="c_accent font_6 m-t_3 fas fa-solid fa-ellipsis " aria-hidden="true"></em>
+          <em class="c_accent fa-chevron-right fa-solid fas font_6 m-l_n3 m-t_3" aria-hidden="true"></em>
+        </span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section zone-label="userActions" class="grid columns_1 columns_3:lg p_4  gap_4 p-y_5:lg p-t_4 ">
+  <div class=" col-start_start col-end_end col-end_n2:lg  reading-typography br_solid br_black-3 shadow_overlap-light p_4 bg_white br_radius realative">
+    <h3>Notifications</h3>
+    <div class="reading-typography font-size_up " style="--custom-font-size-up:.8">
+      {% include_relative PageBlocks/Notifications.html %}
+    </div>
+  </div>
+  <div class="flex flex_column gap_4 col-end_end col-start_start col-start_n2:lg reading-typography wrapper-container p-l_4:lg">
+    <div zone-label="card" class="br_solid br_black-3 shadow_overlap-light p_4  bg_white br_radius realative">
+      <h3>Webinars & Podcasts</h3>
+      <p>Learn from ACC’s experts about issues affecting women in cardiology.</p>
+      <div class="grid"><a href="#" class="btn btn-secondary expanded-click-area">Explore</a></div>
+    </div>
+    <div zone-label="card" class="br_solid br_black-3 shadow_overlap-light p_4  bg_white br_radius realative">
+      <h3>Resources</h3>
+      <p>Get recommendations for articles, books and more.</p>
+      <div class="grid"><a href="#" class="btn btn-secondary expanded-click-area">Explore</a></div>
+    </div>
+  </div>
+</section>
+<section
+  zone-label="feature"
+  class="bg_black-1 columns_1 columns_2:md gap_4 gap_5:md grid m-b_4 m-b_5:lg p_4 p_5:md reading-typography"
+>
+  <div class="">
+    <img
+      src="https://www.acc.org//-/media/Non-Clinical/Images/2024/11/07/acc-75th-anniversary"
+      alt="Staff celebrating ACC's 75th Anniversary"
+      class="w_100 aspect_3x2 "
+    >
+  </div>
+  <div class="font_n1 font_0:lg flex_column flex gap_4 ">
+    <div zone-label="main-content" class="">
+      <h2>WIC Member Engagement Grant</h2>
+      <p>
+        State chapters can work together to apply for money to support Women in Cardiology (WIC) events in their area.
+      </p>
+      <p>
+        Local meetings give women in cardiology a chance to practice leadership, make connections with others, serve on
+        panels, and meet other WIC members in their region.
+      </p>
+    </div>
+    <div class="flex flex_row m-t_auto">
+      <div class="flex_auto m-l_auto max-w_20">
+        Learn more about
+        <a
+          href=""
+          class="link"
+          >WIC Member Engagement Grant</a
+        >
+      </div>
+      <span class="flex flex_row flex_shrink">
+        <em class="c_accent font_6 m-t_3 fas fa-solid fa-ellipsis " aria-hidden="true"></em>
+        <em class="c_accent fa-chevron-right fa-solid fas font_6 m-l_n3 m-t_3" aria-hidden="true"></em>
+      </span>
+    </div>
+  </div>
+</section>
+
+<section zone-label="Footer Section" class="grid columns_1 columns_3:lg p_4  gap_4 p-y_5:lg p-t_4 ">
+  <div class=" col-start_start col-end_end col-end_n2:lg  reading-typography">
+    <div
+    class="aspect_21x9:md aspect_16x9 p_4 bg_acc m-b_5:lg m-y_4 bg_cover br_round flex flex_column items_center"
+    style="background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), url('/PrototypingACCorg/assets/images/ACC/StateAgenda/NorthAmericaMap.png')"
+  >
+    <div class="c_white color_inherit m-y_auto max-w_30 p-b_4 p-b_5:lg p_3 p_4:lg reading-typography self_start">
+      <h1 class="font_9:lg font_5:md font_3 lh_1 font_medium">State Chapters</h1>
+      <p class="font_1:lg font_0">
+        Engage with local WIC events through chapters in your area.
+      </p>
+      <a
+      href="https://www.acc.org/Membership/Sections-and-Councils/Women-in-Cardiology-Section/Chapter-Engagement "
+      class="float_right btn-sm btn btn-primary capitalize m-b_n0 shadow_1"
+      >Engage Today!</a
+    >
+    </div>
+  </div> 
+  <div
+      label="CTA-Callout"
+      class="bg_black-1 br_radius columns_1 columns_2:md font-size_up gap_3 gap_4:md gap_5:lg grid m-x_auto max-w_25 max-w_80:md reading-typography"
+      style="--custom-font-size-up: 1; --col-1:auto; --col-2:1fr; -row-1:375px;"
+    >
+      <!-- Image Section -->
+      <div grid-label="image" class="max-w_25 flex_grow ">
+        <img 
+          src="/PrototypingACCorg/assets/images/ACC/NCD/PhoneBackground.png"
+          alt="Discover a better work-life balance with us."
+          class="w_100 aspect_3x2 "
+        >
+      </div>
+
+      <!-- Content Section -->
+      <div grid-label="content-container" class="flex_auto grid columns_1 rows_1 self_center p-y_4 p-y_5:lg ">
+        <div grid-label="content" class="max-w_30 p-x_4 m_auto w_100 ">
+          <h4 class="c_black lh_1 m-b_4 font_accent max-w_25">Digital Book Club</h4>
+          <p class="lh_2">Nesciunt repellendus ullam aspernatur repellendus quam fuga vitae.</p>
+
+          <a
+            href="https://www.acc.org/Membership/Sections-and-Councils/Women-in-Cardiology-Section/Chapter-Engagement "
+            class="float_right btn-sm btn btn-primary capitalize m-b_n0 shadow_1"
+            >Start Today!</a
+          >
+        </div>
+      </div>
+      
+    </div>
+    <div
+      label="CTA_follow_up"
+      class="font-size_up m-x_n4 p_4 p_5:md reading-typography"
+      style="--custom-font-size-up: 1;"
+    >
+      <div
+        data-item="cta"
+        class="shadow_bevel-light p_4 p_5:lg bg_white br_round font-size_up m-t_6:lg m-y_4 m-y_5:md m_auto max-w_60 relative text_center relative"
+      >
+        <h2 data-item="cta-title" class="m-b_3 lh_1 font_medium font_display">
+          <strong class="font-size_up m-b_2 block">DocMatter</strong>
+          <small class="font-size_down block"
+            >Connecting You to the Conversations that Matter</small
+          >
+        </h2>
+        <div class="p-t_2 p-b_3" data-item="cta-description">
+          <p class="font-size_up">Connect with Women in Cardiology on DocMatter, a platform for ACC Members to ask case questions and learn best practices from peers.  </p>
+      </div>
+        <div class="grid justify_center">
+          <a
+            rel="noopener noreferrer"
+            href="https://www.surveymonkey.com/r/66ZMZBC"
+            target="_blank"
+            class="btn-lg btn btn-primary expanded-click-area br_solid btn btn-lg capitalize m-b_n2 shadow_overlap-bold"
+          >
+            Go To DocMatter
+          </a>
+        </div>
+      </div>
+      <p class="text_center">Questions or Issues? <a href="" target="_blank">Contact ACC Member Care</a>.</p>
+    </div>
+  </div>
+  <div
+    class="flex flex_column col-end_end col-start_start col-start_n2:lg reading-typography wrapper-container p-l_4:lg  "
+    style="--custom-font-size-up:.8"
+  >
+    <div class="br_solid br_black-3 shadow_emboss-light p_4 bg_black-1 br-tr_radius br-tl_radius realative overflow_scroll-y isolation_isolate scrollbar-mini">
+      {% include_relative PageBlocks/TwitterX.html %}
+    </div>
+    <div
+      class="p_4 eading-typography color-inerit c_white linear-gradient_custom br-br_radius br-bl_radius"
+      style="--start-color:#0b5243; --end-color:#00213b;"
+    >
+      <p class="font_1 lh_3 text-shadow_black-1">
+        <strong class="font-size_up-1">Join the Conversation</strong> <br>
+        <a href="https://twitter.com/hashtag/ACCWIC" target="_blank" class="c_white">#ACCWIC</a> <br>
+        <a href="https://twitter.com/ACCinTouch" target="_blank" class="c_white">@ACCinTouch</a>
+      </p>
+    </div>
   </div>
 </section>

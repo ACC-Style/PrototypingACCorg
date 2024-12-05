@@ -8,7 +8,7 @@
   {% assign data_object = data_object[part] %}
 {% endfor %}
 
-{% assign grid_styles = "columns_2:md columns_1 gap-x_5:lg gap_4 grid" %}
+{% assign grid_styles = "columns_2:md columns_1 gap-x_5:lg gap_4 grid p-x_4:lg" %}
 {% if include.grid_modifier %}
   {% assign grid_styles = include.grid_modifier %}
 {% endif %} 
@@ -21,32 +21,34 @@
 {% if include.container_modifier %}
   <section
     label="UL_IconHeadlineText"
-    class="reading-typography font-size_up p_4 {{ include.container_modifier }}"
+    class="reading-typography font-size_up p_4 wrapper-container {{ include.container_modifier }}"
     style="--custom-font-size-up: {{ font_size }}"
   >
 {% else %}
   <div
     label="UL_IconHeadlineText"
-    class="reading-typography font-size_up"
+    class="reading-typography font-size_up wrapper-container"
     style="--custom-font-size-up: {{ font_size }}"
   >
 {% endif %}
 
-<ul class="{{ grid_styles }} p-x_4:lg ul_none text_left">
+<ul class="{{ grid_styles }}  ul_none text_left">
   {% for listItem in data_object %}
-    <li class="flex flex_row:md flex_column items_start justify_start isolate relative c_accent {% if listItem.url %} p-x_4 h:bg_accent-5 {% endif %} p_3 br_radius">
-      <i class="c_inherit-all font_7 m-t_3 p-r_4 fas {{ listItem.icon_class }}" aria-hidden="true"></i>
-      <div class="font-size_up">
-        <div class="font_bold not-link c_inherit-all lh_3">
+    <li class="flex flex_row:md flex_column justify_start isolate relative c_accent m_0 {% if listItem.url %} p-x_4 h:bg_accent-5 items_start {% else %} items_center {% endif %} p_3 br_radius">
+      <span class="font-size_up-2"><i class="c_inherit-all font-size_up-2 m-t_3 p-r_4 fas {{ listItem.icon_class }}" aria-hidden="true"></i></span>
+      <div class="{% if listItem.dsecription %} text_left {% else %} text_center text_left:md {% endif %}  ">
+        <div class="font_display font_medium not-link max-w_25 m-x_auto m-l_0:md {% if listItem.url %} c_inherit-all {% else %} c_black {% endif %} lh_3">
           {% if listItem.url %}
             <a href="{{ listItem.url }}" class="not-link c_accent-n1 h:c_accent-n3 h:underline expanded-click-area" target="_blank" rel="noopener noreferrer">{{ listItem.headline }}</a>
           {% else %}
             {{ listItem.headline }}
           {% endif %}
         </div>
-        <span class="block font-size_down opacity_8 c_black">
-          {{ listItem.description }}
-        </span>
+        {% if listItem.description.size > 0 %}
+          <div class="block font-size_down-1 opacity_8 c_black max-w_30 m-x_auto m-l_0:md">
+            {{ listItem.description }}
+          </div>
+        {% endif %}
       </div>
     </li>
   {% endfor %}
