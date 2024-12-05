@@ -35,7 +35,7 @@
 <ul class="{{ grid_styles }}  ul_none text_left">
   {% for listItem in data_object %}
     <li class="flex flex_row:md flex_column justify_start isolate relative c_accent m_0 {% if listItem.url %} p-x_4 h:bg_accent-5 items_start {% else %} items_center {% endif %} p_3 br_radius">
-      <span class="font-size_up-2"><i class="c_inherit-all font-size_up-2 m-t_3 p-r_4 fas {{ listItem.icon_class }}" aria-hidden="true"></i></span>
+      <span class="font-size_up-2 m-t_3 p-r_4"><i class="c_inherit-all font-size_up-2 fa-solid fa-fw {{ listItem.icon_class }}" aria-hidden="true"></i></span>
       <div class="{% if listItem.dsecription %} text_left {% else %} text_center text_left:md {% endif %}  ">
         <div class="font_display font_medium not-link max-w_25 m-x_auto m-l_0:md {% if listItem.url %} c_inherit-all {% else %} c_black {% endif %} lh_3">
           {% if listItem.url %}
