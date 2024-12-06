@@ -171,7 +171,7 @@ position: "Section Member"
 
 <section
   zone-label="mission and about"
-  class="columns_1 grid columns_2:lg gap_5:lg gap_4 p_4 p_5:lg reading-typography bg_black-1"
+  class="columns_1 grid columns_2:lg gap_4:lg gap_4 p_4 p_5:lg reading-typography bg_black-1"
 >
   <div class="wrapper-container">
     <h3 class="c_primary-n3 font_bold text_center text_left:md">Mission</h3>
@@ -198,19 +198,29 @@ position: "Section Member"
 </section>
 
 <section zone-label="userActions" class="grid columns_1 columns_3:lg p_4  gap_4 p-y_5:lg p-t_4 ">
-  <div class=" col-start_start col-end_end col-end_n2:lg  reading-typography br_solid br_black-3 br_1 shadow_overlap-light p_4 bg_white br_radius realative">
+  <div class=" col-start_start col-end_end col-end_n2:lg  reading-typography  p_4 bg_white realative">
     <h3>Notifications</h3>
     <div class="reading-typography font-size_up " style="--custom-font-size-up:.8">
       {% include_relative PageBlocks/Notifications.html %}
     </div>
   </div>
   <div class="flex flex_column gap_4 col-end_end col-start_start col-start_n2:lg reading-typography wrapper-container p-l_4:lg">
-    <div zone-label="card" class="br_solid br_black-3 br_1 shadow_overlap-light p_4  bg_white br_radius realative">
+    <div zone-label="card" class=" p_4  bg_white br_radius realative">
+      <img
+      src="/PrototypingACCorg/assets/images/ACC/MemberSections/Webinars.png"
+      alt="Discover a better work-life balance with us."
+      class="w_100 aspect_21x9 bg_cover"
+    >
       <h3>Webinars & Podcasts</h3>
       <p>Learn from ACC’s experts about issues affecting women in cardiology.</p>
       <div class="grid"><a href="#" class="btn btn-secondary expanded-click-area">Explore</a></div>
     </div>
-    <div zone-label="card" class="br_solid br_black-3 br_1 shadow_overlap-light p_4  bg_white br_radius realative">
+    <div zone-label="card" class=" p_4  bg_white br_radius realative">
+      <img
+      src="/PrototypingACCorg/assets/images/ACC/MemberSections/Resources.png"
+      alt="Discover a better work-life balance with us."
+      class="w_100 aspect_21x9 bg_cover"
+    >
       <h3>Resources</h3>
       <p>Get recommendations for articles, books and more.</p>
       <div class="grid"><a href="#" class="btn btn-secondary expanded-click-area">Explore</a></div>
@@ -257,32 +267,45 @@ position: "Section Member"
 </section>
 
 <section zone-label="Footer Section" class="grid columns_1 columns_3:lg p_4  gap_4 p-y_5:lg p-t_4 ">
-  <div class=" col-start_start col-end_end col-end_n2:lg  reading-typography">
+  <div class=" col-start_start col-end_end col-end_n2:lg  reading-typography flex flex_column gap_3">
     <div
-    class="aspect_21x9:md aspect_16x9 p_4 bg_acc m-b_5:lg m-y_4 bg_cover br_round flex flex_column items_center"
-    style="background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), url('/PrototypingACCorg/assets/images/ACC/StateAgenda/NorthAmericaMap.png')"
-  >
-    <div class="c_white color_inherit m-y_auto max-w_30 p-b_4 p-b_5:lg p_3 p_4:lg reading-typography self_start">
-      <h1 class="font_9:lg font_5:md font_3 lh_1 font_medium">State Chapters</h1>
-      <p class="font_1:lg font_0">
-        Engage with local WIC events through chapters in your area.
-      </p>
-      <a
-      href="https://www.acc.org/Membership/Sections-and-Councils/Women-in-Cardiology-Section/Chapter-Engagement "
-      class="float_right btn-sm btn btn-primary capitalize m-b_n0 shadow_1"
-      >Engage Today!</a
-    >
-    </div>
-  </div> 
-  <div
       label="CTA-Callout"
-      class="bg_black-1 br_radius columns_1 columns_2:md font-size_up gap_3 gap_4:md gap_5:lg grid m-x_auto max-w_25 max-w_80:md reading-typography"
-      style="--custom-font-size-up: 1; --col-1:auto; --col-2:1fr; -row-1:375px;"
+      class="columns_1 columns_2:md font-size_up gap_3 gap_4:md gap_5:lg grid m-x_auto max-w_25 max-w_80:md reading-typography"
+      style="--custom-font-size-up: 1; --col-1:auto; --col-2:auto; -row-1:375px;"
     >
       <!-- Image Section -->
       <div grid-label="image" class="max-w_25 flex_grow ">
-        <img 
-          src="/PrototypingACCorg/assets/images/ACC/NCD/PhoneBackground.png"
+        <img
+          src="/PrototypingACCorg/assets/images/ACC/MemberSections/NorthAmericaMap.png"
+          alt="Discover a better work-life balance with us."
+          class="w_100 aspect_3x2 bg_cover"
+        >
+      </div>
+
+      <!-- Content Section -->
+      <div grid-label="content-container" class="flex_auto grid columns_1 rows_1 self_center p-y_4 p-y_5:lg ">
+        <div grid-label="content" class="max-w_30 p-x_4 m_auto w_100 ">
+          <h4 class="c_black lh_1 m-b_4 font_accent max-w_25">State Chapters</h4>
+          <p class="lh_2">Engage with local WIC events through chapters in your area.</p>
+
+          <a
+            href="https://www.acc.org/Membership/Sections-and-Councils/Women-in-Cardiology-Section/Chapter-Engagement "
+            class="float_right btn-sm btn btn-secondary capitalize m-b_n0 shadow_1"
+            >Engage Locally Today!</a
+          >
+        </div>
+      </div>
+    </div>
+    <hr class="bg_primary-2">
+    <div
+      label="CTA-Callout"
+      class="columns_1 columns_2:md font-size_up gap_3 gap_4:md gap_5:lg grid m-x_auto max-w_25 max-w_80:md reading-typography"
+      style="--custom-font-size-up: 1; --col-1:auto; --col-2:auto; -row-1:375px;"
+    >
+      <!-- Image Section -->
+      <div grid-label="image" class="max-w_25 flex_grow ">
+        <img
+          src="/PrototypingACCorg/assets/images/ACC/MemberSections/PhoneBackground.png"
           alt="Discover a better work-life balance with us."
           class="w_100 aspect_3x2 "
         >
@@ -292,66 +315,67 @@ position: "Section Member"
       <div grid-label="content-container" class="flex_auto grid columns_1 rows_1 self_center p-y_4 p-y_5:lg ">
         <div grid-label="content" class="max-w_30 p-x_4 m_auto w_100 ">
           <h4 class="c_black lh_1 m-b_4 font_accent max-w_25">Digital Book Club</h4>
-          <p class="lh_2">
-            WIC Book Club: Quarterly picks on self & career growth discussed on Twitter #WICBOOK.</p>
+          <p class="lh_2">Quarterly picks on self & career growth discussed on Twitter #WICBOOK.</p>
 
           <a
             href="https://www.acc.org/Membership/Sections-and-Councils/Women-in-Cardiology-Section/Chapter-Engagement "
-            class="float_right btn-sm btn btn-primary capitalize m-b_n0 shadow_1"
+            class="float_right btn-sm btn btn-secondary capitalize m-b_n0 shadow_1"
             >Start Today!</a
           >
         </div>
       </div>
-      
-    </div>
-    <div
-      label="CTA_follow_up"
-      class="font-size_up m-x_n4 p_4 p_5:md reading-typography"
-      style="--custom-font-size-up: 1;"
-    >
-      <div
-        data-item="cta"
-        class="shadow_bevel-light p_4 p_5:lg bg_white br_round font-size_up m-t_6:lg m-y_4 m-y_5:md m_auto max-w_60 relative text_center relative"
-      >
-        <h2 data-item="cta-title" class="m-b_3 lh_1 font_medium font_display">
-          <strong class="font-size_up m-b_2 block">DocMatter</strong>
-          <small class="font-size_down block"
-            >Connecting You to the Conversations that Matter</small
-          >
-        </h2>
-        <div class="p-t_2 p-b_3" data-item="cta-description">
-          <p class="font-size_up">Connect with Women in Cardiology on DocMatter, a platform for ACC Members to ask case questions and learn best practices from peers.  </p>
-      </div>
-        <div class="grid justify_center">
-          <a
-            rel="noopener noreferrer"
-            href="https://www.surveymonkey.com/r/66ZMZBC"
-            target="_blank"
-            class="btn-lg btn btn-primary expanded-click-area br_solid btn btn-lg capitalize m-b_n2 shadow_overlap-bold"
-          >
-            Go To DocMatter
-          </a>
-        </div>
-      </div>
-      <p class="text_center">Questions or Issues? <a href="" target="_blank">Contact ACC Member Care</a>.</p>
     </div>
   </div>
   <div
     class="flex flex_column col-end_end col-start_start col-start_n2:lg reading-typography wrapper-container p-l_4:lg  "
     style="--custom-font-size-up:.8"
   >
-    <div class="br_solid br_black-3 shadow_emboss-light p_4 bg_black-1 br-tr_radius br-tl_radius realative overflow_scroll-y isolation_isolate scrollbar-mini">
+    <div class="br_solid br_black-2 shadow_emboss-light p_4 bg_black-1 br-tr_radius br-tl_radius realative overflow_scroll-y isolation_isolate scrollbar-mini">
       {% include_relative PageBlocks/TwitterX.html %}
     </div>
     <div
-      class="p_4 eading-typography color-inerit c_white linear-gradient_custom br-br_radius br-bl_radius"
-      style="--start-color:#0b5243; --end-color:#00213b;"
+      class="p_4 eading-typography color-inerit c_black linear-gradient_custom br-br_radius br-bl_radius br_solid br_1 br_black-2"
+      style="--start-color:#91edd9; --end-color:#bad9f0;"
     >
-      <p class="font_1 lh_3 text-shadow_black-1">
+      <p class="font_1 lh_3">
         <strong class="font-size_up-1">Join the Conversation on <i class="fa-brands fa-x-twitter"></i></strong> <br>
-        <a href="https://twitter.com/hashtag/ACCWIC" target="_blank" class="c_white">#ACCWIC</a> <br>
-        <a href="https://twitter.com/ACCinTouch" target="_blank" class="c_white">@ACCinTouch</a>
+        <a href="https://twitter.com/hashtag/ACCWIC" target="_blank">#ACCWIC</a> <br>
+        <a href="https://twitter.com/ACCinTouch" target="_blank">@ACCinTouch</a>
       </p>
     </div>
+  </div>
+</section>
+<section zone-label="callbackCTA">
+  <div
+    label="CTA_follow_up"
+    class="font-size_up p_4 p_5:md reading-typography bg_black-1"
+    style="--custom-font-size-up: 1;"
+  >
+    <div
+      data-item="cta"
+      class="shadow_bevel-light p_4 p_5:lg bg_white br_round font-size_up m-t_6:lg m-y_4 m-y_5:md m_auto max-w_60 relative text_center relative"
+    >
+      <h2 data-item="cta-title" class="m-b_3 lh_1 font_medium font_display">
+        <strong class="font-size_up m-b_2 block">DocMatter</strong>
+        <small class="font-size_down block">Connecting You to the Conversations that Matter</small>
+      </h2>
+      <div class="p-t_2 p-b_3" data-item="cta-description">
+        <p class="font-size_up">
+          Connect with Women in Cardiology on DocMatter, a platform for ACC Members to ask case questions and learn best
+          practices from peers.
+        </p>
+      </div>
+      <div class="grid justify_center">
+        <a
+          rel="noopener noreferrer"
+          href="https://www.surveymonkey.com/r/66ZMZBC"
+          target="_blank"
+          class="btn-lg btn btn-primary expanded-click-area br_solid btn btn-lg capitalize m-b_n2 shadow_overlap-bold"
+        >
+          Go To DocMatter
+        </a>
+      </div>
+    </div>
+    <p class="text_center">Questions or Issues? <a href="" target="_blank">Contact ACC Member Care</a>.</p>
   </div>
 </section>
