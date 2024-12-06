@@ -66,14 +66,14 @@ Cardiology section today!" cta_link ="" cta_button_text ="Join Today" %}
 </section>
 <hr>
 
-<section grid-template="page-layout" class="">
+<section  class="grid columns_1 columns_2:lg p_5:lg p_4 gap_5:lg gap_4 reading-typography">
+  <div class="col_all">    <h2>{{page.section_name}}: Member Section Details</h2>
+    <h3>We champion women’s leadership, professional growth, and wellness.</h3></div>
   <div
-    grid-area="content"
-    class="reading-typography font-size_up p_4:lg"
-    style="--custom-font-size-up: 1"
+    class="reading-typography font-size_up"
+    style="--custom-font-size-up: 1.125"
   >
-    <h2>{{page.section_name}}: Member Section Details</h2>
-    <h3>We champion women’s leadership, professional growth, and wellness.</h3>
+
     <p>
       The Women in Cardiology Section of the ACC offers women cardiologists
       opportunities to strengthen their professional support system and skills
@@ -90,21 +90,19 @@ Cardiology section today!" cta_link ="" cta_button_text ="Join Today" %}
       in cardiovascular medicine.
     </p>
   </div>
-</section>
-<section grid-template="page-layout" class="">
   <div
-    grid-area="fullscreen"
-    class="m-t_5:lg m-t_4 bg_black-1 reading-typography font-size_up p_5:lg p_4"
-    style="--custom-font-size-up: 1"
+    class=" bg_black-1 reading-typography font-size_down p-x_5:lg p_4 wrapper-container br_round"
+    style="--custom-font-size-down: 1"
   >
-    <h3>Member Section Benefits</h3>
+    <h3>Benefits</h3>
     {% include_relative PageBlocks/UL_IconText.html
     data_path="Blocks.MemberSection.UL_IconText_SecttionBenefits" %}
   </div>
 </section>
+
 <section grid-template="page-layout" class="">
   <div grid-area="content">
     {% include_relative PageBlocks/FollowUpCTA.html
-    data_path="Blocks.MemberSection.FollowUpCTA_Login" cta_type="bevel" %}
+    data_path="Blocks.MemberSection.FollowUpCTA_Login" cta_type="bevel" container_modifier="bg_black-2 m-x_n4:md m-x_n3 m-b_n5" %}
   </div>
 </section>
