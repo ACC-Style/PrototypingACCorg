@@ -4,6 +4,7 @@ name: "Home"
 position: "NCD Academy"
 ---
 {% include MicroSite/heroimage.dynamic.html
+hero_image_base="NCD"
 parent_page_name="Education"
 parent_link="https://www.acc.org/Education-and-Meetings"
 page_title="NCD Academy"
@@ -67,39 +68,47 @@ cta_button_text="Join Today"
     </aside>
 
   </main>
-  <div class="columns_2:md columns_1 grid gap_5:md p_5:lg p_4 gap_4 m-x_n4 p_4 p_5:md p_6:lg bg_black-1">
+  <div class="columns_3:lg columns_1 grid gap_5:lg p_5:lg p_4 gap-y_4 m-x_n4 p_4 p_5:md p_6:lg bg_black-1 reading-typography">
     <!-- Spotlight -->
     <section zone-label="course-spotlight"
-      class="bg_white br_round relative shadow_bevel-light p_4 flex flex_column justify_around">
+      class="bg_white br_round relative shadow_bevel-light p_4 flex flex_column justify_around  col-start_start col-end_3">
       <div
         class="absolute t_0 r_0 p-y_3 p-x_5 br-tr_raidus br-bl_round bg_accent-n1 shadow_overlap-light font_n1 c_white font_xbold capitalize">
         Featured</div>
-      <div class="grid columns_2:md columns_1 gap-x_4 gap-x_5:lg gap-y_3">
-        <div class="bg_cover br_round grid overflow_clip self_stretch p_5 p-y_6"
+      <div class="grid columns_2:md columns_1 gap-x_4 gap-x_5:lg gap-y_3 reading-typogrphay font-size_up">
+        <div class="bg_cover br_radius grid overflow_clip self_stretch p_5 p-y_6 aspect_1x1"
           style="background-image: url({% include URL.html url='/PrototypingACCorg/assets/images/ACC/NCD/vacine.png' %});">
         </div>
 
         <div class="flex flex_column m-y_4:md">
-          <h3 class="c_black lh_1 m-b_2">Vaccine</h3>
+          <h3 class="c_black lh_1 m-b_2 font_3 font_4:md font_display font_5:lg ">Vaccine</h3>
           <p class="m-b_3">Learn how vaccines support global health and sustainable development goals.</p>
-          <a class="expanded-click-area btn btn-secondary m-t_auto" href="{% include URL.html url='../NCD_Course-Vaccine/' %}">Learn More <i
+          <a class="expanded-click-area btn btn-secondary m-t_auto m-x_auto inline-block" href="{% include URL.html url='../NCD_Course-Vaccine/' %}">Learn More <i
               class="fa-solid fa-arrow-right p-l_2"></i></a>
         </div>
       </div>
     </section>
+    <section zone-label="card" class="bg_accent-n3 br_radius c_white color_inherit flex flex_column font-size_up p_4 p_5:lg reading-typography relative shadow_overlap-light" style="
+    --custom-font-size-up: 1.25;
+">
+       <h3>Download the NCD Academy App for Free</h3>
+      <div class="flex flex_row:md flex_column gap_3 justify_center m-t_auto">        <a class="br_1 br_radius br_solid br_white-3 btn btn-secondary shadow_overlap-light" zone-label="app-store" href="https://apps.apple.com/us/app/ncd-academy/id1501602635"><i class="fa-apple fa-brands m-r_3" aria-hidden="true"></i>App Store</a>
+      <a class="br_1 br_radius br_solid br_white-3 btn btn-secondary shadow_overlap-light" zone-label="play-store" href="https://play.google.com/store/apps/details?id=org.acc.ncdacademy"><i class="fa-brands fa-google-play m-r_3" aria-hidden="true"></i> Play
+        Store</a></div>
+    </section>
     <!-- App Promotion -->
-    <section zone-label="app-promotion"
-      class="aspect_16x9 bg-blend_multiply bg_black-4 bg_cover br_round c_white grid items_center justify_center text_center"
-      style="background-image:url({% include URL.html url='/PrototypingACCorg/assets/images/ACC/NCD/PhoneBackground.png'  %})">
+    {% comment %} <section zone-label="app-promotion"
+      class="bg-blend_multiply bg_black-4 bg_cover br_round c_white grid items_center justify_center text_center"
+      style="background-image:url({% include URL.html url='/PrototypingACCorg/assets/images/ACC/NCD/PhoneBackground-color.png'  %})">
       <h2
-        class="c_white font_display font_xbold text-shadow_black-1 font_4 font_5:md font_display font_8:lg lh_0 m-y_4">
-        Get your education<br>on the go</h2>
+        class="c_white font_display font_regular text-shadow_black-1 font_2 font_3:md font_display font_4:lg lh_0 m-y_4">
+        Download the NCD Academy App for Free </h2>
       <div class="flex flex_row:md flex_column gap_3 justify_center">
-        <a class="btn btn-secondary br_1 br_solid br_white-3 shadow_overlap-light" zone-label="app-store" href="https://apps.apple.com/us/app/ncd-academy/id1501602635"><i class="fa-apple fa-brands m-r_3"></i>App Store</a>
-        <a class="btn btn-secondary br_1 br_solid br_white-3 shadow_overlap-light" zone-label="play-store" href="https://play.google.com/store/apps/details?id=org.acc.ncdacademy"><i class="fa-brands fa-google-play m-r_3"></i> Play
+        <a class="btn btn-secondary btn-sm br_1 br_solid br_white-3 shadow_overlap-light br_radius" zone-label="app-store" href="https://apps.apple.com/us/app/ncd-academy/id1501602635"><i class="fa-apple fa-brands m-r_3"></i>App Store</a>
+        <a class="btn btn-secondary btn-sm br_1 br_solid br_white-3 shadow_overlap-light br_radius" zone-label="play-store" href="https://play.google.com/store/apps/details?id=org.acc.ncdacademy"><i class="fa-brands fa-google-play m-r_3"></i> Play
           Store</a>
       </div>
-    </section>
+    </section> {% endcomment %}
   </div>
   <!-- Resources Section -->
   <section zone-label="resources-section" class="p_4:lg reading-typography">
