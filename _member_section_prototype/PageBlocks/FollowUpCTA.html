@@ -11,16 +11,27 @@ data_path: specifies the path for data to be used in the CTA follow-up. Example:
 grid_modifier: modify the grid styles for CTA layout. Example: "columns_4:lg columns_2:md columns_1 gap_6:lg gap_3"
 -->
 
+
+
 {% assign path_parts = 'Blocks.FollowUpCTA' | split: '.' %}
 {% if include.data_path %}
   {% assign path_parts = include.data_path | split: '.' %}
 {% endif %}
 
 
+{%- assign id = "default" -%}
+{%- if page.id -%}
+{%- assign id = page.id -%}
+{%- endif -%} 
+{%- if include.id -%}
+{%- assign id = include.id -%}
+{%- endif -%} 
+
 {% assign data_object = site.data %}
 {% for part in path_parts %}
   {% assign data_object = data_object[part] %}
 {% endfor %}
+
 
 {% assign grid_styles = " columns_3:lg columns_2:md columns_1 gap_5:lg gap_4 grid " %}
 {% if include.grid_modifier %}
@@ -40,6 +51,13 @@ grid_modifier: modify the grid styles for CTA layout. Example: "columns_4:lg col
     {% endif %}
 {% endif %}
 
+{% for cta in data_object %}
+{%- if id == "default" -%}
+ <span class="c_alert"> missing id</span>
+{%- endif -%}
+{%- if cta.id ==  id -%}
+  
+
 <div
     label="CTA_follow_up"
     class="reading-typography font-size_up p_4 p_5:md {% if include.container_modifier %}{{ include.container_modifier }} {% endif %}"
@@ -49,7 +67,7 @@ grid_modifier: modify the grid styles for CTA layout. Example: "columns_4:lg col
 
 
     <div data-item="cta" class="{{ cta_styles }} font-size_up m-t_6:lg m-y_4 m-y_5:md m_auto max-w_60 relative text_center relative" > 
-        {% for cta in data_object %}
+
             <h2 data-item="cta-title" class="m-b_3 lh_1 font_medium font_display">
                 <strong class="font-size_up m-b_2 block">{{ cta.title }}</strong>
                 <small class="font-size_down block">{{ cta.subtitle }}</small>
@@ -79,6 +97,8 @@ grid_modifier: modify the grid styles for CTA layout. Example: "columns_4:lg col
           </a>
         {% endif %}
             </div>
-        {% endfor %}
+
     </div>
 </div>
+{%- endif -%}
+{% endfor %}

@@ -5,13 +5,12 @@ position: "Logged Out"
 section_name: "Women in Cardiology"
 section_url: "https://www.acc.org/Membership/Sections-and-Councils/Women-in-Cardiology-Section"
 user_state: "not_logged_in"
+id: "login"
 ---
 
 {% include_relative PageBlocks/heroimage.dynamic.html parent_link ='#' hero_image_base="MEMBER"
 parent_page_name ='Member Sections' page_title ="Women in Cardiology: Member
-Section" cta_title ="Empower. Connect. Lead." cta_description ="Unlock exclusive
-resources, expand your influence, and support our mission. Join the Women in
-Cardiology section today!" cta_link ="" cta_button_text ="Join Today" %}
+Section" cta_title ="Unlock Access Now" cta_description ="Discover the benefits waiting for you—resources, connections, and tools built for your success." cta_link ="" cta_button_text ="Log In to Continue" %}
 
 <section grid-template="page-layout" class="">
   <div
@@ -30,17 +29,14 @@ Cardiology section today!" cta_link ="" cta_button_text ="Join Today" %}
       >
     </h2>
     <p>
-      You've arrived at a Member Section page, a gateway to our exclusive member
-      benefits. These benefits, designed specifically for cardiovascular
-      professionals, offer access to specialized communities, valuable content,
-      and exciting opportunities to make a real impact in your field.
+      Member sections are your gateway to exclusive resources, specialized tools, and unmatched opportunities to grow professionally through mentoring, networking, and leadership pathways. Log in to unlock these benefits and elevate your career.
     </p>
     <p class="font_bold">
       Log in to unlock these resources and start benefiting from our exclusive
       member perks.
     </p>
     <a href="" class="btn btn-primary"
-      >Login <i class="fa-solid fa-sign-in-alt" aria-hidden="true"></i
+      >Log in <i class="fa-solid fa-sign-in-alt" aria-hidden="true"></i
     ></a>
   </div>
   <aside grid-area="sidebar-secondary">
@@ -102,7 +98,7 @@ Cardiology section today!" cta_link ="" cta_button_text ="Join Today" %}
 
 <section grid-template="page-layout" class="">
   <div grid-area="content">
-    {% include_relative PageBlocks/FollowUpCTA.html
+    {% include_relative PageBlocks/FollowUpCTA.html id="login"
     data_path="Blocks.MemberSection.FollowUpCTA_Login" cta_type="bevel" container_modifier="bg_black-2 m-x_n4:md m-x_n3 m-b_n5" %}
   </div>
 </section>
