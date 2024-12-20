@@ -6,10 +6,10 @@ url: an alternative URL to use if neither GUID nor MEDIA is provided. Example: "
 
 {%- if include.media -%}
   {%- assign cleaned_guid = include.media | remove: '{' | remove: '}' | remove: '-' | strip -%}
-  {%- assign url = "/~/media/" | append: cleaned_guid | append: ".ashx" -%}
+  {%- assign url = "~/media/" | append: cleaned_guid | append: ".ashx" -%}
 {%- elsif include.guid -%}
     {%- assign cleaned_guid = include.guid | remove: '{' | remove: '}' | remove: '-' | strip -%}
-  {%- assign url = "/~/link.aspx?_id=" | append: cleaned_guid | append: "&amp;_z=z" -%}
+  {%- assign url = "~/link.aspx?_id=" | append: cleaned_guid | append: "&amp;_z=z" -%}
 {%- elsif include.relative -%}
   {%- assign url = include.relative | append: site.github.build_revision | relative_url -%}
 {%- elsif include.url -%}
