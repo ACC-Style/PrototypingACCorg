@@ -5,7 +5,7 @@
 
 <section zone-label="login-section" class="m-b_5:lg m-b_4">
   <div
-    class="relative m-r_4:lg m-t_5:lg h:bg_primary-5 isolate_isolation bg_black-_05 br_1 br_solid br_black-3 p_4 br_radius grid items_center justify_center m-l_0:lg ncd-logo shadow_bevel-light relative">
+    class="relative m-t_5:lg h:bg_primary-5 isolate_isolation bg_black-_05 br_1 br_solid br_black-3 p_4 br_radius grid items_center justify_center m-l_0:lg ncd-logo shadow_bevel-light relative">
    <div class="col_all row_all">
      <img class="w_100 bg-blend_multiply"
      src="{% include URL.html media='{B94EDF85-2BB6-4B94-8B04-14A2AAD18F9E}' %}" alt="NCD Academy Logo">
@@ -18,7 +18,7 @@
 {% if site.data.Blocks.NCD.certifications %}
   {% for certification in site.data.Blocks.NCD.certifications %}
     {% if certification.id == include.id %}
-    <div class="certification p-x_4 p-l_0:lg">
+    <div class="certification">
       <hr class="bg_primary m-y_5:lg m-y_4">
       <h4>Certification</h4>
       <p>
@@ -37,7 +37,7 @@
 {% if site.data.Blocks.NCD.badges %}
   {% for badge in site.data.Blocks.NCD.badges %}
     {% if badge.id == include.id %}
-    <div class="ncd-badge p-x_4 p-l_0:lg">
+    <div class="ncd-badge">
       <hr class="bg_primary m-y_5:lg m-y_4">
       <h4>Badge</h4>
       {% if badge.image_guid %}
@@ -53,7 +53,7 @@
 {% if site.data.Blocks.NCD.seals %}
   {% for seal in site.data.Blocks.NCD.seals %}
     {% if seal.id == include.id %}
-    <div class="ncd-seal p-x_4 p-l_0:lg p-y_1">
+    <div class="ncd-seal p-y_1">
       <hr class="bg_primary m-y_5:lg m-y_4">
       {% if seal.image_guid %}
         <img class="block m-x_auto m_auto max-w_30 w_100" src="{% include URL.html media=seal.image_guid %}" alt="{{ seal.alt }}">
@@ -78,7 +78,7 @@
 {% endfor %}
 
 {% if has_related_education %}
-<div class="related-education p-x_4 p-l_0:lg ">
+<div class="related-education ">
   <hr class="bg_primary m-y_5:lg m-y_4">
   <h4>Related Education</h4>
   <ul class="wrapper-container ul_none">

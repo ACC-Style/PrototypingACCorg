@@ -10,11 +10,11 @@ layout: default
     <div class="bg_white shadow_overlap-light">
       {% include arches-header.html %}
       {% include {{ page.masthead }} hero_title=page.hero-title cta_text=page.hero-cta-text cta_link=page.hero-cta-link %}
-      <div  grid-template="page-layout">
-        <main grid-area="content" class="reading-typography p_4:lg">
+      <div  grid-template="page-layout" class="p-t_4">
+        <main grid-area="content" class="reading-typography ">
           {{content}}
         </main>
-        <section grid-area="sidebar-primary">
+        <section grid-area="sidebar-primary" class="p-x_4 p-r_0:md">
           <nav class="nav-sub bg_primary c_white font_2 font_ui">
             <ul class="ul_none flex_column flex">
               <li class="nav-item font-size_up" data-nav="parent">
@@ -88,7 +88,7 @@ layout: default
           </nav>
         </section>
         {% if page.sidebar-secondary %}
-        <section grid-area="sidebar-secondary" class="reading-typography">
+        <section grid-area="sidebar-secondary" class="reading-typography p-x_4 p-l_0:md">
             {% include_relative {{ page.sidebar-secondary }} id=page.course_id %}
         </section>
         {% endif %}
@@ -97,7 +97,7 @@ layout: default
     </div>
   </div>
   
-<style>
+{% comment %} <style>
   :root {
       --custom-font-size-modifier: 1.125;
       --page-padding: 8px;
@@ -335,7 +335,7 @@ border-end-end-radius: 6px;
 [data-item=cta-callout]::after {
 border-radius: 6px;
 }
-</style>
+</style> {% endcomment %}
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
