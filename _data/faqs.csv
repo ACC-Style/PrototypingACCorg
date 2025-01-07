@@ -31,5 +31,11 @@
 ","17"
 "Is this the start of an annual gala?","<p>This Fundraising Gala and Celebration is being held in honor of the ACC's 75th Anniversary and will not be an annual event.  </p>","18"
 "Do you have an emergency plan in place?","<p>Security and medical professionals will be onsite to assist in any emergency situations. </p>","19"
-"How do I get to The Field Museum?","<p><a href=""https://www.fieldmuseum.org/directions-parking"">Field Museum Information on Directions &amp; Parking</a> Drive, parking garages are available surrounding the Museum Campus. Most lots run around $10-$20 self park. <br />Uber or Taxi<br>Wheelchair-accessible parking is available on first-come, first-served basis in the East Museum Lot. <br />CTA Train: closest stop is Roosevelt. Servicing the Red, Orange and green lines <br />Metra: closest Metra stop is the Metra Electric District station at Museum Campus/11th Street. </p>","20"
+"How do I get to The Field Museum?","
+        <p class=""font-size_up""><a target=""_blank"" href=""https://www.fieldmuseum.org/directions-parking"">Field Museum Information on Directions &amp; Parking</a></p>
+            <ul><li>Uber or Taxi</li>
+        <li>Drive, parking garages are available surrounding the Museum Campus. Most lots run around $10-$20 self park.  Wheelchair-accessible parking is available on first-come, first-served basis in the East Museum Lot. </li>
+        <li>CTA Train: closest stop is Roosevelt. Servicing the Red, Orange and green lines </li>
+        <li>Metra: closest Metra stop is the Metra Electric District station at Museum Campus/11th Street. </li>     
+    </ul>","20"
 "Fun Facts About the Field Museum","<p><strong>History:</strong> The museum's collection originated from the 1893 World's Columbian Exposition, and the museum opened in 1894. The museum's name honors Marshall Field, who donated $1 million to make the museum a reality.  </p><strong>Collection:</strong> The museum has nearly 40 million objects, but only a small fraction are on display. Some of the most famous items include Egyptian mummies, the man-eating lions of Tsavo, and SUE, the most complete T. rex ever discovered.  </p><strong>Máximo the Titanosaur:</strong> One of the museum's most famous residents is Máximo the Titanosaur, the largest dinosaur to ever walk the earth.</p>","21"
