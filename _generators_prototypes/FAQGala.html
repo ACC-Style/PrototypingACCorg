@@ -1,0 +1,150 @@
+---
+layout: playground
+name: "FAQ - gala"
+position: "Generator"
+csv_file: "faqs"
+---
+
+<div class="relative" COPY_ME >
+{% assign faqs = site.data.faqs | sort: "sortnumber" %}
+{% for faq in faqs  %}
+    <header id="accordion_header" class="flex flex_row sticky t_n2 bg_acc-n3 shadow_overlap-light br_solid br_1 br_white-2 z_2 collapsed relative" aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#content_accordion-{{faq.sortnumber}}" aria-controls="#content_accordion-{{faq.sortnumber}}">
+        <div class="h:bg_acc m_2 c_primary-n2 h:c_primary-5 br_radius expanded-click-area">
+            <div class="flex_none" >
+                <span class="fa-stack">
+                    <i class="fas fa-minus fa-stack-1x"></i>
+                    <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x "></i>
+                </span>
+            </div>
+        </div>
+        <div class=" font-size_up flex_auto flex flex_row justify_center p-y_2">
+            <div class="flex_auto self_center reading-typography no-margins">
+                <h3 class="lh_2 max-w_50 c_primary-n2">{{faq.question}}</h3>
+            </div>
+        </div>
+    </header>
+    <main  id="content_accordion-{{faq.sortnumber}}"
+        class="bg_acc-n5 br-bl_radius br-br_radius m-x_0 m-x_3:md p_4 p-x_5:lg reading-typography shadow_emboss-light tab-content transition_4 collapse"
+        aria-labelledby="accordion_header m-x_3">
+        <div class="reading-typography font-size_up m-y_3:lg" style="--custom-font-size-up: 1.125">
+            {{faq.answer | html}}
+        </div>
+    </main>
+    {% endfor %}
+</div>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<style>
+    :root{
+        --font-family_display: "Montserrat", "Maven Pro", "Muli", "Open Sans", Verdana, Helvetica, sans-serif;
+        --font-family_copy: "Montserrat", "Maven Pro", "Muli", "Open Sans", Verdana, Helvetica, sans-serif;
+        --primary-h: 16.4deg;
+        --primary-s: 10.5%;
+        --primary-l: 79.4%;
+        --primary: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
+        --secondary-h: 223.6deg;
+        --secondary-s: 10.5%;
+        --secondary-l: 79.4%;
+        --secondary: hsl(var(--secondary-h), var(--secondary-s), var(--secondary-l));
+        --success-h: 161.3deg;
+        --success-s: 57%;
+        --success-l: 21%;
+        --success: hsl(var(--success-h), var(--success-s), var(--success-l));
+        --shade-h: 15.6deg;
+        --shade-s: 10.7%;
+        --shade-l: 49.6%;
+        --shade: hsl(var(--shade-h), var(--shade-s), var(--shade-l));
+        --warning-h: 41.3deg;
+        --warning-s: 57%;
+        --warning-l: 21%;
+        --warning: hsl(var(--warning-h), var(--warning-s), var(--warning-l));
+        --alert-h: 341.3deg;
+        --alert-s: 57%;
+        --alert-l: 21%;
+        --alert: hsl(var(--alert-h), var(--alert-s), var(--alert-l));
+        --navigation-h: 221.8791946309deg;
+        --navigation-s: 63.4042553191%;
+        --navigation-l: 46.0784313725%;
+        --navigation: hsl(var(--navigation-h), var(--navigation-s), var(--navigation-l));
+        --accent-h: 168.9deg;
+        --accent-s: 25.7%;
+        --accent-l: 80%;
+        --accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+        --info-h: 31.3043478261deg;
+        --info-s: 11.1111111111%;
+        --info-l: 59.4117647059%;
+        --info: hsl(var(--info-h), var(--info-s), var(--info-l));
+        --highlight-h: 265.8536585366deg;
+        --highlight-s: 48.2352941176%;
+        --highlight-l: 50%;
+        --highlight: hsl(var(--highlight-h), var(--highlight-s), var(--highlight-l));
+        --acc-h: 221.3deg;
+        --acc-s: 57%;
+        --acc-l: 21%;
+        --acc: hsl(var(--acc-h), var(--acc-s), var(--acc-l));
+        --link-color-light-h: 169.2857142857deg;
+        --link-color-light-s: 70%;
+        --link-color-light-l: 73.5294117647%;
+        --link-color-light: hsl(var(--link-color-light-h), var(--link-color-light-s), var(--link-color-light-l));
+        --link-color-light--hover-h: 169.2857142857deg;
+        --link-color-dark-h: 196.7deg;
+        --link-color-dark-s: 41%;
+        --link-color-dark-l: 79%;
+        --link-color-dark: hsl(var(--link-color-dark-h), var(--link-color-dark-s), var(--link-color-dark-l));
+        --link-color-dark--hover-h: 167.4deg;
+        --link-color-dark--hover: hsl(var(--link-color-dark--hover-h), calc(var(--link-color-dark-s) * 1.5), calc(var(--link-color-dark-l) * 1.5));
+    }
+    body{
+    background-color: hsl(var(--acc-h), var(--acc-s), calc(var(--acc-l) * .5)) !important;   
+    background-image: url(blueprint.png), url(blueprint-end.png);
+    background-attachment: fixed, fixed;
+    background-size:100% 40%, 100% 15%;
+    background-repeat: no-repeat, no-repeat;
+    background-position: center top, center bottom;
+    }
+    body>div{
+        position: relative;
+        isolation: isolate;
+
+    }
+    body>div>div.bg_white{
+    background-color: transparent !important; 
+    box-shadow: none; 
+    padding:1rem 2rem; 
+    }
+    body>div>div.bg_white::before{
+        content:'';
+        display:block;
+        filter: blur(100px);
+        background-color:  hsla(var(--acc-h), var(--acc-s), var(--acc-l), 50%);
+        inset:-100px 100px 0px;
+        position: absolute;
+        z-index: -1;
+    }
+    .section-glow::before{
+        content: '';
+    display: block;
+    filter: blur(100px);
+    background-color: hsla(var(--acc-h), var(--acc-s), var(--acc-l), 50%);
+    inset: 1rem 5rem 1rem;
+    position: absolute;
+    z-index: -1;
+    background-blend-mode: screen;
+    }
+    .dark.section-glow::before{
+        background-color: hsla(var(--acc-h), var(--acc-s), 5%, 50%);
+    inset: -20px 0 -30px;
+    filter: blur(100px);
+    background-blend-mode: multiply;
+    }
+    .reading-typography{
+        color: var(--primary);
+        h1,h2,h3,h4,h5{ color:  hsl(var(--primary-h), var(--primary-s), 95%);}
+    }
+    .text-indent_n1 {
+    text-indent: -1ch;
+}
+</style>
