@@ -35,15 +35,15 @@ github: [metadata]
 port: 4001
 collections_dir: _collections
 collections:
-  page_prototypes:
+  prototypes:
     output: true
     permalink: /acc/:path/
-  generators_prototypes:
+  generators:
     output: true
-    permalink: /playground/:path/
-  arches_ui_playground:
+    permalink: /generators/:path/
+  ui_playground:
     output: true
-    permalink: /UI/:path/
+    permalink: /ui/:path/
   member_section_prototype:
     output: true
     permalink: /MemberSection/:path/
