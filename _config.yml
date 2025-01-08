@@ -33,30 +33,11 @@ plugins:
 destination: "docs"
 github: [metadata]
 port: 4001
-#collections_dir: prototypes
-
+collections_dir: _collections
 collections:
-  legacy_prototypes:
-    output: true
-    permalink: /legacy/:path/
   arches_prototypes:
     output: true
     permalink: /arches/:path/
-  virtual_prototypes:
-    output: true
-    permalink: /virtual/:path/
-  fedlogin_prototypes:
-    output: true
-    permalink: /fedlogin/:path/
-  library_prototypes:
-    output: true
-    permalink: /library/:path/
-  event_prototypes:
-    output: true
-    permalink: /event/:path/
-  jacc_prototypes:
-    output: true
-    permalink: /jacc/:path/
   generators_prototypes:
     output: true
     permalink: /playground/:path/
