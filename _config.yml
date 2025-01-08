@@ -35,9 +35,9 @@ github: [metadata]
 port: 4001
 collections_dir: _collections
 collections:
-  arches_prototypes:
+  page_prototypes:
     output: true
-    permalink: /arches/:path/
+    permalink: /acc/:path/
   generators_prototypes:
     output: true
     permalink: /playground/:path/
