@@ -6,5 +6,6 @@
 	],
 	"settings": {
 		"workbench.colorTheme": "Monokai",
+		"html-css-class-completion.includeGlobPattern": "__IntelliSense/css/*.css",
 	}
 }

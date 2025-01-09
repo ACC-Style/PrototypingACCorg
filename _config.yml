@@ -35,6 +35,9 @@ github: [metadata]
 port: 4001
 collections_dir: _collections
 collections:
+  ui_gold_standard:
+    output: true
+    permalink: /ui-gold/:path/
   prototypes:
     output: true
     permalink: /acc/:path/
@@ -47,7 +50,7 @@ collections:
   member_section_prototype:
     output: true
     permalink: /MemberSection/:path/
-  NCD_Academy:
+  ncd_academy:
     output: true
     permalink: /NCD/:path/
 # Exclude from processing.
