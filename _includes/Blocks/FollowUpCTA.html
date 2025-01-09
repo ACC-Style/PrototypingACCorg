@@ -1,0 +1,84 @@
+<!--
+container_modifier: class slot to change the row mechanism. Example: "custom-container-class"
+container_type: specify the style of container. Options: [bevel, border]. Example: "bevel"
+custom_fontsize: change the base sizing for the reading typography. Defaults to 1. Example: "1.2"
+button_type: specifies the button style. Defaults to btn-secondary. Options: [primary, secondary, link]. Example: "primary"
+button_custom_classes: additional classes to add to the button. Example: "extra-class another-class"
+data_path: specifies the path for data to be used in the CTA follow-up. Example: "Blocks.FollowUpCTA.CustomData"
+
+
+
+grid_modifier: modify the grid styles for CTA layout. Example: "columns_4:lg columns_2:md columns_1 gap_6:lg gap_3"
+-->
+
+{% assign path_parts = 'Blocks.FollowUpCTA' | split: '.' %}
+{% if include.data_path %}
+  {% assign path_parts = include.data_path | split: '.' %}
+{% endif %}
+
+
+{% assign data_object = site.data %}
+{% for part in path_parts %}
+  {% assign data_object = data_object[part] %}
+{% endfor %}
+
+{% assign grid_styles = " columns_3:lg columns_2:md columns_1 gap_5:lg gap_4 grid " %}
+{% if include.grid_modifier %}
+  {% assign grid_styles = include.grid_modifier %}
+{% endif %} 
+
+{% assign font_size = 1 %}
+{% if include.custom_fontsize %}
+  {% assign font_size = include.custom_fontsize %}
+{% endif %} 
+{% assign cta_styles = "" %}
+{% if include.cta_type %}
+    {% if include.cta_type == "bevel" %}
+        {% assign cta_styles = "shadow_bevel-light p_4 p_5:lg bg_white br_round" %}
+    {% elsif include.cta_type == "border" %}
+        {% assign cta_styles = "p_4 p-t_6 p-x_5:lg bg_white br-t_1 br_solid br_primary-1" %}
+    {% endif %}
+{% endif %}
+
+<div
+    label="CTA_follow_up"
+    class="reading-typography font-size_up p_4 p_5:md {% if include.container_modifier %}{{ include.container_modifier }} {% endif %}"
+    style="--custom-font-size-up: {{font_size}};"
+  >
+
+
+
+    <div data-item="cta" class="{{ cta_styles }} font-size_up m-t_6:lg m-y_4 m-y_5:md m_auto max-w_60 relative text_center relative" > 
+        {% for cta in data_object %}
+            <h2 data-item="cta-title" class="m-b_3 lh_1 font_medium font_display">
+                <strong class="font-size_up m-b_2 block">{{ cta.title }}</strong>
+                <small class="font-size_down block">{{ cta.subtitle }}</small>
+            </h2>
+            <div class="p-t_2 p-b_3" data-item="cta-description">
+                <p class="font-size_up">{{ cta.description }}</p>
+            </div>
+            <div class="grid justify_center">
+        {% if cta.guid != blank and cta.guid != nil and cta.guid != "" %}
+          {% assign cleaned_guid = cta.guid | remove: '{' | remove: '}' | remove: '-' | strip %}
+          <a
+            rel="noopener noreferrer"
+            href="~/link.aspx?_id={{ cleaned_guid }}&amp;_z=z"
+            target="_blank"
+            class="{% if include.button_custom_classes %}{{ include.button_custom_classes }}{% else %}btn-lg{% endif %} {% case include.button_type %}{% when 'primary' %}btn btn-primary{% when 'secondary' %}btn btn-secondary{% when 'link' %}btn btn-link link{% else %}btn btn-primary{% endcase %} expanded-click-area br_solid btn btn-lg capitalize m-b_n2 {% if include.container_type != 'bevel' %}shadow_overlap-bold{% else %}shadow_1{% endif %}"
+          >
+            {{ cta.link_text }}
+          </a>
+        {% else %}
+          <a
+            rel="noopener noreferrer"
+            href="{{ cta.link_url }}"
+            target="_blank"
+            class="{% if include.button_custom_classes %}{{ include.button_custom_classes }}{% else %}btn-lg{% endif %} {% case include.button_type %}{% when 'primary' %}btn btn-primary{% when 'secondary' %}btn btn-secondary{% when 'link' %}btn btn-link link{% else %}btn btn-primary{% endcase %} expanded-click-area br_solid btn btn-lg capitalize m-b_n2 {% if include.container_type != 'bevel' %}shadow_overlap-bold{% else %}shadow_1{% endif %}"
+          >
+            {{ cta.link_text }}
+          </a>
+        {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+</div>
