@@ -1,0 +1,46 @@
+---
+layout: ui/fullscreen_slot
+name: "Split Content Thirds Panel"
+position: "Image + Text + Button"
+---
+<h2 class="p-x_4 p-x_5:lg">Image on Left</h2>
+<div label="CTA-Callout"
+    class="reading-typography font-size_up br_radius bg_black-1 m-y_5:lg m-y_4 grid columns_2:md columns_1 gap_5:lg gap_4:md gap_3 max-w_25 max-w_80:md m-x_auto"
+    style="--custom-font-size-up: 1; --col-1:auto; --col-2:1fr; -row-1:375px;">
+    <!-- Image Section -->
+    <div grid-label="image" class="max-w_25 flex_grow ">
+        <img src="https://placehold.co/375x250/000000/FFFFFF/png" alt="Discover a better work-life balance with us."
+            class="w_100 aspect_3x2 ">
+    </div>
+    <!-- Content Section -->
+    <div grid-label="content-container" class="flex_auto grid columns_1 rows_1 self_center p-y_4 p-y_5:lg ">
+        <div grid-label="content" class="max-w_30 p-x_4 m_auto w_100 ">
+            <h4 class="c_black lh_1 m-b_4 font_accent max-w_25">Discover a better work-life balance with us.</h4>
+            <p class="lh_2">Join a thriving organization that prioritizes and respects work-life balance.</p>
+            <a href="https://example.com/jobs"
+                class="float_right btn-sm btn btn-primary capitalize m-b_n0 shadow_1">Search for Jobs</a>
+        </div>
+    </div>
+</div>
+
+
+
+<h2 class="p-x_4 p-x_5:lg">Image on Right</h2>
+<div label="CTA-Callout"
+    class="reading-typography font-size_up br_radius bg_black-1 m-y_5:lg m-y_4 grid columns_2:md columns_1 gap_5:lg gap_4:md gap_3 max-w_25 max-w_80:md m-x_auto"
+    style="--custom-font-size-up: 1; --col-1:1fr; --col-2:auto; -row-1:375px;">
+    <!-- Image Section -->
+    <div grid-label="image" class="max-w_25 flex_grow  order_2:lg ">
+        <img src="https://placehold.co/375x250/6514ad/FFFFFF/png" alt="Explore Your Career Opportunities"  class="w_100 aspect_3x2">
+    </div>
+    <!-- Content Section -->
+    <div grid-label="content-container"
+        class="flex_auto grid columns_1 rows_1 self_center p-y_4 p-y_5:lg   order_1:lg ">
+        <div grid-label="content" class="max-w_30 p-x_4 m_auto w_100 ">
+            <h4 class="c_black lh_1 m-b_4 font_accent max-w_25">Explore Your Career Opportunities</h4>
+            <p class="lh_2">Start building your dream career today.</p>
+            <a href="https://example.com/jobs"
+                class="float_right btn-sm btn btn-primary capitalize m-b_n0 shadow_1">Explore Jobs</a>
+        </div>
+    </div>
+</div>
