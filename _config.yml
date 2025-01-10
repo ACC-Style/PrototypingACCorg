@@ -50,7 +50,7 @@ collections:
   member_section_prototype:
     output: true
     permalink: /MemberSection/:path/
-  ncd_academy:
+  ncd:
     output: true
     permalink: /NCD/:path/
 # Exclude from processing.
