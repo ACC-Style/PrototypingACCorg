@@ -85,18 +85,14 @@
     {% for item in site.data.Blocks.NCD.related_education %}
       {% if item.id == include.id %}
         {% if item.link_guid and item.link_guid != "{sitecore-guid-from-web-team}" %}
-          <li class="related-item relative m-b_5 m-b_4:md h:bg_primary-5 br_radius m-x_n3 p_4">
-              <h5 class="c_black lh_1 m-b_2">{{ item.title }}
-                <br>
-                <small class="c_primary-n2">{{ item.type }}</small>
+          <li class="related-item relative m-b_3 m-b_2:md h:bg_primary-5 br_radius m-x_n3 p_4">
+              <h5 class="c_black-6  lh_1 m-b_2">{{ item.title }}
               </h5>
               <a class="not-link h:c_primary-n3 expanded-click-area" target="_blank" href="{% include URL.html guid=item.link_guid %}">{{ item.type }}<i class="fa-solid fa-arrow-right p-l_2"></i></a>
             </li>
           {% elsif item.link and item.link != "#" %}
-            <li class="related-item relative m-b_5 m-b_4:md h:bg_primary-5 br_radius m-x_n3 p_4">
-                <h5 class="c_black lh_1 m-b_2">{{ item.title }}
-                  <br>
-                  <small class="c_primary-n2">{{ item.type }}</small>
+            <li class="related-item relative m-b_3 m-b_2:md h:bg_primary-5 br_radius m-x_n3 p_4">
+                <h5 class="c_black-6  lh_1 m-b_2">{{ item.title }}
                 </h5>
                 <a class="not-link h:c_primary-n3 expanded-click-area" target="_blank" href="{{ item.link }}">{{ item.type }}<i class="fa-solid fa-arrow-right p-l_2"></i></a>
               </li>

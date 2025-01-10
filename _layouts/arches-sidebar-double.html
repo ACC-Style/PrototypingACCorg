@@ -89,7 +89,7 @@ layout: default
         </section>
         {% if page.sidebar-secondary %}
         <section grid-area="sidebar-secondary" class="reading-typography p-x_4 p-l_0:md">
-            {% include_relative {{ page.sidebar-secondary }} id=page.course_id %}
+            {% include {{ page.sidebar-secondary }} id=page.course_id %}
         </section>
         {% endif %}
       </div>
