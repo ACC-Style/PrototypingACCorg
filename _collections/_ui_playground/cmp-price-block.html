@@ -1,0 +1,112 @@
+---
+layout: ui/fullscreen_shaded_slot
+name: "CMP Pricing"
+position: "Section with Price Blocks + Product Listing"
+---
+
+<style>
+    @media only screen and (width > 768px) and (width < 1024px) {
+        .triple-bento{
+        grid-template-columns: 7fr 5fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+        "a c"
+        "b c";
+
+        & li:nth-child(1){
+            grid-area: a;
+        }
+        & li:nth-child(2){
+            grid-area: b;
+        }
+        & li:nth-child(3){
+            grid-area: c;
+        }
+    }
+
+    }
+</style>
+<ul class="grid columns_3:lg columns_1 gap_4 gap_5:lg ul_none triple-bento">
+    <li data-element="data-table" class="flex flex_column justify_start br_round bg_primary-n2 p_5:md p_4 c_white-8 shadow_bevel-bold reading-typography  color_inherit">
+        <header class="min-h_2xlh items_top m-b_4">
+            <h2 data-element="table-title" class="font_xbold m-b_0 uppercase font_3:lg font_2">Member</h2>
+        </header>
+        <main>
+            <div item-label="price-block">
+                <h3 class="flex flex_row font_8 gap_2 items_center lh_2 nowrap"><span class="font_bold">$1500</span><span class="font_light">/</span><span class="font_n1 font_0:lg font_medium lh_0 m-l_2 self_center wrap">5 year <br>purchase plan </span></h3>
+            </div>
+            <divv class="c_inherit flex flex_row font_display font_medium m_0 p-y_3:md p-y_2 opacity_7 m-x_n3">
+                <span class="flex_auto grid">
+                  <span class="br-t_1 br-tl_radius br_inherit br_solid self_center"></span>
+                </span>
+                <span class="flex_shrink p-x_3 lh_1 text_center">
+                  or
+                </span>
+                <span class="flex_auto grid">
+                  <span class="br-t_1 br-tl_radius br_inherit br_solid self_center"></span>
+                </span>
+              </divv>
+            <div item-label="price-block">
+                <h3 class="flex flex_row font_8 gap_2 items_center lh_2 nowrap"><span class="font_bold">$300</span><span class="font_light">/</span><span class="font_n1 font_0:lg font_medium lh_0 m-l_2 self_center wrap">1 year <br>purchase plan </span></h3>
+
+            </div>
+           
+        </main>
+        <footer class="m-b_n3:md m-t_auto"><div><i class="fa-solid fa-plus p-r_3"></i>Annual ABIM MOC fee<sup class="font_bold">*</sup></div></footer>
+    </li>
+    <li data-element="data-table" class="flex flex_column justify_start br_round bg_secondary-n1 p_5:md p_4 c_white-8 shadow_bevel-bold reading-typography  color_inherit">
+        <header class="min-h_2xlh items_top m-b_4">
+            <h2 data-element="table-title" class="font_xbold m-b_0 uppercase font_3:lg font_2">NonMember</h2>
+        </header>
+        <main>
+            <div item-label="price-block">
+                <h3 class="flex flex_row font_8 gap_2 items_center lh_2 nowrap"><span class="font_bold">$1500</span><span class="font_light">/</span><span class="font_n1 font_0:lg font_medium lh_0 m-l_2 self_center wrap">5 year <br>purchase plan </span></h3>
+            </div>
+            <divv class="c_inherit flex flex_row font_display font_medium m_0 p-y_3:md p-y_2 opacity_8 m-x_n3">
+                <span class="flex_auto grid">
+                  <span class="br-t_1 br-tl_radius br_inherit br_solid self_center"></span>
+                </span>
+                <span class="flex_shrink p-x_3 lh_1 text_center">
+                  or
+                </span>
+                <span class="flex_auto grid">
+                  <span class="br-t_1 br-tl_radius br_inherit br_solid self_center"></span>
+                </span>
+              </divv>
+            <div item-label="price-block">
+                <h3 class="flex flex_row font_8 gap_2 items_center lh_2 nowrap"><span class="font_bold">$300</span><span class="font_light">/</span><span class="font_n1 font_0:lg font_medium lh_0 m-l_2 self_center wrap">1 year <br>purchase plan </span></h3>
+
+            </div>
+           
+        </main>
+        <footer class="m-b_n3:md m-t_auto"><div><i class="fa-solid fa-plus p-r_3"></i>Annual ABIM MOC fee<sup class="font_bold">*</sup></div></footer>
+    </li>
+    <li data-element="data-table" class="flex flex_column justify_start br_round bg_accent-n2 p_5:md p_4 c_white-8 shadow_bevel-bold reading-typography  color_inherit">
+        <header class="min-h_2xlh items_top m-b_4">
+            <h2 data-element="table-title" class="font_xbold m-b_0 uppercase font_3:lg font_2">Fellows In Training <span class="lowercase">or</span>
+                Emeritus Members</h2>
+        </header>
+        <main>
+            <div item-label="price-block">
+                <h3 class="flex flex_row font_8 gap_2 items_center lh_2 nowrap"><span class="font_bold">$1500</span><span class="font_light">/</span><span class="font_n1 font_0:lg font_medium lh_0 m-l_2 self_center wrap">5 year <br>purchase plan </span></h3>
+            </div>
+            <divv class="c_inherit flex flex_row font_display font_medium m_0 p-y_3:md p-y_2 opacity_8 m-x_n3">
+                <span class="flex_auto grid">
+                  <span class="br-t_1 br-tl_radius br_inherit br_solid self_center"></span>
+                </span>
+                <span class="flex_shrink p-x_3 lh_1 text_center">
+                  or
+                </span>
+                <span class="flex_auto grid">
+                  <span class="br-t_1 br-tl_radius br_inherit br_solid self_center"></span>
+                </span>
+              </divv>
+            <div item-label="price-block">
+                <h3 class="flex flex_row font_8 gap_2 items_center lh_2 nowrap"><span class="font_bold">$300</span><span class="font_light">/</span><span class="font_n1 font_0:lg font_medium lh_0 m-l_2 self_center wrap">1 year <br>purchase plan </span></h3>
+
+            </div>
+           
+        </main>
+        <footer class="m-b_n3:md m-t_auto"><div><i class="fa-solid fa-plus p-r_3"></i>Annual ABIM MOC fee<sup class="font_bold">*</sup></div></footer>
+    </li>
+</ul>
