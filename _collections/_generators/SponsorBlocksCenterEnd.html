@@ -1,0 +1,142 @@
+---
+layout: playground
+name: "Sponsor Blocks Center End"
+position: "Generator"
+csv_file: "sponsors-sort-link"
+---
+
+{% assign sponsors-sort = site.data.sponsors-sort-link | sort: 'sortnumber' %}
+
+
+    <section>
+        <ul class="grid-last-row-center p-t_0 p_4 ul_none no-marker">
+            {% for sponsor in sponsors-sort  %}
+            <li
+                class="item bg_black-_05 br_1 br_black-_01 br_round br_solid  p-b_4 relative {% if sponsor.url %} h:bg_black-1 {% endif %}">
+                {% if sponsor.url %}
+                <a data-name="sponsor__name" class="expanded-click-area undecorated flex flex_column gap-y_4:lg gap-y_3:md gap-y_2" target="_blank"
+                    href="{% include URL.html url=sponsor.url %}" rel="noopener">
+                    <header class="bg_white br_radius  m-x_4:lg m_3 m-b_2  p_3 shadow_overlap-light w_auto">
+                        <div class="relative aspect_16x9 grid columns_1 rows_1 items_center">                          
+                            {%- if sponsor.guid -%}
+                                <img decoding="async" alt="Logo of {{ sponsor.name }}" class="w_90 m-x_auto self_center bg_contain" src="{% include URL.html media=sponsor.guid %}">
+                            {%- else -%}
+                                <img decoding="async" alt="Logo of {{ sponsor.name }}" class="w_90 m-x_auto self_center bg_contain"   src="{{ 'assets/images/playground/'| append: sponsor.img  | relative_url }}">
+                            {%- endif -%}
+                        </div>
+                    </header>
+                    <div class="c_primary-n3 font_2:lg font_0:md font_n1 font_display font_regular lh_1 p-x_4 text_center undecorated">
+                        {{ sponsor.name }}
+                    </div>
+                </a>
+                {% else %}
+                <div class="flex flex_column gap-y_4:lg gap-y_3:md gap-y_2">
+                    <header class="bg_white br_radius  m-x_4:lg m_3 m-b_2  p_3 shadow_overlap-light w_auto">
+                        <div class="relative aspect_16x9 grid columns_1 rows_1 items_center">                          
+                            {%- if sponsor.guid -%}
+                                <img decoding="async" alt="Logo of {{ sponsor.name }}" class="w_90 m-x_auto self_center bg_contain" src="{% include URL.html media=sponsor.guid %}">
+                            {%- else -%}
+                                <img decoding="async" alt="Logo of {{ sponsor.name }}" class="w_90 m-x_auto self_center bg_contain"   src="{{ 'assets/images/playground/'| append: sponsor.img  | relative_url }}">
+                            {%- endif -%}
+                        </div>
+                    </header>
+                    <div class="c_primary-n3 font_2:lg font_0:md font_n1 font_display font_regular lh_1 p-x_4 text_center undecorated">
+                        {{ sponsor.name }}
+                    </div>
+                </div>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+<style>
+
+.grid-last-row-center {
+  display: grid;
+  gap: 1rem;
+  /*   grid-template-columns: repeat(calc(var(--column-count, 3) * 2), 1fr); */
+  grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+    container-type: inline-size;
+    container-name: grid-large;
+    max-width: calc(75px * 12 + 11rem);
+    margin-inline: auto;
+  @container (width >= calc(75px * 2 + 1rem)) {
+    .item {
+      grid-column: span 2;
+    }
+  }
+
+  @container grid-large (calc(75px * 4 + 3rem) < width < calc(75px * 6 + 5rem) ) {
+    .item:last-child:nth-child(odd) {
+      grid-column: 2 / span 2;
+    }
+  }
+
+  @container grid-large (calc(75px * 6 + 5rem) < width < calc(75px * 8 + 7rem)) {
+    .item:nth-child(3n + 4):last-child {
+      grid-column: 3 / 5;
+    }
+
+    &:has(:nth-child(3n + 5):last-child) > :nth-last-child(2) {
+      grid-column: 2 / 4;
+    }
+  }
+
+  @container grid-large (calc(75px * 8 + 7rem) < width < calc(75px * 10 + 9rem)) {
+    .item:nth-child(4n + 5):last-child {
+      grid-column: 4 / 6;
+    }
+
+    &:has(:nth-child(4n + 6):last-child) > :nth-last-child(2) {
+      grid-column: 3 / 5;
+    }
+
+    &:has(:nth-child(4n + 7):last-child) > :nth-last-child(3) {
+      grid-column: 2 / 4;
+    }
+  }
+  @container grid-large (calc(75px * 10 + 9rem) < width < calc(75px * 12 + 11rem)) {
+    .item:nth-child(5n + 6):last-child {
+      grid-column: 5 / 7;
+    }
+
+    &:has(:nth-child(5n + 7):last-child) > :last-child {
+      grid-column: 6 / 8;
+    }
+    &:has(:nth-child(5n + 7):last-child) > :nth-last-child(2) {
+      grid-column: 4 / 6;
+    }
+    &:has(:nth-child(5n + 7):last-child) > :last-child {
+      grid-column: 6 / 8;
+    }
+
+    &:has(:nth-child(5n + 8):last-child) > :last-child {
+      grid-column: 7/9;
+    }
+    &:has(:nth-child(5n + 8):last-child) > :nth-last-child(2) {
+      grid-column: 5 / 7;
+    }
+
+    &:has(:nth-child(5n + 8):last-child) > :nth-last-child(3) {
+      grid-column: 3/5;
+    }
+/* CENTER  on last 4 */
+    &:has(:nth-child(5n + 9):last-child) > :last-child {
+      grid-column: 8/10;
+    }
+    &:has(:nth-child(5n + 9):last-child) > :nth-last-child(2) {
+      grid-column: 6 / 8;
+    }
+
+    &:has(:nth-child(5n + 9):last-child) > :nth-last-child(3) {
+      grid-column: 4/6;
+    }
+    &:has(:nth-child(5n + 9):last-child) > :nth-last-child(4) {
+      grid-column: 2/4;
+    }
+
+
+  }
+}
+
+</style>
