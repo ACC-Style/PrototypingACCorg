@@ -36,7 +36,7 @@ csv_file: "faqs"
         </a>
       </li>
       {% else %}
-      <li class="c_black-7 text_center">{{ alpha }}</li>
+      <!-- <li class="c_black-7 text_center">{{ alpha }}</li> -->
       {% endif %}
       {% endfor %}
 
@@ -65,7 +65,7 @@ csv_file: "faqs"
   <section  grid-template="page-layout" id="{{alpha}}" class="relative br-t_1 br_dotted br_secondary-n2 w_100 p-b_4 m-t_4 font_0 block grid:md isolation_isolate" style="--sidebar-width:15rem;">
     <div grid-area="sidebar-primary"  class="sticky relative:md t_0 isolation_isolate z_3">
       <div
-        class="c_acc font_3:lg font_2:md font_1 font_accent font_bold inline-block uppercase shadow_overlap-light bg_primary-n2 lh_0 br-br_radius br-bl_radius p_2 p-x_4 m-x_3 sticky:md t_5 flex_none">{{ alpha }}</div>
+        class="c_acc font_3:lg font_2:md font_1 font_accent font_bold inline-block uppercase shadow_overlap-light bg_primary-n2 lh_0 br-br_radius br-bl_radius p_2 p-x_4 m-x_3 sticky:md t_0 flex_none">{{ alpha }}</div>
     </div>
     <div grid-area="content" class=" p-t_0 p_4 solation_isolate z_1 wrapper-container">
     <ul class="grid {{ columns }} gap_5:lg gap_4:md gap_3 ul_none m-t_5 m-t_4:md" >
