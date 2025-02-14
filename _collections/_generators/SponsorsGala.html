@@ -4,9 +4,15 @@ name: "Gala - Sponsors"
 position: "Generator"
 csv_file: "faqs"
 ---
-{% assign alpha_array = 'Diamond,Silver,Bronze,Pewter,Programmatic Supporter' | split: ',' %}
-{% assign sponsors-teir = site.data.sponsors-teir-gala | sort: 'name' %}
-{% assign alpha_categories = sponsors-teir | map: 'tiers' %}
+{%- assign alpha_array = 'Diamond,Gold,Silver,Bronze,Pewter,Programmatic Supporter' | split: ',' -%}
+{%- assign diamond-columns = "columns_2:lg columns_2:md columns_1" -%}
+{%- assign gold-columns = "columns_3:lg columns_2:md columns_1" -%}
+{%- assign silver-columns = "columns_4:lg columns_3:md columns_2" -%}
+{%- assign bronze-columns = "columns_5:lg columns_4:md columns_2" -%}
+{%- assign pewter-columns = "columns_5:lg columns_4:md columns_3" -%}
+{%- assign supporter-columns = "columns_6:lg columns_5:md columns_4" -%}
+{%- assign sponsors-teir = site.data.sponsors-teir-gala | sort: 'name' -%}
+{%- assign alpha_categories = sponsors-teir | map: 'tiers' -%}
 
 <section class="relative p-t_2 wrapper-container" id="AlphaNavTop">
   <div class="sticky t_0 r_0 z_1">
@@ -21,7 +27,7 @@ csv_file: "faqs"
   </div>
   <nav class="bg_secondary-n3 br_radius grid items_center p_3 p_4:lg relative shadow_overlap-light z_2 m-t_n2">
     <ul
-      class="c_secondary-2 flex:lg flex_row font_bold gap_4 grid columns_2 columns_3:md justify_center m-x_4 m-y_3 ul_none">
+      class="c_secondary-2 flex:lg flex_row font_bold gap_4 grid columns_1 columns_3:md justify_center m-x_4 m-y_3 ul_none">
       {% for alpha in alpha_array %}
       {% if alpha_categories contains alpha %}
       <li class="c_black-7 text_center">
@@ -38,15 +44,31 @@ csv_file: "faqs"
   </nav>
   {% for alpha in alpha_array %}
   {% if alpha_categories contains alpha %}
+  {%- if alpha == "Diamond" -%}
+  {%- assign columns = diamond-columns -%}
+  {%-  endif -%}
+  {%- if alpha == "Gold" -%}
+  {%- assign columns = gold-columns -%}
+  {%-  endif -%}
+  {%- if alpha == "Silver" -%}
+  {%- assign columns = silver-columns -%}
+  {%-  endif -%}
+  {%- if alpha == "Bronze" -%}
+  {%- assign columns = bronze-columns -%}
+  {%-  endif -%}
+  {%- if alpha == "Pewter" -%}
+  {%- assign columns = pewter-columns -%}
+  {%-  endif -%}
+  {%- if alpha == "Programmatic Supporter" -%}
+  {%- assign columns = supporter-columns -%}
+  {%-  endif -%}
   <section  grid-template="page-layout" id="{{alpha}}" class="relative br-t_1 br_dotted br_secondary-n2 w_100 p-b_4 m-t_4 font_0 block grid:md isolation_isolate" style="--sidebar-width:15rem;">
     <div grid-area="sidebar-primary"  class="sticky relative:md t_0 isolation_isolate z_3">
       <div
-        class="c_acc font_3:lg font_2:md font_1 font_accent font_bold inline-block uppercase shadow_overlap-light bg_primary-n2 lh_0 br-br_radius br-bl_radius p_2 p-x_4 m-x_3 sticky:md t_5 flex_none">
-        {{ alpha }}
-      </div>
+        class="c_acc font_3:lg font_2:md font_1 font_accent font_bold inline-block uppercase shadow_overlap-light bg_primary-n2 lh_0 br-br_radius br-bl_radius p_2 p-x_4 m-x_3 sticky:md t_5 flex_none">{{ alpha }}</div>
     </div>
     <div grid-area="content" class=" p-t_0 p_4 solation_isolate z_1 wrapper-container">
-    <ul class="grid columns_5:lg columns_3:md columns_2 gap_5:lg gap_4:md gap_3 ul_none m-t_5 m-t_4:md" >
+    <ul class="grid {{ columns }} gap_5:lg gap_4:md gap_3 ul_none m-t_5 m-t_4:md" >
       {% for company in sponsors-teir %}
       {% if company.tiers == alpha %}
       <li class="bg_black-_05 br_1 br_black-_01 br_round br_solid flex flex_column gap-y_3">
