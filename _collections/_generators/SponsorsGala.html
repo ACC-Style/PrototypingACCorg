@@ -14,6 +14,22 @@ csv_file: "faqs"
 {%- assign sponsors-teir = site.data.sponsors-teir-gala | sort: 'name' -%}
 {%- assign alpha_categories = sponsors-teir | map: 'tiers' -%}
 
+<div class="grid items_start justify_center row_all:md z_1 max-w_25 m_auto">
+  <h2>Invest in the Future</h2>
+  <p>Join us for an evening of celebration and make a difference greater than just one night.</p>
+  <a href="{% include URL.html guid='{0BAA378B-C565-43B5-9E6A-4AC2A07D75BE}' %}" class="btn btn-primary-2 c_black  bg_primary h:bg_primary-4 br_none m_auto">Sponsorship Opportunities</a>
+ </div>
+
+
+ <div data-element="data-table" class="br_1 br_round br_solid br_white-3 c_white clear_both font_2 font_3:lg m-b_4 m-b_5:md overflow_hidden p_4 p_5:md relative shadow_bevel-light text_center">
+  <h1 data-element="table-title" class="c_primary-3 font_bold font_display font_ui m-b_0 uppercase">Thanks to our Sponsors</h1>
+  <p>The ACC is Grateful for the Support of our Bridge to the Future Programmatic Sponsors.</p>
+  <a href="{% include URL.html guid='{B0E52933-B53B-4C36-A9F8-442AA91A339F}' %}" class="btn btn-primary-2 c_black  bg_primary h:bg_primary-4 br_none m_auto">View Our Sponsors</a>
+  <div class="z_0 absolute inset_0 br_round bg_secondary" style="filter:blur(30px) opacity(.2);backdrop-filter: blur(3px);"></div> 
+</div>
+
+
+
 <main class="relative p-t_2 wrapper-container" id="AlphaNavTop">
   <div class="sticky t_0 r_0 z_1">
     <div class="absolute r_4 t_0 flex flex_row flex_nowrap gap-x_3">
@@ -31,7 +47,7 @@ csv_file: "faqs"
       {% for alpha in alpha_array %}
       {% if alpha_categories contains alpha %}
       <li class="c_black-7 text_center display_contents">
-        <a class=" bg_primary-4 br_radius c_primary-n5 h:c_white h:bg_primary-n3 p-x_3 block h:undecorated" href="#{{ alpha }}">
+        <a class=" bg_primary-4 br_radius c_primary-n5 h:c_white h:bg_primary-n3 p-x_3 block h:undecorated" href="#{{ alpha | strip }}">
           {{- alpha -}}
         </a>
       </li>
@@ -64,7 +80,7 @@ csv_file: "faqs"
   {%- if alpha == "Programmatic Supporter" -%}
   {%- assign columns = supporter-columns -%}
   {%-  endif -%}
-  <section  grid-template="page-layout" id="{{alpha}}" class="relative br-t_1 br_dotted br_secondary-n2 w_100 p-b_4 m-t_4 font_0 block grid:md isolation_isolate" style="--sidebar-width:15rem;">
+  <section  grid-template="page-layout" id="{{alpha | strip }}" class="relative br-t_1 br_dotted br_secondary-n2 w_100 p-b_4 m-t_4 font_0 block grid:md isolation_isolate" style="--sidebar-width:15rem;">
     <div grid-area="sidebar-primary"  class="sticky relative:md t_0 isolation_isolate z_3">
       <div
         class="c_acc font_3:lg font_2:md font_1 font_accent font_bold inline-block uppercase shadow_overlap-light bg_primary-n2 lh_0 br-br_radius br-bl_radius p_2 p-x_4 m-x_3 sticky:md t_0 flex_none">{{ alpha }}</div>
