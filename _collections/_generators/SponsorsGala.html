@@ -7,14 +7,14 @@ csv_file: "faqs"
 {%- assign alpha_array = 'Diamond,Gold,Silver,Bronze,Pewter,Programmatic Supporter' | split: ',' -%}
 {%- assign diamond-columns = "columns_2:lg columns_2:md columns_1" -%}
 {%- assign gold-columns = "columns_3:lg columns_2:md columns_1" -%}
-{%- assign silver-columns = "columns_3:lg columns_2:md columns_2"" -%}
+{%- assign silver-columns = "columns_3:lg columns_2:md columns_2" -%}
 {%- assign bronze-columns = "columns_4:lg columns_3:md columns_3" -%}
 {%- assign pewter-columns = "columns_5:lg columns_4:md columns_3" -%}
 {%- assign supporter-columns = "columns_6:lg columns_5:md columns_4" -%}
 {%- assign sponsors-teir = site.data.sponsors-teir-gala | sort: 'name' -%}
 {%- assign alpha_categories = sponsors-teir | map: 'tiers' -%}
 
-<section class="relative p-t_2 wrapper-container" id="AlphaNavTop">
+<main class="relative p-t_2 wrapper-container" id="AlphaNavTop">
   <div class="sticky t_0 r_0 z_1">
     <div class="absolute r_4 t_0 flex flex_row flex_nowrap gap-x_3">
       <a class="br-tl_square br-tr_square br_radius btn btn-primary btn-sm grid items_center justify_center m-l_auto self_center shadow_3 c_acc-n3"
@@ -36,9 +36,9 @@ csv_file: "faqs"
         </a>
       </li>
       {% else %}
-      {%- comment -%}
-      <li class="c_black-7 text_center display_contents">{{ alpha }}</li> 
-        {%- endcomment -%}
+
+  
+        
       {% endif %}
       {% endfor %}
 
@@ -101,7 +101,7 @@ csv_file: "faqs"
  </section>
   {% endif %}
   {% endfor %}
-</section> 
+</main> 
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
