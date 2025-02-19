@@ -11,7 +11,7 @@ csv_file: "faqs"
 {%- assign bronze-columns = "columns_4:lg columns_3:md columns_3" -%}
 {%- assign pewter-columns = "columns_5:lg columns_4:md columns_3" -%}
 {%- assign supporter-columns = "columns_6:lg columns_5:md columns_4" -%}
-{%- assign sponsors-teir = site.data.sponsors-teir-gala | sort: 'name' -%}
+{%- assign sponsors-teir = site.data.Gala.sponsors-teir-gala | sort: 'name' -%}
 {%- assign alpha_categories = sponsors-teir | map: 'tiers' -%}
 
 <div class="grid items_start justify_center row_all:md z_1 max-w_25 m_auto">
