@@ -8,36 +8,42 @@ position: "Section with Matrix of Data"
     .topic-subgrid {
         grid-template-rows: subgrid;
         display: grid;
-        grid-row: span 2;
+        grid-row: span 3;
     }
 </style>
 <h2>Remind Yourself of the 2025 CMP Topics</h2>
 <ul class="grid ul_none m_0 gap_2 gap_3:md columns_4:lg columns_2:md columns_1 rows_3  m-t_4:lg m-t_2 font_1:lg font_0" style="
 --row-1: max-content;
 --row-2: max-content;
+--row-3: max-content;
 ">
     <li class="grid topic-subgrid m_0 p_0 gap_1 gap_2:md relative">
-        <div class="bg_acc-n1 grid items_center p_4"><a
-                href="https://www.acc.org/Education-and-Meetings/Products-and-Resources/ACCSAP"
-                class="block not-link block  h:undecorated not-link expanded-click-area">
-                <h4 class="font_medium c_white lh_0 m_0 font-size_up-1 uppercase"><span
-                        class="font_xbold c_special">ACC</span>SAP</h4>
-                <span class="wrap c_white lh_2 font-size_down-1 block">Cardiovascular Disease</span>
-            </a></div>
+        <div class="bg_acc-n1 grid items_center p_4 relative overflow_hidden"><a
+            href="{% include URL.html guid='{2E824E19-78E1-4FA6-BDE3-508448FCDF72}' %}"
+            class="block c_acc-1 expanded-click-area h:c_acc-4 h:undecorated not-link">
+            <h4 class="font_medium c_white lh_0 m_0 font-size_up-1 uppercase"><span
+                    class="font_xbold c_special">ACC</span>SAP</h4>
+            <span class="wrap c_white lh_2 font-size_down-1 block">Cardiovascular Disease</span>
+            <i class="fa-solid fa-arrow-circle-right fa-3x absolute c_inherit h:c_inherit b_n3 r_n2"></i>
+        </a></div>
 
         <div class="bg_special-3 p-x_4 p-y_3 p-y_4:md">
             <ul class="ul_square m_0 p-l_4">
                 <li>Arrhythmias</li>
             </ul>
         </div>
+        <div class="bg_special-3 font_n1 p-x_4 p-y_3 p-y_4:md relative">
+            <a  href="{% include URL.html guid='{2E824E19-78E1-4FA6-BDE3-508448FCDF72}' %}" class="grid items_center justify_center text_center c_acc-n1 h:c_acc-n3 expanded-click-area-after bg_white-1 h:bg_white-4 inset_0 absolute" ><span> Go to SAP Page</span></a>
+        </div>
     </li>
     <li class="grid topic-subgrid m_0 p_0 gap_1 gap_2:md relative">
-        <div class="bg_acc-n1 grid items_center p_4"><a
-                href="https://www.acc.org/Education-and-Meetings/Products-and-Resources/ACCSAP"
-                class="block not-link block  h:undecorated not-link expanded-click-area">
+        <div class="bg_acc-n1 grid items_center p_4 relative overflow_hidden"><a
+            href="{% include URL.html guid='{6ED43FF8-C308-457E-9DA8-4DC0C4FEF02E}' %}"  %}"
+                class="block c_acc-1 expanded-click-area h:c_acc-4 h:undecorated not-link">
                 <h4 class="font_medium c_white lh_0 m_0 font-size_up-1 uppercase"><span
                         class="font_xbold c_invt">CATH</span>SAP</h4>
                 <span class="wrap c_white lh_2 font-size_down-1 block">Interventional Cardiology</span>
+                <i class="fa-solid fa-arrow-circle-right fa-3x absolute c_inherit h:c_inherit b_n3 r_n2"></i>
             </a></div>
 
         <div class="bg_invt-3 p-x_4 p-y_3 p-y_4:md">
@@ -45,14 +51,18 @@ position: "Section with Matrix of Data"
                 <li>Case Selection &amp; Management</li>
             </ul>
         </div>
+        <div class="bg_invt-3  font_n1 p-x_4 p-y_3 p-y_4:md relative">
+            <a  href="{% include URL.html guid='{6ED43FF8-C308-457E-9DA8-4DC0C4FEF02E}' %}" class="grid items_center justify_center text_center c_acc-n1 h:c_acc-n3 expanded-click-area-after bg_white-1 h:bg_white-4 inset_0 absolute" ><span> Go to SAP Page</span></a>
+        </div>
     </li>
     <li class="grid topic-subgrid m_0 p_0 gap_1 gap_2:md relative">
-        <div class="bg_acc-n1 grid items_center p_4"><a
-                href="https://www.acc.org/Education-and-Meetings/Products-and-Resources/ACCSAP"
-                class="block not-link block  h:undecorated not-link expanded-click-area">
+        <div class="bg_acc-n1 grid items_center p_4 relative overflow_hidden"><a
+            href="{% include URL.html guid='{9313B9FC-6099-4C35-8D14-64A2C41E17F2}' %}" 
+                class="block c_acc-1 expanded-click-area h:c_acc-4 h:undecorated not-link">
                 <h4 class="font_medium c_white lh_0 m_0 font-size_up-1 uppercase"><span
                         class="font_xbold c_arr">EP</span>SAP</h4>
                 <span class="wrap c_white lh_2 font-size_down-1 block">Cardiac Arrhythmias and Electrophysiology</span>
+                <i class="fa-solid fa-arrow-circle-right fa-3x absolute c_inherit h:c_inherit b_n3 r_n2"></i>
             </a></div>
 
         <div class="bg_arr-3 p-x_4 p-y_3 p-y_4:md">
@@ -62,20 +72,28 @@ position: "Section with Matrix of Data"
                 <li>Basic Physiology, Anatomy, Pharmacology &amp; Genetics </li>
             </ul>
         </div>
+        <div class="bg_arr-3 font_n1 p-x_4 p-y_3 p-y_4:md relative">
+            <a  href="{% include URL.html guid='{9313B9FC-6099-4C35-8D14-64A2C41E17F2}' %}" class="grid items_center justify_center text_center c_acc-n1 h:c_acc-n3 expanded-click-area-after bg_white-1 h:bg_white-4 inset_0 absolute" ><span> Go to SAP Page</span></a>
+        </div>
     </li>
     <li class="grid topic-subgrid m_0 p_0 gap_1 gap_2:md relative">
-        <div class="bg_acc-n1 grid items_center p_4"><a
-                href="https://www.acc.org/Education-and-Meetings/Products-and-Resources/ACCSAP"
-                class="block not-link block h:undecorated not-link expanded-click-area">
+        <div class="bg_acc-n1 grid items_center p_4 relative overflow_hidden"><a
+            href="{% include URL.html guid='{9A335806-CD27-47B4-B075-8147C7C9CC09}' %}" 
+                class="block c_acc-1 expanded-click-area h:c_acc-4 h:undecorated not-link">
                 <h4 class="font_medium c_white lh_0 m_0 font-size_up-1 uppercase"><span
                         class="font_xbold c_hf">HF</span>SAP</h4>
                 <span class="wrap c_white lh_2 font-size_down-1 block">Advanced Heart Failure and Transplant Cardiology</span>
-            </a></div>
+                <i class="fa-solid fa-arrow-circle-right fa-3x absolute c_inherit h:c_inherit b_n3 r_n2"></i>
+            </a>
+        </div>
 
         <div class="bg_hf-3 p-x_4 p-y_3 p-y_4:md">
             <ul class="ul_square m_0 p-l_4">
                 <li>Heart Transplant</li>
             </ul>
+        </div>
+        <div class="bg_hf-3  font_n1 p-x_4 p-y_3 p-y_4:md relative">
+            <a  href="{% include URL.html guid='{9A335806-CD27-47B4-B075-8147C7C9CC09}' %}" class="grid items_center justify_center text_center c_acc-n1 h:c_acc-n3 expanded-click-area-after bg_white-1 h:bg_white-4 inset_0 absolute" ><span> Go to SAP Page</span></a>
         </div>
     </li>
 </ul>
