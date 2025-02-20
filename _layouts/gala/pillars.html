@@ -1,7 +1,7 @@
 ---
 layout: arches-sidebar-double
 ---
-
+{%- assign page_classes = 'c_primary-5 font_10:lg font_6 font_8:md lh_0 m-b_4:lg p_3 p_4:lg' -%}
 {%- assign title_classes = 'block c_white font_7:lg font_5:md font_4 uppercase font_display font_medium lh_1' -%}
 {%- assign date_classes = 'block font_3:lg font_2:md font_1 c_primary-2 font_xbold' -%}
 {%- assign content_classes = 'block font_2:lg font_1:md font_0 lh_2 ' -%}
@@ -10,55 +10,60 @@ layout: arches-sidebar-double
 {% if page.course_id == nil or page.course_id == '' %}
     <p class="c_alert">Missing Course ID</p>
 {% else %}
-    <p class="c_alert">Course ID: {{page.course_id}}</p>
+    <!-- <p class="c_alert">Course ID: {{page.course_id}}</p> -->
     <!-- Main Content Section -->
     {% if site.data.Gala.Pillars %} 
         {%- assign data_collection = site.data.Gala.Pillars | where: "id", page.course_id -%}
         {% if data_collection %}
             {%- assign grouped_nodes = data_collection | group_by: "node_id" -%}
            
-            <div class="main-content p_4:lg bg_acc-n2 br_round reading-typography color-inherit c_white">
+            <div class="main-content p_4:lg bg_acc-n2 br_radius reading-typography color-inherit c_white ">
                 {% for group in grouped_nodes %}
-                <section class="container m-b_6:lg m-b_5:md m-b_4">
-            
-                     <div grid-area="title">
-                        <h2 class="{{title_classes}}">{{ group.items[0].title }}</h2>
-
-                     </div>
-                     {%- if group.items[0].image -%}
-                        <div grid-area="iamge">
-                            {%- if group.items[0].image_guid and  group.items[0].image_guid != "{sitecore-guid}" -%}
-                                {%- assign guid = group.items[0].image_guid -%}
-                                <img src="{% include URL.html media=guid %}" alt="{{group.items[0].image_alt}}">
-                            {%- else -%}
-                            <img class="bg_black-3 w_auto" src="{{group.items[0].image}}" alt="{{group.items[0].image_alt}}">
-
-                            {%- endif -%}
-                        </div>
-                     {%- endif -%}  
-                {%- if group.items[0].type == "node" -%}
-                    <!-- node code -->    
-                    <div grid-area="content" class="{{content_classes}}">
-                        {%- if group.items[0].date -%}
-                        <span class="{{date_classes}}"> {{ group.items[0].date }}</span>
-                        {%- endif -%}
-                        {{group.items[0].content}}
-                    </div>    
+                {%- if  group.items[0].type == "page" -%}
+                        <h1 class="{{page_classes}}">{{group.items[0].title}}</h1>
                 {%- else -%}
-                <div grid-area="content" class="{{content_classes}}">
-                <ul class="ul_none flex flex_column gap_4">
-                    {% for item in group.items %}
-                      <li>
-                        {%- if item.date -%}
-                        <span class="{{date_classes}}"> {{ item.date }}</span>
-                        {%- endif -%}
-                        {{ item.content }} </li>
-                    {% endfor %}
-                  </ul>
-                </div>
+                <section class="container m-b_6:lg m-b_5:md m-b_4 ">
+            
+                    <div grid-area="title">
+                       <h2 class="{{title_classes}}">{{ group.items[0].title }}</h2>
+
+                    </div>
+                    {%- if group.items[0].image -%}
+                       <div grid-area="iamge">
+                           {%- if group.items[0].image_guid and  group.items[0].image_guid != "{sitecore-guid}" -%}
+                               {%- assign guid = group.items[0].image_guid -%}
+                               <img src="{% include URL.html media=guid %}" alt="{{group.items[0].image_alt}}">
+                           {%- else -%}
+                           <img class="bg_black-3 br_round m-b_4" src="{{group.items[0].image}}" alt="{{group.items[0].image_alt}}">
+
+                           {%- endif -%}
+                       </div>
+                    {%- endif -%}  
+               {%- if group.items[0].type == "node" -%}
+                   <!-- node code -->    
+                   <div grid-area="content" class="{{content_classes}}">
+                       {%- if group.items[0].date -%}
+                       <span class="{{date_classes}}"> {{ group.items[0].date }}</span>
+                       {%- endif -%}
+                       {{group.items[0].content}}
+                   </div>    
+               {%- else -%}
+               <div grid-area="content" class="{{content_classes}}">
+               <ul class="ul_none flex flex_column gap_4  br-b_1 br_dotted br_primary-n1">
+                   {% for item in group.items %}
+                     <li class="p_4 m-t_3 br-t_1 br_dotted br_primary-n1">
+                       {%- if item.date -%}
+                       <span class="{{date_classes}}"> {{ item.date }}</span>
+                       {%- endif -%}
+                       {{ item.content }} </li>
+                   {% endfor %}
+                 </ul>
+               </div>
+               {%- endif -%}
+
+               </section>
                 {%- endif -%}
 
-                </section>
               {% endfor %}
 
             </div>
