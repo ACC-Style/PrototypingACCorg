@@ -1,7 +1,7 @@
 ---
 layout: arches-sidebar-double
 ---
-{%- assign page_classes = 'c_primary-5 font_10:lg font_6 font_8:md lh_0 m-b_4:lg p_3 p_4:lg' -%}
+{%- assign page_classes = 'c_primary-5 font_10:lg font_6 font_8:md lh_0 m-b_4:lg' -%}
 {%- assign title_classes = 'block c_white font_7:lg font_5:md font_4 uppercase font_display font_medium lh_1' -%}
 {%- assign date_classes = 'block font_3:lg font_2:md font_1 c_primary-2 font_xbold' -%}
 {%- assign content_classes = 'block font_2:lg font_1:md font_0 lh_2 ' -%}
@@ -17,12 +17,12 @@ layout: arches-sidebar-double
         {% if data_collection %}
             {%- assign grouped_nodes = data_collection | group_by: "node_id" -%}
            
-            <div class="main-content p_4:lg bg_acc-n2 br_radius reading-typography color-inherit c_white ">
+            <div class="main-content p_4 p_5:lg bg_acc-n2 br_radius reading-typography color-inherit c_white ">
                 {% for group in grouped_nodes %}
                 {%- if  group.items[0].type == "page" -%}
                         <h1 class="{{page_classes}}">{{group.items[0].title}}</h1>
                 {%- else -%}
-                <section class="container m-b_6:lg m-b_5:md m-b_4 ">
+                <section class="m-b_6:lg m-b_5:md m-b_4 ">
             
                     <div grid-area="title">
                        <h2 class="{{title_classes}}">{{ group.items[0].title }}</h2>
