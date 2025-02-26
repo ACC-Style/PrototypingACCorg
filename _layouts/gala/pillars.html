@@ -1,11 +1,16 @@
 ---
-layout: arches-sidebar-double
+layout: arches-sidebar
 ---
-{%- assign page_classes = 'c_primary-5 font_10:lg font_6 font_8:md lh_0 m-b_4:lg' -%}
-{%- assign title_classes = 'block c_white font_7:lg font_5:md font_4 uppercase font_display font_medium lh_1' -%}
-{%- assign date_classes = 'block font_3:lg font_2:md font_1 c_primary-2 font_xbold' -%}
-{%- assign content_classes = 'block font_2:lg font_1:md font_0 lh_2 ' -%}
-
+{%- assign page_classes = 'font_10:lg font_9:md font_7 lh_0 m-b_6:lg m-b_4 font_display' -%}
+{%- assign title_classes = 'block font_8:lg font_6:md font_5 font_display font_regular lh_1' -%}
+{%- assign date_classes = 'block font_9:lg font_7:md font_6 c_primary-2 font_xbold' -%}
+{%- assign content_classes = 'block font_3:lg font_2:md font_1 lh_3 m-y_2 m-y_3:md m-y_4:lg' -%}
+{%- assign timeline-content_classes = 'block font_3:lg font_2:md font_1 lh_3 m-y_2 m-y_3:md m-y_4:lg' -%}
+{%- assign container_page = 'p_4 p_5:lg bg_acc-n2 br_radius c_white color_inherit' -%}
+{%- assign container_split = 'grid columns_3:lg columns_2:md columns_1 gap_5:lg gap_4' -%}
+{%- assign container_split-content = 'col-start_start col-end_n2:md col-end_end' -%}
+{%- assign timeline_split = 'grid columns_4:lg columns_3:md columns_1 gap_5:lg gap_4' -%}
+{%- assign timeline_split-content = 'col-start_start col-end_n2:md col-end_end' -%}
 
 {% if page.course_id == nil or page.course_id == '' %}
     <p class="c_alert">Missing Course ID</p>
@@ -17,45 +22,71 @@ layout: arches-sidebar-double
         {% if data_collection %}
             {%- assign grouped_nodes = data_collection | group_by: "node_id" -%}
            
-            <div class="main-content p_4 p_5:lg bg_acc-n2 br_radius reading-typography color-inherit c_white ">
+            <div class="main-content reading-typography wrapper-container {{container_page}}">
                 {% for group in grouped_nodes %}
                 {%- if  group.items[0].type == "page" -%}
                         <h1 class="{{page_classes}}">{{group.items[0].title}}</h1>
                 {%- else -%}
                 <section class="m-b_6:lg m-b_5:md m-b_4 ">
-            
-                    <div grid-area="title">
-                       <h2 class="{{title_classes}}">{{ group.items[0].title }}</h2>
-
+                    <div class="{{container_split}}">
+                        <div grid-area="title" class="{{container_split-content}}">
+                            <h2 class="{{title_classes}}">{{ group.items[0].title }}</h2>
+                            {%- if group.items[0].date and group.items[0].type == "node" -%}
+                            <span class="{{date_classes}}"> {{ group.items[0].date }}</span>
+                            {%- endif -%}
+                         </div>
+                         {%- if group.items[0].image -%}
+                            <div grid-area="iamge" class="m_auto:md max-w_20">
+                                {%- if group.items[0].image_guid and  group.items[0].image_guid != "{sitecore-guid}" -%}
+                                    {%- assign guid = group.items[0].image_guid -%}
+                                    <img src="{% include URL.html media=guid %}" alt="{{group.items[0].image_alt}}">
+                                {%- else -%}
+                                <img class="bg_black-3 br_round m-b_4" src="{{group.items[0].image}}" alt="{{group.items[0].image_alt}}">
+     
+                                {%- endif -%}
+                            </div>
+                         {%- endif -%}  
                     </div>
-                    {%- if group.items[0].image -%}
-                       <div grid-area="iamge">
-                           {%- if group.items[0].image_guid and  group.items[0].image_guid != "{sitecore-guid}" -%}
-                               {%- assign guid = group.items[0].image_guid -%}
-                               <img src="{% include URL.html media=guid %}" alt="{{group.items[0].image_alt}}">
-                           {%- else -%}
-                           <img class="bg_black-3 br_round m-b_4" src="{{group.items[0].image}}" alt="{{group.items[0].image_alt}}">
-
-                           {%- endif -%}
-                       </div>
-                    {%- endif -%}  
+                   
                {%- if group.items[0].type == "node" -%}
                    <!-- node code -->    
                    <div grid-area="content" class="{{content_classes}}">
-                       {%- if group.items[0].date -%}
-                       <span class="{{date_classes}}"> {{ group.items[0].date }}</span>
-                       {%- endif -%}
                        {{group.items[0].content}}
                    </div>    
                {%- else -%}
                <div grid-area="content" class="{{content_classes}}">
+                
                <ul class="ul_none flex flex_column gap_4  br-b_1 br_dotted br_primary-n1">
                    {% for item in group.items %}
-                     <li class="p_4 m-t_3 br-t_1 br_dotted br_primary-n1">
-                       {%- if item.date -%}
-                       <span class="{{date_classes}}"> {{ item.date }}</span>
-                       {%- endif -%}
-                       {{ item.content }} </li>
+                   {%- unless item.type == 'timeline' -%}
+
+                    {%- if item.image -%}
+                    <li class="p_4 m-t_3 br-t_1 br_dotted br_primary-n1 {{timeline_split}}">
+                        <div class="{{timeline_split-content}}">
+                    {%- else -%}
+                    <li class="p_4 m-t_3 br-t_1 br_dotted br_primary-n1">
+                        <div>
+                    {%- endif -%}
+                    
+                        {%- if item.date -%}
+                        <div class="{{date_classes}}"> {{ item.date }}</div>
+                        {%- endif -%}
+                        <div class="{{timeline-content_classes}}">{{ item.content }}</div>
+                    </div>
+
+                       {%- if item.image -%}
+                       <div grid-area="iamge" class="m_auto:md max-w_20">
+                           {%- if item.image_guid and  item.image_guid != "{sitecore-guid}" -%}
+                               {%- assign guid = item.image_guid -%}
+                               <img src="{% include URL.html media=guid %}" alt="{{item.image_alt}}" >
+                           {%- else -%}
+                           <img class="bg_black-3 br_round m-b_4" src="{{item.image}}" alt="{{item.image_alt}}">
+
+                           {%- endif -%}
+                       </div>
+                    {%- endif -%}  
+                    </li>
+                    {%- endunless -%}
                    {% endfor %}
                  </ul>
                </div>
