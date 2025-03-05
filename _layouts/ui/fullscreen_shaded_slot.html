@@ -1,22 +1,8 @@
 ---
-layout: default
+layout: UI
 --- 
-
-{% include arches-head.html %}
-<body id="ng-app" ng-app="AccApp" class="user-not-logged-in ng-scope medium-viewport" style="background-color: #c1d6d9;">
-    <div class="max-w_75 m_auto">
-        <div class="bg_white shadow_overlap-light min-h_100"> 
-            <div class="p_4 p_5:lg br-b_1 br_solid br_primary-n2 m-b_4">
-                <h1 class="c_primary font_accent">{{page.name | titlecase}}
-                    <br>
-                    <small class="font-size_down-3">{{page.position | titlecase}}</small>  
-                </h1>
-            </div>
-            <section class="reading-typography p-x_4 p-x_5:lg m-b_4 m-b_5:lg bg_black-2 p-y_5:lg p-y_4 shadow_emboss-light">
-            {{content}}
-            </section>
-        </div>
-    </div>
-</body>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<div  mode="debug">
+<section class="reading-typography p-x_4 p-x_5:lg m-b_4 m-b_5:lg bg_black-2 p-y_5:lg p-y_4 shadow_emboss-light">
+{{content}}
+</section>
+</div>     
