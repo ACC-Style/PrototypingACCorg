@@ -27,13 +27,13 @@ custom_fontsize:  change the base sizing for the reading typography defaults to 
 {% if include.container_modifier %}
   <section
     label="IconDecoratedList"
-    class="reading-typography font-size_up grid {{ include.container_modifier }} {{ grid_styles }}"
+    class="reading-typography font-size_up grid content-wrapper {{ include.container_modifier }} {{ grid_styles }}"
     style="--custom-font-size-up: {{font_size}} ;"
   >
 {% else %}
   <div
     label="IconDecoratedList"
-    class="reading-typography font-size_up grid {{ grid_styles }}"
+    class="reading-typography font-size_up grid content-wrapper {{ grid_styles }}"
     style="--custom-font-size-up: {{font_size}} ;"
   >
 {% endif %}
@@ -51,13 +51,13 @@ custom_fontsize:  change the base sizing for the reading typography defaults to 
         
         <!-- New section header -->
         <div class="grid-cell">
-          <div class="section-header flex flex_row:md flex_column items_center justify_start m-b_4 text_center text_left:md">
-            <em class="c_accent font_7 self_center self_start:md p_4 p_0:md m-t_4 m-t_3:md p-r_4:md far fa-regular {{ row.icon_class }}" aria-hidden="true"></em>
-            <h3 class="m_0">
-             {{ row.section_title }}
+          <div class="section-header flex flex_row:md flex_column items_center justify_start m-b_4 text_center text_left:md c_accent-n1">
+            <i class="font_7 self_center self_start:md p_4 p_0:md m-t_4 m-t_3:md p-r_4:md far fa-regular {{ row.icon_class }}" aria-hidden="true"></i>
+            <h3 class="m_0 font_bold not-link c_inherit-all lh_3 ">
+             <span class="font-size_up-1">{{ row.section_title }}</span>
             </h3>
           </div>
-          <ul class="ul_square marker_accent m-b_6">
+          <ul class="ul_square marker_accent m-b_4">
           
           <!-- Set the current section and icon to use for subsequent rows -->
           {% assign current_section = row.section_title %}

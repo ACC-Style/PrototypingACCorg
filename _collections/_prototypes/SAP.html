@@ -6,6 +6,7 @@ masthead: "MicroSite/heroimage.micro.dynamic.html"
 hero-title: "ACCSAP"
 hero-cta-text: "Purchase"
 hero-cta-link: "#"
+parent-page: "Education"
 
 ---
 <main grid-area="content" class="p-t_5:lg p-t_4 p-x_4:lg relative" >
@@ -19,11 +20,16 @@ hero-cta-link: "#"
     </div>
    </div>
 
-   <div class="wrapper-container bg_black-1 br_radius m-t_5:lg m-t_4 shadow_emboss-overlap reading-typography p_4">
+   <div class="wrapper-container bg_black-1 br_radius m-t_5:lg m-t_4reading-typography p_4">
     <h3>Key Benefits</h3>
     {%- include Blocks/UL_IconHeadlineText.html data_path="SAP.keybenefits" -%}
    </div>
    {%- include_relative  SAP/full-price-model.html -%}
+   <section class="reading-typography">
+       <h2>Learning Experience &amp; Features</h2>
+       <h3>How it works</h3>
+       {%- include Blocks/UL_IconLists.html data_path="SAP.learningexperiencefeatures" container_modifier="m-b_5:lg m-b_4" -%}
+   </section>
    {%- include_relative  SAP/wrap-up-content.html -%}
 </main>
 <aside grid-area="sidebar-primary">
@@ -49,3 +55,8 @@ hero-cta-link: "#"
         </div>
     </div>
 </aside>
+<style>
+    mark{
+        background-color: transparent;
+    }
+</style>
