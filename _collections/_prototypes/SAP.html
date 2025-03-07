@@ -1,0 +1,31 @@
+---
+layout: arches-pagelayout
+name: "SAP"
+position: "Product Page"
+masthead: "MicroSite/heroimage.micro.dynamic.html"
+hero-title: "ACCSAP"
+hero-cta-text: "Buy"
+hero-cta-link: "#"
+
+---
+<main grid-area="content" class="p-t_5:lg p-t_4 p-x_4:lg relative" >
+   <div id="introduction" class="grid columns_1 columns_5:md gap_5:lg gap_4">
+    <div class="col-start_start col-end_n3:md col-end_end reading-typography font-size_up" style="--custom-font-size-modifier: 1.125;">
+        {%- include_relative SAP/intro-primary.html -%}
+
+    </div>
+    <div class="col-start_start col-start_n3:md col-end_end">
+        {%- include_relative SAP/intro-secondary.html -%}
+    </div>
+   </div>
+
+   <div class="wrapper-container bg_black-1 br_radius m-t_5:lg m-t_4 shadow_emboss-overlap reading-typography p_4">
+    <h3>Key Benefits</h3>
+    {%- include Blocks/UL_IconHeadlineText.html data_path="SAP.keybenefits" -%}
+   </div>
+   {%- include_relative  SAP/full-price-model.html -%}
+   {%- include_relative  SAP/wrap-up-content.html -%}
+</main>
+<aside grid-area="sidebar-primary">
+    {%- include_relative SAP/sidebar-nav.html -%}
+</aside>
