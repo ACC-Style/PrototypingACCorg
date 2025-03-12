@@ -1,0 +1,92 @@
+---
+layout: arches
+name: "Advanced Grid"
+position: "cell labeling"
+---
+<style>
+
+[class*="_Cstart"]{
+    --C-start: 1
+}
+[class*="_C1"]{
+    --C-start: 1
+}
+[class*="_C2"]{
+    --C-start: 2
+}
+[class*="_C3"]{
+    --C-start: 3
+}
+[class*="_C4"]{
+    --C-start: 4
+}
+[class*="_Cend"]{
+    --C-start: end
+}
+
+[class*="~C1"]{
+    --C-end: 2
+}
+[class*="~C2"]{
+    --C-end: 3
+}
+[class*="~C3"]{
+    --C-end: 4
+}
+[class*="~C4"]{
+    --C-end: 5
+}
+[class*="~Cend"]{
+    --C-end: -1
+}
+[class*="_Rstart"]{
+    --R-start: 1
+}
+[class*="_R1"]{
+    --R-start: 1
+}
+[class*="_R2"]{
+    --R-start: 2
+}
+[class*="_R3"]{
+    --R-start: 3
+}
+[class*="_R4"]{
+    --R-start: 4
+}
+[class*="_Rend"]{
+    --R-start: end
+}
+
+[class*="~R1"]{
+    --R-end: 2
+}
+[class*="~R2"]{
+    --R-end: 3
+}
+[class*="~R3"]{
+    --R-end: 4
+}
+[class*="~R4"]{
+    --R-end: 5
+}
+[class*="~Rend"]{
+    --R-end: -1
+}
+[class^="cell"]{
+    --_C-start: var(--C-start,1);
+    --_C-end: var(--C-end,-1);
+    --_R-start: var(--R-start,1);
+    --_R-end: var(--R-end,-1);
+    grid-column:var(--_C-start)/var(--_C-end);
+    grid-row:var(--_R-start)/var(--_R-end);
+}
+
+</style>
+
+cell_C1~C3_R2-R4
+<div class="grid bg_black columns_5 rows_5 gap_4 p_5">
+    <div class="cell_C1~C3_R2~R4 bg_accent p_4">
+
+    </div>
+</div>
