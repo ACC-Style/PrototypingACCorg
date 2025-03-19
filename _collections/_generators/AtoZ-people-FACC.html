@@ -1,9 +1,9 @@
 ---
 layout: playground
-name: "A to Z List"
-position: "Generator"
-csv_file: "people"
-data_path: "people"
+name: "FACC - A to Z List"
+position: "Convocation - Generator"
+csv_file: "Convocation/FACC-people"
+data_path: "Convocation.FACC-people"
 ---
 
 {% assign alpha_array = 'A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z' | split: ',' %}
@@ -21,7 +21,6 @@ data_path: "people"
 {% if contains_titles.size >= 1 and contains_titles.first != '' %}
   {% assign city_font_size = 'font-size_down-2' %}
 {% endif %}
-
 
 <div class="relative p-t_2 content_wrapper" id="AlphaNavTop" >
   <div class="sticky t_0 r_0 z_1">
