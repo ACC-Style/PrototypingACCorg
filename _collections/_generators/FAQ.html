@@ -6,7 +6,7 @@ csv_file: "faqs"
 ---
 
 <div class="relative" COPY_ME >
-{% assign faqs = site.data.faqs | sort: "sortnumber" %}
+{% assign faqs = site.data.faqs %}
 {% for faq in faqs  %}
     <header id="accordion_header" class="flex flex_row sticky t_n2 bg_white shadow_overlap-light br_solid br_1 br_black-2 z_2 collapsed relative" aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#content_accordion-{{faq.sortnumber}}" aria-controls="#content_accordion-{{faq.sortnumber}}">
         <div class="h:bg_primary-5 m_2 c_primary-n2 h:c_primary-n4 br_radius expanded-click-area">
