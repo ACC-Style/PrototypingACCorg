@@ -3,10 +3,17 @@ layout: playground
 name: "A to Z List"
 position: "Generator"
 csv_file: "people"
+data_path: "people"
 ---
 
 {% assign alpha_array = 'A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z' | split: ',' %}
-{% assign people = site.data.people | sort: 'sortname' %}
+{% assign path_parts = page.data_path | split: '.'  %}
+{% assign data_object = site.data %}
+{% for part in path_parts %}
+  {% assign data_object = data_object[part] %}
+{% endfor %}
+
+{% assign people = data_object | sort: 'sortname' %}
 {% assign alpha_categories = people | map: 'group' %}
 {% assign contains_titles = people | map: 'title' %}
 {% assign contains_titles = contains_titles | uniq %}
@@ -14,6 +21,7 @@ csv_file: "people"
 {% if contains_titles.size >= 1 and contains_titles.first != '' %}
   {% assign city_font_size = 'font-size_down-2' %}
 {% endif %}
+
 
 <div class="relative p-t_2 content_wrapper" id="AlphaNavTop" >
   <div class="sticky t_0 r_0 z_1">
@@ -35,7 +43,7 @@ csv_file: "people"
     class="bg_white br_radius grid items_center p_3 p_4:lg relative shadow_overlap-light z_2 m-t_n2 wrapper-container"
   >
     <ul
-      class="grid columns_6:lg columns_5:md columns_4 c_secondary-2 font_bold gap_4 grid columns_5 justify_around:lg justify_center m-x_4 m-y_3 ul_none"
+      class="grid columns_6:lg columns_5:md columns_4 c_secondary-2 font_bold gap_4 grid columns_5 justify_around:lg justify_center m-x_4 m-y_3 ul_none w_100"
     >
       <!-- Loop -->
       {% for alpha in alpha_array %}
