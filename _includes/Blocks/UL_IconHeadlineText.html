@@ -1,3 +1,11 @@
+<!-- 
+data_path: the data path for the csv
+container_modifier: class slot to change the row mechanizm.
+custom_fontsize:  change the base sizing for the reading typography defaults to 1.
+-->
+
+
+
 {% assign path_parts = 'Blocks.UL_IconHeadlineText' | split: '.' %}
 {% if include.data_path %}
   {% assign path_parts = include.data_path | split: '.' %}
@@ -34,10 +42,10 @@
 
 <ul class="{{ grid_styles }} p-x_4:lg ul_none text_left">
   {% for listItem in data_object %}
-    <li class="flex flex_row:md flex_column items_start justify_start isolate relative c_accent-n1 {% if listItem.url %} p-x_4 h:bg_accent-5 {% endif %} p_3 br_radius">
-      <i class="c_inherit-all font_7 m-t_3 p-r_4 fas {{ listItem.icon_class }}" aria-hidden="true"></i>
+    <li class="flex flex_row:md flex_column items_start:md items_center justify_start isolate relative c_accent-n1 {% if listItem.url %} p-x_4 h:bg_accent-5 {% endif %} p_3 br_radius">
+      <i class="c_inherit-all font_7 self_center self_start:md p_4 p_0:md m-t_4 m-t_3:md p-r_4:md far fa-regular  {{ listItem.icon_class }}" aria-hidden="true"></i>
       <div class="font-size_up">
-        <div class="font_bold not-link c_inherit-all lh_2">
+        <div class="font_bold not-link c_inherit-all lh_2 text_center text_left:md m-b_3 m-b_0:lg">
           {% if listItem.url %}
             <a href="{{ listItem.url }}" class="not-link c_accent-n1 h:c_accent-n3 h:underline expanded-click-area" target="_blank" rel="noopener noreferrer">{{ listItem.headline }}</a>
           {% else %}

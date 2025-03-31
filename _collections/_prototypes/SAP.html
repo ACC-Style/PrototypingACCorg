@@ -9,7 +9,7 @@ hero-cta-link: "#"
 parent-page: "Education"
 ---
 
-<main grid-area="content" class="p-t_5:lg p-t_4 p-x_4:lg relative">
+<main grid-area="content" class="p-t_5:lg p-t_4 p-x_4:lg relative wrapper-container">
   <div id="introduction" class="grid columns_1 columns_5:lg gap_5:lg gap_4">
     <div
       class="col-start_start col-end_n3:lg col-end_end reading-typography font-size_up"
@@ -21,14 +21,27 @@ parent-page: "Education"
       {%- include_relative SAP/intro-secondary.html -%}
     </div>
   </div>
-  {%- include_relative SAP/cardiosourse-plus.html -%}
-
+  <div class="reading-typography">
+    <h3 data-heading="Whats in the product?" dir="auto" class="heading" id="Whats_in_the_product?">
+      Whats in the product?
+    </h3>
+    <div class="reading-typography font-size_up" style="--custom-font-size-modifier: 1.65;">
+    <ul class="ul_none grid columns_3:lg columns_2:md columns_1 gap_5:lg gap_4">
+      <li class="flex flex_row gap_3 gap_4:lg items_center justify_start"><strong class="c_accent-n2 font-size_up-2 font_xbold lh_0">130 </strong><small class="font-size_down-2 lh_1 font_medium">Learning <br> Modules</small></li>
+      <li class="flex flex_row gap_3 gap_4:lg items_center justify_start"><strong class="c_accent-n2 font-size_up-2 font_xbold lh_0">50 </strong><small class="font-size_down-2 lh_1 font_medium"> Video <br> Presentations</small></li>
+      <li class="flex flex_row gap_3 gap_4:lg items_center justify_start"><strong class="c_accent-n2 font-size_up-2 font_xbold lh_0">+600 </strong><small class="font-size_down-2 lh_1 font_medium">Questions <span class="font-size_down-2 block m-t_1 c_black-8 font_regular">with supportive references</span></small></li>
+    </ul>
+    </div>
+  </div>
   <div
-    class="wrapper-container bg_black-1 br_radius m-t_5:lg m-t_4reading-typography p_4"
+    class="wrapper-container bg_black-1 br_radius m-t_5:lg m-t_4 reading-typography p_4"
   >
     <h3>Key Benefits</h3>
     {%- include Blocks/UL_IconHeadlineText.html data_path="SAP.keybenefits" -%}
+
+    {%- include_relative SAP/cardiosourse-plus.html -%}
   </div>
+
   {%- include_relative SAP/full-price-model.html -%}
   <section class="reading-typography">
     <h2>Learning Experience &amp; Features</h2>
@@ -79,8 +92,4 @@ parent-page: "Education"
     </div>
   </div>
 </aside>
-<style>
-  mark {
-    background-color: transparent;
-  }
-</style>
+
