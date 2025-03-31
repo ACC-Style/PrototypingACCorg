@@ -7,56 +7,80 @@ hero-title: "ACCSAP"
 hero-cta-text: "Purchase"
 hero-cta-link: "#"
 parent-page: "Education"
-
 ---
-<main grid-area="content" class="p-t_5:lg p-t_4 p-x_4:lg relative" >
-   <div id="introduction" class="grid columns_1 columns_5:md gap_5:lg gap_4">
-    <div class="col-start_start col-end_n3:md col-end_end reading-typography font-size_up" style="--custom-font-size-modifier: 1.125;">
+
+<main grid-area="content" class="p-t_5:lg p-t_4 p-x_4:lg relative">
+  <div id="introduction" class="grid columns_1 columns_5:lg gap_5:lg gap_4">
+    <div
+      class="col-start_start col-end_n3:lg col-end_end reading-typography font-size_up"
+      style="--custom-font-size-modifier: 1.125;"
+    >
         {%- include_relative SAP/intro-primary.html -%}
-
     </div>
-    <div class="col-start_start col-start_n3:md col-end_end">
-        {%- include_relative SAP/intro-secondary.html -%}
+    <div class="col-start_start col-start_n3:lg col-end_end">
+      {%- include_relative SAP/intro-secondary.html -%}
     </div>
-   </div>
+  </div>
+  {%- include_relative SAP/cardiosourse-plus.html -%}
 
-   <div class="wrapper-container bg_black-1 br_radius m-t_5:lg m-t_4reading-typography p_4">
+  <div
+    class="wrapper-container bg_black-1 br_radius m-t_5:lg m-t_4reading-typography p_4"
+  >
     <h3>Key Benefits</h3>
     {%- include Blocks/UL_IconHeadlineText.html data_path="SAP.keybenefits" -%}
-   </div>
-   {%- include_relative  SAP/full-price-model.html -%}
-   <section class="reading-typography">
-       <h2>Learning Experience &amp; Features</h2>
-       <h3>How it works</h3>
-       {%- include Blocks/UL_IconLists.html data_path="SAP.learningexperiencefeatures" container_modifier="m-b_5:lg m-b_4" -%}
-   </section>
-   {%- include_relative  SAP/wrap-up-content.html -%}
+  </div>
+  {%- include_relative SAP/full-price-model.html -%}
+  <section class="reading-typography">
+    <h2>Learning Experience &amp; Features</h2>
+    {%- include Blocks/UL_IconLists.html
+    data_path="SAP.learningexperiencefeatures" container_modifier="m-b_5:lg
+    m-b_4" -%}
+  </section>
+  {%- include_relative SAP/wrap-up-content.html -%}
+  {%- include_relative SAP/follow-up-cta.html -%}
 </main>
 <aside grid-area="sidebar-primary">
-    {%- include_relative SAP/sidebar-nav.html -%}
-    <div class="heading-children reading-typography p_4 m-t_4 m-x_3 bg_primary-5 br_radius" >
-        <div class="el-h3 heading-wrapper">
-            <h4 data-heading="Built by Experts, Designed for Your Success" dir="auto" class="heading"
-                id="Built_by_Experts,_Designed_for_Your_Success">
-                Built by Experts, Designed for Your Success
-            </h4>
-            <div class="heading-children">
-                <div class="el-p">
-                    <p dir="auto">ACCSAP is developed by <strong>top cardiovascular experts</strong> who bring
-                        real-world experience and cutting-edge research into this program.</p>
-                    <p class="text_center"><a href="#" class="btn btn-secondary m_auto text_center">View Faculty</a></p>    
-                </div>
-                <div class="el-p">
-                    <p class="font-size_down-2 font_italic"><em>Thank you to our dedicated faculty for making this an unparalleled learning
-                            resource!</em></p>
-                </div>
-                <div class="mod-footer mod-ui"></div>
-            </div>
+  {%- include_relative SAP/sidebar-nav.html -%}
+  <div
+    class="heading-children reading-typography p_4 m-t_4 m-x_3 bg_primary-5 br_radius"
+  >
+    <div class="el-h3 heading-wrapper">
+      <h4
+        data-heading="Built by Experts, Designed for Your Success"
+        dir="auto"
+        class="heading"
+        id="Built_by_Experts,_Designed_for_Your_Success"
+      >
+        Built by Experts, Designed for Your Success
+      </h4>
+      <div class="heading-children">
+        <div class="el-p">
+          <p dir="auto">
+            ACCSAP is developed by
+            <strong>top cardiovascular experts</strong> who bring real-world
+            experience and cutting-edge research into this program.
+          </p>
+          <p class="text_center">
+            <a href="#" class="btn btn-secondary m_auto text_center"
+              >View Faculty</a
+            >
+          </p>
         </div>
+        <div class="el-p">
+          <p class="font-size_down-2 font_italic">
+            <em
+              >Thank you to our dedicated faculty for making this an
+              unparalleled learning resource!</em
+            >
+          </p>
+        </div>
+        <div class="mod-footer mod-ui"></div>
+      </div>
     </div>
+  </div>
 </aside>
 <style>
-    mark{
-        background-color: transparent;
-    }
+  mark {
+    background-color: transparent;
+  }
 </style>

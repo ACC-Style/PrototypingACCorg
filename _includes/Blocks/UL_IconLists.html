@@ -66,7 +66,14 @@ custom_fontsize:  change the base sizing for the reading typography defaults to 
       
       <!-- Render the list item for the current section -->
       <li class="list-item m-b_3">
-        {% if row.link_url != "" %}
+        {% assign has_link = false %}
+        {% if (row.link_url != "" and row.link_url != nil and row.link_url != null) or
+              (row.guid != "" and row.guid != nil and row.guid != null) %}
+          {% assign has_link = true %}
+        {% endif %}
+
+
+        {% if has_link == true %}
           <a class="link" href="{{ row.link_url }}">{{ row.link_text }}</a>
         {% else %}
           {{ row.link_text }}
