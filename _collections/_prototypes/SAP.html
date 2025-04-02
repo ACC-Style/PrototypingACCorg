@@ -2,14 +2,15 @@
 layout: arches-pagelayout
 name: "SAP"
 position: "Product Page"
-masthead: "MicroSite/heroimage.micro.dynamic.html"
+masthead: "empty.html"
 hero-title: "ACCSAP"
 hero-cta-text: "Purchase"
 hero-cta-link: "#"
 parent-page: "Education"
 ---
-
-<main grid-area="content" class="p-t_5:lg p-t_4 p-x_4:lg relative wrapper-container">
+<!-- masthead: "MicroSite/heroimage.micro.dynamic.html" -->
+<main grid-area="content" class="p-t_5:lg p-t_4 p-x_4:lg relative wrapper-container  ">
+{%- include_relative SAP/product-banner.html -%}
   <div id="introduction" class="grid columns_1 columns_5:lg gap_5:lg gap_4">
     <div
       class="col-start_start col-end_n3:lg col-end_end reading-typography font-size_up"
@@ -21,7 +22,7 @@ parent-page: "Education"
       {%- include_relative SAP/intro-secondary.html -%}
     </div>
   </div>
-  <div class="reading-typography">
+  <div class="reading-typography m-y_4:lg">
     <h3 data-heading="What's in the product?" dir="auto" class="heading" id="Whats_in_the_product?">
       What's in the product?
     </h3>
@@ -50,13 +51,14 @@ parent-page: "Education"
     data_path="SAP.learningexperiencefeatures" container_modifier="m-b_5:lg
     m-b_4" -%}
   </section>
+
   {%- include_relative SAP/wrap-up-content.html -%}
   {%- include_relative SAP/follow-up-cta.html -%}
 </main>
-<aside grid-area="sidebar-primary">
+<aside grid-area="sidebar-primary" >
   {%- include_relative SAP/sidebar-nav.html -%}
   <div
-    class="heading-children reading-typography p_4 m-t_4 m-x_3 bg_primary-5 br_radius"
+    class="heading-children reading-typography p_4 m-t_4 m-x_4 bg_primary-5 br_radius"
   >
     <div class="el-h3 heading-wrapper">
       <h4
