@@ -1,0 +1,1 @@
+p-x_3 p-y_2 bg_shade-5 h:bg_shade-n2 br_radius c_black-7 h:c_shade-5 undecorated h:undecorated not-link font_bold nowrap block text_center font-size_down-1 

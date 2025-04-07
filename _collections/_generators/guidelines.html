@@ -4,75 +4,86 @@ name: "Guidelines"
 position: "Guidelines"
 ---
 {% assign grouped = site.data.guidelines | group_by: "year" | sort: "name" | reverse %}
-<div class="reading-typography">
+<div class="reading-typography font-size_down p_3 wrapper-container bg_black-_05" style="--custom-font-size-modifier:1.125;">
   {% for group in grouped %}
-<section aria-labelledby="document-{{ group.name }}">
-  <h3 id="document-{{ group.name }}">
-    <span class="display_none" aria-hidden="true">Documents for</span> <strong> {{ group.name }}</strong>
-  </h3>
-
-  <ul class="ul_none p_0 m_0 document-list">
-    {% for item in group.items %}
-    <li class="{% if item.new == 'true' %}new{% endif %}" itemscope itemtype="https://schema.org/MedicalGuideline">
-      <meta itemprop="datePublished" content="{{ group.name }}" />
-      <h4 itemprop="name">{{ item.title }}</h4>
-
-      {% if item.jacc_url or item.pdf_url or item.hub_url %}
-      <nav aria-label="Resource links for {{ item.document_type }}: {{ item.title }}">
-        <ul class="ul_inline-pipe">
-          {% if item.jacc_url %}
-          <li>
-            <a href="{{ item.jacc_url }}"
-               target="_blank"
-               rel="noopener noreferrer"
-               itemprop="guidelineSubject"
-               itemscope itemtype="https://schema.org/ScholarlyArticle"
-               title="Read the full {{ item.document_type | downcase }} on JACC.org: {{ item.title }}">
-              View in JACC
-            </a>
-          </li>
-          {% endif %}
-
+  <section aria-labelledby="document-{{ group.name }}" class="m-b_1 m-b_2:sm bg_black-1 p-y_3 p-x_3 p-x_4:sm">
+    <h3 id="document-{{ group.name }}" class="c_accent-n2 m-t_3 m-t_4:md">
+      <span class="display_none" aria-hidden="true">Documents for</span> <strong> {{ group.name }}</strong>
+    </h3>
+    <ul class="ul_none p_0 m_0 document-list grid columns_1 columns_2:md columns_3:lg gap_4:md gap_3">
+      {% assign grouped_items = group.items | sort: "title" %}
+      {% for item in grouped_items %}
+      <li class="{% if item.new == 'true' %}new active order_0 {% endif %} relative h:bg_primary-4 wrapper-container flex flex_column bg_white br_radius p_3 p_4:md p-b_2 p-b_3:md isolation_isolate relative" itemscope itemtype="https://schema.org/MedicalGuideline">
+        <meta itemprop="datePublished" content="{{ group.name }}" />
+        <span class="a:_inline-block a:inline-block absolute bg_highlight-n2 c_white display_none font-size_down-2 font_bold m-t_2 p-x_3 p-y_2 r_4 t_n4 uppercase">new</span>
+        <div class="flex_row flex gap_2 gap_3:sm">
+          <h4 itemprop="name" class="font_medium m-t_0 lh_1 c_primary-n3">{{ item.title }}</h4>
           {% if item.pdf_url %}
-          <li>
-            <a href="{{ item.pdf_url }}"
-               target="_blank"
-               rel="noopener noreferrer"
-               type="application/pdf"
-               itemprop="guidelineUrl"
-               class="link-no-after"
-               title="Download the PDF of the {{ item.document_type | downcase }}: {{ item.title }}">
-              <i class="fa-solid fa-file-pdf"></i> Download PDF <i class="fa-solid fa-download"></i>
+          <div class="flex_none flex_5 m-l_auto">
+            <a href="{{ item.pdf_url }}" target="_blank" rel="noopener noreferrer" type="application/pdf"
+              itemprop="guidelineUrl"  class="aspect_1x1 btn btn-outline-secondary grid items_center justify_center p_3 expanded-click-area z_1"
+              title="Download the PDF of the {{ item.document_type | downcase }}: {{ item.title }}">
+              <i class="fa-file-pdf fa-solid font-size_up-1"></i>
             </a>
-          </li>
+          </div>
           {% endif %}
+        </div>
+        {% if item.jacc_url or item.pdf_url or item.hub_url %}
+        <nav aria-label="Resource links for {{ item.document_type }}: {{ item.title }}" class="m-t_auto z_2">
+          <ul class="ul_none flex flex_row font-size_down-2 items_end justify_stretch m_0">
+            {% if item.jacc_url %}
+            <li class="flex_auto">
+              <a href="{{ item.jacc_url }}" target="_blank" rel="noopener noreferrer" itemprop="guidelineSubject"
+                itemscope itemtype="https://schema.org/ScholarlyArticle"
+                title="Read the full {{ item.document_type | downcase }} on JACC.org: {{ item.title }}"
+                class="{% include css-bundles/sm-btn.txt %}"
+                >
+                 <span class="display_none inline:md">View in</span> JACC <i class="m-x_2 fa-solid fa-external-link"></i>
+              </a>
+            </li>
+            {% endif %}
+            {% if item.hub_url %}
+            {% if item.hub_url contains 'http' %}
+            {% assign is_absolute = true %}
+            {% else %}
+            {% assign is_absolute = false %}
+            {% endif %}
+            {% if item.hub_url contains 'acc.org' %}
+            {% assign is_acc_url = true %}
+            {% else %}
+            {% assign is_acc_url = false %}
+            {% endif %}
+            {% if is_absolute and is_acc_url == false %}
+            {% assign is_external = true %}
+            {% else %}
+            {% assign is_external = false %}
+            {% endif %}
+            <li class="flex_auto">
+              <a href="{{ item.hub_url }}" itemprop="mainEntityOfPage"
+                title="Visit the topic hub for articles, and other tools about the {{ item.document_type | downcase }}: {{ item.title }}"
+                class="{% include css-bundles/sm-btn.txt %}"
+                {% if is_external %} target="_blank" rel="noopener noreferrer" {% endif %}
+                >
+                <span class="display_none inline:md">Visit Document</span> Hub
 
-          {% if item.hub_url %}
-          {% assign is_absolute = item.hub_url contains 'http' %}
-          {% assign is_external = is_absolute and item.hub_url contains 'acc.org' == false %}
-          <li>
-            <a href="{{ item.hub_url }}"
-               itemprop="mainEntityOfPage"
-               title="Visit the topic hub for articles, and other tools about the {{ item.document_type | downcase }}: {{ item.title }}"
-               {% if is_external %}
-                 target="_blank" rel="noopener noreferrer"
-               {% endif %}>
-              Visit Topic Hub
-            </a>
-          </li>
+                {% if is_external %}
+                <i class="m-x_2 fa-solid fa-external-link"></i>
+                {% endif %}
+              </a>
+            </li>
+            {% endif %}
+          </ul>
+        </nav>
         {% endif %}
-        </ul>
-      </nav>
-      {% endif %}
-    </li>
-    {% endfor %}
-  </ul>
-</section>
-{% endfor %}
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endfor %}
 </div>
 <style>
-  .link-no-after::after{
+  .link-no-after::after {
     display: none !important;
-    content:"" !important;
+    content: "" !important;
   }
 </style>
