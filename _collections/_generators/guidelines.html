@@ -72,6 +72,66 @@ position: "Guidelines"
               </a>
             </li>
             {% endif %}
+            {% if item.article_url %}
+            {% if item.article_url contains 'http' %}
+            {% assign is_absolute = true %}
+            {% else %}
+            {% assign is_absolute = false %}
+            {% endif %}
+            {% if item.article_url contains 'acc.org' %}
+            {% assign is_acc_url = true %}
+            {% else %}
+            {% assign is_acc_url = false %}
+            {% endif %}
+            {% if is_absolute and is_acc_url == false %}
+            {% assign is_external = true %}
+            {% else %}
+            {% assign is_external = false %}
+            {% endif %}
+            <li class="flex_auto">
+              <a href="{{ item.article_url }}" itemprop="mainEntityOfPage"
+                title="Read any updates on the {{ item.document_type | downcase }}: {{ item.title }}"
+                class="{% include css-bundles/sm-btn.txt %}"
+                {% if is_external %} target="_blank" rel="noopener noreferrer" {% endif %}
+                >
+                <span class="display_none inline:md">Read the Updating</span> News Article
+
+                {% if is_external %}
+                <i class="m-x_2 fa-solid fa-external-link"></i>
+                {% endif %}
+              </a>
+            </li>
+            {% endif %}
+            {% if item.keypoints_url %}
+            {% if item.keypoints_url contains 'http' %}
+            {% assign is_absolute = true %}
+            {% else %}
+            {% assign is_absolute = false %}
+            {% endif %}
+            {% if item.keypoints_url contains 'acc.org' %}
+            {% assign is_acc_url = true %}
+            {% else %}
+            {% assign is_acc_url = false %}
+            {% endif %}
+            {% if is_absolute and is_acc_url == false %}
+            {% assign is_external = true %}
+            {% else %}
+            {% assign is_external = false %}
+            {% endif %}
+            <li class="flex_auto">
+              <a href="{{ item.keypoints_url }}" itemprop="mainEntityOfPage"
+                title="Quickly get the most relevant key points for {{ item.document_type | downcase }}: {{ item.title }}"
+                class="{% include css-bundles/sm-btn.txt %}"
+                {% if is_external %} target="_blank" rel="noopener noreferrer" {% endif %}
+                >
+                <span class="display_none inline:md">Quick catch up wih the</span> Key Points
+
+                {% if is_external %}
+                <i class="m-x_2 fa-solid fa-external-link"></i>
+                {% endif %}
+              </a>
+            </li>
+            {% endif %}
           </ul>
         </nav>
         {% endif %}
