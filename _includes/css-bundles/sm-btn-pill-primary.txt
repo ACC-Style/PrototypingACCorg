@@ -1,0 +1,1 @@
+p-x_3 p-y_2 bg_primary-4 h:bg_primary-n3 c_black-8 h:c_shade-5 undecorated h:undecorated not-link font_bold nowrap block text_center 

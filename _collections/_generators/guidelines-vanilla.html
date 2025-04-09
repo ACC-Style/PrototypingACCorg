@@ -1,0 +1,158 @@
+---
+layout: arches
+name: "Guidelines Vanilla"
+position: "Guidelines - Semantic HTML only"
+---
+{% assign grouped = site.data.guidelines | group_by: "year" | sort: "name" | reverse %}
+<div class="reading-typography wrapper-container p_3 p_4:md">
+  {% for group in grouped %}
+  <section aria-labelledby="document-{{ group.name }}"  class="p_4 bg_round  {% cycle '', 'bg_black-1' %}"  >
+    <h4 id="document-{{ group.name }}" class="c_accent-n2">
+      <span class="display_none" aria-hidden="true">Documents for</span> <strong> {{ group.name }}</strong>
+    </h4>
+
+    <ul class="ul_none columns_2:md columns_1 grid gap_4">
+      {% assign grouped_items = group.items | sort: "title" %}
+      {% for item in grouped_items %}
+      
+      <li class="{% if item.new == 'true' %}new active order_0 {% endif %}max-w_40 relative isolation_isolate m-b_3" itemscope itemtype="https://schema.org/MedicalGuideline">
+        <meta itemprop="datePublished" content="{{ group.name }}" />
+        <div class="">
+          <h5 itemprop="name" class=""><span class="c_black-5 font-size_down-2 block lh_0">
+            {{ group.name }}
+            {% if item.new == 'true' %}
+            <span class="bg_highlight-n2 c_white font-size_down-2 font_bold m-t_n3 p-x_3 p-y_2 inline-block uppercase">new</span>          
+            {% endif %}
+
+            
+            </span> {{ item.title }}</h5>
+
+        </div>
+        {% if item.jacc_url or item.pdf_url or item.hub_url %}
+        <nav aria-label="Resource links for {{ item.document_type }}: {{ item.title }}" class="m-t_auto ">
+          <ul class="ul_none flex flex_row font-size_down-2 items_end justify_stretch m_0 gap_1 isolation_isolate">
+            {% if item.jacc_url %}
+            <li class="m_0 p_0 z_0">
+              <a href="{{ item.jacc_url }}" target="_blank" rel="noopener noreferrer" itemprop="guidelineSubject"
+                itemscope itemtype="https://schema.org/ScholarlyArticle"
+                title="Read the full {{ item.document_type | downcase }} on JACC.org: {{ item.title }}"
+                class="{% include css-bundles/sm-btn-pill.txt %}  br-tl_round br-bl_round expanded-click-area"
+                >
+                 <span class="display_none inline:md">View in</span> JACC <i class="m-x_2 fa-solid fa-external-link"></i>
+              </a>
+            </li>
+            {% endif %}
+            {% if item.hub_url %}
+            {% if item.hub_url contains 'http' %}
+            {% assign is_absolute = true %}
+            {% else %}
+            {% assign is_absolute = false %}
+            {% endif %}
+            {% if item.hub_url contains 'acc.org' %}
+            {% assign is_acc_url = true %}
+            {% else %}
+            {% assign is_acc_url = false %}
+            {% endif %}
+            {% if is_absolute and is_acc_url == false %}
+            {% assign is_external = true %}
+            {% else %}
+            {% assign is_external = false %}
+            {% endif %}
+            <li class="m_0 p_0 z_2">
+              <a href="{{ item.hub_url }}" itemprop="mainEntityOfPage"
+                title="Visit the topic hub for articles, and other tools about the {{ item.document_type | downcase }}: {{ item.title }}"
+                class="{% include css-bundles/sm-btn-pill.txt %}  br_square"
+                {% if is_external %} target="_blank" rel="noopener noreferrer" {% endif %}
+                >
+                <span class="display_none inline:md">Visit Document</span> Hub
+
+                {% if is_external %}
+                <i class="m-x_2 fa-solid fa-external-link"></i>
+                {% endif %}
+              </a>
+            </li>
+            {% endif %}
+            {% if item.article_url %}
+            {% if item.article_url contains 'http' %}
+            {% assign is_absolute = true %}
+            {% else %}
+            {% assign is_absolute = false %}
+            {% endif %}
+            {% if item.article_url contains 'acc.org' %}
+            {% assign is_acc_url = true %}
+            {% else %}
+            {% assign is_acc_url = false %}
+            {% endif %}
+            {% if is_absolute and is_acc_url == false %}
+            {% assign is_external = true %}
+            {% else %}
+            {% assign is_external = false %}
+            {% endif %}
+            <li class="m_0 p_0 z_2">
+              <a href="{{ item.article_url }}" itemprop="mainEntityOfPage"
+                title="Read any updates on the {{ item.document_type | downcase }}: {{ item.title }}"
+                class="{% include css-bundles/sm-btn-pill.txt %}  br_square br_square"
+                {% if is_external %} target="_blank" rel="noopener noreferrer" {% endif %}
+                >
+                <span class="display_none inline:md">Read the Updating</span> News Article
+
+                {% if is_external %}
+                <i class="m-x_2 fa-solid fa-external-link"></i>
+                {% endif %}
+              </a>
+            </li>
+            {% endif %}
+            {% if item.keypoints_url %}
+            {% if item.keypoints_url contains 'http' %}
+            {% assign is_absolute = true %}
+            {% else %}
+            {% assign is_absolute = false %}
+            {% endif %}
+            {% if item.keypoints_url contains 'acc.org' %}
+            {% assign is_acc_url = true %}
+            {% else %}
+            {% assign is_acc_url = false %}
+            {% endif %}
+            {% if is_absolute and is_acc_url == false %}
+            {% assign is_external = true %}
+            {% else %}
+            {% assign is_external = false %}
+            {% endif %}
+            <li class="m_0 p_0 z_2">
+              <a href="{{ item.keypoints_url }}" itemprop="mainEntityOfPage"
+                title="Quickly get the most relevant key points for {{ item.document_type | downcase }}: {{ item.title }}"
+                class="{% include css-bundles/sm-btn-pill.txt %}  br_square"
+                {% if is_external %} target="_blank" rel="noopener noreferrer" {% endif %}
+                >
+                <span class="display_none inline:md">Quickly takeaway the</span> Key Points
+
+                {% if is_external %}
+                <i class="m-x_2 fa-solid fa-external-link"></i>
+                {% endif %}
+              </a>
+            </li>
+            {% endif %}
+            {% if item.pdf_url %}
+            <li class="m_0 p_0 z_2">
+              <a href="{{ item.pdf_url }}" target="_blank" rel="noopener noreferrer" type="application/pdf"
+                itemprop="guidelineUrl"  class="{% include css-bundles/sm-btn-pill.txt %} bg_primary br-tr_round br-br_round"
+                title="Download the PDF of the {{ item.document_type | downcase }}: {{ item.title }}">
+                <i class="fa-file-pdf fa-solid"></i> PDF
+              </a>
+            </li>
+            {% endif %}
+          </ul>
+        </nav>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endfor %}
+</div>
+<style>
+  .link-no-after::after {
+    display: none !important;
+    content: "" !important;
+  }
+</style>
