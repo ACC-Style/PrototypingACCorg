@@ -4,6 +4,8 @@ name: "Guidelines Nue"
 position: "Blue Sky"
 ---
 {% assign grouped = site.data.guidelines | sort: 'title' %}
+{% assign thisyear = 'now' | date: "%Y" %}
+{% assign lastyear = 'now' | date: "%Y" | to_i | minus: 1 | append:""  %}
 <div
   class="reading-typography  p_3 wrapper-container bg_black-_05"
 
@@ -12,13 +14,14 @@ position: "Blue Sky"
     class="grid:lg columns_5:lg gap_3"
     aria-labelledby="document-{{ group.name }}"
     >
-    <div class="bg_black-2 p-y_3 p-x_3 p-x_4:sm wrapper-container col-start_start col-end_3:md col-end_3:lg br_radius shadow_emboss-light">
+    <div class="bg_black-2 p-y_3 p-x_3 wrapper-container col-start_start col-end_3:md col-end_3:lg br_radius shadow_emboss-light">
     <h2>Recent Documents</h2>
-      <ul class="ul_none p_0 m_0 document-list grid columns_1 gap_4:md gap_3 p-y_3">
+      <ul class="ul_none p_0 m_0 document-list grid columns_1 gap_3:md gap_2 p-y_2">
         {% for item in grouped %}
-          {%- if item.year == '2025' or item.year == '2024' -%}
+          {%- if item.year == thisyear or item.year == lastyear  -%}
+         
             <li
-              class="{% if item.new == 'true' %}new active order_0 p-t_4  {% endif %} relative h:bg_primary-4 wrapper-container flex flex_column bg_white br_radius p_3 p_4:md p-b_2 p-b_3:md isolation_isolate relative"
+              class="{% if item.new == 'true' %}new active order_0 p-t_4 m_0  {% endif %} relative h:bg_primary-4 wrapper-container flex flex_column bg_white br_radius p_3 p_4:md p-b_2 p-b_3:md isolation_isolate relative"
               itemscope
               itemtype="https://schema.org/MedicalGuideline"
             >
@@ -216,7 +219,7 @@ position: "Blue Sky"
                 <h4 itemprop="name" class="font_medium m-t_0 lh_1 c_primary-n3 m-b_0">{{ item.title }}</h4>
                 <span class="font_bold font-size_down-2 " aria-hidden="true">Publishished:&nbsp;
                 <strong
-                  class=""
+                  class="c_accent-n3"
                 >
                   {{ item.year }}
                 </strong></span>
