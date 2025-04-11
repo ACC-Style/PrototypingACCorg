@@ -1,10 +1,11 @@
 ---
-layout: arches-sidebar
+layout: arches-pagelayout
 name: "SAPs Product Line"
 position: "Product Line"
-masthead: "MicroSite/heroimage.dynamic.html"
+masthead: "empty.html"
+masthead2: "MicroSite/heroimage.dynamic.html"
 hero-parent: "Education"
-hero-title: "Self-Assement Programs (SAP)"
+hero-title: "Self-Assessment Programs (SAP)"
 hero-cta-title: "Stay at the Top of Your Game <small>In Every Cardiology Specialty</small>"
 hero-cta-description: "ACC's (SAPs) deliver the tools you need to stay sharp, earn credit, and prepare for exams."
 hero-cta-text: "Find Your SAPs"
@@ -13,7 +14,7 @@ parent-page: "Education"
 sidebarRoot: SAPs
 sidebarArray:
   - label: ACCSAP
-    url: #
+    url: ../SAP-Product
     active: false
   - label: EPSAP
     url: #
@@ -25,38 +26,49 @@ sidebarArray:
     url: #
     active: false
 ---
-
-<div class="wrapper-container reading-typography">
-  <h1><abbr title="Self-Assement Programs">SAPs</abbr></h1>
+<main grid-area="content" class="p-t_5:lg p-t_4 p-x_4:lg relative wrapper-container  ">
+  {%- include_relative SAP/productline-banner.html -%}
+<div id="introduction" class="reading-typography font-size_up" style="--custom-font-size-modifier: 1.125;">
   <p>
-   Designed for lifelong learning and tailored to your specialty, SAPs help
-    you stay current, meet certification requirements, and grow in your clinical practice.
-  </p>
-  <div class="columns_1 columns_2:md grid gap_4 gap_5:lg">
-  <section class="m-b_4:md" id="introduction">
-    <h2>What’s a SAP?</h2>
+    Designed for lifelong learning and tailored to your specialty, SAPs help
+     you stay current, meet certification requirements, and grow in your clinical practice.
+   </p>
+</div>
+  <div id="product-description" class="grid columns_1 columns_5:lg gap_5:lg gap_4 reading-typography">
+    <div
+      class="col-start_start col-end_n3:lg col-end_end "
+      
+    >
+    <h2>What is s a SAP?</h2>
     <p>
-      SAPs are a comprehensive learning experience
-      — combining:
+     The ACC's <abbr title="Self-Assessment Programs">SAPs</abbr> are a comprehensive learning experience
     </p>
-    <ul>
-      <li>Expert-authored educational material</li>
-      <li>Board-style practice questions and exams</li>
-      <li>Smart study tools that adapt to your goals</li>
+    <ul class="ul_none">
+      <li><strong>Smart Study Tools</strong> that adapt to your goals</li>
+      <li><strong>Expertly-authored</strong> educational materials</li>
+      <li><strong>Board-style questions</strong> and supportive resources</li>
     </ul>
-
-  </section>
-
-  <section class="m-b_4:md" id="convince">
-    <h2>Why SAPs Work</h2>
+    <h3>Why do they work</h3>
     <p>
-      ACC’s Self-Assessment Programs are trusted by thousands of cardiology
-      professionals because they go far beyond traditional test prep. Each SAP
-      is carefully structured to align with the ABIM exam blueprint, ensuring
-      that you're not just memorizing facts — you're learning how to apply
+      ACC’s <abbr title="Self-Assessment Programs">SAPs</abbr> are trusted by thousands of cardiology
+      professionals because they are carefully structured to align with the ABIM exam blueprint, ensuring
+      that you're not just memorizing facts, but learning how to apply
       knowledge in real clinical situations.
     </p>
+    </div>
+    <div class="col-start_start col-start_n3:lg col-end_end display_none:print">
+      {%- include_relative SAP/intro-productline-secondary.html -%}
+    </div>
+  </div>
+<div class="wrapper-container reading-typography">
+
+  <div class="columns_1 columns_2:md grid gap_4 gap_5:lg">
+  <section class="m-b_4:md" id="introduction">
+
+
   </section>
+
+
   </div>
   <section class="m-b_4:md " id="benefits">
     <h3>Here’s what that means for you</h3>
@@ -106,7 +118,7 @@ sidebarArray:
 </div>
 
 </div>
-<h4 class="text_center" >Coming inside each SAP:</h4>
+<h4 class="text_center" >Included with each SAP</h4>
     <ul class="ul_inline-pipe font-size_down-2 justify_center">
       <li>Custom quizzes that mimic Board format</li>
       <li> Highlighting & bookmarking for fast review</li>
@@ -116,22 +128,14 @@ sidebarArray:
       <li> Flashcard-friendly printable materials</li>
     </ul>
 </section>
-  {% comment %} <section id="reinforce">
-    <h2>
-      Powerful Learning Tools
-    </h2>
-    <h3>Practice Like the Real Thing</h3>
-    <p>
-      Access hundreds of Board-style questions, plus full-length simulated exams that mirror the ABIM experience.
-    </p>
-    <h3>
-      Earn Credit on Your Time
-    </h3>
-    <p>Work at your own pace and credits from anywhere — on desktop or mobile.</p>
-    <h3>See Your Progress, Fill Your Gaps</h3>
-    <p>
-      Every quiz and question comes with detailed explanations and references — plus built-in tools to track your knowledge gaps and guide your next study steps.
-    </p>
-  </section> {% endcomment %}
-
 </div>
+</main>
+<aside grid-area="sidebar-primary"  class="display_none:print">
+  {%- include_relative SAP/sidebar-nav.html -%}
+ 
+  {%- include_relative SAP/mobile-ad.html -%}
+</aside>
+
+<style>
+  .br_round{border-radius: .75rem;}
+</style>
