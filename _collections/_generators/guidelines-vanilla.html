@@ -11,7 +11,7 @@ position: "Guidelines - Semantic HTML only"
       <span class="display_none" aria-hidden="true">Documents for</span> <strong> {{ group.name }}</strong>
     </h4>
 
-    <ul class="ul_none columns_2:md columns_1 grid gap_4">
+    <ul class="ul_none ">
       {% assign grouped_items = group.items | sort: "title" %}
       {% for item in grouped_items %}
       
@@ -137,7 +137,7 @@ position: "Guidelines - Semantic HTML only"
               <a href="{{ item.pdf_url }}" target="_blank" rel="noopener noreferrer" type="application/pdf"
                 itemprop="guidelineUrl"  class="{% include css-bundles/sm-btn-pill.txt %} bg_primary br-tr_round br-br_round"
                 title="Download the PDF of the {{ item.document_type | downcase }}: {{ item.title }}">
-                <i class="fa-file-pdf fa-solid"></i> PDF
+                <i class="fa-file-pdf fa-solid"></i> <span class="display_none inline:md">Full Text</span> PDF
               </a>
             </li>
             {% endif %}
