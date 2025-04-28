@@ -220,24 +220,23 @@ parent-page: "Education"
         <div class="reading-typography m-b_4 wrapper-container">
             <style>
                 @container (width > 480px) and (width < 767px) {
-                    .triple-bento{
-                    grid-template-columns: 7fr 5fr;
-                    grid-template-rows: auto auto;
-                    grid-template-areas:
-                    "a c"
-                    "b c";
-            
-                    & li:nth-child(1){
-                        grid-area: a;
-                    }
-                    & li:nth-child(2){
-                        grid-area: b;
-                    }
-                    & li:nth-child(3){
-                        grid-area: c;
-                    }
-                }
-            
+                  .triple-bento{
+                      grid-template-columns: 7fr 5fr;
+                      grid-template-rows: auto auto;
+                      grid-template-areas:
+                      "a c"
+                      "b c";
+              
+                      & li:nth-child(1){
+                          grid-area: a;
+                      }
+                      & li:nth-child(2){
+                          grid-area: b;
+                      }
+                      & li:nth-child(3){
+                          grid-area: c;
+                      }
+                  }
                 }
             </style>
             <ul class="grid columns_3:lg columns_1 gap_4 gap_3:md gap_4:lg ul_none triple-bento font_n3 font_n2:md font_n1:lg">
