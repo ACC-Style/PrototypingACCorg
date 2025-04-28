@@ -97,9 +97,18 @@ position: "Strategic Effort"
         .append("rect")
         .attr("class", d => `bar assoc-${d.association.replace(/\s+/g, '-')}`) // << add CSS class per association
         .attr("x", d => x1(d.association))
-        .attr("y", d => yScale(d.value))
+        .attr("y", d => {
+          const originalY = yScale(d.value);
+          if (d.value === 0) {
+            return yScale(0) - 3; // Move it up a little
+          }
+          return originalY;
+        })
         .attr("width", x1.bandwidth())
-        .attr("height", d => height - margin.top - margin.bottom - yScale(d.value))
+        .attr("height", d => {
+          const h = height - margin.top - margin.bottom - yScale(d.value);
+          return Math.max(h, 3); // Minimum 3px height
+        })
         .attr("fill", d => color(d.association))
         .attr("opacity", d => d.association === "ACC" ? 1 : 0.5);
     });
