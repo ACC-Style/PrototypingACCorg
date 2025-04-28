@@ -1,0 +1,161 @@
+---
+layout: ui/fullscreen_slot
+name: "Grouped Bar Chart"
+position: "Strategic Effort"
+---
+<div class="grid justify_center items_center">
+  <svg class="m_auto"id="radarChart" width="1200" height="600"></svg>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script>
+  const width = 1200;
+  const height = 600;
+  const margin = {top: 50, right: 200, bottom: 150, left: 200}; // << your updated margins
+  
+  const svg = d3.select("#radarChart")
+    .attr("width", width)
+    .attr("height", height)
+    .append("g")
+    .attr("transform", `translate(${margin.left},${margin.top})`);
+  
+  const axes = [
+    { label: "Member Networking Opportunities", key: "MemberNetworking" },
+    { label: "Donations & Philanthropy", key: "DonationsPhilanthropy" },
+    { label: "Events", key: "Events" },
+    { label: "Scientific Publications / Latest Science", key: "ScientificPublications" },
+    { label: "Practice Support Resources", key: "PracticeSupport" },
+    { label: "Patient-Facing Tools & Content", key: "PatientFacingContent" },
+    { label: "Education", key: "Education" }
+  ];
+  
+  // Color scale
+  const color = d3.scaleOrdinal(d3.schemeCategory10);
+  
+  d3.csv('{{ "/assets/data/association_data.csv" | relative_url }}').then(function(data) {
+  
+    const associations = data.map(d => d.Association);
+  
+    const x0 = d3.scaleBand()
+      .domain(axes.map(d => d.label))
+      .range([0, width - margin.left - margin.right])
+      .paddingInner(0.3); // more space between groups
+  
+    const x1 = d3.scaleBand()
+      .domain(associations)
+      .range([0, x0.bandwidth()])
+      .padding(0.05);
+  
+    const yScale = d3.scaleLinear()
+      .domain([0, 5])
+      .range([height - margin.top - margin.bottom, 0]);
+  
+    // X Axis
+    svg.append("g")
+      .attr("transform", `translate(0, ${height - margin.top - margin.bottom})`)
+      .call(d3.axisBottom(x0))
+      .selectAll("text")
+      .attr("transform", "rotate(-35)")
+      .style("text-anchor", "end")
+      .style("font-size", "12px");
+  
+    // Y Axis
+    svg.append("g")
+      .call(d3.axisLeft(yScale).ticks(5))
+      .selectAll("text")
+      .style("font-size", "12px");
+  
+    // Prepare grouped data
+    const groupedData = [];
+    data.forEach(d => {
+      axes.forEach(axis => {
+        groupedData.push({
+          association: d.Association,
+          category: axis.label,
+          value: +d[axis.key] || 0
+        });
+      });
+    });
+  
+    // Draw bars
+    const bars = svg.selectAll(".categoryGroup")
+      .data(axes.map(d => d.label))
+      .enter()
+      .append("g")
+      .attr("class", "categoryGroup")
+      .attr("transform", d => `translate(${x0(d)},0)`);
+  
+    bars.each(function(category) {
+      const group = d3.select(this);
+      const filteredData = groupedData.filter(d => d.category === category);
+  
+      group.selectAll(".bar")
+        .data(filteredData)
+        .enter()
+        .append("rect")
+        .attr("class", d => `bar assoc-${d.association.replace(/\s+/g, '-')}`) // << add CSS class per association
+        .attr("x", d => x1(d.association))
+        .attr("y", d => yScale(d.value))
+        .attr("width", x1.bandwidth())
+        .attr("height", d => height - margin.top - margin.bottom - yScale(d.value))
+        .attr("fill", d => color(d.association))
+        .attr("opacity", d => d.association === "ACC" ? 1 : 0.5);
+    });
+  
+    // Add legend
+    const legend = svg.append("g")
+      .attr("transform", `translate(${width - margin.left - margin.right + 30}, 0)`);
+  
+    associations.forEach((assoc, i) => {
+      const legendRow = legend.append("g")
+        .attr("class", `legend-item assoc-${assoc.replace(/\s+/g, '-')}`)
+        .attr("transform", `translate(0, ${i * 20})`);
+  
+      legendRow.append("rect")
+        .attr("width", 12)
+        .attr("height", 12)
+        .attr("fill", color(assoc))
+        .attr("opacity", assoc === "ACC" ? 1 : 0.5);
+  
+      legendRow.append("text")
+        .attr("x", 20)
+        .attr("y", 10)
+        .text(assoc)
+        .style("font-size", "12px")
+        .attr("alignment-baseline", "middle");
+    });
+  
+    // 🔥 Hover interaction for legend
+    d3.selectAll(".legend-item")
+      .on("mouseover", function(event, d) {
+        const hoveredClass = d3.select(this).attr("class").split(' ')[1]; // Get class like assoc-ACC
+        d3.selectAll(".bar")
+          .attr("opacity", 0.2); // Dim all
+        d3.selectAll(`.${hoveredClass}`)
+          .attr("opacity", 1); // Highlight hovered association
+        d3.selectAll(".legend-item rect")
+          .attr("opacity", 0.2);
+        d3.select(`.${hoveredClass} rect`)
+          .attr("opacity", 1);
+      })
+      .on("mouseout", function() {
+  // Reset all bars
+  d3.selectAll(".bar")
+    .attr("opacity", function() {
+      const className = d3.select(this).attr("class");
+      return className.includes("assoc-ACC") ? 1 : 0.5;
+    });
+
+  // Reset all legend squares
+  d3.selectAll(".legend-item rect")
+    .attr("opacity", function() {
+      const parentClass = d3.select(this.parentNode).attr("class");
+      return parentClass.includes("assoc-ACC") ? 1 : 0.5;
+    });
+});
+  
+  });
+  </script>
+  

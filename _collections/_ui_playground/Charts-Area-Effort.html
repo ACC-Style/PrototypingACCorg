@@ -1,0 +1,116 @@
+---
+layout: ui/fullscreen_slot
+name: "Area Chart"
+position: "Strategic Effort"
+---
+
+<svg id="radarChart" width="700" height="700"></svg>
+
+
+
+
+<!-- d3.csv( "{{ '../../assets/data/association_data.csv' | relative }}" ).then(function(data) { -->
+<!-- UMD bundle (exports the d3 global) -->
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script>
+const width = 800;
+const height = 500;
+const margin = {top: 50, right: 120, bottom: 50, left: 50};
+
+const svg = d3.select("#radarChart")
+  .attr("width", width)
+  .attr("height", height)
+  .append("g")
+  .attr("transform", `translate(${margin.left},${margin.top})`);
+
+const axes = [
+  { label: "Member Networking Opportunities", key: "MemberNetworking" },
+  { label: "Donations & Philanthropy", key: "DonationsPhilanthropy" },
+  { label: "Events", key: "Events" },
+  { label: "Scientific Publications / Latest Science", key: "ScientificPublications" },
+  { label: "Practice Support Resources", key: "PracticeSupport" },
+  { label: "Patient-Facing Tools & Content", key: "PatientFacingContent" },
+  { label: "Education", key: "Education" }
+];
+
+const color = d3.scaleOrdinal(d3.schemeCategory10);
+
+// Load CSV
+d3.csv('{{ "/assets/data/association_data.csv" | relative_url }}').then(function(data) {
+
+  // X Scale = categories
+  const xScale = d3.scalePoint()
+    .domain(axes.map(d => d.label))
+    .range([0, width - margin.left - margin.right])
+    .padding(0.5);
+
+  // Y Scale = 0-5 stars
+  const yScale = d3.scaleLinear()
+    .domain([0, 5])
+    .range([height - margin.top - margin.bottom, 0]);
+
+  // Draw X axis
+  svg.append("g")
+    .attr("transform", `translate(0, ${height - margin.top - margin.bottom})`)
+    .call(d3.axisBottom(xScale))
+    .selectAll("text")
+    .attr("text-anchor", "end")
+    .attr("transform", "rotate(-35)")
+    .style("font-size", "12px");
+
+  // Draw Y axis
+  svg.append("g")
+    .call(d3.axisLeft(yScale).ticks(5));
+
+  // Area generator
+  const area = d3.area()
+    .x((d, i) => xScale(d.axis))
+    .y0(yScale(0))
+    .y1(d => yScale(d.value))
+    .curve(d3.curveMonotoneX);
+
+  // Process each association
+  data.forEach((d, i) => {
+    const points = axes.map(axis => ({
+      axis: axis.label,
+      value: +d[axis.key] || 0
+    }));
+
+    svg.append("path")
+      .datum(points)
+      .attr("fill", color(d.Association))
+      .attr("opacity", .75)
+      .attr("stroke", color(d.Association))
+      .attr("stroke-opacity", d.Association === "ACC" ? .8 : 0.5) 
+      .attr("stroke-width", 2)
+      .attr("fill-opacity", d.Association === "ACC" ? 0.3 : 0.1) // Optional: ACC slightly stronger
+      .attr("d", area);
+  });
+
+  // Add a legend
+  const legend = svg.append("g")
+    .attr("transform", `translate(${width - margin.left - margin.right + 20}, 0)`);
+
+  data.forEach((d, i) => {
+    const legendRow = legend.append("g")
+      .attr("transform", `translate(0, ${i * 20})`);
+
+    legendRow.append("rect")
+      .attr("width", 12)
+      .attr("height", 12)
+      .attr("fill", color(d.Association))
+      .attr("stroke", "#333")
+      .attr("stroke-width", 0.5);
+
+    legendRow.append("text")
+      .attr("x", 20)
+      .attr("y", 10)
+      .text(d.Association)
+      .attr("fill", "#333")
+      .style("font-size", "12px")
+      .attr("alignment-baseline", "middle");
+  });
+
+}); 
+</script>
+  

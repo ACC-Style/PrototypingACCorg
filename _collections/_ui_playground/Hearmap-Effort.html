@@ -1,0 +1,109 @@
+---
+layout: ui/fullscreen_slot
+name: "Heat Map Chart"
+position: "Strategic Effort"
+---
+
+<svg id="radarChart" width="700" height="700"></svg>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3-scale-chromatic.min.js"></script>
+
+<script>
+const width = 900;
+const height = 500;
+const margin = {top: 80, right: 50, bottom: 50, left: 150};
+
+const svg = d3.select("#radarChart")
+  .attr("width", width)
+  .attr("height", height)
+  .append("g")
+  .attr("transform", `translate(${margin.left},${margin.top})`);
+
+const axes = [
+  { label: "Member Networking Opportunities", key: "MemberNetworking" },
+  { label: "Donations & Philanthropy", key: "DonationsPhilanthropy" },
+  { label: "Events", key: "Events" },
+  { label: "Scientific Publications / Latest Science", key: "ScientificPublications" },
+  { label: "Practice Support Resources", key: "PracticeSupport" },
+  { label: "Patient-Facing Tools & Content", key: "PatientFacingContent" },
+  { label: "Education", key: "Education" }
+];
+
+// Nice smooth Red -> Yellow -> Green interpolation
+const colorScale = d3.scaleSequential()
+  .domain([1, 5])
+  .interpolator(d3.interpolateRdYlGn);
+
+d3.csv('{{ "/assets/data/association_data.csv" | relative_url }}').then(function(data) {
+
+  const associations = data.map(d => d.Association);
+
+  // X = Categories
+  const xScale = d3.scaleBand()
+    .domain(axes.map(d => d.label))
+    .range([0, width - margin.left - margin.right])
+    .padding(0.05);
+
+  // Y = Associations
+  const yScale = d3.scaleBand()
+    .domain(associations)
+    .range([0, height - margin.top - margin.bottom])
+    .padding(0.05);
+
+  // Draw X Axis (Top)
+  svg.append("g")
+    .attr("transform", `translate(0,0)`)
+    .call(d3.axisTop(xScale))
+    .selectAll("text")
+    .style("text-anchor", "start")
+    .attr("transform", "rotate(-45)")
+    .style("font-size", "12px");
+
+  // Draw Y Axis (Left)
+  svg.append("g")
+    .call(d3.axisLeft(yScale))
+    .selectAll("text")
+    .style("font-size", "12px");
+
+  // Flatten Data for heatmap
+  const heatmapData = [];
+
+  data.forEach(d => {
+    axes.forEach(axis => {
+      heatmapData.push({
+        association: d.Association,
+        category: axis.label,
+        value: +d[axis.key] || 0
+      });
+    });
+  });
+
+  // Draw Rectangles
+  svg.selectAll()
+    .data(heatmapData)
+    .enter()
+    .append("rect")
+    .attr("x", d => xScale(d.category))
+    .attr("y", d => yScale(d.association))
+    .attr("width", xScale.bandwidth())
+    .attr("height", yScale.bandwidth())
+    .style("fill", d => colorScale(d.value))
+    .style("stroke", "#333")
+    .style("stroke-width", 0.5);
+
+  // Add Text Values inside Cells
+  svg.selectAll()
+    .data(heatmapData)
+    .enter()
+    .append("text")
+    .attr("x", d => xScale(d.category) + xScale.bandwidth() / 2)
+    .attr("y", d => yScale(d.association) + yScale.bandwidth() / 2)
+    .attr("text-anchor", "middle")
+    .attr("dy", "0.35em")
+    .text(d => d.value)
+    .style("fill", "#000")
+    .style("font-size", "10px");
+
+});
+</script>
