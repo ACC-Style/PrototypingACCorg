@@ -1,0 +1,210 @@
+---
+layout: ui/fullscreen_slot
+name: "Radial Effort Chart"
+position: "Strategic Effort-Max 4 Association"
+---
+
+<svg id="radarChart" width="800" height="800"></svg>
+
+
+<style>
+    body { font-family: sans-serif; }
+    .axisLabel {
+      font-size: 12px;
+      text-anchor: middle;
+      fill: #333;
+      font-weight: 5;
+      font-family: "Open Sans", sans-serif;
+    }
+    .gridCircle {
+      fill: none;
+      stroke: #ccc;
+      stroke-width: 0.5px;
+    }
+    .axisLine {
+      stroke: #999;
+      stroke-width: 1px;
+    }
+  </style>
+
+<!-- UMD bundle (exports the d3 global) -->
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script>
+  // Setup
+  const width = 800;
+  const height = 800;
+  const margin = 100;
+  const radius = Math.min(width, height) / 2 - margin;
+  
+  const svg = d3.select("#radarChart")
+    .attr("width", width)
+    .attr("height", height)
+    .append("g")
+    .attr("transform", `translate(${width/2}, ${height/2})`);
+  
+  // Axis labels
+  const axes = [
+  { label: "Membership & Networking Opportunities", key: "MemberNetworking" },
+  { label: "Events", key: "Events" },
+  { label: "Education", key: "Education" },
+  { label: "Scientific Publications / Latest Science", key: "ScientificPublications" },
+  { label: "Practice Support Resources", key: "PracticeSupport" },
+  { label: "Patient-Facing Tools & Content", key: "PatientFacingContent" },
+  { label: "Donations & Philanthropy", key: "DonationsPhilanthropy" },
+  { label: "Medical Advocacy", key: "Advocacy" }
+];
+
+  
+const angleSlice = Math.PI * 2 / axes.length;
+const rScale = d3.scaleLinear().range([0, radius]).domain([0, 5]);
+const color = d3.scaleOrdinal(d3.schemeCategory10);
+
+
+  
+  // Load CSV
+  d3.csv( "{{ '../../assets/data/association_data.csv' | relative }}" ).then(function(data) {
+  
+    // Draw grid circles
+    const levels = 5;
+    for (let level = 0; level <= levels; level++) {
+      svg.append("circle")
+        .attr("class", "gridCircle")
+        .attr("r", radius / levels * level);
+    }
+  
+    // Draw axis lines and labels
+    axes.forEach((axis, i) => {
+  const angle = angleSlice * i - Math.PI/2;
+
+  svg.append("line")
+    .attr("class", "axisLine")
+    .attr("x1", 0)
+    .attr("y1", 0)
+    .attr("x2", radius * Math.cos(angle))
+    .attr("y2", radius * Math.sin(angle));
+
+  svg.append("text")
+    .attr("class", "axisLabel")
+    .attr("x", (radius + 40) * Math.cos(angle))
+    .attr("y", (radius + 40) * Math.sin(angle))
+    .text(axis.label) <!-- 🔥 Use .label not axis -->
+    .call(text => text.each(function() {
+      const self = d3.select(this);
+      const words = self.text().split(/\s+/);
+      self.text('');
+      for (let i = 0; i < words.length; i++) {
+        self.append("tspan")
+            .text(words[i])
+            .attr("x", self.attr("x"))
+            .attr("dy", i ? "1.1em" : 0);
+      }
+    }));
+});
+
+  
+    // Function to format one association
+    function radarLine(d) {
+  return axes.map((axis, i) => {
+    let value = d[axis.key];
+    if (value === undefined || value === "") {
+      value = 0;
+    } else {
+      value = +value;
+    }
+    const angle = angleSlice * i;
+    return [
+      rScale(value) * Math.cos(angle - Math.PI/2),
+      rScale(value) * Math.sin(angle - Math.PI/2)
+    ];
+  });
+};
+  
+// Track visible associations (ACC is always visible)
+const visibleAssociations = new Set(["ACC"]);
+
+// Container for radar shapes
+const radarGroup = svg.append("g").attr("class", "radarShapes");
+
+// Draw radar shapes and assign IDs
+data.forEach((d) => {
+  const points = radarLine(d);
+
+  radarGroup.append("path")
+    .datum(points)
+    .attr("d", d3.line()
+      .x(d => d[0])
+      .y(d => d[1])
+      .curve(d3.curveLinearClosed))
+    .attr("fill", color(d.Association))
+    .attr("stroke", color(d.Association))
+    .attr("stroke-width", 2)
+    .attr("stroke-opacity", d.Association === "ACC" ? "1" : ".25")
+    .attr("stroke-dasharray", d.Association === "ACC" ? "0" : "4,4")
+    .attr("fill-opacity", d.Association === "ACC" ? 0.15 : 0)
+    .attr("class", "radarArea")
+    .attr("data-association", d.Association);
+});
+
+// Build legend with checkboxes
+const legend = svg.append("foreignObject")
+  .attr("x", -width/2 + 20)
+  .attr("y", -height/2 + 20)
+  .attr("width", 180)
+  .attr("height", 400)
+  .append("xhtml:div");
+
+data.forEach((d) => {
+
+  if (d.Association === "ACC") {
+    legend.append("div").html(`
+    <label style="display:flex; align-items:center; gap:6px; font-size:12px;">
+      <input disabled checked type="checkbox"  data-name="${d.Association}">
+      <span class="font_ui font_xbold" style="color:${color(d.Association)}">${d.Association}</span>
+    </label>
+    `);
+    return;
+  }
+
+  const id = `check-${d.Association}`;
+  const div = legend.append("div");
+  div.html(`
+    <label style="display:flex; align-items:center; gap:6px; font-size:12px;">
+      <input type="checkbox" id="${id}" data-name="${d.Association}">
+      <span class="font_ui font_xbold" style="color:${color(d.Association)}">${d.Association}</span>
+    </label>
+  `);
+});
+
+// Add interactivity
+d3.selectAll("input[type='checkbox']").on("change", function() {
+  const selected = this.dataset.name;
+  const isChecked = this.checked;
+
+  if (isChecked) {
+    if (visibleAssociations.size >= 4) { // ACC + 3 others
+      alert("You can only compare up to 3 associations with ACC.");
+      this.checked = false;
+      return;
+    }
+    visibleAssociations.add(selected);
+  } else {
+    visibleAssociations.delete(selected);
+  }
+
+  // Update visibility
+  d3.selectAll(".radarArea")
+    .attr("fill-opacity", function() {
+      const assoc = d3.select(this).attr("data-association");
+      return visibleAssociations.has(assoc) ? 0.15 : 0;
+    })
+    .attr("stroke-opacity", function() {
+      const assoc = d3.select(this).attr("data-association");
+      return visibleAssociations.has(assoc) ? 1 : .25;
+    });
+});
+
+  
+  });
+  
+  </script>
+  
