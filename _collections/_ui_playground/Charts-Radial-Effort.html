@@ -4,7 +4,7 @@ name: "Radial Effort Chart"
 position: "Strategic Effort"
 ---
 
-<svg id="radarChart" width="700" height="700"></svg>
+<svg id="radarChart" width="800" height="800"></svg>
 
 
 <style>
@@ -32,9 +32,9 @@ position: "Strategic Effort"
 <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
 <script>
   // Setup
-  const width = 700;
-  const height = 700;
-  const margin = 50;
+  const width = 800;
+  const height = 800;
+  const margin = 100;
   const radius = Math.min(width, height) / 2 - margin;
   
   const svg = d3.select("#radarChart")
@@ -46,12 +46,12 @@ position: "Strategic Effort"
   // Axis labels
   const axes = [
   { label: "Membership & Networking Opportunities", key: "MemberNetworking" },
-  { label: "Donations & Philanthropy", key: "DonationsPhilanthropy" },
   { label: "Events", key: "Events" },
+  { label: "Education", key: "Education" },
   { label: "Scientific Publications / Latest Science", key: "ScientificPublications" },
   { label: "Practice Support Resources", key: "PracticeSupport" },
   { label: "Patient-Facing Tools & Content", key: "PatientFacingContent" },
-  { label: "Education", key: "Education" }
+  { label: "Donations & Philanthropy", key: "DonationsPhilanthropy" }
 ];
 
   
@@ -85,8 +85,8 @@ const color = d3.scaleOrdinal(d3.schemeCategory10);
 
   svg.append("text")
     .attr("class", "axisLabel")
-    .attr("x", (radius + 20) * Math.cos(angle))
-    .attr("y", (radius + 20) * Math.sin(angle))
+    .attr("x", (radius + 40) * Math.cos(angle))
+    .attr("y", (radius + 40) * Math.sin(angle))
     .text(axis.label) <!-- 🔥 Use .label not axis -->
     .call(text => text.each(function() {
       const self = d3.select(this);

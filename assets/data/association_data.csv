@@ -1,5 +1,5 @@
-Association,MemberNetworking,DonationsPhilanthropy,Events,ScientificPublications,PracticeSupport,PatientFacingContent,Education
-ACC,2,1,4,5,3,1,5
-AHA,2,5,2,1,2,5,2
-AMA,5,1,4,3,5,1,3
-ESC,4,0,5,5,0,0,4
+Association,DonationsPhilanthropy,MemberNetworking,Events,Education,ScientificPublications,PracticeSupport,PatientFacingContent
+ACC,1,3,4,5,5,3,1
+AHA,5,2,2,2,1,2,5
+AMA,1,5,4,3,3,5,1
+ESC,0,4,5,4,5,0,0
