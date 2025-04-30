@@ -1,0 +1,100 @@
+---
+layout: arches-pagelayout
+name: "SAP-ACHD"
+position: "Product Page"
+masthead: "empty.html"
+hero-title: "ACHD"
+hero-cta-text: "Purchase"
+hero-cta-link: "#"
+parent-page: "Education"
+---
+<!-- masthead: "MicroSite/heroimage.micro.dynamic.html" -->
+<main grid-area="content" class="p-t_5:lg p-t_4 p-x_4:lg relative wrapper-container  ">
+{%- include_relative SAP/ACHD/product-banner.html -%}
+  <div id="introduction" class="grid columns_1 columns_5:lg gap_5:lg gap_4">
+    <div
+      class="col-start_start col-end_n3:lg col-end_end reading-typography font-size_up"
+      style="--custom-font-size-modifier: 1.125;"
+    >
+        {%- include_relative SAP/ACHD/intro-primary.html -%}
+
+    </div>
+    <div class="col-start_start col-start_n3:lg col-end_end">
+      {%- include_relative SAP/ACHD/intro-secondary.html -%}
+    </div>
+  </div>
+  <div class="reading-typography m-y_4:lg bg_black-1 br_radius p_4">
+    <h3 data-heading="What's in the product?" dir="auto" class="heading" id="Whats_in_the_product?">
+      What's in the product?
+    </h3>
+    <div class="reading-typography font-size_up" style="--custom-font-size-modifier: 1.65;">
+    <ul class="ul_none grid columns_3:lg columns_2:md columns_1 gap_5:lg gap_4">
+      <li class="flex flex_row gap_3 gap_4:lg items_center justify_start"><strong class="c_accent-n2 font-size_up-2 font_xbold lh_0">76 </strong><small class="font-size_down-2 lh_1 font_medium">Video Learning Modules </small></li>
+      <li class="flex flex_row gap_3 gap_4:lg items_center justify_start"><strong class="c_accent-n2 font-size_up-2 font_xbold lh_0">76 </strong><small class="font-size_down-2 lh_1 font_medium"> Video Study Guides </small></li>
+      <li class="flex flex_row gap_3 gap_4:lg items_center justify_start"><strong class="c_accent-n2 font-size_up-2 font_xbold lh_0">135 </strong><small class="font-size_down-2 lh_1 font_medium">Case-based Questions</small></li>
+    </ul>
+    </div>
+    
+  </div>
+  <div
+    class="wrapper-container m-t_5:lg m-t_4 reading-typography p_4"
+  >
+    <h3>Key Benefits</h3>
+    {%- include Blocks/UL_IconHeadlineText.html data_path="SAP.ACHD.keybenefits" -%}
+  </div>
+
+  {%- include_relative SAP/ACHD/full-price-model.html -%}
+  <section class="reading-typography">
+    <h2>Learning Experience &amp; Features</h2>
+    {%- include Blocks/UL_IconLists.html
+    data_path="SAP.ACHD.learningexperiencefeatures" container_modifier="m-b_5:lg
+    m-b_4" -%}
+  </section>
+  {%- include_relative SAP/ACHD/wrap-up-content.html -%}
+  {%- include_relative SAP/ACHD/follow-up-cta.html -%}
+</main>
+<aside grid-area="sidebar-primary" >
+  {%- include_relative SAP/ACHD/sidebar-nav.html -%}
+  <div
+    class="heading-children reading-typography p_4 m-t_4 m-x_4 bg_primary-5 br_radius"
+  >
+    <div class="el-h3 heading-wrapper">
+      <h4
+        data-heading="Built by Experts, Designed for Your Success"
+        dir="auto"
+        class="heading"
+        id="Built_by_Experts,_Designed_for_Your_Success"
+      >
+        Built by Experts, Designed for Your Success
+      </h4>
+      <div class="heading-children">
+        <div class="el-p">
+          <p dir="auto">
+            All our products are developed by
+            <strong>top cardiovascular experts</strong> who bring real-world
+            experience and cutting-edge research into this program.
+          </p>
+          <p class="text_center">
+            <a href="#" class="btn btn-secondary m_auto text_center"
+              >View Faculty</a
+            >
+          </p>
+        </div>
+        <div class="el-p">
+          <p class="font-size_down-1 c_primary-n3 font_italic text_center">
+            <em
+              >Thank you to our dedicated faculty for making this an
+              unparalleled learning resource!</em
+            >
+          </p>
+        </div>
+    
+      </div>
+    </div>
+  </div>
+  {%- include_relative SAP/ACHD/mobile-ad.html -%}
+</aside>
+
+<style>
+  .br_round{border-radius: .75rem;}
+</style>
