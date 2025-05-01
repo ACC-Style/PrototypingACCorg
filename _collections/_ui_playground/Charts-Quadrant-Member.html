@@ -1,0 +1,190 @@
+---
+layout: ui/fullscreen_slot
+name: "Quadrant Chart"
+position: "Membership"
+---
+<div id="chartContainer" class="relative grid rows_1 columns_1" style="
+width: 1200px;
+height: 1000px;
+">
+<svg id="radarChart" class="row_all col_all" width="1200" height="1000"></svg>
+</div>
+
+
+
+
+<!-- d3.csv( "{{ '../../assets/data/association_data.csv' | relative }}" ).then(function(data) { -->
+<!-- UMD bundle (exports the d3 global) -->
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script>
+// D3.js Quadrant Lollipop Chart for Association Membership Experience
+// Assumes container <svg id="radarChart"></svg> exists in HTML
+
+const width = 1200;
+const height = 1000;
+const margin = { top: 125, right: 175, bottom: 125, left: 175 };
+
+const svg = d3.select("#radarChart")
+  .attr("width", width)
+  .attr("height", height)
+  .append("g")
+  .attr("transform", `translate(${width / 2}, ${height / 2})`);
+
+const xScale = d3.scaleLinear().domain([-5, 5]).range([-width / 2 + margin.left, width / 2 - margin.right]);
+const yScale = d3.scaleLinear().domain([-5, 5]).range([height / 2 - margin.bottom, -height / 2 + margin.top]);
+
+// Draw axes
+svg.append("line")
+  .attr("x1", xScale(-5))
+  .attr("x2", xScale(5))
+  .attr("y1", yScale(0))
+  .attr("y2", yScale(0))
+  .attr("stroke", "#555");
+
+svg.append("line")
+  .attr("x1", xScale(0))
+  .attr("x2", xScale(0))
+  .attr("y1", yScale(-5))
+  .attr("y2", yScale(5))
+  .attr("stroke", "#555");
+
+// Optional grid lines
+for (let i = -5; i <= 5; i++) {
+  if (i !== 0) {
+    svg.append("line")
+      .attr("x1", xScale(-5))
+      .attr("x2", xScale(5))
+      .attr("y1", yScale(i))
+      .attr("y2", yScale(i))
+      .attr("stroke", "#eee");
+
+    svg.append("line")
+      .attr("x1", xScale(i))
+      .attr("x2", xScale(i))
+      .attr("y1", yScale(-5))
+      .attr("y2", yScale(5))
+      .attr("stroke", "#eee");
+  }
+}
+
+// HTML quadrant/axis labels outside the chart corners
+
+const labels = [
+  { className: "lh_1 font_1 self_start self-justify_end text_left", html: "<h3>Membership Onboarding and Welcoming</h3><p>Easy to find, marketed and expressed</p>" },
+  { className: "lh_1 font_1 self_start self-justify_start text_right", html: "<h3>Content Locking</h3><p>Account Entrance only. No prompting or teasing of more beyond the wall.</p>" },
+  { className: "lh_1 font_1 self_end self-justify_start text_right", html: "<h3>Membership is Implied</h3><p>Speakeasy approach — you just need to know somehow.</p>" },
+  { className: "lh_1 font_1 self_end self-justify_end text_left", html: "<h3>No Content Locking</h3><p>Paywalled and/or Membership only. Interrupted experience.</p>" },
+  { className: "lh_1 font_2 self_start self-justify_center text_center", html: "<h2>Welcoming</h2>" },
+  { className: "lh_1 font_2 self_end self-justify_center text_center", html: "<h2>Secret</h2>" },
+  { className: "lh_1 font_2 self_center self-justify_start text_center rotate_270", html: "<h2>Content Locking</h2>" },
+  { className: "lh_1 font_2 self_center self-justify_end text_center rotate_90", html: "<h2>No Locking</h2>" }
+];
+
+
+const container = document.getElementById("chartContainer");
+labels.forEach(d => {
+  const div = document.createElement("div");
+  div.innerHTML = d.html;
+  div.style.position = "absolute";
+  div.style.color = "#333";
+  div.style.pointerEvents = "none";
+  div.style.maxWidth = "150px";
+  div.style.inset = "unset";
+  div.className= d.className
+
+  container.appendChild(div);
+});
+
+
+// Color scale
+const color = d3.scaleOrdinal(d3.schemeTableau10);
+
+// Load data and plot
+d3.csv('{{ "/assets/data/association_data-membership.csv" | relative_url }}').then(data => {
+  data.forEach(d => {
+    d.X = +d.X;
+    d.Y = +d.Y;
+  });
+
+  const associations = Array.from(new Set(data.map(d => d.Association)));
+  const visibility = {};
+  associations.forEach(a => visibility[a] = true);
+
+  const updateChart = () => {
+    svg.selectAll(".lollipop-line, .dot, .label").remove();
+
+    svg.selectAll(".lollipop-line")
+      .data(data)
+      .enter()
+      .append("line")
+      .attr("class", "lollipop-line")
+      .attr("x1", xScale(0))
+      .attr("y1", yScale(0))
+      .attr("x2", d => xScale(d.X))
+      .attr("y2", d => yScale(d.Y))
+      .attr("stroke", d => color(d.Association))
+      .attr("stroke-width", 4)
+      .attr("opacity", d => visibility[d.Association] ? (d.Association === "ACC" ? 1 : 0.4) : 0.1);
+
+    svg.selectAll(".dot")
+      .data(data)
+      .enter()
+      .append("circle")
+      .attr("class", "dot")
+      .attr("cx", d => xScale(d.X))
+      .attr("cy", d => yScale(d.Y))
+      .attr("r", 5)
+      .attr("fill", d => color(d.Association))
+      .attr("opacity", d => visibility[d.Association] ? 1 : 0.1);
+
+    svg.selectAll(".label")
+      .data(data)
+      .enter()
+      .append("text")
+      .attr("class", "label")
+      .attr("x", d => xScale(d.X) + 8)
+      .attr("y", d => yScale(d.Y))
+      .attr("alignment-baseline", "middle")
+      .attr("font-weight", d => d.Association === "ACC" ? "bold" : "normal")
+      .attr("fill", d => color(d.Association))
+      .attr("font-size", "12px")
+      .style("opacity", d => visibility[d.Association] ? 1 : 0.1)
+      .text(d => d.Association);
+  };
+
+  // Create interactive legend
+  const legendDiv = document.createElement("div");
+  legendDiv.style.position = "absolute";
+  legendDiv.style.top = "170px";
+  legendDiv.style.right = "20px";
+  legendDiv.style.background = "#fff";
+  legendDiv.style.padding = "10px";
+  legendDiv.style.border = "1px solid #ccc";
+  legendDiv.style.fontSize = "12px";
+
+  associations.forEach(assoc => {
+    const label = document.createElement("label");
+    label.style.display = "block";
+    label.style.marginBottom = "4px";
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.checked = true;
+    checkbox.disabled = assoc === "ACC";
+    checkbox.onchange = () => {
+      visibility[assoc] = checkbox.checked;
+      updateChart();
+    };
+    const span = document.createElement("span");
+    span.textContent = ` ${assoc}`;
+    span.style.color = color(assoc);
+    label.appendChild(checkbox);
+    label.appendChild(span);
+    legendDiv.appendChild(label);
+  });
+
+  container.appendChild(legendDiv);
+  updateChart();
+});
+
+</script>
+  
