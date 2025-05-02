@@ -1,7 +1,7 @@
 ---
 layout: ui/fullscreen_slot
 name: "Quadrant Chart"
-position: "Membership"
+position: "Brand"
 ---
 <div id="chartContainer" class="relative grid rows_1 columns_1 m_auto" style="
 width: 1000px;
@@ -17,7 +17,7 @@ height:800px;
 <!-- UMD bundle (exports the d3 global) -->
 <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
 <script>
-// D3.js Quadrant Lollipop Chart for Association Membership Experience
+// D3.js Quadrant Lollipop Chart for Association Brand Experience
 // Assumes container <svg id="radarChart"></svg> exists in HTML
 
 const width = 1000;
@@ -70,14 +70,14 @@ for (let i = -4; i <= 4; i++) {
 // HTML quadrant/axis labels outside the chart corners
 
 const labels = [
-  { className: "lh_1 font_1 self_start self-justify_end text_left", html: "<h3>Premium Promise</h3><p class='font-size_down-1'>The value is promised but not presented. <strong>Lack of Value Impression</strong></p>" },
-  { className: "lh_1 font_1 self_start self-justify_start text_right", html: "<h3>Gated Community</h3><p class='font-size_down-1'>Account Entrance only. No prompting or teasing of more beyond the wall.</p>" },
-  { className: "lh_1 font_1 self_end self-justify_start text_right", html: "<h3>Speakeasy</h3><p class='font-size_down-1'>You just need to know somehow there is membership and there is value.</p>" },
-  { className: "lh_1 font_1 self_end self-justify_end text_left", html: "<h3>Membership is Invisible</h3><p class='font-size_down-1'>Main site doesn't attempt to push membership.</p>" },
-  { className: "lh_1 font_2 self_start self-justify_center text_center p-t_6", html: "<h2>Welcoming</h2>" },
-  { className: "lh_1 font_2 self_end self-justify_center text_center p-b_6", html: "<h2>Secret</h2>" },
-  { className: "lh_1 font_2 self_center self-justify_start text_center rotate_270 p-t_6 m-l_6", html: "<h2>Locked</h2>" },
-  { className: "lh_1 font_2 self_center self-justify_end text_center rotate_90 p-t_6 m-r_6", html: "<h2>Unlock</h2>" }
+  { className: "lh_1 font_1 self_start self-justify_end text_left", html: "<h3>Brand Onboarding and Welcoming</h3><p class='font-size_down-1'>Easy to find, marketed and expressed</p>" },
+  { className: "lh_1 font_1 self_start self-justify_start text_right", html: "<h3>Content Locking</h3><p class='font-size_down-1'>Account Entrance only. No prompting or teasing of more beyond the wall.</p>" },
+  { className: "lh_1 font_1 self_end self-justify_start text_right", html: "<h3>Brand is Implied</h3><p class='font-size_down-1'>Speakeasy approach — you just need to know somehow.</p>" },
+  { className: "lh_1 font_1 self_end self-justify_end text_left", html: "<h3>No Content Locking</h3><p class='font-size_down-1'>Paywalled and/or Brand only. Interrupted experience.</p>" },
+  { className: "lh_1 font_2 self_start self-justify_center text_center p-t_6 m-t_6", html: "<h2>Welcoming</h2>" },
+  { className: "lh_1 font_2 self_end self-justify_center text_center p-b_6 m-b-6", html: "<h2>Secret</h2>" },
+  { className: "lh_1 font_2 self_center self-justify_start text_center rotate_270 p-t_6 m-l_6", html: "<h2>Content Locking</h2>" },
+  { className: "lh_1 font_2 self_center self-justify_end text_center rotate_90 p-t_6 m-r_6", html: "<h2>No Locking</h2>" }
 ];
 
 
@@ -100,7 +100,7 @@ labels.forEach(d => {
 const color = d3.scaleOrdinal(d3.schemeTableau10);
 
 // Load data and plot
-d3.csv('{{ "/assets/data/association_data-membership.csv" | relative_url }}').then(data => {
+d3.csv('{{ "/assets/data/association_data-brand.csv" | relative_url }}').then(data => {
   data.forEach(d => {
     d.X = +d.X;
     d.Y = +d.Y;

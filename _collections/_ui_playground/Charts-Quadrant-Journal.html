@@ -1,7 +1,7 @@
 ---
 layout: ui/fullscreen_slot
 name: "Quadrant Chart"
-position: "Membership"
+position: "Journal"
 ---
 <div id="chartContainer" class="relative grid rows_1 columns_1 m_auto" style="
 width: 1000px;
@@ -70,14 +70,14 @@ for (let i = -4; i <= 4; i++) {
 // HTML quadrant/axis labels outside the chart corners
 
 const labels = [
-  { className: "lh_1 font_1 self_start self-justify_end text_left", html: "<h3>Premium Promise</h3><p class='font-size_down-1'>The value is promised but not presented. <strong>Lack of Value Impression</strong></p>" },
-  { className: "lh_1 font_1 self_start self-justify_start text_right", html: "<h3>Gated Community</h3><p class='font-size_down-1'>Account Entrance only. No prompting or teasing of more beyond the wall.</p>" },
-  { className: "lh_1 font_1 self_end self-justify_start text_right", html: "<h3>Speakeasy</h3><p class='font-size_down-1'>You just need to know somehow there is membership and there is value.</p>" },
-  { className: "lh_1 font_1 self_end self-justify_end text_left", html: "<h3>Membership is Invisible</h3><p class='font-size_down-1'>Main site doesn't attempt to push membership.</p>" },
-  { className: "lh_1 font_2 self_start self-justify_center text_center p-t_6", html: "<h2>Welcoming</h2>" },
-  { className: "lh_1 font_2 self_end self-justify_center text_center p-b_6", html: "<h2>Secret</h2>" },
-  { className: "lh_1 font_2 self_center self-justify_start text_center rotate_270 p-t_6 m-l_6", html: "<h2>Locked</h2>" },
-  { className: "lh_1 font_2 self_center self-justify_end text_center rotate_90 p-t_6 m-r_6", html: "<h2>Unlock</h2>" }
+  { className: "lh_1 font_1 self_start self-justify_end text_left", html: "<h3>Singluar and Strategic</h3><p class='font-size_down-1'>Same system, same place, same look. <strong>Strategically Hard and Deminishes Journal</strong></p>" },
+  { className: "lh_1 font_1 self_start self-justify_start text_right", html: "<h3>Strategic Repetiting</h3><p class='font-size_down-1'>Users don’t feel the border between content or context.  <strong>Easy to overwhelm or loose focus.</strong></p>" },
+  { className: "lh_1 font_1 self_end self-justify_start text_right", html: "<h3>Effort Overlap</h3><p class='font-size_down-1'>Links exist, Content in both places, users alwasys switch contexts. <strong>Risks fragmentation.<strong></p>" },
+  { className: "lh_1 font_1 self_end self-justify_end text_left", html: "<h3>Siloed Islands</h3><p class='font-size_down-1'>Little or no connection. Difficult for users to understand value across properties. <strong>Survival of the fittest</strong></p>" },
+  { className: "lh_1 font_2 self_start self-justify_center text_center", html: "<h2>Integrated Brand & Experiance</h2>" },
+  { className: "lh_1 font_2 self_end self-justify_center text_center", html: "<h2>Distinct Brand & Experience</h2>" },
+  { className: "lh_1 font_2 self_center self-justify_start text_center rotate_270 p-t_6 m-l_6", html: "<h2>Duplicate</h2>" },
+  { className: "lh_1 font_2 self_center self-justify_end text_center rotate_90 p-t_6 m-r_6", html: "<h2>Unique</h2>" }
 ];
 
 
@@ -100,7 +100,7 @@ labels.forEach(d => {
 const color = d3.scaleOrdinal(d3.schemeTableau10);
 
 // Load data and plot
-d3.csv('{{ "/assets/data/association_data-membership.csv" | relative_url }}').then(data => {
+d3.csv('{{ "/assets/data/association_data-journal.csv" | relative_url }}').then(data => {
   data.forEach(d => {
     d.X = +d.X;
     d.Y = +d.Y;
@@ -185,5 +185,6 @@ d3.csv('{{ "/assets/data/association_data-membership.csv" | relative_url }}').th
   container.appendChild(legendDiv);
   updateChart();
 });
+
 </script>
   
