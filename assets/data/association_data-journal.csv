@@ -1,9 +1,9 @@
 Association,X,Y
 ACC,-3,-3
-AHA,3,-3
-HSFA,-1,-4
+AHA,4,-2.5
 ESC,3,4
+HFSA,-3,-2.5
 AMA,2,-4
-ANA,3,-3
-HRS,4,-2.5
-FACS,4,-4
+AAN,-1,-2.5
+FACS,-1,-2.5
+HRS,1,-2.5
