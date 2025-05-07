@@ -36,7 +36,7 @@ position: "Guidelines - Semantic HTML only"
               <a href="{{ item.jacc_url }}" target="_blank" rel="noopener noreferrer" itemprop="guidelineSubject"
                 itemscope itemtype="https://schema.org/ScholarlyArticle"
                 title="Read the full {{ item.document_type | downcase }} on JACC.org: {{ item.title }}"
-                class="{% include css-bundles/sm-btn-pill.txt %}  br-tl_round br-bl_round expanded-click-area"
+                class="{% include css-bundles/sm-btn-pill.txt %}  br-tl_radius br-bl_radius expanded-click-area"
                 >
                  <span class="display_none inline:md">View in</span> JACC <i class="m-x_2 fa-solid fa-external-link"></i>
               </a>
@@ -135,7 +135,7 @@ position: "Guidelines - Semantic HTML only"
             {% if item.pdf_url %}
             <li class="m_0 p_0 z_2">
               <a href="{{ item.pdf_url }}" target="_blank" rel="noopener noreferrer" type="application/pdf"
-                itemprop="guidelineUrl"  class="{% include css-bundles/sm-btn-pill.txt %} bg_primary br-tr_round br-br_round"
+                itemprop="guidelineUrl"  class="{% include css-bundles/sm-btn-pill.txt %} bg_primary br-tr_radius br-br_radius"
                 title="Download the PDF of the {{ item.document_type | downcase }}: {{ item.title }}">
                 <i class="fa-file-pdf fa-solid"></i> <span class="display_none inline:md">Full Text</span> PDF
               </a>
