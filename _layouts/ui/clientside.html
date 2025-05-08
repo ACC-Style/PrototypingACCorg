@@ -1,0 +1,53 @@
+---
+layout: UI
+--- 
+<div class="reading-typography">
+    <!-- Prism CSS -->
+<link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css" rel="stylesheet" />
+
+<!-- Prism JS -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.2/papaparse.min.js"></script>
+
+{% assign csv_data  = site.data[page.csv_file] %}
+{% assign first_row = csv_data[0] %}
+
+{%- comment -%}
+ Build a comma‑separated string of your header names
+{%- endcomment -%}
+{% assign header_line = "" %}
+{% for pair in first_row %}
+  {% assign header_line = header_line | append: pair[0] %}
+  {% unless forloop.last %}
+    {% assign header_line = header_line | append: "," %}
+  {% endunless %}
+{% endfor %}
+
+{%- comment -%}
+ Now split that string back into an array of keys
+{%- endcomment -%}
+{% assign colkeys = header_line | split: "," %}
+<textarea id="csvInput" rows="10" cols="60">
+    {%- comment -%} 1) The header row {%- endcomment -%}
+    "{{ colkeys | join:'","' }}"
+    
+    {%- comment -%} 2) Every data row, in the same key order {%- endcomment -%}
+    {% for row in csv_data %}
+      "{% for key in colkeys %}{{ row[key] | replace: '"' , '""' }}{% unless forloop.last %}","{% endunless %}{% endfor %}"
+    {% endfor %}
+    </textarea>
+
+   
+
+        
+    <!-- Live Rendered Output -->
+    <div id="output" class="m-t_4"></div>
+    
+
+
+    <!-- Your existing Prism code block -->
+    <pre class="m-t_4"><code id="codeBlock" class="language-html"></code></pre>  
+    <!-- Place this right above (or below) your code block --> 
+    {{content}}
+</div>

@@ -1,0 +1,122 @@
+---
+layout: ui/clientside
+name: "Temp"
+position: "Generator"
+csv_file: "industry"
+---
+<script>
+  // Generates the pattern and populates both the preview and the code block
+  function generatePattern() {
+    const csvData = document.getElementById("csvInput").value;
+    const parsed  = Papa.parse(csvData.trim(), { header: true }).data;
+
+    // Group by the “grouping” column
+    const grouped = {};
+    parsed.forEach(item => {
+      const alpha = (item.grouping || '').toUpperCase();
+      if (!grouped[alpha]) grouped[alpha] = [];
+      grouped[alpha].push(item);
+    });
+
+    // Build A–Z nav
+    const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
+    let html = `<div class="relative p-t_2" id="AlphaNavTop">`;
+    html += `<nav class="bg_white br_radius grid items_center p_3 p_4:lg relative shadow_overlap-light z_2 m-t_n2 wrapper-container">
+               <ul class="c_secondary-2 flex:lg flex_row font_bold gap_4 grid columns_5 wrap justify_center m-x_4 m-y_3 ul_none flex_wrap">`;
+    alphabet.forEach(letter => {
+      if (grouped[letter]) {
+        html += `<li class="c_black-7 text_center">
+                   <a class="bg_primary-4 br_radius h:c_white h:bg_primary-n3 p-x_3 block h:undecorated" 
+                      href="#${letter}">${letter}</a>
+                 </li>`;
+      } else {
+        html += `<li class="c_black-7 text_center">${letter}</li>`;
+      }
+    });
+    html += `</ul></nav>`;
+
+    // Build each letter section
+    alphabet.forEach(letter => {
+      if (grouped[letter]) {
+        html += `<div id="${letter}" class="relative br-t_1 br_dotted br_primary-3 w_100 p-y_4 font_0 flex_row flex wrapper-container">
+                   <div class="flex_none">
+                     <div class="c_white font_8 font_accent font_bold inline-block uppercase 
+                                 shadow_overlap-light bg_primary-n2 lh_0 br_radius p_2 p-x_4 m-x_3 sticky t_4">
+                       ${letter}
+                     </div>
+                   </div>
+                   <ul class="flex_auto gap-x_5:lf gap-x_4 gap-y_4 grid columns_1 
+                              columns_2:md columns_3:lg p-t_0 p_4 ul_none">`;
+
+        grouped[letter].forEach(company => {
+          const name = company.exhibitor_name || '';
+          const url  = company.exhibitor_url  || '';
+          if (url) {
+            html += `<li class="lh_1 font_ui flex flex_column justify_center">
+                       <a data-name="newMember__name" 
+                          class="block font_display c_primary-n2 font-size_up-1 m-b_2"
+                          target="_blank" href="${url}">
+                         ${name}
+                       </a>
+                     </li>`;
+          } else {
+            html += `<li class="lh_1 font_ui flex flex_column justify_center">
+                       <span data-name="newMember__name" 
+                             class="block font_display c_primary-n4 font-size_up-1 m-b_2">
+                         ${name}
+                       </span>
+                     </li>`;
+          }
+        });
+
+        html += `  </ul>
+                 </div>`;
+      }
+    });
+
+    html += `</div>`;
+
+    // Render into the page and into the Prism code block
+    document.getElementById('output').innerHTML = html;
+    const codeBlock = document.getElementById('codeBlock');
+    codeBlock.textContent = html;
+    Prism.highlightElement(codeBlock);
+  }
+
+  // Copies the contents of the code block to clipboard
+  function copyCode() {
+    const btn    = document.getElementById('copyCodeBtn');
+    const codeEl = document.getElementById('codeBlock');
+    if (!btn || !codeEl) return;
+
+    const text = codeEl.textContent;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text)
+        .then(() => {
+          btn.textContent = 'Copied!';
+          setTimeout(() => btn.textContent = 'Copy Code', 2000);
+        })
+        .catch(() => {
+          btn.textContent = 'Error';
+          setTimeout(() => btn.textContent = 'Copy Code', 2000);
+        });
+    } else {
+      // Fallback for older browsers
+      const range = document.createRange();
+      range.selectNodeContents(codeEl);
+      const sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+      try {
+        document.execCommand('copy');
+        sel.removeAllRanges();
+        btn.textContent = 'Copied!';
+      } catch {
+        btn.textContent = 'Error';
+      }
+      setTimeout(() => btn.textContent = 'Copy Code', 2000);
+    }
+  }
+</script>
+<button onclick="generatePattern()">Generate</button>
+<button id="copyCodeBtn" type="button"  onclick="copyCode()">Copy Code</button>
