@@ -1,0 +1,160 @@
+<div id="carousel-vertical">
+  <div class="bg_secondary-5 br_black-5 br_solid feature-tabs flex flex_row">
+   
+    <script>
+      $(document).ready(function () {
+          animationMethod = "fade";
+          if (($('body').hasClass("small-viewport"))) {
+              animationMethod = "slide";
+          }
+          $('.flexslider').flexslider({
+              slideshow: true,
+              animation: animationMethod,
+              slideshowSpeed: '7000',
+        controlNav: true,
+              directionNav: true,
+              useCSS: true,
+              manualControls: '.feature-tabs .tab-controls .tab-control',
+      after: function(){
+            $('.feature-tabs').find(".flex-active").addClass("is-active");
+        }
+          });
+      });
+  </script><script>
+      $(document).ready(function () {
+        animationMethod = "fade";
+        if ($("body").hasClass("small-viewport")) {
+          animationMethod = "slide";
+        }
+        $(".flexslider").flexslider({
+          slideshow: true,
+          animation: animationMethod,
+          slideshowSpeed: "7000",
+          controlNav: true,
+          directionNav: true,
+          useCSS: true,
+          manualControls: ".feature-tabs .tab-controls .tab-control",
+          after: function () {
+            $(".feature-tabs").find(".flex-active").addClass("is-active");
+          },
+        });
+      });
+    </script>
+    <div class="flexslider flex_auto w_70">
+      <ul class="slides">
+        <li
+          class="tab-content"
+        >
+          <a
+            href="/Education-and-Meetings/Maintenance-of-Certification-Information-Hub/Collaborative-Maintenance-Pathway"
+            ><img
+              src="https://www.acc.org/-/media/Non-Clinical/Images/Marketing-Images/Features/Triptychs_New/ACC-General/G21041_625x350_Slideshow_1.jpg?la=en&amp;h=700&amp;w=1250&amp;hash=484EA64BCAC738798F97A72C370463B8"
+              alt="CMP"
+              draggable="false"
+            />
+            <div class="subtext">
+              <span class="inner lh_3 p-b_4 p-x_4 font_1 font_slab"
+                >Stay Current and Certified Through the CMP</span
+              >
+            </div>
+          </a>
+        </li>
+        <li
+          class="tab-content flex-active-slide"
+        >
+          <a
+            href="https://www.acc.org/Education-and-Meetings/Meetings/Meeting-Items/2024/07/03/2025-Care-of-the-Athletic-Heart"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><img
+              src="https://www.acc.org/-/media/Non-Clinical/Images/Education-and-Meetings/Meetings/2025/H25082-Athletic-Heart_625x350.jpg?la=en&amp;h=1458&amp;w=2604&amp;hash=6DD848BE211F36554E8B1143B59F4E69"
+              alt="Athletic Heart"
+              draggable="false"
+            />
+            <div class="subtext">
+              <span class="inner lh_3 p-b_4 p-x_4 font_1 font_slab"
+                >Gain Actional Insights to Manage Your Patient Athletes</span
+              >
+            </div>
+          </a>
+        </li>
+        <li
+          class="tab-content"
+        >
+          <a
+            href="https://www.acc.org/accanywhere"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><img
+              src="https://www.acc.org/-/media/Non-Clinical/Images/Marketing-Images/Features/Triptychs_New/ACC-Meetings/2023/J23041-ACC-Anywhere-625x350.jpg?la=en&amp;h=350&amp;w=625&amp;hash=891A8E29601F1C5D6DC65DA2B6DD087B"
+              alt=""
+              draggable="false"
+            />
+            <div class="subtext">
+              <span class="inner lh_3 p-b_4 p-x_4 font_1 font_slab"
+                >Get Unlimited On Demand Access to ALL of ACC’s Courses!</span
+              >
+            </div>
+          </a>
+        </li>
+      </ul>
+      <ul class="flex-direction-nav">
+        <li><a class="flex-prev" href="#">Previous</a></li>
+        <li><a class="flex-next" href="#">Next</a></li>
+      </ul>
+      <ul class="flex-direction-nav">
+        <li><a class="flex-prev" href="#">Previous</a></li>
+        <li><a class="flex-next" href="#">Next</a></li>
+      </ul>
+
+      <ul class="flex-direction-nav">
+        <li><a class="flex-prev" href="#">Previous</a></li>
+        <li><a class="flex-next" href="#">Next</a></li>
+      </ul>
+    </div>
+    <ul
+      class="flex flex_auto flex_column w_30 m-t_0 tab-controls font_ui br-l_1 br_solid br_black-4 mobile"
+      style="height: unset;"
+    >
+      <li
+        class="br_secondary-4 br_solid d_inline-block flex flex_auto flex_column font_1 justify_center overflow_visible p-y_2 p_4 tab-control text_center vertical-align_middle w_100 is-active"
+      >
+        <a href="#" class="overflow_ellipsis">CMP</a>
+      </li>
+      <li
+        class="br_secondary-4 br_solid d_inline-block flex flex_auto flex_column font_1 justify_center overflow_visible p-y_2 p_4 tab-control text_center vertical-align_middle w_100 is-active flex-active"
+      >
+        <a href="#" class="overflow_ellipsis">Care of the Athletic Heart</a>
+      </li>
+      <li
+        class="br_secondary-4 br_solid d_inline-block flex flex_auto flex_column font_1 justify_center overflow_visible p-y_2 p_4 tab-control text_center vertical-align_middle w_100 is-active"
+      >
+        <a href="#" class="overflow_ellipsis">ACC Anywhere</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<script src="https://raw.githubusercontent.com/woocommerce/FlexSlider/refs/heads/master/jquery.flexslider-min.js"  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<div id="carouselExample" class="carousel slide">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="..." class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="..." class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="..." class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
