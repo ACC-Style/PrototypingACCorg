@@ -1,7 +1,7 @@
 ---
 layout: ui/fullscreen_slot
 name: "Quadrant Chart"
-position: "Journal"
+position: "ESC Journal"
 ---
 <div id="chartContainer" class="relative grid rows_1 columns_1 m_auto" style="
 width: 1000px;
@@ -100,7 +100,7 @@ labels.forEach(d => {
 const color = d3.scaleOrdinal(d3.schemeTableau10);
 
 // Load data and plot
-d3.csv('{{ "/assets/data/association_data-journal.csv" | relative_url }}').then(data => {
+d3.csv('{{ "/assets/data/association_data-journal-ESC-shift.csv" | relative_url }}').then(data => {
   data.forEach(d => {
     d.X = +d.X;
     d.Y = +d.Y;
