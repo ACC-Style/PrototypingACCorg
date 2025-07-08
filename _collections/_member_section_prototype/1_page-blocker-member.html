@@ -8,152 +8,11 @@ user_state: "not_logged_in"
 id: "login"
 ---
 
-<style>
-    [grid-template="page-blocker"] {
-        display: grid;
-        grid-template-columns: [start] calc(50% - 15rem) repeat(3, 10rem) calc(50% - 15rem) [end];
-        grid-template-rows: [start] max-content repeat(4, 1fr) max-content [end];
-        grid-template-areas: "a a a c c" "a a a c c" "b b . e e" "b b . e e" "d d f f f" "d d f f f";
-    }
+{% include_relative PageBlocks/bento-roadblock.styles.html %}
 
-    [grid-template="backdrop"] {
-        display: grid;
-        grid-template-columns: subgrid;
-        grid-template-rows: subgrid;
-    }
-
-    [grid-template="backdrop"]>li {
-        display: grid;
-        grid-template-columns: subgrid;
-        grid-template-rows: subgrid;
-        justify-content: center;
-        font-size: inherit;
-        display: grid;
-        grid-template-columns: subgrid;
-        grid-template-rows: subgrid;
-        /* grid-gap: .5rem; */
-        /* padding: 1rem; */
-    }
-
-    .icon,
-    .text {
-        opacity: .3;
-        filter: blur(1.5px);
-        padding-inline: 2rem;
-        line-height: 1.25ch;
-    }
-
-    .icon {
-        grid-area: icon;
-        /* padding-block-end: .5rem; */
-    }
-
-    .text {
-        grid-area: text;
-        max-width: 12ch;
-        padding-block: .75rem;
-    }
-
-    [grid-area="a"] {
-        grid-area: a;
-        grid-template-areas: "text text text" "icon . .";
-
-        .icon {
-            justify-self: start;
-            align-self: start;
-        }
-
-        .text {
-            justify-self: start;
-            align-self: end;
-            text-align: left;
-        }
-    }
-
-    [grid-area="b"] {
-        grid-area: b;
-        grid-template-areas: "icon ." "text .";
-
-        .icon {
-            justify-self: start;
-            align-self: end;
-        }
-
-        .text {
-            justify-self: start;
-            align-self: start;
-            text-align: left;
-        }
-    }
-
-    [grid-area="c"] {
-        grid-area: c;
-        grid-template-areas: "text text" ". icon";
-
-        .icon {
-            justify-self: end;
-            align-self: start;
-        }
-
-        .text {
-            justify-self: end;
-            align-self: end;
-            text-align: right;
-        }
-    }
-
-    [grid-area="d"] {
-        grid-area: d;
-        grid-template-areas: "icon . ." "text text text";
-
-        .icon {
-            justify-self: start;
-            align-self: end;
-        }
-
-        .text {
-            justify-self: start;
-            align-self: start;
-            text-align: left;
-        }
-    }
-
-    [grid-area="e"] {
-        grid-area: e;
-        grid-template-areas: ". icon" ". text";
-
-        .icon {
-            justify-self: end;
-            align-self: end;
-        }
-
-        .text {
-            justify-self: end;
-            align-self: start;
-            text-align: right;
-        }
-
-    }
-
-    [grid-area="f"] {
-        grid-area: f;
-        grid-template-areas: ". . icon" "text text text";
-
-        .icon {
-            justify-self: end;
-            align-self: end;
-        }
-
-        .text {
-            justify-self: end;
-            align-self: start;
-            text-align: right;
-        }
-    }
-</style>
 <section grid-template="page-blocker" class="bg_secondary-1">
     <ul grid-template="backdrop"
-        class="ul_none br_round col_all row_all gap_3 gap_4:lg p_3 p_4:lg m_0 font_1 font_8:md font_10:lg isolation_isolate">
+        class="ul_none br_round col_all row_all gap_3 gap_4:lg p_3 p_4:lg m_0 font_0 font_8:md font_10:lg isolation_isolate">
         <li grid-area="a" class="bg_primary-n4 c_white color-inherit m_0 p_0 reading-typography texture_dust">
             <div class="icon"><i class="font-size_up-2  fa-light fa-circle-check" aria-hidden="true"></i></div>
             <div grid-area="text" class="font_display font_regular text font-size_down-2">Membership Benefit
@@ -188,11 +47,11 @@ id: "login"
                 Tools </div>
         </li>
     </ul>
-    <div grid-area="main"
-        class="col-start_2 col-end_n2 row-start_2 row-end_n2 columns_1 grid items_center justify_center rows_1 isolation_isolate z_2">
+       <div grid-template="roadblock"
+        class="isolation_isolate z_2">
         <div class="justify_center items_center m_auto max-w_30">
-            <div class="bg_secondary-1 p_4 self_center">
-                <div class="p_4 bg_white reading-typography flex flex_column gap_4">
+            <div class="bg_secondary-1 p_4:lg p_3 self_center">
+                <div class="p_4:lg p_3 bg_white reading-typography flex flex_column gap_4:lg gap_3:md gap_2">
 
                     <header
                         class="columns_1 grid isolation_isolate min-h_20 overflow_hidden relative rows_1 font_3:lg font_2:md font_1">
@@ -226,8 +85,8 @@ id: "login"
                                 opportunities to strengthen their professional support system and skills. </p>
                        
                     </div>
-                    <div class="br-b_5 br_secondary-1 br_solid m-x_n4 order_n1 p-x_5:lg p_4 p_4:lg">
-                            <h2>You Need to Member of College</h2>
+                    <div class="br-b_5 br_secondary-1 br_solid m-x_n4 order_n1 p-x_5:lg p_4">
+                            <h2 class="wrap_balanced">You Need to Member of College</h2>
                             <p>This is an exclusive member perks become a member of the American College of Cardiology to gain access.
                             </p>
                             <div class="grid"><a href="../2_home-teaser-no-section-access/" class="btn btn-lg btn-primary m_auto">Join Now</a></div>
