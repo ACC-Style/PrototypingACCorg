@@ -1,10 +1,10 @@
 Association,X,Y
-ACC,2.5,2.5
+ACC,2.5,2
 AHA,2.5,-3
 AHA-Prof,1,2
-ESC,-2.5,1
+ESC,-2.5,2.5
 HFSA,-2.5,1.5
-AMA,-2,1
-AAN,-2.5,3
+AMA,-2,3
+AAN,-2.5,1.5
 FACS,-3,1.5
-HRS,-2.5,2
+HRS,-2.5,3

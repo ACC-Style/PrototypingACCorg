@@ -1,0 +1,28 @@
+---
+layout: arches-sidebar
+name: "About - Teaser"
+position: "Need Section Access"
+hero-title: "Women in Cardiology"
+hero-cta-text: "Manage Membership"
+hero_image_base: "MEMBER"
+sidebarRoot: Women in Cardiology
+sidebarRootURL: ../2.0_home-teaser-no-section-access/
+masthead: MicroSite/teasermodeandheroimage.micro.dynamic.html
+sidebarArray:
+  - label: About
+    url: ../2.1_about-teaser/
+    active: true
+  - label:  Announcements
+    url: ../2.3_announcements-teaser/
+  - label: Resources
+    url: ../2.2_resources-teaser/
+---
+<div class="reading-typography font-size_up"
+style="--custom-font-size-up: 1.06">
+<h2>About</h2>
+  <div class="reading-typography">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos est exercitationem perspiciatis fuga, eligendi dolor reprehenderit sed cupiditate nesciunt asperiores animi minima, officia doloribus velit consequatur distinctio, corporis illo consequuntur?
+  </div>
+      {% include_relative PageBlocks/about/leadership.teaser.html %}
+      {% include_relative PageBlocks/Unlock-FollowUpCTA.html %}
+</div>

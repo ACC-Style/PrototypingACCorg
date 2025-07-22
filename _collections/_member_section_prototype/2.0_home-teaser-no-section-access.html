@@ -1,0 +1,119 @@
+---
+layout: arches
+name: "Home - Teaser"
+position: "Need Section Access"
+section_name: "Women in Cardiology"
+section_url: "https://www.acc.org/Membership/Sections-and-Councils/Women-in-Cardiology-Section"
+user_state: "not_logged_in"
+---
+<section grid-template="page-layout" class="bg_shade-n3 br-b_1 br-t_1 br_black-3 br_solid c_white color_inherit m-b_0 p-y_4 reading-typography">
+  <div grid-area="content" class="font-size_up max-w_65 p-b_4 p-t_4 p-t_5:lg p-x_4:md p-x_5:lg reading-typography" style="--custom-font-size-up: 1.06">
+    <h2 class="lh_2 m-b_4 flex flex_row">
+      <div class="flex_shrink font_10 grid items_center justify_center m-r_4">
+        <i class="fas fa-lock-alt font-size_up-2" aria-hidden="true"></i>
+      </div>
+      <strong class="flex_grow">Member Section Access Required!<small class="block font_regular">
+         Extend Your Membership Today!</small></strong>
+    </h2>
+    <p class="lh_3 max-w_45">
+      You've arrived at a Member Section page that you don't have access to.<br>
+      This is a gateway to our exclusive member
+      benefits. These benefits, designed specifically for {{page.section_name}}. <br>
+      Member Sections offer access to specialized communities, valuable content,
+      and exciting opportunities to make a real impact in your field.
+    </p>
+    
+    <a href="../3_home-access" class="bg_white-8 btn btn-lg h:bg_white shadow_overlap-light">Manage Membership <i class="fa-solid fa-gears" aria-hidden="true"></i></a>
+  </div>
+  <aside grid-area="sidebar-secondary">
+    <div data-item="cta-overlay" class="bg_white-6 br-bl_round br-r_0 br-tl_round br_1 br_black-3 br_solid c_black color_inherit m-l_4 m-t_4 p_4 p_5:lg reading-typography relative shadow_bevel-light z_1">
+      <h4>
+        Need Help?
+        <small class="block">Something Not Right?</small>
+      </h4>
+      <ul class="ul_none">
+        <li>
+          <a href="https://my.acc.org/s/ContactUsMemberCare">Contact ACC Member Care</a>
+        </li>
+        <li><a href="tel:800-253-4636">800-253-4636, ext. 5603</a></li>
+        <li><a href="tel:202-375-6000">202-375-6000</a></li>
+      </ul>
+    </div>
+  </aside>
+</section>
+{% include MicroSite/heroimage.dynamic.html parent_link ="#"  hero_image_base="MEMBER" parent_page
+="Member Sections" hero_title ="Women in Cardiology" cta_title
+="Join WIC Today" cta_description ="Unlock exclusive resources,
+expand your influence, and support our mission. Join the Women in Cardiology
+section today!" cta_link ="../3_home-access" cta_text ="Manage Membership" %}
+
+
+<section  class="grid:md columns_4:md columns_5:lg  p_5:lg p_4 gap-x_5:lg gap_4 reading-typography">
+  <div class="col_all">  
+     <h2>Why Should You Join {{page.section_name}}?</h2>
+  </div>
+  <div
+    class="reading-typography font-size_up col_all col-end_n3"
+    style="--custom-font-size-up: 1.125"
+  >
+
+    <p>
+      The Women in Cardiology Section of the ACC offers a platform and opportunities to strengthen their professional support system, skills and the future of the community.
+      Active involvement in the Section provides leadership skills developemnt and understanding the governance structure and avenues to leadership within the College.
+    </p>
+    <h3>Mission</h3>
+    <p>
+      Our mission is to foster a supportive community that advocates for gender
+      and career equity, empowering women cardiologists across all specialties
+      and career stages. Join us in creating a more inclusive and dynamic field
+      in cardiovascular medicine.
+    </p>
+    <div class="">
+    <h3 class="c_primary-n1 flex flex_column flex_row:md font_display font_medium m_0 p-y_5:md p-y_4">
+  <span class="flex_auto grid">
+    <span class="br-t_1 br-tl_radius br_inherit br_solid self_center"></span>
+  </span>
+  <span class="flex_auto flex_shrink p-x_4 p-x_5:lg lh_1 text_center">
+   Join WIC Today
+  </span>
+  <span class="flex_auto grid">
+    <span class="br_primary-1 br-tl_radius br-t_1 br_solid br_inherit self_center"></span>
+  </span>
+</h3>
+    <p>Manage your membership and add WIC to your sections to gain full benefits of this section.</p>
+    <div class="text_center"><a href="../3_home-access" class="btn btn-primary">Manage Membership <i class="fa-solid fa-gears"></i></a></div>
+    </div>
+  </div>
+  <div
+    class=" bg_black-1 reading-typography font-size_down p-x_5:lg p_4 wrapper-container br_round col_all col-start_n3"
+    style="--custom-font-size-down: 1"
+  >
+    <h3>Section Benefits</h3>
+    {% include_relative PageBlocks/UL_IconText.html
+    data_path="Blocks.MemberSection.UL_IconText_SecttionBenefits" %}
+  </div>
+</section>
+
+<section class="teaser bg_shade-4 p_5:lg p_4 reading-typography">
+  <h2>Teaser Content</h2>
+  <div class="grid columns_3:lg columns_1 gap_5:lg gap_4 reading-typography">
+  <div zone-label="card" class=" p_4  bg_white br_solid br_black-1 shadow_overlap-light br_radius relative">
+    <img src="/PrototypingACCorg/assets/images/MicroSite/MEMBER_600x300.png" alt="Discover a better work-life balance with us." class="w_100 aspect_21x9 bg_cover m-b_3">
+    <h3>About</h3>
+    <p>Learn more about the Initatives and Leadership with in this Section</p>
+    <div class="grid"><a href="../2.1_about-teaser/" class="btn btn-secondary expanded-click-area">Explore</a></div>
+  </div>
+  <div zone-label="card" class=" p_4  bg_white br_solid br_black-1 shadow_overlap-light br_radius relative">
+    <img src="/PrototypingACCorg/assets/images/ACC/MemberSections/Webinars.png" alt="Discover a better work-life balance with us." class="w_100 aspect_21x9 bg_cover m-b_3">
+    <h3>Announcements</h3>
+    <p>Learn from ACC’s experts about issues affecting women in cardiology.</p>
+    <div class="grid"><a href="../2.3_announcements-teaser/" class="btn btn-secondary expanded-click-area">Explore</a></div>
+  </div>
+  <div zone-label="card" class=" p_4  bg_white br_solid br_black-1 shadow_overlap-light br_radius relative">
+    <img src="/PrototypingACCorg/assets/images/ACC/MemberSections/Resources.png" alt="Discover a better work-life balance with us." class="w_100 aspect_21x9 bg_cover m-b_3">
+    <h3>Resources</h3>
+    <p>Get recommendations for articles, books and more.</p>
+    <div class="grid"><a href="../2.2_resources-teaser/" class="btn btn-secondary expanded-click-area">Explore</a></div>
+  </div>
+</div>
+</section>
