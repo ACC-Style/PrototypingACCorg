@@ -54,7 +54,7 @@ Variables that can be used in the tag:
       <h2 data-item="cta-title" class="font_medium">{{ include.cta_title | default: 'The Call-to-Action of the Main Page' }}</h2>
       <p data-item="cta-description" class="font-size_up-1 lh_2">{{ include.cta_description | default: 'Voluptas est incidunt.' }}</p>
       <div class="grid justify_center">
-         <a href="{{ include.cta_link | default: '#' }}" class="btn btn-primary capitalize">{{ include.cta_text | default: 'Call to Action' }}</a>
+         <a href="{{ include.cta_link | default: '#' }}" class="btn btn-primary capitalize">{{ include.cta_button_text | default: 'Call to Action' }}</a>
       </div>
       <div class="z_0 bg_acc br_round inset_0 opacity_8 absolute shadow_overlap-bold bg-blend_multiply"></div>
     </div>
