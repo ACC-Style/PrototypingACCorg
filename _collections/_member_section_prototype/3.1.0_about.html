@@ -10,7 +10,7 @@ sidebarRootURL: ../3.0_home/
 masthead: MicroSite/heroimage.micro.dynamic.html
 sidebarArray:
   - label: About
-    url: ../3.1_about/
+    url: ../3.1.0_about/
     active: true
   - label: Resources
     url: ../3.2_resources/
@@ -21,25 +21,19 @@ sidebarArray:
   - label: Iniatives & Activities
     url: ../3.5_feature.chapters/
 ---
-<div class="wrapper-container">
-  <section zone-label="startingSection" class="grid columns_1 columns_2:lg columns_5:lg gap_5:lg gap_4">
+<section zone-label="startingSection" class="grid columns_1 columns_2:md columns_5:lg gap_5:lg gap_4 m-b_5:lg m-b_4">
   <main
     zone-label="introduction"
-    class="reading-typography font-size_up p-l_4:lg max-w_65 col-start_start col-end_end col-end_n1:md col-end_n3:lg "
+    class="reading-typography font-size_up max-w_65 col-start_start col-end_end col-end_n2:md col-end_n3:lg "
     style="--custom-font-size-up: 1.06"
   >
-    <h2 class="lh_2 m-b_4">
-      About
-      <small class="block font-size_down-2">WIC champion women’s leadership, professional growth, and wellness. (75&nbsp;Char)</small>
-    </h2>
+    <hgroup class="lh_2 m-b_4">
+      <h1>About</h1>
+      <small class="block font-size_up-1 c_primary-n2">WIC champion women’s leadership, professional growth, and wellness. (75&nbsp;Char)</small>
+    </hgroup>
     <p>{% include Placeholder/text.200.txt %}</p>
-    <div class="bg_black-1 br_round p_4 lh_1 text_center
-    ">
-      <p class="block font_bold">Shaping the experience and the initatives is the Member Section Leadership</p>
-      <a href="../3.1.1_about.leadership/" class="btn btn-primary">View Leadership</a>
-    </div>
   </main>
-  <aside class="col-end_end col-start_start col-start_n3:lg  col-start_n1:md reading-typography wrapper-container p-l_4:lg">
+  <aside class="col-end_end col-start_start col-start_n3:lg col-start_n2:md reading-typography wrapper-container p-l_4:lg">
    <blockquote class="Account bg_black-_05 block br_1 br_round br_solid br_white-5 col-end_end col-start_start flex font_display m-x_4:md m-x_5 p-y_5:md p_4 relative shadow_bevel-light z1" aria-label="Testimonial from Myrrh Arobo">
   <em class="absolute t_3:md t_n3 l_3 l_n4:md c_accent-n1 fa-fw fa-quote-left fa-solid font_5 font_7:md font_9:lg  text-shadow_black-1 z_1" aria-hidden="true"></em>
   <div class="flex_auto p-x_2  p-x_3:sm p-y_0 p-y_4:md p-x_4:md c_black z_2 flex flex_column" role="article">
@@ -47,8 +41,8 @@ sidebarArray:
         My intention is for the ACC WIC Section to support women cardiologists of all ages, all stages and all subspecialties.
 
     </p>
-    <cite class="c_accent-n3 flex flex_row:md flex_column font_normal m-t_auto:md m-t_3 m-l_n3 justify_end:md justify_start font-size_down-1" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
-      <img src="https://www.acc.org//-/media/Non-Clinical/Images/2019/07/01/Lundberg-Gina-600x600.jpg" alt="Headshot of Gina Price Lundberg" class="aspect_1x1 br_1 br_circle br_solid br_white-1 flex_none max-w_5 shadow_1 self_start" itemprop="image" style="width: 50px;">
+    <cite class="c_accent-n3 flex flex_row:sm flex_column font_normal m-t_auto:md m-t_3 m-l_n3 justify_end:md justify_start font-size_down-1" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+      <i class="fa-solid fa-user-circle fa-2x flex_shrink:md lh_2 m-l_3 self_center c_accent-n1"></i> 
       <span class="flex_shrink:md lh_2 m-l_3 self_center">
         <span class="block font_accent font_bold" itemprop="name">Gina Price Lundberg, MD, FACC</span>
         <span class="font-size_down-1 opacity_8 font_ui block" itemprop="jobTitle">Chair</span>
@@ -62,17 +56,34 @@ sidebarArray:
       </div> 
   </aside>
 </section>
-<section id="workgroups" aria-labelledby="workgroups-heading">
+<section id="leadership" aria-labelledby="leadership-heading" class="m-b_4 m-b_5:lg">
+      <h2 id="leadership-heading" class="section-title">Leadership</h2>
+    <p>Shaping the experience and the initatives is the Member Section Leadership</p>
+      {% include_relative PageBlocks/about/leadership.teaser.html %}
+    <h3>Section Group Photo</h3>
+      <div
+        class="p_3 m-b_4 br_solid br_black-3 br_1 br_radius shadow_overlap-light"
+      >
+      <img src="https://cdn.midjourney.com/833e00b6-0a6e-4d11-8fab-2d9cc6011baa/0_1.png" class="aspect_16x9 bg_secondary-4 br_radius">
+        <cite class="font-size_down opacity_6 c_primary"
+          >Group photo taken at ACC 24.</cite
+        >
+      </div>
+  
+    </div>
+</section>
+
+<section id="workgroups" aria-labelledby="workgroups-heading" class="m-b_4 m-b_5:lg">
   <div class="section-content">
-    <h3 id="workgroups-heading" class="section-title">Workgroups</h3>
+    <h2 id="workgroups-heading" class="section-title">Workgroups</h2>
     <p class="section-description" id="workgroups-desc">
       {% include Placeholder/text.150.txt %}
     </p>
 
-    <ul role="list" aria-describedby="workgroups-desc" class="workgroup-list columns_3:lg columns_2:md columns_1 gap_5:lg gap_4 p_3 p_4:md p_5:lg m-y_3 m-y_4:md m-y_5:lg grid wrapper-container bg_black-1 m-x_n4 reading-typography">
-<li class="br_black-3 br_radius br_solid columns_1 gap_4 gap_5:md grid p_4 relative shadow_0" data-item="card">
+    <ul role="list" aria-describedby="workgroups-desc" class="workgroup-list columns_3:lg columns_2:md columns_1 gap_5:lg gap_4 p_3 p_4:md p_5:lg m-y_3 m-y_4:md m-y_5:lg grid wrapper-container bg_black-1 reading-typography">
+<li class="br_black-2 br_radius br_1 br_solid columns_1 gap_4 gap_5:md grid p_4 relative bg_white shadow_overlap-light" data-item="card">
 
-    <div class="col_all columns_1 grid isolation_isolate overflow_hidden relative rows_1">
+    <div class="col_all columns_1 grid isolation_isolate overflow_hidden relative rows_1 m_n4 br-tr_radius br-tl_radius">
       <picture class="col_all row_all bg_cover flex flex_column inset_0 absolute">
         <source srcset="{{ 'assets/images/MicroSite/' | append: page.hero_image_base | append: '_600x300.png' | relative_url }}" media="(min-width: 400px)" class="display_none">
 
@@ -80,26 +91,19 @@ sidebarArray:
         
       </picture>
       <div class="b_3 col_all font-size_up-2 grid inset_0 justify_start m-y_4 relative row_all self_center">
-        <h2 class="font-size_up-2 lh_1 m_0 c_white isolation_isolate relative">
+        <h4 class="font-size_up-1 lh_1 m_0 c_white isolation_isolate relative">
           <span class="text wrap c_white lh_2 font-size_down-1 bg_acc-n3 p_3" style="box-decoration-break: clone;">Cardiovascular Disease</span>
-        </h2>
+        </h4>
       </div>
     </div>
 
-    <div class="font_n1 font_0:lg flex_column flex gap_4">
-      <div zone-label="main-content" class="p-y_4">
-        <h2 data-item="cta-title" class="m-b_3 lh_1 font_medium font_display"><strong class="font-size_up m-b_2 block">Ready to Take the Next Step?</strong></h2>
-
-        <p class="font-size_up lh_3">Join professionals using ACHDSAP to maintain their certification and advance their
-          knowledge.</p>
-        
-      </div>
-
+    <div class="flex_column items_start flex gap_4">
+      <p class="font-size_up lh_3">{% include Placeholder/text.150.txt %}</p>
     </div>
   </li>
-  <li class="br_black-3 br_radius br_solid columns_1 gap_4 gap_5:md grid p_4 relative shadow_0" data-item="card">
+  <li class="br_black-2 br_radius br_1 br_solid columns_1 gap_4 gap_5:md grid p_4 relative bg_white shadow_overlap-light" data-item="card">
 
-    <div class="col_all columns_1 grid isolation_isolate overflow_hidden relative rows_1">
+    <div class="col_all columns_1 grid isolation_isolate overflow_hidden relative rows_1 m_n4 br-tr_radius br-tl_radius">
       <picture class="col_all row_all bg_cover flex flex_column inset_0 absolute">
         <source srcset="{{ 'assets/images/MicroSite/' | append: page.hero_image_base | append: '_600x300.png' | relative_url }}" media="(min-width: 400px)" class="display_none">
 
@@ -107,26 +111,18 @@ sidebarArray:
         
       </picture>
       <div class="b_3 col_all font-size_up-2 grid inset_0 justify_start m-y_4 relative row_all self_center">
-        <h2 class="font-size_up-2 lh_1 m_0 c_white isolation_isolate relative">
+        <h4 class="font-size_up-1 lh_1 m_0 c_white isolation_isolate relative">
           <span class="text wrap c_white lh_2 font-size_down-1 bg_acc-n3 p_3" style="box-decoration-break: clone;">Cardiovascular Disease</span>
-        </h2>
+        </h4>
       </div>
     </div>
 
-    <div class="font_n1 font_0:lg flex_column flex gap_4">
-      <div zone-label="main-content" class="p-y_4">
-        <h2 data-item="cta-title" class="m-b_3 lh_1 font_medium font_display"><strong class="font-size_up m-b_2 block">Ready to Take the Next Step?</strong></h2>
-
-        <p class="font-size_up lh_3">Join professionals using ACHDSAP to maintain their certification and advance their
-          knowledge.</p>
-        
-      </div>
-
+    <div class="flex_column items_start flex gap_4">
+      <p class="font-size_up lh_3">{% include Placeholder/text.150.txt %}</p>
     </div>
-  </li>
-  <li class="br_black-3 br_radius br_solid columns_1 gap_4 gap_5:md grid p_4 relative shadow_0" data-item="card">
+  </li><li class="br_black-2 br_radius br_1 br_solid columns_1 gap_4 gap_5:md grid p_4 relative bg_white shadow_overlap-light" data-item="card">
 
-    <div class="col_all columns_1 grid isolation_isolate overflow_hidden relative rows_1">
+    <div class="col_all columns_1 grid isolation_isolate overflow_hidden relative rows_1 m_n4 br-tr_radius br-tl_radius">
       <picture class="col_all row_all bg_cover flex flex_column inset_0 absolute">
         <source srcset="{{ 'assets/images/MicroSite/' | append: page.hero_image_base | append: '_600x300.png' | relative_url }}" media="(min-width: 400px)" class="display_none">
 
@@ -134,25 +130,17 @@ sidebarArray:
         
       </picture>
       <div class="b_3 col_all font-size_up-2 grid inset_0 justify_start m-y_4 relative row_all self_center">
-        <h2 class="font-size_up-2 lh_1 m_0 c_white isolation_isolate relative">
+        <h4 class="font-size_up-1 lh_1 m_0 c_white isolation_isolate relative">
           <span class="text wrap c_white lh_2 font-size_down-1 bg_acc-n3 p_3" style="box-decoration-break: clone;">Cardiovascular Disease</span>
-        </h2>
+        </h4>
       </div>
     </div>
 
-    <div class="font_n1 font_0:lg flex_column flex gap_4">
-      <div zone-label="main-content" class="p-y_4">
-        <h2 data-item="cta-title" class="m-b_3 lh_1 font_medium font_display"><strong class="font-size_up m-b_2 block">Ready to Take the Next Step?</strong></h2>
-
-        <p class="font-size_up lh_3">Join professionals using ACHDSAP to maintain their certification and advance their
-          knowledge.</p>
-        
-      </div>
-
+    <div class="flex_column items_start flex gap_4">
+      <p class="font-size_up lh_3">{% include Placeholder/text.150.txt %}</p>
     </div>
   </li>
       <!-- Add additional workgroups here -->
     </ul>
   </div>
 </section>
-</div>
