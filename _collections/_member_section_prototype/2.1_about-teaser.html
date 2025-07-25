@@ -25,5 +25,80 @@ style="--custom-font-size-up: 1.06">
     </h2>
 <p>{% include Placeholder/text.200.txt %}</p>
       {% include_relative PageBlocks/about/leadership.teaser.html %}
-      {% include_relative PageBlocks/Unlock-FollowUpCTA.html %}
 </div>
+<section id="workgroups" aria-labelledby="workgroups-heading" class="m-b_4 m-b_5:lg">
+  <div class="section-content">
+    <h2 id="workgroups-heading" class="section-title">Workgroups</h2>
+    <p class="section-description" id="workgroups-desc">
+      {% include Placeholder/text.150.txt %}
+    </p>
+    <div class=" wrapper-container ">
+      <ul role="list" aria-describedby="workgroups-desc"
+        class="workgroup-list columns_3:md columns_2:sm columns_1 gap_5:lg gap_4 grid ul_none">
+        <li class="br_black-2 br_radius br_1 br_solid relative bg_white shadow_overlap-light p_0 m_0" data-item="card">
+          <div class="columns_1 grid isolation_isolate overflow_hidden relative rows_1 br-tr_radius br-tl_radius">
+            <picture class="col_all row_all bg_cover flex flex_column inset_0 absolute">
+              <source
+                srcset="{{ 'assets/images/MicroSite/' | append: page.hero_image_base | append: '_600x300.png' | relative_url}}"
+                media="(min-width: 400px)" class="display_none"><img
+                src="{{ 'assets/images/MicroSite/' | append: page.hero_image_base | append: '_320x300.png' | relative_url}}"
+                alt="Hero Image" loading="lazy" class="bg_cover flex_100 bg-blend_luminosity ">
+            </picture>
+            <div class="col_all grid inset_0 justify_start m-y_4 relative row_all self_center">
+              <h4 class="lh_1 m_0 c_white isolation_isolate relative p-r_4"><span
+                  class="text wrap c_white lh_2 bg_acc-n3 p_3" style="box-decoration-break: clone;">Cardiovascular
+                  Disease</span></h4>
+            </div>
+          </div>
+          <div class="p_4:md p_3">
+            <p class="lh_2 m_0">{% include Placeholder/text.150.txt %}</p>
+          </div>
+        </li>
+                <li class="br_black-2 br_radius br_1 br_solid relative bg_white shadow_overlap-light p_0 m_0" data-item="card">
+          <div class="columns_1 grid isolation_isolate overflow_hidden relative rows_1 br-tr_radius br-tl_radius">
+            <picture class="col_all row_all bg_cover flex flex_column inset_0 absolute">
+              <source
+                srcset="{{ 'assets/images/MicroSite/' | append: page.hero_image_base | append: '_600x300.png' | relative_url}}"
+                media="(min-width: 400px)" class="display_none"><img
+                src="{{ 'assets/images/MicroSite/' | append: page.hero_image_base | append: '_320x300.png' | relative_url}}"
+                alt="Hero Image" loading="lazy" class="bg_cover flex_100 bg-blend_luminosity ">
+            </picture>
+            <div class="col_all grid inset_0 justify_start m-y_4 relative row_all self_center">
+              <h4 class="lh_1 m_0 c_white isolation_isolate relative p-r_4"><span
+                  class="text wrap c_white lh_2 bg_acc-n3 p_3" style="box-decoration-break: clone;">Cardiovascular
+                  Disease</span></h4>
+            </div>
+          </div>
+          <div class="p_4:md p_3">
+            <p class="lh_2 m_0">{% include Placeholder/text.150.txt %}</p>
+          </div>
+        </li>
+                <li class="br_black-2 br_radius br_1 br_solid relative bg_white shadow_overlap-light p_0 m_0" data-item="card">
+          <div class="columns_1 grid isolation_isolate overflow_hidden relative rows_1 br-tr_radius br-tl_radius">
+            <picture class="col_all row_all bg_cover flex flex_column inset_0 absolute">
+              <source
+                srcset="{{ 'assets/images/MicroSite/' | append: page.hero_image_base | append: '_600x300.png' | relative_url}}"
+                media="(min-width: 400px)" class="display_none"><img
+                src="{{ 'assets/images/MicroSite/' | append: page.hero_image_base | append: '_320x300.png' | relative_url}}"
+                alt="Hero Image" loading="lazy" class="bg_cover flex_100 bg-blend_luminosity ">
+            </picture>
+            <div class="col_all grid inset_0 justify_start m-y_4 relative row_all self_center">
+              <h4 class="lh_1 m_0 c_white isolation_isolate relative p-r_4"><span
+                  class="text wrap c_white lh_2 bg_acc-n3 p_3" style="box-decoration-break: clone;">Cardiovascular
+                  Disease</span></h4>
+            </div>
+          </div>
+          <div class="p_4:md p_3">
+            <p class="lh_2 m_0">{% include Placeholder/text.150.txt %}</p>
+          </div>
+        </li>
+
+
+        <!-- Add additional workgroups here -->
+      </ul>
+      <p class="text_center">Some Message - (Become a Member of this Section to support and shape these iniatives)</p> 
+    </div>
+
+  </div>
+</section>
+{% include_relative PageBlocks/Unlock-FollowUpCTA.html %}

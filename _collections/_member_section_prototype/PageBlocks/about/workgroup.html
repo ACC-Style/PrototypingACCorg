@@ -1,0 +1,27 @@
+    <article class="grid columns_3:lg columns_2:md columns_1 gap-x_4 gap-x_5:md gap-y_3">
+         <h3 class="col_all">{{ include.title | default: "Workgroup"}}</h3>
+         <hr class="col_all br_primary m_0 bg_primary">
+         <main class="col_all col-end_n2:md">  
+            <span class="bg_warning-4 p-y_2 p-x_3 inline-block br_radius">Work Group is not currently accepting new members</span>
+            <p>{% include Placeholder/text.200.txt %}</p>
+            <h4>Initiatives and Focus:</h4>
+            <ul>
+                <li>{% include Placeholder/text.60.txt %}</li>
+                <li>{% include Placeholder/text.80.txt %}</li>
+                <li>{% include Placeholder/text.60.txt %}</li>
+            </ul>
+        </main>
+        <aside class="col_all col-start_n2:md">
+            <section class="flex flex_column flex_row:md p-b_4 m-b_4 gap-x_5:lg gap-x_4">
+                <div class="flex_auto flex_column justify_start">
+                    <span class="m-b_0 speaker_name font_display font_medium font-size_up-1 lh_2 c_primary"> Pepper H. Soda III, MD,
+                        FACC</span>
+                    <ul class="speaker_metadata ul_none font_copy font-size_down m_o p_0">
+                        <!-- This is a repeated snippet -->
+                        <li class="c_black-8 lh_1 m_0 m-b_2">Physician-in-Chief, Department of Cardiology, Mount
+                            SugarLoaf Hospital</li>
+                    </ul>
+                    <span class="block c_black-6 font-size_down-2 lh_0 font_italic">New York, NY, USA</span>
+            </section>
+        </aside>
+    </article>

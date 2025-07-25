@@ -24,7 +24,7 @@ layout: default
                 </div>
               </li>
               {% for item in page.sidebarArray %}
-              {% if item.active and page.sidebarArraySub %}
+              {% if item.active and item.sidebarArraySub %}
               <li class="nav-item " data-nav="child">
                 <div class="flex flex_row">
                   <div
@@ -43,7 +43,7 @@ layout: default
                
                     <nav class="nav-sub-child bg_white-2 font-size_down childNavCollapse">
                       <ul class="ul_none flex_column flex">
-                        {% for subitem in page.sidebarArraySub %}
+                        {% for subitem in item.sidebarArraySub %}
                         <li class="nav-item " data-nav="child">
                           <div class="flex flex_row">
                             <div class="flex flex_column flex_none justify_start">
