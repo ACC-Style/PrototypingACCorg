@@ -1,53 +1,19 @@
 ---
-layout: arches
+layout: arches-fullscreen
 name: "Home - Teaser"
 position: "Need Section Access"
 section_name: "Women in Cardiology"
 section_url: "https://www.acc.org/Membership/Sections-and-Councils/Women-in-Cardiology-Section"
 user_state: "not_logged_in"
+hero-title: "Women in Cardiology"
+hero-cta-text: "Manage Membership"
+hero-cta-link: ../3.0_home/
+manage-membership-url: ../3.0_home/
+hero_image_base: "MEMBER"
+sidebarRoot: Women in Cardiology
+sidebarRootURL: ../2.0_home-teaser-no-section-access/
+masthead: MicroSite/teasermodeandheroimage.micro.dynamic.html
 ---
-<section grid-template="page-layout" class="bg_shade-n3 br-b_1 br-t_1 br_black-3 br_solid c_white color_inherit m-b_0 p-y_4 reading-typography">
-  <div grid-area="content" class="font-size_up max-w_65 p-b_4 p-t_4 p-t_5:lg p-x_4:md p-x_5:lg reading-typography" style="--custom-font-size-up: 1.06">
-    <h2 class="lh_2 m-b_4 flex flex_row">
-      <div class="font_10 grid items_center justify_center m-r_4 flex_none">
-        <i class="fas fa-lock-alt font-size_up-2" aria-hidden="true"></i>
-      </div>
-      <strong class="">Member Section Access Required!<small class="block font_regular wrap">
-         Extend Your Membership Today!</small></strong>
-    </h2>
-    <p class="lh_3 max-w_45">
-      You've arrived at a Member Section page that you don't have access to.<br>
-      This is a gateway to our exclusive member
-      benefits. These benefits, designed specifically for {{page.section_name}}. <br>
-      Member Sections offer access to specialized communities, valuable content,
-      and exciting opportunities to make a real impact in your field.
-    </p>
-    
-    <a href="../3_home-access" class="bg_white-8 btn btn-lg h:bg_white shadow_overlap-light">Manage Membership <i class="fa-solid fa-gears" aria-hidden="true"></i></a>
-  </div>
-  <aside grid-area="sidebar-secondary">
-    <div data-item="cta-overlay" class="bg_white-6 br-bl_round br-r_0 br-tl_round br_1 br_black-3 br_solid c_black color_inherit m-l_4 m-t_4 p_4 p_5:lg reading-typography relative shadow_bevel-light z_1">
-      <h4>
-        Need Help?
-        <small class="block">Something Not Right?</small>
-      </h4>
-      <ul class="ul_none">
-        <li>
-          <a href="https://my.acc.org/s/ContactUsMemberCare">Contact ACC Member Care</a>
-        </li>
-        <li><a href="tel:800-253-4636">800-253-4636, ext. 5603</a></li>
-        <li><a href="tel:202-375-6000">202-375-6000</a></li>
-      </ul>
-    </div>
-  </aside>
-</section>
-{% include MicroSite/heroimage.dynamic.html parent_link ="#"  hero_image_base="MEMBER" parent_page
-="Member Sections" hero_title ="Women in Cardiology" cta_title
-="Join WIC Today" cta_description ="Unlock exclusive resources,
-expand your influence, and support our mission. Join the Women in Cardiology
-section today!" cta_link ="../3_home-access" cta_text ="Manage Membership" %}
-
-
 <section  class="grid:md columns_4:md columns_5:lg  p_5:lg p_4 gap-x_5:lg gap_4 reading-typography">
   <div class="col_all">  
      <h2>Why Should You Join {{page.section_name}}?</h2>
@@ -81,7 +47,7 @@ section today!" cta_link ="../3_home-access" cta_text ="Manage Membership" %}
   </span>
 </h3>
     <p>Manage your membership and add WIC to your sections to gain full benefits of this section.</p>
-    <div class="text_center"><a href="../3_home-access" class="btn btn-primary">Manage Membership <i class="fa-solid fa-gears"></i></a></div>
+    <div class="text_center"><a href="../3.0_home/" class="btn btn-primary">Manage Membership <i class="fa-solid fa-gears"></i></a></div>
     </div>
   </div>
   <div

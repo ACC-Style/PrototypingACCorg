@@ -1,5 +1,7 @@
-<section grid-template="page-layout" class="bg_shade-n3 br-b_1 br-t_1 br_black-3 br_solid c_white color_inherit m-b_0 p-y_4 reading-typography">
-  <div grid-area="content" class="font-size_up max-w_65 p-b_4 p-t_4 p-t_5:lg p-x_4:md p-x_5:lg reading-typography" style="--custom-font-size-up: 1.06">
+<section grid-template="page-layout"
+  class="bg_shade-n3 br-b_1 br-t_1 br_black-3 br_solid c_white color_inherit m-b_0 p-y_4 reading-typography">
+  <div grid-area="content" class="font-size_up max-w_65 p-b_4 p-t_4 p-t_5:lg p-x_4:md p-x_5:lg reading-typography"
+    style="--custom-font-size-up: 1.06">
     <h2 class="lh_2 m-b_4 flex flex_row">
       <div class="flex_none font_10 grid items_center justify_center m-r_4">
         <i class="fas fa-lock-alt font-size_up-2" aria-hidden="true"></i>
@@ -8,13 +10,16 @@
           Member Section Access Required!</small></strong>
     </h2>
     <p class="lh_3 max-w_45 m_4">
-       What is visible is available for all Members of the college, but sections members can access more. Manage your membership today to join this Member Section and unlock all the content and benefits of this section.
+      What is visible is available for all Members of the college, but sections members can access more. Manage your
+      membership today to join this Member Section and unlock all the content and benefits of this section.
     </p>
-    
-    <a href="" class="bg_white-8 btn btn-lg h:bg_white shadow_overlap-light">Manage Membership <i class="fa-solid fa-gears" aria-hidden="true"></i></a>
+
+    <a href="{{ include.cta_link | default: '#' }}" class="bg_white-8 btn btn-lg h:bg_white shadow_overlap-light">Manage
+      Membership <i class="fa-solid fa-gears" aria-hidden="true"></i></a>
   </div>
   <aside grid-area="sidebar-secondary">
-    <div data-item="cta-overlay" class="bg_white-6 br-bl_round br-r_0 br-tl_round br_1 br_black-3 br_solid c_black color_inherit m-l_4 m-t_4 p_4 p_5:lg reading-typography relative shadow_bevel-light z_1">
+    <div data-item="cta-overlay"
+      class="bg_white-6 br-bl_round br-r_0 br-tl_round br_1 br_black-3 br_solid c_black color_inherit m-l_4 m-t_4 p_4 p_5:lg reading-typography relative shadow_bevel-light z_1">
       <h4>
         Need Help?
       </h4>
@@ -42,51 +47,35 @@ Variables that can be used in the tag:
   - cta_button_text: Text for the call-to-action button (default: 'Get Started').
 -->
 {% assign hero_image_base = include.hero_image_base | default: 'Dynamic' %}
-<div
-  data-item="hero-image-cta"
-  class="relative isolation_isolate grid rows_3 rows_2:md columns_4:md columns_5:lg columns_2  "
-  style="--row-1:2.5rem; --row-2:min-content;">
-  <picture data-item="responsive-hero-image" class="col_all row_all w_100 flex overflow_hidden ">
-    <source
-      srcset="{{ 'assets/images/MicroSite/' | append: hero_image_base | append: '_1200x300.png' | relative_url }}"
-      media="(min-width: 1024px)"
-      class="display_none">
-    <source
-      srcset="{{ 'assets/images/MicroSite/' | append: hero_image_base | append: '_1024x256.png' | relative_url }}"
-      media="(min-width: 768px)"
-      class="display_none">
-    <source
-      srcset="{{ 'assets/images/MicroSite/' | append: hero_image_base | append: '_600x300.png' | relative_url }}"
-      media="(min-width: 400px)"
-      class="display_none">
-    <img
-      src="{{ 'assets/images/MicroSite/' | append: hero_image_base | append: '_320x300.png' | relative_url }}"
-      alt="{{ include.hero_image_alt | default: 'Hero Image' }}"
-      class="bg_cover flex_100">
+<div grid-template="hero-image-cta" template-option="micro" class="isolation_isolate overflow_hidden relative">
+  <picture data-item="responsive-hero-image" class="absolute bg_cover flex flex_column inset_0 ">
+    <source srcset="{{ 'assets/images/MicroSite/' | append: hero_image_base | append: '_1200x300.png' | relative_url }}"
+      media="(min-width: 1024px)" class="display_none">
+    <source srcset="{{ 'assets/images/MicroSite/' | append: hero_image_base | append: '_1024x256.png' | relative_url }}"
+      media="(min-width: 768px)" class="display_none">
+    <source srcset="{{ 'assets/images/MicroSite/' | append: hero_image_base | append: '_600x300.png' | relative_url }}"
+      media="(min-width: 400px)" class="display_none">
+    <img src="{{ 'assets/images/MicroSite/' | append: hero_image_base | append: '_320x300.png' | relative_url }}"
+      alt="{{ include.hero_image_alt | default: 'Hero Image' }}" class="bg_cover flex_100">
   </picture>
-  <div class="z_1 row-start_start row_end_1 col-start_start col-end_end flex flex_row justify_start">
-    <nav data-item="hero-image-breadcrumb-nav" class=" relative isolation_isolate p-y_3 p-x_4 c_white-8 w_auto font_n1 font_0:md">
-      <!-- Breadcrumb navigation content goes here -->
-      <a href="{{ include.parent_link | default: '#' }}" class="h:c_white h:underline font_bold c_white-8 expanded-click-area h:c_white">
-        <i class="fas fa-arrow-left"></i>
-        Back |
-        {{ include.parent_page | default: 'The Parent Link of this Section' }}</a>
-      <span class="bg_acc opacity_6 absolute inset_0 br-br_radius z_0 bg-blend_multiply"></span>
-    </nav>
-  </div>
-  <div class="relative row-start_2 row-end_3 col-start_start col-end_3:md col-end_end">
-    <h1 data-item="page-title" class="c_white z_1 p-t_5:lg p-t_4 font_7:lg font_5:md font_3 p-r_4 lh_0 font_bold text-shadow_black-1 lh_0">
-      <span class="bg_acc lh_0 lh_3 p_3 p-x_4"  style="box-decoration-break: clone">{{ include.hero_title | default: 'This is the Section Title' }}</span>
+  <div grid-area="title">
+    <h1 data-item="hero-title" class="lh_3 m_0 m-y_3 m-y_0:lg c_white isolation_isolate relative">
+      <span class="display_none:md">
+        <a href="../" class="h:c_white h:underline font_bold c_white-8 expanded-click-area h:c_white">
+          <i class="fas fa-solid fa-arrow-left m-l_n3" aria-hidden="true"></i>
+        </a>
+      </span>
+      {% assign title_parts = include.hero_title | default: 'Section Title Goes Here' | split: ' ' %}
+      {% for part in title_parts %}
+      <span class="text">{{ part }}</span>
+      {% endfor %}
     </h1>
   </div>
-  <div class="relative row-start_2:md row-end_end:md col-start_n3:md  row-start_3 row-end_end col-start_start col-end_end font_n1 font_0:lg">
-    <div data-item="cta-overlay" class="c_white color_inherit m-x_4 m-x_5:lg p_4 p_5:lg reading-typography relative z_1 m-b_5">
-      <h2 data-item="cta-title" class="font_medium">{{ include.cta_title | default: 'The Call-to-Action of the Main Page' }}</h2>
-      <p data-item="cta-description" class="font-size_up-1 lh_2">{{ include.cta_description | default: 'Voluptas est incidunt.' }}</p>
-      <div class="grid justify_center">
-         <a href="{{ include.cta_link | default: '#' }}" class="btn btn-primary capitalize">{{ include.cta_text | default: 'Call to Action' }}</a>
-      </div>
-      <div class="z_0 bg_acc br_round inset_0 opacity_8 absolute shadow_overlap-bold bg-blend_multiply"></div>
+  <div grid-area="cta" class="relative font-size_down-1 grid justify_center items_center">
+    <div class="grid justify_center items_center">
+      <a href="{{ include.cta_link | default: '#' }}"
+        class="br_white-3 btn btn-primary c_white expanded-click-area shadow_overlap-bold">{{ include.cta_text |
+        default: 'Start Now' }}</a>
     </div>
   </div>
 </div>
