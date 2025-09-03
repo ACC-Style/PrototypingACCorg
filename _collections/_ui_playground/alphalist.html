@@ -1,0 +1,109 @@
+---
+layout: default
+name: "Alpha List"
+position: "Non ACC"
+---
+<nav class="alphabet-nav" aria-label="A-Z index">
+  <ul class="alphabet-list">
+    <!-- For a section with id="#" use href="#%23" (percent-encoded) -->
+    <li><a href="#%23" aria-label="Symbols">#</a></li>
+    <li><a href="#A">A</a></li><li><a href="#B">B</a></li><li><a href="#C">C</a></li>
+    <li><a href="#D">D</a></li><li><a href="#E">E</a></li><li><a href="#F">F</a></li>
+    <li><a href="#G">G</a></li><li><a href="#H">H</a></li><li><a href="#I">I</a></li>
+    <li><a href="#J">J</a></li><li><a href="#K">K</a></li><li><a href="#L">L</a></li>
+    <li><a href="#M">M</a></li><li><a href="#N">N</a></li><li><a href="#O">O</a></li>
+    <li><a href="#P">P</a></li><li><a href="#Q">Q</a></li><li><a href="#R">R</a></li>
+    <li><a href="#S">S</a></li><li><a href="#T">T</a></li><li><a href="#U">U</a></li>
+    <li><a href="#V">V</a></li><li><a href="#W">W</a></li><li><a href="#X">X</a></li>
+    <li><a href="#Y">Y</a></li><li><a href="#Z">Z</a></li>
+  </ul>
+</nav>
+
+<style>
+  :root{
+  /* theming */
+  --btn-bg: #f6f7f9;
+  --btn-bg-hover: #eef2f6;
+  --btn-text: #222;
+  --btn-border: #cfd6e0;
+  --focus: #0a66ff;
+
+  /* sizing + spacing knobs */
+  --font-size: 14px;
+  --radius: 8px;
+  --gap: 4px;           /* space between cells */
+  --pad-block: .3rem;      /* vertical padding */
+  --pad-inline: .5rem;     /* horizontal padding */
+
+  /* layout heuristics for container queries */
+  --cell-min: 24px;        /* desired min cell width used to set breakpoints */
+}
+
+/* container for inline-size queries */
+.alphabet-nav{
+  container-type: inline-size;
+  container-name: alpha;
+  margin: 0 auto;
+  max-width: 100%;
+  width: auto;
+  display:block;
+  padding:.25rem;
+}
+
+.alphabet-list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;                 /* centers the last row */
+  gap: var(--gap);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  /* default: 5 rows (= fifths) -> 6 columns */
+}
+
+/* Each cell gets an equal slice of the row based on --cols */
+.alphabet-list li{
+  flex: 0 0 calc((100% - (var(--cols) - 1) * var(--gap)) / var(--cols));
+}
+
+.alphabet-list a{
+  box-sizing: border-box;
+  display: block;
+  text-align: center;
+  font-size: var(--font-size);
+  line-height: 1;
+  padding: var(--pad-block) var(--pad-inline);
+  color: var(--btn-text);
+  background: var(--btn-bg);
+  border: 1px solid var(--btn-border);
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: background-color .15s ease, border-color .15s ease, transform .06s ease;
+}
+.alphabet-list a:hover{ background: var(--btn-bg-hover); transform: translateY(-1px); }
+.alphabet-list a:focus-visible{ outline: 2px solid var(--focus); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce){ .alphabet-list a{ transition: none; } }
+
+.alphabet-list { --cols: 7; }
+
+
+/* ~thirds (=9 cols) */
+@container alpha (width > 262px) {
+  .alphabet-list { --cols: 9; }
+}
+
+/* two rows: 14 / 13 */
+@container alpha (width > 510px) {
+  .alphabet-list { --cols: 14; }
+}
+
+/* single line: 27 columns (# + A-Z) */
+@container alpha (width > 970px) {
+  .alphabet-list { --cols: 27; }
+}
+/* Optional: disabled state
+.alphabet-list a[aria-disabled="true"]{
+  opacity: .45; pointer-events: none;
+}
+*/
+</style>
