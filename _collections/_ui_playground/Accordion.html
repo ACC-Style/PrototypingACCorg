@@ -1,100 +1,188 @@
 ---
-layout: arches_empty
+layout: arches_content-spaced
 name: "Accordion"
 position: "HTML and CSS Only"
 ---
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 20px;
-        background-color: #f5f5f5;
+    :root {
+        interpolate-size: allow-keywords;
     }
-
-    .accordion {
-        max-width: 600px;
-        margin: 0 auto;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        background-color: #fff;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    .accordion details {
-        border-bottom: 1px solid #ccc;
-        display: grid;
-        transition: height 0.3s ease;
-        grid-template-rows: auto;
-    }
-
-    .accordion summary {
-        padding: 15px;
-        cursor: pointer;
-        font-weight: bold;
-        background-color: #e7e7e7;
-        border-bottom: 1px solid #ccc;
-        transition: background-color 0.3s ease;
-    }
-
-    .accordion summary:hover {
-        background-color: #d6d6d6;
-    }
-
-    .accordion details[open] summary {
-        background-color: #ccc;
-    }
-
-    .accordion details .content {
+    details[name="accordion"]::details-content {
         overflow: hidden;
-        height: 0;
-
+        block-size: 0;
+        transition: block-size 2s ease, visablity 2s ease, content-visibility 1s;
+        transition-behavior: allow-discrete;
     }
-
-    .accordion details[open] .content {
-        height: auto;
-        padding: 15px;
+    details[name="accordion"][open]::details-content {
+        block-size: auto;
+    }
+    details[name="accordion"] summary {
+        list-style: none;
+        cursor: pointer;
+    }
+    details[name="accordion"] summary::-webkit-details-marker {
+        display: none;
+    }
+    details[name="accordion"] summary::marker {
+        display: none;
+    }
+    details[name="accordion"] summary .fa-stack .a\:rotation {
+        transition: transform .5s ease;
+    }
+    details[name="accordion"][open] summary .fa-stack .a\:rotation {
+        transform: rotate(0deg);
     }
 </style>
 
-<div class="accordion w_100 grid">
-    <details class="w_100 grid transition_4 rows_2 relative">
-        <summary class="sticky t_0">Section 1</summary>
-        <div class="content transition_4 overflow_hidden">
-            <p>This is the content of section 1. It is revealed when the section is expanded. Nihil vel corporis qui
-                repudiandae quis perspiciatis molestiae. Reiciendis repellat nemo fugit nam aut modi. Nobis ut similique
+<div grid-template="container">
+    <details name="accordion" class="isolation_isolate m-b_3">
+        <summary
+            class="sticky inset_0 b_auto z_3 bg_white h:bg_primary-5 c_primary-n2 br_radius shadow_bevel-light br_solid br_1 br_black-2">
+            <hgroup class="flex flex_row">
+                <span class="fa-stack flex_shrink m_2 br_radius ">
+                    <i class="fa-solid fa-minus fa-stack-1x" aria-hidden="true"></i>
+                    <i class="fa-solid fa-minus rotate_90 a:rotation fa-stack-1x " aria-hidden="true"></i>
+                </span>
+                <h4 class="flex_auto m-y_2 inline-block self_center">Section 1</h4>
+            </hgroup>
+        </summary>
+        <div data-container
+            class="z_0 bg_black-_05 br-bl_radius br-br_radius m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light transition_4 m-b_2">
+
+            <p>This is the container of section 1. It is revealed when the section is expanded. Nihil vel corporis
+                qui
+                repudiandae quis perspiciatis molestiae. Reiciendis repellat nemo fugit nam aut modi. Nobis ut
+                similique
                 unde ut ducimus dolores quasi. Ut laboriosam quo molestias.
             </p>
             <p>
-                Velit nostrum molestias odio dolor consequatur nostrum repudiandae facilis nobis. Molestiae et dolor.
-                Repellat molestiae repudiandae aperiam in dicta. Natus culpa et expedita odit modi vel. Laboriosam illo
+                Velit nostrum molestias odio dolor consequatur nostrum repudiandae facilis nobis. Molestiae et
+                dolor.
+                Repellat molestiae repudiandae aperiam in dicta. Natus culpa et expedita odit modi vel. Laboriosam
+                illo
                 aut laborum.
             </p>
             <p>
                 Voluptas inventore ut temporibus architecto voluptas officia eius at. Iste pariatur quae veritatis.
                 Ratione sequi ut voluptas doloribus et. Laboriosam dicta ipsa vel blanditiis. Ut adipisci commodi
                 voluptatum porro est.</p>
-            <p>This is the content of section 1. It is revealed when the section is expanded. Nihil vel corporis qui
-                repudiandae quis perspiciatis molestiae. Reiciendis repellat nemo fugit nam aut modi. Nobis ut similique
+            <p>This is the container of section 1. It is revealed when the section is expanded. Nihil vel corporis
+                qui
+                repudiandae quis perspiciatis molestiae. Reiciendis repellat nemo fugit nam aut modi. Nobis ut
+                similique
                 unde ut ducimus dolores quasi. Ut laboriosam quo molestias.
 
-                Velit nostrum molestias odio dolor consequatur nostrum repudiandae facilis nobis. Molestiae et dolor.
-                Repellat molestiae repudiandae aperiam in dicta. Natus culpa et expedita odit modi vel. Laboriosam illo
+                Velit nostrum molestias odio dolor consequatur nostrum repudiandae facilis nobis. Molestiae et
+                dolor.
+                Repellat molestiae repudiandae aperiam in dicta. Natus culpa et expedita odit modi vel. Laboriosam
+                illo
                 aut laborum.
 
                 Voluptas inventore ut temporibus architecto voluptas officia eius at. Iste pariatur quae veritatis.
                 Ratione sequi ut voluptas doloribus et. Laboriosam dicta ipsa vel blanditiis. Ut adipisci commodi
                 voluptatum porro est.</p>
+
         </div>
     </details>
-    <details>
-        <summary>Section 2</summary>
-        <div class="content">
-            <p>This is the content of section 2. It is revealed when the section is expanded.</p>
+
+    <details name="accordion" class="isolation_isolate m-b_3">
+        <summary
+            class="sticky inset_0 b_auto z_3 bg_white h:bg_primary-5 c_primary-n2 br_radius shadow_bevel-light br_solid br_1 br_black-2">
+            <hgroup class="flex flex_row">
+                <span class="fa-stack flex_shrink m_2 br_radius ">
+                    <i class="fa-solid fa-minus fa-stack-1x" aria-hidden="true"></i>
+                    <i class="fa-solid fa-minus rotate_90 a:rotation fa-stack-1x " aria-hidden="true"></i>
+                </span>
+                <h4 class="flex_auto m-y_2 inline-block self_center">Section 1</h4>
+            </hgroup>
+        </summary>
+        <div data-container
+            class="z_0 bg_black-_05 br-bl_radius br-br_radius m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light transition_4 m-b_2">
+            <div data-cotent>
+                <p>This is the container of section 1. It is revealed when the section is expanded. Nihil vel corporis
+                    qui
+                    repudiandae quis perspiciatis molestiae. Reiciendis repellat nemo fugit nam aut modi. Nobis ut
+                    similique
+                    unde ut ducimus dolores quasi. Ut laboriosam quo molestias.
+                </p>
+                <p>
+                    Velit nostrum molestias odio dolor consequatur nostrum repudiandae facilis nobis. Molestiae et
+                    dolor.
+                    Repellat molestiae repudiandae aperiam in dicta. Natus culpa et expedita odit modi vel. Laboriosam
+                    illo
+                    aut laborum.
+                </p>
+                <p>
+                    Voluptas inventore ut temporibus architecto voluptas officia eius at. Iste pariatur quae veritatis.
+                    Ratione sequi ut voluptas doloribus et. Laboriosam dicta ipsa vel blanditiis. Ut adipisci commodi
+                    voluptatum porro est.</p>
+                <p>This is the container of section 1. It is revealed when the section is expanded. Nihil vel corporis
+                    qui
+                    repudiandae quis perspiciatis molestiae. Reiciendis repellat nemo fugit nam aut modi. Nobis ut
+                    similique
+                    unde ut ducimus dolores quasi. Ut laboriosam quo molestias.
+
+                    Velit nostrum molestias odio dolor consequatur nostrum repudiandae facilis nobis. Molestiae et
+                    dolor.
+                    Repellat molestiae repudiandae aperiam in dicta. Natus culpa et expedita odit modi vel. Laboriosam
+                    illo
+                    aut laborum.
+
+                    Voluptas inventore ut temporibus architecto voluptas officia eius at. Iste pariatur quae veritatis.
+                    Ratione sequi ut voluptas doloribus et. Laboriosam dicta ipsa vel blanditiis. Ut adipisci commodi
+                    voluptatum porro est.</p>
+            </div>
         </div>
     </details>
-    <details>
-        <summary>Section 3</summary>
-        <div class="content">
-            <p>This is the content of section 3. It is revealed when the section is expanded.</p>
+
+    <details name="accordion" class="isolation_isolate m-b_3">
+        <summary
+            class="sticky inset_0 b_auto z_3 bg_white h:bg_primary-5 c_primary-n2 br_radius shadow_bevel-light br_solid br_1 br_black-2">
+            <hgroup class="flex flex_row">
+                <span class="fa-stack flex_shrink m_2 br_radius ">
+                    <i class="fa-solid fa-minus fa-stack-1x" aria-hidden="true"></i>
+                    <i class="fa-solid fa-minus rotate_90 a:rotation fa-stack-1x " aria-hidden="true"></i>
+                </span>
+                <h4 class="flex_auto m-y_2 inline-block self_center">Section 1</h4>
+            </hgroup>
+        </summary>
+        <div data-container
+            class="z_0 bg_black-_05 br-bl_radius br-br_radius m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light transition_4 m-b_2">
+            <div data-cotent>
+                <p>This is the container of section 1. It is revealed when the section is expanded. Nihil vel corporis
+                    qui
+                    repudiandae quis perspiciatis molestiae. Reiciendis repellat nemo fugit nam aut modi. Nobis ut
+                    similique
+                    unde ut ducimus dolores quasi. Ut laboriosam quo molestias.
+                </p>
+                <p>
+                    Velit nostrum molestias odio dolor consequatur nostrum repudiandae facilis nobis. Molestiae et
+                    dolor.
+                    Repellat molestiae repudiandae aperiam in dicta. Natus culpa et expedita odit modi vel. Laboriosam
+                    illo
+                    aut laborum.
+                </p>
+                <p>
+                    Voluptas inventore ut temporibus architecto voluptas officia eius at. Iste pariatur quae veritatis.
+                    Ratione sequi ut voluptas doloribus et. Laboriosam dicta ipsa vel blanditiis. Ut adipisci commodi
+                    voluptatum porro est.</p>
+                <p>This is the container of section 1. It is revealed when the section is expanded. Nihil vel corporis
+                    qui
+                    repudiandae quis perspiciatis molestiae. Reiciendis repellat nemo fugit nam aut modi. Nobis ut
+                    similique
+                    unde ut ducimus dolores quasi. Ut laboriosam quo molestias.
+
+                    Velit nostrum molestias odio dolor consequatur nostrum repudiandae facilis nobis. Molestiae et
+                    dolor.
+                    Repellat molestiae repudiandae aperiam in dicta. Natus culpa et expedita odit modi vel. Laboriosam
+                    illo
+                    aut laborum.
+
+                    Voluptas inventore ut temporibus architecto voluptas officia eius at. Iste pariatur quae veritatis.
+                    Ratione sequi ut voluptas doloribus et. Laboriosam dicta ipsa vel blanditiis. Ut adipisci commodi
+                    voluptatum porro est.</p>
+            </div>
         </div>
     </details>
+
 </div>
