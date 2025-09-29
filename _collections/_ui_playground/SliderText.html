@@ -1,0 +1,108 @@
+---
+layout: arches_content-spaced
+name: "Slider Text"
+position: "HTML and CSS Only"
+---
+<!-- Carousel -->
+<div class="carousel reading-typography overflow_hidden bg_black-1 p-t_5:lg p-t_4" data-cardcount="6">
+  <div class="carousel-track flex flex_row gap_5:lg gap_4:md gap_3">
+    <article class="carousel-slide relative">
+      <a href="#" class="expanded-click-area"> 
+      <h-group class="lh_2 font_2 font_3:lg">
+        <h3 class="c_accent-n2 m-b_0 uppercase font_bold font-size_down-2">Guideline</h3>
+        <strong class="c_black text-wrap_blanced font_medium font_display lh_1 m-y_3 block">
+        2025 High Blood Pressure Guideline
+        </strong>
+      </h-group>
+      <span class="display_none">Go to Document</span></a>    
+    </article>
+    <article class="carousel-slide relative">
+      <a href="#" class="expanded-click-area"> 
+      <h-group class="lh_2 font_2 font_3:lg">
+        <h3 class="c_accent-n2 m-b_0 uppercase font_bold font-size_down-2">Guideline</h3>
+        <strong class="c_black text-wrap_blanced font_medium font_display lh_1 m-y_3 block">
+        2025 Acute Coronary Syndroms Guideline
+        </strong>
+      </h-group>
+      <span class="display_none">Go to Document</span></a>    
+    </article>
+    <article class="carousel-slide relative">
+      <a href="#" class="expanded-click-area"> 
+      <h-group class="lh_2 font_2 font_3:lg">
+        <h3 class="c_accent-n2 m-b_0 uppercase font_bold font-size_down-2">Scientific Statement</h3>
+        <strong class="c_black text-wrap_blanced font_medium font_display lh_1 m-y_3 block">
+        2025 Use of Risk Assessment to Guide Decision-Making for Blood Pressure Management in the Primary Prevention of Cardiovascular Disease
+        </strong>
+      </h-group>
+      <span class="display_none">Go to Document</span></a>    
+    </article>
+    <article class="carousel-slide relative">
+      <a href="#" class="expanded-click-area"> 
+      <h-group class="lh_2 font_2 font_3:lg">
+        <h3 class="c_accent-n2 m-b_0 uppercase font_bold font-size_down-2">Expert Consensus Document</h3>
+        <strong class="c_black text-wrap_blanced font_medium font_display lh_1 m-y_3 block">
+        2025 Cardiac Computed Tomography for Prosthetic Heart Valve Assessment
+        </strong>
+      </h-group>
+      <span class="display_none">Go to Document</span></a>    
+    </article>
+  </div>
+    <div class="carousel-nav display_none:touch">
+        <button class="carousel-prev bg_white-8 br_0 c_accent-1 h:c_accent_n2 font_4 opacity_7 h:opacity absolute text-shadow_black-1 l_n2 shadow_overlap-light"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="carousel-next bg_white-8 br_0 c_accent-1 h:c_accent_n2 font_4 opacity_7 h:opacity absolute text-shadow_black-1 r_n2 shadow_overlap-light"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+    <div class="carousel-dots text_center m-t_3 p-y_3"></div>
+</div>
+
+<script src="https://www.acc.org/Scripts/slider.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+      const carouselElement = document.querySelector('.carousel');
+      const carousel = new InfiniteCarousel(carouselElement, {
+          autoplay: false,
+          autoplayDelay: 4000,
+          transitionClass: 'transition_4',
+          breakpoints: {
+              768: 2,
+              1024: 3
+          }
+      });
+  });
+    
+</script>
+
+
+<style scoped>
+
+
+    .carousel-slide {
+        flex: 0 0 calc((100% / var(--visible-slides)) - (var(--margin-offset) *1px));
+        text-decoration: none;
+        box-sizing: border-box;
+    }
+
+    .carousel-prev,
+    .carousel-next {
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+    }
+
+
+
+
+    .carousel-dots span {
+        width: 10px;
+        height: 10px;
+        margin: 5px;
+        border-radius: 50%;
+        border: none;
+        background: #ccc;
+        display: inline-block;
+    }
+
+    .carousel-dots span.active {
+        background: #333;
+    }
+</style>
