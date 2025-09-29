@@ -7,35 +7,35 @@ position: "HTML and CSS Only"
     :root {
         interpolate-size: allow-keywords;
     }
-    details[name="accordion"]::details-content {
+    details[accordion]::details-content {
         overflow: hidden;
         block-size: 0;
         transition: block-size 2s ease, visablity 2s ease, content-visibility 1s;
         transition-behavior: allow-discrete;
     }
-    details[name="accordion"][open]::details-content {
+    details[accordion][open]::details-content {
         block-size: auto;
     }
-    details[name="accordion"] summary {
+    details[accordion] summary {
         list-style: none;
         cursor: pointer;
     }
-    details[name="accordion"] summary::-webkit-details-marker {
+    details[accordion] summary::-webkit-details-marker {
         display: none;
     }
-    details[name="accordion"] summary::marker {
+    details[accordion] summary::marker {
         display: none;
     }
-    details[name="accordion"] summary .fa-stack .a\:rotation {
+    details[accordion] summary .fa-stack .a\:rotation {
         transition: transform .5s ease;
     }
-    details[name="accordion"][open] summary .fa-stack .a\:rotation {
+    details[accordion][open] summary .fa-stack .a\:rotation {
         transform: rotate(0deg);
     }
 </style>
 
 <div grid-template="container">
-    <details name="accordion" class="isolation_isolate m-b_3">
+    <details accordion name="grouped-label" class="isolation_isolate m-b_3">
         <summary
             class="sticky inset_0 b_auto z_3 bg_white h:bg_primary-5 c_primary-n2 br_radius shadow_bevel-light br_solid br_1 br_black-2">
             <hgroup class="flex flex_row">
@@ -43,7 +43,7 @@ position: "HTML and CSS Only"
                     <i class="fa-solid fa-minus fa-stack-1x" aria-hidden="true"></i>
                     <i class="fa-solid fa-minus rotate_90 a:rotation fa-stack-1x " aria-hidden="true"></i>
                 </span>
-                <h4 class="flex_auto m-y_2 inline-block self_center">Section 1</h4>
+                <h3 class="flex_auto m-y_2 inline-block self_center">Section 1</h3>
             </hgroup>
         </summary>
         <div data-container
@@ -85,7 +85,7 @@ position: "HTML and CSS Only"
         </div>
     </details>
 
-    <details name="accordion" class="isolation_isolate m-b_3">
+    <details accordion name="grouped-label" class="isolation_isolate m-b_3">
         <summary
             class="sticky inset_0 b_auto z_3 bg_white h:bg_primary-5 c_primary-n2 br_radius shadow_bevel-light br_solid br_1 br_black-2">
             <hgroup class="flex flex_row">
@@ -93,7 +93,7 @@ position: "HTML and CSS Only"
                     <i class="fa-solid fa-minus fa-stack-1x" aria-hidden="true"></i>
                     <i class="fa-solid fa-minus rotate_90 a:rotation fa-stack-1x " aria-hidden="true"></i>
                 </span>
-                <h4 class="flex_auto m-y_2 inline-block self_center">Section 1</h4>
+                <h3 class="flex_auto m-y_2 inline-block self_center">Section 1</h3>
             </hgroup>
         </summary>
         <div data-container
@@ -135,7 +135,7 @@ position: "HTML and CSS Only"
         </div>
     </details>
 
-    <details name="accordion" class="isolation_isolate m-b_3">
+    <details accordion name="grouped-label" class="isolation_isolate m-b_3">
         <summary
             class="sticky inset_0 b_auto z_3 bg_white h:bg_primary-5 c_primary-n2 br_radius shadow_bevel-light br_solid br_1 br_black-2">
             <hgroup class="flex flex_row">
@@ -143,7 +143,7 @@ position: "HTML and CSS Only"
                     <i class="fa-solid fa-minus fa-stack-1x" aria-hidden="true"></i>
                     <i class="fa-solid fa-minus rotate_90 a:rotation fa-stack-1x " aria-hidden="true"></i>
                 </span>
-                <h4 class="flex_auto m-y_2 inline-block self_center">Section 1</h4>
+                <h3 class="flex_auto m-y_2 inline-block self_center">Section 1</h3>
             </hgroup>
         </summary>
         <div data-container
