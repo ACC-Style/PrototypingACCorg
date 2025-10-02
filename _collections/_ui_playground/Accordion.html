@@ -20,6 +20,9 @@ position: "HTML and CSS Only"
         list-style: none;
         cursor: pointer;
     }
+    details[accordion] summary + *{
+        scroll-margin-block-start: 4rem;
+    }
     details[accordion] summary::-webkit-details-marker {
         display: none;
     }
@@ -33,7 +36,7 @@ position: "HTML and CSS Only"
         transform: rotate(0deg);
     }
 </style>
-
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quisquam ullam nostrum, eum dolorem nesciunt provident aut itaque impedit voluptatibus, quam voluptates, distinctio asperiores? Laudantium ipsam repellendus labore ex quaerat.
 <div grid-template="container">
     <details accordion name="grouped-label" class="isolation_isolate m-b_3">
         <summary
@@ -43,10 +46,10 @@ position: "HTML and CSS Only"
                     <i class="fa-solid fa-minus fa-stack-1x" aria-hidden="true"></i>
                     <i class="fa-solid fa-minus rotate_90 a:rotation fa-stack-1x " aria-hidden="true"></i>
                 </span>
-                <h3 class="flex_auto m-y_2 inline-block self_center">Section 1</h3>
+                <h3 class="flex_auto m-y_2 inline-block self_center">Great Content Within</h3>
             </hgroup>
         </summary>
-        <div data-container
+        <div data-container id="great-content-within"
             class="z_0 bg_black-_05 br-bl_radius br-br_radius m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light transition_4 m-b_2">
 
             <p>This is the container of section 1. It is revealed when the section is expanded. Nihil vel corporis
@@ -96,7 +99,7 @@ position: "HTML and CSS Only"
                 <h3 class="flex_auto m-y_2 inline-block self_center">Section 1</h3>
             </hgroup>
         </summary>
-        <div data-container
+        <div data-container id="section-1"
             class="z_0 bg_black-_05 br-bl_radius br-br_radius m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light transition_4 m-b_2">
             <div data-cotent>
                 <p>This is the container of section 1. It is revealed when the section is expanded. Nihil vel corporis
@@ -143,13 +146,13 @@ position: "HTML and CSS Only"
                     <i class="fa-solid fa-minus fa-stack-1x" aria-hidden="true"></i>
                     <i class="fa-solid fa-minus rotate_90 a:rotation fa-stack-1x " aria-hidden="true"></i>
                 </span>
-                <h3 class="flex_auto m-y_2 inline-block self_center">Section 1</h3>
+                <h3 class="flex_auto m-y_2 inline-block self_center">Section 2</h3>
             </hgroup>
         </summary>
-        <div data-container
+        <div data-container id="section-2"
             class="z_0 bg_black-_05 br-bl_radius br-br_radius m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light transition_4 m-b_2">
             <div data-cotent>
-                <p>This is the container of section 1. It is revealed when the section is expanded. Nihil vel corporis
+                <p>This is the container of section 2. It is revealed when the section is expanded. Nihil vel corporis
                     qui
                     repudiandae quis perspiciatis molestiae. Reiciendis repellat nemo fugit nam aut modi. Nobis ut
                     similique
@@ -166,7 +169,7 @@ position: "HTML and CSS Only"
                     Voluptas inventore ut temporibus architecto voluptas officia eius at. Iste pariatur quae veritatis.
                     Ratione sequi ut voluptas doloribus et. Laboriosam dicta ipsa vel blanditiis. Ut adipisci commodi
                     voluptatum porro est.</p>
-                <p>This is the container of section 1. It is revealed when the section is expanded. Nihil vel corporis
+                <p> Nihil vel corporis
                     qui
                     repudiandae quis perspiciatis molestiae. Reiciendis repellat nemo fugit nam aut modi. Nobis ut
                     similique
