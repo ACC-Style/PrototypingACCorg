@@ -36,7 +36,23 @@ position: "HTML and CSS Only"
         transform: rotate(0deg);
     }
 </style>
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quisquam ullam nostrum, eum dolorem nesciunt provident aut itaque impedit voluptatibus, quam voluptates, distinctio asperiores? Laudantium ipsam repellendus labore ex quaerat.
+<script>
+window.addEventListener('hashchange', openTarget);
+window.addEventListener('DOMContentLoaded', openTarget);
+function openTarget() {
+ const hash = window.location.hash.substring(1);
+ if (hash) {
+   const target = document.getElementById(hash);
+   if (target) {
+     const details = target.closest('details');
+     if (details) {
+       details.open = true;
+     }
+   }
+ }
+}
+</script>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quisquam ullam nostrum, eum dolorem nesciunt provident aut itaque impedit voluptatibus, quam voluptates, distinctio asperiores? Laudantium ipsam repellendus labore ex quaerat.</p>
 <div grid-template="container">
     <details accordion name="grouped-label" class="isolation_isolate m-b_3">
         <summary
