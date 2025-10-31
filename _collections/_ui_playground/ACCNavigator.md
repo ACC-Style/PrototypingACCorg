@@ -15,7 +15,7 @@ position: "Requirements"
 <hr>
 <h2>Full Pattern</h2>
 <section data-label="acc-navigator" class="m-y_6 font_n1 font_0:md font_1:lg">
-    <div data-label="container" class="br_2 br_black-2 br_round br_solid flex flex_column isolate_isolation items_center m-x_5 relative">
+    <div data-label="container" class="br_2 br_black-2 br_round br_solid flex flex_column isolation_isolate items_center m-x_5 relative">
     {% include_relative ACCNavigator/subs/question-header-all.html %}
     {%  include_relative ACCNavigator/subs/response-buttons-with-shuffle.html %}
     {% include_relative ACCNavigator/subs/power-user_type-ahead.html %}     

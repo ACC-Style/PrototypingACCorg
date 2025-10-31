@@ -1,0 +1,1 @@
+ block p-y_2 p-x_3 h:bg_accent-n2 h:c_white undecorated

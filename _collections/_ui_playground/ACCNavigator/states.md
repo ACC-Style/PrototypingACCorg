@@ -30,8 +30,8 @@ If the user types into the response line then trigger the [`Power User Feature`]
 When the user clicks a response button, the response line will be replaced with the selected response button. The system will progress to the next state either a [`Follow-up Question State`](#follow-up-question-answer) or a [`Result State`](#result-state) depending if the MadLib-combination has associated second responses or can match to a result.
 
 <section data-label="acc-navigator" class="m-y_6 font_n1 font_0:md font_1:lg">
-    <div data-label="container" class="br_2 br_black-2 br_round br_solid flex flex_column isolate_isolation items_center m-x_5 relative">
-    <header class="font-size_up-2 font_accent font_medium isolate_isolation overflow_visible grid justify_center items_center" style="translate: 0 -50%;">
+    <div data-label="container" class="br_2 br_black-2 br_round br_solid flex flex_column isolation_isolate items_center m-x_5 relative">
+    <header class="font-size_up-2 font_accent font_medium isolation_isolate overflow_visible grid justify_center items_center" style="translate: 0 -50%;">
     	<div id="question-line" class="flex flex_wrap flex_row items_center justify_center z_1 p-x_5:lg p-x_4:md p-x_4 gap-y_4 bg_white w_auto">
     		<div data-label="sentence-starter" class="flex_none self_center lh_0 p-x_4 bg_white">I want to</div>
             {% include_relative ACCNavigator/subs/question-line.html %}
@@ -54,8 +54,8 @@ If the user types into the response line, then trigger the [`Power User Feature.
 If the user clicks the `Restart Question` button the Widget will return to a [`Empty or Onload State`](#empty-query-onload-state) and will ignore any URL queries that might exist as it resets.
 
 <section data-label="acc-navigator" class="m-y_6 font_n1 font_0:md font_1:lg">
-    <div data-label="container" class="br_2 br_black-2 br_round br_solid flex flex_column isolate_isolation items_center m-x_5 relative">
-    <header class="font-size_up-2 font_accent font_medium isolate_isolation overflow_visible grid justify_center items_center" style="translate: 0 -50%;">
+    <div data-label="container" class="br_2 br_black-2 br_round br_solid flex flex_column isolation_isolate items_center m-x_5 relative">
+    <header class="font-size_up-2 font_accent font_medium isolation_isolate overflow_visible grid justify_center items_center" style="translate: 0 -50%;">
   	  <div id="question-line" class="flex flex_wrap flex_row items_center justify_center z_1 p-x_5:lg p-x_4:md p-x_4 gap-y_4 bg_white w_auto">
   		  <div data-label="sentence-starter" class="flex_none self_center lh_0 p-x_4 bg_white">I want to</div>
         {% include_relative ACCNavigator/subs/result-button.html %}
@@ -75,8 +75,8 @@ When the Widget has only results and or no extra follow-up responses the system 
 Each result will render the Page Title, and a how to navigate to this page breadcrumb to the item from the Widget's location. The results will link directly to page or item.
 
 <section data-label="acc-navigator" class="m-y_6 font_n1 font_0:md font_1:lg">
-    <div data-label="container" class="br_2 br_black-2 br_round br_solid flex flex_column isolate_isolation items_center m-x_5 relative">
-    <header class="font-size_up-2 font_accent font_medium isolate_isolation overflow_visible grid justify_center items_center" style="translate: 0 -50%;">
+    <div data-label="container" class="br_2 br_black-2 br_round br_solid flex flex_column isolation_isolate items_center m-x_5 relative">
+    <header class="font-size_up-2 font_accent font_medium isolation_isolate overflow_visible grid justify_center items_center" style="translate: 0 -50%;">
   	  <div id="question-line" class="flex flex_wrap flex_row items_center justify_center z_1 p-x_5:lg p-x_4:md p-x_4 gap-y_4 bg_white w_auto">
   		  <div data-label="sentence-starter" class="flex_none self_center lh_0 p-x_4 bg_white">I want to</div>
         {% include_relative ACCNavigator/subs/result-button.html %}
@@ -114,11 +114,11 @@ The Widget, when onload and there are query strings to the URL, the widget will 
 The user should be able to type into the response line.  This will replace the basic `response buttons` and shuffle button with a grid of buttons based on a reductive filter of the users typed text against the current response-list.  For example typed text of `credit` will return all buttons with `credit` in their label.  A `clear text` button appears in the top right of the button grid and an X button at the end of the text input.   Clicking either will return the user to the basic mode of the current state of the Widget and clear out any text in the response line.  Clicking any of the `response buttons` will  replace the response line at the top with the selected response button and will progress the Widget to the next state.
 
 <section data-label="acc-navigator" class="m-y_6 font_n1 font_0:md font_1:lg">
-    <div data-label="container" class="br_2 br_black-2 br_round br_solid flex flex_column isolate_isolation items_center m-x_5 relative">
-    <header class="font-size_up-2 font_accent font_medium isolate_isolation overflow_visible grid justify_center items_center" style="translate: 0 -50%;">
+    <div data-label="container" class="br_2 br_black-2 br_round br_solid flex flex_column isolation_isolate items_center m-x_5 relative">
+    <header class="font-size_up-2 font_accent font_medium isolation_isolate overflow_visible grid justify_center items_center" style="translate: 0 -50%;">
     	<div id="question-line" class="flex flex_wrap flex_row items_center justify_center z_1 p-x_5:lg p-x_4:md p-x_4 gap-y_4 bg_white w_auto">
     		<div data-label="sentence-starter" class="flex_none self_center lh_0 p-x_4 bg_white">I want to</div>
-        <div data-element="question-line" data-label="ask-word" class="flex_auto isolate_isolation flex_20 max-w_15">
+        <div data-element="question-line" data-label="ask-word" class="flex_auto isolation_isolate flex_20 max-w_15">
         	<div data-label="input-wrapper" class="flex flex_row flex_nowrap justify_center relative transition_3 w_auto">
         		<input type="text" name="" id="input-word-first" class="bg_transparent br-b_2 br_0 br_accent br_solid br_square f:none font-size_up opacity_none overflow_visible p-r_4 relative text_center z_1" value="Credit">
         		<button  class="flex_none c_black-4 font-size_down-2 r_n3 h:c_black p_3 br_none bg_transparent m-l_n5 z_2"><i class="fas fa-times"></i></button>
