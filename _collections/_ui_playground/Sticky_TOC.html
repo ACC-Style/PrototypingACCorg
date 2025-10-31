@@ -25,22 +25,35 @@ position: "HTML and CSS Only"
             <div class="toc-mobile display_none:lg {% include_relative Sticky/TOC/DIV.toc-mobile.txt %}">
                 <label class="font_1 font_medium font_display" for="jump-navigation">Document Library</label>
                 <select id="jump-navigation">
-                    <option class="display_none hidden" value="guidelines">Guidelines</option>
+                    <option class="font_bold" value="guidelines">Guidelines</option>
 
 
-                    <option class="display_none hidden" value="expert-consensus">Expert Consensus</option>
+                    <option hidden class="display_none bold" value="expert-consensus">Expert Consensus</option>
                     <optgroup label="Expert Consensus">
                         <option value="expert-consensus-appropriate-use-criteria">Appropriate Use Criteria</option>
                         <option value="expert-consensus-expert-consensus-documents">Expert Consensus Documents</option>
                         <option value="expert-consensus-other">Other</option>
                     </optgroup>
-                    <option value="competence-and-training">Competence and Training</option>
-                    <option value="other-policy">Other Policy</option>
+                    <option value="competence-and-training" hidden class="display_none bold">Competence and Training</option>
+                    <optgroup label="Competence and Training">
+                        <option value="competence-and-training-competence-and-training-statements">Competence and
+                            Training Statements</option>
+
+                    </optgroup>
+                    <option value="other-policy" hidden class="display_none bold">Other Policy</option>
+                    <optgroup label="Other Policy">
+                        <option value="other-policy-data-standards">Data Standards</option>
+                        <option value="other-policy-data-standards">Health Policy Statements</option>
+
+                        <option value="other-policy-performance-measures">Data Standards</option>
+                        <option value="other-policy-other">Other</option>
+
+                    </optgroup>
+
                 </select>
                 <div id="to-top" class="absolute b_0 r_0 z_1">
                     <div class="absolute t_0 r_4 flex flex_row flex_nowrap gap-x_3">
-                        <a
-                            class="br-tl_square br-tr_square br_radius btn btn-accent btn-sm grid items_center c_white  justify_center m-l_auto self_center shadow_3"
+                        <a class="br-tl_square br-tr_square br_radius btn btn-accent btn-sm grid items_center c_white  justify_center m-l_auto self_center shadow_3"
                             href="#docTop"><span><i class="fas fa-arrow-up p-r_2" aria-hidden="true"></i>top</span></a>
                     </div>
                 </div>
@@ -127,11 +140,12 @@ position: "HTML and CSS Only"
                                     Policy Statements</a></li>
                             <li class="{% include_relative Sticky/TOC/LI.txt %}"><a
                                     class="a:bg_accent-5  {% include_relative Sticky/TOC/LI-A.txt %}"
-                                    href="#other-policy-other">Other</a></li>
-                            <li class="{% include_relative Sticky/TOC/LI.txt %}"><a
-                                    class="a:bg_accent-5  {% include_relative Sticky/TOC/LI-A.txt %}"
                                     href="#other-policy-performance-measures">Performance
                                     Measures</a></li>
+                            <li class="{% include_relative Sticky/TOC/LI.txt %}"><a
+                                    class="a:bg_accent-5  {% include_relative Sticky/TOC/LI-A.txt %}"
+                                    href="#other-policy-other">Other</a></li>
+
                         </ol>
                     </li>
                 </ol>
@@ -937,53 +951,7 @@ position: "HTML and CSS Only"
                                 the Role of Advanced Practice Providers</a></li>
                     </ul>
                 </section>
-                <section id="other-policy-other">
-                    <h4 class=" {% include_relative Sticky/CONTENT/h4.txt %}">Other</h4>
-                    <ul class="ul_none">
-                        <li><a class="{% include_relative Sticky/CONTENT/A.txt %}"
-                                href="https://www.jacc.org/doi/10.1016/j.jacc.2021.04.004"
-                                title="Read on JACC: Professionalism and Ethics: AHA and ACC Consensus Conference Report"
-                                class="h:underline-none undecorated" target="_blank">2021 Professionalism and Ethics</a>
-                        </li>
-                    </ul>
-                    <ul class="ul_none">
-                        <li><a class="{% include_relative Sticky/CONTENT/A.txt %}"
-                                href="http://www.onlinejacc.org/content/early/2019/06/29/j.jacc.2019.05.034"
-                                title="Read on JACC: Methodology for Heart House Roundtables"
-                                class="h:underline-none undecorated" target="_blank">2019 Methodology for Heart House
-                                Roundtables</a></li>
-                    </ul>
-                    <ul class="ul_none">
-                        <li><a class="{% include_relative Sticky/CONTENT/A.txt %}"
-                                href="http://www.onlinejacc.org/content/70/25/3173"
-                                title="Read on JACC: Fontan-Associated Liver Disease: Proceedings from the American College of Cardiology Stakeholders Meeting"
-                                class="h:underline-none undecorated" target="_blank">2017 Fontan-Associated Liver
-                                Disease</a></li>
-                    </ul>
-                    <ul class="ul_none">
-                        <li><a class="{% include_relative Sticky/CONTENT/A.txt %}"
-                                href="http://www.onlinejacc.org/content/67/20/2419"
-                                title="Read on JACC: Knowledge Gaps in Cardiovascular Care of the Older Adult Population"
-                                class="h:underline-none undecorated" target="_blank">2016 Knowledge Gaps in
-                                Cardiovascular
-                                Care of the Older Adult Population</a></li>
-                    </ul>
-                    <ul class="ul_none">
-                        <li><a class="{% include_relative Sticky/CONTENT/A.txt %}"
-                                href="http://www.onlinejacc.org/content/66/13/1497"
-                                title="Read on JACC: Left Atrial Appendage Occlusion Device, Societal Overview of"
-                                class="h:underline-none undecorated" target="_blank">2015 Left Atrial Appendage
-                                Occlusion
-                                Device</a></li>
-                    </ul>
-                    <ul class="ul_none">
-                        <li><a class="{% include_relative Sticky/CONTENT/A.txt %}"
-                                href="http://www.onlinejacc.org/content/64/20/2146"
-                                title="Read on JACC: Protecting the Heart of the American Athlete: Proceedings of the American College of Cardiology Sports and Exercise Cardiology Think Tank"
-                                class="h:underline-none undecorated" target="_blank">2014 Protecting the Heart of the
-                                American Athlete</a></li>
-                    </ul>
-                </section>
+
                 <section id="other-policy-performance-measures">
                     <h4 class=" {% include_relative Sticky/CONTENT/h4.txt %}">Performance Measures</h4>
                     <ul class="ul_none">
@@ -1114,6 +1082,53 @@ position: "HTML and CSS Only"
                                 and
                                 Creation of Performance Measures For Quantifying the Quality of Cardiovascular Care</a>
                         </li>
+                    </ul>
+                </section>
+                <section id="other-policy-other">
+                    <h4 class=" {% include_relative Sticky/CONTENT/h4.txt %}">Other</h4>
+                    <ul class="ul_none">
+                        <li><a class="{% include_relative Sticky/CONTENT/A.txt %}"
+                                href="https://www.jacc.org/doi/10.1016/j.jacc.2021.04.004"
+                                title="Read on JACC: Professionalism and Ethics: AHA and ACC Consensus Conference Report"
+                                class="h:underline-none undecorated" target="_blank">2021 Professionalism and Ethics</a>
+                        </li>
+                    </ul>
+                    <ul class="ul_none">
+                        <li><a class="{% include_relative Sticky/CONTENT/A.txt %}"
+                                href="http://www.onlinejacc.org/content/early/2019/06/29/j.jacc.2019.05.034"
+                                title="Read on JACC: Methodology for Heart House Roundtables"
+                                class="h:underline-none undecorated" target="_blank">2019 Methodology for Heart House
+                                Roundtables</a></li>
+                    </ul>
+                    <ul class="ul_none">
+                        <li><a class="{% include_relative Sticky/CONTENT/A.txt %}"
+                                href="http://www.onlinejacc.org/content/70/25/3173"
+                                title="Read on JACC: Fontan-Associated Liver Disease: Proceedings from the American College of Cardiology Stakeholders Meeting"
+                                class="h:underline-none undecorated" target="_blank">2017 Fontan-Associated Liver
+                                Disease</a></li>
+                    </ul>
+                    <ul class="ul_none">
+                        <li><a class="{% include_relative Sticky/CONTENT/A.txt %}"
+                                href="http://www.onlinejacc.org/content/67/20/2419"
+                                title="Read on JACC: Knowledge Gaps in Cardiovascular Care of the Older Adult Population"
+                                class="h:underline-none undecorated" target="_blank">2016 Knowledge Gaps in
+                                Cardiovascular
+                                Care of the Older Adult Population</a></li>
+                    </ul>
+                    <ul class="ul_none">
+                        <li><a class="{% include_relative Sticky/CONTENT/A.txt %}"
+                                href="http://www.onlinejacc.org/content/66/13/1497"
+                                title="Read on JACC: Left Atrial Appendage Occlusion Device, Societal Overview of"
+                                class="h:underline-none undecorated" target="_blank">2015 Left Atrial Appendage
+                                Occlusion
+                                Device</a></li>
+                    </ul>
+                    <ul class="ul_none">
+                        <li><a class="{% include_relative Sticky/CONTENT/A.txt %}"
+                                href="http://www.onlinejacc.org/content/64/20/2146"
+                                title="Read on JACC: Protecting the Heart of the American Athlete: Proceedings of the American College of Cardiology Sports and Exercise Cardiology Think Tank"
+                                class="h:underline-none undecorated" target="_blank">2014 Protecting the Heart of the
+                                American Athlete</a></li>
                     </ul>
                 </section>
             </section>
