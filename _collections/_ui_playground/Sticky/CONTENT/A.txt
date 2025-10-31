@@ -1,1 +1,1 @@
- not-link h:undecorated lh_2 p-r_3 m-b_3 block h:bg_accent-5 p-y_2 p-l_4 m-b_3  c_primary-n3 h:c_black
+ lh_2 p-r_3 m-b_3 block h:bg_accent-5 p-y_2 p-l_4 m-b_3  c_primary-n3 h:c_black not-link h:underline
