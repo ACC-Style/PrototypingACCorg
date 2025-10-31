@@ -1,1 +1,1 @@
-bg_warning-2 m-r_4:lg m-r_3 p-x_3 p-y_1  uppercase br_round font_bold c_black font-size_down-2 vertical-align_middle
+bg_warning-2  m-r_3 p-x_3 p-y_1  uppercase br_round font_bold c_black font-size_down-2 vertical-align_middle
