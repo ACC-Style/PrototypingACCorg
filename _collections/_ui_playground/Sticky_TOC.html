@@ -25,14 +25,23 @@ position: "HTML and CSS Only"
             <div class="toc-mobile display_none:lg {% include_relative Sticky/TOC/DIV.toc-mobile.txt %}">
                 <label class="font_1 font_medium font_display" for="jump-navigation">Document Library</label>
                 <select id="jump-navigation">
-                    <option class="display_none" value="guidelines">Guidelines</option>
+                    <option class="display_none hidden" value="guidelines">Guidelines</option>
                     <optgroup label="Guidelines">
                         <option value="guidelines-2025">2025</option>
                         <option value="guidelines-2024">2024</option>
                         <option value="guidelines-2023">2023</option>
+                        <option value="guidelines-2022">2022</option>
+                        <option value="guidelines-2021">2021</option>
+                        <option value="guidelines-2020">2020</option>
+                        <option value="guidelines-2019">2019</option>
                     </optgroup>
 
-                    <option value="expert-consensus">Expert Consensus</option>
+                    <option class="display_none hidden" value="expert-consensus">Expert Consensus</option>
+                    <optgroup label="Expert Consensus">
+                        <option value="expert-consensus-appropriate-use-criteria">Appropriate Use Criteria</option>
+                        <option value="expert-consensus-expert-consensus-documents">Expert Consensus Documents</option>
+                        <option value="expert-consensus-other">Other</option>
+                    </optgroup>
                     <option value="competence-and-training">Competence and Training</option>
                     <option value="other-policy">Other Policy</option>
                 </select>
