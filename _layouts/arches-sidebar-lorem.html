@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+{% include arches-head.html %}
+
+<body id="ng-app" ng-app="AccApp" class="user-not-logged-in ng-scope medium-viewport"
+  style="background-color: #c1d6d9;">
+  <div class="max-w_75 m_auto">
+    <div class="bg_white shadow_overlap-light">
+      {% include arches-header.html %}
+
+      <div  grid-template="page-layout">
+        <main grid-area="content" class="p-t_5:lg p-t_4 p-x_4:lg reading-typography" >
+          {{content}}
+        </main>
+        <section grid-area="sidebar-primary">
+          {% include Placeholder/sidebar-lorem.html %}
+        </section>
+      </div>
+      {% include arches-footer.html %}
+    </div>
+  </div>
+  
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
