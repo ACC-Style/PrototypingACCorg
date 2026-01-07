@@ -3,7 +3,7 @@ layout: ui/tripple_slot
 name: "Card Photo - Slim"
 position: "Image + Text + Button"
 ---
-<div grid-area="card" class="br_solid br_black-3 br_1 br_radius p_4 flex flex_column gap_3 bg_white shadow_bevel-bold relative">
+<div data-area="card" class="br_solid br_black-3 br_1 br_radius p_4 flex flex_column gap_3 bg_white shadow_bevel-bold relative">
   <header class="aspect_5x1 bg_black-2 grid items_center justify_center m-b_4 m-t_n4 m-x_n4 overflow-clip w_auto">
     <img alt="New science and guidelines" lazy-load="true" class="w_100" src="https://placehold.co/500x100/6514ad/FFFFFF/png">
   </header>
@@ -20,3 +20,45 @@ position: "Image + Text + Button"
       More</a>
   </footer>
 </div>
+
+<style type="css">
+/*
+Card Photo - Slim
+<p>This compact card pattern combines a slim, cropped image with a headline, supporting text, and a required call-to-action button. Commonly used in a 3-up layout or a 2-up layout when a sidebar is present, this style introduces subtle branding or sub-brand visual flair without dominating the page. These cards are designed to support the primary goals of the page, guiding users toward key actions or destinations. Each card must maintain a singular focus to ensure clarity and effectiveness.</p>
+
+Markup: 
+<div data-area="card" class="br_solid br_black-3 br_1 br_radius p_4 flex flex_column gap_3 bg_white shadow_bevel-bold relative">
+  <header class="aspect_5x1 bg_black-2 grid items_center justify_center m-b_4 m-t_n4 m-x_n4 overflow-clip w_auto">
+    <img alt="New science and guidelines" lazy-load="true" class="w_100" src="{{> Sub.Placeholder.Image.5x1 }}">
+  </header>
+  <main class="m_auto">
+    <h3 class="">
+      {{> Sub.Placeholder.Text.40 }}
+      <small class="block font-size_down-1 font_medium m-t_3">{{> Sub.Placeholder.Text.60 }}</small>
+    </h3>
+    <p>{{> Sub.Placeholder.Text.200 }}</p>
+  </main>
+  <footer class="flex flex_row justify_start gap_3 m-t_auto m_auto">
+     {{> HTML.Inputs.Button modifier_class="btn-shade wrap" }}
+  </footer>
+</div>
+
+
+Note: <p>Use when reinforcing sub-branding or when the imagery is purely decorative or thematic. <strong>Avoid</strong> when the image provides essential context for the task or is unique to the content, as the slim crop may obscure important details. In those cases, use a card pattern that allows for a larger, more informative image. <strong>Do Not </strong> combine multiple actions or messages in a single card.</p>
+
+
+MarkupWrapperClasses: columns_2:md columns_1 gap_6:lg gap_4 grid
+
+SubComponents:
+HTML.Inputs.Button - Button
+
+DATA:
+Sub.Placeholder.Image.5x1 - Image 588w x 252w
+Sub.Placeholder.Text.40 - Header
+Sub.Placeholder.Text.60 - Sub Header (Optional)
+Sub.Placeholder.Text.200 - Card Text
+
+Weight: 0
+Styleguide: Recipes.Page.Cards.SlimImage
+*/
+</style>
