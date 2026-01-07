@@ -28,31 +28,32 @@ github_username: mattwatier
 
 theme: jekyll-theme-minimal
 plugins:
-  - jekyll-feed
-  - jekyll-github-metadata
+- jekyll-feed
+- jekyll-github-metadata
 destination: "docs"
-github: [metadata]
+github: [ metadata ]
 port: 4001
 collections_dir: _collections
 collections:
   ui_gold_standard:
     output: true
     permalink: /ui-gold/:path/
-  prototypes:
+  _prototypes:
     output: true
     permalink: /acc/:path/
-  generators:
+  _generators:
     output: true
     permalink: /generators/:path/
-  ui_playground:
+  _ui_playground:
     output: true
     permalink: /ui/:path/
-  member_section_prototype:
-    output: true
-    permalink: /MemberSection/:path/
   ncd:
     output: true
     permalink: /NCD/:path/
+  member_section_prototype:
+    output: true
+    permalink: /MemberSection/:path/
+
 # Exclude from processing.
 
 # The following items will not be processed, by default.
