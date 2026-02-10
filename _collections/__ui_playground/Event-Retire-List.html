@@ -7,10 +7,10 @@ position: "HTML and CSS Only"
   <ul data-role="events" class="ul_none m_0 p_0 flex flex_column gap-y_4 reading-typography wrapper-container">
 
     <li>
-      <article class="br_radius br_1 br_black-2 bg_white br_solid p_4 relative font_ui shadow_overlap-light" data-component="EventCard">
+      <article class="br_radius br_1 br_black-2 bg_white br_solid p_4 relative font_ui shadow_overlap-light h:bg_accent-5" data-component="EventCard">
         <div class="flex flex_row:md flex_column gap-x_4">
 
-          <div class="flex_none" style="width: clamp(75px, 10vw, 125px);">
+          <div class="flex_none m_auto m_0:md" style="width: clamp(75px, 10vw, 125px);">
             <div class="cal-date text_center">
               <a target="_blank" class="block btn btn-primary c_white expanded-click-area flex flex_column justify_stretch font-size_down"
                  href="https://events.mcon-mannheim.de/frontend/index.php?sub=438"
@@ -24,18 +24,18 @@ position: "HTML and CSS Only"
             </div>
           </div>
 
-          <div class="flex_auto m-r_4:md">
+          <div class="flex_auto">
             <h3 class="article-title cursor_pointer font_display font_medium h:underline lh_1 m-y_2 font-size_up-2">
               Annual Meeting of German Cardiac Society
             </h3>
 
-            <div class="meta m-t_2:md m-l_3 m-l_0:md m-b_3 m-b_0:md font_bold">
+            <div class="meta m-t_2:md m-b_3 m-b_0:md font_bold">
               <time class="c_black-7 m-r_2" datetime="2026-04-08">April 8-11, 2026</time>
               <span class="c_black-7 m-x_2">|</span>
               <span class="c_black-7">Mannheim, Germany</span>
             </div>
 
-            <p>
+            <p class="m-b_0">
               Join ACC President Dr. Roxana Mehran for a joint scientific session.
             </p>
           </div>
@@ -45,10 +45,10 @@ position: "HTML and CSS Only"
     </li>
 
     <li>
-      <article class="br_radius br_1 br_black-2 bg_white br_solid p_4 relative font_ui shadow_overlap-light" data-component="EventCard">
+      <article class="br_radius br_1 br_black-2 bg_white br_solid p_4 relative font_ui shadow_overlap-light h:bg_accent-5" data-component="EventCard">
         <div class="flex flex_row:md flex_column gap-x_4">
 
-          <div class="flex_none" style="width: clamp(75px, 10vw, 125px);">
+          <div class="flex_none m_auto m_0:md" style="width: clamp(75px, 10vw, 125px);">
             <div class="cal-date text_center">
               <a target="_blank" class="block btn btn-primary c_white expanded-click-area flex flex_column justify_stretch font-size_down"
                  href="https://scsasm.org/"
@@ -62,18 +62,18 @@ position: "HTML and CSS Only"
             </div>
           </div>
 
-          <div class="flex_auto m-r_4:md">
+          <div class="flex_auto">
             <h3 class="article-title cursor_pointer font_display font_medium h:underline lh_1 m-y_2 font-size_up-2">
               37th Singapore Cardiac Society Annual Scientific Meeting
             </h3>
 
-            <div class="meta m-t_2:md m-l_3 m-l_0:md m-b_3 m-b_0:md font_bold">
+            <div class="meta m-t_2:md m-b_3 m-b_0:md font_bold">
               <time class="c_black-7 m-r_2" datetime="2026-04-17">April 17-19, 2026</time>
               <span class="c_black-7 m-x_2">|</span>
               <span class="c_black-7">Singapore, Singapore</span>
             </div>
 
-            <p>
+            <p class="m-b_0">
               Join ACC&apos;s Immediate-Past President Dr. Chris Kramer for an ACC educational session.
             </p>
           </div>
@@ -83,10 +83,10 @@ position: "HTML and CSS Only"
     </li>
 
     <li>
-      <article class="br_radius br_1 br_black-2 bg_white br_solid p_4 relative font_ui shadow_overlap-light" data-component="EventCard">
+      <article class="br_radius br_1 br_black-2 bg_white br_solid p_4 relative font_ui shadow_overlap-light h:bg_accent-5" data-component="EventCard">
         <div class="flex flex_row:md flex_column gap-x_4">
 
-          <div class="flex_none" style="width: clamp(75px, 10vw, 125px);">
+          <div class="flex_none m_auto m_0:md" style="width: clamp(75px, 10vw, 125px);">
             <div class="cal-date text_center">
               <a target="_blank" class="block btn btn-primary c_white expanded-click-area flex flex_column justify_stretch font-size_down"
                  href="https://congressocpc.pt/"
@@ -100,18 +100,18 @@ position: "HTML and CSS Only"
             </div>
           </div>
 
-          <div class="flex_auto m-r_4:md">
+          <div class="flex_auto">
             <h3 class="article-title cursor_pointer font_display font_medium h:underline lh_1 m-y_2 font-size_up-2">
               Portuguese Society of Cardiology Congress
             </h3>
 
-            <div class="meta m-t_2:md m-l_3 m-l_0:md m-b_3 m-b_0:md font_bold">
+            <div class="meta m-t_2:md m-b_3 m-b_0:md font_bold">
               <time class="c_black-7 m-r_2" datetime="2025-04-24">April 24-25, 2025</time>
               <span class="c_black-7 m-x_2">|</span>
               <span class="c_black-7">Porto, Portugal</span>
             </div>
 
-            <p>
+            <p class="m-b_0">
               Join ACC President Dr. Roxana Mehran for a joint scientific session.
             </p>
           </div>
@@ -183,7 +183,7 @@ position: "HTML and CSS Only"
 
   const article = item.querySelector('article');
   if (article) {
-    article.classList.remove('shadow_overlap-light');
+    article.classList.remove('shadow_overlap-light','h:bg_accent-5');
     article.classList.add('font-size_down');
   }
 }
