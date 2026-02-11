@@ -1,0 +1,70 @@
+{% assign start_ts = include.event.start_date | date: "%s" %}
+{% assign end_input = include.event.end_date | default: include.event.start_date %}
+{% assign end_ts = end_input | date: "%s" %}
+
+{% assign start_iso = start_ts | date: "%Y-%m-%d" %}
+{% assign end_iso   = end_ts   | date: "%Y-%m-%d" %}
+
+{% assign month_abbr = start_ts | date: "%b" %}
+{% assign month_full = start_ts | date: "%B" %}
+{% assign year = start_ts | date: "%Y" %}
+{% assign start_day = start_ts | date: "%-d" %}
+{% assign end_day = end_ts | date: "%-d" %}
+
+{% if end_iso == start_iso %}
+  {% assign day_range = start_day %}
+  {% assign human_range = month_full | append: " " | append: start_day | append: ", " | append: year %}
+{% else %}
+  {% assign day_range = start_day | append: " - " | append: end_day %}
+  {% assign human_range = month_full | append: " " | append: start_day | append: "-" | append: end_day | append: ", " | append: year %}
+{% endif %}
+
+{% assign location = include.event.city | append: ", " | append: include.event.country %}
+{% assign aria = include.event.title | append: ". " | append: human_range | append: ". " | append: location | append: "." %}
+<li class="m_0 p_0 p-b_3">
+  <article
+    class="br_radius br_1 br_black-2 bg_white br_solid p_4 relative font_ui shadow_overlap-light h:bg_accent-5"
+    data-component="EventCard">
+
+    <div class="flex flex_row:md flex_column gap-x_4 gap-y_3">
+
+      <div class="flex_none m_auto m_0:md" style="width: clamp(120px, 15vw, 140px);">
+        <div class="cal-date text_center">
+          <a target="_blank"
+             class="block btn btn-primary c_white expanded-click-area flex flex_column justify_stretch font-size_down"
+             href="{{ include.event.url }}"
+             aria-label="{{ aria | escape }}">
+            <span class="block flex_none font-size_up-1 p-y_1">{{ month_abbr }}</span>
+            <span class="block br-b_2 br-t_2 br_solid font-size_up-2 flex_auto font_xbold grid items_center p-x_4 text_center aspect_3x1">
+              <span class="nowrap">{{ day_range }}</span>
+            </span>
+            <span class="block flex_none font-size_up-1 p-y_1">{{ year }}</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="flex_auto">
+        <h3 class="article-title cursor_pointer font_display font_medium lh_1 m-y_2 font-size_up-2">
+          {{ include.event.title }}
+        </h3>
+
+        <strong class="meta m-y_2 block c_shade-n2 font-size_down">
+          <time datetime="{{ start_iso }}">{{ human_range }}</time>
+          <span class="m-x_2">|</span>
+          <span>{{ location }}</span>
+        </strong>
+        {% if include.event.description and include.event.description != "" %}
+          <p class="m-y_3">{{ include.event.description }}</p>
+        {% endif %}
+        {% if include.event.tagline and include.event.tagline != "" %}
+          <p class="m-y_3" data-element="tagline">{{ include.event.tagline }}</p>
+        {% else %}
+          <p class="m-y_3" data-element="tagline"></p>
+        {% endif %}
+
+
+      </div>
+
+    </div>
+  </article>
+</li>

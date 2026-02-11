@@ -1,0 +1,13 @@
+---
+layout: playground
+name: "International Event List"
+position: "Generator"
+csv_file: "international-events"
+---
+
+ <ul data-role="events"
+    class="ul_none m_0 p_0 p-b_3 flex flex_column gap-y_3 reading-typography wrapper-container p-b_3">
+  {% for event in site.data.international-events %}
+    {% include_relative subs/event-card.html event=event %}
+  {% endfor %}
+</ul>
