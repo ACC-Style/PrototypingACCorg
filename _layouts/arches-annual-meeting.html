@@ -1,0 +1,17 @@
+---
+layout: annual-meeting
+--- 
+{% include arches-head.html %}
+<body id="ng-app" ng-app="AccApp" class="user-not-logged-in ng-scope medium-viewport bg_secondary-4">
+   
+    <div class="m_auto">
+        <div class="bg_white shadow_overlap-light"> 
+            {% include annual/arches-header.html %}
+            <div class="p_5:lg p_4:md p_3 m-x_6:lg m-x_5:lg m-x_4:md ">
+                {{content}}
+            </div>
+            {% include annual/arches-footer.html %}
+        </div>
+    </div> 
+    {% include annual/root.html %}
+</body>
