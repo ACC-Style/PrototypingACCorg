@@ -1,0 +1,191 @@
+<style>
+    .hero-color-splash {
+        background-image: url("{% include URL.html media='{3654A6F4-E725-4D18-9F34-750090781B77}'%}"),
+        linear-gradient(to left top, #061a37, #022450, #012d69, #083683, #1a3f9d);
+        background-position: right top, center center;
+        background-size: contain, contain;
+        background-repeat: no-repeat, no-repeat;
+    }
+
+    
+    [grid-template="hero-area"] {
+        --radius-curve: 16px;
+        --hero-overlay-color: var(--acc);
+        --hero-overlay-opacity: .85;
+        --breadcrumb-height: calc(var(--radius-curve) * 2);
+        --container-padding: calc(var(--radius-curve) * .75);
+        grid-template-rows:            
+            [all-start breadcrumb-start hero-start hero-curve-2-start]  calc(var(--breadcrumb-height, 2.5rem)) 
+            [breadcrumb-end] var(--container-padding, 24px) 
+            [title-start] auto 
+            [title-end hero-curve-1-start] var(--container-padding, 24px) 
+            [feature-start hero-curve-2-end] auto
+            [hero-end hero-curve-1-end] calc(var(--container-padding, 24px) * 10) 
+            [feature-end intro-start] auto 
+            [all-end intro-end];
+        grid-template-columns:
+            
+        [all-start hero-start breadcrumb-start hero-curve-1-start] var(--container-padding, 24px) 
+            [intro-start] var(--container-padding, 24px) 
+            [title-start] var(--container-padding, 24px) 
+            [feature-start hero-curve-1-end] 1fr 
+            [title-end] var(--container-padding, 24px) 
+            [intro-end breadcrumb-end hero-curve-2-start] var(--container-padding, 24px) 
+            [all-end feature-start hero-end hero-curve-2-end];
+    }
+
+    @container (min-width : 540px) {
+        
+        [grid-template="hero-area"] {
+            --radius-curve: 20px;
+            --title-space: 1fr;
+            --feature-space: 1fr;
+            grid-template-rows:
+
+                
+            [all-start breadcrumb-start hero-start hero-curve-2-start] calc(var(--container-padding, 24px) * 2) 
+                [breadcrumb-end] var(--container-padding, 24px) 
+                [title-start feature-start hero-curve-2-end] auto 
+                [title-end] var(--container-padding, 24px) 
+                [hero-curve-1-start] var(--container-padding, 24px) 
+                [hero-end intro-start hero-curve-1-end] auto 
+                [all-end feature-end intro-end];
+            grid-template-columns:
+                
+            [all-start hero-start breadcrumb-start intro-start hero-curve-1-start] var(--container-padding, 24px) 
+                [ title-start] var(--title-space) 
+                [title-end ] var(--container-padding, 24px) 
+                [feature-start hero-curve-1-end intro-end] var(--feature-space) 
+                [ breadcrumb-end hero-curve-2-start] var(--container-padding, 24px) 
+                [all-end feature-start hero-end hero-curve-2-end];
+        }
+    }
+
+    @container (min-width : 768px) {
+
+        /* Styles for small laptops and larger devices */
+        
+        [grid-template="hero-area"] {
+            --radius-curve: 24px;
+            --title-space: 4fr;
+            --feature-space: 3fr;
+        }
+    }
+
+    @container (min-width : 1024px) {
+
+        /* Styles for small laptops and larger devices */
+        
+        [grid-template="hero-area"] {
+            --radius-curve: 28px;
+            --title-space: 3fr;
+            --feature-space: 2fr;
+        }
+    }
+
+    .curve {
+        display: block;
+        width: var(--radius-curve, 24px);
+        height: var(--radius-curve, 24px);
+        position: absolute;
+        clip-path: url(#clipCurve);
+        -webkit-clip-path: url(#clipCurve);
+        background-color: white;
+    }
+
+    
+    [grid-template] {
+        display: grid;
+    }
+
+
+
+    
+    [grid-area="intro"] {
+        grid-area: intro;
+    }
+
+
+    
+    [grid-area="background"] {
+        grid-area: hero;
+        border-radius: var(--radius-curve);
+    }
+
+
+    
+    [grid-area="title"] {
+        grid-area: title;
+        text-wrap-style: balance;
+        padding-left: var(--container-padding);
+    }
+
+
+    
+    [grid-area="breadcrumb"] {
+        grid-area: breadcrumb;
+        position: relative;
+
+        & nav {
+            background: white;
+            border-bottom-right-radius: calc(var(--radius-curve, 24px) * .75);
+        }
+
+        & .curve {
+            z-index: 100;
+            top: 0;
+            right: calc(var(--radius-curve, 24px) * -1);
+            rotate: 90deg;
+            background: white;
+
+            &.alt {
+                z-index: 100;
+                left: 0;
+                bottom: calc(var(--radius-curve, 24px) * -1);
+                position: absolute;
+                rotate: 90deg;
+                background: #ffffff;
+                top: auto;
+            }
+        }
+
+    }
+
+    
+    [grid-area="feature-cutout"] {
+        grid-area: feature;
+        border-top-left-radius: var(--radius-curve);
+        padding-top: var(--container-padding);
+        padding-left: var(--container-padding);
+
+    }
+
+    
+    [grid-area="feature-container"] {
+        background-image: linear-gradient(to left top, #061a37, #022450);
+        border-radius: var(--radius-curve);
+        border-top-left-radius: calc(var(--radius-curve) * .75);
+    }
+
+    
+    [grid-area="hero-curve-1"] {
+        /* grid-area: row-start / column-start / row-end / column-end; */
+        grid-area: hero-curve-1;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        rotate: 270deg;
+
+    }
+
+    
+    [grid-area="hero-curve-2"] {
+        /* grid-area: row-start / column-start / row-end / column-end; */
+        grid-area: hero-curve-2;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        rotate: 270deg;
+
+    }
+</style>
