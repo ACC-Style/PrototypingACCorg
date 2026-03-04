@@ -1,0 +1,290 @@
+---
+layout: acc/fullscreen
+name: "Concept Education Meeting"
+position: "Concept Anchors Page"
+masthead: "empty.html"
+---
+
+<div class="wrapper-container">
+    <div grid-template="hero-area"
+        class="grid relative m-b_5:lg m-b_4 isolation_isolate reading-typography font-size_up p_3 p_4:md"
+        style="--custom-font-size-up: 1.125;">
+        <div grid-area="background" class=" hero-color-splash relative z_0">
+
+        </div>
+        <div grid-area="breadcrumb" class="grid justify_start relative">
+            <nav
+                class="grid inline-block isolation_isolate items_center p-r_5:lg p-x_4 p-r_5 relative">
+                <a href="{% include URL.html url='https://www.acc.org/' %}"
+                    class="not-link font_n2 font_n1:sm font_0:md font_1:lg  c_acc h:undecorated font_bold opacity_7 h:opacity expanded-click-area"><i
+                        class="fas fa-chevron-left" aria-hidden="true"></i> <i
+                        class="fas fa-home"></i></a>
+                <span class="curve"></span>
+                <span class="curve alt"></span>
+            </nav>
+        </div>
+        <div grid-area="title"
+            class="color_inherit reading-typography color_inherit c_white z_1 font-size_up flex flex_column justify_center p_3 p_4:md p_5:lg"
+            style="--custom-font-size-up: 1.125;">
+            <h1 class="m_0"> About The ACC</h1>
+            <p class="opacity_7 font_light m_0">
+                Celebrating 75 Years of Transforming CV Care For All
+            </p>
+        </div>
+        <div class="bg_white"
+            grid-area="feature-cutout">
+            <aside 
+                class="columns_1 grid isolation_isolate rows_3 m-t_4 max-w_30 m_auto p-x_4"
+                style="--row-1:90px; --row-2:90px;">
+                <div data-label="background"
+                    class="bg_acc-n2 row-end_end row-start_2 col_all flex shadow_bevel-light br_solid br_1 br_accent-4"
+                    style="border-radius: 16px;"></div>
+                <div data-label="product-image" class="row_all col_all grid">
+                    <div class="bg_contain bg_no-repeat m-t_n3"
+                        style="background-image: url( 'https://www.acc.org/~/media/Non-Clinical/Images/Education-and-Meetings/Products-and-Resources/ACHDSAP/Learn-Mobile.png' ); background-position: center top;"></div>
+                </div>
+                <div data-label="content-container"
+                    class="bg_white br_radius m_3 p_4 reading-typography row-end_end row-start_n2 shadow_overlap-light z_2 col_all br_solid br_black-2 br_1">
+                    <h4 class="font_xbold text_center font_4:lg font_3">Learn on
+                        the Go!</h4>
+                    <p class="text_center">Access your SAPs from anywhere on the
+                        mobile app <strong>ACC Learn</strong>.</p>
+                    <div
+                        class="grid columns_2 content_center gap_2 justify_center">
+                        <a class="bg_black br_radius ga-external"
+                            href="https://apps.apple.com/us/app/acc-learn/id1497013017"
+                            target="_blank"><img
+                                src="https://www.acc.org/~/media/Non-Clinical/Images/Education-and-Meetings/Products-and-Resources/ACHDSAP/appstore.svg"
+                                alt="Download on the App Store"></a>
+                        <a class="bg_black br_radius ga-external"
+                            href="https://play.google.com/store/apps/details?id=org.acc.learn.android&amp;hl=en_US&amp;pli=1"
+                            target="_blank"><img
+                                src="https://www.acc.org/~/media/Non-Clinical/Images/Education-and-Meetings/Products-and-Resources/ACHDSAP/googleplay.svg"
+                                alt="Get it on Google Play"></a>
+                    </div>
+                    <div class="text_center m-t_3 m-b_n2"><a
+                            href="https://www.acc.org/-/media/Non-Clinical/Files-PDFs-Excel-MS-Word-etc/2020/10/01/G20147-ACC-Lifelong-Learning-App-Info-Sheet.pdf"
+                            target="_blank"><small>Learn
+                                More</small></a></div>
+                </div>
+            </aside>
+        </div>
+        <div grid-area="intro" class="reading-typography p-t_5 p-x_4:md"
+            style="--custom-font-size-up: 1.02;">
+            <p>The American College of Cardiology (ACC) envisions a world where
+                science, knowledge and innovation
+                optimize cardiovascular care and outcomes. </p>
+            <p>We believe in the power of community. With more than 56,000
+                members worldwide spanning the entire
+                cardiovascular team, we serve as the professional home for
+                clinicians and researchers seeking the latest
+                science, research and education. United with our members,
+                chapters and global cardiovascular partners,
+                we are focused on transforming cardiovascular care and improving
+                heart health for all. </p>
+
+        </div>
+        <span grid-area="hero-curve-2" class="curve"></span>
+        <span grid-area="hero-curve-1" class="curve"></span>
+    </div>
+    <svg width="0" height="0" viewBox="0 0 100 100"
+        xmlns="http://www.w3.org/2000/svg" style="position: absolute;">
+        <defs>
+            <clippath id="clipCurve" clipPathUnits="objectBoundingBox">
+                <path d="M 0 0 Q 0 1, 1 1 L 0 1 Z" />
+            </clippath>
+        </defs>
+    </svg>
+</div>
+
+<style>
+    .hero-color-splash {
+        background-image: url("{% include URL.html media='{3654A6F4-E725-4D18-9F34-750090781B77}'%}"),
+        linear-gradient(to left top, #061a37, #022450, #012d69, #083683, #1a3f9d);
+        background-position: right top, center center;
+        background-size: contain, contain;
+        background-repeat: no-repeat, no-repeat;
+    }
+
+    
+    [grid-template="hero-area"] {
+        --radius-curve: 16px;
+        --hero-overlay-color: var(--acc);
+        --hero-overlay-opacity: .85;
+        --breadcrumb-height: calc(var(--radius-curve) * 2);
+        --container-padding: calc(var(--radius-curve) * .75);
+        grid-template-rows:            
+            [all-start breadcrumb-start hero-start hero-curve-2-start]  calc(var(--breadcrumb-height, 2.5rem)) 
+            [breadcrumb-end] var(--container-padding, 24px) 
+            [title-start] auto 
+            [title-end hero-curve-1-start] var(--container-padding, 24px) 
+            [feature-start hero-curve-2-end] auto
+            [hero-end hero-curve-1-end] calc(var(--container-padding, 24px) * 10) 
+            [feature-end intro-start] auto 
+            [all-end intro-end];
+        grid-template-columns:
+            
+        [all-start hero-start breadcrumb-start hero-curve-1-start] var(--container-padding, 24px) 
+            [intro-start] var(--container-padding, 24px) 
+            [title-start] var(--container-padding, 24px) 
+            [feature-start hero-curve-1-end] 1fr 
+            [title-end] var(--container-padding, 24px) 
+            [intro-end breadcrumb-end hero-curve-2-start] var(--container-padding, 24px) 
+            [all-end feature-start hero-end hero-curve-2-end];
+    }
+
+    @container (min-width : 540px) {
+        
+        [grid-template="hero-area"] {
+            --radius-curve: 20px;
+            --title-space: 1fr;
+            --feature-space: 1fr;
+            grid-template-rows:
+
+                
+            [all-start breadcrumb-start hero-start hero-curve-2-start] calc(var(--container-padding, 24px) * 2) 
+                [breadcrumb-end] var(--container-padding, 24px) 
+                [title-start feature-start hero-curve-2-end] auto 
+                [title-end] var(--container-padding, 24px) 
+                [hero-curve-1-start] var(--container-padding, 24px) 
+                [hero-end intro-start hero-curve-1-end] auto 
+                [all-end feature-end intro-end];
+            grid-template-columns:
+                
+            [all-start hero-start breadcrumb-start intro-start hero-curve-1-start] var(--container-padding, 24px) 
+                [ title-start] var(--title-space) 
+                [title-end ] var(--container-padding, 24px) 
+                [feature-start hero-curve-1-end intro-end] var(--feature-space) 
+                [ breadcrumb-end hero-curve-2-start] var(--container-padding, 24px) 
+                [all-end feature-start hero-end hero-curve-2-end];
+        }
+    }
+
+    @container (min-width : 768px) {
+
+        /* Styles for small laptops and larger devices */
+        
+        [grid-template="hero-area"] {
+            --radius-curve: 24px;
+            --title-space: 4fr;
+            --feature-space: 3fr;
+        }
+    }
+
+    @container (min-width : 1024px) {
+
+        /* Styles for small laptops and larger devices */
+        
+        [grid-template="hero-area"] {
+            --radius-curve: 28px;
+            --title-space: 3fr;
+            --feature-space: 2fr;
+        }
+    }
+
+    .curve {
+        display: block;
+        width: var(--radius-curve, 24px);
+        height: var(--radius-curve, 24px);
+        position: absolute;
+        clip-path: url(#clipCurve);
+        -webkit-clip-path: url(#clipCurve);
+        background-color: white;
+    }
+
+    
+    [grid-template] {
+        display: grid;
+    }
+
+
+
+    
+    [grid-area="intro"] {
+        grid-area: intro;
+    }
+
+
+    
+    [grid-area="background"] {
+        grid-area: hero;
+        border-radius: var(--radius-curve);
+    }
+
+
+    
+    [grid-area="title"] {
+        grid-area: title;
+        text-wrap-style: balance;
+        padding-left: var(--container-padding);
+    }
+
+
+    
+    [grid-area="breadcrumb"] {
+        grid-area: breadcrumb;
+        position: relative;
+
+        & nav {
+            background: white;
+            border-bottom-right-radius: calc(var(--radius-curve, 24px) * .75);
+        }
+
+        & .curve {
+            z-index: 100;
+            top: 0;
+            right: calc(var(--radius-curve, 24px) * -1);
+            rotate: 90deg;
+            background: white;
+
+            &.alt {
+                z-index: 100;
+                left: 0;
+                bottom: calc(var(--radius-curve, 24px) * -1);
+                position: absolute;
+                rotate: 90deg;
+                background: #ffffff;
+                top: auto;
+            }
+        }
+
+    }
+
+    
+    [grid-area="feature-cutout"] {
+        grid-area: feature;
+        border-top-left-radius: var(--radius-curve);
+        padding-top: var(--container-padding);
+        padding-left: var(--container-padding);
+
+    }
+
+    
+    [grid-area="feature-container"] {
+        background-image: linear-gradient(to left top, #061a37, #022450);
+        border-radius: var(--radius-curve);
+        border-top-left-radius: calc(var(--radius-curve) * .75);
+    }
+
+    
+    [grid-area="hero-curve-1"] {
+        /* grid-area: row-start / column-start / row-end / column-end; */
+        grid-area: hero-curve-1;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        rotate: 270deg;
+
+    }
+
+    
+    [grid-area="hero-curve-2"] {
+        /* grid-area: row-start / column-start / row-end / column-end; */
+        grid-area: hero-curve-2;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        rotate: 270deg;
+
+    }
+</style>
