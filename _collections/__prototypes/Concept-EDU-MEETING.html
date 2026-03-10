@@ -169,11 +169,11 @@ masthead: "empty.html"
 {%- include_relative EDU/career.html -%}
 {%- include_relative EDU/institution.html -%}
 <section id="nav-gone"></section>
-<ul id="sticky_nav" class="b_2 br_1 br_black-2 br_round br_solid flex flex_row flex_wrap font_n1:lg font_n2:md font_n3 gap_2 items_center justify_center m_auto p-x_3 p-y_3 relative shadow_overlap-light sticky ul_none w_auto z_2">
-  <li><a class="p-x_3 p-y_2 a:bg_accent-n1 a:c_white br_radius " href="#Online-Learning">Learning</a></li>
-  <li><a class="p-x_3 p-y_2 a:bg_accent-n1 a:c_white br_radius " href="#Events">Meetings &amp; Events</a></li>
-  <li><a class="p-x_3 p-y_2 a:bg_accent-n1 a:c_white br_radius " href="#Careers">Career</a></li>
-  <li><a class="p-x_3 p-y_2 a:bg_accent-n1 a:c_white br_radius " href="#Institutional">Institutional</a></li>
+<ul id="sticky_nav" class="b_2 br_1 br_black-2 br_round br_solid flex flex_row flex_wrap font_n1:lg font_n2:md font_n3 gap_2 items_center justify_center m-x_5:md m-x_6:lg m-x_n3 p-x_0 p-y_3 relative shadow_overlap-light sticky ul_none w_auto z_2">
+  <li><a class="p-x_3 p-y_2 a:bg_accent-n1 a:c_white br_radius active" href="#Online-Learning" aria-current="true">Learning</a></li>
+  <li><a class="p-x_3 p-y_2 a:bg_accent-n1 a:c_white br_radius" href="#Events" aria-current="false">Meetings &amp; Events</a></li>
+  <li><a class="p-x_3 p-y_2 a:bg_accent-n1 a:c_white br_radius" href="#Professional" aria-current="false">Professional</a></li>
+  <li><a class="p-x_3 p-y_2 a:bg_accent-n1 a:c_white br_radius" href="#Institutional" aria-current="false">Institutional</a></li>
 </ul>
 <style>
     #sticky_nav::after {
@@ -223,6 +223,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }, {
     root: null,
+    rootMargin: "-80px 0px 0px -80px",
     threshold: 0
   });
 
@@ -242,6 +243,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }, {
       root: null,
+      rootMargin: "-80px 0px 0px 0px",
       threshold: 0
     });
 
