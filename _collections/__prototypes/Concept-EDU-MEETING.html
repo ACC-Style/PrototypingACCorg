@@ -1,10 +1,10 @@
 ---
 layout: acc/fullscreen
-name: "Concept Education Meeting"
+name: "Concept Education Meeting (NEW)"
 position: "Concept Anchors Page"
 masthead: "empty.html"
 ---
-<base href="https://www.acc.org/Education-and-Meetings/">
+
 <div
     class="wrapper-container">
     <div
@@ -109,12 +109,13 @@ masthead: "empty.html"
             grid-area="intro"
             class="reading-typography p-t_5 p-x_4:md"
             style="--custom-font-size-up: 1.02;">
-            <p>
-                Education at the American College of Cardiology exists to
-                strengthen the collective expertise of its members, turning
-                shared knowledge into better outcomes for patients and the
-                profession as a whole.
-            </p>
+            <p><strong>Explore ACC learning opportunities designed to help cardiology professionals:</strong></p>
+            <ul>
+                <li>Earn CME and MOC credits</li>
+                <li>Prepare for board certification</li>
+                <li>Stay current with the latest clinical science</li>
+                <li>Connect with peers through meetings and leadership programs</li>
+            </ul>
             <div
                 class="grid columns_2:md columns_1 gap_4 m-t_4">
                 <a
@@ -159,10 +160,14 @@ masthead: "empty.html"
     </svg>
 </div>
 {%- include css-bundles/anchor-header-styles.html -%}
+{%- include_relative EDU/audience-cards.html -%}
+
 {%- include Blocks/Slider.html -%}
-<div class="columns_1 columns_2:md  grid m-b_4 p_4 p-y_5:lg ">
+<div class="m-b_4 p_4 p-y_5:lg ">
 {%- include_relative EDU/products.html -%}
 {%- include_relative EDU/events.html -%}
+{%- include_relative EDU/career.html -%}
+{%- include_relative EDU/institution.html -%}
 </div>
 
 
