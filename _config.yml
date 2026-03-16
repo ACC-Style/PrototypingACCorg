@@ -53,6 +53,9 @@ collections:
   member_section_prototype:
     output: true
     permalink: /MemberSection/:path/
+  annual_meeting_prototype:
+    output: true
+    permalink: /AnnualMeeting/:path/
 
 # Exclude from processing.
 
