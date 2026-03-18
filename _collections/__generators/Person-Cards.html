@@ -1,0 +1,309 @@
+---
+layout: playground
+name: "Person Card Builder"
+position: "Generator"
+csv_file: "none"
+---
+<div class="app">
+    <section class="panel bg_black-1 p_4 br_round reading-typography" aria-label="Builder controls">
+      <h1 class="panel__title">Person Card Builder</h1>
+      <div class="panel__body stack">
+        <p class="helper">Use the form to build one or more person cards. The preview updates live, and the CMS-ready HTML is generated below.</p>
+<seciton class="flex flex_row gap_4">
+  
+          <label>
+            Name
+            <input id="name" type="text" value="Douglas Drachman, MD, FACC" />
+          </label>
+  
+          <label>
+            Title
+            <input id="title" type="text" value="Chair" />
+          </label>
+  
+          <label>
+            Image URL
+            <input id="image" type="text" value="https://acc.org/-/media/Non-Clinical/Images/2019/11/CARDIOLOGY/Drachman-Douglas-600x600.jpg" />
+          </label>
+  
+          <label>
+            Image Alt Text
+            <input id="alt" type="text" value="Douglas Drachman, MD, FACC" />
+          </label>
+  
+</seciton>
+        <div class="actions p_3"> <button id="updateSelected" type="button" class="btn btn-primary self_bottom">Update Selected</button>
+          <button class="btn-success btn" id="addCard" type="button"><i class="fa-solid fa-plus p-x_2"></i>Add Card</button>
+         
+          <button id="clearForm" type="button">Clear Form</button>
+        </div>
+
+        <div>
+          <h2 style="margin:0 0 8px; font-size:16px;">Cards in Wrapper</h2>
+          <ul id="cardsList" class="cards-list cards-list flex flex_column gap_2 ul_none" aria-live="polite"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="workspace">
+      <section class="panel">
+        <h2 class="panel__title">Live Preview</h2>
+        <div class="panel__body preview-shell">
+          <div id="preview"></div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2 class="panel__title">Generated HTML</h2>
+        <div class="panel__body output-wrap ">
+          <div class="output-block display_none">
+            <h3>Single Card</h3>
+            <textarea id="singleOutput" readonly></textarea>
+            <div class="actions">
+              <button data-copy-target="singleOutput" type="button">Copy Single Card</button>
+            </div>
+          </div>
+
+          <div class="output-block">
+            <h3>Wrapper + All Cards</h3>
+            <textarea id="wrapperOutput" readonly class="min-h_40"></textarea>
+            <div class="actions">
+              <button data-copy-target="wrapperOutput" type="button">Copy Wrapper HTML</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </div>
+
+  <template id="personCardTemplate">
+    <li class="wrapper-container bg_white m_0 p_2 br_1 br_black-3 br_round br_solid grid columns_2 gap_0 items_start justify_start shadow_overlap-light">
+      <div class="p_3 p-b_0 p_4:md p-r_0:sm p_3:sm grid items_center justify_center col_all col-end_n2:sm">
+        <img data-item="photo" class="aspect_1x1 w_100 aspect_8x10:sm bg_cover br_radius max-w_20 br_1 br_solid br_black-2" src="" alt="">
+      </div>
+      <div class="col-start_n2:sm col_all font_0:sm font_1:md font_2:lg font_n1:xs font_n2 lh_2 m-x_3:md p-x_4:md p-y_4:md p-y_4:sm p_3">
+        <span data-item="name" class="font_display font-size_up-1 c_secondary-n2 lh_1"></span>
+        <strong data-item="title" class="block font-size_down-1 c_primary font_meduim font_ui"></strong>
+      </div>
+    </li>
+  </template>
+
+  <script>
+    const form = {
+      name: document.getElementById('name'),
+      title: document.getElementById('title'),
+      image: document.getElementById('image'),
+      alt: document.getElementById('alt')
+    };
+
+    const preview = document.getElementById('preview');
+    const singleOutput = document.getElementById('singleOutput');
+    const wrapperOutput = document.getElementById('wrapperOutput');
+    const cardsList = document.getElementById('cardsList');
+    const template = document.getElementById('personCardTemplate');
+
+    const wrapperClassName = 'columns_1 columns_2:md columns_3:lg gap_4:md gap_3 grid justify_center ul_none wrapper-container';
+
+    const cards = [];
+    let selectedIndex = -1;
+
+    function escapeHtml(value) {
+      return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function getFormData() {
+      return {
+        name: form.name.value.trim(),
+        title: form.title.value.trim(),
+        image: form.image.value.trim(),
+        alt: form.alt.value.trim() || form.name.value.trim()
+      };
+    }
+
+    function fillCardElement(card) {
+      const fragment = template.content.cloneNode(true);
+      const li = fragment.querySelector('li');
+      const img = fragment.querySelector('[data-item="photo"]');
+      const name = fragment.querySelector('[data-item="name"]');
+      const title = fragment.querySelector('[data-item="title"]');
+
+      img.src = card.image;
+      img.alt = card.alt;
+      name.textContent = card.name;
+      title.textContent = card.title;
+
+      return li;
+    }
+
+    function cardToHtml(card) {
+      return `<li class="wrapper-container bg_white m_0 p_2 br_1 br_black-3 br_round br_solid grid columns_2 gap_0 items_start justify_start shadow_overlap-light">\n  <div class="p_3 p-b_0 p_4:md p-r_0:sm p_3:sm grid items_center justify_center col_all col-end_n2:sm">\n    <img data-item="photo" class="aspect_1x1 w_100 aspect_8x10:sm bg_cover br_radius max-w_20 br_1 br_solid br_black-2" src="${escapeHtml(card.image)}" alt="${escapeHtml(card.alt)}">\n  </div>\n  <div class="col-start_n2:sm col_all font_0:sm font_1:md font_2:lg font_n1:xs font_n2 lh_2 m-x_3:md p-x_4:md p-y_4:md p-y_4:sm p_3">\n    <span data-item="name" class="font_display font-size_up-1 c_secondary-n2 lh_1">${escapeHtml(card.name)}</span>\n    <strong data-item="title" class="block font-size_down-1 c_primary font_meduim font_ui">${escapeHtml(card.title)}</strong>\n  </div>\n</li>`;
+    }
+
+    function wrapperToHtml() {
+      const cardMarkup = cards.map(cardToHtml).join('\n');
+      return `<ul class="${wrapperClassName}">\n${indentMarkup(cardMarkup, 2)}\n</ul>`;
+    }
+
+    function indentMarkup(markup, spaces) {
+      const pad = ' '.repeat(spaces);
+      return markup
+        .split('\n')
+        .map(line => line ? pad + line : line)
+        .join('\n');
+    }
+
+    function renderPreview() {
+      const list = document.createElement('ul');
+      list.className = wrapperClassName;
+
+      if (cards.length === 0) {
+        const empty = document.createElement('p');
+        empty.className = 'helper';
+        empty.textContent = 'Add a card to preview the wrapper output.';
+        preview.replaceChildren(empty);
+        wrapperOutput.value = '';
+        singleOutput.value = '';
+        renderCardsList();
+        return;
+      }
+
+      cards.forEach(card => list.appendChild(fillCardElement(card)));
+      preview.replaceChildren(list);
+      wrapperOutput.value = wrapperToHtml();
+      singleOutput.value = selectedIndex > -1 ? cardToHtml(cards[selectedIndex]) : cardToHtml(cards[cards.length - 1]);
+      renderCardsList();
+    }
+
+    function renderCardsList() {
+      cardsList.innerHTML = '';
+
+      cards.forEach((card, index) => {
+        const li = document.createElement('li');
+        li.className = 'br_1 br_black-3 br_solid flex flex_row gap_4 items_center p_3';
+        li.innerHTML = `
+          <img width="100" class="br_radius flex_none max-w_5" src="${escapeHtml(card.image)}" alt="${escapeHtml(card.alt)}">
+          <div class="card-meta flex flex_row gap_4">
+            <strong>${escapeHtml(card.name)}</strong>
+            <span>${escapeHtml(card.title)}</span>
+          </div>
+          <div class="inline-actions m-l_auto flex flex_row gap_2">
+            <button type="button" data-action="edit" data-index="${index}">Edit</button>
+            <button type="button" data-action="delete" data-index="${index}">Delete</button>
+          </div>
+        `;
+
+        if (index === selectedIndex) {
+          li.style.outline = '2px solid var(--accent)';
+          li.style.outlineOffset = '2px';
+        }
+
+        cardsList.appendChild(li);
+      });
+    }
+
+    function loadCardIntoForm(index) {
+      const card = cards[index];
+      if (!card) return;
+
+      selectedIndex = index;
+      form.name.value = card.name;
+      form.title.value = card.title;
+      form.image.value = card.image;
+      form.alt.value = card.alt;
+      renderPreview();
+    }
+
+    function clearForm() {
+      selectedIndex = -1;
+      form.name.value = '';
+      form.title.value = '';
+      form.image.value = '';
+      form.alt.value = '';
+      singleOutput.value = '';
+      renderCardsList();
+    }
+
+    document.getElementById('addCard').addEventListener('click', () => {
+      const card = getFormData();
+      if (!card.name || !card.title || !card.image) return;
+      cards.push(card);
+      selectedIndex = cards.length - 1;
+      renderPreview();
+    });
+
+    document.getElementById('updateSelected').addEventListener('click', () => {
+      if (selectedIndex < 0 || !cards[selectedIndex]) return;
+      const card = getFormData();
+      if (!card.name || !card.title || !card.image) return;
+      cards[selectedIndex] = card;
+      renderPreview();
+    });
+
+    document.getElementById('clearForm').addEventListener('click', clearForm);
+
+    cardsList.addEventListener('click', event => {
+      const button = event.target.closest('button');
+      if (!button) return;
+
+      const index = Number(button.dataset.index);
+      const action = button.dataset.action;
+
+      if (action === 'edit') {
+        loadCardIntoForm(index);
+      }
+
+      if (action === 'delete') {
+        cards.splice(index, 1);
+        if (selectedIndex === index) selectedIndex = -1;
+        if (selectedIndex > index) selectedIndex -= 1;
+        renderPreview();
+      }
+    });
+
+    document.addEventListener('click', event => {
+      const button = event.target.closest('[data-copy-target]');
+      if (!button) return;
+
+      const target = document.getElementById(button.dataset.copyTarget);
+      if (!target || !target.value) return;
+
+      navigator.clipboard.writeText(target.value)
+        .then(() => {
+          const original = button.textContent;
+          button.textContent = 'Copied';
+          setTimeout(() => {
+            button.textContent = original;
+          }, 1200);
+        })
+        .catch(() => {
+          target.select();
+          document.execCommand('copy');
+        });
+    });
+
+    form.name.addEventListener('input', () => {
+      const current = getFormData();
+      if (current.name && current.title && current.image) {
+        singleOutput.value = cardToHtml(current);
+      }
+    });
+
+    [form.title, form.image, form.alt].forEach(field => {
+      field.addEventListener('input', () => {
+        const current = getFormData();
+        if (current.name && current.title && current.image) {
+          singleOutput.value = cardToHtml(current);
+        }
+      });
+    });
+
+    const starterCard = getFormData();
+    cards.push(starterCard);
+    selectedIndex = 0;
+    renderPreview();
+  </script>
