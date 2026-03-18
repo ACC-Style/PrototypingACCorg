@@ -184,7 +184,7 @@ csv_file: "none"
 
       cards.forEach((card, index) => {
         const li = document.createElement('li');
-        li.className = 'br_1 br_black-3 br_solid flex flex_row gap_4 items_center p_3';
+        li.className = 'br_1 br_black-3 a:br_success a:bg_accent-5 br_solid flex flex_row gap_4 items_center p_3';
         li.innerHTML = `
           <img width="100" class="br_radius flex_none max-w_5" src="${escapeHtml(card.image)}" alt="${escapeHtml(card.alt)}">
           <div class="card-meta flex flex_row gap_4">
@@ -198,8 +198,7 @@ csv_file: "none"
         `;
 
         if (index === selectedIndex) {
-          li.style.outline = '2px solid var(--accent)';
-          li.style.outlineOffset = '2px';
+          li.classList.add('active');
         }
 
         cardsList.appendChild(li);
