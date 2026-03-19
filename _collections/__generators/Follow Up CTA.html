@@ -1,0 +1,517 @@
+---
+layout: playground
+name: "Follow Up CTA Builder"
+position: "Generator"
+csv_file: "none"
+---
+  <div class="app">
+    <section class="panel">
+      <div class="panel__header">Follow Up CTA Builder</div>
+      <div class="panel__body">
+        <form id="cta-builder" class="stack">
+          <fieldset class="field">
+            <legend class="legend">Pattern Style</legend>
+            <div class="radio-group">
+              <label class="radio-option">
+                <input type="radio" name="pattern" value="basic" checked />
+                <span>Basic</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="pattern" value="card" />
+                <span>Card</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="pattern" value="rule" />
+                <span>Horizontal Rule</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="field">
+            <label for="title">Title</label>
+            <input id="title" name="title" type="text" value="Commodi dolores" maxlength="120" />
+            <div class="hint">Suggested around 30 characters.</div>
+          </div>
+
+          <div class="field">
+            <label for="subtitle">Subtitle</label>
+            <input id="subtitle" name="subtitle" type="text" value="Rerum libg dero pariatur" maxlength="180" />
+            <div class="hint">Suggested around 40 characters.</div>
+          </div>
+
+          <div class="field">
+            <label for="description">Description</label>
+            <textarea id="description" name="description" maxlength="500">Svel libero ut rerum repudiandae aut est paritur minus vero. Delectus ea est nostrum quae dolores. Delectus nostrum nihil et ad enim.</textarea>
+            <div class="hint">Suggested around 150 characters.</div>
+          </div>
+
+          <div class="field">
+            <div class="link-item__header">
+              <label class="legend">CTA Links</label>
+              <button type="button" id="add-link" class="button-primary">Add Link</button>
+            </div>
+            <div class="hint">
+              If only one link exists, the anchor gets <code>expanded-click-area</code>.
+            </div>
+            <div id="links-list" class="links-list"></div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="stack">
+      <div class="panel">
+        <div class="panel__header">Preview</div>
+        <div class="panel__body">
+          <div id="preview" class="preview-shell"></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel__header">Generated HTML</div>
+        <div class="panel__body">
+          <textarea id="output" class="output-box" readonly></textarea>
+          <div class="toolbar">
+            <button type="button" id="copy-html" class="button-primary">Copy HTML</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <template id="link-template">
+    <div class="link-item">
+      <div class="link-item__grid">
+        <div class="link-item__header">
+          <div class="link-item__title">CTA Link</div>
+          <button type="button" class="button-danger remove-link">Remove</button>
+        </div>
+
+        <div class="field">
+          <label>Link Text</label>
+          <input type="text" class="link-text" value="Learn More" maxlength="80" />
+        </div>
+
+        <div class="field">
+          <label>URL</label>
+          <input type="url" class="link-href" value="cta-href" />
+        </div>
+
+        <div class="field">
+          <label>Button Style Class</label>
+          <input type="text" class="link-style" value="btn-primary" />
+          <div class="hint">Example: <code>btn-primary</code>, <code>btn-secondary</code></div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+ <script>
+    (function () {
+      const form = document.getElementById("cta-builder");
+      const linksList = document.getElementById("links-list");
+      const addLinkButton = document.getElementById("add-link");
+      const preview = document.getElementById("preview");
+      const output = document.getElementById("output");
+      const copyButton = document.getElementById("copy-html");
+      const linkTemplate = document.getElementById("link-template");
+
+      function escapeHtml(value) {
+        return String(value)
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#39;");
+      }
+
+      function indent(text, spaces) {
+        const pad = " ".repeat(spaces);
+        return text
+          .split("\n")
+          .map(line => (line ? pad + line : line))
+          .join("\n");
+      }
+
+      function getPatternValue() {
+        const selected = form.querySelector('input[name="pattern"]:checked');
+        return selected ? selected.value : "basic";
+      }
+
+      function getLinksData() {
+        return Array.from(linksList.querySelectorAll(".link-item")).map(item => {
+          return {
+            text: item.querySelector(".link-text").value.trim() || "Learn More",
+            href: item.querySelector(".link-href").value.trim() || "#",
+            style: item.querySelector(".link-style").value.trim() || "btn-primary"
+          };
+        });
+      }
+
+      function buildLinksHtml(links) {
+        const singleLink = links.length === 1;
+
+        return links
+          .map(link => {
+            const classes = [
+              "btn",
+              "capitalize",
+              "wrap",
+              "wrap_balanced",
+              escapeHtml(link.style),
+              "btn-lg"
+            ];
+
+            if (singleLink) {
+              classes.push("expanded-click-area");
+            }
+
+            return `<a href="${escapeHtml(link.href)}" data-item="cta-button" class="${classes.join(" ")}">${escapeHtml(link.text)}</a>`;
+          })
+          .join("\n");
+      }
+
+      function buildBasicHtml(data) {
+        const linksHtml = indent(buildLinksHtml(data.links), 6);
+
+        return `<div label="CTA_follow_up_basic" class="reading-typography font-size_up p_4 p_5:md" style="--custom-font-size-up: 1;">
+  <div data-item="cta" class="font-size_up m-t_6:lg m-y_4 m-y_5:md m_auto max-w_60 relative text_center relative">
+    <h2 data-item="cta-title" class="m-b_3 lh_1 font_medium font_display">
+      <strong data-item="title" class="font-size_up m-b_2 block">${escapeHtml(data.title)}</strong>
+      <small data-item="subtitle" class="font-size_down block">${escapeHtml(data.subtitle)}</small>
+    </h2>
+    <div class="p-t_2 p-b_3" data-item="cta-description">
+      <p data-item="paragraph" class="font-size_up wrap_balance">${escapeHtml(data.description)}</p>
+    </div>
+    <div class="flex flex_row flex_wrap gap_4 gap_5:lg items_center justify_center" data-item="cta-buttons">
+${linksHtml}
+    </div>
+  </div>
+</div>`;
+      }
+
+      function buildCardHtml(data) {
+        const linksHtml = indent(buildLinksHtml(data.links), 6);
+
+        return `<div label="CTA_follow_up" class="reading-typography font-size_up p_4 p_5:md bg_black-2 p_4 p-y_5:md p-y_6:lg" style="--custom-font-size-up: 1;">
+  <div data-item="cta" class="shadow_bevel-light p_4 p_5:lg bg_white br_round font-size_up m-t_6:lg m-y_4 m-y_5:md m_auto max-w_60 relative text_center relative">
+    <h2 data-item="cta-title" class="m-b_3 lh_1 font_medium font_display">
+      <strong data-item="title" class="font-size_up m-b_2 block">${escapeHtml(data.title)}</strong>
+      <small data-item="subtitle" class="font-size_down block">${escapeHtml(data.subtitle)}</small>
+    </h2>
+    <div class="p-t_2 p-b_3" data-item="cta-description">
+      <p data-item="paragraph" class="font-size_up wrap_balance">${escapeHtml(data.description)}</p>
+    </div>
+    <div class="flex flex_row flex_wrap gap_4 gap_5:lg items_center justify_center" data-item="cta-buttons">
+${linksHtml}
+    </div>
+  </div>
+</div>`;
+      }
+
+      function buildRuleHtml(data) {
+        const linksHtml = indent(buildLinksHtml(data.links), 6);
+
+        return `<div label="CTA_follow_up" class="reading-typography font-size_up p_4 p_5:md p_4 p-y_5:md p-y_6:lg" style="--custom-font-size-up: 1;">
+  <div data-item="cta" class="p_4 p-t_6 p-x_5:lg bg_white br-t_1 br_solid br_primary-1 font-size_up m-t_6:lg m-y_4 m-y_5:md m_auto max-w_60 relative text_center relative">
+    <h2 data-item="cta-title" class="m-b_3 lh_1 font_medium font_display">
+      <strong data-item="title" class="font-size_up m-b_2 block">${escapeHtml(data.title)}</strong>
+      <small data-item="subtitle" class="font-size_down block">${escapeHtml(data.subtitle)}</small>
+    </h2>
+    <p data-item="paragraph" class="font-size_up wrap_balance">${escapeHtml(data.description)}</p>
+    <div class="flex flex_row flex_wrap gap_4 gap_5:lg items_center justify_center" data-item="cta-buttons">
+${linksHtml}
+    </div>
+  </div>
+</div>`;
+      }
+
+      function buildHtml(data) {
+        switch (data.pattern) {
+          case "card":
+            return buildCardHtml(data);
+          case "rule":
+            return buildRuleHtml(data);
+          case "basic":
+          default:
+            return buildBasicHtml(data);
+        }
+      }
+
+      function collectData() {
+        return {
+          pattern: getPatternValue(),
+          title: form.title.value.trim(),
+          subtitle: form.subtitle.value.trim(),
+          description: form.description.value.trim(),
+          links: getLinksData()
+        };
+      }
+
+      function render() {
+        const data = collectData();
+        const html = buildHtml(data);
+
+        preview.innerHTML = html;
+        output.value = html;
+      }
+
+      function addLink(values) {
+        const fragment = linkTemplate.content.cloneNode(true);
+        const item = fragment.querySelector(".link-item");
+
+        if (values) {
+          item.querySelector(".link-text").value = values.text || "";
+          item.querySelector(".link-href").value = values.href || "";
+          item.querySelector(".link-style").value = values.style || "btn-primary";
+        }
+
+        linksList.appendChild(fragment);
+        render();
+      }
+
+      addLinkButton.addEventListener("click", function () {
+        addLink({
+          text: "Learn More",
+          href: "cta-href",
+          style: "btn-primary"
+        });
+      });
+
+      linksList.addEventListener("click", function (event) {
+        if (event.target.classList.contains("remove-link")) {
+          const allItems = linksList.querySelectorAll(".link-item");
+          if (allItems.length > 1) {
+            event.target.closest(".link-item").remove();
+            render();
+          } else {
+            alert("At least one CTA link is required.");
+          }
+        }
+      });
+
+      form.addEventListener("input", render);
+      form.addEventListener("change", render);
+      linksList.addEventListener("input", render);
+      linksList.addEventListener("change", render);
+
+      copyButton.addEventListener("click", async function () {
+        try {
+          await navigator.clipboard.writeText(output.value);
+          copyButton.textContent = "Copied";
+          setTimeout(() => {
+            copyButton.textContent = "Copy HTML";
+          }, 1200);
+        } catch (error) {
+          output.focus();
+          output.select();
+        }
+      });
+
+      addLink({
+        text: "Learn More",
+        href: "cta-href",
+        style: "btn-primary"
+      });
+
+      render();
+    })();
+  </script>
+
+
+  <style>
+    :root {
+      --border: #d0d7de;
+      --bg-soft: #f6f8fa;
+      --text: #1f2328;
+      --muted: #59636e;
+      --accent: #0b57d0;
+      --danger: #b42318;
+      --radius: 10px;
+      --space: 16px;
+      --space-sm: 10px;
+      --space-lg: 24px;
+      --font: Arial, Helvetica, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px;
+      font-family: var(--font);
+      color: var(--text);
+      background: #fff;
+      line-height: 1.4;
+    }
+
+    .app {
+      display: grid;
+      grid-template-columns: minmax(320px, 440px) 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .panel {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .panel__header {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-soft);
+      font-weight: 700;
+    }
+
+    .panel__body {
+      padding: 16px;
+    }
+
+    .stack > * + * {
+      margin-top: 16px;
+    }
+
+    .field {
+      display: grid;
+      gap: 6px;
+    }
+
+    .field label,
+    .legend {
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .hint {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    input[type="text"],
+    input[type="url"],
+    textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font: inherit;
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .radio-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .radio-option {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: #fff;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .links-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .link-item {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px;
+      background: #fcfcfd;
+    }
+
+    .link-item__grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    .link-item__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .link-item__title {
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    button {
+      appearance: none;
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--text);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    button:hover {
+      border-color: #b8c0c8;
+    }
+
+    .button-primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .button-danger {
+      color: var(--danger);
+      border-color: #f1b5b0;
+      background: #fff7f6;
+    }
+
+    .preview-shell {
+      border: 1px dashed var(--border);
+      border-radius: 10px;
+      padding: 18px;
+      background: #fafbfc;
+      min-height: 220px;
+    }
+
+    .output-box {
+      min-height: 280px;
+      font-family: Consolas, Monaco, monospace;
+      font-size: 13px;
+      white-space: pre;
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    @media (max-width: 960px) {
+      .app {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
