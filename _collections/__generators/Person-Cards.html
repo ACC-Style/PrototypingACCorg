@@ -6,10 +6,10 @@ csv_file: "none"
 ---
 <div class="app">
     <section class="panel bg_black-1 p_4 br_round reading-typography" aria-label="Builder controls">
-      <h1 class="panel__title">Person Card Builder</h1>
+      <h1 class="panel__header">Person Card Builder</h1>
       <div class="panel__body stack">
         <p class="helper">Use the form to build one or more person cards. The preview updates live, and the CMS-ready HTML is generated below.</p>
-<seciton class="flex flex_row gap_4">
+<seciton class="flex flex_column gap_4">
   
           <label>
             Name
@@ -47,14 +47,14 @@ csv_file: "none"
 
     <section class="workspace">
       <section class="panel">
-        <h2 class="panel__title">Live Preview</h2>
+        <h2 class="panel__header">Live Preview</h2>
         <div class="panel__body preview-shell">
           <div id="preview"></div>
         </div>
       </section>
 
       <section class="panel">
-        <h2 class="panel__title">Generated HTML</h2>
+        <h2 class="panel__header">Generated HTML</h2>
         <div class="panel__body output-wrap ">
           <div class="output-block display_none">
             <h3>Single Card</h3>
@@ -192,8 +192,8 @@ csv_file: "none"
             <span>${escapeHtml(card.title)}</span>
           </div>
           <div class="inline-actions m-l_auto flex flex_row gap_2">
-            <button type="button" data-action="edit" data-index="${index}">Edit</button>
-            <button type="button" data-action="delete" data-index="${index}">Delete</button>
+            <button type="button" data-action="edit" class="btn btn-primary" data-index="${index}"><i class="fa-solid fa-pencil icon-edit"></i></button>
+            <button type="button" data-action="delete" class="btn btn-alert" data-index="${index}"><i class="fa-solid fa-trash icon-delete"></i></button>
           </div>
         `;
 
@@ -306,3 +306,199 @@ csv_file: "none"
     selectedIndex = 0;
     renderPreview();
   </script>
+    <style>
+    :root {
+      --border: #d0d7de;
+      --bg-soft: #f6f8fa;
+      --text: #1f2328;
+      --muted: #59636e;
+      --accent: #0b57d0;
+      --danger: #b42318;
+      --radius: 10px;
+      --space: 16px;
+      --space-sm: 10px;
+      --space-lg: 24px;
+      --font: Arial, Helvetica, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px;
+      font-family: var(--font);
+      color: var(--text);
+      background: #fff;
+      line-height: 1.4;
+    }
+
+    .app {
+      display: grid;
+      grid-template-columns: minmax(320px, 440px) 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .panel {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .panel__header {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-soft);
+      font-weight: 700;
+    }
+
+    .panel__body {
+      padding: 16px;
+    }
+
+    .stack > * + * {
+      margin-top: 16px;
+    }
+
+    .field {
+      display: grid;
+      gap: 6px;
+    }
+
+    .field label,
+    .legend {
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .hint {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    input[type="text"],
+    input[type="url"],
+    textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font: inherit;
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .radio-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .radio-option {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: #fff;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .links-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .link-item {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px;
+      background: #fcfcfd;
+    }
+
+    .link-item__grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    .link-item__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .link-item__title {
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    button {
+      appearance: none;
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--text);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    button:hover {
+      border-color: #b8c0c8;
+    }
+
+    .button-primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .button-danger {
+      color: var(--danger);
+      border-color: #f1b5b0;
+      background: #fff7f6;
+    }
+
+    .preview-shell {
+      border: 1px dashed var(--border);
+      border-radius: 10px;
+      padding: 18px;
+      background: #fafbfc;
+      min-height: 220px;
+    }
+
+    .output-box {
+      min-height: 280px;
+      font-family: Consolas, Monaco, monospace;
+      font-size: 13px;
+      white-space: pre;
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    @media (max-width: 960px) {
+      .app {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
