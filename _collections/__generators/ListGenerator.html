@@ -1,0 +1,664 @@
+---
+layout: playground
+name: "Descriptive List Generator"
+position: "Generator"
+csv_file: "none"
+---
+<div class="app grid columns_2 gap_5 relative">
+  <aside class="panel reading-typography">
+    <div class="panel__header">Icon Decorated List Items Builder</div>
+    <div class="panel__body stack">
+      <p class="hint">Create CMS-ready HTML for Basic, Linked, and Grouped List
+        patterns with repeatable items and live preview.</p>
+
+      <form id="builderForm" class="stack">
+        <div class="legend">Pattern Type</div>
+        <div class="flex flex_column gap_3" role="radiogroup" aria-label="Pattern type">
+          <label class="br_1 br_black-3 radio br_solid br_rounder p_4 radio-option">
+            <input type="radio" name="patternType" value="basic" checked>
+            <span>
+              <strong>Basic</strong><br>
+              <span class="hint">Icon, label, description. Optionally add a
+                final “Read More” item.</span>
+            </span>
+          </label>
+          <label class="br_1 br_black-3 radio br_solid br_rounder p_4 radio-option">
+            <input type="radio" name="patternType" value="linked">
+            <span>
+              <strong>Linked</strong><br>
+              <span class="hint">Entire item is clickable. Description HTML
+                allowed, but avoid nested links.</span>
+            </span>
+          </label>
+          <label class="br_1 br_black-3 radio br_solid br_rounder p_4 radio-option">
+            <input type="radio" name="patternType" value="grouped">
+            <span>
+              <strong>Grouped List</strong><br>
+              <span class="hint">Item contains a nested bullet list. Each nested
+                bullet supports HTML.</span>
+            </span>
+          </label>
+        </div>
+<div
+          class="checkbox-row conditional bg_primary-5 br_solid br_1 br_black-3 p_4 br_round"
+          data-show-for="basic">
+          <label>
+            <input type="checkbox" id="includeReadMore" name="includeReadMore">
+            <span>
+              <strong>Include optional Read More item</strong><br>
+              <span class="hint">Adds the special ending card after the regular
+                basic items.</span>
+            </span>
+          </label>
+          <section id="readMoreFields"
+            class="conditional br_radius bg_black-1 p_4 m-t_4 br_solid br_1 br_black-3 shadow_emboss-light flex flex_column gap__3"
+            hidden data-show-for="basic">
+            <div class="legend">Read More Item</div>
+            <div class="field">
+              <label for="readMoreTitle">Read More title</label>
+              <input id="readMoreTitle" name="readMoreTitle" type="text"
+                value="Read More">
+            </div>
+            <div class="field">
+              <label for="readMoreHref">Read More link URL</label>
+              <input id="readMoreHref" name="readMoreHref" type="url" value="#">
+            </div>
+            <div class="field">
+              <label for="readMoreDescription">Description HTML</label>
+              <textarea id="readMoreDescription"
+                name="readMoreDescription">about our <em>Member Benefits</em>.</textarea>
+              <p class="hint">Description accepts HTML, but avoid link tags here
+                because the Read More title already contains the link.</p>
+            </div>
+          </section>
+        </div>
+        <div class="legend">Items</div>
+        <p class="hint">For Basic and Grouped List, description content can
+          include HTML like &lt;strong&gt;, &lt;em&gt;, and links. For Linked,
+          keep description HTML free of links because the whole item is
+          clickable.</p>
+        <div id="itemsContainer" class="links-list grid columns_2 gap_4"></div>
+        <div class="actions">
+          <button type="button" class="btn btn-success" id="addItemBtn"><i
+              class="fa-solid fa-plus"></i> Add item</button>
+          <button type="button" id="loadExampleBtn" class="btn btn-link">Load
+            example data</button>
+        </div>
+        
+
+      </form>
+    </div>
+  </aside>
+
+  <main class="stack relative">
+     <div class=""> 
+      <section class="panel ">
+        <div class="panel__header">Generated HTML</div>
+        <div class="panel__body">
+          <textarea id="outputHtml" class="output-box"
+            spellcheck="false"></textarea>
+        </div>
+      </section>
+      <section>
+        <div class="toolbar">
+          <button type="button" class="btn btn-primary" id="copyHtmlBtn">Copy
+            HTML</button>
+          <button type="button" id="formatHtmlBtn" class="btn btn-link">Refresh
+            output <i class="fa-solid fa-refresh"></i></button>
+        </div>
+        <p class="status" id="statusText" aria-live="polite"></p>
+      </section>
+    </div>
+    <section class="panel sticky t_3">
+      <div class="panel__header">Preview</div>
+      <div class="panel__body stack">
+        <p class="hint">Preview renders directly on the page and will inherit
+          any site styles already loaded.</p>
+        <div class="preview-shell" id="previewArea"></div>
+      </div>
+    </section>
+
+   
+
+  </main>
+</div>
+
+<template id="itemTemplate">
+  <article class="link-item" data-item-card>
+    <header class="link-item__header">
+      <strong class="link-item__title">Item <span
+          data-item-number></span></strong>
+      <button type="button" class="btn btn-alert" data-remove-item><span
+          class="display_none">Remove</span> <i
+          class="fa-solid fa-trash"></i></button>
+    </header>
+
+    <div class="link-item__grid">
+      <div class="field">
+        <label>Icon classes</label>
+        <input type="text" data-field="icon" placeholder="fa-duotone fa-gears">
+      </div>
+
+      <div class="field">
+        <label>Label text</label>
+        <input type="text" data-field="label"
+          placeholder="Pass Your Boards with Confidence">
+      </div>
+
+      <div class="field conditional" data-linked-only hidden>
+        <label>Link URL</label>
+        <input type="url" data-field="href" placeholder="#">
+      </div>
+
+      <div class="field conditional" data-basic-or-linked hidden>
+        <label>Description HTML</label>
+        <textarea data-field="description"
+          placeholder="<strong>Nostrum et eveniet</strong> perspiciatis..."></textarea>
+      </div>
+
+    </div>
+
+    <div class="conditional" data-grouped-only hidden>
+      <div class="field">
+        <label>UL TAG list items</label>
+        <div data-sub-items-container></div>
+        <div class="actions">
+          <button type="button" data-add-sub-item
+            class="btn btn-outline-success"><i class="fa-solid fa-plus"></i> Add
+            New</button>
+        </div>
+      </div>
+    </div>
+  </article>
+</template>
+
+<template id="subItemTemplate">
+  <section class="link-item" data-sub-item-card>
+    <header class="link-item__header">
+      <strong class="link-item__title">List item</strong>
+      <button type="button" class="btn btn-alert" data-remove-sub-item><span
+          class="display_none">Remove</span> <i class="fa-solid fa-times"
+          aria-hidden="true"></i></button>
+    </header>
+    <div class="field">
+      <label>LI Content</label>
+      <textarea data-field="subItemHtml"
+        placeholder="Non sed quaerat <a class=&quot;link&quot; href=&quot;#&quot;>non repudiandae ipsa.</a>"></textarea>
+    </div>
+  </section>
+</template>
+
+<script>
+    (function () {
+      const form = document.getElementById('builderForm');
+      const itemsContainer = document.getElementById('itemsContainer');
+      const outputHtml = document.getElementById('outputHtml');
+      const previewArea = document.getElementById('previewArea');
+      const statusText = document.getElementById('statusText');
+      const addItemBtn = document.getElementById('addItemBtn');
+      const loadExampleBtn = document.getElementById('loadExampleBtn');
+      const copyHtmlBtn = document.getElementById('copyHtmlBtn');
+      const formatHtmlBtn = document.getElementById('formatHtmlBtn');
+      const includeReadMore = document.getElementById('includeReadMore');
+      const readMoreFields = document.getElementById('readMoreFields');
+      const itemTemplate = document.getElementById('itemTemplate');
+      const subItemTemplate = document.getElementById('subItemTemplate');
+
+      function escapeAttribute(value) {
+        return String(value ?? '')
+          .replace(/&/g, '&amp;')
+          .replace(/"/g, '&quot;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;');
+      }
+
+      function getPatternType() {
+        return form.querySelector('input[name="patternType"]:checked').value;
+      }
+
+      function setStatus(message) {
+        statusText.textContent = message;
+      }
+
+      function renumberItems() {
+        [...itemsContainer.querySelectorAll('[data-item-card]')].forEach((card, index) => {
+          const numberNode = card.querySelector('[data-item-number]');
+          if (numberNode) numberNode.textContent = index + 1;
+        });
+      }
+
+      function applyConditionalUI() {
+        const pattern = getPatternType();
+
+        document.querySelectorAll('[data-show-for]').forEach((node) => {
+          node.hidden = node.getAttribute('data-show-for') !== pattern;
+        });
+
+        readMoreFields.hidden = !(pattern === 'basic' && includeReadMore.checked);
+
+        [...itemsContainer.querySelectorAll('[data-item-card]')].forEach((card) => {
+          card.querySelectorAll('[data-linked-only]').forEach((el) => {
+            el.hidden = pattern !== 'linked';
+          });
+          card.querySelectorAll('[data-basic-or-linked]').forEach((el) => {
+            el.hidden = !(pattern === 'basic' || pattern === 'linked');
+          });
+          card.querySelectorAll('[data-grouped-only]').forEach((el) => {
+            el.hidden = pattern !== 'grouped';
+          });
+        });
+      }
+
+      function createSubItem(initialValue = '') {
+        const fragment = subItemTemplate.content.cloneNode(true);
+        const card = fragment.querySelector('[data-sub-item-card]');
+        const textarea = card.querySelector('[data-field="subItemHtml"]');
+        textarea.value = initialValue;
+        card.querySelector('[data-remove-sub-item]').addEventListener('click', () => {
+          card.remove();
+          refresh();
+        });
+        textarea.addEventListener('input', refresh);
+        return card;
+      }
+
+      function createItem(initialData = {}) {
+        const fragment = itemTemplate.content.cloneNode(true);
+        const card = fragment.querySelector('[data-item-card]');
+        const fields = {
+          icon: card.querySelector('[data-field="icon"]'),
+          label: card.querySelector('[data-field="label"]'),
+          href: card.querySelector('[data-field="href"]'),
+          description: card.querySelector('[data-field="description"]')
+        };
+
+        fields.icon.value = initialData.icon || 'fa-duotone fa-gears';
+        fields.label.value = initialData.label || 'Pass Your Boards with Confidence';
+        if (fields.href) fields.href.value = initialData.href || '#';
+        if (fields.description) {
+          fields.description.value = initialData.description || '<strong>Nostrum et eveniet</strong> perspiciatis in mollitia et enim consequatur dolorem deserunt.';
+        }
+
+        Object.values(fields).forEach((field) => {
+          if (field) field.addEventListener('input', refresh);
+        });
+
+        const subItemsContainer = card.querySelector('[data-sub-items-container]');
+        const addSubItemBtn = card.querySelector('[data-add-sub-item]');
+        addSubItemBtn.addEventListener('click', () => {
+          subItemsContainer.appendChild(createSubItem());
+          refresh();
+        });
+
+        const subItems = Array.isArray(initialData.subItems) && initialData.subItems.length
+          ? initialData.subItems
+          : [
+              'Non sed quaerat <a class="link" href="#">non repudiandae ipsa.</a>',
+              'Aut consequatur inventore ipsum <a class="link" href="#">numquam tempore saepe.</a>'
+            ];
+
+        subItems.forEach((subItem) => {
+          subItemsContainer.appendChild(createSubItem(subItem));
+        });
+
+        card.querySelector('[data-remove-item]').addEventListener('click', () => {
+          card.remove();
+          renumberItems();
+          refresh();
+        });
+
+        itemsContainer.appendChild(card);
+        renumberItems();
+        applyConditionalUI();
+      }
+
+      function collectItems() {
+        return [...itemsContainer.querySelectorAll('[data-item-card]')].map((card) => {
+          const item = {
+            icon: card.querySelector('[data-field="icon"]').value.trim(),
+            label: card.querySelector('[data-field="label"]').value.trim(),
+            href: card.querySelector('[data-field="href"]')?.value.trim() || '#',
+            description: card.querySelector('[data-field="description"]')?.value || '',
+            subItems: [...card.querySelectorAll('[data-field="subItemHtml"]')].map((node) => node.value)
+          };
+          return item;
+        });
+      }
+
+      function renderBasicItem(item) {
+        return `    <li data-item="list-item" class="flex flex_row:md flex_column items_start:md items_center justify_start isolate relative c_accent-n1 p_3 p_4:md br_radius">\n      <i data-item="item-icon" class="c_inherit-all font_7 self_center self_start:md p_4 p_0:md m-t_4 m-t_3:md p-r_4:md ${escapeAttribute(item.icon)}" aria-hidden="true"></i>\n      <div class="font-size_up text_center text_left:md">\n        <strong data-item="item-label" class="c_inherit-all font_bold lh_2 m-b_0:md m-b_3 not-link text_center text_left:md wrap_balance">${item.label}</strong>\n        <span data-item="item-description" class="block font-size_down opacity_8 c_black">${item.description}</span>\n      </div>\n    </li>`;
+      }
+
+      function renderLinkedItem(item) {
+        return `    <li data-item="list-item" class="br_radius c_accent-n1 flex flex_column flex_row:md h:bg_primary-4 h:c_accent-n3 isolate items_center items_start:md justify_start p_3 p_4:md relative">\n      <i data-item="item-icon" class="c_inherit-all ${escapeAttribute(item.icon)} font_7 m-t_3:md m-t_4 p-r_4:md p_0:md p_4 self_center self_start:md" aria-hidden="true"></i>\n      <a data-item="item-link" class="block c_accent-n1 expanded-click-area font-size_up h:c_accent-n4 h:undecorated not-link" href="${escapeAttribute(item.href)}">\n        <strong data-item="item-label" class="c_inherit-all font_bold lh_2 m-b_0:md m-b_3 not-link text_center text_left:md wrap_balance">${item.label}</strong>\n        <span data-item="item-description" class="block font-size_down opacity_8 c_black">${item.description}</span>\n      </a>\n    </li>`;
+      }
+
+      function renderGroupedItem(item) {
+        const subItems = item.subItems
+          .filter(Boolean)
+          .map((subItem) => `          <li data-item="item-list-item">${subItem}</li>`)
+          .join('\n');
+
+        return `    <li data-item="list-item" class="flex flex_row:md flex_column items_start:md items_center justify_start isolate relative c_accent-n1 p_3 p_4:md br_radius">\n      <i data-item="item-icon" class="c_inherit-all font_7 self_center self_start:md p_4 p_0:md m-t_4 m-t_3:md p-r_4:md ${escapeAttribute(item.icon)}" aria-hidden="true"></i>\n      <div class="font-size_up">\n        <strong data-item="item-label" class="c_inherit-all font_bold lh_2 m-b_0:md m-b_3 not-link text_center text_left:md wrap_balance">${item.label}</strong>\n        <ul data-item="item-list" class="ul_square marker_accent font-size_down opacity_8 c_black">\n${subItems}\n        </ul>\n      </div>\n    </li>`;
+      }
+
+      function renderReadMoreItem() {
+        const title = document.getElementById('readMoreTitle').value.trim() || 'Read More';
+        const href = document.getElementById('readMoreHref').value.trim() || '#';
+        const description = document.getElementById('readMoreDescription').value || 'about our <em>Member Benefits</em>.';
+
+        return `    <li class="br_radius c_accent-n1 flex flex_column flex_row:md h:bg_primary-4 h:c_accent-n3 isolate items_center items_start:md justify_start p_3 p_4:md relative">
+      <span class="fa-stack font_6 order_2">
+        <i class="fa-ellipsis fas fa-stack-1x" aria-hidden="true"></i>
+        <i class="fa-chevron-right fa-solid fa-stack-1x" aria-hidden="true" style=" left: 20%; font-size: 115%; "></i>
+      </span>
+      <div class="font-size_up text_center text_left:md order_1">
+        <strong data-time="item-title" class="block font_bold font_display not-link c_inherit-all lh_2 m-b_3 m-b_0:md wrap_balance">
+          <a data-item="item-link" class="c_inherit-all expanded-click-area font_bold inherit_all not-link" href="${escapeAttribute(href)}">${title}</a>
+        </strong>
+        <span data-item="item-description" class="block opacity_8 font-size_down c_black">${description}</span>
+      </div>
+    </li>`;
+      }
+
+      function buildHtml() {
+        const pattern = getPatternType();
+        const wrapperClass = 'wrapper-class';
+        const listClass = 'columns_2:lg columns_3:xl columns_1 gap-x_5:xl gap-x_4:lg gap-x_3 gap-y_4 grid p-x_4:xl p-x_3:lg p-x_0 ul_none';
+        const items = collectItems();
+
+        const itemMarkup = items.map((item) => {
+          if (pattern === 'linked') return renderLinkedItem(item);
+          if (pattern === 'grouped') return renderGroupedItem(item);
+          return renderBasicItem(item);
+        });
+
+        if (pattern === 'basic' && includeReadMore.checked) {
+          itemMarkup.push(renderReadMoreItem());
+        }
+
+        return `<div class="${escapeAttribute(wrapperClass)}">\n  <ul class="${escapeAttribute(listClass)}">\n${itemMarkup.join('\n')}\n  </ul>\n</div>`;
+      }
+
+      function renderPreview(html) {
+        previewArea.innerHTML = html;
+      }
+
+      function refresh() {
+        applyConditionalUI();
+        const html = buildHtml();
+        outputHtml.value = html;
+        renderPreview(html);
+      }
+
+      function loadExampleData() {
+        itemsContainer.innerHTML = '';
+        const pattern = getPatternType();
+
+        if (pattern === 'linked') {
+          createItem({
+            icon: 'fa-duotone fa-graduation-cap',
+            label: 'Pass Your Boards with Confidence',
+            href: '#',
+            description: '<strong>Nostrum et eveniet</strong> perspiciatis in mollitia et enim consequatur dolorem deserunt.'
+          });
+          createItem({
+            icon: 'fa-duotone fa-books-medical',
+            label: 'Study Smarter with Guided Content',
+            href: '#',
+            description: 'Explore curated learning resources designed to strengthen retention.'
+          });
+        } else if (pattern === 'grouped') {
+          createItem({
+            icon: 'far fa-regular fa-cup-straw',
+            label: 'Pass Your Boards with Confidence',
+            subItems: [
+              'Non sed quaerat <a class="link" href="#">non repudiandae ipsa.</a>',
+              'Aut consequatur inventore ipsum <strong>numquam tempore saepe.</strong>'
+            ]
+          });
+          createItem({
+            icon: 'fa-duotone fa-stethoscope',
+            label: 'Get Practical Tools',
+            subItems: [
+              'Reference guides with <em>key takeaways</em>.',
+              'Checklists and <a class="link" href="#">downloadable aids</a>.'
+            ]
+          });
+        } else {
+          createItem({
+            icon: 'fa-duotone fa-gears',
+            label: 'Pass Your Boards with Confidence',
+            description: '<strong>Nostrum et eveniet</strong> perspiciatis in mollitia et enim consequatur dolorem deserunt.'
+          });
+          createItem({
+            icon: 'fa-duotone fa-heart-pulse',
+            label: 'Strengthen Clinical Decision-Making',
+            description: 'Review high-yield learning content and real-world examples.'
+          });
+        }
+
+        refresh();
+        setStatus('Example content loaded.');
+      }
+
+      addItemBtn.addEventListener('click', () => {
+        createItem();
+        refresh();
+      });
+
+      loadExampleBtn.addEventListener('click', loadExampleData);
+      formatHtmlBtn.addEventListener('click', refresh);
+      includeReadMore.addEventListener('change', refresh);
+      form.addEventListener('input', refresh);
+      form.addEventListener('change', refresh);
+
+      copyHtmlBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(outputHtml.value);
+          setStatus('HTML copied to clipboard.');
+        } catch (error) {
+          outputHtml.focus();
+          outputHtml.select();
+          setStatus('Clipboard access failed. Select and copy the HTML manually.');
+        }
+      });
+
+      createItem();
+      createItem();
+      refresh();
+      setStatus('Builder ready.');
+    })();
+  </script>
+
+<style>
+    :root {
+      --border: #d0d7de;
+      --bg-soft: #f6f8fa;
+      --text: #1f2328;
+      --muted: #59636e;
+      --accent: #0b57d0;
+      --danger: #b42318;
+      --radius: 10px;
+      --space: 16px;
+      --space-sm: 10px;
+      --space-lg: 24px;
+      --font: Arial, Helvetica, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px;
+      font-family: var(--font);
+      color: var(--text);
+      background: #fff;
+      line-height: 1.4;
+    }
+
+
+
+    .panel {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .panel__header {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-soft);
+      font-weight: 700;
+    }
+
+    .panel__body {
+      padding: 16px;
+    }
+
+    .stack > * + * {
+      margin-top: 16px;
+    }
+
+    .field {
+      display: grid;
+      gap: 6px;
+    }
+
+    .field label,
+    .legend {
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .hint {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    input[type="text"],
+    input[type="url"],
+    textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font: inherit;
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .radio-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .radio-option {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: #fff;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .links-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .link-item {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px;
+      background: #fcfcfd;
+    }
+
+    .link-item__grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    .link-item__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .link-item__title {
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+
+    
+
+    .preview-shell {
+      border: 1px dashed var(--border);
+      border-radius: 10px;
+      padding: 18px;
+      background: #fafbfc;
+      min-height: 220px;
+    }
+
+    .output-box {
+      min-height: 280px;
+      font-family: Consolas, Monaco, monospace;
+      font-size: 13px;
+      white-space: pre;
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .checkbox-option,
+    .muted-box {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px;
+      background: #fcfcfd;
+    }
+
+    .checkbox-option {
+      display: flex;
+      gap: 10px;
+      align-items: start;
+    }
+
+    .conditional[hidden] {
+      display: none !important;
+    }
+
+    .status {
+      color: var(--muted);
+      font-size: 12px;
+      min-height: 1.2em;
+    }
+
+    @media (max-width: 960px) {
+      .app {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
