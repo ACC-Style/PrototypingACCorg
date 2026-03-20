@@ -118,16 +118,7 @@ csv_file: "none"
       gap: 10px;
     }
 
-    button {
-      appearance: none;
-      border: 1px solid var(--border);
-      background: #fff;
-      color: var(--text);
-      border-radius: 8px;
-      padding: 10px 14px;
-      font: inherit;
-      cursor: pointer;
-    }
+
 
     button:hover {
       border-color: #b8c0c8;
@@ -462,7 +453,7 @@ csv_file: "none"
   ];
 
   if (shouldApplyBaseRadius(weight, finish)) {
-    classes.push("br_radius");
+    classes.push("");
   }
 
   if (custom) {
