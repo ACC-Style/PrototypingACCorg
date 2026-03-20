@@ -332,15 +332,28 @@ csv_file: "none"
     </section>
 
     <div class="stack">
-      <section class="panel">
-        <div class="panel__header">Preview</div>
-        <div class="panel__body">
-          <div class="preview-shell bg_accent-5 br_dashed br_accent-2 br_1 p_4:md">
-            <div id="previewArea" class="bg_highlight-5 m-y_n4:md p-t_4:md p-b_4:md reading-typography"></div>
-          </div>
-          <cite class="m-x_3"><strong>Preview Colors: </strong><i class="fa-solid fa-square c_accent-5"></i> Intrensic Padding from Template <i class="fa-solid fa-square c_highlight-5"></i> Page Area</cite>
-        </div>
-      </section>
+<section class="panel">
+  <div class="panel__header">Preview</div>
+  <div class="panel__body">
+    <div class="field">
+      <label class="radio-option">
+        <input type="checkbox" id="togglePreviewColors" checked>
+        <span>Show preview colors</span>
+      </label>
+      <div class="hint">Toggles preview-only background helpers so reclaim behavior is easier to see.</div>
+    </div>
+
+    <div id="previewShell" class="preview-shell bg_accent-5 br_dashed br_accent-2 br_1 p_4:md">
+      <div id="previewArea" class="bg_highlight-5 m-y_n4:md p-t_4:md p-b_4:md reading-typography"></div>
+    </div>
+
+    <cite class="m-x_3">
+      <strong>Preview Colors: </strong>
+      <i class="fa-solid fa-square c_accent-5"></i> Intrensic Padding from Template
+      <i class="fa-solid fa-square c_highlight-5"></i> Page Area
+    </cite>
+  </div>
+</section>
 
       <section class="panel">
         <div class="panel__header">Generated HTML</div>
@@ -369,7 +382,8 @@ csv_file: "none"
     const previewArea = document.getElementById("previewArea");
     const outputHtml = document.getElementById("outputHtml");
     const statusMessage = document.getElementById("statusMessage");
-
+    const togglePreviewColors = document.getElementById("togglePreviewColors");
+    const previewShell = document.getElementById("previewShell");
     const updateButton = document.getElementById("updateButton");
     const copyButton = document.getElementById("copyButton");
     const copyOutputButton = document.getElementById("copyOutputButton");
@@ -534,14 +548,26 @@ ${contentMarkup}
       const subdivision = getCheckedValue("subdivision");
       introOptions.classList.toggle("is-hidden", subdivision !== "introduction");
     }
+function updatePreviewColors() {
+  const showColors = togglePreviewColors.checked;
 
-    function updateBuilder() {
-      updateSubdivisionUI();
-      const markup = buildMarkup();
-      previewArea.innerHTML = markup;
-      outputHtml.value = markup;
-      statusMessage.textContent = "";
-    }
+  previewShell.classList.toggle("bg_accent-5", showColors);
+  previewArea.classList.toggle("bg_highlight-5", showColors);
+
+  const legend = previewShell.nextElementSibling;
+  if (legend) {
+    legend.style.display = showColors ? "" : "none";
+  }
+}
+
+function updateBuilder() {
+  updateSubdivisionUI();
+  const markup = buildMarkup();
+  previewArea.innerHTML = markup;
+  outputHtml.value = markup;
+  updatePreviewColors();
+  statusMessage.textContent = "";
+}
 
     function copyText(text) {
       if (navigator.clipboard && window.isSecureContext) {
@@ -592,6 +618,7 @@ ${contentMarkup}
     copyButton.addEventListener("click", handleCopy);
     copyOutputButton.addEventListener("click", handleCopy);
     resetButton.addEventListener("click", handleReset);
+    togglePreviewColors.addEventListener("change", updatePreviewColors);
 
     [
       zoneTag,
