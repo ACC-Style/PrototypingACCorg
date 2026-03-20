@@ -1,0 +1,611 @@
+---
+layout: playground
+name: "Content Zone Builder"
+position: "Builder"
+csv_file: "none"
+---
+
+  <style>
+    :root {
+      --border: #d0d7de;
+      --bg-soft: #f6f8fa;
+      --text: #1f2328;
+      --muted: #59636e;
+      --accent: #0b57d0;
+      --danger: #b42318;
+      --radius: 10px;
+      --space: 16px;
+      --space-sm: 10px;
+      --space-lg: 24px;
+      --font: Arial, Helvetica, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px;
+      font-family: var(--font);
+      color: var(--text);
+      background: #fff;
+      line-height: 1.4;
+    }
+
+    .app {
+      display: grid;
+      grid-template-columns: minmax(320px, 440px) 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .panel {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .panel__header {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-soft);
+      font-weight: 700;
+    }
+
+    .panel__body {
+      padding: 16px;
+    }
+
+    .stack > * + * {
+      margin-top: 16px;
+    }
+
+    .field {
+      display: grid;
+      gap: 6px;
+    }
+
+    .field label,
+    .legend {
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .hint {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    input[type="text"],
+    input[type="url"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font: inherit;
+    }
+
+    textarea {
+      min-height: 180px;
+      resize: vertical;
+    }
+
+    .radio-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .radio-option {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: #fff;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    button {
+      appearance: none;
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--text);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    button:hover {
+      border-color: #b8c0c8;
+    }
+
+    .button-primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .button-danger {
+      color: var(--danger);
+      border-color: #f1b5b0;
+      background: #fff7f6;
+    }
+
+    .preview-shell {
+
+    }
+
+    .output-box {
+      min-height: 320px;
+      font-family: Consolas, Monaco, monospace;
+      font-size: 13px;
+      white-space: pre;
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .status {
+      color: var(--muted);
+      font-size: 12px;
+      min-height: 18px;
+    }
+
+    .is-hidden {
+      display: none;
+    }
+
+    @media (max-width: 960px) {
+      .app {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <div class="app">
+    <section class="panel">
+      <div class="panel__header">Zone Pattern Builder</div>
+      <div class="panel__body">
+        <div class="stack">
+          <div class="field">
+            <label for="zoneTag">Wrapper Element</label>
+            <select id="zoneTag">
+              <option value="section" selected>section</option>
+              <option value="div">div</option>
+            </select>
+            <div class="hint">Choose the outer DOM element.</div>
+          </div>
+
+          <fieldset class="field">
+            <legend class="legend">1. Zone spacing role</legend>
+            <div class="radio-group">
+              <label class="radio-option">
+                <input type="radio" name="zoneRole" value="default" checked>
+                <span>Default</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="zoneRole" value="contained">
+                <span>Contained</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="zoneRole" value="reclaimed">
+                <span>Reclaimed</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="zoneRole" value="end">
+                <span>End</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="zoneRole" value="end-reclaimed">
+                <span>End Reclaimed</span>
+              </label>
+            </div>
+            <div class="hint">Defines how the section behaves in page flow.</div>
+          </fieldset>
+
+          <fieldset class="field">
+            <legend class="legend">2. Visual weight</legend>
+            <div class="radio-group">
+              <label class="radio-option">
+                <input type="radio" name="zoneWeight" value="" checked>
+                <span>None</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="zoneWeight" value="whisper">
+                <span>Whisper</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="zoneWeight" value="subtle">
+                <span>Subtle</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="zoneWeight" value="bold">
+                <span>Bold</span>
+              </label>
+            </div>
+            <div class="hint">Defines the strength of the surface treatment.</div>
+          </fieldset>
+
+          <fieldset class="field">
+            <legend class="legend">3. Optional finish</legend>
+            <div class="radio-group">
+              <label class="radio-option">
+                <input type="radio" name="zoneFinish" value="none" checked>
+                <span>None (Square Edge)</span>
+              </label>
+                            <label class="radio-option">
+                <input type="radio" name="zoneFinish" value="radius">
+                <span>Radius Corner</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="zoneFinish" value="embossed">
+                <span>Embossed</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="zoneFinish" value="beveled">
+                <span>Beveled</span>
+              </label>
+            </div>
+            <div class="hint">Defines the edge character of the surface.</div>
+          </fieldset>
+
+          <fieldset class="field">
+            <legend class="legend">4. Optional subdivision</legend>
+            <div class="radio-group">
+              <label class="radio-option">
+                <input type="radio" name="subdivision" value="none" checked>
+                <span>None</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="subdivision" value="fifty-fifty">
+                <span>50/50</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="subdivision" value="introduction">
+                <span>Introduction</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="subdivision" value="three-up">
+                <span>Three Up</span>
+              </label>
+            </div>
+            <div class="hint">Adds a layout wrapper inside the zone. Introduction is the only option that alters inner cell classes.</div>
+          </fieldset>
+
+          <div class="field">
+            <label for="zoneId">Optional ID</label>
+            <input id="zoneId" type="text" placeholder="example-zone">
+          </div>
+
+          <div class="field">
+            <label for="customClasses">Optional Custom Classes</label>
+            <input id="customClasses" type="text" placeholder="reading-typography wrapper-container">
+            <div class="hint">Any extra utility classes appended to the outer wrapper.</div>
+          </div>
+
+          <div class="field">
+            <label for="innerHtml">Inner HTML</label>
+            <textarea id="innerHtml"><h3>Commodi dolores (30&nbsp;Characters)
+    <small class="block font-size_down-2 font_medium m-t_3"> Rerum libg dero pariatur (40&nbsp;Characters)</small>
+</h3>
+<p>Dignissimos sed deserunt est non. Aliquam nam aut quam. Voluptas ut vel voluptates aliquam mollitia enim consequatur. Quas quisquam natus dolor eos consequatur culpa. Fuga manam ten. (200&nbsp;Characters)</p></textarea>
+            <div class="hint">This content is placed inside the zone or the generated subdivision wrapper. For subdivided layouts, update inner cells later in a code editor if needed.</div>
+          </div>
+
+          <div id="introOptions" class="field is-hidden">
+            <label for="introModifier">Introduction content modifier</label>
+            <select id="introModifier">
+              <option value="1" selected>1</option>
+              <option value="1.125">1.125</option>
+              <option value="1.25">1.25</option>
+            </select>
+            <div class="hint">Only used by the Introduction subdivision. Controls <code>--custom-font-size-modifier</code> on the content cell.</div>
+          </div>
+
+          <div class="actions">
+            <button type="button" class="button-primary" id="updateButton">Update Preview</button>
+            <button type="button" id="copyButton">Copy HTML</button>
+            <button type="button" class="button-danger" id="resetButton">Reset</button>
+          </div>
+
+          <div class="status" id="statusMessage" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="stack">
+      <section class="panel">
+        <div class="panel__header">Preview</div>
+        <div class="panel__body">
+          <div class="preview-shell bg_accent-5 br_dashed br_accent-2 br_1 p_4:md">
+            <div id="previewArea" class="bg_highlight-5 m-y_n4:md p-t_4:md p-b_4:md"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel__header">Generated HTML</div>
+        <div class="panel__body">
+          <textarea id="outputHtml" class="output-box" readonly></textarea>
+          <div class="toolbar">
+            <button type="button" id="copyOutputButton">Copy Output</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    const defaultInnerHtml = `<h3>Commodi dolores (30&nbsp;Characters)
+    <small class="block font-size_down-2 font_medium m-t_3"> Rerum libg dero pariatur (40&nbsp;Characters)</small>
+</h3>
+<p>Dignissimos sed deserunt est non. Aliquam nam aut quam. Voluptas ut vel voluptates aliquam mollitia enim consequatur. Quas quisquam natus dolor eos consequatur culpa. Fuga manam ten. (200&nbsp;Characters)</p>`;
+
+    const zoneTag = document.getElementById("zoneTag");
+    const zoneId = document.getElementById("zoneId");
+    const customClasses = document.getElementById("customClasses");
+    const innerHtml = document.getElementById("innerHtml");
+    const introModifier = document.getElementById("introModifier");
+    const introOptions = document.getElementById("introOptions");
+    const previewArea = document.getElementById("previewArea");
+    const outputHtml = document.getElementById("outputHtml");
+    const statusMessage = document.getElementById("statusMessage");
+
+    const updateButton = document.getElementById("updateButton");
+    const copyButton = document.getElementById("copyButton");
+    const copyOutputButton = document.getElementById("copyOutputButton");
+    const resetButton = document.getElementById("resetButton");
+
+    function getCheckedValue(name) {
+      const checked = document.querySelector(`input[name="${name}"]:checked`);
+      return checked ? checked.value : "";
+    }
+
+    function getRoleClasses(role) {
+      switch (role) {
+        case "default":
+          return ["m-b_4", "m-b_5:lg"];
+        case "contained":
+          return ["p_4", "p_5:lg"];
+        case "reclaimed":
+          return ["m-x_n3", "m-x_n4:md", "p_3", "p_4:md", "p_5:lg",];
+        case "end":
+          return ["p_4", "p_5:lg", "m-b_0" , "m-b_n4:md"];
+        case "end-reclaimed":
+          return ["m-x_n3", "m-x_n4:md", "m-b_n4:md", "p_3", "p_4:md", "p_5:lg", "m-b_0"];
+        default:
+          return [];
+      }
+    }
+
+    function getWeightClasses(weight) {
+      switch (weight) {
+        case "whisper":
+          return ["bg_black-_05", "br_black-1"];
+        case "subtle":
+          return ["bg_black-1", "br_black-2",];
+        case "bold":
+          return ["bg_black-2", "br_black-3"];
+        default:
+          return ["bg_white"];
+      }
+    }
+
+    function getFinishClasses(finish) {
+      switch (finish) {
+        case "none":
+          return ["br_none"];
+        case "radius":
+          return ["br_radius"]
+        case "embossed":
+          return ["shadow_emboss-light", "br_round"];
+        case "beveled":
+          return ["br_1", "br_solid", "shadow_bevel-light", "br_rounder"];
+        default:
+          return [];
+      }
+    }
+
+    function shouldApplyBaseRadius(weight, finish) {
+      return weight && finish === "none";
+    }
+
+    function escapeAttribute(value) {
+      return value.replace(/"/g, "&quot;");
+    }
+
+   function buildClassList() {
+  const role = getCheckedValue("zoneRole");
+  const weight = getCheckedValue("zoneWeight");
+  const finish = getCheckedValue("zoneFinish");
+  const subdivision = getCheckedValue("subdivision");
+  const custom = customClasses.value.trim();
+
+  const classes = [
+    ...getRoleClasses(role),
+    ...getWeightClasses(weight),
+    ...getFinishClasses(finish),
+    ...getSubdivisionClasses(subdivision)
+  ];
+
+  if (shouldApplyBaseRadius(weight, finish)) {
+    classes.push("br_radius");
+  }
+
+  if (custom) {
+    classes.push(...custom.split(/\s+/));
+  }
+
+  return [...new Set(classes)];
+}
+function getSubdivisionClasses(type) {
+  switch (type) {
+    case "none":
+      return [];
+    case "fifty-fifty":
+      return ["columns_2:md", "columns_1", "gap_5:lg", "gap_6:xl", "gap_4", "grid"];
+    case "introduction":
+      return ["grid", "columns_1", "columns_4:md", "columns_5:lg", "gap_5:lg", "gap_4"];
+    case "three-up":
+      return ["columns_3:lg", "columns_2:md", "columns_1", "gap-x_4:lg", "gap-x_3:md", "gap_4", "grid", "ul_none"];
+    default:
+      return [];
+  }
+}
+   function buildSubdivisionMarkup(type, content) {
+  const trimmedContent = content.trim();
+
+  switch (type) {
+    case "none":
+      return trimmedContent;
+
+    case "fifty-fifty":
+      return [
+        '<div item-label="column-primary">',
+        trimmedContent,
+        '</div>',
+        '<div item-label="column-secondary">column 2</div>'
+      ].join('\n');
+
+    case "introduction":
+      return [
+        `<div item-label="content" class="col-start_start col-end_n3:md col-end_end reading-typography font-size_up" style="--custom-font-size-modifier: ${introModifier.value};">`,
+        trimmedContent,
+        '</div>',
+        '<div item-label="sidebar-primary" class="col-start_start col-start_n3:md col-end_end wrapper-container">aside</div>'
+      ].join('\n');
+
+    case "three-up":
+      return [
+        '<div item-label="item-1">item 1</div>',
+        '<div item-label="item-2">item 2</div>',
+        '<div item-label="item-3">item 3</div>'
+      ].join('\n');
+
+    default:
+      return trimmedContent;
+  }
+}
+
+    function buildMarkup() {
+      const tag = zoneTag.value;
+      const idValue = zoneId.value.trim();
+      const classList = buildClassList();
+      const subdivision = getCheckedValue("subdivision");
+      const contentMarkup = buildSubdivisionMarkup(subdivision, innerHtml.value);
+
+      const attrs = [];
+
+      if (classList.length) {
+        attrs.push(`class="${escapeAttribute(classList.join(" "))}"`);
+      }
+
+      if (idValue) {
+        attrs.push(`id="${escapeAttribute(idValue)}"`);
+      }
+
+      const attrString = attrs.length ? " " + attrs.join(" ") : "";
+
+      return `<${tag}${attrString}>
+${contentMarkup}
+</${tag}>`;
+    }
+
+    function updateSubdivisionUI() {
+      const subdivision = getCheckedValue("subdivision");
+      introOptions.classList.toggle("is-hidden", subdivision !== "introduction");
+    }
+
+    function updateBuilder() {
+      updateSubdivisionUI();
+      const markup = buildMarkup();
+      previewArea.innerHTML = markup;
+      outputHtml.value = markup;
+      statusMessage.textContent = "";
+    }
+
+    function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        return navigator.clipboard.writeText(text);
+      }
+
+      return new Promise((resolve, reject) => {
+        outputHtml.focus();
+        outputHtml.select();
+        outputHtml.setSelectionRange(0, outputHtml.value.length);
+
+        try {
+          const successful = document.execCommand("copy");
+          successful ? resolve() : reject(new Error("Copy failed"));
+        } catch (error) {
+          reject(error);
+        }
+      });
+    }
+
+    function handleCopy() {
+      copyText(outputHtml.value)
+        .then(() => {
+          statusMessage.textContent = "Generated HTML copied.";
+        })
+        .catch(() => {
+          statusMessage.textContent = "Unable to copy automatically. Please copy manually.";
+        });
+    }
+
+    function handleReset() {
+      zoneTag.value = "section";
+      zoneId.value = "";
+      customClasses.value = "";
+      innerHtml.value = defaultInnerHtml;
+      introModifier.value = "1";
+
+      document.querySelector('input[name="zoneRole"][value="default"]').checked = true;
+      document.querySelector('input[name="zoneWeight"][value=""]').checked = true;
+      document.querySelector('input[name="zoneFinish"][value="none"]').checked = true;
+      document.querySelector('input[name="subdivision"][value="none"]').checked = true;
+
+      updateBuilder();
+      statusMessage.textContent = "Builder reset to defaults.";
+    }
+
+    updateButton.addEventListener("click", updateBuilder);
+    copyButton.addEventListener("click", handleCopy);
+    copyOutputButton.addEventListener("click", handleCopy);
+    resetButton.addEventListener("click", handleReset);
+
+    [
+      zoneTag,
+      zoneId,
+      customClasses,
+      innerHtml,
+      introModifier,
+      ...document.querySelectorAll('input[name="zoneRole"]'),
+      ...document.querySelectorAll('input[name="zoneWeight"]'),
+      ...document.querySelectorAll('input[name="zoneFinish"]'),
+      ...document.querySelectorAll('input[name="subdivision"]')
+    ].forEach((element) => {
+      element.addEventListener("input", updateBuilder);
+      element.addEventListener("change", updateBuilder);
+    });
+
+    updateBuilder();
+  </script>
