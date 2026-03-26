@@ -1,0 +1,451 @@
+---
+layout: arches
+name: "taxonmy"
+position: "Experiment"
+---
+<div class="app grid columns_5:lg columns_4:md columns_1">
+  <aside class="sidebar bg_secondary-5 col-start_start col-end_2:md col-end_end p_4:lg ">
+    <div class="brand reading-typography">
+      <h3><div class="eyebrow c_accent-n3 font-size_down-2">Taxonomy Atlas</div>
+      Explore our system of terms like a map, not a spreadsheet.</h3>
+      <p>Search uses synonyms behind the scenes, while scope notes stay out of the client-facing experience.</p>
+    </div>
+
+    <div class="stats grid columns_2 gap_2">
+      <div class="stat bg_white p_3"><strong class="block c_primary font_4 font_xbold" id="statFacets"></strong><span class="muted lh_0 block opacity_5">facets</span></div>
+      <div class="stat bg_white p_3"><strong class="block c_primary font_4 font_xbold" id="statTerms"></strong><span class="muted lh_0 block opacity_5">terms</span></div>
+      <div class="stat bg_white p_3"><strong class="block c_primary font_4 font_xbold" id="statTop"></strong><span class="muted lh_0 block opacity_5">top-level terms</span></div>
+      <div class="stat bg_white p_3"><strong class="block c_primary font_4 font_xbold" id="statDepth"></strong><span class="muted lh_0 block opacity_5">levels deep</span></div>
+    </div>
+
+    <div>
+      <div class="eyebrow">Browse by facet</div>
+      <div class="facet-list flex flex_column gap_1" id="facetList"></div>
+    </div>
+  </aside>
+
+  <main class="main bg_secondary-4 col-start_2:md col-start_start col-end_end p_5:lg">
+    <section class="topbar">
+      <div class="search-wrap">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="7" stroke-width="2"></circle><path d="m20 20-3.5-3.5" stroke-width="2"></path></svg>
+        <input id="searchInput" type="search" placeholder="Search taxonomy terms or common-language synonyms…" autocomplete="off" />
+        <div class="search-results" id="searchResults"></div>
+      </div>
+      <div class="pill-row">
+        <button class="pill is-active" data-intent="all">All destinations</button>
+        <button class="pill" data-intent="products">Products</button>
+        <button class="pill" data-intent="news">News</button>
+        <button class="pill" data-intent="initiatives">Initiatives</button>
+        <button class="pill" data-intent="events">Events & Courses</button>
+      </div>
+    </section>
+
+    <section class="panel hero">
+      <div class="eyebrow">Selected path</div>
+      <h2 id="heroTitle">Choose a facet or search for a term.</h2>
+      <div class="breadcrumbs" id="breadcrumbs"></div>
+      <p class="muted" id="heroCopy">The center columns let people progressively narrow the information space. The right panel turns the selected term into next-step discovery for content, products, and initiatives.</p>
+    </section>
+
+    <section class="explorer">
+      <div class="panel columns-wrap">
+        <div class="columns" id="columns"></div>
+      </div>
+
+      <aside class="panel details">
+        <div>
+          <div class="eyebrow">Discovery panel</div>
+          <h3 id="detailTitle" style="margin:0 0 8px;">Nothing selected yet</h3>
+          <p class="muted" id="detailCopy">Pick a node to see how the taxonomy could hand off to downstream experiences.</p>
+        </div>
+
+        <div class="card-grid">
+          <div class="intent-grid" id="intentGrid"></div>
+        </div>
+
+        <div>
+          <div class="eyebrow">Related paths</div>
+          <div class="sibling-list" id="relatedList"></div>
+        </div>
+
+        <div>
+          <div class="eyebrow">Search helpers in play</div>
+          <div class="tag-row" id="synonymTags"></div>
+        </div>
+
+        <div class="footer-note">
+          Scope notes are preserved in the data model for governance and editorial use, but intentionally hidden from this interface.
+        </div>
+      </aside>
+    </section>
+  </main>
+</div>
+
+<script>
+const TAXONOMY_DATA = {"stats": {"facetCount": 5, "termCount": 272, "topLevelCount": 124, "deepest": 4}, "facets": [{"name": "Conditions", "facet": "Conditions", "depth": 0, "children": [{"name": "Cancer", "facet": "Conditions", "depth": 1, "children": [{"name": "Breast Cancer", "facet": "Conditions", "depth": 2, "children": [], "synonyms": ["Breast Neoplasms"], "scope": "Tumors or cancer of the human\u00a0BREAST."}, {"name": "Lung Cancer", "facet": "Conditions", "depth": 2, "children": [], "synonyms": ["Lung Neoplasms"], "scope": "Tumors or cancer of the\u00a0LUNG"}, {"name": "Prostate Cancer", "facet": "Conditions", "depth": 2, "children": [], "synonyms": ["Prostatic Neoplasms"], "scope": "Tumors or cancer of the PROSTATE."}], "synonyms": ["Neoplasms"], "scope": "New abnormal growth of tissue. Malignant neoplasms show a greater degree of anaplasia and have the properties of invasion and metastasis, compared to benign neoplasms."}, {"name": "Cardiovascular Kidney Metabolic Syndrome", "facet": "Conditions", "depth": 1, "children": [{"name": "Chronic Kidney Disease", "facet": "Conditions", "depth": 2, "children": [], "synonyms": ["CKD", "Renal Insufficiency", "Chronic"], "scope": "Conditions in which the KIDNEYS perform below the normal level for more than three months. Chronic kidney insufficiency is classified by five stages according to the decline in GLOMERULAR FILTRATION RATE and the degree of kidney damage (as measured by the level of PROTEINURIA). The most severe form is the end-stage renal disease (CHRONIC KIDNEY FAILURE). (Kidney Foundation: Kidney Disease Outcome Quality Initiative, 2002)"}, {"name": "Diabetes", "facet": "Conditions", "depth": 2, "children": [], "synonyms": ["Diabetes Mellitus"], "scope": "A heterogeneous group of disorders characterized by\u00a0HYPERGLYCEMIA\u00a0and\u00a0GLUCOSE INTOLERANCE."}, {"name": "Dyslipidemia", "facet": "Conditions", "depth": 2, "children": [{"name": "Hypercholesterolemia", "facet": "Conditions", "depth": 3, "children": [], "synonyms": ["Homozygous Familial Hypercholesterolemia"], "scope": "A rare inherited genetic disorder, one form of\u00a0HYPERLIPOPROTEINEMIA TYPE II, characterized by high level of\u00a0LOW-DENSITY LIPOPROTEIN\u00a0(LDL) which if not treated could elevate the chance of heart attack at an early age."}, {"name": "Hypertriglyceridemia", "facet": "Conditions", "depth": 3, "children": [], "synonyms": ["Hypertriglyceridemia"], "scope": "A condition of elevated levels of\u00a0TRIGLYCERIDES\u00a0in the blood."}, {"name": "Primary Hyperlipidemia", "facet": "Conditions", "depth": 3, "children": [], "synonyms": ["Hyperlipidemia"], "scope": "Conditions with excess\u00a0LIPIDS\u00a0in the blood."}], "synonyms": ["High Blood Cholesterol", "Dyslipidemias"], "scope": "Abnormalities in the serum levels of\u00a0LIPIDS, including overproduction or deficiency. Abnormal serum lipid profiles may include high total\u00a0CHOLESTEROL, high\u00a0TRIGLYCERIDES, low\u00a0HIGH DENSITY LIPOPROTEIN CHOLESTEROL, and elevated\u00a0LOW DENSITY LIPOPROTEIN CHOLESTEROL."}, {"name": "Liver Disease", "facet": "Conditions", "depth": 2, "children": [], "synonyms": ["NASH", "Fatty Liver Disease", "NAFL", "Non-alcoholic Steatohepatitis", "Liver Diseases"], "scope": "Pathological processes of the LIVER."}, {"name": "Obesity", "facet": "Conditions", "depth": 2, "children": [], "synonyms": ["Obesity"], "scope": "A status with BODY WEIGHT that is grossly above the recommended standards, usually due to accumulation of excess FATS in the body. The standards may vary with age, sex, genetic or cultural background. In the BODY MASS INDEX, a BMI greater than 30.0 kg/m2 is considered obese, and a BMI greater than 40.0 kg/m2 is considered morbidly obese (MORBID OBESITY)."}], "synonyms": ["Metabolic Diseases", "Cardiometabolic Diseases", "CKM Syndrome", "Cardiovascular-Kidney-Metabolic Syndrome", "Syndrome X", "CKM"], "scope": "a cluster of metabolic abnormalities that are risk factors for cardiovascular disease (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2859214/)"}, {"name": "Cardiovascular Disease", "facet": "Conditions", "depth": 1, "children": [{"name": "Heart Disease", "facet": "Conditions", "depth": 2, "children": [{"name": "Cardiac Arrhythmia", "facet": "Conditions", "depth": 3, "children": [{"name": "Atrial Arrhythmia", "facet": "Conditions", "depth": 4, "children": [], "synonyms": ["Supraventricular Arrhythmias", "Atrial Flutter"], "scope": "Rapid, irregular atrial contractions caused by a block of electrical impulse conduction in the right atrium and a reentrant wave front traveling up the inter-atrial septum and down the right atrial free wall or vice versa. Unlike ATRIAL FIBRILLATION which is caused by abnormal impulse generation, typical atrial flutter is caused by abnormal impulse conduction. As in atrial fibrillation, patients with atrial flutter cannot effectively pump blood into the lower chambers of the heart (HEART VENTRICLES)"}, {"name": "Atrial Fibrillation", "facet": "Conditions", "depth": 4, "children": [], "synonyms": ["Afib", "AF", "Atrial Fribrillation"], "scope": "Abnormal cardiac rhythm that is characterized by rapid, uncoordinated firing of electrical impulses in the upper chambers of the heart (HEART ATRIA). In such case, blood cannot be effectively pumped into the lower chambers of the heart (HEART VENTRICLES). It is caused by abnormal impulse generation."}, {"name": "Bradyarrhythmia", "facet": "Conditions", "depth": 4, "children": [], "synonyms": ["Bradycardia", "Atrio Ventricular Block"], "scope": "Cardiac arrhythmias that are characterized by excessively slow HEART RATE, usually below 50 beats per minute in human adults. They can be classified broadly into SINOATRIAL NODE dysfunction and ATRIOVENTRICULAR BLOCK."}, {"name": "Genetic Arrhythmic Conditions", "facet": "Conditions", "depth": 4, "children": [], "synonyms": [], "scope": null}, {"name": "Heart Conduction Disorders", "facet": "Conditions", "depth": 4, "children": [], "synonyms": [], "scope": null}, {"name": "Syncope", "facet": "Conditions", "depth": 4, "children": [], "synonyms": ["Cardiogenic Syncope", "Syncope", "Cardiogenic"], "scope": "A transient loss of consciousness and postural tone caused by diminished blood flow to the brain (i.e., BRAIN ISCHEMIA). Presyncope refers to the sensation of lightheadedness and loss of strength that precedes a syncopal event or accompanies an incomplete syncope. (From Adams et al., Principles of Neurology, 6th ed, pp367-9)"}, {"name": "Tachyarrhythmia", "facet": "Conditions", "depth": 4, "children": [], "synonyms": ["Supraventricular Tachycardia", "SVT", "Tachycardia", "Supraventricular"], "scope": "Abnormally rapid heartbeat, usually with a HEART RATE above 100 beats per minute for adults. Tachycardia accompanied by disturbance in the cardiac depolarization (cardiac arrhythmia) is called tachyarrhythmia."}, {"name": "Ventricular Arrhythmia", "facet": "Conditions", "depth": 4, "children": [], "synonyms": ["Ventricular Fibrillation"], "scope": "A potentially lethal cardiac arrhythmia that is characterized by uncoordinated extremely rapid firing of electrical impulses (400-600/min) in HEART VENTRICLES. Such asynchronous ventricular quivering or fibrillation prevents any effective cardiac output and results in unconsciousness (SYNCOPE). It is one of the major electrocardiographic patterns seen with CARDIAC ARREST."}], "synonyms": ["Arrhythmias", "Cardiac"], "scope": "Any disturbances of the normal rhythmic beating of the heart or MYOCARDIAL CONTRACTION. Cardiac arrhythmias can be classified by the abnormalities in HEART RATE, disorders of electrical impulse generation, or impulse conduction."}, {"name": "Cardiomyopathy", "facet": "Conditions", "depth": 3, "children": [{"name": "Cardiac Amyloidosis", "facet": "Conditions", "depth": 4, "children": [], "synonyms": ["Amyloidosis"], "scope": null}, {"name": "Hypertrophic Cardiomyopathy", "facet": "Conditions", "depth": 4, "children": [], "synonyms": ["Hypertrophy", "HCM", "Nonobstructive Cardiomyopathy", "Obstructive Cardiomyopathy", "Cardiomyopathy", "Hypertrophic"], "scope": "do not confuse with CARDIAC HYPERTROPHY see CARDIOMEGALY\nScope Note\nA form of CARDIAC MUSCLE disease, characterized by left and/or right ventricular hypertrophy (HYPERTROPHY, LEFT VENTRICULAR; HYPERTROPHY, RIGHT VENTRICULAR), frequent asymmetrical involvement of the HEART SEPTUM, and normal or reduced left ventricular volume. Risk factors include HYPERTENSION; AORTIC STENOSIS; and gene MUTATION; (FAMILIAL HYPERTROPHIC CARDIOMYOPATHY)"}, {"name": "Myocarditis", "facet": "Conditions", "depth": 4, "children": [], "synonyms": ["Myocarditis"], "scope": "Inflammatory processes of the muscular walls of the heart (MYOCARDIUM) which result in injury to the cardiac muscle cells (MYOCYTES, CARDIAC). Manifestations range from subclinical to sudden death (DEATH, SUDDEN). Myocarditis in association with cardiac dysfunction is classified as inflammatory CARDIOMYOPATHY usually caused by INFECTION, autoimmune diseases, or responses to toxic substances. Myocarditis is also a common cause of DILATED CARDIOMYOPATHY and other cardiomyopathies."}], "synonyms": ["Cardiomyopathies"], "scope": "A group of diseases in which the dominant feature is the involvement of the CARDIAC MUSCLE itself. Cardiomyopathies are classified according to their predominant pathophysiological features (DILATED CARDIOMYOPATHY; HYPERTROPHIC CARDIOMYOPATHY; RESTRICTIVE CARDIOMYOPATHY) or their etiological/pathological factors (CARDIOMYOPATHY, ALCOHOLIC; ENDOCARDIAL FIBROELASTOSIS)."}, {"name": "Cardiotoxicity", "facet": "Conditions", "depth": 3, "children": [], "synonyms": ["Cardiotoxicity"], "scope": "Damage to the HEART or its function secondary to exposure to toxic substances such as drugs used in CHEMOTHERAPY; IMMUNOTHERAPY; or RADIATION."}, {"name": "Congenital Heart Disease", "facet": "Conditions", "depth": 3, "children": [{"name": "Patent Foramen Ovale", "facet": "Conditions", "depth": 4, "children": [], "synonyms": ["Ovale", "Patent Foramen"], "scope": "A condition in which the FORAMEN OVALE in the ATRIAL SEPTUM fails to close shortly after birth. This results in abnormal communications between the two upper chambers of the heart. An isolated patent ovale foramen without other structural heart defects is usually of no hemodynamic significance."}], "synonyms": ["Congenital Heart Defects"], "scope": "Developmental abnormalities involving structures of the heart. These defects are present at birth but may be discovered later in life."}, {"name": "Endocarditis", "facet": "Conditions", "depth": 3, "children": [], "synonyms": ["Infective Endocarditis", "Rheumatic Heart Disease", "Endocarditis"], "scope": "Inflammation of the inner lining of the heart (ENDOCARDIUM), the continuous membrane lining the four chambers and HEART VALVES. It is often caused by microorganisms including bacteria, viruses, fungi, and rickettsiae. Left untreated, endocarditis can damage heart valves and become life-threatening."}, {"name": "Heart Failure", "facet": "Conditions", "depth": 3, "children": [{"name": "Acute Heart Failure", "facet": "Conditions", "depth": 4, "children": [], "synonyms": ["Heart Failure"], "scope": null}, {"name": "Chronic Heart Failure", "facet": "Conditions", "depth": 4, "children": [], "synonyms": ["Heart Failure"], "scope": null}, {"name": "HFpEF", "facet": "Conditions", "depth": 4, "children": [], "synonyms": ["Heart Failure with Preserved Ejection Fraction", "Diastolic Heart Failure", "Heart Failure", "Diastolic"], "scope": "Heart failure caused by abnormal myocardial relaxation during\u00a0DIASTOLE\u00a0leading to defective cardiac filling. (used the mesh scope notes for heart failure, diastolic"}, {"name": "HFrEF", "facet": "Conditions", "depth": 4, "children": [], "synonyms": ["Heart Failure with Reduced Ejection Fraction", "Systolic Heart Failure", "Heart Failure", "Systolic"], "scope": "Heart failure caused by abnormal myocardial contraction during SYSTOLE leading to defective cardiac emptying."}, {"name": "HFmrEF", "facet": "Conditions", "depth": 4, "children": [], "synonyms": ["Heart Failure"], "scope": "HF with mildly reduced EF"}, {"name": "HFimpEF", "facet": "Conditions", "depth": 4, "children": [], "synonyms": ["Heart Failure"], "scope": "HF with improved EF"}], "synonyms": ["Heart Failure"], "scope": "Acute Heart Failure"}, {"name": "Ischemic Heart Disease", "facet": "Conditions", "depth": 3, "children": [{"name": "Acute Coronary Syndrome", "facet": "Conditions", "depth": 4, "children": [], "synonyms": ["Acute Coronary Syndrome"], "scope": "Angina Pectoris"}, {"name": "Angina", "facet": "Conditions", "depth": 4, "children": [], "synonyms": ["Chest Pain", "Stable Angina", "Unstable Angina", "Angina Pectoris"], "scope": "The symptom of paroxysmal pain consequent to MYOCARDIAL ISCHEMIA usually of distinctive character, location and radiation. It is thought to be provoked by a transient stressful situation during which the oxygen requirements of the MYOCARDIUM exceed that supplied by the CORONARY CIRCULATION."}, {"name": "Cardiogenic Shock", "facet": "Conditions", "depth": 4, "children": [], "synonyms": ["Shock", "Cardiogenic"], "scope": "Shock resulting from diminution of cardiac output in heart disease."}, {"name": "Coronary Artery Disease", "facet": "Conditions", "depth": 4, "children": [], "synonyms": ["Chronic Coronary Artery Disease", "Stable Ischemic Heart Disease", "SIHD", "CAD", "Coronary Artery Disease"], "scope": "Pathological processes of CORONARY ARTERIES that may derive from a congenital abnormality, atherosclerotic, or non-atherosclerotic cause."}, {"name": "Myocardial Infarction", "facet": "Conditions", "depth": 4, "children": [], "synonyms": ["Heart Attack", "Myocardial Infarction"], "scope": "NECROSIS\u00a0of the\u00a0MYOCARDIUM\u00a0caused by an obstruction of the blood supply to the heart (CORONARY CIRCULATION)."}, {"name": "NSTEMI", "facet": "Conditions", "depth": 4, "children": [], "synonyms": ["Non-ST-segment Elevation Myocardial Infarction", "Non-ST Elevated Myocardial Infarction"], "scope": "A myocardial infarction that does not produce elevations in the ST segments of the ELECTROCARDIOGRAM. ST segment elevation of the ECG is often used in determining the treatment protocol (see also ST Elevation Myocardial Infarction)."}, {"name": "STEMI", "facet": "Conditions", "depth": 4, "children": [], "synonyms": ["ST-segment Elevation Myocardial Infarction", "ST Elevation Myocardial Infarction"], "scope": "A clinical syndrome defined by MYOCARDIAL ISCHEMIA symptoms; persistent elevation in the ST segments of the ELECTROCARDIOGRAM; and release of BIOMARKERS of myocardial NECROSIS (e.g., elevated TROPONIN levels). ST segment elevation in the ECG is often used in determining the treatment protocol (see also NON-ST ELEVATION MYOCARDIAL INFARCTION)."}], "synonyms": ["Myocardial Ischemia", "Chronic Coronary Artery Disease", "Stable Ischemic Heart Disease", "SIHD", "CAD", "ASCVD"], "scope": "A disorder of cardiac function caused by insufficient blood flow to the muscle tissue of the heart. The decreased blood flow may be due to narrowing of the coronary arteries (CORONARY ARTERY DISEASE), to obstruction by a thrombus (CORONARY THROMBOSIS), or less commonly, to diffuse narrowing of arterioles and other small vessels within the heart. Severe interruption of the blood supply to the myocardial tissue may result in necrosis of cardiac muscle (MYOCARDIAL INFARCTION). Used the scope note for myocardial ischemia)"}, {"name": "Pericardial Disease", "facet": "Conditions", "depth": 3, "children": [{"name": "Constrictive Pericarditis", "facet": "Conditions", "depth": 4, "children": [], "synonyms": ["Pericarditis", "Constrictive"], "scope": "Inflammation of the PERICARDIUM that is characterized by the fibrous scarring and adhesion of both serous layers, the VISCERAL PERICARDIUM and the PARIETAL PERICARDIUM leading to the loss of pericardial cavity. The thickened pericardium severely restricts cardiac filling. Clinical signs include FATIGUE, muscle wasting, and WEIGHT LOSS."}, {"name": "Pericardial Effusion", "facet": "Conditions", "depth": 4, "children": [], "synonyms": ["Pericardial Effusion"], "scope": "Fluid accumulation within the PERICARDIUM. Serous effusions are associated with pericardial diseases. Hemopericardium is associated with trauma. Lipid-containing effusion (chylopericardium) results from leakage of THORACIC DUCT. Severe cases can lead to CARDIAC TAMPONADE."}, {"name": "Pericarditis", "facet": "Conditions", "depth": 4, "children": [], "synonyms": ["Myopericarditis", "Pericarditis"], "scope": "Inflammation of the PERICARDIUM from various origins, such as infection, neoplasm, autoimmune process, injuries, or drug-induced. Pericarditis usually leads to PERICARDIAL EFFUSION, or CONSTRICTIVE PERICARDITIS.,"}], "synonyms": ["Myopericardial Disease"], "scope": null}, {"name": "Sudden Cardiac Death", "facet": "Conditions", "depth": 3, "children": [], "synonyms": ["SCD", "Ventricular Fibrillation", "V-Fib", "Death", "Sudden", "Cardiac"], "scope": "Unexpected rapid natural death due to cardiovascular collapse within one hour of initial symptoms. It is usually caused by the worsening of existing heart diseases. The sudden onset of symptoms, such as CHEST PAIN and CARDIAC ARRHYTHMIAS, particularly VENTRICULAR TACHYCARDIA, can lead to the loss of consciousness and cardiac arrest followed by biological death. (from Braunwald's Heart Disease: A Textbook of Cardiovascular Medicine, 7th ed., 2005)"}, {"name": "Valvular Disease", "facet": "Conditions", "depth": 3, "children": [{"name": "Stenosis", "facet": "Conditions", "depth": 4, "children": [], "synonyms": ["Aortic Valve Stenosis", "Constriction", "Pathologic"], "scope": "The condition of an anatomical structure's being constricted beyond normal dimensions."}, {"name": "Regurgitation", "facet": "Conditions", "depth": 4, "children": [], "synonyms": ["Mitral Regurgitation", "Mitral Valve Insufficiency"], "scope": "Backflow of blood from the LEFT VENTRICLE into the LEFT ATRIUM due to imperfect closure of the MITRAL VALVE. This can lead to mitral valve regurgitation."}], "synonyms": ["Heart Valve Diseases"], "scope": "Pathological conditions involving any of the various HEART VALVES and the associated structures (PAPILLARY MUSCLES and CHORDAE TENDINEAE)."}], "synonyms": ["Heart Diseases"], "scope": "Pathological conditions involving the HEART including its structural and functional abnormalities."}, {"name": "MACE", "facet": "Conditions", "depth": 2, "children": [], "synonyms": ["Major Adverse Cardiovascular Events"], "scope": null}, {"name": "Vascular Disease", "facet": "Conditions", "depth": 2, "children": [{"name": "Atherosclerosis", "facet": "Conditions", "depth": 3, "children": [], "synonyms": ["Atheroslerosis"], "scope": "A thickening and loss of elasticity of the walls of ARTERIES that occurs with formation of ATHEROSCLEROTIC PLAQUES within the ARTERIAL INTIMA."}, {"name": "Congenital Cardiovascular Disease", "facet": "Conditions", "depth": 3, "children": [], "synonyms": [], "scope": null}, {"name": "Cerebrovascular Disease", "facet": "Conditions", "depth": 3, "children": [{"name": "Chronic cerebrovascular disease", "facet": "Conditions", "depth": 4, "children": [], "synonyms": [], "scope": null}, {"name": "Transient Ischemic Attack", "facet": "Conditions", "depth": 4, "children": [], "synonyms": ["TIA", "Ischemic Attack", "Transient"], "scope": "Brief reversible episodes of focal, nonconvulsive ischemic dysfunction of the brain having a duration of less than 24 hours, and usually less than one hour, caused by transient thrombotic or embolic blood vessel occlusion or stenosis. Events may be classified by arterial distribution, temporal pattern, or etiology (e.g., embolic vs. thrombotic). (From Adams et al., Principles of Neurology, 6th ed, pp814-6)"}, {"name": "Stroke", "facet": "Conditions", "depth": 4, "children": [], "synonyms": ["Stroke"], "scope": "A group of pathological conditions characterized by sudden, non-convulsive loss of neurological function due to BRAIN ISCHEMIA or INTRACRANIAL HEMORRHAGES. Stroke is classified by the type of tissue NECROSIS, such as the anatomic location, vasculature involved, etiology, age of the affected individual, and hemorrhagic vs. non-hemorrhagic nature. (From Adams et al., Principles of Neurology, 6th ed, pp777-810)"}], "synonyms": ["Cerebrovascular Disorders"], "scope": "A spectrum of pathological conditions of impaired blood flow in the brain. They can involve vessels (ARTERIES or VEINS) in the CEREBRUM, the CEREBELLUM, and the BRAIN STEM. Major categories include INTRACRANIAL ARTERIOVENOUS MALFORMATIONS; BRAIN ISCHEMIA; CEREBRAL HEMORRHAGE; and others."}, {"name": "Aortic Disease", "facet": "Conditions", "depth": 3, "children": [{"name": "Acute Aortic Syndromes", "facet": "Conditions", "depth": 4, "children": [], "synonyms": [], "scope": null}, {"name": "Thoracic Aortic Aneurysm", "facet": "Conditions", "depth": 4, "children": [], "synonyms": [], "scope": null}, {"name": "Abdominal Aortic Aneurysm", "facet": "Conditions", "depth": 4, "children": [], "synonyms": [], "scope": null}], "synonyms": ["Aortic Dissection", "Aortic Diseases"], "scope": "Pathological processes involving any part of the\u00a0AORTA."}, {"name": "Non-Coronary Arterial Disease", "facet": "Conditions", "depth": 3, "children": [{"name": "Peripheral Artery Disease", "facet": "Conditions", "depth": 4, "children": [], "synonyms": ["PAD", "Peripheral Arterial Disease"], "scope": "Lack of perfusion in the EXTREMITIES resulting from atherosclerosis. It is characterized by INTERMITTENT CLAUDICATION, and an ANKLE BRACHIAL INDEX of 0.9 or less."}, {"name": "Lower Extremity Peripheral Artery Disease", "facet": "Conditions", "depth": 4, "children": [], "synonyms": [], "scope": "there is a term \"carotid artery disease\""}, {"name": "Upper Extremity Peripheral Artery Disease", "facet": "Conditions", "depth": 4, "children": [], "synonyms": [], "scope": null}, {"name": "Mesenteric Artery Disease", "facet": "Conditions", "depth": 4, "children": [], "synonyms": [], "scope": null}, {"name": "Renal Artery Disease", "facet": "Conditions", "depth": 4, "children": [], "synonyms": [], "scope": null}], "synonyms": [], "scope": null}, {"name": "Venous Disease", "facet": "Conditions", "depth": 3, "children": [{"name": "Venous Thromboembolism", "facet": "Conditions", "depth": 4, "children": [], "synonyms": ["Venous Thromboembolism"], "scope": "Obstruction of a vein or VEINS (embolism) by a blood clot (THROMBUS) in the blood stream."}, {"name": "Pulmonary Embolism", "facet": "Conditions", "depth": 4, "children": [], "synonyms": ["Pulmonary Embolism"], "scope": "Blocking of the PULMONARY ARTERY or one of its branches by an EMBOLUS."}, {"name": "Chronic Venous Disease", "facet": "Conditions", "depth": 4, "children": [], "synonyms": [], "scope": null}], "synonyms": [], "scope": null}, {"name": "Pulmonary Hypertension", "facet": "Conditions", "depth": 3, "children": [], "synonyms": ["Hypertension", "Pulmonary"], "scope": "Increased VASCULAR RESISTANCE in the PULMONARY CIRCULATION, usually secondary to HEART DISEASES or LUNG DISEASES."}, {"name": "Lymphedema", "facet": "Conditions", "depth": 3, "children": [], "synonyms": [], "scope": null}, {"name": "Hypertension", "facet": "Conditions", "depth": 3, "children": [], "synonyms": ["High Blood Pressure", "Hypertension"], "scope": "Persistently high systemic arterial BLOOD PRESSURE. Based on multiple readings (BLOOD PRESSURE DETERMINATION), hypertension is currently defined as when SYSTOLIC PRESSURE is consistently greater than 140 mm Hg or when DIASTOLIC PRESSURE is consistently 90 mm Hg or more."}], "synonyms": ["Vascular Diseases"], "scope": "Pathological processes involving any of the\u00a0BLOOD VESSELS\u00a0in the cardiac or peripheral circulation. They include diseases of\u00a0ARTERIES;\u00a0VEINS; and rest of the vasculature system in the body"}], "synonyms": ["CVD", "Cardiovascular Diseases"], "scope": "Pathological conditions involving the\u00a0CARDIOVASCULAR SYSTEM\u00a0including the\u00a0HEART; the\u00a0BLOOD VESSELS; or the\u00a0PERICARDIUM."}, {"name": "Coagulopathy", "facet": "Conditions", "depth": 1, "children": [], "synonyms": ["Blood clotting disorder"], "scope": null}, {"name": "COVID 19", "facet": "Conditions", "depth": 1, "children": [], "synonyms": ["COVID-19"], "scope": "A viral disorder generally characterized by high FEVER; COUGH; DYSPNEA; CHILLS; PERSISTENT TREMOR; MUSCLE PAIN; HEADACHE; SORE THROAT; a new loss of taste and/or smell (see AGEUSIA and ANOSMIA) and other symptoms of a VIRAL PNEUMONIA. In severe cases, a myriad of coagulopathy associated symptoms often correlating with COVID-19 severity is seen (e.g., BLOOD COAGULATION; THROMBOSIS; ACUTE RESPIRATORY DISTRESS SYNDROME; SEIZURES; HEART ATTACK; STROKE; multiple CEREBRAL INFARCTIONS; KIDNEY FAILURE; catastrophic ANTIPHOSPHOLIPID ANTIBODY SYNDROME and/or DISSEMINATED INTRAVASCULAR COAGULATION). In younger patients, rare inflammatory syndromes are sometimes associated with COVID-19 (e.g., atypical KAWASAKI SYNDROME; TOXIC SHOCK SYNDROME; pediatric multisystem inflammatory disease; and CYTOKINE STORM SYNDROME). A coronavirus, SARS-CoV-2, in the genus BETACORONAVIRUS is the causative agent."}, {"name": "Pregnancy", "facet": "Conditions", "depth": 1, "children": [{"name": "Preeclampsia", "facet": "Conditions", "depth": 2, "children": [], "synonyms": ["Pre-eclampsia"], "scope": "A complication of PREGNANCY, characterized by a complex of symptoms including maternal HYPERTENSION and PROTEINURIA with or without pathological EDEMA. Symptoms may range between mild and severe. Pre-eclampsia usually occurs after the 20th week of gestation, but may develop before this time in the presence of trophoblastic disease."}], "synonyms": ["Pregnancy"], "scope": "The status during which female mammals carry their developing young (EMBRYOS or FETUSES) in utero before birth, beginning from FERTILIZATION to BIRTH."}, {"name": "Sleep Apnea", "facet": "Conditions", "depth": 1, "children": [], "synonyms": ["Obstructive Sleep Apnea", "OSA", "Sleep Apnea Syndromes"], "scope": "Disorders characterized by multiple cessations of respirations during sleep that induce partial arousals and interfere with the maintenance of sleep. Sleep apnea syndromes are divided into central (see SLEEP APNEA, CENTRAL), obstructive (see SLEEP APNEA, OBSTRUCTIVE), and mixed central-obstructive types."}]}, {"name": "Diagnosis & Testing", "facet": "Diagnosis & Testing", "depth": 0, "children": [{"name": "Advanced Lipid Testing", "facet": "Diagnosis & Testing", "depth": 1, "children": [{"name": "Apo(b) Screening", "facet": "Diagnosis & Testing", "depth": 2, "children": [], "synonyms": ["Apolipoprotein B", "Apolipoprotein B-100"], "scope": "A 513-kDa protein synthesized in the LIVER. It serves as the major structural protein of low-density lipoproteins (LIPOPROTEINS, LDL; LIPOPROTEINS, VLDL). It is the ligand for the LDL receptor (RECEPTORS, LDL) that promotes cellular binding and internalization of LDL particles."}, {"name": "LP(a) Screening", "facet": "Diagnosis & Testing", "depth": 2, "children": [], "synonyms": ["Lipoprotein(a)"], "scope": "A lipoprotein that resembles the LOW-DENSITY LIPOPROTEINS but with an extra protein moiety, APOPROTEIN (A) also known as APOLIPOPROTEIN (A), linked to APOLIPOPROTEIN B-100 on the LDL by one or two disulfide bonds. High plasma level of lipoprotein (a) is associated with increased risk of atherosclerotic cardiovascular disease."}], "synonyms": ["LDL-C Screening", "Lp(a) Screening", "Lipids"], "scope": null}, {"name": "Biomarkers", "facet": "Diagnosis & Testing", "depth": 1, "children": [], "synonyms": [], "scope": null}, {"name": "Blood Pressure", "facet": "Diagnosis & Testing", "depth": 1, "children": [], "synonyms": ["Blood Pressure"], "scope": "PRESSURE of the BLOOD on the ARTERIES and other BLOOD VESSELS."}, {"name": "Cholesterol", "facet": "Diagnosis & Testing", "depth": 1, "children": [], "synonyms": ["Cholesterol"], "scope": "The principal sterol of all higher animals, distributed in body tissues, especially the brain and spinal cord, and in animal fats and oils."}, {"name": "Heart Rate", "facet": "Diagnosis & Testing", "depth": 1, "children": [], "synonyms": ["Heart Rate"], "scope": "The number of times the HEART VENTRICLES contract per unit of time, usually per minute."}, {"name": "Hemodynamics", "facet": "Diagnosis & Testing", "depth": 1, "children": [], "synonyms": ["Hemodynamics"], "scope": "The movement and the forces involved in the movement of the blood through the CARDIOVASCULAR SYSTEM."}, {"name": "Imaging", "facet": "Diagnosis & Testing", "depth": 1, "children": [{"name": "Angiography", "facet": "Diagnosis & Testing", "depth": 2, "children": [], "synonyms": ["Angiography"], "scope": "Radiography of blood vessels after injection of a contrast medium."}, {"name": "Electrocardiogram", "facet": "Diagnosis & Testing", "depth": 2, "children": [], "synonyms": ["Electrocardiography"], "scope": "Recording of the moment-to-moment electromotive forces of the HEART as projected onto various sites on the body's surface, delineated as a scalar function of time. The recording is monitored by a tracing on slow moving chart paper or by observing it on a cardioscope, which is a CATHODE RAY TUBE DISPLAY."}, {"name": "Invasive Imaging", "facet": "Diagnosis & Testing", "depth": 2, "children": [], "synonyms": [], "scope": null}, {"name": "Multimodal Imaging", "facet": "Diagnosis & Testing", "depth": 2, "children": [], "synonyms": ["Multimodality Imaging", "Multimodal Imaging"], "scope": "The use of combination of imaging techniques or platforms (e.g., MRI SCAN and PET SCAN) encompassing aspects of anatomical, functional, or molecular imaging methods."}, {"name": "Noninvasive Imaging", "facet": "Diagnosis & Testing", "depth": 2, "children": [{"name": "Computed Tomography", "facet": "Diagnosis & Testing", "depth": 3, "children": [], "synonyms": ["CT", "Cardiac CT", "Tomography", "X-Ray Computed"], "scope": "there are many types of computed tomographies; how do we know this means \"x-ray\" computed"}, {"name": "Magnetic Resonance Imaging", "facet": "Diagnosis & Testing", "depth": 3, "children": [], "synonyms": ["Cardiac MR", "PET", "MRI", "Magnetic Resonance Imaging"], "scope": "Non-invasive method of demonstrating internal anatomy based on the principle that atomic nuclei in a strong magnetic field absorb pulses of radiofrequency energy and emit them as radiowaves which can be reconstructed into computerized images. The concept includes proton spin tomographic techniques."}, {"name": "Radionuclide Imaging", "facet": "Diagnosis & Testing", "depth": 3, "children": [], "synonyms": ["SPECT", "Nuclear Cardiology", "Radioisotopes"], "scope": "The production of an image obtained by cameras that detect the radioactive emissions of an injected radionuclide as it has distributed differentially throughout tissues in the body. The image obtained from a moving detector is called a scan, while the image obtained from a stationary camera device is called a scintiphotograph."}], "synonyms": [], "scope": null}, {"name": "Ultrasound", "facet": "Diagnosis & Testing", "depth": 2, "children": [{"name": "Echocardiography", "facet": "Diagnosis & Testing", "depth": 3, "children": [{"name": "Transesophageal Echocardiography", "facet": "Diagnosis & Testing", "depth": 4, "children": [], "synonyms": ["TEE", "Echocardiography"], "scope": "Ultrasonic recording of the size, motion, and composition of the heart and surrounding tissues using a transducer placed in the esophagus."}, {"name": "Transthorasic Echocardiogram", "facet": "Diagnosis & Testing", "depth": 4, "children": [], "synonyms": ["TTE", "Echocardiography", "Transesophageal"], "scope": "Ultrasonic recording of the size, motion, and composition of the heart and surrounding tissues using a transducer placed in the esophagus."}], "synonyms": ["Echocardiography"], "scope": "Ultrasonic recording of the size, motion, and composition of the heart and surrounding tissues. The standard approach is transthoracic."}, {"name": "Focused Cardiac Ultrasound", "facet": "Diagnosis & Testing", "depth": 3, "children": [], "synonyms": ["FOCUS"], "scope": null}, {"name": "Peripheral Ultrasound", "facet": "Diagnosis & Testing", "depth": 3, "children": [], "synonyms": [], "scope": null}, {"name": "Point of Care Ultrasound", "facet": "Diagnosis & Testing", "depth": 3, "children": [], "synonyms": ["POCUS"], "scope": null}], "synonyms": ["Ultrasonography"], "scope": "The visualization of deep structures of the body by recording the reflections or echoes of ultrasonic pulses directed into the tissues. Use of ultrasound for imaging or diagnostic purposes employs frequencies ranging from 1.6 to 10 megahertz."}], "synonyms": ["Diagnostic Imaging"], "scope": "Any visual display of structural or functional patterns of organs or tissues for diagnostic evaluation. It includes measuring physiologic and metabolic responses to physical and chemical stimuli, as well as ultramicroscopy."}, {"name": "Stress Testing", "facet": "Diagnosis & Testing", "depth": 1, "children": [], "synonyms": ["Exercise Test", "Stress Echo", "Stress Treadmill", "Exercise Testing"], "scope": "Controlled physical activity which is performed in order to allow assessment of physiological functions, particularly cardiovascular and pulmonary, but also aerobic capacity. Maximal (most intense) exercise is usually required but submaximal exercise is also used. (used the scope note for \"exercise testing."}, {"name": "Stroke Volume", "facet": "Diagnosis & Testing", "depth": 1, "children": [], "synonyms": ["Stroke Volume"], "scope": "The amount of BLOOD pumped out of the HEART per beat, not to be confused with cardiac output (volume/time). It is calculated as the difference between the end-diastolic volume and the end-systolic volume."}]}, {"name": "Treatments", "facet": "Treatments", "depth": 0, "children": [{"name": "ACE Inhibitors", "facet": "Treatments", "depth": 1, "children": [], "synonyms": ["Angiotensin-converting Enzyme Inhibitors"], "scope": "A class of drugs whose main indications are the treatment of hypertension and heart failure. They exert their hemodynamic effect mainly by inhibiting the renin-angiotensin system. They also modulate sympathetic nervous system activity and increase prostaglandin synthesis. They cause mainly vasodilation and mild natriuresis without affecting heart rate and contractility."}, {"name": "Anticoagulants", "facet": "Treatments", "depth": 1, "children": [], "synonyms": ["Anticoagulant Management", "DOAC", "Anticoagulants"], "scope": "Agents that prevent BLOOD CLOTTING."}, {"name": "Antithrombotic Therapy", "facet": "Treatments", "depth": 1, "children": [], "synonyms": ["Antithrombotic Agents"], "scope": null}, {"name": "ARBs", "facet": "Treatments", "depth": 1, "children": [], "synonyms": ["Angiotensin Receptor Blockers", "Angiotensin Receptor Antagonists"], "scope": null}, {"name": "ARNIs", "facet": "Treatments", "depth": 1, "children": [], "synonyms": ["Angiotensin Receptor-Neprilysin Inhibitors"], "scope": "Agents that antagonize ANGIOTENSIN RECEPTORS. Many drugs in this class specifically target the ANGIOTENSIN TYPE 1 RECEPTOR."}, {"name": "Beta Blockers", "facet": "Treatments", "depth": 1, "children": [], "synonyms": [], "scope": null}, {"name": "Cardiac Rehabilitation", "facet": "Treatments", "depth": 1, "children": [], "synonyms": ["Cardiac Rehabilitation"], "scope": "Angiotensin II Receptor Antagonist"}, {"name": "Cardiovascular Disease Prevention", "facet": "Treatments", "depth": 1, "children": [{"name": "Lipid Lowering", "facet": "Treatments", "depth": 2, "children": [{"name": "Nonstatins", "facet": "Treatments", "depth": 3, "children": [], "synonyms": ["no term"], "scope": null}, {"name": "Statins", "facet": "Treatments", "depth": 3, "children": [], "synonyms": ["Hydroxymethylglutaryl-CoA Reductase Inhibitors"], "scope": "Compounds that inhibit\u00a0HYDROXYMETHYLGLUTARYL COA REDUCTASES. They have been shown to directly lower\u00a0CHOLESTEROL\u00a0synthesis."}], "synonyms": [], "scope": null}, {"name": "Exercise", "facet": "Treatments", "depth": 2, "children": [], "synonyms": ["Regular Exercise", "Exercise"], "scope": "Physical activity which is usually regular and done with the intention of improving or maintaining PHYSICAL FITNESS or HEALTH. Contrast with PHYSICAL EXERTION which is concerned largely with the physiologic and metabolic response to energy expenditure."}, {"name": "Diet and Nutrition", "facet": "Treatments", "depth": 2, "children": [], "synonyms": ["Nutrition Therapy", "Healthy Diet"], "scope": null}, {"name": "Primary Prevention", "facet": "Treatments", "depth": 2, "children": [], "synonyms": ["Primary Prevention"], "scope": "Specific practices for the prevention of disease or mental disorders in susceptible individuals or populations. These include HEALTH PROMOTION, including mental health; protective procedures, such as COMMUNICABLE DISEASE CONTROL; and monitoring and regulation of ENVIRONMENTAL POLLUTANTS. Primary prevention is to be distinguished from SECONDARY PREVENTION and TERTIARY PREVENTION."}, {"name": "Secondary Prevention", "facet": "Treatments", "depth": 2, "children": [], "synonyms": ["Secondary Prevention"], "scope": "The prevention of recurrences or exacerbations of a disease or complications of its therapy."}, {"name": "Smoking Cessation", "facet": "Treatments", "depth": 2, "children": [], "synonyms": ["Tobacco Cessation", "Smoking Cessation", "Smoking Prevention"], "scope": "Discontinuing the habit of SMOKING."}, {"name": "Stress Reduction", "facet": "Treatments", "depth": 2, "children": [], "synonyms": [], "scope": null}, {"name": "Stroke Prevention", "facet": "Treatments", "depth": 2, "children": [], "synonyms": [], "scope": null}], "synonyms": ["Prevention"], "scope": null}, {"name": "Cardiovascular Procedures", "facet": "Treatments", "depth": 1, "children": [{"name": "Cardiac Surgery", "facet": "Treatments", "depth": 2, "children": [{"name": "Aortic Surgery", "facet": "Treatments", "depth": 3, "children": [], "synonyms": [], "scope": null}, {"name": "Coronary Artery Bypass", "facet": "Treatments", "depth": 3, "children": [], "synonyms": ["Coronary Artery Bypass"], "scope": "Surgical therapy of ischemic coronary artery disease achieved by grafting a section of saphenous vein, internal mammary artery, or other substitute between the aorta and the obstructed coronary artery distal to the obstructive lesion."}, {"name": "Heart Transplantation", "facet": "Treatments", "depth": 3, "children": [], "synonyms": ["Cardiac Transplant", "Heart Transplantation"], "scope": "The transference of a heart from one human or animal to another"}, {"name": "Myocardial Revascularization", "facet": "Treatments", "depth": 3, "children": [], "synonyms": ["Coronary Artery Revascularization", "Myocardial Revascularization"], "scope": "The restoration of blood supply to the myocardium. (From Dorland, 28th ed) New in 2024"}], "synonyms": ["Cardiac Surgical Procedures"], "scope": "Surgery performed on the heart."}, {"name": "Coronary, Peripheral and Structural Procedures", "facet": "Treatments", "depth": 2, "children": [{"name": "Drug-Eluting Stents", "facet": "Treatments", "depth": 3, "children": [], "synonyms": ["Drug-Eluting Stents"], "scope": "Stents that are covered with materials that are embedded with chemicals that are gradually released into the surrounding milieu."}, {"name": "PCI", "facet": "Treatments", "depth": 3, "children": [], "synonyms": ["Percutaneous Coronary Intervention"], "scope": "A family of percutaneous techniques that are used to manage CORONARY OCCLUSION, including standard balloon angioplasty (PERCUTANEOUS TRANSLUMINAL CORONARY ANGIOPLASTY), the placement of intracoronary STENTS, and atheroablative technologies (e.g., ATHERECTOMY; ENDARTERECTOMY; THROMBECTOMY; PERCUTANEOUS TRANSLUMINAL LASER ANGIOPLASTY). PTCA was the dominant form of PCI, before the widespread use of stenting."}, {"name": "Peripheral Intervention", "facet": "Treatments", "depth": 3, "children": [], "synonyms": [], "scope": null}, {"name": "Stents", "facet": "Treatments", "depth": 3, "children": [], "synonyms": ["Stents"], "scope": "Devices that provide support for tubular structures that are being anastomosed or for body cavities during skin grafting."}, {"name": "Structural Intervention", "facet": "Treatments", "depth": 3, "children": [{"name": "Mechanical Valve", "facet": "Treatments", "depth": 4, "children": [], "synonyms": [], "scope": null}, {"name": "Prosthetic Valve", "facet": "Treatments", "depth": 4, "children": [], "synonyms": [], "scope": null}], "synonyms": [], "scope": null}, {"name": "TAVR", "facet": "Treatments", "depth": 3, "children": [], "synonyms": ["Transcatheter Aortic Valve Replacement", "TAVI"], "scope": "Surgical treatment for severe AORTIC VALVE STENOSIS. Transcatheter aortic valve replacement (TAVR) is used as an alternative option in patients who are deemed at high risk or inoperable for traditional open-heart surgery."}, {"name": "Vascular Access", "facet": "Treatments", "depth": 3, "children": [], "synonyms": ["Vascular Surgical Procedures"], "scope": "Operative procedures for the treatment of vascular disorders."}], "synonyms": [], "scope": null}, {"name": "Invasive Cardiovascular Procedures", "facet": "Treatments", "depth": 2, "children": [{"name": "Ablation", "facet": "Treatments", "depth": 3, "children": [], "synonyms": ["Ablation Techniques"], "scope": "There is also catheter ablation, so didn't want to use the scope note for ablation techniques"}, {"name": "Cardiac Implantable Devices", "facet": "Treatments", "depth": 3, "children": [{"name": "Cardiovascular Implantable Electronic Device", "facet": "Treatments", "depth": 4, "children": [], "synonyms": ["CIED"], "scope": null}, {"name": "Implantable Cardioverter-Defibrillator", "facet": "Treatments", "depth": 4, "children": [], "synonyms": ["ICD", "Defibrillators", "Implantable"], "scope": "Implantable devices which continuously monitor the electrical activity of the heart and automatically detect and terminate ventricular tachycardia (TACHYCARDIA, VENTRICULAR) and VENTRICULAR FIBRILLATION. They consist of an impulse generator, batteries, and electrodes."}, {"name": "Left Ventricular Assist Device", "facet": "Treatments", "depth": 4, "children": [], "synonyms": ["LVAD"], "scope": null}, {"name": "Mechanical Circulatory Support", "facet": "Treatments", "depth": 4, "children": [], "synonyms": ["Heart-Assist Devices"], "scope": "Not sure that the mesh term heart assist devices relates to mechanical circulatory support"}, {"name": "Cardiac Pacing", "facet": "Treatments", "depth": 4, "children": [], "synonyms": ["Cardiac Resynchronization Therapy", "Pacemaker", "Cardiac Pacing", "Artificial"], "scope": "Regulation of the rate of contraction of the heart muscles by an artificial pacemaker."}], "synonyms": [], "scope": null}, {"name": "LAAO", "facet": "Treatments", "depth": 3, "children": [], "synonyms": ["Left Atrial Appendage Occlusion"], "scope": null}, {"name": "Revascularization", "facet": "Treatments", "depth": 3, "children": [], "synonyms": [], "scope": null}], "synonyms": [], "scope": null}], "synonyms": [], "scope": null}, {"name": "CCBs", "facet": "Treatments", "depth": 1, "children": [], "synonyms": ["Calcium Channel Blockers"], "scope": "A class of drugs that act by selective inhibition of calcium influx through cellular membranes."}, {"name": "CPR", "facet": "Treatments", "depth": 1, "children": [], "synonyms": ["Cardiopulmonary Resuscitation"], "scope": "The artificial substitution of heart and lung action as indicated for HEART ARREST resulting from electric shock, DROWNING, respiratory arrest, or other causes. The two major components of cardiopulmonary resuscitation are artificial ventilation (RESPIRATION, ARTIFICIAL) and closed-chest CARDIAC MASSAGE."}, {"name": "Critical Care", "facet": "Treatments", "depth": 1, "children": [], "synonyms": ["Intensive Care", "Critical Care"], "scope": "Use for health care provided to a critically ill patient during a medical emergency or crisis. (MeSH)"}, {"name": "Dual Antiplatelet Therapy", "facet": "Treatments", "depth": 1, "children": [], "synonyms": [], "scope": null}, {"name": "GLP1-RAs", "facet": "Treatments", "depth": 1, "children": [], "synonyms": ["Glucagon-Like Peptide-1 Receptor Agonists"], "scope": "Compounds that stimulate the activity of GLUCAGON-LIKE PEPTIDE-1 RECEPTOR. Glucagon-like peptide-1 receptor agonists are used to treat TYPE 2 DIABETES and OBESITY."}, {"name": "MRAs", "facet": "Treatments", "depth": 1, "children": [], "synonyms": ["Mineralocorticoid Receptor Antagonists"], "scope": "Drugs that bind to and block the activation of MINERALOCORTICOID RECEPTORS by MINERALOCORTICOIDS such as ALDOSTERONE."}, {"name": "Myosin Inhibitors", "facet": "Treatments", "depth": 1, "children": [], "synonyms": [], "scope": null}, {"name": "Noncardiac Surgery", "facet": "Treatments", "depth": 1, "children": [], "synonyms": [], "scope": null}, {"name": "Perioperative Evaluation and Care", "facet": "Treatments", "depth": 1, "children": [], "synonyms": ["Perioperative Care"], "scope": "Interventions to provide care prior to, during, and immediately after surgery."}, {"name": "Platelets", "facet": "Treatments", "depth": 1, "children": [], "synonyms": ["Blood Platelets"], "scope": null}, {"name": "SGLT2 Inhibitors", "facet": "Treatments", "depth": 1, "children": [], "synonyms": ["Sodium-Glucose Cotransporter 2 Inhibitors"], "scope": "Compounds that inhibit SODIUM-GLUCOSE TRANSPORTER 2. They lower blood sugar by preventing the reabsorption of glucose by the kidney and are used in the treatment of TYPE 2 DIABETES MELLITUS."}, {"name": "Semaglutide", "facet": "Treatments", "depth": 1, "children": [], "synonyms": [], "scope": null}, {"name": "Targeted and Immune Cancer Therapy", "facet": "Treatments", "depth": 1, "children": [], "synonyms": ["Immunotherapy", "Molecular Targeted Therapy"], "scope": null}, {"name": "Vaccines", "facet": "Treatments", "depth": 1, "children": [], "synonyms": ["Vaccines"], "scope": "Suspensions of killed or attenuated microorganisms (bacteria, viruses, fungi, protozoa), antigenic proteins, synthetic constructs, or other bio-molecular derivatives, administered for the prevention, amelioration, or treatment of infectious and other diseases."}]}, {"name": "Specialties", "facet": "Specialties", "depth": 0, "children": [{"name": "Academic Cardiology", "facet": "Specialties", "depth": 1, "children": [], "synonyms": ["no term"], "scope": null}, {"name": "Advanced Career Professionals", "facet": "Specialties", "depth": 1, "children": [], "synonyms": [], "scope": null}, {"name": "Adult Congenital Cardiology", "facet": "Specialties", "depth": 1, "children": [], "synonyms": ["Congenital Heart Disease"], "scope": null}, {"name": "Cardio-Obstetrics", "facet": "Specialties", "depth": 1, "children": [], "synonyms": ["Obstetrics"], "scope": null}, {"name": "Cardio-Oncology", "facet": "Specialties", "depth": 1, "children": [], "synonyms": ["Cardiotoxicity"], "scope": null}, {"name": "Cardiolovascular Care Team", "facet": "Specialties", "depth": 1, "children": [], "synonyms": ["APP", "Advanced Practice Provider", "Cardiology Care Team", "CV Care Team", "no term"], "scope": null}, {"name": "Critical Care Cardiology", "facet": "Specialties", "depth": 1, "children": [], "synonyms": ["Critical Care"], "scope": null}, {"name": "CV Tech", "facet": "Specialties", "depth": 1, "children": [], "synonyms": [], "scope": null}, {"name": "Early Career Professionals", "facet": "Specialties", "depth": 1, "children": [], "synonyms": [], "scope": null}, {"name": "Electrophysiology", "facet": "Specialties", "depth": 1, "children": [], "synonyms": ["Cardiac Electrophysiology"], "scope": null}, {"name": "Federal Cardiology", "facet": "Specialties", "depth": 1, "children": [], "synonyms": [], "scope": null}, {"name": "Fellows in Training", "facet": "Specialties", "depth": 1, "children": [], "synonyms": ["FIT"], "scope": null}, {"name": "Geriatric Cardiology", "facet": "Specialties", "depth": 1, "children": [], "synonyms": ["Geriatrics"], "scope": null}, {"name": "Heart Failure Cardiology", "facet": "Specialties", "depth": 1, "children": [], "synonyms": [], "scope": null}, {"name": "Hematology", "facet": "Specialties", "depth": 1, "children": [], "synonyms": ["Hematology"], "scope": null}, {"name": "Hospitalist", "facet": "Specialties", "depth": 1, "children": [], "synonyms": [], "scope": null}, {"name": "Interventional Cardiology", "facet": "Specialties", "depth": 1, "children": [], "synonyms": ["no term"], "scope": null}, {"name": "Medical Residents", "facet": "Specialties", "depth": 1, "children": [], "synonyms": [], "scope": null}, {"name": "Medical Students", "facet": "Specialties", "depth": 1, "children": [], "synonyms": [], "scope": null}, {"name": "Pediatric Cardiology", "facet": "Specialties", "depth": 1, "children": [], "synonyms": ["Pediatrics"], "scope": null}, {"name": "Pharmacist", "facet": "Specialties", "depth": 1, "children": [], "synonyms": [], "scope": null}, {"name": "Regenerative Medicine", "facet": "Specialties", "depth": 1, "children": [], "synonyms": ["Genetics", "Omics and Tissue Regeneration", "Cell- and Tissue-Based Therapy"], "scope": "Therapies that involve the TRANSPLANTATION of CELLS or TISSUES developed for the purpose of restoring the function of diseased or dysfunctional cells or tissues. (MeSH)"}, {"name": "Sports and Exercise Cardiology", "facet": "Specialties", "depth": 1, "children": [], "synonyms": ["Athletes", "Sports Medicine"], "scope": "The field of medicine concerned with physical fitness and the diagnosis and treatment of injuries sustained in exercise and sports activities. (MeSH)"}, {"name": "Translational Medicine", "facet": "Specialties", "depth": 1, "children": [], "synonyms": ["Basic and Translational Research", "Translational Science", "Biomedical"], "scope": "The field of investigation which seeks to understand the scientific and operational principles underlying each step of the translational process to increase the efficiency and effectiveness of translational research in all therapeutic areas. (MeSH)"}, {"name": "Vascular Medicine", "facet": "Specialties", "depth": 1, "children": [], "synonyms": ["Vascular Heart Disease"], "scope": null}, {"name": "Women in Cardiology", "facet": "Specialties", "depth": 1, "children": [], "synonyms": ["Women in Cardiology"], "scope": "Used for content related to women practicing in the profession of cardiology; female cardiologists, etc."}]}, {"name": "Nonclinical", "facet": "Nonclinical", "depth": 0, "children": [{"name": "ACC History", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["History of Cardiology"], "scope": "Use for content related to the history of past events and development in the field of cardiology and the ACC."}, {"name": "Advocacy", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["Health Policy", "Advocacy"], "scope": "Use for content related to ACC's efforts to influence laws and regulations related to cardiovascular medicine and population health. "}, {"name": "Artificial Intelligence", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["AI", "Artificial Intelligence"], "scope": "Theory and development of COMPUTER SYSTEMS which perform tasks that normally require human intelligence. Such tasks may include speech recognition, LEARNING; VISUAL PERCEPTION; MATHEMATICAL COMPUTING; reasoning, PROBLEM SOLVING, DECISION-MAKING, and translation of language."}, {"name": "Basic Science Research", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["Basic Science Research"], "scope": null}, {"name": "Career Development", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["Career Development"], "scope": "Use for content that provides advice and insights that allows to physicians and health care professionals to navigate professional milestones throughout their career in cardiology from residency to retirement."}, {"name": "Certification", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["Certification"], "scope": "Use for content related to the efforts of the ACC and American Board of Internal Medicine (ABIM) towards continual improvement of all educational and assessment processes for physicians to stay current in their knowledge of cardiovascular diseases and practice of cardiovascular treatments."}, {"name": "Clinical Decision Support", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["Clinical Decision Support"], "scope": "Use for content related to information systems used to integrate clinical and patient information and provide decision making support in patient care."}, {"name": "Coding", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["Clinical Coding"], "scope": "Process of substituting a symbol or code for a term such as a diagnosis or procedure. (from Slee's Health Care Terms, 3d ed.)"}, {"name": "Comparative Effectiveness", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["CER", "Comparative Effectiveness"], "scope": "Use for content related to providing comparative information to health care providers, patients and policymakers about the standard of care available. "}, {"name": "Compensation", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["Compensation"], "scope": "Use for content related to payment for damages from a medical malpractice claim against a health professional."}, {"name": "Cost Effectiveness", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["Cost Effectiveness", "Cost-Benefit Analysis"], "scope": "Use for content related to health care costs, or the analysis and study of these costs."}, {"name": "Diversity, Equity and Inclusion", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["DEI", "Diversity", "Equity and Inclusion"], "scope": "Use for content related to policies and programs promoting the representation and participation of different groups of individuals, including people of different races, ethnicities, religions, abilities, genders and sexual orientations."}, {"name": "Electronic Health Record", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["EHR", "Electronic Medical Record", "Electronic Health Record"], "scope": "Use for content related to a digital version of a patient's medical history, diagnoses, medications, treatment plans, immunization dates, allergies, radiology images, and laboratory and test results."}, {"name": "Emergency Department", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": [], "scope": null}, {"name": "Financial Management", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": [], "scope": null}, {"name": "Financial Planning", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": [], "scope": null}, {"name": "Facility Accreditation", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": [], "scope": null}, {"name": "Gender", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": [], "scope": null}, {"name": "Guideline Directed Medical Therapy", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": [], "scope": null}, {"name": "Health Care Technology", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["Health Care Technology"], "scope": "Use for content related to the use of technology to solve health care problems."}, {"name": "Health Data Interchange Standards", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["Health Data Interchange Standards"], "scope": "Use for content related to the organizational framework for the dissemination of electronic health care information or clinical data, across health-related institutions and systems, for the purpose of enhancing patient care."}, {"name": "Health Economics", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["Economics", "Health Economics"], "scope": "Use for content related to the economic and financial impact of a condition on the patient, the physician, society, or government."}, {"name": "Health Equity", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["Social Determinants of Health", "Health Equity"], "scope": "Use for content related to the opportunity to attain optimal health regardless of race, ethnicity, disability, sexual orientation, gender identity, socioeconomic status, geography, preferred language, or other factors that affect access to care and health outcomes. (See: https://www.cms.gov/pillar/health-equity)"}, {"name": "Health Informatics", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["Health Informatics"], "scope": "Use for content related to the analysis and use of medical data in various aspects of health care and medicine."}, {"name": "Implicit Bias", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["Implicit Bias"], "scope": "Use for content that provides expert advice to physicians and health care professionals about how to handle and overcome inherent bias while practicing cardiology."}, {"name": "Innovation", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["Emerging Technologies and Innovations", "Technological Innovations", "Innovation"], "scope": "Use for content related to medical technology innovation, from research in areas such as bioinstrumentation, artificial organs and cellular bioprocessing, to applied research efforts that yield products, such as diagnostic imaging equipment and implantable devices."}, {"name": "International", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["International"], "scope": "Use to modify another Topic to indicate that it has an international or multinational context. For example, Advocacy (International)."}, {"name": "Leadership", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["Leadership"], "scope": "Use for content related to the development and use of practical skills for an individual to be able to influence or guide other individuals, teams, or entire organizations."}, {"name": "Medical Ethics", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["Medical Ethics"], "scope": "Use for content related to the rights and duties of the physician, relations with patients and fellow practitioners, as well as actions of the physician in patient care and interpersonal relations with patient families."}, {"name": "Organizational Structure", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["Organizational Structure"], "scope": "Use to modify another Topic to indicate that it has an organizational structure context. For example, Practice Management (Organizational Structure)."}, {"name": "Patient-Centered Care", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["Patient-Centered Care"], "scope": "Use for content related to patient care where institutional resources and personnel are organized around patients rather than around specialized departments."}, {"name": "Patient Data", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["Patient Data"], "scope": "Use for content related to longitudinal patient-maintained records of individual health history."}, {"name": "Patient Education", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["Patient Education as Topic"], "scope": "The teaching or training of patients concerning their own health needs."}, {"name": "Patient Navigator", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": [], "scope": null}, {"name": "Practice Management", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["Cardiovascular Management", "Practice Management"], "scope": "Use for content related to the organization and operation of the business aspects of a physician's practice."}, {"name": "Professional Accreditation", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": [], "scope": null}, {"name": "Program Directors", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": [], "scope": null}, {"name": "Public Reporting", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["Public Reporting"], "scope": "Use for content related to public reporting of health care quality indicators data by health facilities."}, {"name": "Quality Improvement", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["Quality Improvement"], "scope": "Use for content related to the framework used to systematically improve care by standardizing processes and structures such as  technology, culture, leadership, and physical knowledge, and human capital to reduce variation, achieve predictable results and improve outcomes for patients, health care systems and organizations."}, {"name": "Quality of Life", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["Quality of Life"], "scope": "Use for content related to a patient's personal health (physical, mental and spiritual) and autonomy in decision making."}, {"name": "Race and Ethnicity", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["Race and Ethnicity"], "scope": "A constituent element or influence that could be used in studies for racial disparities as variables such as those related to risk factors and disease and or differential access to services."}, {"name": "Randomized Control Trial", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["RCT"], "scope": null}, {"name": "Referral", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["Referral"], "scope": "Use for content related to sending a patient to another program or practitioner for services or advice. "}, {"name": "Reimbursement", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["Reimbursement/Regulation", "Payment", "Insurance Reimbursement"], "scope": "Use for content related to health care reimbursement methods such as fee-for-service, capitation, salary, bundled payments and value-based payments."}, {"name": "Risk Assessment", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["Risk Assessment"], "scope": "Use for content related to the process of minimizing risk to an organization by developing systems to identify and analyze potential hazards to prevent accidents, injuries, and other adverse occurrences, and by attempting to handle events and incidents which do occur in such a manner that their effect and cost are minimized. (Slee and Slee, Health Care Terms, 2d ed)"}, {"name": "Risk Factor", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["Disease Risk Factor", "Risk Factor"], "scope": "Use to modify another Topic to indicate that it has risk factors as a context. For example, Myocardial Infarction (Risk Factor)."}, {"name": "Safety", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["Medical Safety", "Patient Safety", "Safety"], "scope": "Use for content related to reducing risk, to address and reduce incidents and accidents that may negatively impact health care providers and their patients."}, {"name": "Shared Decision Making", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["Shared Decision Making"], "scope": "Use for content related to using a collaborative process for reaching a decision."}, {"name": "Social Drivers of Health", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["Social Determinants", "Social Determinants of Health"], "scope": "Use for content related to how different social, economic and environmental factors can affect people's health, and efforts to bring about changes that can mitigate adverse effects and/or have a positive health impact.  Changed on 7/31 from Social Determinants of Health to Social Drivers of Health (per Justine and Melvin). "}, {"name": "Team-Based Patient Care", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["Patient Care Team", "Multidisciplinary Team Based Care", "Team-Based Patient Care"], "scope": "Use for content related to care of patients by a multidisciplinary team usually organized under the leadership of a physician."}, {"name": "Telehealth", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["telemedicine", "Telehealth"], "scope": "Use for content related to the delivery of interactive consultative and diagnostic health services via remote telecommunications."}, {"name": "Training Programs", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["Competence", "Training"], "scope": "Use for content related to the overall requirements for clinical training for physicians and health care professionals in the diagnosis and management of cardiovascular diseases."}, {"name": "Translational Research", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["Translational Research"], "scope": "The endeavour to traverse a specific step of the translation process of turning an observation in the laboratory, clinic, or community into an intervention that will improve the health of individuals and the public. (from Nat Rev Drug Discov. 2018 July ; 17(7): 455\u2013456.)"}, {"name": "Well-being", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["Self-Care"], "scope": "Use for content related to the patient caring for themself when ill, or taking positive actions and adopting behaviors to prevent illness."}, {"name": "Work-Life Balance", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["Burnout", "Work-Life Balance"], "scope": "Use for content related to maintaining a healthy relationship between professional or work life and personal or private life."}, {"name": "Workplace Violence", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": ["Workplace Violence"], "scope": "Use for content related to any act or threat of physical violence, harassment, intimidation, or other threatening disruptive behavior that occurs at the work site."}, {"name": "Quality Programs", "facet": "Nonclinical", "depth": 1, "children": [{"name": "ACTION Registry", "facet": "Nonclinical", "depth": 2, "children": [], "synonyms": [], "scope": "Diana added on 2/4 "}, {"name": "ACPC Quality Network", "facet": "Nonclinical", "depth": 2, "children": [], "synonyms": [], "scope": null}, {"name": "AFib Ablation Registry", "facet": "Nonclinical", "depth": 2, "children": [], "synonyms": [], "scope": null}, {"name": "CathPCI Registry", "facet": "Nonclinical", "depth": 2, "children": [], "synonyms": [], "scope": null}, {"name": "Chest Pain MI Registry", "facet": "Nonclinical", "depth": 2, "children": [], "synonyms": [], "scope": null}, {"name": "CV ASC Registry Suite", "facet": "Nonclinical", "depth": 2, "children": [], "synonyms": [], "scope": null}, {"name": "Diabetes Collaborative Registry", "facet": "Nonclinical", "depth": 2, "children": [], "synonyms": [], "scope": null}, {"name": "EP Device Implant Registry", "facet": "Nonclinical", "depth": 2, "children": [], "synonyms": [], "scope": null}, {"name": "ICD Registry", "facet": "Nonclinical", "depth": 2, "children": [], "synonyms": [], "scope": null}, {"name": "IMPACT Registry", "facet": "Nonclinical", "depth": 2, "children": [], "synonyms": [], "scope": null}, {"name": "LAAO Registry", "facet": "Nonclinical", "depth": 2, "children": [], "synonyms": [], "scope": null}, {"name": "NCDR", "facet": "Nonclinical", "depth": 2, "children": [], "synonyms": [], "scope": null}, {"name": "PINNACLE Registry", "facet": "Nonclinical", "depth": 2, "children": [], "synonyms": [], "scope": null}, {"name": "PVI Registry", "facet": "Nonclinical", "depth": 2, "children": [], "synonyms": [], "scope": null}, {"name": "STS/ACC TVT Registry", "facet": "Nonclinical", "depth": 2, "children": [], "synonyms": [], "scope": null}], "synonyms": ["Registries"], "scope": null}, {"name": "Conferences and Meetings", "facet": "Nonclinical", "depth": 1, "children": [{"name": "(to be added in late 2025)", "facet": "Nonclinical", "depth": 2, "children": [], "synonyms": [], "scope": null}, {"name": "Transcatheter Cardiovascular Therapeutics", "facet": "Nonclinical", "depth": 2, "children": [], "synonyms": [], "scope": null}, {"name": "ACC Annual Scientific Session", "facet": "Nonclinical", "depth": 2, "children": [], "synonyms": [], "scope": null}], "synonyms": [], "scope": null}, {"name": "Podcasts", "facet": "Nonclinical", "depth": 1, "children": [], "synonyms": [], "scope": null}]}]};
+const state = {
+  facet: TAXONOMY_DATA.facets[0]?.name || null,
+  activePath: [],
+  intent: 'all'
+};
+
+const els = {
+  facetList: document.getElementById('facetList'),
+  statFacets: document.getElementById('statFacets'),
+  statTerms: document.getElementById('statTerms'),
+  statTop: document.getElementById('statTop'),
+  statDepth: document.getElementById('statDepth'),
+  heroTitle: document.getElementById('heroTitle'),
+  heroCopy: document.getElementById('heroCopy'),
+  breadcrumbs: document.getElementById('breadcrumbs'),
+  columns: document.getElementById('columns'),
+  detailTitle: document.getElementById('detailTitle'),
+  detailCopy: document.getElementById('detailCopy'),
+  intentGrid: document.getElementById('intentGrid'),
+  relatedList: document.getElementById('relatedList'),
+  synonymTags: document.getElementById('synonymTags'),
+  searchInput: document.getElementById('searchInput'),
+  searchResults: document.getElementById('searchResults'),
+  pills: [...document.querySelectorAll('.pill')]
+};
+
+const stats = TAXONOMY_DATA.stats;
+els.statFacets.textContent = stats.facetCount;
+els.statTerms.textContent = stats.termCount;
+els.statTop.textContent = stats.topLevelCount;
+els.statDepth.textContent = stats.deepest;
+
+function slugify(value) {
+  return String(value || '')
+    .toLowerCase()
+    .normalize('NFKD')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+}
+
+function getFacetNode() {
+  return TAXONOMY_DATA.facets.find(f => f.name === state.facet) || TAXONOMY_DATA.facets[0];
+}
+
+function getNodeByPath(path, facetName = state.facet) {
+  const facet = TAXONOMY_DATA.facets.find(f => f.name === facetName);
+  if (!facet) return null;
+  let current = facet;
+  for (const segment of path) {
+    current = (current.children || []).find(child => child.name === segment);
+    if (!current) return null;
+  }
+  return current;
+}
+
+function getChildrenAtDepth(depth) {
+  const facet = getFacetNode();
+  if (depth === 0) return facet.children || [];
+  const parentPath = state.activePath.slice(0, depth);
+  const parent = getNodeByPath(parentPath);
+  return parent?.children || [];
+}
+
+function getSelectedNode() {
+  if (!state.activePath.length) return getFacetNode();
+  return getNodeByPath(state.activePath);
+}
+
+function facetSummary(facet) {
+  const countTerms = [];
+  const walk = (node) => {
+    (node.children || []).forEach(child => {
+      countTerms.push(child.name);
+      walk(child);
+    });
+  };
+  walk(facet);
+  return countTerms.length;
+}
+
+function renderFacets() {
+  els.facetList.innerHTML = '';
+  TAXONOMY_DATA.facets.forEach(facet => {
+    const btn = document.createElement('button');
+    btn.className = 'facet-btn btn btn-shade flex flex_row' + (facet.name === state.facet ? ' is-active' : '');
+    btn.innerHTML = `<strong class="c_black m-r_auto">${facet.name}</strong><small class="c_primary-n3 font_n2">${facetSummary(facet)} terms</small>`;
+    btn.addEventListener('click', () => {
+      state.facet = facet.name;
+      state.activePath = [];
+      closeSearch();
+      render();
+    });
+    els.facetList.appendChild(btn);
+  });
+}
+
+function renderBreadcrumbs() {
+  els.breadcrumbs.innerHTML = '';
+  const facetCrumb = document.createElement('span');
+  facetCrumb.className = 'crumb';
+  facetCrumb.textContent = state.facet;
+  els.breadcrumbs.appendChild(facetCrumb);
+
+  state.activePath.forEach((segment, index) => {
+    const arrow = document.createElement('span');
+    arrow.textContent = '→';
+    arrow.style.opacity = '.5';
+    els.breadcrumbs.appendChild(arrow);
+
+    const crumb = document.createElement('button');
+    crumb.className = 'crumb';
+    crumb.textContent = segment;
+    crumb.style.cursor = 'pointer';
+    crumb.addEventListener('click', () => {
+      state.activePath = state.activePath.slice(0, index + 1);
+      render();
+    });
+    els.breadcrumbs.appendChild(crumb);
+  });
+}
+
+function renderColumns() {
+  const labels = ['Level 1', 'Level 2', 'Level 3', 'Level 4'];
+  els.columns.innerHTML = '';
+
+  for (let depth = 0; depth < 4; depth++) {
+    const column = document.createElement('section');
+    column.className = 'column';
+
+    const parentLabel = depth === 0
+      ? state.facet
+      : state.activePath[depth - 1] || 'Waiting for selection';
+
+    const items = getChildrenAtDepth(depth);
+    const list = document.createElement('div');
+    list.className = 'node-list';
+
+    if (!items.length) {
+      list.innerHTML = `<div class="empty">No terms at this level yet for this path.</div>`;
+    } else {
+      items.forEach(item => {
+        const pathAtDepth = state.activePath[depth];
+        const isActive = pathAtDepth === item.name;
+        const btn = document.createElement('button');
+        btn.className = 'node' + (isActive ? ' is-active' : '');
+        btn.innerHTML = `
+          <strong>${item.name}</strong>
+          <div class="meta">${item.children?.length ? item.children.length + ' child terms' : 'Leaf term'} • depth ${item.depth}</div>
+        `;
+        btn.addEventListener('click', () => {
+          state.activePath = [...state.activePath.slice(0, depth), item.name];
+          render();
+        });
+        list.appendChild(btn);
+      });
+    }
+
+    column.innerHTML = `
+      <header>
+        <strong>${labels[depth]}</strong>
+        <small>${parentLabel}</small>
+      </header>
+    `;
+    column.appendChild(list);
+    els.columns.appendChild(column);
+  }
+}
+
+function getRelatedNodes(selected) {
+  if (!selected || !state.activePath.length) {
+    return getFacetNode().children.slice(0, 6);
+  }
+  const parentPath = state.activePath.slice(0, -1);
+  const parent = parentPath.length ? getNodeByPath(parentPath) : getFacetNode();
+  const siblings = (parent?.children || []).filter(node => node.name !== selected.name);
+  const children = selected.children || [];
+  return [...children.slice(0, 3), ...siblings.slice(0, 3)];
+}
+
+function renderDetails() {
+  const selected = getSelectedNode();
+  const selectedName = state.activePath[state.activePath.length - 1];
+
+  els.heroTitle.textContent = selectedName
+    ? selectedName
+    : `Start in ${state.facet} and let people narrow their way in.`;
+
+  els.heroCopy.textContent = selectedName
+    ? `This path can act as a taxonomy landing state that branches users toward the right downstream destination without forcing them to understand the entire system first.`
+    : `A good discovery pattern lets people begin broad, move narrower, and then pivot into the thing they actually came for — product, news, initiative, event, or course.`;
+
+  els.detailTitle.textContent = selectedName || state.facet;
+  els.detailCopy.textContent = selectedName
+    ? `Selected term lives at level ${selected.depth} in ${selected.facet}. This is where the taxonomy can become routing logic for content hubs, filters, search, recommendation modules, and campaign landing pages.`
+    : `Choose a term to see how the taxonomy can drive onward journeys.`;
+
+  const term = selectedName || state.facet;
+  const slug = slugify(term);
+  const intents = [
+    {
+      key: 'products',
+      title: 'Products',
+      copy: `Send users to product cards, certifications, toolkits, or member benefits tagged with “${term}”.`,
+      href: `/products?topic=${slug}`
+    },
+    {
+      key: 'news',
+      title: 'News',
+      copy: `Reveal latest coverage, announcements, and editorial stories mapped to this term.`,
+      href: `/news?topic=${slug}`
+    },
+    {
+      key: 'initiatives',
+      title: 'Initiatives',
+      copy: `Surface initiatives, programs, advocacy, or strategic work connected to this concept.`,
+      href: `/initiatives?topic=${slug}`
+    },
+    {
+      key: 'events',
+      title: 'Events & Courses',
+      copy: `Bridge taxonomy into event agendas, webinars, self-assessment, or course discovery.`,
+      href: `/education?topic=${slug}`
+    }
+  ];
+
+  const visibleIntents = state.intent === 'all'
+    ? intents
+    : intents.filter(item => item.key === state.intent);
+
+  els.intentGrid.innerHTML = visibleIntents.map(item => `
+    <article class="intent">
+      <strong>${item.title}</strong>
+      <small>${item.copy}</small>
+      <div style="margin-top:10px;">
+        <code style="font-size:12px; color:#9eb0d6;">${item.href}</code>
+      </div>
+    </article>
+  `).join('');
+
+  const related = getRelatedNodes(selected);
+  els.relatedList.innerHTML = related.length
+    ? related.map(node => `<button class="sibling" data-name="${node.name}">${node.name} <span style="color:var(--muted)">· ${node.children?.length ? 'branch' : 'leaf'}</span></button>`).join('')
+    : '<div class="muted">No related paths yet.</div>';
+
+  [...els.relatedList.querySelectorAll('.sibling')].forEach(btn => {
+    btn.addEventListener('click', () => jumpToNodeName(btn.dataset.name));
+  });
+
+  const syns = (selected?.synonyms || []).slice(0, 10);
+  els.synonymTags.innerHTML = syns.length
+    ? syns.map(s => `<span class="tag">${s}</span>`).join('')
+    : '<span class="muted">No extra search helpers attached to this term.</span>';
+}
+
+function jumpToNodeName(name) {
+  const all = flattenAll();
+  const match = all.find(item =>
+    item.facet === state.facet &&
+    item.path[item.path.length - 1] === name
+  );
+  if (match) {
+    state.activePath = match.path;
+    render();
+  }
+}
+
+function flattenAll() {
+  const out = [];
+  TAXONOMY_DATA.facets.forEach(facet => {
+    const walk = (node, path=[]) => {
+      (node.children || []).forEach(child => {
+        const nextPath = [...path, child.name];
+        out.push({
+          name: child.name,
+          facet: child.facet,
+          path: nextPath,
+          depth: child.depth,
+          synonyms: child.synonyms || []
+        });
+        walk(child, nextPath);
+      });
+    };
+    walk(facet);
+  });
+  return out;
+}
+
+const searchIndex = flattenAll().map(item => {
+  const searchable = [
+    item.name,
+    ...item.path,
+    ...item.synonyms
+  ].join(' ').toLowerCase();
+  return { ...item, searchable };
+});
+
+function renderSearchResults(query) {
+  const q = query.trim().toLowerCase();
+  if (!q) {
+    closeSearch();
+    return;
+  }
+
+  const results = searchIndex
+    .filter(item => item.searchable.includes(q))
+    .sort((a, b) => a.depth - b.depth)
+    .slice(0, 16);
+
+  if (!results.length) {
+    els.searchResults.innerHTML = `<div class="result"><strong>No matches</strong><small>Try a broader term or common-language synonym.</small></div>`;
+  } else {
+    els.searchResults.innerHTML = results.map(item => {
+      const aliasMatch = item.synonyms.find(s => s.toLowerCase().includes(q));
+      return `
+        <button class="result" data-facet="${item.facet}" data-path="${item.path.join('|||')}">
+          <strong>${item.name}</strong>
+          <small>${item.facet} → ${item.path.join(' → ')}${aliasMatch ? ` • matched via "${aliasMatch}"` : ''}</small>
+        </button>
+      `;
+    }).join('');
+  }
+
+  els.searchResults.classList.add('is-open');
+  [...els.searchResults.querySelectorAll('.result[data-path]')].forEach(btn => {
+    btn.addEventListener('click', () => {
+      state.facet = btn.dataset.facet;
+      state.activePath = btn.dataset.path.split('|||');
+      els.searchInput.value = '';
+      closeSearch();
+      render();
+    });
+  });
+}
+
+function closeSearch() {
+  els.searchResults.classList.remove('is-open');
+  els.searchResults.innerHTML = '';
+}
+
+function bindPills() {
+  els.pills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      state.intent = pill.dataset.intent;
+      els.pills.forEach(p => p.classList.toggle('is-active', p === pill));
+      renderDetails();
+    });
+  });
+}
+
+function render() {
+  renderFacets();
+  renderBreadcrumbs();
+  renderColumns();
+  renderDetails();
+}
+
+els.searchInput.addEventListener('input', (event) => renderSearchResults(event.target.value));
+document.addEventListener('click', (event) => {
+  if (!event.target.closest('.search-wrap')) closeSearch();
+});
+
+bindPills();
+render();
+</script>
+
+
