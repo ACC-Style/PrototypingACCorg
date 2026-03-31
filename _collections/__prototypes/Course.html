@@ -5,13 +5,42 @@ position: "Concept Page"
 masthead: "empty.html"
 ---
 
+<div grid-template="hero-image-cta" id="hero" class="font_3:lg font_2:md font_1 relative">
+    <div grid-area="background" class="col_all overflow_hidden row_all relative">
+        <picture data-item="responsive-hero-image" class="absolute bg_cover flex flex_column inset_0 ">
+          <source srcset="../../assets/images/ACC/Course/1200x300.png"
+            media="(min-width: 1024px)" class="display_none">
+          <source srcset="../../assets/images/ACC/Course/1024x256.png"
+            media="(min-width: 768px)" class="display_none">
+          <source srcset="../../assets/images/ACC/Course/600x300.png"
+            media="(min-width: 400px)" class="display_none">
+          <img src="../../assets/images/ACC/Course/300x300.png" alt="Hero Image"
+            class="flex_100">
+        </picture>
+    </div>
+    <div grid-area="breadcrumb" class="z_1 flex flex_row justify_start">
+        <nav data-item="hero-image-breadcrumb-nav" class="font-size_down-2 relative isolation_isolate p-y_3 p-x_4 c_white-8">
+        	<a href="#" class="h:c_white h:underline font_bold c_white-8 expanded-click-area h:c_white"><i class="fas fa-arrow-left"></i> Back</a> |
+        	Education & Meetings</a>
+        </nav>
+    </div>
+    <div grid-area="title" class="relative font-size_up-2 m-y_6:lg m-y_5:md">
+        <h1 data-item="hero-title"
+          class="font-size_up-2 m_0 c_white isolation_isolate relative">
+         Educational Spotlight Courses</h1>
+    </div>
+</div>
+
+
+
+
 <header class="m-y_5:lg m-y_4 m-t_4 p-x_5:lg p-x_4 reading-typography br_solid  br_black-3 br-b_1">
     <strong class="c_secondary font_bold uppercase">
-    Explore ACC Online Courses in Cardiovascular Care   
+    
     </strong>
-    <h1 class="font_display m-b_3 m-t_0">
-     Educational Spotlight Courses
-    </h1>
+    <h2 class="font_display m-b_3 m-t_0">
+    Explore ACC Online Courses in Cardiovascular Care  
+    </h2>
     <p class="lh_3 ">
       These Courses offer the cardiovascular community a collection of resources and newly developed, evidence-based educational activities across topics such as lipid management, valvular heart disease, CVD and influenza vaccine, SGLT2i's, and cardiomyopathies.
 </p>
