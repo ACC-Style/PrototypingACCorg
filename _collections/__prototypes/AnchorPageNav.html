@@ -1,0 +1,1933 @@
+---
+layout: acc/fullscreen
+name: "Anchor Page Nav"
+position: "Page Nav"
+masthead: "empty.html"
+---
+<div
+    class="wrapper-container">
+    <div
+        grid-template="hero-area"
+        class="grid relative m-b_4:lg m-b_3 isolation_isolate reading-typography font-size_up p_3 p_4:md"
+        style="--custom-font-size-up: 1.125;">
+        <div
+            grid-area="background"
+            class=" hero-color-splash relative z_0"></div>
+        <div
+            grid-area="breadcrumb"
+            class="grid justify_start relative">
+            <nav
+                class="grid inline-block isolation_isolate items_center p-r_5:lg p-x_4 p-r_5 relative">
+                <a
+                    href="{% include URL.html url='https://www.acc.org/' %}"
+                    class="not-link font_n2 font_n1:sm font_0:md font_1:lg c_acc h:undecorated font_bold opacity_7 h:opacity expanded-click-area">
+                    <i
+                        class="fas fa-chevron-left"
+                        aria-hidden="true"></i>
+                    <i
+                        class="fas fa-home"></i>
+                </a>
+                <span
+                    class="curve"></span>
+                <span
+                    class="curve alt"></span>
+            </nav>
+        </div>
+        <div
+            grid-area="title"
+            class="color_inherit reading-typography color_inherit c_white z_1 font-size_up flex flex_column justify_center p_3 p_4:md p_5:lg"
+            style="--custom-font-size-up: 1.125;">
+            <h1
+                class="m_0">
+                Topics
+            </h1>
+            <p
+                class="opacity_7 font_light m_0">
+                Taxonomy and Tags of the Website
+            </p>
+        </div>
+        <div
+            class="bg_white"
+            grid-area="feature-cutout">
+            <aside
+                class="columns_1 grid isolation_isolate rows_3 m-t_4 max-w_30 m_auto p-x_4"
+                style="--row-1:90px; --row-2:90px;">
+                <div
+                    data-label="background"
+                    class="bg_acc-n2 row-end_end row-start_2 col_all flex shadow_bevel-light br_solid br_1 br_accent-4"
+                    style="border-radius: 16px;"></div>
+                <div
+                    data-label="product-image"
+                    class="row_all col_all grid">
+                    <div
+                        class="bg_contain bg_no-repeat m-t_n3"
+                        style="background-image: url( 'https://www.acc.org/~/media/Non-Clinical/Images/Education-and-Meetings/Products-and-Resources/ACHDSAP/Learn-Mobile.png' ); background-position: center top;"></div>
+                </div>
+                <div
+                    data-label="content-container"
+                    class="bg_white br_radius m_3 p_4 reading-typography  row-end_end row-start_n2 shadow_overlap-light z_2 col_all br_solid br_black-2 br_1" style="--custom-font-size-up: .8;">
+                    <h3
+                        class="text_center font_medium lh_1">
+                        Share Your Interests by Joining a Member Sections
+                    </h3>
+                    <p
+                        class="text_left">
+                        Connect with peers in focused cardiology areas.  Share insights, explore topics, and take part in discussions shaped around this topic
+                    </p>
+                    <div
+                        class="grid columns_1 items_center content_center gap_2 justify_center">
+                        <a
+                            class="btn btn-secondary"
+                            href="https://apps.apple.com/us/app/acc-learn/id1497013017">
+                            Explore Our Member Section</a>
+
+                    </div>
+                    
+                </div>
+            </aside>
+        </div>
+        <div
+            grid-area="intro"
+            class="reading-typography p-t_5 p-x_4:md"
+            style="--custom-font-size-up: 1.02;">
+            <h2>Explore Clinical Topics designed to make cardiovascular content easier to find. </h2>
+            <p>Explore Clinical Topics designed to make cardiovascular content easier to find. Each topic page brings together the latest education, articles, guidelines, and clinical policy documents for a specific area of cardiovascular care — all in one place. Built to support clinicians, care teams, and anyone looking for trusted cardiovascular information, these pages make it easier to explore the topics most relevant to your interests and work.</p>
+   <strong>Jump to topic category</strong>
+<div class="flex gap_3 justify_center m-t_4">
+                <a href="#Conditions" class="btn btn-shade btn-sm">
+                    Conditions
+                </a>                <a href="#Diagnostics" class="btn btn-shade btn-sm">
+                    Diagnostics &amp; Testing
+                </a>                <a href="#Treatments" class="btn btn-shade btn-sm">
+                    Treatments
+                </a>                <a href="#Specialties" class="btn btn-shade btn-sm">
+                    Specialties
+                </a>                <a href="#Nonclinical" class="btn btn-shade btn-sm">
+                    Nonclinical
+                </a>
+
+            </div>
+        </div>
+        <span
+            grid-area="hero-curve-2"
+            class="curve"></span>
+        <span
+            grid-area="hero-curve-1"
+            class="curve"></span>
+    </div>
+    <svg
+        width="0"
+        height="0"
+        viewBox="0 0 100 100"
+        xmlns="http://www.w3.org/2000/svg"
+        style="position: absolute;">
+        <defs>
+            <clippath
+                id="clipCurve"
+                clipPathUnits="objectBoundingBox">
+                <path
+                    d="M 0 0 Q 0 1, 1 1 L 0 1 Z" />
+            </clippath>
+        </defs>
+    </svg>
+</div>
+{%- include css-bundles/anchor-header-styles.html -%}
+
+
+
+
+<div class="p_6:lg display_none">
+  <ul class="c_primary font_copy ul_none font_1 grid gap_4 columns_3:lg columns_2:md columns_1">
+    <li class="nav-item flex flex_row justify_start items_start" data-nav="child">
+      <button type="button"
+        class="br_0 bg_white br_none font-size_down p-y_2 justify_start c_primary h:c_primary-n3 br_radius h:bg_primary-5 a:bg_accent-5 a:c_accent-n3 bg_black-1 p_2 flex flex_column"
+        aria-expanded="true" data-bs-toggle="collapse" data-bs-target="#pageHubChild" aria-controls="pageHubChild">
+        <span class="fa-stack" aria-hidden="true">
+          <i class="fas fa-minus fa-stack-1x"></i>
+          <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x"></i>
+        </span>
+        <span class="sr-only">Toggle Parent Nav section</span>
+      </button>
+      <div class="flex_auto self_start">
+        <a href="/parent-url"
+          class="active p-y_2 w_100 inline-block h:underline self_center font-size_up font_medium p-l_3">
+          Parent Nav
+        </a>
+        <nav class="nav-sub-child font-size_down p-l_3 collapse show" id="pageHubChild">
+          <ul class="ul_none flex_column flex m-t_3 p-l_3 gap-y_3 lh_1">
+            <li class="nav-item p-l_4" data-nav="child">
+              < data-item="childless" a class="c_primary h:c_primary-n2 h:underline link inline-block">Child
+                Link</am-l_3>
+            </li>
+            <!-- Child item with grandchildren -->
+            <li class="nav-item flex flex_column gap_3 " data-nav="grandchild">
+              <a class="c_primary h:c_primary-n2 h:underline link inline-block ">Child
+                With Grandchildren</a>
+
+              <ul class="ul_none m-t_2 p-l_3 m-b_3 br-l_3 br_solid br_accent-4 gap-y_2 flex flex_column"
+                id="grandChildOne">
+                <li data-nav="child">
+                  <a class="c_primary h:c_primary-n2 h:underline link inline-block ">
+                    Grandchild Link One
+                  </a>
+                </li>
+                <li data-nav="child">
+                  <a class="c_primary h:c_primary-n2 h:underline link inline-block">
+                    Grandchild Link Two
+                  </a>
+                </li>
+                <li data-nav="child">
+                  <a class="c_primary h:c_primary-n2 h:underline link inline-block">
+                    Grandchild Link Three
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item p-l_4" data-nav="child">
+              <a class="c_primary h:c_primary-n2 h:underline link inline-block">
+                Est dolor recusandae aut exercitationem occaecati deleniti.
+              </a>
+              <div class="flex flex_row">
+                <div class="flex_auto self_start p-l_3">
+
+                </div>
+              </div>
+            </li>
+
+          </ul>
+        </nav>
+      </div>
+    </li>
+  </ul>
+</div>
+<div id="topicsRoot" class="">
+  <section class="taxonomy-facet p_4 m-b_4 font-size_up-1" data-taxonomy="facet" id="Conditions">
+    <h2 class="c_primary font_display font-size_up-2 font_bold m-t_0 m-b_2">Conditions</h2>
+    <p class="c_black-7 font-size_down m-t_0 m-b_3">Explore Conditions topics and terms covered across ACC content.</p>
+    <ul class="c_primary font_copy ul_none font_1 grid gap_4 columns_3:lg columns_2:md columns_1">
+      <li class="nav-item flex flex_row justify_start items_start" data-taxonomy="parent" data-has-children="true">
+        <button type="button"
+          class="br_0 bg_white br_none font-size_down-1 p-y_2 justify_start c_primary h:c_primary-n3 br_radius h:bg_primary-5 a:bg_accent-5 a:c_accent-n3 bg_black-1 p_2 flex flex_column collapsed"
+          aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#taxC0" aria-controls="taxC0"><span
+            class="fa-stack" aria-hidden="true"><i class="fas fa-minus fa-stack-1x" aria-hidden="true"></i><i
+              class="fas fa-minus rotate_90 a:rotation fa-stack-1x" aria-hidden="true"></i></span><span
+            class="sr-only">Toggle Cancer section</span></button>
+        <div class="flex_auto m-t_2 self_start"><a href="https://www.acc.org/Clinical-Topics/cancer"
+            title="Explore: Cancer also known as Neoplasms"
+            class="taxonomy-term taxonomy-parent-link active c_primary font_medium h:c_primary-n2 h:underline inline-block lh_1 m_0 p-l_3 self_center w_100"
+            data-term-id="Conditions::Conditions &gt; Cancer">Cancer</a>
+          <nav class="font-size_down nav-child p-l_3 collapse" id="taxC0">
+            <ul class="ul_none flex_column flex m-t_3 p-l_3 gap-y_3 lh_1">
+              <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                  href="https://www.acc.org/Clinical-Topics/breast-cancer"
+                  title="Explore: Breast Cancer also known as Breast Neoplasms"
+                  class="taxonomy-term taxonomy-child-link c_primary-n1 h:c_primary-n3 font_medium font_copy h:underline inline-block link"
+                  data-term-id="Conditions::Conditions &gt; Cancer &gt; Breast Cancer">Breast Cancer</a></li>
+              <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                  href="https://www.acc.org/Clinical-Topics/lung-cancer"
+                  title="Explore: Lung Cancer also known as Lung Neoplasms"
+                  class="taxonomy-term taxonomy-child-link c_primary-n1 h:c_primary-n3 font_medium font_copy h:underline inline-block link"
+                  data-term-id="Conditions::Conditions &gt; Cancer &gt; Lung Cancer">Lung Cancer</a></li>
+              <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                  href="https://www.acc.org/Clinical-Topics/prostate-cancer"
+                  title="Explore: Prostate Cancer also known as Prostatic Neoplasms"
+                  class="taxonomy-term taxonomy-child-link c_primary-n1 h:c_primary-n3 font_medium font_copy h:underline inline-block link"
+                  data-term-id="Conditions::Conditions &gt; Cancer &gt; Prostate Cancer">Prostate Cancer</a></li>
+            </ul>
+          </nav>
+        </div>
+      </li>
+      <li class="nav-item flex flex_row justify_start items_start" data-taxonomy="parent" data-has-children="true">
+        <button type="button"
+          class="br_0 bg_white br_none font-size_down-1 p-y_2 justify_start c_primary h:c_primary-n3 br_radius h:bg_primary-5 a:bg_accent-5 a:c_accent-n3 bg_black-1 p_2 flex flex_column collapsed"
+          aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#taxC1" aria-controls="taxC1"><span
+            class="fa-stack" aria-hidden="true"><i class="fas fa-minus fa-stack-1x" aria-hidden="true"></i><i
+              class="fas fa-minus rotate_90 a:rotation fa-stack-1x" aria-hidden="true"></i></span><span
+            class="sr-only">Toggle Cardiovascular Kidney Metabolic Syndrome section</span></button>
+        <div class="flex_auto m-t_2 self_start"><a
+            href="https://www.acc.org/Clinical-Topics/cardiovascular-kidney-metabolic-syndrome"
+            title="Explore: Cardiovascular Kidney Metabolic Syndrome also known as Metabolic Diseases, Cardiometabolic Diseases, CKM Syndrome, Cardiovascular-Kidney-Metabolic Syndrome, Syndrome X, CKM"
+            class="taxonomy-term taxonomy-parent-link active c_primary font_medium h:c_primary-n2 h:underline inline-block lh_1 m_0 p-l_3 self_center w_100"
+            data-term-id="Conditions::Conditions &gt; Cardiovascular Kidney Metabolic Syndrome">Cardiovascular Kidney
+            Metabolic Syndrome</a>
+          <nav class="font-size_down nav-child p-l_3 collapse" id="taxC1">
+            <ul class="ul_none flex_column flex m-t_3 p-l_3 gap-y_3 lh_1">
+              <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                  href="https://www.acc.org/Clinical-Topics/chronic-kidney-disease"
+                  title="Explore: Chronic Kidney Disease also known as CKD, Renal Insufficiency, Chronic"
+                  class="taxonomy-term taxonomy-child-link c_primary-n1 h:c_primary-n3 font_medium font_copy h:underline inline-block link"
+                  data-term-id="Conditions::Conditions &gt; Cardiovascular Kidney Metabolic Syndrome &gt; Chronic Kidney Disease">Chronic
+                  Kidney Disease</a></li>
+              <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                  href="https://www.acc.org/Clinical-Topics/diabetes"
+                  title="Explore: Diabetes also known as Diabetes Mellitus"
+                  class="taxonomy-term taxonomy-child-link c_primary-n1 h:c_primary-n3 font_medium font_copy h:underline inline-block link"
+                  data-term-id="Conditions::Conditions &gt; Cardiovascular Kidney Metabolic Syndrome &gt; Diabetes">Diabetes</a>
+              </li>
+              <li class="nav-item flex flex_column gap_3" data-taxonomy="child" data-has-children="true"><a
+                  href="https://www.acc.org/Clinical-Topics/dyslipidemia"
+                  title="Explore: Dyslipidemia also known as High Blood Cholesterol, Dyslipidemias"
+                  class="taxonomy-term taxonomy-child-link c_primary-n1 h:c_primary-n3 font_medium font_copy h:underline inline-block link"
+                  data-term-id="Conditions::Conditions &gt; Cardiovascular Kidney Metabolic Syndrome &gt; Dyslipidemia">Dyslipidemia</a>
+                <ul class="ul_none m-t_2 p-l_3 m-b_3 br-l_3 br_solid br_accent-4 gap-y_2 flex flex_column">
+                  <li data-taxonomy="grandchild" data-has-children="false"><a
+                      href="https://www.acc.org/Clinical-Topics/hypercholesterolemia"
+                      title="Explore: Hypercholesterolemia also known as Homozygous Familial Hypercholesterolemia"
+                      class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                      data-term-id="Conditions::Conditions &gt; Cardiovascular Kidney Metabolic Syndrome &gt; Dyslipidemia &gt; Hypercholesterolemia">Hypercholesterolemia</a>
+                  </li>
+                  <li data-taxonomy="grandchild" data-has-children="false"><a
+                      href="https://www.acc.org/Clinical-Topics/hypertriglyceridemia"
+                      title="Explore: Hypertriglyceridemia also known as Hypertriglyceridemia"
+                      class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                      data-term-id="Conditions::Conditions &gt; Cardiovascular Kidney Metabolic Syndrome &gt; Dyslipidemia &gt; Hypertriglyceridemia">Hypertriglyceridemia</a>
+                  </li>
+                  <li data-taxonomy="grandchild" data-has-children="false"><a
+                      href="https://www.acc.org/Clinical-Topics/primary-hyperlipidemia"
+                      title="Explore: Primary Hyperlipidemia also known as Hyperlipidemia"
+                      class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                      data-term-id="Conditions::Conditions &gt; Cardiovascular Kidney Metabolic Syndrome &gt; Dyslipidemia &gt; Primary Hyperlipidemia">Primary
+                      Hyperlipidemia</a></li>
+                </ul>
+              </li>
+              <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                  href="https://www.acc.org/Clinical-Topics/liver-disease"
+                  title="Explore: Liver Disease also known as NASH, Fatty Liver Disease, NAFL, Non-alcoholic Steatohepatitis, Liver Diseases"
+                  class="taxonomy-term taxonomy-child-link c_primary-n1 h:c_primary-n3 font_medium font_copy h:underline inline-block link"
+                  data-term-id="Conditions::Conditions &gt; Cardiovascular Kidney Metabolic Syndrome &gt; Liver Disease">Liver
+                  Disease</a></li>
+              <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                  href="https://www.acc.org/Clinical-Topics/obesity" title="Explore: Obesity also known as Obesity"
+                  class="taxonomy-term taxonomy-child-link c_primary-n1 h:c_primary-n3 font_medium font_copy h:underline inline-block link"
+                  data-term-id="Conditions::Conditions &gt; Cardiovascular Kidney Metabolic Syndrome &gt; Obesity">Obesity</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </li>
+    </ul>
+    <div data-taxonomy="grandparent" class="m-b_4 m-x_n3 p-b_4 p_4">
+      <h3 class="c_primary flex flex_row font_bold items_center m-b_4 relative"><i
+          class="c_primary-3 fa-plus fa-solid font-size_down-2 p-r_3" aria-hidden="true"></i><a
+          href="https://www.acc.org/Clinical-Topics/cardiovascular-disease"
+          title="Explore: Cardiovascular Disease also known as CVD, Cardiovascular Diseases"
+          class="taxonomy-term taxonomy-grandparent-link c_primary expanded-click-area flex_none font_medium h:c_primary-n2 h:underline inline-block m_0 undecorated"
+          data-term-id="Conditions::Conditions &gt; Cardiovascular Disease">Cardiovascular Disease</a><span
+          class="m-l_4 br-t_1 br_dashed br_primary-3 flex_grow"></span></h3>
+      <ul
+        class="c_primary font_copy ul_none font_1 grid gap_4 columns_3:lg columns_2:md columns_1 br-b_1 br_dashed br_primary-3 p-b_4 font-size_down-1">
+        <li class="nav-item flex flex_row justify_start items_start" data-taxonomy="parent" data-has-children="true">
+          <button type="button"
+            class="br_0 bg_white br_none font-size_down-2 p-y_2 justify_start c_primary h:c_primary-n3 br_radius h:bg_primary-5 a:bg_accent-5 a:c_accent-n3 bg_black-1 p_2 flex flex_column collapsed m-t_2 shadow_n1"
+            aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#taxC2" aria-controls="taxC2"><span
+              class="fa-stack" aria-hidden="true"><i class="fas fa-minus fa-stack-1x" aria-hidden="true"></i><i
+                class="fas fa-minus rotate_90 a:rotation fa-stack-1x" aria-hidden="true"></i></span><span
+              class="sr-only">Toggle Heart Disease section</span></button>
+          <div class="flex_auto m-t_2 self_start"><a href="https://www.acc.org/Clinical-Topics/heart-disease"
+              title="Explore: Heart Disease also known as Heart Diseases"
+              class="taxonomy-term taxonomy-parent-link active c_primary font_medium h:c_primary-n2 h:underline inline-block lh_1 m_0 p-l_3 self_center w_100 font-size_up m-b_0 m-t_2"
+              data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Heart Disease">Heart Disease</a>
+            <nav class="font-size_down nav-child p-l_3 collapse" id="taxC2">
+              <ul class="ul_none flex_column flex m-t_3 p-l_3 gap-y_3 lh_1">
+                <li class="nav-item flex flex_column gap_3" data-taxonomy="child" data-has-children="true"><a
+                    href="https://www.acc.org/Clinical-Topics/cardiac-arrhythmia"
+                    title="Explore: Cardiac Arrhythmia also known as Arrhythmias, Cardiac"
+                    class="taxonomy-term taxonomy-child-link c_primary h:c_primary-n2 h:underline link inline-block"
+                    data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Heart Disease &gt; Cardiac Arrhythmia">Cardiac
+                    Arrhythmia</a>
+                  <ul class="ul_none m-t_2 p-l_3 m-b_3 br-l_3 br_solid br_accent-4 gap-y_2 flex flex_column">
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/atrial-arrhythmia"
+                        title="Explore: Atrial Arrhythmia also known as Supraventricular Arrhythmias, Atrial Flutter"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Heart Disease &gt; Cardiac Arrhythmia &gt; Atrial Arrhythmia">Atrial
+                        Arrhythmia</a></li>
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/atrial-fibrillation"
+                        title="Explore: Atrial Fibrillation also known as Afib, AF, Atrial Fribrillation"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Heart Disease &gt; Cardiac Arrhythmia &gt; Atrial Fibrillation">Atrial
+                        Fibrillation</a></li>
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/bradyarrhythmia"
+                        title="Explore: Bradyarrhythmia also known as Bradycardia, Atrio Ventricular Block"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Heart Disease &gt; Cardiac Arrhythmia &gt; Bradyarrhythmia">Bradyarrhythmia</a>
+                    </li>
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/genetic-arrhythmic-conditions"
+                        title="Explore: Genetic Arrhythmic Conditions"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Heart Disease &gt; Cardiac Arrhythmia &gt; Genetic Arrhythmic Conditions">Genetic
+                        Arrhythmic Conditions</a></li>
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/heart-conduction-disorders"
+                        title="Explore: Heart Conduction Disorders"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Heart Disease &gt; Cardiac Arrhythmia &gt; Heart Conduction Disorders">Heart
+                        Conduction Disorders</a></li>
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/syncope"
+                        title="Explore: Syncope also known as Cardiogenic Syncope, Syncope, Cardiogenic"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Heart Disease &gt; Cardiac Arrhythmia &gt; Syncope">Syncope</a>
+                    </li>
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/tachyarrhythmia"
+                        title="Explore: Tachyarrhythmia also known as Supraventricular Tachycardia, SVT, Tachycardia, Supraventricular"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Heart Disease &gt; Cardiac Arrhythmia &gt; Tachyarrhythmia">Tachyarrhythmia</a>
+                    </li>
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/ventricular-arrhythmia"
+                        title="Explore: Ventricular Arrhythmia also known as Ventricular Fibrillation"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Heart Disease &gt; Cardiac Arrhythmia &gt; Ventricular Arrhythmia">Ventricular
+                        Arrhythmia</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item flex flex_column gap_3" data-taxonomy="child" data-has-children="true"><a
+                    href="https://www.acc.org/Clinical-Topics/cardiomyopathy"
+                    title="Explore: Cardiomyopathy also known as Cardiomyopathies"
+                    class="taxonomy-term taxonomy-child-link c_primary h:c_primary-n2 h:underline link inline-block"
+                    data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Heart Disease &gt; Cardiomyopathy">Cardiomyopathy</a>
+                  <ul class="ul_none m-t_2 p-l_3 m-b_3 br-l_3 br_solid br_accent-4 gap-y_2 flex flex_column">
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/cardiac-amyloidosis"
+                        title="Explore: Cardiac Amyloidosis also known as Amyloidosis"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Heart Disease &gt; Cardiomyopathy &gt; Cardiac Amyloidosis">Cardiac
+                        Amyloidosis</a></li>
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/hypertrophic-cardiomyopathy"
+                        title="Explore: Hypertrophic Cardiomyopathy also known as Hypertrophy, HCM, Nonobstructive Cardiomyopathy, Obstructive Cardiomyopathy, Cardiomyopathy, Hypertrophic"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Heart Disease &gt; Cardiomyopathy &gt; Hypertrophic Cardiomyopathy">Hypertrophic
+                        Cardiomyopathy</a></li>
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/myocarditis"
+                        title="Explore: Myocarditis also known as Myocarditis"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Heart Disease &gt; Cardiomyopathy &gt; Myocarditis">Myocarditis</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                    href="https://www.acc.org/Clinical-Topics/cardiotoxicity"
+                    title="Explore: Cardiotoxicity also known as Cardiotoxicity"
+                    class="taxonomy-term taxonomy-child-link c_primary h:c_primary-n2 h:underline link inline-block"
+                    data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Heart Disease &gt; Cardiotoxicity">Cardiotoxicity</a>
+                </li>
+                <li class="nav-item flex flex_column gap_3" data-taxonomy="child" data-has-children="true"><a
+                    href="https://www.acc.org/Clinical-Topics/congenital-heart-disease"
+                    title="Explore: Congenital Heart Disease also known as Congenital Heart Defects"
+                    class="taxonomy-term taxonomy-child-link c_primary h:c_primary-n2 h:underline link inline-block"
+                    data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Heart Disease &gt; Congenital Heart Disease">Congenital
+                    Heart Disease</a>
+                  <ul class="ul_none m-t_2 p-l_3 m-b_3 br-l_3 br_solid br_accent-4 gap-y_2 flex flex_column">
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/patent-foramen-ovale"
+                        title="Explore: Patent Foramen Ovale also known as Ovale, Patent Foramen"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Heart Disease &gt; Congenital Heart Disease &gt; Patent Foramen Ovale">Patent
+                        Foramen Ovale</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                    href="https://www.acc.org/Clinical-Topics/endocarditis"
+                    title="Explore: Endocarditis also known as Infective Endocarditis, Rheumatic Heart Disease, Endocarditis"
+                    class="taxonomy-term taxonomy-child-link c_primary h:c_primary-n2 h:underline link inline-block"
+                    data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Heart Disease &gt; Endocarditis">Endocarditis</a>
+                </li>
+                <li class="nav-item flex flex_column gap_3" data-taxonomy="child" data-has-children="true"><a
+                    href="https://www.acc.org/Clinical-Topics/heart-failure"
+                    title="Explore: Heart Failure also known as Heart Failure"
+                    class="taxonomy-term taxonomy-child-link c_primary h:c_primary-n2 h:underline link inline-block"
+                    data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Heart Disease &gt; Heart Failure">Heart
+                    Failure</a>
+                  <ul class="ul_none m-t_2 p-l_3 m-b_3 br-l_3 br_solid br_accent-4 gap-y_2 flex flex_column">
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/acute-heart-failure"
+                        title="Explore: Acute Heart Failure also known as Heart Failure"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Heart Disease &gt; Heart Failure &gt; Acute Heart Failure">Acute
+                        Heart Failure</a></li>
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/chronic-heart-failure"
+                        title="Explore: Chronic Heart Failure also known as Heart Failure"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Heart Disease &gt; Heart Failure &gt; Chronic Heart Failure">Chronic
+                        Heart Failure</a></li>
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/hfpef"
+                        title="Explore: HFpEF also known as Heart Failure with Preserved Ejection Fraction, Diastolic Heart Failure, Heart Failure, Diastolic"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Heart Disease &gt; Heart Failure &gt; HFpEF">HFpEF</a>
+                    </li>
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/hfref"
+                        title="Explore: HFrEF also known as Heart Failure with Reduced Ejection Fraction, Systolic Heart Failure, Heart Failure, Systolic"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Heart Disease &gt; Heart Failure &gt; HFrEF">HFrEF</a>
+                    </li>
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/hfmref"
+                        title="Explore: HFmrEF also known as Heart Failure"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Heart Disease &gt; Heart Failure &gt; HFmrEF">HFmrEF</a>
+                    </li>
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/hfimpef"
+                        title="Explore: HFimpEF also known as Heart Failure"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Heart Disease &gt; Heart Failure &gt; HFimpEF">HFimpEF</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item flex flex_column gap_3" data-taxonomy="child" data-has-children="true"><a
+                    href="https://www.acc.org/Clinical-Topics/ischemic-heart-disease"
+                    title="Explore: Ischemic Heart Disease also known as Myocardial Ischemia, Chronic Coronary Artery Disease, Stable Ischemic Heart Disease, SIHD, CAD, ASCVD"
+                    class="taxonomy-term taxonomy-child-link c_primary h:c_primary-n2 h:underline link inline-block"
+                    data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Heart Disease &gt; Ischemic Heart Disease">Ischemic
+                    Heart Disease</a>
+                  <ul class="ul_none m-t_2 p-l_3 m-b_3 br-l_3 br_solid br_accent-4 gap-y_2 flex flex_column">
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/acute-coronary-syndrome"
+                        title="Explore: Acute Coronary Syndrome also known as Acute Coronary Syndrome"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Heart Disease &gt; Ischemic Heart Disease &gt; Acute Coronary Syndrome">Acute
+                        Coronary Syndrome</a></li>
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/angina"
+                        title="Explore: Angina also known as Chest Pain, Stable Angina, Unstable Angina, Angina Pectoris"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Heart Disease &gt; Ischemic Heart Disease &gt; Angina">Angina</a>
+                    </li>
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/cardiogenic-shock"
+                        title="Explore: Cardiogenic Shock also known as Shock, Cardiogenic"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Heart Disease &gt; Ischemic Heart Disease &gt; Cardiogenic Shock">Cardiogenic
+                        Shock</a></li>
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/coronary-artery-disease"
+                        title="Explore: Coronary Artery Disease also known as Chronic Coronary Artery Disease, Stable Ischemic Heart Disease, SIHD, CAD, Coronary Artery Disease"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Heart Disease &gt; Ischemic Heart Disease &gt; Coronary Artery Disease">Coronary
+                        Artery Disease</a></li>
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/myocardial-infarction"
+                        title="Explore: Myocardial Infarction also known as Heart Attack, Myocardial Infarction"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Heart Disease &gt; Ischemic Heart Disease &gt; Myocardial Infarction">Myocardial
+                        Infarction</a></li>
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/nstemi"
+                        title="Explore: NSTEMI also known as Non-ST-segment Elevation Myocardial Infarction, Non-ST Elevated Myocardial Infarction"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Heart Disease &gt; Ischemic Heart Disease &gt; NSTEMI">NSTEMI</a>
+                    </li>
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/stemi"
+                        title="Explore: STEMI also known as ST-segment Elevation Myocardial Infarction, ST Elevation Myocardial Infarction"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Heart Disease &gt; Ischemic Heart Disease &gt; STEMI">STEMI</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item flex flex_column gap_3" data-taxonomy="child" data-has-children="true"><a
+                    href="https://www.acc.org/Clinical-Topics/pericardial-disease"
+                    title="Explore: Pericardial Disease also known as Myopericardial Disease"
+                    class="taxonomy-term taxonomy-child-link c_primary h:c_primary-n2 h:underline link inline-block"
+                    data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Heart Disease &gt; Pericardial Disease">Pericardial
+                    Disease</a>
+                  <ul class="ul_none m-t_2 p-l_3 m-b_3 br-l_3 br_solid br_accent-4 gap-y_2 flex flex_column">
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/constrictive-pericarditis"
+                        title="Explore: Constrictive Pericarditis also known as Pericarditis, Constrictive"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Heart Disease &gt; Pericardial Disease &gt; Constrictive Pericarditis">Constrictive
+                        Pericarditis</a></li>
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/pericardial-effusion"
+                        title="Explore: Pericardial Effusion also known as Pericardial Effusion"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Heart Disease &gt; Pericardial Disease &gt; Pericardial Effusion">Pericardial
+                        Effusion</a></li>
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/pericarditis"
+                        title="Explore: Pericarditis also known as Myopericarditis, Pericarditis"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Heart Disease &gt; Pericardial Disease &gt; Pericarditis">Pericarditis</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                    href="https://www.acc.org/Clinical-Topics/sudden-cardiac-death"
+                    title="Explore: Sudden Cardiac Death also known as SCD, Ventricular Fibrillation, V-Fib, Death, Sudden, Cardiac"
+                    class="taxonomy-term taxonomy-child-link c_primary h:c_primary-n2 h:underline link inline-block"
+                    data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Heart Disease &gt; Sudden Cardiac Death">Sudden
+                    Cardiac Death</a></li>
+                <li class="nav-item flex flex_column gap_3" data-taxonomy="child" data-has-children="true"><a
+                    href="https://www.acc.org/Clinical-Topics/valvular-disease"
+                    title="Explore: Valvular Disease also known as Heart Valve Diseases"
+                    class="taxonomy-term taxonomy-child-link c_primary h:c_primary-n2 h:underline link inline-block"
+                    data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Heart Disease &gt; Valvular Disease">Valvular
+                    Disease</a>
+                  <ul class="ul_none m-t_2 p-l_3 m-b_3 br-l_3 br_solid br_accent-4 gap-y_2 flex flex_column">
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/stenosis"
+                        title="Explore: Stenosis also known as Aortic Valve Stenosis, Constriction, Pathologic"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Heart Disease &gt; Valvular Disease &gt; Stenosis">Stenosis</a>
+                    </li>
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/regurgitation"
+                        title="Explore: Regurgitation also known as Mitral Regurgitation, Mitral Valve Insufficiency"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Heart Disease &gt; Valvular Disease &gt; Regurgitation">Regurgitation</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </li>
+        <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+            href="https://www.acc.org/Clinical-Topics/mace"
+            title="Explore: MACE also known as Major Adverse Cardiovascular Events"
+            class="taxonomy-term taxonomy-parent-link c_primary h:c_primary-n2 h:underline link inline-block p-y_2 w_100 self_center font-size_up font_medium p-l_5 m-b_0"
+            data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; MACE">MACE</a></li>
+        <li class="nav-item flex flex_row justify_start items_start" data-taxonomy="parent" data-has-children="true">
+          <button type="button"
+            class="br_0 bg_white br_none font-size_down-2 p-y_2 justify_start c_primary h:c_primary-n3 br_radius h:bg_primary-5 a:bg_accent-5 a:c_accent-n3 bg_black-1 p_2 flex flex_column collapsed m-t_2 shadow_n1"
+            aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#taxC3" aria-controls="taxC3"><span
+              class="fa-stack" aria-hidden="true"><i class="fas fa-minus fa-stack-1x" aria-hidden="true"></i><i
+                class="fas fa-minus rotate_90 a:rotation fa-stack-1x" aria-hidden="true"></i></span><span
+              class="sr-only">Toggle Vascular Disease section</span></button>
+          <div class="flex_auto m-t_2 self_start"><a href="https://www.acc.org/Clinical-Topics/vascular-disease"
+              title="Explore: Vascular Disease also known as Vascular Diseases"
+              class="taxonomy-term taxonomy-parent-link active c_primary font_medium h:c_primary-n2 h:underline inline-block lh_1 m_0 p-l_3 self_center w_100 font-size_up m-b_0 m-t_2"
+              data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Vascular Disease">Vascular
+              Disease</a>
+            <nav class="font-size_down nav-child p-l_3 collapse" id="taxC3">
+              <ul class="ul_none flex_column flex m-t_3 p-l_3 gap-y_3 lh_1">
+                <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                    href="https://www.acc.org/Clinical-Topics/atherosclerosis"
+                    title="Explore: Atherosclerosis also known as Atheroslerosis"
+                    class="taxonomy-term taxonomy-child-link c_primary h:c_primary-n2 h:underline link inline-block"
+                    data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Vascular Disease &gt; Atherosclerosis">Atherosclerosis</a>
+                </li>
+                <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                    href="https://www.acc.org/Clinical-Topics/congenital-cardiovascular-disease"
+                    title="Explore: Congenital Cardiovascular Disease"
+                    class="taxonomy-term taxonomy-child-link c_primary h:c_primary-n2 h:underline link inline-block"
+                    data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Vascular Disease &gt; Congenital Cardiovascular Disease">Congenital
+                    Cardiovascular Disease</a></li>
+                <li class="nav-item flex flex_column gap_3" data-taxonomy="child" data-has-children="true"><a
+                    href="https://www.acc.org/Clinical-Topics/cerebrovascular-disease"
+                    title="Explore: Cerebrovascular Disease also known as Cerebrovascular Disorders"
+                    class="taxonomy-term taxonomy-child-link c_primary h:c_primary-n2 h:underline link inline-block"
+                    data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Vascular Disease &gt; Cerebrovascular Disease">Cerebrovascular
+                    Disease</a>
+                  <ul class="ul_none m-t_2 p-l_3 m-b_3 br-l_3 br_solid br_accent-4 gap-y_2 flex flex_column">
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/chronic-cerebrovascular-disease"
+                        title="Explore: Chronic cerebrovascular disease"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Vascular Disease &gt; Cerebrovascular Disease &gt; Chronic cerebrovascular disease">Chronic
+                        cerebrovascular disease</a></li>
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/transient-ischemic-attack"
+                        title="Explore: Transient Ischemic Attack also known as TIA, Ischemic Attack, Transient"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Vascular Disease &gt; Cerebrovascular Disease &gt; Transient Ischemic Attack">Transient
+                        Ischemic Attack</a></li>
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/stroke" title="Explore: Stroke also known as Stroke"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Vascular Disease &gt; Cerebrovascular Disease &gt; Stroke">Stroke</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item flex flex_column gap_3" data-taxonomy="child" data-has-children="true"><a
+                    href="https://www.acc.org/Clinical-Topics/aortic-disease"
+                    title="Explore: Aortic Disease also known as Aortic Dissection, Aortic Diseases"
+                    class="taxonomy-term taxonomy-child-link c_primary h:c_primary-n2 h:underline link inline-block"
+                    data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Vascular Disease &gt; Aortic Disease">Aortic
+                    Disease</a>
+                  <ul class="ul_none m-t_2 p-l_3 m-b_3 br-l_3 br_solid br_accent-4 gap-y_2 flex flex_column">
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/acute-aortic-syndromes"
+                        title="Explore: Acute Aortic Syndromes"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Vascular Disease &gt; Aortic Disease &gt; Acute Aortic Syndromes">Acute
+                        Aortic Syndromes</a></li>
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/thoracic-aortic-aneurysm"
+                        title="Explore: Thoracic Aortic Aneurysm"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Vascular Disease &gt; Aortic Disease &gt; Thoracic Aortic Aneurysm">Thoracic
+                        Aortic Aneurysm</a></li>
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/abdominal-aortic-aneurysm"
+                        title="Explore: Abdominal Aortic Aneurysm"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Vascular Disease &gt; Aortic Disease &gt; Abdominal Aortic Aneurysm">Abdominal
+                        Aortic Aneurysm</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item flex flex_column gap_3" data-taxonomy="child" data-has-children="true"><a
+                    href="https://www.acc.org/Clinical-Topics/non-coronary-arterial-disease"
+                    title="Explore: Non-Coronary Arterial Disease"
+                    class="taxonomy-term taxonomy-child-link c_primary h:c_primary-n2 h:underline link inline-block"
+                    data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Vascular Disease &gt; Non-Coronary Arterial Disease">Non-Coronary
+                    Arterial Disease</a>
+                  <ul class="ul_none m-t_2 p-l_3 m-b_3 br-l_3 br_solid br_accent-4 gap-y_2 flex flex_column">
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/peripheral-artery-disease"
+                        title="Explore: Peripheral Artery Disease also known as PAD, Peripheral Arterial Disease"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Vascular Disease &gt; Non-Coronary Arterial Disease &gt; Peripheral Artery Disease">Peripheral
+                        Artery Disease</a></li>
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/lower-extremity-peripheral-artery-disease"
+                        title="Explore: Lower Extremity Peripheral Artery Disease"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Vascular Disease &gt; Non-Coronary Arterial Disease &gt; Lower Extremity Peripheral Artery Disease">Lower
+                        Extremity Peripheral Artery Disease</a></li>
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/upper-extremity-peripheral-artery-disease"
+                        title="Explore: Upper Extremity Peripheral Artery Disease"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Vascular Disease &gt; Non-Coronary Arterial Disease &gt; Upper Extremity Peripheral Artery Disease">Upper
+                        Extremity Peripheral Artery Disease</a></li>
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/mesenteric-artery-disease"
+                        title="Explore: Mesenteric Artery Disease"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Vascular Disease &gt; Non-Coronary Arterial Disease &gt; Mesenteric Artery Disease">Mesenteric
+                        Artery Disease</a></li>
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/renal-artery-disease"
+                        title="Explore: Renal Artery Disease"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Vascular Disease &gt; Non-Coronary Arterial Disease &gt; Renal Artery Disease">Renal
+                        Artery Disease</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item flex flex_column gap_3" data-taxonomy="child" data-has-children="true"><a
+                    href="https://www.acc.org/Clinical-Topics/venous-disease" title="Explore: Venous Disease"
+                    class="taxonomy-term taxonomy-child-link c_primary h:c_primary-n2 h:underline link inline-block"
+                    data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Vascular Disease &gt; Venous Disease">Venous
+                    Disease</a>
+                  <ul class="ul_none m-t_2 p-l_3 m-b_3 br-l_3 br_solid br_accent-4 gap-y_2 flex flex_column">
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/venous-thromboembolism"
+                        title="Explore: Venous Thromboembolism also known as Venous Thromboembolism"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Vascular Disease &gt; Venous Disease &gt; Venous Thromboembolism">Venous
+                        Thromboembolism</a></li>
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/pulmonary-embolism"
+                        title="Explore: Pulmonary Embolism also known as Pulmonary Embolism"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Vascular Disease &gt; Venous Disease &gt; Pulmonary Embolism">Pulmonary
+                        Embolism</a></li>
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/chronic-venous-disease"
+                        title="Explore: Chronic Venous Disease"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Vascular Disease &gt; Venous Disease &gt; Chronic Venous Disease">Chronic
+                        Venous Disease</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                    href="https://www.acc.org/Clinical-Topics/pulmonary-hypertension"
+                    title="Explore: Pulmonary Hypertension also known as Hypertension, Pulmonary"
+                    class="taxonomy-term taxonomy-child-link c_primary h:c_primary-n2 h:underline link inline-block"
+                    data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Vascular Disease &gt; Pulmonary Hypertension">Pulmonary
+                    Hypertension</a></li>
+                <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                    href="https://www.acc.org/Clinical-Topics/lymphedema" title="Explore: Lymphedema"
+                    class="taxonomy-term taxonomy-child-link c_primary h:c_primary-n2 h:underline link inline-block"
+                    data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Vascular Disease &gt; Lymphedema">Lymphedema</a>
+                </li>
+                <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                    href="https://www.acc.org/Clinical-Topics/hypertension"
+                    title="Explore: Hypertension also known as High Blood Pressure, Hypertension"
+                    class="taxonomy-term taxonomy-child-link c_primary h:c_primary-n2 h:underline link inline-block"
+                    data-term-id="Conditions::Conditions &gt; Cardiovascular Disease &gt; Vascular Disease &gt; Hypertension">Hypertension</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <ul class="c_primary font_copy ul_none font_1 grid gap_4 columns_3:lg columns_2:md columns_1">
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/coagulopathy"
+          title="Explore: Coagulopathy also known as Blood clotting disorder"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Conditions::Conditions &gt; Coagulopathy">Coagulopathy</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/covid-19" title="Explore: COVID 19 also known as COVID-19"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Conditions::Conditions &gt; COVID 19">COVID 19</a></li>
+      <li class="nav-item flex flex_row justify_start items_start" data-taxonomy="parent" data-has-children="true">
+        <button type="button"
+          class="br_0 bg_white br_none font-size_down-1 p-y_2 justify_start c_primary h:c_primary-n3 br_radius h:bg_primary-5 a:bg_accent-5 a:c_accent-n3 bg_black-1 p_2 flex flex_column collapsed"
+          aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#taxC4" aria-controls="taxC4"><span
+            class="fa-stack" aria-hidden="true"><i class="fas fa-minus fa-stack-1x" aria-hidden="true"></i><i
+              class="fas fa-minus rotate_90 a:rotation fa-stack-1x" aria-hidden="true"></i></span><span
+            class="sr-only">Toggle Pregnancy section</span></button>
+        <div class="flex_auto m-t_2 self_start"><a href="https://www.acc.org/Clinical-Topics/pregnancy"
+            title="Explore: Pregnancy also known as Pregnancy"
+            class="taxonomy-term taxonomy-parent-link active c_primary font_medium h:c_primary-n2 h:underline inline-block lh_1 m_0 p-l_3 self_center w_100"
+            data-term-id="Conditions::Conditions &gt; Pregnancy">Pregnancy</a>
+          <nav class="font-size_down nav-child p-l_3 collapse" id="taxC4">
+            <ul class="ul_none flex_column flex m-t_3 p-l_3 gap-y_3 lh_1">
+              <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                  href="https://www.acc.org/Clinical-Topics/preeclampsia"
+                  title="Explore: Preeclampsia also known as Pre-eclampsia"
+                  class="taxonomy-term taxonomy-child-link c_primary-n1 h:c_primary-n3 font_medium font_copy h:underline inline-block link"
+                  data-term-id="Conditions::Conditions &gt; Pregnancy &gt; Preeclampsia">Preeclampsia</a></li>
+            </ul>
+          </nav>
+        </div>
+      </li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/sleep-apnea"
+          title="Explore: Sleep Apnea also known as Obstructive Sleep Apnea, OSA, Sleep Apnea Syndromes"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Conditions::Conditions &gt; Sleep Apnea">Sleep Apnea</a></li>
+    </ul>
+  </section>
+  <section class="taxonomy-facet p_4 m-b_4 font-size_up-1" data-taxonomy="facet" id="Diagnostics">
+    <h2 class="c_primary font_display font-size_up-2 font_bold m-t_0 m-b_2">Diagnostics and Testing</h2>
+    <p class="c_black-7 font-size_down m-t_0 m-b_3">Explore Diagnostics and Testing topics and terms covered across ACC
+      content.</p>
+    <ul class="c_primary font_copy ul_none font_1 grid gap_4 columns_3:lg columns_2:md columns_1">
+      <li class="nav-item flex flex_row justify_start items_start" data-taxonomy="parent" data-has-children="true">
+        <button type="button"
+          class="br_0 bg_white br_none font-size_down-1 p-y_2 justify_start c_primary h:c_primary-n3 br_radius h:bg_primary-5 a:bg_accent-5 a:c_accent-n3 bg_black-1 p_2 flex flex_column collapsed"
+          aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#taxC5" aria-controls="taxC5"><span
+            class="fa-stack" aria-hidden="true"><i class="fas fa-minus fa-stack-1x" aria-hidden="true"></i><i
+              class="fas fa-minus rotate_90 a:rotation fa-stack-1x" aria-hidden="true"></i></span><span
+            class="sr-only">Toggle Advanced Lipid Testing section</span></button>
+        <div class="flex_auto m-t_2 self_start"><a href="https://www.acc.org/Clinical-Topics/advanced-lipid-testing"
+            title="Explore: Advanced Lipid Testing also known as LDL-C Screening, Lp(a) Screening, Lipids"
+            class="taxonomy-term taxonomy-parent-link active c_primary font_medium h:c_primary-n2 h:underline inline-block lh_1 m_0 p-l_3 self_center w_100"
+            data-term-id="Diagnosis and Testing::Diagnosis and Testing &gt; Advanced Lipid Testing">Advanced Lipid
+            Testing</a>
+          <nav class="font-size_down nav-child p-l_3 collapse" id="taxC5">
+            <ul class="ul_none flex_column flex m-t_3 p-l_3 gap-y_3 lh_1">
+              <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                  href="https://www.acc.org/Clinical-Topics/apo-b-screening"
+                  title="Explore: Apo(b) Screening also known as Apolipoprotein B, Apolipoprotein B-100"
+                  class="taxonomy-term taxonomy-child-link c_primary-n1 h:c_primary-n3 font_medium font_copy h:underline inline-block link"
+                  data-term-id="Diagnosis and Testing::Diagnosis and Testing &gt; Advanced Lipid Testing &gt; Apo(b) Screening">Apo(b)
+                  Screening</a></li>
+              <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                  href="https://www.acc.org/Clinical-Topics/lp-a-screening"
+                  title="Explore: LP(a) Screening also known as Lipoprotein(a)"
+                  class="taxonomy-term taxonomy-child-link c_primary-n1 h:c_primary-n3 font_medium font_copy h:underline inline-block link"
+                  data-term-id="Diagnosis and Testing::Diagnosis and Testing &gt; Advanced Lipid Testing &gt; LP(a) Screening">LP(a)
+                  Screening</a></li>
+            </ul>
+          </nav>
+        </div>
+      </li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/biomarkers" title="Explore: Biomarkers"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Diagnosis and Testing::Diagnosis and Testing &gt; Biomarkers">Biomarkers</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/blood-pressure"
+          title="Explore: Blood Pressure also known as Blood Pressure"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Diagnosis and Testing::Diagnosis and Testing &gt; Blood Pressure">Blood Pressure</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/cholesterol" title="Explore: Cholesterol also known as Cholesterol"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Diagnosis and Testing::Diagnosis and Testing &gt; Cholesterol">Cholesterol</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/heart-rate" title="Explore: Heart Rate also known as Heart Rate"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Diagnosis and Testing::Diagnosis and Testing &gt; Heart Rate">Heart Rate</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/hemodynamics"
+          title="Explore: Hemodynamics also known as Hemodynamics"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Diagnosis and Testing::Diagnosis and Testing &gt; Hemodynamics">Hemodynamics</a></li>
+    </ul>
+    <div data-taxonomy="grandparent" class="m-b_4 m-x_n3 p-b_4 p_4">
+      <h3 class="c_primary flex flex_row font_bold items_center m-b_4 relative"><i
+          class="c_primary-3 fa-plus fa-solid font-size_down-2 p-r_3" aria-hidden="true"></i><a
+          href="https://www.acc.org/Clinical-Topics/imaging" title="Explore: Imaging also known as Diagnostic Imaging"
+          class="taxonomy-term taxonomy-grandparent-link c_primary expanded-click-area flex_none font_medium h:c_primary-n2 h:underline inline-block m_0 undecorated"
+          data-term-id="Diagnosis and Testing::Diagnosis and Testing &gt; Imaging">Imaging</a><span
+          class="m-l_4 br-t_1 br_dashed br_primary-3 flex_grow"></span></h3>
+      <ul
+        class="c_primary font_copy ul_none font_1 grid gap_4 columns_3:lg columns_2:md columns_1 br-b_1 br_dashed br_primary-3 p-b_4 font-size_down-1">
+        <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+            href="https://www.acc.org/Clinical-Topics/angiography"
+            title="Explore: Angiography also known as Angiography"
+            class="taxonomy-term taxonomy-parent-link c_primary h:c_primary-n2 h:underline link inline-block p-y_2 w_100 self_center font-size_up font_medium p-l_5 m-b_0"
+            data-term-id="Diagnosis and Testing::Diagnosis and Testing &gt; Imaging &gt; Angiography">Angiography</a>
+        </li>
+        <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+            href="https://www.acc.org/Clinical-Topics/electrocardiogram"
+            title="Explore: Electrocardiogram also known as Electrocardiography"
+            class="taxonomy-term taxonomy-parent-link c_primary h:c_primary-n2 h:underline link inline-block p-y_2 w_100 self_center font-size_up font_medium p-l_5 m-b_0"
+            data-term-id="Diagnosis and Testing::Diagnosis and Testing &gt; Imaging &gt; Electrocardiogram">Electrocardiogram</a>
+        </li>
+        <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+            href="https://www.acc.org/Clinical-Topics/invasive-imaging" title="Explore: Invasive Imaging"
+            class="taxonomy-term taxonomy-parent-link c_primary h:c_primary-n2 h:underline link inline-block p-y_2 w_100 self_center font-size_up font_medium p-l_5 m-b_0"
+            data-term-id="Diagnosis and Testing::Diagnosis and Testing &gt; Imaging &gt; Invasive Imaging">Invasive
+            Imaging</a></li>
+        <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+            href="https://www.acc.org/Clinical-Topics/multimodal-imaging"
+            title="Explore: Multimodal Imaging also known as Multimodality Imaging, Multimodal Imaging"
+            class="taxonomy-term taxonomy-parent-link c_primary h:c_primary-n2 h:underline link inline-block p-y_2 w_100 self_center font-size_up font_medium p-l_5 m-b_0"
+            data-term-id="Diagnosis and Testing::Diagnosis and Testing &gt; Imaging &gt; Multimodal Imaging">Multimodal
+            Imaging</a></li>
+        <li class="nav-item flex flex_row justify_start items_start" data-taxonomy="parent" data-has-children="true">
+          <button type="button"
+            class="br_0 bg_white br_none font-size_down-2 p-y_2 justify_start c_primary h:c_primary-n3 br_radius h:bg_primary-5 a:bg_accent-5 a:c_accent-n3 bg_black-1 p_2 flex flex_column collapsed m-t_2 shadow_n1"
+            aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#taxC6" aria-controls="taxC6"><span
+              class="fa-stack" aria-hidden="true"><i class="fas fa-minus fa-stack-1x" aria-hidden="true"></i><i
+                class="fas fa-minus rotate_90 a:rotation fa-stack-1x" aria-hidden="true"></i></span><span
+              class="sr-only">Toggle Noninvasive Imaging section</span></button>
+          <div class="flex_auto m-t_2 self_start"><a href="https://www.acc.org/Clinical-Topics/noninvasive-imaging"
+              title="Explore: Noninvasive Imaging"
+              class="taxonomy-term taxonomy-parent-link active c_primary font_medium h:c_primary-n2 h:underline inline-block lh_1 m_0 p-l_3 self_center w_100 font-size_up m-b_0 m-t_2"
+              data-term-id="Diagnosis and Testing::Diagnosis and Testing &gt; Imaging &gt; Noninvasive Imaging">Noninvasive
+              Imaging</a>
+            <nav class="font-size_down nav-child p-l_3 collapse" id="taxC6">
+              <ul class="ul_none flex_column flex m-t_3 p-l_3 gap-y_3 lh_1">
+                <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                    href="https://www.acc.org/Clinical-Topics/computed-tomography"
+                    title="Explore: Computed Tomography also known as CT, Cardiac CT, Tomography, X-Ray Computed"
+                    class="taxonomy-term taxonomy-child-link c_primary h:c_primary-n2 h:underline link inline-block"
+                    data-term-id="Diagnosis and Testing::Diagnosis and Testing &gt; Imaging &gt; Noninvasive Imaging &gt; Computed Tomography">Computed
+                    Tomography</a></li>
+                <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                    href="https://www.acc.org/Clinical-Topics/magnetic-resonance-imaging"
+                    title="Explore: Magnetic Resonance Imaging also known as Cardiac MR, PET, MRI, Magnetic Resonance Imaging"
+                    class="taxonomy-term taxonomy-child-link c_primary h:c_primary-n2 h:underline link inline-block"
+                    data-term-id="Diagnosis and Testing::Diagnosis and Testing &gt; Imaging &gt; Noninvasive Imaging &gt; Magnetic Resonance Imaging">Magnetic
+                    Resonance Imaging</a></li>
+                <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                    href="https://www.acc.org/Clinical-Topics/radionuclide-imaging"
+                    title="Explore: Radionuclide Imaging also known as SPECT, Nuclear Cardiology, Radioisotopes"
+                    class="taxonomy-term taxonomy-child-link c_primary h:c_primary-n2 h:underline link inline-block"
+                    data-term-id="Diagnosis and Testing::Diagnosis and Testing &gt; Imaging &gt; Noninvasive Imaging &gt; Radionuclide Imaging">Radionuclide
+                    Imaging</a></li>
+              </ul>
+            </nav>
+          </div>
+        </li>
+        <li class="nav-item flex flex_row justify_start items_start" data-taxonomy="parent" data-has-children="true">
+          <button type="button"
+            class="br_0 bg_white br_none font-size_down-2 p-y_2 justify_start c_primary h:c_primary-n3 br_radius h:bg_primary-5 a:bg_accent-5 a:c_accent-n3 bg_black-1 p_2 flex flex_column collapsed m-t_2 shadow_n1"
+            aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#taxC7" aria-controls="taxC7"><span
+              class="fa-stack" aria-hidden="true"><i class="fas fa-minus fa-stack-1x" aria-hidden="true"></i><i
+                class="fas fa-minus rotate_90 a:rotation fa-stack-1x" aria-hidden="true"></i></span><span
+              class="sr-only">Toggle Ultrasound section</span></button>
+          <div class="flex_auto m-t_2 self_start"><a href="https://www.acc.org/Clinical-Topics/ultrasound"
+              title="Explore: Ultrasound also known as Ultrasonography"
+              class="taxonomy-term taxonomy-parent-link active c_primary font_medium h:c_primary-n2 h:underline inline-block lh_1 m_0 p-l_3 self_center w_100 font-size_up m-b_0 m-t_2"
+              data-term-id="Diagnosis and Testing::Diagnosis and Testing &gt; Imaging &gt; Ultrasound">Ultrasound</a>
+            <nav class="font-size_down nav-child p-l_3 collapse" id="taxC7">
+              <ul class="ul_none flex_column flex m-t_3 p-l_3 gap-y_3 lh_1">
+                <li class="nav-item flex flex_column gap_3" data-taxonomy="child" data-has-children="true"><a
+                    href="https://www.acc.org/Clinical-Topics/echocardiography"
+                    title="Explore: Echocardiography also known as Echocardiography"
+                    class="taxonomy-term taxonomy-child-link c_primary h:c_primary-n2 h:underline link inline-block"
+                    data-term-id="Diagnosis and Testing::Diagnosis and Testing &gt; Imaging &gt; Ultrasound &gt; Echocardiography">Echocardiography</a>
+                  <ul class="ul_none m-t_2 p-l_3 m-b_3 br-l_3 br_solid br_accent-4 gap-y_2 flex flex_column">
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/transesophageal-echocardiography"
+                        title="Explore: Transesophageal Echocardiography also known as TEE, Echocardiography"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Diagnosis and Testing::Diagnosis and Testing &gt; Imaging &gt; Ultrasound &gt; Echocardiography &gt; Transesophageal Echocardiography">Transesophageal
+                        Echocardiography</a></li>
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/transthorasic-echocardiogram"
+                        title="Explore: Transthorasic Echocardiogram also known as TTE, Echocardiography, Transesophageal"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Diagnosis and Testing::Diagnosis and Testing &gt; Imaging &gt; Ultrasound &gt; Echocardiography &gt; Transthorasic Echocardiogram">Transthorasic
+                        Echocardiogram</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                    href="https://www.acc.org/Clinical-Topics/focused-cardiac-ultrasound"
+                    title="Explore: Focused Cardiac Ultrasound also known as FOCUS"
+                    class="taxonomy-term taxonomy-child-link c_primary h:c_primary-n2 h:underline link inline-block"
+                    data-term-id="Diagnosis and Testing::Diagnosis and Testing &gt; Imaging &gt; Ultrasound &gt; Focused Cardiac Ultrasound">Focused
+                    Cardiac Ultrasound</a></li>
+                <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                    href="https://www.acc.org/Clinical-Topics/peripheral-ultrasound"
+                    title="Explore: Peripheral Ultrasound"
+                    class="taxonomy-term taxonomy-child-link c_primary h:c_primary-n2 h:underline link inline-block"
+                    data-term-id="Diagnosis and Testing::Diagnosis and Testing &gt; Imaging &gt; Ultrasound &gt; Peripheral Ultrasound">Peripheral
+                    Ultrasound</a></li>
+                <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                    href="https://www.acc.org/Clinical-Topics/point-of-care-ultrasound"
+                    title="Explore: Point of Care Ultrasound also known as POCUS"
+                    class="taxonomy-term taxonomy-child-link c_primary h:c_primary-n2 h:underline link inline-block"
+                    data-term-id="Diagnosis and Testing::Diagnosis and Testing &gt; Imaging &gt; Ultrasound &gt; Point of Care Ultrasound">Point
+                    of Care Ultrasound</a></li>
+              </ul>
+            </nav>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <ul class="c_primary font_copy ul_none font_1 grid gap_4 columns_3:lg columns_2:md columns_1">
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/stress-testing"
+          title="Explore: Stress Testing also known as Exercise Test, Stress Echo, Stress Treadmill, Exercise Testing"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Diagnosis and Testing::Diagnosis and Testing &gt; Stress Testing">Stress Testing</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/stroke-volume"
+          title="Explore: Stroke Volume also known as Stroke Volume"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Diagnosis and Testing::Diagnosis and Testing &gt; Stroke Volume">Stroke Volume</a></li>
+    </ul>
+  </section>
+  <section class="taxonomy-facet p_4 m-b_4 font-size_up-1" data-taxonomy="facet" id="Treatments">
+    <h2 class="c_primary font_display font-size_up-2 font_bold m-t_0 m-b_2">Treatments</h2>
+    <p class="c_black-7 font-size_down m-t_0 m-b_3">Explore Treatments topics and terms covered across ACC content.</p>
+    <ul class="c_primary font_copy ul_none font_1 grid gap_4 columns_3:lg columns_2:md columns_1">
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/ace-inhibitors"
+          title="Explore: ACE Inhibitors also known as Angiotensin-converting Enzyme Inhibitors"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Treatments::Treatments &gt; ACE Inhibitors">ACE Inhibitors</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/anticoagulants"
+          title="Explore: Anticoagulants also known as Anticoagulant Management, DOAC, Anticoagulants"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Treatments::Treatments &gt; Anticoagulants">Anticoagulants</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/antithrombotic-therapy"
+          title="Explore: Antithrombotic Therapy also known as Antithrombotic Agents"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Treatments::Treatments &gt; Antithrombotic Therapy">Antithrombotic Therapy</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/arbs"
+          title="Explore: ARBs also known as Angiotensin Receptor Blockers, Angiotensin Receptor Antagonists"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Treatments::Treatments &gt; ARBs">ARBs</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/arnis"
+          title="Explore: ARNIs also known as Angiotensin Receptor-Neprilysin Inhibitors"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Treatments::Treatments &gt; ARNIs">ARNIs</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/beta-blockers" title="Explore: Beta Blockers"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Treatments::Treatments &gt; Beta Blockers">Beta Blockers</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/cardiac-rehabilitation"
+          title="Explore: Cardiac Rehabilitation also known as Cardiac Rehabilitation"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Treatments::Treatments &gt; Cardiac Rehabilitation">Cardiac Rehabilitation</a></li>
+      <li class="nav-item flex flex_row justify_start items_start" data-taxonomy="parent" data-has-children="true">
+        <button type="button"
+          class="br_0 bg_white br_none font-size_down-1 p-y_2 justify_start c_primary h:c_primary-n3 br_radius h:bg_primary-5 a:bg_accent-5 a:c_accent-n3 bg_black-1 p_2 flex flex_column collapsed"
+          aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#taxC8" aria-controls="taxC8"><span
+            class="fa-stack" aria-hidden="true"><i class="fas fa-minus fa-stack-1x" aria-hidden="true"></i><i
+              class="fas fa-minus rotate_90 a:rotation fa-stack-1x" aria-hidden="true"></i></span><span
+            class="sr-only">Toggle Cardiovascular Disease Prevention section</span></button>
+        <div class="flex_auto m-t_2 self_start"><a
+            href="https://www.acc.org/Clinical-Topics/cardiovascular-disease-prevention"
+            title="Explore: Cardiovascular Disease Prevention also known as Prevention"
+            class="taxonomy-term taxonomy-parent-link active c_primary font_medium h:c_primary-n2 h:underline inline-block lh_1 m_0 p-l_3 self_center w_100"
+            data-term-id="Treatments::Treatments &gt; Cardiovascular Disease Prevention">Cardiovascular Disease
+            Prevention</a>
+          <nav class="font-size_down nav-child p-l_3 collapse" id="taxC8">
+            <ul class="ul_none flex_column flex m-t_3 p-l_3 gap-y_3 lh_1">
+              <li class="nav-item flex flex_column gap_3" data-taxonomy="child" data-has-children="true"><a
+                  href="https://www.acc.org/Clinical-Topics/lipid-lowering" title="Explore: Lipid Lowering"
+                  class="taxonomy-term taxonomy-child-link c_primary-n1 h:c_primary-n3 font_medium font_copy h:underline inline-block link"
+                  data-term-id="Treatments::Treatments &gt; Cardiovascular Disease Prevention &gt; Lipid Lowering">Lipid
+                  Lowering</a>
+                <ul class="ul_none m-t_2 p-l_3 m-b_3 br-l_3 br_solid br_accent-4 gap-y_2 flex flex_column">
+                  <li data-taxonomy="grandchild" data-has-children="false"><a
+                      href="https://www.acc.org/Clinical-Topics/nonstatins"
+                      title="Explore: Nonstatins also known as no term"
+                      class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                      data-term-id="Treatments::Treatments &gt; Cardiovascular Disease Prevention &gt; Lipid Lowering &gt; Nonstatins">Nonstatins</a>
+                  </li>
+                  <li data-taxonomy="grandchild" data-has-children="false"><a
+                      href="https://www.acc.org/Clinical-Topics/statins"
+                      title="Explore: Statins also known as Hydroxymethylglutaryl-CoA Reductase Inhibitors"
+                      class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                      data-term-id="Treatments::Treatments &gt; Cardiovascular Disease Prevention &gt; Lipid Lowering &gt; Statins">Statins</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                  href="https://www.acc.org/Clinical-Topics/exercise"
+                  title="Explore: Exercise also known as Regular Exercise, Exercise"
+                  class="taxonomy-term taxonomy-child-link c_primary-n1 h:c_primary-n3 font_medium font_copy h:underline inline-block link"
+                  data-term-id="Treatments::Treatments &gt; Cardiovascular Disease Prevention &gt; Exercise">Exercise</a>
+              </li>
+              <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                  href="https://www.acc.org/Clinical-Topics/diet-and-nutrition"
+                  title="Explore: Diet and Nutrition also known as Nutrition Therapy, Healthy Diet"
+                  class="taxonomy-term taxonomy-child-link c_primary-n1 h:c_primary-n3 font_medium font_copy h:underline inline-block link"
+                  data-term-id="Treatments::Treatments &gt; Cardiovascular Disease Prevention &gt; Diet and Nutrition">Diet
+                  and Nutrition</a></li>
+              <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                  href="https://www.acc.org/Clinical-Topics/primary-prevention"
+                  title="Explore: Primary Prevention also known as Primary Prevention"
+                  class="taxonomy-term taxonomy-child-link c_primary-n1 h:c_primary-n3 font_medium font_copy h:underline inline-block link"
+                  data-term-id="Treatments::Treatments &gt; Cardiovascular Disease Prevention &gt; Primary Prevention">Primary
+                  Prevention</a></li>
+              <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                  href="https://www.acc.org/Clinical-Topics/secondary-prevention"
+                  title="Explore: Secondary Prevention also known as Secondary Prevention"
+                  class="taxonomy-term taxonomy-child-link c_primary-n1 h:c_primary-n3 font_medium font_copy h:underline inline-block link"
+                  data-term-id="Treatments::Treatments &gt; Cardiovascular Disease Prevention &gt; Secondary Prevention">Secondary
+                  Prevention</a></li>
+              <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                  href="https://www.acc.org/Clinical-Topics/smoking-cessation"
+                  title="Explore: Smoking Cessation also known as Tobacco Cessation, Smoking Cessation, Smoking Prevention"
+                  class="taxonomy-term taxonomy-child-link c_primary-n1 h:c_primary-n3 font_medium font_copy h:underline inline-block link"
+                  data-term-id="Treatments::Treatments &gt; Cardiovascular Disease Prevention &gt; Smoking Cessation">Smoking
+                  Cessation</a></li>
+              <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                  href="https://www.acc.org/Clinical-Topics/stress-reduction" title="Explore: Stress Reduction"
+                  class="taxonomy-term taxonomy-child-link c_primary-n1 h:c_primary-n3 font_medium font_copy h:underline inline-block link"
+                  data-term-id="Treatments::Treatments &gt; Cardiovascular Disease Prevention &gt; Stress Reduction">Stress
+                  Reduction</a></li>
+              <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                  href="https://www.acc.org/Clinical-Topics/stroke-prevention" title="Explore: Stroke Prevention"
+                  class="taxonomy-term taxonomy-child-link c_primary-n1 h:c_primary-n3 font_medium font_copy h:underline inline-block link"
+                  data-term-id="Treatments::Treatments &gt; Cardiovascular Disease Prevention &gt; Stroke Prevention">Stroke
+                  Prevention</a></li>
+            </ul>
+          </nav>
+        </div>
+      </li>
+    </ul>
+    <div data-taxonomy="grandparent" class="m-b_4 m-x_n3 p-b_4 p_4">
+      <h3 class="c_primary flex flex_row font_bold items_center m-b_4 relative"><i
+          class="c_primary-3 fa-plus fa-solid font-size_down-2 p-r_3" aria-hidden="true"></i><a
+          href="https://www.acc.org/Clinical-Topics/cardiovascular-procedures"
+          title="Explore: Cardiovascular Procedures"
+          class="taxonomy-term taxonomy-grandparent-link c_primary expanded-click-area flex_none font_medium h:c_primary-n2 h:underline inline-block m_0 undecorated"
+          data-term-id="Treatments::Treatments &gt; Cardiovascular Procedures">Cardiovascular Procedures</a><span
+          class="m-l_4 br-t_1 br_dashed br_primary-3 flex_grow"></span></h3>
+      <ul
+        class="c_primary font_copy ul_none font_1 grid gap_4 columns_3:lg columns_2:md columns_1 br-b_1 br_dashed br_primary-3 p-b_4 font-size_down-1">
+        <li class="nav-item flex flex_row justify_start items_start" data-taxonomy="parent" data-has-children="true">
+          <button type="button"
+            class="br_0 bg_white br_none font-size_down-2 p-y_2 justify_start c_primary h:c_primary-n3 br_radius h:bg_primary-5 a:bg_accent-5 a:c_accent-n3 bg_black-1 p_2 flex flex_column collapsed m-t_2 shadow_n1"
+            aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#taxC9" aria-controls="taxC9"><span
+              class="fa-stack" aria-hidden="true"><i class="fas fa-minus fa-stack-1x" aria-hidden="true"></i><i
+                class="fas fa-minus rotate_90 a:rotation fa-stack-1x" aria-hidden="true"></i></span><span
+              class="sr-only">Toggle Cardiac Surgery section</span></button>
+          <div class="flex_auto m-t_2 self_start"><a href="https://www.acc.org/Clinical-Topics/cardiac-surgery"
+              title="Explore: Cardiac Surgery also known as Cardiac Surgical Procedures"
+              class="taxonomy-term taxonomy-parent-link active c_primary font_medium h:c_primary-n2 h:underline inline-block lh_1 m_0 p-l_3 self_center w_100 font-size_up m-b_0 m-t_2"
+              data-term-id="Treatments::Treatments &gt; Cardiovascular Procedures &gt; Cardiac Surgery">Cardiac
+              Surgery</a>
+            <nav class="font-size_down nav-child p-l_3 collapse" id="taxC9">
+              <ul class="ul_none flex_column flex m-t_3 p-l_3 gap-y_3 lh_1">
+                <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                    href="https://www.acc.org/Clinical-Topics/aortic-surgery" title="Explore: Aortic Surgery"
+                    class="taxonomy-term taxonomy-child-link c_primary h:c_primary-n2 h:underline link inline-block"
+                    data-term-id="Treatments::Treatments &gt; Cardiovascular Procedures &gt; Cardiac Surgery &gt; Aortic Surgery">Aortic
+                    Surgery</a></li>
+                <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                    href="https://www.acc.org/Clinical-Topics/coronary-artery-bypass"
+                    title="Explore: Coronary Artery Bypass also known as Coronary Artery Bypass"
+                    class="taxonomy-term taxonomy-child-link c_primary h:c_primary-n2 h:underline link inline-block"
+                    data-term-id="Treatments::Treatments &gt; Cardiovascular Procedures &gt; Cardiac Surgery &gt; Coronary Artery Bypass">Coronary
+                    Artery Bypass</a></li>
+                <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                    href="https://www.acc.org/Clinical-Topics/heart-transplantation"
+                    title="Explore: Heart Transplantation also known as Cardiac Transplant, Heart Transplantation"
+                    class="taxonomy-term taxonomy-child-link c_primary h:c_primary-n2 h:underline link inline-block"
+                    data-term-id="Treatments::Treatments &gt; Cardiovascular Procedures &gt; Cardiac Surgery &gt; Heart Transplantation">Heart
+                    Transplantation</a></li>
+                <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                    href="https://www.acc.org/Clinical-Topics/myocardial-revascularization"
+                    title="Explore: Myocardial Revascularization also known as Coronary Artery Revascularization, Myocardial Revascularization"
+                    class="taxonomy-term taxonomy-child-link c_primary h:c_primary-n2 h:underline link inline-block"
+                    data-term-id="Treatments::Treatments &gt; Cardiovascular Procedures &gt; Cardiac Surgery &gt; Myocardial Revascularization">Myocardial
+                    Revascularization</a></li>
+              </ul>
+            </nav>
+          </div>
+        </li>
+        <li class="nav-item flex flex_row justify_start items_start" data-taxonomy="parent" data-has-children="true">
+          <button type="button"
+            class="br_0 bg_white br_none font-size_down-2 p-y_2 justify_start c_primary h:c_primary-n3 br_radius h:bg_primary-5 a:bg_accent-5 a:c_accent-n3 bg_black-1 p_2 flex flex_column collapsed m-t_2 shadow_n1"
+            aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#taxC10" aria-controls="taxC10"><span
+              class="fa-stack" aria-hidden="true"><i class="fas fa-minus fa-stack-1x" aria-hidden="true"></i><i
+                class="fas fa-minus rotate_90 a:rotation fa-stack-1x" aria-hidden="true"></i></span><span
+              class="sr-only">Toggle Coronary, Peripheral and Structural Procedures section</span></button>
+          <div class="flex_auto m-t_2 self_start"><a
+              href="https://www.acc.org/Clinical-Topics/coronary-peripheral-and-structural-procedures"
+              title="Explore: Coronary, Peripheral and Structural Procedures"
+              class="taxonomy-term taxonomy-parent-link active c_primary font_medium h:c_primary-n2 h:underline inline-block lh_1 m_0 p-l_3 self_center w_100 font-size_up m-b_0 m-t_2"
+              data-term-id="Treatments::Treatments &gt; Cardiovascular Procedures &gt; Coronary, Peripheral and Structural Procedures">Coronary,
+              Peripheral and Structural Procedures</a>
+            <nav class="font-size_down nav-child p-l_3 collapse" id="taxC10">
+              <ul class="ul_none flex_column flex m-t_3 p-l_3 gap-y_3 lh_1">
+                <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                    href="https://www.acc.org/Clinical-Topics/drug-eluting-stents"
+                    title="Explore: Drug-Eluting Stents also known as Drug-Eluting Stents"
+                    class="taxonomy-term taxonomy-child-link c_primary h:c_primary-n2 h:underline link inline-block"
+                    data-term-id="Treatments::Treatments &gt; Cardiovascular Procedures &gt; Coronary, Peripheral and Structural Procedures &gt; Drug-Eluting Stents">Drug-Eluting
+                    Stents</a></li>
+                <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                    href="https://www.acc.org/Clinical-Topics/pci"
+                    title="Explore: PCI also known as Percutaneous Coronary Intervention"
+                    class="taxonomy-term taxonomy-child-link c_primary h:c_primary-n2 h:underline link inline-block"
+                    data-term-id="Treatments::Treatments &gt; Cardiovascular Procedures &gt; Coronary, Peripheral and Structural Procedures &gt; PCI">PCI</a>
+                </li>
+                <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                    href="https://www.acc.org/Clinical-Topics/peripheral-intervention"
+                    title="Explore: Peripheral Intervention"
+                    class="taxonomy-term taxonomy-child-link c_primary h:c_primary-n2 h:underline link inline-block"
+                    data-term-id="Treatments::Treatments &gt; Cardiovascular Procedures &gt; Coronary, Peripheral and Structural Procedures &gt; Peripheral Intervention">Peripheral
+                    Intervention</a></li>
+                <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                    href="https://www.acc.org/Clinical-Topics/stents" title="Explore: Stents also known as Stents"
+                    class="taxonomy-term taxonomy-child-link c_primary h:c_primary-n2 h:underline link inline-block"
+                    data-term-id="Treatments::Treatments &gt; Cardiovascular Procedures &gt; Coronary, Peripheral and Structural Procedures &gt; Stents">Stents</a>
+                </li>
+                <li class="nav-item flex flex_column gap_3" data-taxonomy="child" data-has-children="true"><a
+                    href="https://www.acc.org/Clinical-Topics/structural-intervention"
+                    title="Explore: Structural Intervention"
+                    class="taxonomy-term taxonomy-child-link c_primary h:c_primary-n2 h:underline link inline-block"
+                    data-term-id="Treatments::Treatments &gt; Cardiovascular Procedures &gt; Coronary, Peripheral and Structural Procedures &gt; Structural Intervention">Structural
+                    Intervention</a>
+                  <ul class="ul_none m-t_2 p-l_3 m-b_3 br-l_3 br_solid br_accent-4 gap-y_2 flex flex_column">
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/mechanical-valve" title="Explore: Mechanical Valve"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Treatments::Treatments &gt; Cardiovascular Procedures &gt; Coronary, Peripheral and Structural Procedures &gt; Structural Intervention &gt; Mechanical Valve">Mechanical
+                        Valve</a></li>
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/prosthetic-valve" title="Explore: Prosthetic Valve"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Treatments::Treatments &gt; Cardiovascular Procedures &gt; Coronary, Peripheral and Structural Procedures &gt; Structural Intervention &gt; Prosthetic Valve">Prosthetic
+                        Valve</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                    href="https://www.acc.org/Clinical-Topics/tavr"
+                    title="Explore: TAVR also known as Transcatheter Aortic Valve Replacement, TAVI"
+                    class="taxonomy-term taxonomy-child-link c_primary h:c_primary-n2 h:underline link inline-block"
+                    data-term-id="Treatments::Treatments &gt; Cardiovascular Procedures &gt; Coronary, Peripheral and Structural Procedures &gt; TAVR">TAVR</a>
+                </li>
+                <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                    href="https://www.acc.org/Clinical-Topics/vascular-access"
+                    title="Explore: Vascular Access also known as Vascular Surgical Procedures"
+                    class="taxonomy-term taxonomy-child-link c_primary h:c_primary-n2 h:underline link inline-block"
+                    data-term-id="Treatments::Treatments &gt; Cardiovascular Procedures &gt; Coronary, Peripheral and Structural Procedures &gt; Vascular Access">Vascular
+                    Access</a></li>
+              </ul>
+            </nav>
+          </div>
+        </li>
+        <li class="nav-item flex flex_row justify_start items_start" data-taxonomy="parent" data-has-children="true">
+          <button type="button"
+            class="br_0 bg_white br_none font-size_down-2 p-y_2 justify_start c_primary h:c_primary-n3 br_radius h:bg_primary-5 a:bg_accent-5 a:c_accent-n3 bg_black-1 p_2 flex flex_column collapsed m-t_2 shadow_n1"
+            aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#taxC11" aria-controls="taxC11"><span
+              class="fa-stack" aria-hidden="true"><i class="fas fa-minus fa-stack-1x" aria-hidden="true"></i><i
+                class="fas fa-minus rotate_90 a:rotation fa-stack-1x" aria-hidden="true"></i></span><span
+              class="sr-only">Toggle Invasive Cardiovascular Procedures section</span></button>
+          <div class="flex_auto m-t_2 self_start"><a
+              href="https://www.acc.org/Clinical-Topics/invasive-cardiovascular-procedures"
+              title="Explore: Invasive Cardiovascular Procedures"
+              class="taxonomy-term taxonomy-parent-link active c_primary font_medium h:c_primary-n2 h:underline inline-block lh_1 m_0 p-l_3 self_center w_100 font-size_up m-b_0 m-t_2"
+              data-term-id="Treatments::Treatments &gt; Cardiovascular Procedures &gt; Invasive Cardiovascular Procedures">Invasive
+              Cardiovascular Procedures</a>
+            <nav class="font-size_down nav-child p-l_3 collapse" id="taxC11">
+              <ul class="ul_none flex_column flex m-t_3 p-l_3 gap-y_3 lh_1">
+                <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                    href="https://www.acc.org/Clinical-Topics/ablation"
+                    title="Explore: Ablation also known as Ablation Techniques"
+                    class="taxonomy-term taxonomy-child-link c_primary h:c_primary-n2 h:underline link inline-block"
+                    data-term-id="Treatments::Treatments &gt; Cardiovascular Procedures &gt; Invasive Cardiovascular Procedures &gt; Ablation">Ablation</a>
+                </li>
+                <li class="nav-item flex flex_column gap_3" data-taxonomy="child" data-has-children="true"><a
+                    href="https://www.acc.org/Clinical-Topics/cardiac-implantable-devices"
+                    title="Explore: Cardiac Implantable Devices"
+                    class="taxonomy-term taxonomy-child-link c_primary h:c_primary-n2 h:underline link inline-block"
+                    data-term-id="Treatments::Treatments &gt; Cardiovascular Procedures &gt; Invasive Cardiovascular Procedures &gt; Cardiac Implantable Devices">Cardiac
+                    Implantable Devices</a>
+                  <ul class="ul_none m-t_2 p-l_3 m-b_3 br-l_3 br_solid br_accent-4 gap-y_2 flex flex_column">
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/cardiovascular-implantable-electronic-device"
+                        title="Explore: Cardiovascular Implantable Electronic Device also known as CIED"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Treatments::Treatments &gt; Cardiovascular Procedures &gt; Invasive Cardiovascular Procedures &gt; Cardiac Implantable Devices &gt; Cardiovascular Implantable Electronic Device">Cardiovascular
+                        Implantable Electronic Device</a></li>
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/implantable-cardioverter-defibrillator"
+                        title="Explore: Implantable Cardioverter-Defibrillator also known as ICD, Defibrillators, Implantable"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Treatments::Treatments &gt; Cardiovascular Procedures &gt; Invasive Cardiovascular Procedures &gt; Cardiac Implantable Devices &gt; Implantable Cardioverter-Defibrillator">Implantable
+                        Cardioverter-Defibrillator</a></li>
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/left-ventricular-assist-device"
+                        title="Explore: Left Ventricular Assist Device also known as LVAD"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Treatments::Treatments &gt; Cardiovascular Procedures &gt; Invasive Cardiovascular Procedures &gt; Cardiac Implantable Devices &gt; Left Ventricular Assist Device">Left
+                        Ventricular Assist Device</a></li>
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/mechanical-circulatory-support"
+                        title="Explore: Mechanical Circulatory Support also known as Heart-Assist Devices"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Treatments::Treatments &gt; Cardiovascular Procedures &gt; Invasive Cardiovascular Procedures &gt; Cardiac Implantable Devices &gt; Mechanical Circulatory Support">Mechanical
+                        Circulatory Support</a></li>
+                    <li data-taxonomy="grandchild" data-has-children="false"><a
+                        href="https://www.acc.org/Clinical-Topics/cardiac-pacing"
+                        title="Explore: Cardiac Pacing also known as Cardiac Resynchronization Therapy, Pacemaker, Cardiac Pacing, Artificial"
+                        class="taxonomy-term taxonomy-grandchild-link c_secondary-n2 h:c_secondary-n4 h:underline link inline-block"
+                        data-term-id="Treatments::Treatments &gt; Cardiovascular Procedures &gt; Invasive Cardiovascular Procedures &gt; Cardiac Implantable Devices &gt; Cardiac Pacing">Cardiac
+                        Pacing</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                    href="https://www.acc.org/Clinical-Topics/laao"
+                    title="Explore: LAAO also known as Left Atrial Appendage Occlusion"
+                    class="taxonomy-term taxonomy-child-link c_primary h:c_primary-n2 h:underline link inline-block"
+                    data-term-id="Treatments::Treatments &gt; Cardiovascular Procedures &gt; Invasive Cardiovascular Procedures &gt; LAAO">LAAO</a>
+                </li>
+                <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                    href="https://www.acc.org/Clinical-Topics/revascularization" title="Explore: Revascularization"
+                    class="taxonomy-term taxonomy-child-link c_primary h:c_primary-n2 h:underline link inline-block"
+                    data-term-id="Treatments::Treatments &gt; Cardiovascular Procedures &gt; Invasive Cardiovascular Procedures &gt; Revascularization">Revascularization</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <ul class="c_primary font_copy ul_none font_1 grid gap_4 columns_3:lg columns_2:md columns_1">
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/ccbs" title="Explore: CCBs also known as Calcium Channel Blockers"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Treatments::Treatments &gt; CCBs">CCBs</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/cpr"
+          title="Explore: CPR also known as Cardiopulmonary Resuscitation"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Treatments::Treatments &gt; CPR">CPR</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/critical-care"
+          title="Explore: Critical Care also known as Intensive Care, Critical Care"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Treatments::Treatments &gt; Critical Care">Critical Care</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/dual-antiplatelet-therapy"
+          title="Explore: Dual Antiplatelet Therapy"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Treatments::Treatments &gt; Dual Antiplatelet Therapy">Dual Antiplatelet Therapy</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/glp1-ras"
+          title="Explore: GLP1-RAs also known as Glucagon-Like Peptide-1 Receptor Agonists"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Treatments::Treatments &gt; GLP1-RAs">GLP1-RAs</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/mras"
+          title="Explore: MRAs also known as Mineralocorticoid Receptor Antagonists"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Treatments::Treatments &gt; MRAs">MRAs</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/myosin-inhibitors" title="Explore: Myosin Inhibitors"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Treatments::Treatments &gt; Myosin Inhibitors">Myosin Inhibitors</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/noncardiac-surgery" title="Explore: Noncardiac Surgery"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Treatments::Treatments &gt; Noncardiac Surgery">Noncardiac Surgery</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/perioperative-evaluation-and-care"
+          title="Explore: Perioperative Evaluation and Care also known as Perioperative Care"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Treatments::Treatments &gt; Perioperative Evaluation and Care">Perioperative Evaluation and
+          Care</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/platelets" title="Explore: Platelets also known as Blood Platelets"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Treatments::Treatments &gt; Platelets">Platelets</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/sglt2-inhibitors"
+          title="Explore: SGLT2 Inhibitors also known as Sodium-Glucose Cotransporter 2 Inhibitors"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Treatments::Treatments &gt; SGLT2 Inhibitors">SGLT2 Inhibitors</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/semaglutide" title="Explore: Semaglutide"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Treatments::Treatments &gt; Semaglutide">Semaglutide</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/targeted-and-immune-cancer-therapy"
+          title="Explore: Targeted and Immune Cancer Therapy also known as Immunotherapy, Molecular Targeted Therapy"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Treatments::Treatments &gt; Targeted and Immune Cancer Therapy">Targeted and Immune Cancer
+          Therapy</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/vaccines" title="Explore: Vaccines also known as Vaccines"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Treatments::Treatments &gt; Vaccines">Vaccines</a></li>
+    </ul>
+  </section>
+  <section class="taxonomy-facet p_4 m-b_4 font-size_up-1" data-taxonomy="facet" id="Specialties">
+    <h2 class="c_primary font_display font-size_up-2 font_bold m-t_0 m-b_2">Specialties</h2>
+    <p class="c_black-7 font-size_down m-t_0 m-b_3">Explore Specialties topics and terms covered across ACC content.</p>
+    <ul class="c_primary font_copy ul_none font_1 grid gap_4 columns_3:lg columns_2:md columns_1">
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/academic-cardiology"
+          title="Explore: Academic Cardiology also known as no term"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Specialties::Specialties &gt; Academic Cardiology">Academic Cardiology</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/advanced-career-professionals"
+          title="Explore: Advanced Career Professionals"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Specialties::Specialties &gt; Advanced Career Professionals">Advanced Career Professionals</a>
+      </li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/adult-congenital-cardiology"
+          title="Explore: Adult Congenital Cardiology also known as Congenital Heart Disease"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Specialties::Specialties &gt; Adult Congenital Cardiology">Adult Congenital Cardiology</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/cardio-obstetrics"
+          title="Explore: Cardio-Obstetrics also known as Obstetrics"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Specialties::Specialties &gt; Cardio-Obstetrics">Cardio-Obstetrics</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/cardio-oncology"
+          title="Explore: Cardio-Oncology also known as Cardiotoxicity"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Specialties::Specialties &gt; Cardio-Oncology">Cardio-Oncology</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/cardiolovascular-care-team"
+          title="Explore: Cardiolovascular Care Team also known as APP, Advanced Practice Provider, Cardiology Care Team, CV Care Team, no term"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Specialties::Specialties &gt; Cardiolovascular Care Team">Cardiolovascular Care Team</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/critical-care-cardiology"
+          title="Explore: Critical Care Cardiology also known as Critical Care"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Specialties::Specialties &gt; Critical Care Cardiology">Critical Care Cardiology</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/cv-tech" title="Explore: CV Tech"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Specialties::Specialties &gt; CV Tech">CV Tech</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/early-career-professionals"
+          title="Explore: Early Career Professionals"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Specialties::Specialties &gt; Early Career Professionals">Early Career Professionals</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/electrophysiology"
+          title="Explore: Electrophysiology also known as Cardiac Electrophysiology"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Specialties::Specialties &gt; Electrophysiology">Electrophysiology</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/federal-cardiology" title="Explore: Federal Cardiology"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Specialties::Specialties &gt; Federal Cardiology">Federal Cardiology</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/fellows-in-training"
+          title="Explore: Fellows in Training also known as FIT"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Specialties::Specialties &gt; Fellows in Training">Fellows in Training</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/geriatric-cardiology"
+          title="Explore: Geriatric Cardiology also known as Geriatrics"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Specialties::Specialties &gt; Geriatric Cardiology">Geriatric Cardiology</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/heart-failure-cardiology" title="Explore: Heart Failure Cardiology"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Specialties::Specialties &gt; Heart Failure Cardiology">Heart Failure Cardiology</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/hematology" title="Explore: Hematology also known as Hematology"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Specialties::Specialties &gt; Hematology">Hematology</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/hospitalist" title="Explore: Hospitalist"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Specialties::Specialties &gt; Hospitalist">Hospitalist</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/interventional-cardiology"
+          title="Explore: Interventional Cardiology also known as no term"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Specialties::Specialties &gt; Interventional Cardiology">Interventional Cardiology</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/medical-residents" title="Explore: Medical Residents"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Specialties::Specialties &gt; Medical Residents">Medical Residents</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/medical-students" title="Explore: Medical Students"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Specialties::Specialties &gt; Medical Students">Medical Students</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/pediatric-cardiology"
+          title="Explore: Pediatric Cardiology also known as Pediatrics"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Specialties::Specialties &gt; Pediatric Cardiology">Pediatric Cardiology</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/pharmacist" title="Explore: Pharmacist"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Specialties::Specialties &gt; Pharmacist">Pharmacist</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/regenerative-medicine"
+          title="Explore: Regenerative Medicine also known as Genetics, Omics and Tissue Regeneration, Cell- and Tissue-Based Therapy"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Specialties::Specialties &gt; Regenerative Medicine">Regenerative Medicine</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/sports-and-exercise-cardiology"
+          title="Explore: Sports and Exercise Cardiology also known as Athletes, Sports Medicine"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Specialties::Specialties &gt; Sports and Exercise Cardiology">Sports and Exercise Cardiology</a>
+      </li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/translational-medicine"
+          title="Explore: Translational Medicine also known as Basic and Translational Research, Translational Science, Biomedical"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Specialties::Specialties &gt; Translational Medicine">Translational Medicine</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/vascular-medicine"
+          title="Explore: Vascular Medicine also known as Vascular Heart Disease"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Specialties::Specialties &gt; Vascular Medicine">Vascular Medicine</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/women-in-cardiology"
+          title="Explore: Women in Cardiology also known as Women in Cardiology"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Specialties::Specialties &gt; Women in Cardiology">Women in Cardiology</a></li>
+    </ul>
+  </section>
+  <section class="taxonomy-facet p_4 m-b_4 font-size_up-1" data-taxonomy="facet" id="Nonclinical">
+    <h2 class="c_primary font_display font-size_up-2 font_bold m-t_0 m-b_2">Nonclinical</h2>
+    <p class="c_black-7 font-size_down m-t_0 m-b_3">Explore Nonclinical topics and terms covered across ACC content.</p>
+    <ul class="c_primary font_copy ul_none font_1 grid gap_4 columns_3:lg columns_2:md columns_1">
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/acc-history"
+          title="Explore: ACC History also known as History of Cardiology"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; ACC History">ACC History</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/advocacy"
+          title="Explore: Advocacy also known as Health Policy, Advocacy"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Advocacy">Advocacy</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/artificial-intelligence"
+          title="Explore: Artificial Intelligence also known as AI, Artificial Intelligence"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Artificial Intelligence">Artificial Intelligence</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/basic-science-research"
+          title="Explore: Basic Science Research also known as Basic Science Research"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Basic Science Research">Basic Science Research</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/career-development"
+          title="Explore: Career Development also known as Career Development"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Career Development">Career Development</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/certification"
+          title="Explore: Certification also known as Certification"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Certification">Certification</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/clinical-decision-support"
+          title="Explore: Clinical Decision Support also known as Clinical Decision Support"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Clinical Decision Support">Clinical Decision Support</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/coding" title="Explore: Coding also known as Clinical Coding"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Coding">Coding</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/comparative-effectiveness"
+          title="Explore: Comparative Effectiveness also known as CER, Comparative Effectiveness"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Comparative Effectiveness">Comparative Effectiveness</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/compensation"
+          title="Explore: Compensation also known as Compensation"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Compensation">Compensation</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/cost-effectiveness"
+          title="Explore: Cost Effectiveness also known as Cost Effectiveness, Cost-Benefit Analysis"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Cost Effectiveness">Cost Effectiveness</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/diversity-equity-and-inclusion"
+          title="Explore: Diversity, Equity and Inclusion also known as DEI, Diversity, Equity and Inclusion"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Diversity, Equity and Inclusion">Diversity, Equity and
+          Inclusion</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/electronic-health-record"
+          title="Explore: Electronic Health Record also known as EHR, Electronic Medical Record, Electronic Health Record"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Electronic Health Record">Electronic Health Record</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/emergency-department" title="Explore: Emergency Department"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Emergency Department">Emergency Department</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/financial-management" title="Explore: Financial Management"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Financial Management">Financial Management</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/financial-planning" title="Explore: Financial Planning"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Financial Planning">Financial Planning</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/facility-accreditation" title="Explore: Facility Accreditation"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Facility Accreditation">Facility Accreditation</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/gender" title="Explore: Gender"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Gender">Gender</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/guideline-directed-medical-therapy"
+          title="Explore: Guideline Directed Medical Therapy"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Guideline Directed Medical Therapy">Guideline Directed Medical
+          Therapy</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/health-care-technology"
+          title="Explore: Health Care Technology also known as Health Care Technology"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Health Care Technology">Health Care Technology</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/health-data-interchange-standards"
+          title="Explore: Health Data Interchange Standards also known as Health Data Interchange Standards"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Health Data Interchange Standards">Health Data Interchange
+          Standards</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/health-economics"
+          title="Explore: Health Economics also known as Economics, Health Economics"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Health Economics">Health Economics</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/health-equity"
+          title="Explore: Health Equity also known as Social Determinants of Health, Health Equity"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Health Equity">Health Equity</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/health-informatics"
+          title="Explore: Health Informatics also known as Health Informatics"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Health Informatics">Health Informatics</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/implicit-bias"
+          title="Explore: Implicit Bias also known as Implicit Bias"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Implicit Bias">Implicit Bias</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/innovation"
+          title="Explore: Innovation also known as Emerging Technologies and Innovations, Technological Innovations, Innovation"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Innovation">Innovation</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/international"
+          title="Explore: International also known as International"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; International">International</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/leadership" title="Explore: Leadership also known as Leadership"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Leadership">Leadership</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/medical-ethics"
+          title="Explore: Medical Ethics also known as Medical Ethics"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Medical Ethics">Medical Ethics</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/organizational-structure"
+          title="Explore: Organizational Structure also known as Organizational Structure"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Organizational Structure">Organizational Structure</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/patient-centered-care"
+          title="Explore: Patient-Centered Care also known as Patient-Centered Care"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Patient-Centered Care">Patient-Centered Care</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/patient-data"
+          title="Explore: Patient Data also known as Patient Data"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Patient Data">Patient Data</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/patient-education"
+          title="Explore: Patient Education also known as Patient Education as Topic"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Patient Education">Patient Education</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/patient-navigator" title="Explore: Patient Navigator"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Patient Navigator">Patient Navigator</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/practice-management"
+          title="Explore: Practice Management also known as Cardiovascular Management, Practice Management"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Practice Management">Practice Management</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/professional-accreditation"
+          title="Explore: Professional Accreditation"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Professional Accreditation">Professional Accreditation</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/program-directors" title="Explore: Program Directors"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Program Directors">Program Directors</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/public-reporting"
+          title="Explore: Public Reporting also known as Public Reporting"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Public Reporting">Public Reporting</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/quality-improvement"
+          title="Explore: Quality Improvement also known as Quality Improvement"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Quality Improvement">Quality Improvement</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/quality-of-life"
+          title="Explore: Quality of Life also known as Quality of Life"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Quality of Life">Quality of Life</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/race-and-ethnicity"
+          title="Explore: Race and Ethnicity also known as Race and Ethnicity"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Race and Ethnicity">Race and Ethnicity</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/randomized-control-trial"
+          title="Explore: Randomized Control Trial also known as RCT"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Randomized Control Trial">Randomized Control Trial</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/referral" title="Explore: Referral also known as Referral"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Referral">Referral</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/reimbursement"
+          title="Explore: Reimbursement also known as Reimbursement/Regulation, Payment, Insurance Reimbursement"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Reimbursement">Reimbursement</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/risk-assessment"
+          title="Explore: Risk Assessment also known as Risk Assessment"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Risk Assessment">Risk Assessment</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/risk-factor"
+          title="Explore: Risk Factor also known as Disease Risk Factor, Risk Factor"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Risk Factor">Risk Factor</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/safety"
+          title="Explore: Safety also known as Medical Safety, Patient Safety, Safety"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Safety">Safety</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/shared-decision-making"
+          title="Explore: Shared Decision Making also known as Shared Decision Making"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Shared Decision Making">Shared Decision Making</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/social-drivers-of-health"
+          title="Explore: Social Drivers of Health also known as Social Determinants, Social Determinants of Health"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Social Drivers of Health">Social Drivers of Health</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/team-based-patient-care"
+          title="Explore: Team-Based Patient Care also known as Patient Care Team, Multidisciplinary Team Based Care, Team-Based Patient Care"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Team-Based Patient Care">Team-Based Patient Care</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/telehealth"
+          title="Explore: Telehealth also known as telemedicine, Telehealth"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Telehealth">Telehealth</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/training-programs"
+          title="Explore: Training Programs also known as Competence, Training"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Training Programs">Training Programs</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/translational-research"
+          title="Explore: Translational Research also known as Translational Research"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Translational Research">Translational Research</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/well-being" title="Explore: Well-being also known as Self-Care"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Well-being">Well-being</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/work-life-balance"
+          title="Explore: Work-Life Balance also known as Burnout, Work-Life Balance"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Work-Life Balance">Work-Life Balance</a></li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/workplace-violence"
+          title="Explore: Workplace Violence also known as Workplace Violence"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Workplace Violence">Workplace Violence</a></li>
+      <li class="nav-item flex flex_row justify_start items_start" data-taxonomy="parent" data-has-children="true">
+        <button type="button"
+          class="br_0 bg_white br_none font-size_down-1 p-y_2 justify_start c_primary h:c_primary-n3 br_radius h:bg_primary-5 a:bg_accent-5 a:c_accent-n3 bg_black-1 p_2 flex flex_column collapsed"
+          aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#taxC12" aria-controls="taxC12"><span
+            class="fa-stack" aria-hidden="true"><i class="fas fa-minus fa-stack-1x" aria-hidden="true"></i><i
+              class="fas fa-minus rotate_90 a:rotation fa-stack-1x" aria-hidden="true"></i></span><span
+            class="sr-only">Toggle Quality Programs section</span></button>
+        <div class="flex_auto m-t_2 self_start"><a href="https://www.acc.org/Clinical-Topics/quality-programs"
+            title="Explore: Quality Programs also known as Registries"
+            class="taxonomy-term taxonomy-parent-link active c_primary font_medium h:c_primary-n2 h:underline inline-block lh_1 m_0 p-l_3 self_center w_100"
+            data-term-id="Nonclinical::Nonclinical &gt; Quality Programs">Quality Programs</a>
+          <nav class="font-size_down nav-child p-l_3 collapse" id="taxC12">
+            <ul class="ul_none flex_column flex m-t_3 p-l_3 gap-y_3 lh_1">
+              <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                  href="https://www.acc.org/Clinical-Topics/action-registry" title="Explore: ACTION Registry"
+                  class="taxonomy-term taxonomy-child-link c_primary-n1 h:c_primary-n3 font_medium font_copy h:underline inline-block link"
+                  data-term-id="Nonclinical::Nonclinical &gt; Quality Programs &gt; ACTION Registry">ACTION Registry</a>
+              </li>
+              <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                  href="https://www.acc.org/Clinical-Topics/acpc-quality-network" title="Explore: ACPC Quality Network"
+                  class="taxonomy-term taxonomy-child-link c_primary-n1 h:c_primary-n3 font_medium font_copy h:underline inline-block link"
+                  data-term-id="Nonclinical::Nonclinical &gt; Quality Programs &gt; ACPC Quality Network">ACPC Quality
+                  Network</a></li>
+              <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                  href="https://www.acc.org/Clinical-Topics/afib-ablation-registry"
+                  title="Explore: AFib Ablation Registry"
+                  class="taxonomy-term taxonomy-child-link c_primary-n1 h:c_primary-n3 font_medium font_copy h:underline inline-block link"
+                  data-term-id="Nonclinical::Nonclinical &gt; Quality Programs &gt; AFib Ablation Registry">AFib
+                  Ablation Registry</a></li>
+              <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                  href="https://www.acc.org/Clinical-Topics/cathpci-registry" title="Explore: CathPCI Registry"
+                  class="taxonomy-term taxonomy-child-link c_primary-n1 h:c_primary-n3 font_medium font_copy h:underline inline-block link"
+                  data-term-id="Nonclinical::Nonclinical &gt; Quality Programs &gt; CathPCI Registry">CathPCI
+                  Registry</a></li>
+              <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                  href="https://www.acc.org/Clinical-Topics/chest-pain-mi-registry"
+                  title="Explore: Chest Pain MI Registry"
+                  class="taxonomy-term taxonomy-child-link c_primary-n1 h:c_primary-n3 font_medium font_copy h:underline inline-block link"
+                  data-term-id="Nonclinical::Nonclinical &gt; Quality Programs &gt; Chest Pain MI Registry">Chest Pain
+                  MI Registry</a></li>
+              <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                  href="https://www.acc.org/Clinical-Topics/cv-asc-registry-suite"
+                  title="Explore: CV ASC Registry Suite"
+                  class="taxonomy-term taxonomy-child-link c_primary-n1 h:c_primary-n3 font_medium font_copy h:underline inline-block link"
+                  data-term-id="Nonclinical::Nonclinical &gt; Quality Programs &gt; CV ASC Registry Suite">CV ASC
+                  Registry Suite</a></li>
+              <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                  href="https://www.acc.org/Clinical-Topics/diabetes-collaborative-registry"
+                  title="Explore: Diabetes Collaborative Registry"
+                  class="taxonomy-term taxonomy-child-link c_primary-n1 h:c_primary-n3 font_medium font_copy h:underline inline-block link"
+                  data-term-id="Nonclinical::Nonclinical &gt; Quality Programs &gt; Diabetes Collaborative Registry">Diabetes
+                  Collaborative Registry</a></li>
+              <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                  href="https://www.acc.org/Clinical-Topics/ep-device-implant-registry"
+                  title="Explore: EP Device Implant Registry"
+                  class="taxonomy-term taxonomy-child-link c_primary-n1 h:c_primary-n3 font_medium font_copy h:underline inline-block link"
+                  data-term-id="Nonclinical::Nonclinical &gt; Quality Programs &gt; EP Device Implant Registry">EP
+                  Device Implant Registry</a></li>
+              <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                  href="https://www.acc.org/Clinical-Topics/icd-registry" title="Explore: ICD Registry"
+                  class="taxonomy-term taxonomy-child-link c_primary-n1 h:c_primary-n3 font_medium font_copy h:underline inline-block link"
+                  data-term-id="Nonclinical::Nonclinical &gt; Quality Programs &gt; ICD Registry">ICD Registry</a></li>
+              <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                  href="https://www.acc.org/Clinical-Topics/impact-registry" title="Explore: IMPACT Registry"
+                  class="taxonomy-term taxonomy-child-link c_primary-n1 h:c_primary-n3 font_medium font_copy h:underline inline-block link"
+                  data-term-id="Nonclinical::Nonclinical &gt; Quality Programs &gt; IMPACT Registry">IMPACT Registry</a>
+              </li>
+              <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                  href="https://www.acc.org/Clinical-Topics/laao-registry" title="Explore: LAAO Registry"
+                  class="taxonomy-term taxonomy-child-link c_primary-n1 h:c_primary-n3 font_medium font_copy h:underline inline-block link"
+                  data-term-id="Nonclinical::Nonclinical &gt; Quality Programs &gt; LAAO Registry">LAAO Registry</a>
+              </li>
+              <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                  href="https://www.acc.org/Clinical-Topics/ncdr" title="Explore: NCDR"
+                  class="taxonomy-term taxonomy-child-link c_primary-n1 h:c_primary-n3 font_medium font_copy h:underline inline-block link"
+                  data-term-id="Nonclinical::Nonclinical &gt; Quality Programs &gt; NCDR">NCDR</a></li>
+              <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                  href="https://www.acc.org/Clinical-Topics/pinnacle-registry" title="Explore: PINNACLE Registry"
+                  class="taxonomy-term taxonomy-child-link c_primary-n1 h:c_primary-n3 font_medium font_copy h:underline inline-block link"
+                  data-term-id="Nonclinical::Nonclinical &gt; Quality Programs &gt; PINNACLE Registry">PINNACLE
+                  Registry</a></li>
+              <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                  href="https://www.acc.org/Clinical-Topics/pvi-registry" title="Explore: PVI Registry"
+                  class="taxonomy-term taxonomy-child-link c_primary-n1 h:c_primary-n3 font_medium font_copy h:underline inline-block link"
+                  data-term-id="Nonclinical::Nonclinical &gt; Quality Programs &gt; PVI Registry">PVI Registry</a></li>
+              <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                  href="https://www.acc.org/Clinical-Topics/sts-acc-tvt-registry" title="Explore: STS/ACC TVT Registry"
+                  class="taxonomy-term taxonomy-child-link c_primary-n1 h:c_primary-n3 font_medium font_copy h:underline inline-block link"
+                  data-term-id="Nonclinical::Nonclinical &gt; Quality Programs &gt; STS/ACC TVT Registry">STS/ACC TVT
+                  Registry</a></li>
+            </ul>
+          </nav>
+        </div>
+      </li>
+      <li class="nav-item flex flex_row justify_start items_start" data-taxonomy="parent" data-has-children="true">
+        <button type="button"
+          class="br_0 bg_white br_none font-size_down-1 p-y_2 justify_start c_primary h:c_primary-n3 br_radius h:bg_primary-5 a:bg_accent-5 a:c_accent-n3 bg_black-1 p_2 flex flex_column collapsed"
+          aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#taxC13" aria-controls="taxC13"><span
+            class="fa-stack" aria-hidden="true"><i class="fas fa-minus fa-stack-1x" aria-hidden="true"></i><i
+              class="fas fa-minus rotate_90 a:rotation fa-stack-1x" aria-hidden="true"></i></span><span
+            class="sr-only">Toggle Conferences and Meetings section</span></button>
+        <div class="flex_auto m-t_2 self_start"><a href="https://www.acc.org/Clinical-Topics/conferences-and-meetings"
+            title="Explore: Conferences and Meetings"
+            class="taxonomy-term taxonomy-parent-link active c_primary font_medium h:c_primary-n2 h:underline inline-block lh_1 m_0 p-l_3 self_center w_100"
+            data-term-id="Nonclinical::Nonclinical &gt; Conferences and Meetings">Conferences and Meetings</a>
+          <nav class="font-size_down nav-child p-l_3 collapse" id="taxC13">
+            <ul class="ul_none flex_column flex m-t_3 p-l_3 gap-y_3 lh_1">
+              <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                  href="https://www.acc.org/Clinical-Topics/to-be-added-in-late-2025"
+                  title="Explore: (to be added in late 2025)"
+                  class="taxonomy-term taxonomy-child-link c_primary-n1 h:c_primary-n3 font_medium font_copy h:underline inline-block link"
+                  data-term-id="Nonclinical::Nonclinical &gt; Conferences and Meetings &gt; (to be added in late 2025)">(to
+                  be added in late 2025)</a></li>
+              <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                  href="https://www.acc.org/Clinical-Topics/transcatheter-cardiovascular-therapeutics"
+                  title="Explore: Transcatheter Cardiovascular Therapeutics"
+                  class="taxonomy-term taxonomy-child-link c_primary-n1 h:c_primary-n3 font_medium font_copy h:underline inline-block link"
+                  data-term-id="Nonclinical::Nonclinical &gt; Conferences and Meetings &gt; Transcatheter Cardiovascular Therapeutics">Transcatheter
+                  Cardiovascular Therapeutics</a></li>
+              <li class="nav-item" data-taxonomy="child" data-has-children="false"><a
+                  href="https://www.acc.org/Clinical-Topics/acc-annual-scientific-session"
+                  title="Explore: ACC Annual Scientific Session"
+                  class="taxonomy-term taxonomy-child-link c_primary-n1 h:c_primary-n3 font_medium font_copy h:underline inline-block link"
+                  data-term-id="Nonclinical::Nonclinical &gt; Conferences and Meetings &gt; ACC Annual Scientific Session">ACC
+                  Annual Scientific Session</a></li>
+            </ul>
+          </nav>
+        </div>
+      </li>
+      <li class="nav-item p-l_4" data-taxonomy="parent" data-has-children="false"><a
+          href="https://www.acc.org/Clinical-Topics/podcasts" title="Explore: Podcasts"
+          class="taxonomy-term taxonomy-parent-link c_primary font-size_up font_medium h:c_primary-n2 h:underline inline-block link m-l_3 m_0 p-l_5 p-y_2"
+          data-term-id="Nonclinical::Nonclinical &gt; Podcasts">Podcasts</a></li>
+    </ul>
+  </section>
+</div>
