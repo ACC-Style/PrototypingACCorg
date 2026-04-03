@@ -201,7 +201,7 @@ masthead: "empty.html"
     </li>
   </ul>
 </div>
-<div id="topicsRoot" class="">
+<div id="topicsRoot" class="relative">
   <section class="taxonomy-facet p_4 m-b_4 font-size_up-1" data-taxonomy="facet" id="Conditions">
     <h2 class="c_primary font_display font-size_up-2 font_bold m-t_0 m-b_2">Conditions</h2>
     <p class="c_black-7 font-size_down m-t_0 m-b_3">Explore Conditions topics and terms covered across ACC content.</p>
@@ -1930,4 +1930,89 @@ masthead: "empty.html"
           data-term-id="Nonclinical::Nonclinical &gt; Podcasts">Podcasts</a></li>
     </ul>
   </section>
+
+  <ul id="sticky_nav" class="b_2 br_1 br_black-2 br_round br_solid flex flex_row flex_wrap font_n1:lg font_n2:md font_n3 gap_2 items_center justify_center m-x_5:md m-x_6:lg m-x_n3 p-x_0 p-y_3 relative shadow_overlap-light sticky ul_none w_auto z_2">
+  <li><a class="p-x_3 p-y_2 a:bg_accent-n1 a:c_white br_radius active" href="#Conditions" aria-current="true">Conditions</a></li>
+  <li><a class="p-x_3 p-y_2 a:bg_accent-n1 a:c_white br_radius" href="#Diagnostics" aria-current="false">Diagnostics</a></li>
+  <li><a class="p-x_3 p-y_2 a:bg_accent-n1 a:c_white br_radius" href="#Treatments" aria-current="false">Treatments</a></li>
+  <li><a class="p-x_3 p-y_2 a:bg_accent-n1 a:c_white br_radius" href="#Specialties" aria-current="false">Specialties</a></li>
+  <li><a class="p-x_3 p-y_2 a:bg_accent-n1 a:c_white br_radius" href="#Nonclinical" aria-current="false">Nonclinical</a></li>
+</ul>
+<style>
+    #sticky_nav::after {
+        content:"";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: rgba(255,255,255,0.8);
+        backdrop-filter: blur(10px);
+            border-radius: 1.5rem;
+    }
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const nav = document.querySelector("#sticky_nav");
+
+  const navLinks = [
+    ...document.querySelectorAll('#sticky_nav a[href^="#"]')
+  ];
+
+  const items = navLinks
+    .map(link => {
+      const id = link.getAttribute("href");
+      const section = document.querySelector(id);
+      return section ? { link, section } : null;
+    })
+    .filter(Boolean);
+
+  /* -----------------------------
+     Scroll Spy (multiple active)
+  ----------------------------- */
+
+  const sectionObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+      const item = items.find(i => i.section === entry.target);
+      if (!item) return;
+
+      item.link.classList.toggle("active", entry.isIntersecting);
+
+      item.link.setAttribute(
+        "aria-current",
+        entry.isIntersecting ? "true" : "false"
+      );
+    });
+
+  }, {
+    root: null,
+    rootMargin: "-80px 0px 0px -80px",
+    threshold: 0
+  });
+
+  items.forEach(item => sectionObserver.observe(item.section));
+
+  /* -----------------------------
+     Hide nav when #nav-gone visible
+  ----------------------------- */
+
+  const navGoneSection = document.querySelector("#nav-gone");
+
+  if (navGoneSection) {
+
+    const navObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        nav.classList.toggle("display_none", entry.isIntersecting);
+      });
+    }, {
+      root: null,
+      rootMargin: "-80px 0px 0px 0px",
+      threshold: 0
+    });
+
+    navObserver.observe(navGoneSection);
+  }
+
+});
+</script>
 </div>
