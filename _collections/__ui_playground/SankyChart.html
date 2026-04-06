@@ -1,0 +1,780 @@
+---
+layout: ui/fullscreen_slot
+name: "Sankey Chart"
+position: "Brand - Focus"
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taxonomy Sankey</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --panel: #f7f9fb;
+      --border: #d9e1e7;
+      --text: #1f2933;
+      --muted: #6b7785;
+
+      --c0: #198dae;
+      --c1: #16a385;
+      --c2: #7742bd;
+      --c3: #004176;
+      --c4: #676a72;
+
+      --shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      --radius: 14px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px;
+      background: linear-gradient(to bottom, #f8fbfd, #ffffff);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .wrap {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .shell {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .toolbar {
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 12px;
+      align-items: end;
+      padding: 16px;
+      background: var(--panel);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .toolbar__group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      min-width: 0;
+    }
+
+    .toolbar label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .toolbar select,
+    .toolbar input[type="file"],
+    .toolbar button {
+      font: inherit;
+    }
+
+    .toolbar select,
+    .toolbar button {
+      height: 42px;
+      padding: 0 12px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #fff;
+      color: var(--text);
+    }
+
+    .toolbar button {
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .toolbar button:hover {
+      filter: brightness(0.98);
+    }
+
+    .meta {
+      padding: 12px 16px 0 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .chart-area {
+      padding: 16px;
+    }
+
+    .chart-frame {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .sankey-link {
+      fill: none;
+      stroke-opacity: 0.2;
+      transition: stroke-opacity 0.2s ease;
+    }
+
+    .sankey-link:hover,
+    .sankey-link.is-active {
+      stroke-opacity: 0.5;
+    }
+
+    .sankey-node rect {
+      rx: 8;
+      ry: 8;
+      stroke: rgba(0,0,0,0.18);
+      stroke-width: 1;
+      transition: filter 0.2s ease, opacity 0.2s ease;
+    }
+
+    .sankey-node text {
+      font-size: 13px;
+      fill: var(--text);
+      dominant-baseline: middle;
+      pointer-events: none;
+    }
+
+    .sankey-node:hover rect,
+    .sankey-node.is-active rect {
+      filter: brightness(0.97);
+    }
+
+    .sankey-node.is-dim rect,
+    .sankey-node.is-dim text,
+    .sankey-link.is-dim {
+      opacity: 0.18;
+    }
+
+    .sankey-label-depth {
+      font-size: 12px;
+      font-weight: 700;
+      fill: var(--muted);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      padding: 0 16px 16px 16px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .legend__item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .legend__swatch {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      display: inline-block;
+    }
+
+    .details {
+      border-top: 1px solid var(--border);
+      background: #fcfdff;
+      padding: 16px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .details h2 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .details__grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .details__card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px;
+      background: #fff;
+    }
+
+    .details__eyebrow {
+      margin-bottom: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .details__value {
+      font-size: 14px;
+      line-height: 1.45;
+      word-break: break-word;
+    }
+
+    .details__synonyms {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .empty {
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    @media (max-width: 980px) {
+      .toolbar {
+        grid-template-columns: 1fr;
+      }
+
+      .details__grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      body {
+        padding: 14px;
+      }
+
+      .details__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sankey-node text {
+        font-size: 11px;
+      }
+
+      .sankey-label-depth {
+        font-size: 11px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="shell">
+      <div class="toolbar">
+        <div class="toolbar__group">
+          <label for="facetSelect">Facet</label>
+          <select id="facetSelect" disabled>
+            <option>Loading taxonomy…</option>
+          </select>
+        </div>
+
+        <div class="toolbar__group">
+          <label for="jsonFile">Load JSON file</label>
+          <input id="jsonFile" type="file" accept=".json,application/json" />
+        </div>
+
+        <div class="toolbar__group">
+          <label>&nbsp;</label>
+          <button id="resetFocus" type="button">Clear Focus</button>
+        </div>
+      </div>
+
+      <div class="meta" id="metaText">
+        Attempting to load <code>taxonomy_atlas_data.json</code> from this folder.
+      </div>
+
+      <div class="chart-area">
+        <div class="chart-frame">
+          <svg id="taxonomySankey" viewBox="0 0 1200 760" preserveAspectRatio="xMidYMid meet" aria-label="Taxonomy Sankey Diagram"></svg>
+        </div>
+      </div>
+
+      <div class="legend">
+        <span class="legend__item"><span class="legend__swatch" style="background: var(--c0)"></span>Facet</span>
+        <span class="legend__item"><span class="legend__swatch" style="background: var(--c1)"></span>Level 1</span>
+        <span class="legend__item"><span class="legend__swatch" style="background: var(--c2)"></span>Level 2</span>
+        <span class="legend__item"><span class="legend__swatch" style="background: var(--c3)"></span>Level 3</span>
+        <span class="legend__item"><span class="legend__swatch" style="background: var(--c4)"></span>Level 4+</span>
+      </div>
+
+      <div class="details" id="detailsPanel">
+        <h2>Node Details</h2>
+        <div class="empty">Select a node to inspect its metadata.</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (() => {
+      const svg = document.getElementById('taxonomySankey');
+      const facetSelect = document.getElementById('facetSelect');
+      const jsonFileInput = document.getElementById('jsonFile');
+      const resetFocusBtn = document.getElementById('resetFocus');
+      const metaText = document.getElementById('metaText');
+      const detailsPanel = document.getElementById('detailsPanel');
+
+      const WIDTH = 1200;
+      const HEIGHT = 760;
+
+      const PADDING_TOP = 66;
+      const PADDING_BOTTOM = 30;
+      const PADDING_LEFT = 36;
+      const PADDING_RIGHT = 220;
+
+      const NODE_WIDTH = 24;
+      const NODE_GAP = 12;
+      const MIN_NODE_HEIGHT = 18;
+
+      const MAX_DEPTH = 4;
+
+      const COLORS = ['#198dae', '#16a385', '#7742bd', '#004176', '#676a72'];
+
+      let taxonomyData = null;
+      let currentGraph = null;
+      let currentSelection = null;
+
+      init();
+
+      async function init() {
+        bindEvents();
+
+        try {
+          const response = await fetch('./taxonomy_atlas_data.json');
+          if (!response.ok) throw new Error('Fetch failed');
+          const json = await response.json();
+          loadTaxonomy(json, 'Loaded taxonomy_atlas_data.json from the same folder as this HTML file.');
+        } catch (error) {
+          metaText.innerHTML = 'Could not auto-load <code>taxonomy_atlas_data.json</code>. Use the file picker to load your taxonomy JSON.';
+          setEmptyState();
+        }
+      }
+
+      function bindEvents() {
+        facetSelect.addEventListener('change', () => {
+          currentSelection = null;
+          renderSelectedFacet();
+        });
+
+        jsonFileInput.addEventListener('change', async (event) => {
+          const file = event.target.files && event.target.files[0];
+          if (!file) return;
+
+          try {
+            const text = await file.text();
+            const json = JSON.parse(text);
+            loadTaxonomy(json, `Loaded taxonomy from uploaded file: ${file.name}`);
+          } catch (error) {
+            metaText.textContent = 'That file could not be parsed as valid JSON.';
+            setEmptyState();
+          }
+        });
+
+        resetFocusBtn.addEventListener('click', () => {
+          currentSelection = null;
+          updateSelectionUI();
+          renderDetails(null);
+        });
+      }
+
+      function loadTaxonomy(json, message) {
+        if (!json || !Array.isArray(json.facets)) {
+          metaText.textContent = 'This JSON does not have the expected { facets: [] } structure.';
+          setEmptyState();
+          return;
+        }
+
+        taxonomyData = json;
+        metaText.textContent = message;
+
+        populateFacetSelect(json.facets);
+        renderSelectedFacet();
+      }
+
+      function populateFacetSelect(facets) {
+        facetSelect.innerHTML = '';
+
+        facets.forEach((facet, index) => {
+          const option = document.createElement('option');
+          option.value = String(index);
+          option.textContent = facet.name || `Facet ${index + 1}`;
+          facetSelect.appendChild(option);
+        });
+
+        facetSelect.disabled = facets.length === 0;
+      }
+
+      function renderSelectedFacet() {
+        if (!taxonomyData || !taxonomyData.facets || !taxonomyData.facets.length) {
+          setEmptyState();
+          return;
+        }
+
+        const facetIndex = Number(facetSelect.value || 0);
+        const root = taxonomyData.facets[facetIndex];
+        const graph = buildGraph(root);
+        const layout = computeLayout(graph);
+
+        currentGraph = layout;
+
+        clearSVG();
+        drawDepthLabels(layout.depths);
+        drawLinks(layout.links);
+        drawNodes(layout.nodes);
+
+        updateSelectionUI();
+        renderDetails(currentSelection ? layout.nodeMap.get(currentSelection) : null);
+      }
+
+      function setEmptyState() {
+        clearSVG();
+        detailsPanel.innerHTML = `
+          <h2>Node Details</h2>
+          <div class="empty">Select a node to inspect its metadata.</div>
+        `;
+        facetSelect.innerHTML = '<option>No data loaded</option>';
+        facetSelect.disabled = true;
+      }
+
+      function buildGraph(root) {
+        const nodes = [];
+        const links = [];
+        let idCounter = 0;
+
+        function visit(node, parentId = null, depth = 0, parentIds = []) {
+          const id = `n${idCounter++}`;
+          const safeDepth = Math.min(depth, MAX_DEPTH);
+
+          const children = Array.isArray(node.children) ? node.children : [];
+          const synonyms = Array.isArray(node.synonyms) ? node.synonyms : [];
+
+          const graphNode = {
+            id,
+            name: node.name || 'Untitled',
+            facet: node.facet || '',
+            scope: node.scope || '',
+            synonyms,
+            rawDepth: depth,
+            depth: safeDepth,
+            childrenRaw: children,
+            parentIds: [...parentIds],
+            leafCount: 1,
+            descendants: 0
+          };
+
+          nodes.push(graphNode);
+
+          if (parentId) {
+            links.push({
+              source: parentId,
+              target: id,
+              value: 1
+            });
+          }
+
+          if (children.length) {
+            let descendantLeaves = 0;
+            for (const child of children) {
+              const childNode = visit(child, id, depth + 1, [...parentIds, id]);
+              descendantLeaves += childNode.leafCount;
+            }
+            graphNode.leafCount = descendantLeaves;
+          } else {
+            graphNode.leafCount = 1;
+          }
+
+          graphNode.descendants = Math.max(0, graphNode.leafCount - 1);
+          return graphNode;
+        }
+
+        visit(root);
+
+        const nodeMap = new Map(nodes.map(node => [node.id, node]));
+
+        links.forEach(link => {
+          const target = nodeMap.get(link.target);
+          link.value = target ? target.leafCount : 1;
+        });
+
+        return { nodes, links, nodeMap };
+      }
+
+      function computeLayout(graph) {
+        const depths = [...new Set(graph.nodes.map(n => n.depth))].sort((a, b) => a - b);
+        const grouped = new Map(depths.map(depth => [depth, []]));
+
+        graph.nodes.forEach(node => {
+          grouped.get(node.depth).push(node);
+        });
+
+        depths.forEach(depth => {
+          grouped.get(depth).sort((a, b) => {
+            if (b.leafCount !== a.leafCount) return b.leafCount - a.leafCount;
+            return a.name.localeCompare(b.name);
+          });
+        });
+
+        const columnCount = Math.max(depths.length, 1);
+        const usableWidth = WIDTH - PADDING_LEFT - PADDING_RIGHT - NODE_WIDTH;
+        const columnGap = columnCount > 1 ? usableWidth / (columnCount - 1) : 0;
+
+        const unitByDepth = new Map();
+
+        depths.forEach(depth => {
+          const col = grouped.get(depth);
+          const totalValue = col.reduce((sum, node) => sum + node.leafCount, 0);
+          const availableHeight = HEIGHT - PADDING_TOP - PADDING_BOTTOM - ((col.length - 1) * NODE_GAP);
+          const unit = totalValue > 0 ? Math.max(6, availableHeight / totalValue) : 10;
+
+          unitByDepth.set(depth, unit);
+
+          let y = PADDING_TOP;
+          col.forEach(node => {
+            node.x = PADDING_LEFT + (depth * columnGap);
+            node.y = y;
+            node.w = NODE_WIDTH;
+            node.h = Math.max(MIN_NODE_HEIGHT, node.leafCount * unit);
+            node.centerY = node.y + (node.h / 2);
+            y += node.h + NODE_GAP;
+          });
+        });
+
+        graph.nodes.forEach(node => {
+          node._sourceOffset = 0;
+          node._targetOffset = 0;
+        });
+
+        const links = graph.links.map(link => {
+          const sourceNode = graph.nodeMap.get(link.source);
+          const targetNode = graph.nodeMap.get(link.target);
+
+          const sourceUnit = unitByDepth.get(sourceNode.depth) || 8;
+          const thickness = Math.max(2, link.value * sourceUnit);
+
+          const y0 = sourceNode.y + sourceNode._sourceOffset + (thickness / 2);
+          const y1 = targetNode.y + targetNode._targetOffset + (thickness / 2);
+
+          sourceNode._sourceOffset += thickness;
+          targetNode._targetOffset += thickness;
+
+          return {
+            ...link,
+            sourceNode,
+            targetNode,
+            thickness,
+            path: cubicPath(sourceNode.x + sourceNode.w, y0, targetNode.x, y1)
+          };
+        });
+
+        return {
+          nodes: graph.nodes,
+          links,
+          nodeMap: graph.nodeMap,
+          depths
+        };
+      }
+
+      function drawDepthLabels(depths) {
+        const usableWidth = WIDTH - PADDING_LEFT - PADDING_RIGHT - NODE_WIDTH;
+        const columnGap = depths.length > 1 ? usableWidth / (depths.length - 1) : 0;
+
+        depths.forEach(depth => {
+          const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+          text.setAttribute('x', PADDING_LEFT + (depth * columnGap));
+          text.setAttribute('y', 28);
+          text.setAttribute('class', 'sankey-label-depth');
+          text.textContent = depth === 0 ? 'Facet' : `Level ${depth}`;
+          svg.appendChild(text);
+        });
+      }
+
+      function drawLinks(links) {
+        links.forEach(link => {
+          const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+          path.setAttribute('class', 'sankey-link');
+          path.setAttribute('d', link.path);
+          path.setAttribute('stroke', COLORS[Math.min(link.sourceNode.depth, COLORS.length - 1)]);
+          path.setAttribute('stroke-width', link.thickness);
+          path.dataset.source = link.sourceNode.id;
+          path.dataset.target = link.targetNode.id;
+
+          const title = document.createElementNS('http://www.w3.org/2000/svg', 'title');
+          title.textContent = `${link.sourceNode.name} → ${link.targetNode.name} (${link.value})`;
+          path.appendChild(title);
+
+          svg.appendChild(path);
+        });
+      }
+
+      function drawNodes(nodes) {
+        nodes.forEach(node => {
+          const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+          g.setAttribute('class', 'sankey-node');
+          g.dataset.nodeId = node.id;
+
+          const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+          rect.setAttribute('x', node.x);
+          rect.setAttribute('y', node.y);
+          rect.setAttribute('width', node.w);
+          rect.setAttribute('height', node.h);
+          rect.setAttribute('fill', COLORS[Math.min(node.depth, COLORS.length - 1)]);
+
+          const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+          text.setAttribute('x', node.x + node.w + 10);
+          text.setAttribute('y', node.centerY);
+          text.textContent = truncate(node.name, getTextLimit());
+
+          const title = document.createElementNS('http://www.w3.org/2000/svg', 'title');
+          title.textContent = [
+            node.name,
+            `Depth: ${node.rawDepth}`,
+            `Leaf count: ${node.leafCount}`,
+            node.synonyms.length ? `Synonyms: ${node.synonyms.join(', ')}` : '',
+            node.scope ? `Scope: ${node.scope}` : ''
+          ].filter(Boolean).join('\n');
+
+          g.appendChild(rect);
+          g.appendChild(text);
+          g.appendChild(title);
+
+          g.addEventListener('click', () => {
+            currentSelection = node.id;
+            updateSelectionUI();
+            renderDetails(node);
+          });
+
+          svg.appendChild(g);
+        });
+      }
+
+      function updateSelectionUI() {
+        const nodeEls = svg.querySelectorAll('.sankey-node');
+        const linkEls = svg.querySelectorAll('.sankey-link');
+
+        if (!currentSelection || !currentGraph) {
+          nodeEls.forEach(el => {
+            el.classList.remove('is-active', 'is-dim');
+          });
+          linkEls.forEach(el => {
+            el.classList.remove('is-active', 'is-dim');
+          });
+          return;
+        }
+
+        const selectedNode = currentGraph.nodeMap.get(currentSelection);
+        const relatedNodeIds = new Set([selectedNode.id, ...selectedNode.parentIds]);
+
+        currentGraph.links.forEach(link => {
+          if (link.sourceNode.id === selectedNode.id || link.targetNode.id === selectedNode.id) {
+            relatedNodeIds.add(link.sourceNode.id);
+            relatedNodeIds.add(link.targetNode.id);
+          }
+        });
+
+        nodeEls.forEach(el => {
+          const id = el.dataset.nodeId;
+          el.classList.toggle('is-active', id === currentSelection);
+          el.classList.toggle('is-dim', !relatedNodeIds.has(id));
+        });
+
+        linkEls.forEach(el => {
+          const source = el.dataset.source;
+          const target = el.dataset.target;
+          const isRelated = source === currentSelection || target === currentSelection;
+          el.classList.toggle('is-active', isRelated);
+          el.classList.toggle('is-dim', !isRelated);
+        });
+      }
+
+      function renderDetails(node) {
+        if (!node) {
+          detailsPanel.innerHTML = `
+            <h2>Node Details</h2>
+            <div class="empty">Select a node to inspect its metadata.</div>
+          `;
+          return;
+        }
+
+        const synonymsMarkup = node.synonyms.length
+          ? `<ul class="details__synonyms">${node.synonyms.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`
+          : `<div class="empty">No synonyms listed.</div>`;
+
+        detailsPanel.innerHTML = `
+          <h2>${escapeHtml(node.name)}</h2>
+          <div class="details__grid">
+            <div class="details__card">
+              <div class="details__eyebrow">Facet</div>
+              <div class="details__value">${escapeHtml(node.facet || '—')}</div>
+            </div>
+            <div class="details__card">
+              <div class="details__eyebrow">Depth</div>
+              <div class="details__value">${node.rawDepth}</div>
+            </div>
+            <div class="details__card">
+              <div class="details__eyebrow">Leaf Count</div>
+              <div class="details__value">${node.leafCount}</div>
+            </div>
+            <div class="details__card">
+              <div class="details__eyebrow">Descendants</div>
+              <div class="details__value">${node.descendants}</div>
+            </div>
+            <div class="details__card" style="grid-column: span 2;">
+              <div class="details__eyebrow">Synonyms</div>
+              <div class="details__value">${synonymsMarkup}</div>
+            </div>
+            <div class="details__card" style="grid-column: span 2;">
+              <div class="details__eyebrow">Scope</div>
+              <div class="details__value">${node.scope ? escapeHtml(node.scope) : '<span class="empty">No scope provided.</span>'}</div>
+            </div>
+          </div>
+        `;
+      }
+
+      function cubicPath(x0, y0, x1, y1) {
+        const dx = x1 - x0;
+        const c1x = x0 + dx * 0.42;
+        const c2x = x0 + dx * 0.58;
+        return `M ${x0} ${y0} C ${c1x} ${y0}, ${c2x} ${y1}, ${x1} ${y1}`;
+      }
+
+      function truncate(str, max) {
+        return str.length > max ? str.slice(0, max - 1) + '…' : str;
+      }
+
+      function getTextLimit() {
+        return window.innerWidth < 700 ? 18 : 30;
+      }
+
+      function clearSVG() {
+        while (svg.firstChild) {
+          svg.removeChild(svg.firstChild);
+        }
+      }
+
+      function escapeHtml(value) {
+        return String(value)
+          .replaceAll('&', '&amp;')
+          .replaceAll('<', '&lt;')
+          .replaceAll('>', '&gt;')
+          .replaceAll('"', '&quot;')
+          .replaceAll("'", '&#039;');
+      }
+    })();
+  </script>
+</body>
+</html>
