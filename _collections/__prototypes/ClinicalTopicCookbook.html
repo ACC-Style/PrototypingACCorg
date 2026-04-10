@@ -2297,7 +2297,7 @@ masthead: "empty.html"
         <div class="grid columns_4 gap_3 items_center flex_grow max-w_45 m-x_auto">
                 <input type="search" id="taxLinkSearchInput" class="tax-link-search-input col-start_start col-end_n2"
                         placeholder="Keyword Finder" autocomplete="off" spellcheck="false">
-<button type="button" id="taxLinkSearchNext" disabled class="tax-link-search-next btn btn-secondary col-start_n2 col-end_end">Next
+<button type="button" id="taxLinkSearchNext" disabled class="disabled tax-link-search-next btn btn-primary col-start_n2 col-end_end">Next
                                 match</button>
                 <div class="tax-link-search-meta">
                         
@@ -2333,6 +2333,7 @@ masthead: "empty.html"
                         focusIndex = -1;
                         countEl.textContent = '';
                         nextBtn.disabled = true;
+                        nextBtn.classList.add('disabled');
                         lastAppliedQuery = '';
                 }
 
@@ -2361,6 +2362,7 @@ masthead: "empty.html"
                         var n = matches.length;
                         countEl.textContent = n === 0 ? 'No matches' : n === 1 ? '1 match' : n + ' matches';
                         nextBtn.disabled = n === 0;
+                        if (n > 0) nextBtn.classList.remove('disabled');
                         if (n > 0) {
                                 focusIndex = 0;
                                 scrollToFocus();
