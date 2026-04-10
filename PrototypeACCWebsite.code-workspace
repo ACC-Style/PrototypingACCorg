@@ -7,5 +7,6 @@
 	"settings": {
 		"workbench.colorTheme": "Monokai",
 		"html-css-class-completion.includeGlobPattern": "__IntelliSense/css/*.css",
+		"liveServer.settings.port": 5501,
 	}
 }
