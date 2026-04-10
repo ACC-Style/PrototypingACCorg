@@ -2360,7 +2360,7 @@ masthead: "empty.html"
                         }
 
                         var n = matches.length;
-                        countEl.textContent = n === 0 ? 'No matches' : n === 1 ? '1 match' : n + ' matches';
+                        countEl.textContent = n === 0 ? 'No matches' : n === 1 ? '1 match of taxonomy or synonym' : n + ' matches of taxonomy or synonym';
                         nextBtn.disabled = n === 0;
                         if (n > 0) nextBtn.classList.remove('disabled');
                         if (n > 0) {
