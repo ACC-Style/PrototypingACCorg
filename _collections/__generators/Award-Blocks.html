@@ -1,0 +1,467 @@
+---
+layout: playground
+name: "Award Blocks - Builder"
+position: "Builder"
+csv_file: "none"
+---
+ <div class="app">
+  <section class="panel">
+    <div class="panel__header">Award Block Builder</div>
+    <div class="panel__body">
+      <form id="award-builder" class="stack">
+        <div class="field">
+          <div class="field-meta">
+            <label for="title">Title</label>
+            <div id="title-count" class="char-count">0 / 40 suggested max</div>
+          </div>
+          <input id="title" name="title" type="text" value="Distinguished Awards" />
+          <div class="hint">Suggested max: 40 characters.</div>
+          <div id="title-warning" class="warning-message">
+            Title is longer than recommended and may wrap awkwardly in the card.
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="field-meta">
+            <label for="description">Description</label>
+            <div id="description-count" class="char-count">0 / 160 suggested max</div>
+          </div>
+          <textarea id="description" name="description">The ACC Distinguished Awards recognize individuals making outstanding contributions to the cardiovascular profession.</textarea>
+          <div class="hint">Suggested max: 160 characters.</div>
+          <div id="description-warning" class="warning-message">
+            Description is longer than recommended and may reduce scanability or create uneven card heights.
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="learn-more-url">URL to Learn More</label>
+          <input id="learn-more-url" name="learnMoreUrl" type="url" value="{url-to-learn-more}" />
+          <div class="hint">Paste a full URL or a CMS placeholder token.</div>
+        </div>
+
+        <div class="field">
+          <label for="apply-url">URL to Apply</label>
+          <input id="apply-url" name="applyUrl" type="url" value="{url-to-apply}" />
+          <div class="hint">Used only for the open version.</div>
+        </div>
+
+        <div class="field">
+          <label for="flags">Category Flags</label>
+          <input id="flags" name="flags" type="text" value="FIT, International" />
+          <div class="hint">Comma-separated list. Example: FIT, International, Early Career. If blank, defaults to Everyone.</div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="stack">
+    <div class="panel">
+      <div class="panel__header">Preview</div>
+      <div class="panel__body">
+        <div class="preview-grid">
+          <div>
+            <div class="preview-title">Open Version</div>
+            <div id="preview-open" class="preview-shell"></div>
+          </div>
+          <div>
+            <div class="preview-title">Closed Version</div>
+            <div id="preview-closed" class="preview-shell"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="output-block">
+      <div class="output-block__header">
+        <div class="output-block__title">Open HTML</div>
+        <button type="button" id="copy-open" class="button-primary">Copy Open</button>
+      </div>
+      <textarea id="output-open" class="output-box" readonly></textarea>
+    </div>
+
+    <div class="output-block">
+      <div class="output-block__header">
+        <div class="output-block__title">Closed HTML</div>
+        <button type="button" id="copy-closed" class="button-primary">Copy Closed</button>
+      </div>
+      <textarea id="output-closed" class="output-box" readonly></textarea>
+    </div>
+  </section>
+</div>
+
+<script>
+(function () {
+  const SUGGESTED_MAX = {
+    title: 40,
+    description: 160
+  };
+
+  const form = document.getElementById("award-builder");
+  const titleInput = document.getElementById("title");
+  const descriptionInput = document.getElementById("description");
+
+  const titleCount = document.getElementById("title-count");
+  const descriptionCount = document.getElementById("description-count");
+
+  const titleWarning = document.getElementById("title-warning");
+  const descriptionWarning = document.getElementById("description-warning");
+
+  const previewOpen = document.getElementById("preview-open");
+  const previewClosed = document.getElementById("preview-closed");
+
+  const outputOpen = document.getElementById("output-open");
+  const outputClosed = document.getElementById("output-closed");
+
+  const copyOpenButton = document.getElementById("copy-open");
+  const copyClosedButton = document.getElementById("copy-closed");
+
+  function escapeHtml(value) {
+    return String(value || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+
+  function parseFlags(value) {
+    const flags = String(value || "")
+      .split(",")
+      .map(flag => flag.trim())
+      .filter(Boolean);
+
+    return flags.length ? flags : ["Everyone"];
+  }
+
+  function updateCharacterWarning(input, countNode, warningNode, max) {
+    const length = input.value.trim().length;
+    countNode.textContent = `${length} / ${max} suggested max`;
+
+    if (length > max) {
+      countNode.classList.add("is-warning");
+      warningNode.classList.add("is-visible");
+    } else {
+      countNode.classList.remove("is-warning");
+      warningNode.classList.remove("is-visible");
+    }
+  }
+
+  function buildFlagList(flags, isOpen) {
+    const items = flags.map((flag, index) => {
+      const isLastCategory = index === flags.length - 1;
+      const className = isLastCategory ? ' class="no-after"' : '';
+      return `<li${className}>${escapeHtml(flag)}</li>`;
+    });
+
+    if (isOpen) {
+      items.push(`<li open-flag class="no-after br_radius p_2 c_black-7 font_xbold uppercase bg_warning-3 m-r_3 lh_0 m-l_auto">Open</li>`);
+    }
+
+    return items.join("\n                        ");
+  }
+
+  function buildFooter(isOpen, learnMoreUrl, applyUrl) {
+    const directionClass = isOpen ? "flex_row-reverse" : "flex_row";
+
+    if (isOpen) {
+      return `<footer
+                class="m-t_auto p-x_5:md p-x_4:sm p-x_3 p-b_5:md p-b_4:sm p-b_3 p-b_3 flex ${directionClass} gap_4:md gap_3:sm gap_2 col_all">
+                <a href="${escapeHtml(applyUrl)}"
+                    class="btn btn-sm btn-primary nowrap z_2" target="_blank"><span
+                        class="display_none inline-block:sm m-r_3 ">Apply Now</span><i class="fas fa-arrow-right"
+                        aria-hidden="true"></i></a>
+                <a href="${escapeHtml(learnMoreUrl)}"
+                    class="btn btn-sm btn-outline-shade h:c_white z_1 expanded-click-area">Learn
+                    More</a>
+            </footer>`;
+    }
+
+    return `<footer
+                class="m-t_auto p-x_5:md p-x_4:sm p-x_3 p-b_5:md p-b_4:sm p-b_3 p-b_3 flex ${directionClass} gap_4:md gap_3:sm gap_2 col_all">
+                <a href="${escapeHtml(learnMoreUrl)}"
+                    class="btn btn-sm btn-outline-shade h:c_white z_1 expanded-click-area">Learn
+                    More</a>
+            </footer>`;
+  }
+
+  function buildCard(data, isOpen) {
+    return `<article
+            class="bg_white br_round flex flex_column font_copy gap_3 isolation_isolate justify_start relative self_stretch shadow_bevel-light w_100 wrapper-container">
+            <header class="p-x_5:md p-x_4:sm p-x_3 m-t_4">
+                    <ul class="ul_inline-pipe font_n3 c_accent-n3 items_center w_auto font_bold m-t_n2 m-r_n3 flex">
+                        ${buildFlagList(data.flags, isOpen)}
+                    </ul>
+                <h3 data-type="title" class="lh_1 wrap_pretty m_0">${escapeHtml(data.title)}</h3>
+            </header>
+            <main class="relative m-b_3 p-x_5:md p-x_4:sm p-x_3 reading-typography font-size_down">
+                <p data-type="description" class="lh_3 m-y_0">
+                    ${escapeHtml(data.description)}
+                </p>
+            </main>
+            ${buildFooter(isOpen, data.learnMoreUrl, data.applyUrl)}
+        </article>`;
+  }
+
+  function getFormData() {
+    return {
+      title: form.title.value.trim(),
+      description: form.description.value.trim(),
+      learnMoreUrl: form.learnMoreUrl.value.trim() || "#",
+      applyUrl: form.applyUrl.value.trim() || "#",
+      flags: parseFlags(form.flags.value)
+    };
+  }
+
+  function render() {
+    updateCharacterWarning(titleInput, titleCount, titleWarning, SUGGESTED_MAX.title);
+    updateCharacterWarning(descriptionInput, descriptionCount, descriptionWarning, SUGGESTED_MAX.description);
+
+    const data = getFormData();
+    const openHtml = buildCard(data, true);
+    const closedHtml = buildCard(data, false);
+
+    previewOpen.innerHTML = openHtml;
+    previewClosed.innerHTML = closedHtml;
+    outputOpen.value = openHtml;
+    outputClosed.value = closedHtml;
+  }
+
+  async function copyText(text, button) {
+    try {
+      await navigator.clipboard.writeText(text);
+      const original = button.textContent;
+      button.textContent = "Copied";
+      setTimeout(() => {
+        button.textContent = original;
+      }, 1200);
+    } catch (error) {
+      console.error("Copy failed", error);
+    }
+  }
+
+  form.addEventListener("input", render);
+  form.addEventListener("change", render);
+
+  copyOpenButton.addEventListener("click", function () {
+    copyText(outputOpen.value, copyOpenButton);
+  });
+
+  copyClosedButton.addEventListener("click", function () {
+    copyText(outputClosed.value, copyClosedButton);
+  });
+
+  render();
+})();
+</script>
+
+<style>
+  :root {
+    --border: #d0d7de;
+    --bg-soft: #f6f8fa;
+    --text: #1f2328;
+    --muted: #59636e;
+    --accent: #0b57d0;
+    --danger: #b42318;
+    --warning: #b54708;
+    --warning-bg: #fff7ed;
+    --warning-border: #fed7aa;
+    --radius: 10px;
+    --space: 16px;
+    --space-sm: 10px;
+    --space-lg: 24px;
+    --font: Arial, Helvetica, sans-serif;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    padding: 24px;
+    font-family: var(--font);
+    color: var(--text);
+    background: #fff;
+    line-height: 1.4;
+  }
+
+  .app {
+    display: grid;
+    grid-template-columns: minmax(320px, 440px) 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  .panel {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: #fff;
+    overflow: hidden;
+  }
+
+  .panel__header {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg-soft);
+    font-weight: 700;
+  }
+
+  .panel__body {
+    padding: 16px;
+  }
+
+  .stack > * + * {
+    margin-top: 16px;
+  }
+
+  .field {
+    display: grid;
+    gap: 6px;
+  }
+
+  .field label,
+  .legend {
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  .hint {
+    color: var(--muted);
+    font-size: 12px;
+  }
+
+  .field-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .char-count {
+    color: var(--muted);
+    font-size: 12px;
+  }
+
+  .char-count.is-warning {
+    color: var(--warning);
+    font-weight: 700;
+  }
+
+  .warning-message {
+    display: none;
+    color: var(--warning);
+    font-size: 12px;
+    border: 1px solid var(--warning-border);
+    background: var(--warning-bg);
+    border-radius: 8px;
+    padding: 8px 10px;
+  }
+
+  .warning-message.is-visible {
+    display: block;
+  }
+
+  input[type="text"],
+  input[type="url"],
+  textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font: inherit;
+  }
+
+  textarea {
+    min-height: 130px;
+    resize: vertical;
+  }
+
+  button {
+    appearance: none;
+    border: 1px solid var(--border);
+    background: #fff;
+    color: var(--text);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font: inherit;
+    cursor: pointer;
+  }
+
+  button:hover {
+    border-color: #b8c0c8;
+  }
+
+  .button-primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+
+  .preview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .preview-shell {
+    border: 1px dashed var(--border);
+    border-radius: 10px;
+    padding: 18px;
+    background: #fafbfc;
+    min-height: 220px;
+  }
+
+  .preview-title {
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .output-block {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+  }
+
+  .output-block__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    background: var(--bg-soft);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .output-block__title {
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  .output-box {
+    width: 100%;
+    min-height: 280px;
+    font-family: Consolas, Monaco, monospace;
+    font-size: 13px;
+    white-space: pre;
+    padding: 14px;
+    border: 0;
+    resize: vertical;
+  }
+
+  .toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 12px;
+  }
+
+  @media (max-width: 960px) {
+    .app,
+    .preview-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
