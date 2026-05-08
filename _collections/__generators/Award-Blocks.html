@@ -48,7 +48,7 @@ csv_file: "none"
         <div class="field">
           <label for="flags">Category Flags</label>
           <input id="flags" name="flags" type="text" value="FIT, International" />
-          <div class="hint">Comma-separated list. Example: FIT, International, Early Career. If blank, defaults to Everyone.</div>
+          <div class="hint">Comma-separated list. Example: FIT, International, Early Career. If blank, to hide the category tags.</div>
         </div>
       </form>
     </div>
@@ -125,12 +125,10 @@ csv_file: "none"
   }
 
   function parseFlags(value) {
-    const flags = String(value || "")
+    return String(value || "")
       .split(",")
       .map(flag => flag.trim())
       .filter(Boolean);
-
-    return flags.length ? flags : ["Everyone"];
   }
 
   function updateCharacterWarning(input, countNode, warningNode, max) {
@@ -160,18 +158,43 @@ csv_file: "none"
     return items.join("\n                        ");
   }
 
+  function buildFlagContainer(flags, isOpen) {
+    const flagItems = buildFlagList(flags, isOpen);
+    const shouldHideList = !isOpen && flags.length === 0;
+    const ulClasses = [
+      "ul_inline-pipe",
+      "font_n3",
+      "c_accent-n3",
+      "items_center",
+      "w_auto",
+      "font_bold",
+      "m-t_n2",
+      "m-b_3",
+      "m-r_n3",
+      "flex"
+    ];
+
+    if (shouldHideList) {
+      ulClasses.push("display_none");
+    }
+
+    return `<ul class="${ulClasses.join(" ")}">
+                        ${flagItems}
+                    </ul>`;
+  }
+
   function buildFooter(isOpen, learnMoreUrl, applyUrl) {
     const directionClass = isOpen ? "flex_row-reverse" : "flex_row";
 
     if (isOpen) {
       return `<footer
-                class="m-t_auto p-x_5:md p-x_4:sm p-x_3 p-b_5:md p-b_4:sm p-b_3 p-b_3 flex ${directionClass} gap_4:md gap_3:sm gap_2 col_all">
+                class="m-t_auto p-x_5:md p-x_4:sm p-x_3 p-b_4:sm p-b_3 p-b_3 flex ${directionClass} gap_4:md gap_3:sm gap_2 col_all">
                 <a href="${escapeHtml(applyUrl)}"
                     class="btn btn-sm btn-primary nowrap z_2" target="_blank"><span
                         class="display_none inline-block:sm m-r_3 ">Apply Now</span><i class="fas fa-arrow-right"
                         aria-hidden="true"></i></a>
                 <a href="${escapeHtml(learnMoreUrl)}"
-                    class="btn btn-sm btn-outline-shade h:c_white z_1 expanded-click-area">Learn
+                    class="btn btn-sm btn-outline-shade z_1 expanded-click-area">Learn
                     More</a>
             </footer>`;
     }
@@ -179,19 +202,17 @@ csv_file: "none"
     return `<footer
                 class="m-t_auto p-x_5:md p-x_4:sm p-x_3 p-b_5:md p-b_4:sm p-b_3 p-b_3 flex ${directionClass} gap_4:md gap_3:sm gap_2 col_all">
                 <a href="${escapeHtml(learnMoreUrl)}"
-                    class="btn btn-sm btn-outline-shade h:c_white z_1 expanded-click-area">Learn
+                    class="btn btn-sm btn-outline-shade z_1 expanded-click-area">Learn
                     More</a>
             </footer>`;
   }
 
   function buildCard(data, isOpen) {
     return `<article
-            class="bg_white br_round flex flex_column font_copy gap_3 isolation_isolate justify_start relative self_stretch shadow_bevel-light w_100 wrapper-container">
+            class="bg_white br_round flex flex_column font_copy gap-y_3 isolation_isolate justify_start relative self_stretch shadow_bevel-light w_100 wrapper-container">
             <header class="p-x_5:md p-x_4:sm p-x_3 m-t_4">
-                    <ul class="ul_inline-pipe font_n3 c_accent-n3 items_center w_auto font_bold m-t_n2 m-r_n3 flex">
-                        ${buildFlagList(data.flags, isOpen)}
-                    </ul>
-                <h3 data-type="title" class="lh_1 wrap_pretty m_0">${escapeHtml(data.title)}</h3>
+                    ${buildFlagContainer(data.flags, isOpen)}
+                <h3 data-type="title" class="h4 lh_1 wrap_pretty m_0">${escapeHtml(data.title)}</h3>
             </header>
             <main class="relative m-b_3 p-x_5:md p-x_4:sm p-x_3 reading-typography font-size_down">
                 <p data-type="description" class="lh_3 m-y_0">
