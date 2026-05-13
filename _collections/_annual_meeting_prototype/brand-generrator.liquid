@@ -82,6 +82,22 @@ csv_file: "none"
   .brand-gen__copy {
     margin-top: 0.5rem;
   }
+  .brand-gen__presets-label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.85rem;
+    margin-bottom: 0.4rem;
+  }
+  .brand-gen__presets-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+  .brand-gen__preset {
+    font-size: 0.72rem;
+    padding: 0.35rem 0.55rem;
+    line-height: 1.2;
+  }
   /* Composed tokens: HSL parts and fonts are set on <html> by the script (same pattern as _includes/annual/root.html) */
   :root {
     --acc: hsl(var(--acc-h), var(--acc-s), var(--acc-l));
@@ -233,6 +249,18 @@ csv_file: "none"
         <div class="brand-gen__row">
           <input type="color" id="bg-color-shade" value="#8f9da6" data-prefix="shade" />
           <span class="brand-gen__hsl" id="bg-color-shade-hsl"></span>
+        </div>
+      </div>
+
+      <div class="brand-gen__field">
+        <span class="brand-gen__presets-label" id="brand-gen-presets-heading">Quick palettes <span style="font-weight:400;color:#666;font-size:0.88em;">(colors + fonts)</span></span>
+        <div class="brand-gen__presets-row" role="group" aria-labelledby="brand-gen-presets-heading">
+          <button type="button" class="btn btn-secondary brand-gen__preset" data-palette="default">(Default)</button>
+          <button type="button" class="btn btn-secondary brand-gen__preset" data-palette="primaryDull">Primary - Dull</button>
+          <button type="button" class="btn btn-secondary brand-gen__preset" data-palette="primaryBright">Primary - Bright</button>
+          <button type="button" class="btn btn-secondary brand-gen__preset" data-palette="seaside">SeaSide</button>
+          <button type="button" class="btn btn-secondary brand-gen__preset" data-palette="industrial">Industrial</button>
+          <button type="button" class="btn btn-secondary brand-gen__preset" data-palette="acc27" title="Inspired by ACC.27 + WCC Houston key art (navy, red, sky, coral)">ACC.27 Houston</button>
         </div>
       </div>
 
@@ -587,7 +615,7 @@ csv_file: "none"
     root.style.setProperty(name, value);
   }
 
-  function updateHslFromColor(input) {
+  function updateHslFromColor(input, silent) {
     var prefix = input.getAttribute('data-prefix');
     if (!prefix) return;
     var hsl = hexToHSL(input.value);
@@ -599,7 +627,114 @@ csv_file: "none"
     if (prefix === 'primary') {
       syncLinkColorsFromPrimary(hsl);
     }
+    if (!silent) {
+      refreshOutput();
+    }
+  }
+
+  /** Each quick palette sets colors + matching Google Fonts (api slugs = select values). */
+  var PALETTES = {
+    default: {
+      acc: '#1e4d5e',
+      primary: '#d47850',
+      secondary: '#5a6b74',
+      accent: '#2f7d8f',
+      shade: '#8f9da6',
+      fontDisplay: 'Maven+Pro',
+      fontAccent: 'Roboto+Slab',
+      fontCopy: 'Open+Sans'
+    },
+    /* RYB-style harmony: blue → brand, red → primary, yellow → accent; secondary stays default for stability */
+    primaryDull: {
+      acc: '#3d5378',
+      primary: '#9a3f3d',
+      secondary: '#5a6b74',
+      accent: '#a68f3a',
+      shade: '#8c94a3',
+      fontDisplay: 'EB+Garamond',
+      fontAccent: 'Inter',
+      fontCopy: 'Lora'
+    },
+    primaryBright: {
+      acc: '#2563eb',
+      primary: '#ef4444',
+      secondary: '#5a6b74',
+      accent: '#eab308',
+      shade: '#9ca8ba',
+      fontDisplay: 'Montserrat',
+      fontAccent: 'Barlow',
+      fontCopy: 'Open+Sans'
+    },
+    seaside: {
+      acc: '#0f4c5c',
+      primary: '#e8b86b',
+      secondary: '#4f6670',
+      accent: '#3ab89a',
+      shade: '#aecbd4',
+      fontDisplay: 'Quicksand',
+      fontAccent: 'Nunito+Sans',
+      fontCopy: 'Figtree'
+    },
+    /* Neutral greys + caution orange (CTA) + rust accent; cool blue-grays removed */
+    industrial: {
+      acc: '#383a3e',
+      primary: '#dd7a00',
+      secondary: '#5f6166',
+      accent: '#9a463c',
+      shade: '#95999f',
+      fontDisplay: 'Oswald',
+      fontAccent: 'IBM+Plex+Sans',
+      fontCopy: 'Source+Sans+3'
+    },
+    acc27: {
+      acc: '#002147',
+      primary: '#e31b23',
+      secondary: '#f28e8e',
+      accent: '#82d1f1',
+      shade: '#dce6f2',
+      fontDisplay: 'Lexend',
+      fontAccent: 'Roboto+Slab',
+      fontCopy: 'Noto+Sans'
+    }
+  };
+
+  function setFontSelectByApi(selectId, api, silent) {
+    var sel = document.getElementById(selectId);
+    if (!sel || !api) return;
+    for (var o = 0; o < sel.options.length; o++) {
+      if (sel.options[o].value === api) {
+        sel.selectedIndex = o;
+        applyFontSelect(sel, silent);
+        return;
+      }
+    }
+  }
+
+  function applyPalette(key) {
+    var p = PALETTES[key];
+    if (!p) return;
+    var order = ['acc', 'secondary', 'accent', 'shade', 'primary'];
+    for (var i = 0; i < order.length; i++) {
+      var k = order[i];
+      var el = document.getElementById('bg-color-' + k);
+      if (!el) continue;
+      el.value = p[k];
+      updateHslFromColor(el, true);
+    }
+    setFontSelectByApi('bg-font-display', p.fontDisplay, true);
+    setFontSelectByApi('bg-font-accent', p.fontAccent, true);
+    setFontSelectByApi('bg-font-copy', p.fontCopy, true);
     refreshOutput();
+  }
+
+  function wirePalettes() {
+    var nodes = document.querySelectorAll('.brand-gen__preset[data-palette]');
+    for (var i = 0; i < nodes.length; i++) {
+      nodes[i].addEventListener('click', function () {
+        var k = this.getAttribute('data-palette');
+        applyPalette(k);
+      });
+    }
   }
 
   function syncLinkColorsFromPrimary(hsl) {
@@ -677,7 +812,7 @@ csv_file: "none"
     }
   }
 
-  function applyFontSelect(selectEl) {
+  function applyFontSelect(selectEl, silent) {
     var role = selectEl.getAttribute('data-role');
     var opt = selectEl.options[selectEl.selectedIndex];
     if (!opt) return;
@@ -695,7 +830,9 @@ csv_file: "none"
       setThemeProp('--font-family_copy', stack);
       setThemeProp('--font-family_ui', stack);
     }
-    refreshOutput();
+    if (!silent) {
+      refreshOutput();
+    }
   }
 
   function formatNumForCss(n) {
@@ -966,6 +1103,7 @@ csv_file: "none"
   }
 
   wireColors();
+  wirePalettes();
   applyNavigationDefaults();
   wirePageWidth();
   wireFonts();
