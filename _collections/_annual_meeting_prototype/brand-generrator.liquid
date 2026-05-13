@@ -457,7 +457,7 @@ csv_file: "none"
 
       <div class="brand-gen__code">
         <h2 class="font_2 c_primary" style="margin-bottom: 0.5rem;">Generated <code>:root</code> snippet</h2>
-        <p class="reading-typography font-size_down" style="margin-top: 0;">While you adjust controls, this page applies the same tokens on <code>:root</code> (via <code>&lt;html&gt;</code> inline properties) so Arches utilities pick them up. Copy the snippet into <code>_includes/annual/root.html</code> (or merge). System state colors in the output match the current defaults in that file.</p>
+        <p class="reading-typography font-size_down" style="margin-top: 0;">While you adjust controls, this page applies the same tokens on <code>:root</code> (via <code>&lt;html&gt;</code> inline properties) so Arches utilities pick them up. The snippet begins with <strong>static</strong> Google Fonts <code>&lt;link&gt;</code> tags (preconnect + one stylesheet per chosen family) suitable for pasting into a CMS or <code>&lt;head&gt;</code> include, then your <code>:root</code> <code>&lt;style&gt;</code>. System state colors match the current defaults in <code>_includes/annual/root.html</code>.</p>
         <pre><code id="brandThemeOutput"></code></pre>
         <button type="button" class="btn btn-primary brand-gen__copy" id="brandThemeCopy">Copy to clipboard</button>
       </div>
@@ -778,6 +778,39 @@ csv_file: "none"
     ].join('\n');
   }
 
+  /** Selected Google Font API slugs from the three dropdowns (deduped). */
+  function selectedGoogleFontApis() {
+    var apis = [];
+    ['bg-font-display', 'bg-font-accent', 'bg-font-copy'].forEach(function (id) {
+      var sel = document.getElementById(id);
+      if (!sel || sel.selectedIndex < 0) return;
+      var api = sel.options[sel.selectedIndex].value;
+      if (api && apis.indexOf(api) === -1) apis.push(api);
+    });
+    return apis;
+  }
+
+  /** Static <link> lines for copy-paste (CMS-safe; URLs match the live preview). */
+  function buildGoogleFontLinkLines(apis) {
+    if (!apis || apis.length === 0) {
+      return [];
+    }
+    var lines = [
+      '<!-- Google Fonts: paste into <head> or CMS global header (static links; no script) -->',
+      '<link rel="preconnect" href="https://fonts.googleapis.com">',
+      '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
+    ];
+    for (var i = 0; i < apis.length; i++) {
+      lines.push(
+        '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=' +
+          apis[i] +
+          ':wght@300..800&amp;display=swap">'
+      );
+    }
+    lines.push('');
+    return lines;
+  }
+
   function refreshOutput() {
     if (!output) return;
     var g = function (n) {
@@ -790,7 +823,9 @@ csv_file: "none"
     var grad = accGradientCss();
     var lh = g('--link-color-light-h') || '14.68deg';
     var ls = g('--link-color-light-s') || '70%';
-    var lines = [
+    var fontApis = selectedGoogleFontApis();
+    var loaderLines = buildGoogleFontLinkLines(fontApis);
+    var lines = loaderLines.concat([
       '<style>',
       ':root {',
       '',
@@ -854,7 +889,7 @@ csv_file: "none"
       '  --font-family_ui: ' + fontUi + ';',
       '}',
       '</style>'
-    ];
+    ]);
     output.textContent = lines.join('\n');
   }
 
