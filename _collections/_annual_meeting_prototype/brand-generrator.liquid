@@ -247,7 +247,7 @@ csv_file: "none"
       <div class="brand-gen__field">
         <label for="bg-color-shade">Neutral <span style="font-weight:400;color:#555">(shade)</span></label>
         <div class="brand-gen__row">
-          <input type="color" id="bg-color-shade" value="#8f9da6" data-prefix="shade" />
+          <input type="color" id="bg-color-shade" value="#6f7a84" data-prefix="shade" />
           <span class="brand-gen__hsl" id="bg-color-shade-hsl"></span>
         </div>
       </div>
@@ -260,7 +260,8 @@ csv_file: "none"
           <button type="button" class="btn btn-secondary brand-gen__preset" data-palette="primaryBright">Primary - Bright</button>
           <button type="button" class="btn btn-secondary brand-gen__preset" data-palette="seaside">SeaSide</button>
           <button type="button" class="btn btn-secondary brand-gen__preset" data-palette="industrial">Industrial</button>
-          <button type="button" class="btn btn-secondary brand-gen__preset" data-palette="acc27" title="Inspired by ACC.27 + WCC Houston key art (navy, red, sky, coral)">ACC.27 Houston</button>
+          <button type="button" class="btn btn-secondary brand-gen__preset" data-palette="acc27" title="ACC.27 Houston: navy brand, red primary, rose secondary, cyan accent">ACC.27 Houston</button>
+          <button type="button" class="btn btn-secondary brand-gen__preset" data-palette="acc26" title="Inspired by ACC.26 New Orleans key art (indigo, red, gold, magenta)">ACC.26 New Orleans</button>
         </div>
       </div>
 
@@ -323,7 +324,7 @@ csv_file: "none"
           </div>
 <div class="reading-typography">
 <h1 class="font_display">Annual meeting headline</h1>
-          <h3 class=" font_accent">Nav / accent font on subheads and UI chrome</h3>
+          <h3 class="c_secondary font_accent">Nav / accent font on subheads and UI chrome</h3>
           <p>
             Body copy uses the UI / copy font stack with system fallbacks. Try a
             <a class="brand-preview__link" href="#">sample link</a> tinted from primary.
@@ -639,7 +640,7 @@ csv_file: "none"
       primary: '#d47850',
       secondary: '#5a6b74',
       accent: '#2f7d8f',
-      shade: '#8f9da6',
+      shade: '#6f7a84',
       fontDisplay: 'Maven+Pro',
       fontAccent: 'Roboto+Slab',
       fontCopy: 'Open+Sans'
@@ -650,7 +651,7 @@ csv_file: "none"
       primary: '#9a3f3d',
       secondary: '#5a6b74',
       accent: '#a68f3a',
-      shade: '#8c94a3',
+      shade: '#7a7570',
       fontDisplay: 'EB+Garamond',
       fontAccent: 'Inter',
       fontCopy: 'Lora'
@@ -660,7 +661,7 @@ csv_file: "none"
       primary: '#ef4444',
       secondary: '#5a6b74',
       accent: '#eab308',
-      shade: '#9ca8ba',
+      shade: '#737b84',
       fontDisplay: 'Montserrat',
       fontAccent: 'Barlow',
       fontCopy: 'Open+Sans'
@@ -670,7 +671,7 @@ csv_file: "none"
       primary: '#e8b86b',
       secondary: '#4f6670',
       accent: '#3ab89a',
-      shade: '#aecbd4',
+      shade: '#6f7c80',
       fontDisplay: 'Quicksand',
       fontAccent: 'Nunito+Sans',
       fontCopy: 'Figtree'
@@ -681,7 +682,7 @@ csv_file: "none"
       primary: '#dd7a00',
       secondary: '#5f6166',
       accent: '#9a463c',
-      shade: '#95999f',
+      shade: '#706c68',
       fontDisplay: 'Oswald',
       fontAccent: 'IBM+Plex+Sans',
       fontCopy: 'Source+Sans+3'
@@ -689,12 +690,23 @@ csv_file: "none"
     acc27: {
       acc: '#002147',
       primary: '#e31b23',
-      secondary: '#f28e8e',
-      accent: '#82d1f1',
-      shade: '#dce6f2',
+      secondary: '#dc74ac',
+      accent: '#5dc2ea',
+      shade: '#626a72',
       fontDisplay: 'Lexend',
       fontAccent: 'Roboto+Slab',
       fontCopy: 'Noto+Sans'
+    },
+    /* ACC.26 New Orleans key art: indigo anchor, warm red, gold glow, magenta punch */
+    acc26: {
+      acc: '#3a2868',
+      primary: '#e31837',
+      secondary: '#f4a926',
+      accent: '#d12f8a',
+      shade: '#726c75',
+      fontDisplay: 'Montserrat',
+      fontAccent: 'Roboto',
+      fontCopy: 'Open+Sans'
     }
   };
 
