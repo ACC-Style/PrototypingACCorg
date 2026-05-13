@@ -219,35 +219,41 @@ csv_file: "none"
       <div class="brand-gen__field">
         <label for="bg-color-acc">Brand</label>
         <div class="brand-gen__row">
-          <input type="color" id="bg-color-acc" value="#1e4d5e" data-prefix="acc" />
+          <input type="color" id="bg-color-acc" value="#1a5566" data-prefix="acc" />
           <span class="brand-gen__hsl" id="bg-color-acc-hsl"></span>
         </div>
       </div>
       <div class="brand-gen__field">
         <label for="bg-color-primary">Primary</label>
         <div class="brand-gen__row">
-          <input type="color" id="bg-color-primary" value="#d47850" data-prefix="primary" />
+          <input type="color" id="bg-color-primary" value="#c86f4e" data-prefix="primary" />
           <span class="brand-gen__hsl" id="bg-color-primary-hsl"></span>
         </div>
       </div>
       <div class="brand-gen__field">
-        <label for="bg-color-secondary">Secondary</label>
+        <label for="bg-color-secondary">Secondary
+        <span class="block font-size_down">The secondary color is a desaturated harmonious color of the primary color.</span>
+        </label>
+
         <div class="brand-gen__row">
-          <input type="color" id="bg-color-secondary" value="#5a6b74" data-prefix="secondary" />
+          <input type="color" id="bg-color-secondary" value="#a67d6f" data-prefix="secondary" />
           <span class="brand-gen__hsl" id="bg-color-secondary-hsl"></span>
         </div>
       </div>
       <div class="brand-gen__field">
-        <label for="bg-color-accent">Accent</label>
+        <label for="bg-color-accent">Accent
+                <span class="block font-size_down">The accent is a distinct color that stands out from primary color.</span>
+
+        </label>
         <div class="brand-gen__row">
-          <input type="color" id="bg-color-accent" value="#2f7d8f" data-prefix="accent" />
+          <input type="color" id="bg-color-accent" value="#c9a227" data-prefix="accent" />
           <span class="brand-gen__hsl" id="bg-color-accent-hsl"></span>
         </div>
       </div>
       <div class="brand-gen__field">
         <label for="bg-color-shade">Neutral <span style="font-weight:400;color:#555">(shade)</span></label>
         <div class="brand-gen__row">
-          <input type="color" id="bg-color-shade" value="#6f7a84" data-prefix="shade" />
+          <input type="color" id="bg-color-shade" value="#6f787e" data-prefix="shade" />
           <span class="brand-gen__hsl" id="bg-color-shade-hsl"></span>
         </div>
       </div>
@@ -260,7 +266,7 @@ csv_file: "none"
           <button type="button" class="btn btn-secondary brand-gen__preset" data-palette="primaryBright">Primary - Bright</button>
           <button type="button" class="btn btn-secondary brand-gen__preset" data-palette="seaside">SeaSide</button>
           <button type="button" class="btn btn-secondary brand-gen__preset" data-palette="industrial">Industrial</button>
-          <button type="button" class="btn btn-secondary brand-gen__preset" data-palette="acc27" title="ACC.27 Houston: navy brand, red primary, rose secondary, cyan accent">ACC.27 Houston</button>
+          <button type="button" class="btn btn-secondary brand-gen__preset" data-palette="acc27" title="ACC.27 Houston: saturated navy brand, crimson primary, rose secondary, cyan accent">ACC.27 Houston</button>
           <button type="button" class="btn btn-secondary brand-gen__preset" data-palette="acc26" title="Inspired by ACC.26 New Orleans key art (indigo, red, gold, magenta)">ACC.26 New Orleans</button>
         </div>
       </div>
@@ -633,77 +639,79 @@ csv_file: "none"
     }
   }
 
-  /** Each quick palette sets colors + matching Google Fonts (api slugs = select values). */
+  /** Quick palettes: hand-tuned harmonious sets (brand / primary / secondary / accent / neutral). */
   var PALETTES = {
     default: {
-      acc: '#1e4d5e',
-      primary: '#d47850',
-      secondary: '#5a6b74',
-      accent: '#2f7d8f',
-      shade: '#6f7a84',
+      acc: '#1a5566',
+      primary: '#c86f4e',
+      secondary: '#a67d6f',
+      accent: '#c9a227',
+      shade: '#6f787e',
       fontDisplay: 'Maven+Pro',
       fontAccent: 'Roboto+Slab',
       fontCopy: 'Open+Sans'
     },
-    /* RYB-style harmony: blue → brand, red → primary, yellow → accent; secondary stays default for stability */
+    /* Brand: chalky red · Primary: dusty blue · Accent: warm yellow */
     primaryDull: {
-      acc: '#3d5378',
-      primary: '#9a3f3d',
-      secondary: '#5a6b74',
-      accent: '#a68f3a',
-      shade: '#7a7570',
+      acc: '#c96d65',
+      primary: '#5e7082',
+      secondary: '#6c7d8e',
+      accent: '#d4b44a',
+      shade: '#7a7671',
       fontDisplay: 'EB+Garamond',
       fontAccent: 'Inter',
       fontCopy: 'Lora'
     },
+    /* Brand: blue · Primary: red · Accent: yellow (secondary: muted red) */
     primaryBright: {
-      acc: '#2563eb',
-      primary: '#ef4444',
-      secondary: '#5a6b74',
-      accent: '#eab308',
-      shade: '#737b84',
+      acc: '#1e40af',
+      primary: '#c81e1e',
+      secondary: '#9e5558',
+      accent: '#e7c229',
+      shade: '#6b7280',
       fontDisplay: 'Montserrat',
       fontAccent: 'Barlow',
       fontCopy: 'Open+Sans'
     },
+    /* Brand: ocean green · Primary: cerulean · Accent: sand */
     seaside: {
-      acc: '#0f4c5c',
-      primary: '#e8b86b',
-      secondary: '#4f6670',
-      accent: '#3ab89a',
-      shade: '#6f7c80',
+      acc: '#134e48',
+      primary: '#1178b8',
+      secondary: '#4d7f95',
+      accent: '#d4b896',
+      shade: '#64727a',
       fontDisplay: 'Quicksand',
       fontAccent: 'Nunito+Sans',
       fontCopy: 'Figtree'
     },
-    /* Neutral greys + caution orange (CTA) + rust accent; cool blue-grays removed */
+    /* Industrial: exact HSL specs (brand / primary / secondary / accent / neutral) */
     industrial: {
-      acc: '#383a3e',
-      primary: '#dd7a00',
-      secondary: '#5f6166',
-      accent: '#9a463c',
-      shade: '#706c68',
+      acc: '#454f5f',
+      primary: '#8b2020',
+      secondary: '#5f4b44',
+      accent: '#e9a30c',
+      shade: '#7a8390',
       fontDisplay: 'Oswald',
       fontAccent: 'IBM+Plex+Sans',
       fontCopy: 'Source+Sans+3'
     },
+    /* ACC.27 Houston — exact HSL specs */
     acc27: {
-      acc: '#002147',
-      primary: '#e31b23',
-      secondary: '#dc74ac',
-      accent: '#5dc2ea',
-      shade: '#626a72',
+      acc: '#053976',
+      primary: '#c41e3a',
+      secondary: '#a14a81',
+      accent: '#3da7c2',
+      shade: '#60758a',
       fontDisplay: 'Lexend',
       fontAccent: 'Roboto+Slab',
       fontCopy: 'Noto+Sans'
     },
-    /* ACC.26 New Orleans key art: indigo anchor, warm red, gold glow, magenta punch */
     acc26: {
       acc: '#3a2868',
-      primary: '#e31837',
-      secondary: '#f4a926',
-      accent: '#d12f8a',
-      shade: '#726c75',
+      primary: '#d92238',
+      secondary: '#a85f72',
+      accent: '#e3b341',
+      shade: '#6d6572',
       fontDisplay: 'Montserrat',
       fontAccent: 'Roboto',
       fontCopy: 'Open+Sans'
