@@ -1,5 +1,5 @@
 <style>
-      [grid-template="page-blocker"] {
+      .grid-template-page-blocker {
         display: grid;
         grid-template-columns: 
         [start] 1.5rem  
@@ -26,7 +26,7 @@
    
    @media screen and (width > 50rem) {
     
-   [grid-template="page-blocker"] {
+   .grid-template-page-blocker {
         grid-template-columns: [start] calc(50% - 15rem) [roadblock-start] repeat(3, 10rem) [roadblock-end] calc(50% - 15rem) [end];
         grid-template-rows: [start] max-content [roadblock-start] repeat(4, 1fr) [roadblock-end] max-content [end];
         grid-template-areas: "a a a c c"
@@ -38,7 +38,7 @@
     }
 
    }
-   [grid-template="roadblock"]{
+   .grid-template-roadblock{
     grid-area: roadblock;
     display: grid;
     justify-items: center;
@@ -65,8 +65,8 @@
         /* grid-gap: .5rem; */
         /* padding: 1rem; */
     }
-
-    .icon,
+.grid-template-page-blocker{
+ .icon,
     .text {
         opacity: .4;
         filter: blur(1px);
@@ -96,6 +96,8 @@
         padding-block: .75rem;
     }
  }
+}
+   
 
     [grid-area="a"] {
         grid-area: a;

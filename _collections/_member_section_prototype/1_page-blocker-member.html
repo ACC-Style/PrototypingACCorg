@@ -10,14 +10,13 @@ id: "login"
 
 {% include_relative PageBlocks/bento-roadblock.styles.html %}
 
-<section grid-template="page-blocker" class="bg_secondary-1">
+<section grid-template="page-blocker" class="bg_secondary-1 grid-template-page-blocker">
     {% include_relative PageBlocks/_global/AccessBarred.RoadBlock.Background.html %}
-    <div grid-template="roadblock" class="isolation_isolate z_2">
-        <div class="justify_center items_center m_auto max-w_30">
-            <div class="bg_secondary-1 p_4:lg p_3 self_center">
-                <div class="p_4:lg p_3 bg_white reading-typography flex flex_column gap_4:lg gap_3:md gap_2">
+<div 
+        class="isolation_isolate z_2 grid-template-roadblock justify_center items_center m_auto max-w_30 bg_secondary-1 p_4 self_center bg_white reading-typography flex flex_column gap_4">
+    
                     {% include_relative PageBlocks/_global/AccessBarred.SectionTeaser.html %}
-                    <div class="br-b_5 br_secondary-1 br_solid m-x_n4 order_n1 p-x_5:lg p_4">
+                    <div class="order_n1 p-x_5:lg p_4 bg_white">
                         <h2 class="wrap_balance">This Content is For ACC &amp; WIC Section Members Only!</h2>
                         <p>Join the ACC and its Women in Cardiology Section to access this exclusive content and other benefits.</p>
                         <div class="grid">
@@ -26,8 +25,7 @@ id: "login"
                         </div>
                     </div>
                     {% include_relative PageBlocks/_global/AccessBarred.NeedHelp.html %}
-                </div>
-            </div>
-        </div>
+         
+
     </div>
 </section>
