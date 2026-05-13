@@ -1,0 +1,941 @@
+---
+layout: playground
+name: "Brand Theme Generator"
+position: "Builder"
+csv_file: "none"
+---
+
+<style>
+  .brand-gen { font-family: system-ui, sans-serif; }
+  .brand-gen__grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem 3rem;
+  }
+  @media (min-width: 960px) {
+    .brand-gen__grid { grid-template-columns: minmax(280px, 340px) 1fr; align-items: start; }
+  }
+  .brand-gen__panel {
+    background: #f4f4f6;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    border: 1px solid #ddd;
+  }
+  .brand-gen__panel h2 { margin: 0 0 1rem; font-size: 1.1rem; }
+  .brand-gen__field { margin-bottom: 1rem; }
+  .brand-gen__field label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.85rem;
+    margin-bottom: 0.35rem;
+  }
+  .brand-gen__row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .brand-gen__row input[type="color"] {
+    width: 3rem;
+    height: 2rem;
+    padding: 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .brand-gen__hsl {
+    font-family: ui-monospace, monospace;
+    font-size: 0.75rem;
+    color: #444;
+  }
+  .brand-gen__range-val { font-variant-numeric: tabular-nums; min-width: 3.5rem; }
+  .brand-gen__preview-wrap {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+  }
+  .brand-gen__preview-head {
+    padding: 0.75rem 1rem;
+    background: #eee;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-bottom: 1px solid #ddd;
+  }
+  .brand-gen__code {
+    margin-top: 1.5rem;
+  }
+  .brand-gen__code pre {
+    margin: 0;
+    max-height: 420px;
+    overflow: auto;
+    font-size: 0.75rem;
+    line-height: 1.4;
+    background: #1e1e1e;
+    color: #d4d4d4;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+  .brand-gen__copy {
+    margin-top: 0.5rem;
+  }
+  /* Composed tokens: HSL parts and fonts are set on <html> by the script (same pattern as _includes/annual/root.html) */
+  :root {
+    --acc: hsl(var(--acc-h), var(--acc-s), var(--acc-l));
+    --primary: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
+    --secondary: hsl(var(--secondary-h), var(--secondary-s), var(--secondary-l));
+    --accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+    --shade: hsl(var(--shade-h), var(--shade-s), var(--shade-l));
+    --navigation: hsl(var(--navigation-h), var(--navigation-s), var(--navigation-l));
+    --code-color: hsla(
+      var(--accent-h),
+      calc(var(--accent-s) + 5% - var(--accent-s) * 0.05),
+      calc(var(--accent-l) - var(--accent-l) * 0.5),
+      1
+    );
+    --link-color-light: hsl(var(--link-color-light-h), var(--link-color-light-s), var(--link-color-light-l));
+    --start-color: hsl(var(--acc-h), calc(var(--acc-s) * 1.05), calc(var(--acc-l) * 0.3));
+    --end-color: hsl(var(--acc-h), var(--acc-s), var(--acc-l));
+  }
+  .brand-preview-content {
+    padding: 1.25rem;
+    max-width: var(--page-max-width, 1200px);
+    margin: 0 auto;
+  }
+  .brand-preview__title {
+    font-family: var(--font-family_display);
+    color: var(--navigation);
+    font-size: 1.75rem;
+    line-height: 1.2;
+    margin: 0 0 0.5rem;
+  }
+  .brand-preview__subtitle {
+    font-family: var(--font-family_accent);
+    color: var(--accent);
+    font-size: 1.15rem;
+    margin: 0 0 1rem;
+  }
+  .brand-preview__body {
+    font-family: var(--font-family_copy);
+    color: #333;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0 0 1.25rem;
+  }
+  .brand-preview__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .brand-preview__btn {
+    font-family: var(--font-family_ui);
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
+  .brand-preview__btn--primary {
+    background: var(--primary);
+    color: #fff;
+  }
+  .brand-preview__btn--accent {
+    background: var(--accent);
+    color: #fff;
+  }
+  .brand-preview__link {
+    color: var(--link-color-light);
+    font-family: var(--font-family_copy);
+  }
+  .brand-preview__card {
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 2px solid var(--secondary);
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--start-color), var(--end-color));
+    color: #fff;
+    font-family: var(--font-family_copy);
+    font-size: 0.9rem;
+  }
+  .brand-preview__code-inline {
+    font-family: ui-monospace, monospace;
+    font-size: 0.85rem;
+    color: var(--code-color);
+    background: #f0f0f0;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+  }
+  /* Main nav: edge-to-edge within padded preview */
+  .brand-preview__mainnav {
+    margin: -1.25rem -1.25rem 1.25rem;
+    width: calc(100% + 2.5rem);
+    max-width: none;
+  }
+  .brand-preview__mainnav .navbar-nav.gap_preview_nav {
+    gap: 0.25rem;
+  }
+  @media (min-width: 992px) {
+    .brand-preview__mainnav .navbar-nav.gap_preview_nav {
+      gap: 0.5rem;
+    }
+  }
+</style>
+
+<div class="brand-gen">
+  <div class="brand-gen__grid">
+    <div class="brand-gen__panel" aria-label="Theme controls">
+      <h2>Theme controls</h2>
+
+      <div class="brand-gen__field">
+        <label for="bg-page-max-width">Page max width</label>
+        <div class="brand-gen__row">
+          <input type="range" id="bg-page-max-width" min="900" max="1600" step="50" value="1200" data-token="page-max-width" />
+          <span class="brand-gen__range-val" id="bg-page-max-width-out">1200px</span>
+        </div>
+      </div>
+
+      <div class="brand-gen__field">
+        <label for="bg-color-acc">Brand</label>
+        <div class="brand-gen__row">
+          <input type="color" id="bg-color-acc" value="#1e4d5e" data-prefix="acc" />
+          <span class="brand-gen__hsl" id="bg-color-acc-hsl"></span>
+        </div>
+      </div>
+      <div class="brand-gen__field">
+        <label for="bg-color-primary">Primary</label>
+        <div class="brand-gen__row">
+          <input type="color" id="bg-color-primary" value="#d47850" data-prefix="primary" />
+          <span class="brand-gen__hsl" id="bg-color-primary-hsl"></span>
+        </div>
+      </div>
+      <div class="brand-gen__field">
+        <label for="bg-color-secondary">Secondary</label>
+        <div class="brand-gen__row">
+          <input type="color" id="bg-color-secondary" value="#5a6b74" data-prefix="secondary" />
+          <span class="brand-gen__hsl" id="bg-color-secondary-hsl"></span>
+        </div>
+      </div>
+      <div class="brand-gen__field">
+        <label for="bg-color-accent">Accent</label>
+        <div class="brand-gen__row">
+          <input type="color" id="bg-color-accent" value="#2f7d8f" data-prefix="accent" />
+          <span class="brand-gen__hsl" id="bg-color-accent-hsl"></span>
+        </div>
+      </div>
+      <div class="brand-gen__field">
+        <label for="bg-color-shade">Neutral <span style="font-weight:400;color:#555">(shade)</span></label>
+        <div class="brand-gen__row">
+          <input type="color" id="bg-color-shade" value="#8f9da6" data-prefix="shade" />
+          <span class="brand-gen__hsl" id="bg-color-shade-hsl"></span>
+        </div>
+      </div>
+
+      <div class="brand-gen__field">
+        <label for="bg-font-display">Font — display <span style="font-weight:400;color:#555">(headlines)</span></label>
+        <select id="bg-font-display" data-role="display"></select>
+      </div>
+      <div class="brand-gen__field">
+        <label for="bg-font-accent">Font — accent <span style="font-weight:400;color:#555">(nav, labels)</span></label>
+        <select id="bg-font-accent" data-role="accent"></select>
+      </div>
+      <div class="brand-gen__field">
+        <label for="bg-font-copy">Font — copy &amp; UI <span style="font-weight:400;color:#555">(body)</span></label>
+        <select id="bg-font-copy" data-role="copy"></select>
+      </div>
+    </div>
+
+    <div>
+      <div class="brand-gen__preview-wrap wrapper-container">
+        <div class="brand-gen__preview-head">Live preview (controls override <code>:root</code>; Arches + utilities use those tokens)</div>
+        <div id="brandPreviewContent" class="brand-preview-content">
+          <div class="flex c_white relative brand-preview__mainnav">
+            <nav class="flex_auto navbar navbar-primary p_0 navbar-expand-lg navbar-dark bg_acc font_1 font_0:lg relative" aria-label="Preview main navigation">
+              <div class="relative">
+                <button class="br_solid br_2 br_white-2 collapsed m-l_3 m-y_3 navbar-toggler p_2 expanded-click-area collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#brandGenMainNavCollapse" aria-controls="brandGenMainNavCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fas fa-bars c_white" aria-hidden="true"></i><span class="c_white p-x_3 uppercase font_accent">Menu</span>
+                </button>
+              </div>
+              <div class="collapse navbar-collapse" id="brandGenMainNavCollapse">
+                <ul class="navbar-nav flex flex_row:lg flex_column justify_around w_100 gap_preview_nav">
+                  <li class="nav-item relative text_left text_center:lg flex_shrink">
+                    <a class="nav-link expanded-click-area nowrap p-l_4 p-l_0:lg c_white h:c_acc" href="#" title="Home"><i class="fas fa-home p-x_3:lg" aria-hidden="true"></i><span class="display_none:lg"> Home</span></a>
+                  </li>
+                  <li class="nav-item relative text_left text_center:lg flex_auto">
+                    <a class="nav-link expanded-click-area nowrap p-l_4 p-l_0:lg c_white h:c_acc" href="#">Program</a>
+                  </li>
+                  <li class="nav-item relative text_left text_center:lg flex_auto">
+                    <a class="nav-link expanded-click-area nowrap p-l_4 p-l_0:lg c_white h:c_acc" href="#">Registration</a>
+                  </li>
+                  <li class="nav-item relative text_left text_center:lg flex_auto">
+                    <a class="nav-link expanded-click-area nowrap p-l_4 p-l_0:lg c_white h:c_acc" href="#">Plan your program</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+            <nav class="font_n1 font_0:lg absolute bg_primary br-t_1 br_primary br_solid br_none flex_shrink m-l_auto navbar navbar-dark navbar-expand p-y_2 r_0 t_0 b_0:lg relative:lg" aria-label="Preview utility navigation">
+              <ul class="navbar-nav flex flex_row items_center">
+                <li class="nav-item relative flex_shrink dropdown">
+                  <a class="nav-link expanded-click-area c_white h:c_acc nowrap dropdown-toggle" href="#" id="brandGenMyAccDd" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">My ACC <i class="far icon-toggle_chevron-up-down" aria-hidden="true"></i></a>
+                  <ul class="dropdown-menu font_copy br-t_0 dropdown-menu-end br_none br_solid:lg m-t_0 m-t_2:lg font_n1" aria-labelledby="brandGenMyAccDd">
+                    <li><a class="dropdown-item link transition_4 wrap p-x_3 lh_2" href="#">My Profile</a></li>
+                    <li><a class="dropdown-item link transition_4 wrap p-x_3 lh_2" href="#">Logout</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link nowrap c_white h:c_acc" href="#" title="Cart"><i class="far fa-shopping-cart" aria-hidden="true"></i></a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+<div class="reading-typography">
+<h1 class="font_display">Annual meeting headline</h1>
+          <h3 class=" font_accent">Nav / accent font on subheads and UI chrome</h3>
+          <p>
+            Body copy uses the UI / copy font stack with system fallbacks. Try a
+            <a class="brand-preview__link" href="#">sample link</a> tinted from primary.
+            Inline <span class="brand-preview__code-inline">code-style</span> uses accent-derived <code>--code-color</code>.
+          </p></div>
+          <div class="grid gap_2 columns_1 columns_2:md columns_5:lg font_n2 font_ui text_center" aria-label="Color tonal ramps">
+            <div class="flex flex_column c_white br_round br_1 br_solid br_black-2 overflow_hidden" title="Brand">
+              <div class="bg_acc-5 p_2"></div>
+              <div class="bg_acc-4 p_2"></div>
+              <div class="bg_acc-3 p_2"></div>
+              <div class="bg_acc-2 p_2"></div>
+              <div class="bg_acc-1 p_2"></div>
+              <div class="root bg_acc p_2 lh_1">Brand</div>
+              <div class="bg_acc-n1 p_2"></div>
+              <div class="bg_acc-n2 p_2"></div>
+              <div class="bg_acc-n3 p_2"></div>
+              <div class="bg_acc-n4 p_2"></div>
+              <div class="bg_acc-n5 p_2"></div>
+            </div>
+            <div class="flex flex_column c_white br_round br_1 br_solid br_black-2 overflow_hidden" title="Primary">
+              <div class="bg_primary-5 p_2"></div>
+              <div class="bg_primary-4 p_2"></div>
+              <div class="bg_primary-3 p_2"></div>
+              <div class="bg_primary-2 p_2"></div>
+              <div class="bg_primary-1 p_2"></div>
+              <div class="root bg_primary p_2 lh_1">Primary</div>
+              <div class="bg_primary-n1 p_2"></div>
+              <div class="bg_primary-n2 p_2"></div>
+              <div class="bg_primary-n3 p_2"></div>
+              <div class="bg_primary-n4 p_2"></div>
+              <div class="bg_primary-n5 p_2"></div>
+            </div>
+            <div class="flex flex_column c_white br_round br_1 br_solid br_black-2 overflow_hidden" title="Secondary">
+              <div class="bg_secondary-5 p_2"></div>
+              <div class="bg_secondary-4 p_2"></div>
+              <div class="bg_secondary-3 p_2"></div>
+              <div class="bg_secondary-2 p_2"></div>
+              <div class="bg_secondary-1 p_2"></div>
+              <div class="root bg_secondary p_2 lh_1">Secondary</div>
+              <div class="bg_secondary-n1 p_2"></div>
+              <div class="bg_secondary-n2 p_2"></div>
+              <div class="bg_secondary-n3 p_2"></div>
+              <div class="bg_secondary-n4 p_2"></div>
+              <div class="bg_secondary-n5 p_2"></div>
+            </div>
+            <div class="flex flex_column c_white br_round br_1 br_solid br_black-2 overflow_hidden" title="Accent">
+              <div class="bg_accent-5 p_2"></div>
+              <div class="bg_accent-4 p_2"></div>
+              <div class="bg_accent-3 p_2"></div>
+              <div class="bg_accent-2 p_2"></div>
+              <div class="bg_accent-1 p_2"></div>
+              <div class="root bg_accent p_2 lh_1">Accent</div>
+              <div class="bg_accent-n1 p_2"></div>
+              <div class="bg_accent-n2 p_2"></div>
+              <div class="bg_accent-n3 p_2"></div>
+              <div class="bg_accent-n4 p_2"></div>
+              <div class="bg_accent-n5 p_2"></div>
+            </div>
+            <div class="flex flex_column c_white br_round br_1 br_solid br_black-2 overflow_hidden" title="Neutral">
+              <div class="bg_shade-5 p_2"></div>
+              <div class="bg_shade-4 p_2"></div>
+              <div class="bg_shade-3 p_2"></div>
+              <div class="bg_shade-2 p_2"></div>
+              <div class="bg_shade-1 p_2"></div>
+              <div class="root bg_shade p_2 lh_1">Neutral</div>
+              <div class="bg_shade-n1 p_2"></div>
+              <div class="bg_shade-n2 p_2"></div>
+              <div class="bg_shade-n3 p_2"></div>
+              <div class="bg_shade-n4 p_2"></div>
+              <div class="bg_shade-n5 p_2"></div>
+            </div>
+          </div>
+
+          <div class="brand-preview__actions flex flex_wrap gap_2 p_4 br_round bg_black-2 m-y_4">
+            <button type="button" class="btn btn-primary">Primary</button>
+            <button type="button" class="btn btn-secondary">Secondary</button>
+            <button type="button" class="btn btn-accent">Accent</button>
+            <button type="button" class="btn btn-shade">Neutral</button>
+          </div>
+
+          <h4 class="font_display m-t_5 m-b_3 font_medium">Price cards (Arches utilities + theme tokens)</h4>
+          <ul class="gap_4 gap_4:md gap_5:lg ul_none triple-bento font_n2 font_n1:md font_0:lg">
+            <li data-element="price-card" class="flex flex_column m_0 justify_start br_round bg_primary-n2 p_5:md p_4 c_white-8 shadow_bevel-bold reading-typography color_inherit">
+              <header item-label="price-tier" class="items_top m-b_3:md m-b_4">
+                <h2 data-element="price-card-title" class="font_xbold font_display m-y_0 uppercase font_3:lg font_2:md font_1 lh_0">primary</h2>
+              </header>
+              <main class="m-t_auto">
+                <div item-label="price-cost-breakdown">
+                  <h3 class="flex flex_row font_8:lg font_4 font_6:md gap_2 items_center lh_2 nowrap"><span class="font_bold">$900</span><span class="font_light">/</span><span class="font_n1 font_0:lg font_medium lh_0 m-l_2 self_center wrap">5 year <br>purchase plan </span></h3>
+                </div>
+                <div class="c_inherit flex flex_row font_display font_medium m_0 p-y_3:md p-y_2 opacity_8 m-x_n3">
+                  <span class="flex_auto grid">
+                    <span class="br-t_1 br-tl_radius br_inherit br_solid self_center"></span>
+                  </span>
+                  <span class="flex_shrink p-x_3 lh_1 text_center">or</span>
+                  <span class="flex_auto grid">
+                    <span class="br-t_1 br-tl_radius br_inherit br_solid self_center"></span>
+                  </span>
+                </div>
+                <div item-label="price-cost-breakdown">
+                  <h3 class="flex flex_row font_8:lg font_4 font_6:md gap_2 items_center lh_2 nowrap"><span class="font_bold">$300</span><span class="font_light">/</span><span class="font_n1 font_0:lg font_medium lh_0 m-l_2 self_center wrap">1 year <br>purchase plan </span></h3>
+                </div>
+              </main>
+              <footer class="m-b_n3:md m-t_auto"><div><i class="fa-solid fa-plus p-r_3" aria-hidden="true"></i>Annual ABIM MOC fee<sup class="font_bold">*</sup></div></footer>
+            </li>
+            <li data-element="price-card" class="flex flex_column m_0 justify_start br_round bg_secondary-n2 p_5:md p_4 c_white-8 shadow_bevel-bold reading-typography color_inherit">
+              <header item-label="price-tier" class="items_top m-b_3:md m-b_4">
+                <h2 data-element="price-card-title" class="font_xbold font_display m-y_0 uppercase font_3:lg font_2:md font_1 lh_0">secondary</h2>
+              </header>
+              <main class="m-t_auto">
+                <div item-label="price-cost-breakdown">
+                  <h3 class="flex flex_row font_8:lg font_4 font_6:md gap_2 items_center lh_2 nowrap"><span class="font_bold">$900</span><span class="font_light">/</span><span class="font_n1 font_0:lg font_medium lh_0 m-l_2 self_center wrap">5 year <br>purchase plan </span></h3>
+                </div>
+                <div class="c_inherit flex flex_row font_display font_medium m_0 p-y_3:md p-y_2 opacity_8 m-x_n3">
+                  <span class="flex_auto grid">
+                    <span class="br-t_1 br-tl_radius br_inherit br_solid self_center"></span>
+                  </span>
+                  <span class="flex_shrink p-x_3 lh_1 text_center">or</span>
+                  <span class="flex_auto grid">
+                    <span class="br-t_1 br-tl_radius br_inherit br_solid self_center"></span>
+                  </span>
+                </div>
+                <div item-label="price-cost-breakdown">
+                  <h3 class="flex flex_row font_8:lg font_4 font_6:md gap_2 items_center lh_2 nowrap"><span class="font_bold">$300</span><span class="font_light">/</span><span class="font_n1 font_0:lg font_medium lh_0 m-l_2 self_center wrap">1 year <br>purchase plan </span></h3>
+                </div>
+              </main>
+              <footer class="m-b_n3:md m-t_auto"><div><i class="fa-solid fa-plus p-r_3" aria-hidden="true"></i>Annual ABIM MOC fee<sup class="font_bold">*</sup></div></footer>
+            </li>
+            <li data-element="price-card" class="flex flex_column m_0 justify_start br_round bg_accent-n2 p_5:md p_4 c_white-8 shadow_bevel-bold reading-typography color_inherit">
+              <header item-label="price-tier" class="items_top m-b_3:md m-b_4">
+                <h2 data-element="price-card-title" class="font_xbold font_display m-y_0 uppercase font_3:lg font_2:md font_1 lh_0">accent</h2>
+              </header>
+              <main class="m-t_auto">
+                <div item-label="price-cost-breakdown">
+                  <h3 class="flex flex_row font_8:lg font_4 font_6:md gap_2 items_center lh_2 nowrap"><span class="font_bold">$900</span><span class="font_light">/</span><span class="font_n1 font_0:lg font_medium lh_0 m-l_2 self_center wrap">5 year <br>purchase plan </span></h3>
+                </div>
+                <div class="c_inherit flex flex_row font_display font_medium m_0 p-y_3:md p-y_2 opacity_8 m-x_n3">
+                  <span class="flex_auto grid">
+                    <span class="br-t_1 br-tl_radius br_inherit br_solid self_center"></span>
+                  </span>
+                  <span class="flex_shrink p-x_3 lh_1 text_center">or</span>
+                  <span class="flex_auto grid">
+                    <span class="br-t_1 br-tl_radius br_inherit br_solid self_center"></span>
+                  </span>
+                </div>
+                <div item-label="price-cost-breakdown">
+                  <h3 class="flex flex_row font_8:lg font_4 font_6:md gap_2 items_center lh_2 nowrap"><span class="font_bold">$300</span><span class="font_light">/</span><span class="font_n1 font_0:lg font_medium lh_0 m-l_2 self_center wrap">1 year <br>purchase plan </span></h3>
+                </div>
+              </main>
+              <footer class="m-b_n3:md m-t_auto"><div><i class="fa-solid fa-plus p-r_3" aria-hidden="true"></i>Annual ABIM MOC fee<sup class="font_bold">*</sup></div></footer>
+            </li>
+          </ul>
+
+          <div class="brand-preview__card m-t_5">
+            Gradient card uses <code>--start-color</code> → <code>--end-color</code> derived from Brand hue/sat/lightness (<code>--acc-*</code>).
+          </div>
+        </div>
+      </div>
+
+      <div class="brand-gen__code">
+        <h2 class="font_2 c_primary" style="margin-bottom: 0.5rem;">Generated <code>:root</code> snippet</h2>
+        <p class="reading-typography font-size_down" style="margin-top: 0;">While you adjust controls, this page applies the same tokens on <code>:root</code> (via <code>&lt;html&gt;</code> inline properties) so Arches utilities pick them up. Copy the snippet into <code>_includes/annual/root.html</code> (or merge). System state colors in the output match the current defaults in that file.</p>
+        <pre><code id="brandThemeOutput"></code></pre>
+        <button type="button" class="btn btn-primary brand-gen__copy" id="brandThemeCopy">Copy to clipboard</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="brandFontLinks"></div>
+
+{% raw %}
+<script>
+(function () {
+  var root = document.documentElement;
+  var output = document.getElementById('brandThemeOutput');
+  var fontLinksHost = document.getElementById('brandFontLinks');
+  var loadedFonts = {};
+
+  /** Curated Google Fonts (api slug = fonts.googleapis.com family param). family drives web-safe fallbacks. */
+  var GOOGLE_FONTS = [
+    { label: 'Archivo', api: 'Archivo', family: 'sans' },
+    { label: 'Archivo Black', api: 'Archivo+Black', family: 'display' },
+    { label: 'Barlow', api: 'Barlow', family: 'sans' },
+    { label: 'Bebas Neue', api: 'Bebas+Neue', family: 'display' },
+    { label: 'Bitter', api: 'Bitter', family: 'serif' },
+    { label: 'Cabin', api: 'Cabin', family: 'sans' },
+    { label: 'Crimson Pro', api: 'Crimson+Pro', family: 'serif' },
+    { label: 'DM Sans', api: 'DM+Sans', family: 'sans' },
+    { label: 'EB Garamond', api: 'EB+Garamond', family: 'serif' },
+    { label: 'Fira Code', api: 'Fira+Code', family: 'mono' },
+    { label: 'Fira Sans', api: 'Fira+Sans', family: 'sans' },
+    { label: 'Figtree', api: 'Figtree', family: 'sans' },
+    { label: 'IBM Plex Mono', api: 'IBM+Plex+Mono', family: 'mono' },
+    { label: 'IBM Plex Sans', api: 'IBM+Plex+Sans', family: 'sans' },
+    { label: 'IBM Plex Serif', api: 'IBM+Plex+Serif', family: 'serif' },
+    { label: 'Inter', api: 'Inter', family: 'sans' },
+    { label: 'JetBrains Mono', api: 'JetBrains+Mono', family: 'mono' },
+    { label: 'Josefin Sans', api: 'Josefin+Sans', family: 'sans' },
+    { label: 'Lato', api: 'Lato', family: 'sans' },
+    { label: 'Lexend', api: 'Lexend', family: 'sans' },
+    { label: 'Libre Baskerville', api: 'Libre+Baskerville', family: 'serif' },
+    { label: 'Libre Franklin', api: 'Libre+Franklin', family: 'sans' },
+    { label: 'Lora', api: 'Lora', family: 'serif' },
+    { label: 'Manrope', api: 'Manrope', family: 'sans' },
+    { label: 'Maven Pro', api: 'Maven+Pro', family: 'sans' },
+    { label: 'Merriweather', api: 'Merriweather', family: 'serif' },
+    { label: 'Montserrat', api: 'Montserrat', family: 'sans' },
+    { label: 'Mulish', api: 'Mulish', family: 'sans' },
+    { label: 'Noto Sans', api: 'Noto+Sans', family: 'sans' },
+    { label: 'Noto Serif', api: 'Noto+Serif', family: 'serif' },
+    { label: 'Nunito', api: 'Nunito', family: 'sans' },
+    { label: 'Nunito Sans', api: 'Nunito+Sans', family: 'sans' },
+    { label: 'Open Sans', api: 'Open+Sans', family: 'sans' },
+    { label: 'Oswald', api: 'Oswald', family: 'display' },
+    { label: 'Outfit', api: 'Outfit', family: 'sans' },
+    { label: 'Oxygen', api: 'Oxygen', family: 'sans' },
+    { label: 'Playfair Display', api: 'Playfair+Display', family: 'serif' },
+    { label: 'Plus Jakarta Sans', api: 'Plus+Jakarta+Sans', family: 'sans' },
+    { label: 'Poppins', api: 'Poppins', family: 'sans' },
+    { label: 'PT Serif', api: 'PT+Serif', family: 'serif' },
+    { label: 'Quicksand', api: 'Quicksand', family: 'sans' },
+    { label: 'Raleway', api: 'Raleway', family: 'sans' },
+    { label: 'Red Hat Display', api: 'Red+Hat+Display', family: 'sans' },
+    { label: 'Righteous', api: 'Righteous', family: 'display' },
+    { label: 'Roboto', api: 'Roboto', family: 'sans' },
+    { label: 'Roboto Mono', api: 'Roboto+Mono', family: 'mono' },
+    { label: 'Roboto Slab', api: 'Roboto+Slab', family: 'slab' },
+    { label: 'Rubik', api: 'Rubik', family: 'sans' },
+    { label: 'Source Code Pro', api: 'Source+Code+Pro', family: 'mono' },
+    { label: 'Source Sans 3', api: 'Source+Sans+3', family: 'sans' },
+    { label: 'Source Serif 4', api: 'Source+Serif+4', family: 'serif' },
+    { label: 'Space Grotesk', api: 'Space+Grotesk', family: 'sans' },
+    { label: 'Space Mono', api: 'Space+Mono', family: 'mono' },
+    { label: 'Titillium Web', api: 'Titillium+Web', family: 'sans' },
+    { label: 'Ubuntu', api: 'Ubuntu', family: 'sans' },
+    { label: 'Work Sans', api: 'Work+Sans', family: 'sans' }
+  ];
+  GOOGLE_FONTS.sort(function (a, b) {
+    return a.label.localeCompare(b.label);
+  });
+
+  function hexToRgb(hex) {
+    var h = hex.replace('#', '');
+    if (h.length === 3) {
+      h = h[0] + h[0] + h[1] + h[1] + h[2] + h[2];
+    }
+    var n = parseInt(h, 16);
+    return { r: (n >> 16) & 255, g: (n >> 8) & 255, b: n & 255 };
+  }
+
+  function rgbToHsl(r, g, b) {
+    r /= 255;
+    g /= 255;
+    b /= 255;
+    var max = Math.max(r, g, b);
+    var min = Math.min(r, g, b);
+    var h = 0;
+    var s = 0;
+    var l = (max + min) / 2;
+    var d = max - min;
+    if (d !== 0) {
+      s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+      switch (max) {
+        case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+        case g: h = (b - r) / d + 2; break;
+        case b: h = (r - g) / d + 4; break;
+      }
+      h /= 6;
+    }
+    return {
+      h: h * 360,
+      s: s * 100,
+      l: l * 100
+    };
+  }
+
+  function hexToHSL(hex) {
+    var rgb = hexToRgb(hex);
+    var hsl = rgbToHsl(rgb.r, rgb.g, rgb.b);
+    return {
+      h: hsl.h.toFixed(2) + 'deg',
+      s: hsl.s.toFixed(2) + '%',
+      l: hsl.l.toFixed(2) + '%'
+    };
+  }
+
+  function setThemeProp(name, value) {
+    root.style.setProperty(name, value);
+  }
+
+  function updateHslFromColor(input) {
+    var prefix = input.getAttribute('data-prefix');
+    if (!prefix) return;
+    var hsl = hexToHSL(input.value);
+    setThemeProp('--' + prefix + '-h', hsl.h);
+    setThemeProp('--' + prefix + '-s', hsl.s);
+    setThemeProp('--' + prefix + '-l', hsl.l);
+    var out = document.getElementById(input.id + '-hsl');
+    if (out) out.textContent = hsl.h + ' / ' + hsl.s + ' / ' + hsl.l;
+    if (prefix === 'primary') {
+      syncLinkColorsFromPrimary(hsl);
+    }
+    refreshOutput();
+  }
+
+  function syncLinkColorsFromPrimary(hsl) {
+    var parts = {
+      h: parseFloat(hsl.h),
+      s: parseFloat(hsl.s),
+      l: parseFloat(hsl.l)
+    };
+    var linkS = Math.min(100, Math.max(0, parts.s * 0.84));
+    var linkL = Math.min(88, Math.max(40, parts.l + 18));
+    setThemeProp('--link-color-light-h', parts.h.toFixed(2) + 'deg');
+    setThemeProp('--link-color-light-s', linkS.toFixed(2) + '%');
+    setThemeProp('--link-color-light-l', linkL.toFixed(2) + '%');
+  }
+
+  function serifFallbackChain(quotedName, isSlab) {
+    var tail = isSlab
+      ? '"Times New Roman","Lucida Bright",Georgia,serif,"slab"'
+      : '"Times New Roman","Lucida Bright",Georgia,serif';
+    return quotedName + ',' + tail;
+  }
+
+  function sansFallbackChain(quotedName) {
+    return (
+      quotedName +
+      ',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif'
+    );
+  }
+
+  function displayFallbackChain(quotedName) {
+    return quotedName + ',"Muli","Open Sans",Verdana,Helvetica,sans-serif';
+  }
+
+  function fontStackForChoice(quoted, family) {
+    var f = family || 'sans';
+    if (f === 'serif') return serifFallbackChain(quoted, false);
+    if (f === 'slab') return serifFallbackChain(quoted, true);
+    if (f === 'mono') {
+      return quoted + ',ui-monospace,Consolas,Menlo,"Courier New",monospace';
+    }
+    if (f === 'display') return displayFallbackChain(quoted);
+    return sansFallbackChain(quoted);
+  }
+
+  function quoteFontName(label) {
+    return '"' + label.replace(/"/g, '\\"') + '"';
+  }
+
+  function ensureFontLoaded(apiName) {
+    if (loadedFonts[apiName]) return;
+    loadedFonts[apiName] = true;
+    var href =
+      'https://fonts.googleapis.com/css2?family=' +
+      apiName +
+      ':wght@300..800&display=swap';
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = href;
+    fontLinksHost.appendChild(link);
+  }
+
+  function fillSelect(selectId, fonts, selectedApi) {
+    var sel = document.getElementById(selectId);
+    if (!sel) return;
+    sel.innerHTML = '';
+    for (var i = 0; i < fonts.length; i++) {
+      var f = fonts[i];
+      var opt = document.createElement('option');
+      opt.value = f.api;
+      opt.textContent = f.label;
+      opt.setAttribute('data-label', f.label);
+      opt.setAttribute('data-family', f.family || 'sans');
+      if (f.api === selectedApi) opt.selected = true;
+      sel.appendChild(opt);
+    }
+  }
+
+  function applyFontSelect(selectEl) {
+    var role = selectEl.getAttribute('data-role');
+    var opt = selectEl.options[selectEl.selectedIndex];
+    if (!opt) return;
+    var label = opt.getAttribute('data-label') || opt.textContent;
+    var api = opt.value;
+    ensureFontLoaded(api);
+    var quoted = quoteFontName(label);
+    var family = opt.getAttribute('data-family') || 'sans';
+    var stack = fontStackForChoice(quoted, family);
+    if (role === 'accent') {
+      setThemeProp('--font-family_accent', stack);
+    } else if (role === 'display') {
+      setThemeProp('--font-family_display', stack);
+    } else if (role === 'copy') {
+      setThemeProp('--font-family_copy', stack);
+      setThemeProp('--font-family_ui', stack);
+    }
+    refreshOutput();
+  }
+
+  function formatNumForCss(n) {
+    var s = Number(n).toFixed(2);
+    if (s.indexOf('.') >= 0) {
+      s = s.replace(/\.?0+$/, '');
+    }
+    return s;
+  }
+
+  function getThemeStyle(name) {
+    return root.style.getPropertyValue(name).trim();
+  }
+
+  function parseCssNumber(str, fallback) {
+    var v = parseFloat(str);
+    return isNaN(v) ? fallback : v;
+  }
+
+  /** Brand (--acc) gradient strings (matches preview logic, space-separated hsl) */
+  function accGradientCss() {
+    var h = parseCssNumber(getThemeStyle('--acc-h'), 256.1);
+    var s = parseCssNumber(getThemeStyle('--acc-s'), 47.13);
+    var l = parseCssNumber(getThemeStyle('--acc-l'), 34.12);
+    var startL = Math.min(95, Math.max(5, l * 0.3));
+    var startS = Math.min(100, Math.max(0, s * 1.05));
+    return {
+      start:
+        'hsl(' +
+        formatNumForCss(h) +
+        'deg ' +
+        formatNumForCss(startS) +
+        '% ' +
+        formatNumForCss(startL) +
+        '%)',
+      end:
+        'hsl(' +
+        formatNumForCss(h) +
+        'deg ' +
+        formatNumForCss(s) +
+        '% ' +
+        formatNumForCss(l) +
+        '%)'
+    };
+  }
+
+  function staticSystemColorsBlock() {
+    return [
+      '  /* Navigation (fixed default from root.html; not edited in this tool) */',
+      '  --navigation-h: 254.67deg;',
+      '  --navigation-s: 42.06%;',
+      '  --navigation-l: 20.98%;',
+      '  --navigation: hsl(var(--navigation-h), var(--navigation-s), var(--navigation-l));',
+      '',
+      '  /* System states (defaults from root.html) */',
+      '  --success-h: 152.14deg;',
+      '  --success-s: 65.12%;',
+      '  --success-l: 33.73%;',
+      '  --success: hsl(var(--success-h), var(--success-s), var(--success-l));',
+      '',
+      '  --warning-h: 33.91deg;',
+      '  --warning-s: 87.62%;',
+      '  --warning-l: 58.82%;',
+      '  --warning: hsl(var(--warning-h), var(--warning-s), var(--warning-l));',
+      '',
+      '  --alert-h: 4.62deg;',
+      '  --alert-s: 67.33%;',
+      '  --alert-l: 50.78%;',
+      '  --alert: hsl(var(--alert-h), var(--alert-s), var(--alert-l));',
+      '',
+      '  --info-h: 253.85deg;',
+      '  --info-s: 30.95%;',
+      '  --info-l: 50.59%;',
+      '  --info: hsl(var(--info-h), var(--info-s), var(--info-l));',
+      '',
+      '  --highlight-h: 39.23deg;',
+      '  --highlight-s: 92.86%;',
+      '  --highlight-l: 56.05%;',
+      '  --highlight: hsl(var(--highlight-h), var(--highlight-s), var(--highlight-l));'
+    ].join('\n');
+  }
+
+  function refreshOutput() {
+    if (!output) return;
+    var g = function (n) {
+      return getThemeStyle(n) || '';
+    };
+    var fontAccent = g('--font-family_accent');
+    var fontDisplay = g('--font-family_display');
+    var fontCopy = g('--font-family_copy');
+    var fontUi = g('--font-family_ui') || fontCopy;
+    var grad = accGradientCss();
+    var lh = g('--link-color-light-h') || '14.68deg';
+    var ls = g('--link-color-light-s') || '70%';
+    var lines = [
+      '<style>',
+      ':root {',
+      '',
+      '  --page-max-width: ' + (g('--page-max-width') || '1200px') + ';',
+      '  /* Brand (--acc) */',
+      '  --acc-h:  ' + (g('--acc-h') || '') + ';',
+      '  --acc-s:  ' + (g('--acc-s') || '') + ';',
+      '  --acc-l:  ' + (g('--acc-l') || '') + ';',
+      '  --acc: hsl(var(--acc-h), var(--acc-s), var(--acc-l));',
+      '',
+      '  /* Primary */',
+      '  --primary-h: ' + (g('--primary-h') || '') + ';',
+      '  --primary-s: ' + (g('--primary-s') || '') + ';',
+      '  --primary-l: ' + (g('--primary-l') || '') + ';',
+      '  --primary: hsl(var(--primary-h), var(--primary-s), var(--primary-l));',
+      '',
+      '  /* Secondary */',
+      '  --secondary-h: ' + (g('--secondary-h') || '') + ';',
+      '  --secondary-s: ' + (g('--secondary-s') || '') + ';',
+      '  --secondary-l: ' + (g('--secondary-l') || '') + ';',
+      '  --secondary: hsl(var(--secondary-h), var(--secondary-s), var(--secondary-l));',
+      '',
+      '  /* Accent */',
+      '  --accent-h:  ' + (g('--accent-h') || '') + ';',
+      '  --accent-s:  ' + (g('--accent-s') || '') + ';',
+      '  --accent-l:  ' + (g('--accent-l') || '') + ';',
+      '  --accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));',
+      '',
+      '  --code-color: hsla(',
+      '    var(--accent-h),',
+      '    calc(var(--accent-s) + 5% - var(--accent-s) * 0.05),',
+      '    calc(var(--accent-l) - var(--accent-l) * 0.5),',
+      '    1',
+      '  );',
+      '',
+      '  /* Neutral shade */',
+      '  --shade-h: ' + (g('--shade-h') || '') + ';',
+      '  --shade-s: ' + (g('--shade-s') || '') + ';',
+      '  --shade-l: ' + (g('--shade-l') || '') + ';',
+      '  --shade: hsl(var(--shade-h), var(--shade-s), var(--shade-l));',
+      '',
+      staticSystemColorsBlock(),
+      '',
+      '  /* Links (light link tuned from primary) */',
+      '  --link-color-light-h: ' + (g('--link-color-light-h') || '') + ';',
+      '  --link-color-light-s: ' + (g('--link-color-light-s') || '') + ';',
+      '  --link-color-light-l: ' + (g('--link-color-light-l') || '') + ';',
+      '  --link-color-light: hsl(var(--link-color-light-h), var(--link-color-light-s), var(--link-color-light-l));',
+      '',
+      '  --link-color-light--hover-h: ' + lh + ';',
+      '  --link-color-light--hover-s: ' + ls + ';',
+      '  --start-color: ' + grad.start + ';',
+      '  --end-color: ' + grad.end + ';',
+      '  --start-color-alt: #83290b;',
+      '  --end-color-alt: #b73910;',
+      '',
+      '  /* Fonts */',
+      '  --font-family_accent: ' + fontAccent + ';',
+      '  --font-family_display: ' + fontDisplay + ';',
+      '  --font-family_copy: ' + fontCopy + ';',
+      '  --font-family_ui: ' + fontUi + ';',
+      '}',
+      '</style>'
+    ];
+    output.textContent = lines.join('\n');
+  }
+
+  function wireColors() {
+    var inputs = document.querySelectorAll('input[type="color"][data-prefix]');
+    for (var i = 0; i < inputs.length; i++) {
+      inputs[i].addEventListener('input', function () {
+        updateHslFromColor(this);
+      });
+      inputs[i].addEventListener('change', function () {
+        updateHslFromColor(this);
+      });
+      updateHslFromColor(inputs[i]);
+    }
+  }
+
+  function wirePageWidth() {
+    var el = document.getElementById('bg-page-max-width');
+    var out = document.getElementById('bg-page-max-width-out');
+    if (!el) return;
+    function sync() {
+      setThemeProp('--page-max-width', el.value + 'px');
+      if (out) out.textContent = el.value + 'px';
+      refreshOutput();
+    }
+    el.addEventListener('input', sync);
+    sync();
+  }
+
+  function wireFonts() {
+    fillSelect('bg-font-display', GOOGLE_FONTS, 'Maven+Pro');
+    fillSelect('bg-font-accent', GOOGLE_FONTS, 'Roboto+Slab');
+    fillSelect('bg-font-copy', GOOGLE_FONTS, 'Open+Sans');
+    ['bg-font-display', 'bg-font-accent', 'bg-font-copy'].forEach(function (id) {
+      var sel = document.getElementById(id);
+      if (!sel) return;
+      sel.addEventListener('change', function () {
+        applyFontSelect(sel);
+      });
+      applyFontSelect(sel);
+    });
+    ensureFontLoaded('Maven+Pro');
+    ensureFontLoaded('Roboto+Slab');
+    ensureFontLoaded('Open+Sans');
+  }
+
+  /** Navigation token is not user-tuned here; keep root.html defaults on :root for previews + snippet. */
+  function applyNavigationDefaults() {
+    setThemeProp('--navigation-h', '254.67deg');
+    setThemeProp('--navigation-s', '42.06%');
+    setThemeProp('--navigation-l', '20.98%');
+  }
+
+  function wireCopy() {
+    var btn = document.getElementById('brandThemeCopy');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      if (!output) return;
+      var text = output.textContent;
+      function doneOk() {
+        btn.textContent = 'Copied!';
+        setTimeout(function () {
+          btn.textContent = 'Copy to clipboard';
+        }, 2000);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(doneOk).catch(function () {
+          window.prompt('Copy this snippet:', text);
+        });
+      } else {
+        window.prompt('Copy this snippet:', text);
+      }
+    });
+  }
+
+  wireColors();
+  applyNavigationDefaults();
+  wirePageWidth();
+  wireFonts();
+  wireCopy();
+  refreshOutput();
+})();
+</script>
+{% endraw %}
