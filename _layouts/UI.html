@@ -9,26 +9,24 @@ layout: default
 
         <div class="bg_white shadow_overlap-light min-h_100 ">
 
-            <header class="flex flex_row br-b_1 br_solid br_primary-n2 m-b_4">
-                <div class="flex-shrink max-w_10">
-                    <h1 id="header-logo" role="banner">
-                        <a href="{{ '/' | append: site.github.build_revision | relative_url }}">
-                            <img src="https://www.acc.org/-/media/Non-Clinical/Images/System-Images/Logos/ACC-Logo-altered.png"
-                                alt="American College of Cardiology" class="display_none inline-block:md m_3">
-                            <svg class="display_none:md h_3lh m-l_3 m-t_3 mobile-logo-svg">
-                                <image
-                                    href="https://www.acc.org/-/media/Non-Clinical/Images/System-Images/Logos/ACC-Logo-Large-svg.svg"
-                                    class="h_3lh mobile-logo-image"></image>
-                            </svg>
-                        </a>
-                    </h1>
-                </div>
-                <div class="p_4 p_5:lg flex-grow>
+            <header class="flex flex_row br-b_1 br_solid br_primary-n2  items_center p_4 gap_4" role="banner">             
+                <h1 id="header-logo" role="banner" class="flex_shrink">
+                    <a href="{{ '/' | append: site.github.build_revision | relative_url }}">
+                        <img src="https://www.acc.org/-/media/Non-Clinical/Images/System-Images/Logos/ACC-Logo-altered.png"
+                            alt="American College of Cardiology" class="display_none inline-block:md m_3">
+                        <svg class="display_none:md h_3lh m-l_3 m-t_3 mobile-logo-svg">
+                            <image
+                                href="https://www.acc.org/-/media/Non-Clinical/Images/System-Images/Logos/ACC-Logo-Large-svg.svg"
+                                class="h_3lh mobile-logo-image"></image>
+                        </svg>
+                    </a>
+                </h1>
+                <div class="p-y_4 flex-grow">
                     <hgroup>
-                        <h2 class="c_primary font_accent">{{page.name | titlecase}}</h2>
+                        <h2 class="c_primary font_accent m_0 lh_2">{{page.name | titlecase}}</h2>
                         <strong>{{page.position | titlecase}}</strong>
                     </hgroup>
-                    
+
                     {%- if page.raw-source -%}
                     <a href="https://github.com/ACC-Style/PrototypingACCorg/blob/main/_data/{{page.raw-source}}">data file
                         <i class="fa-solid fa-file"></i></a>
@@ -36,6 +34,9 @@ layout: default
                 </div>
             </header>
             <div class="p_4">
+                    {% if page.notes %}
+                    <p>{{page.notes}}</p>
+                    {% endif %}
                 {{content}}
             </div>
     </div>
