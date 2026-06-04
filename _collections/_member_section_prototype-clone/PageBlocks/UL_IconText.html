@@ -1,0 +1,90 @@
+<!--
+header: specifies the text for the h2 tag at the top of the section. Example: "Our Features"
+container_modifier: class slot to change the row mechanism. Example: "custom-container-class"
+custom_fontsize: change the base sizing for the reading typography. Defaults to 1. Example: "1.2"
+button_type: specifies the button style. Defaults to btn-secondary. Options: [primary, secondary, link]. Example: "primary"
+grid_modifier: allows you to pass in rules to change the grid layout from its default. Example: "columns_3:lg columns_1 gap_6:lg"
+data_path: specifies the path for data to be used in the UL IconText list. Example: "Blocks.UL_IconText.CustomData"
+lastItem: specifies whether to include a custom pattern for the last list item. Example: "true"
+-->
+
+
+
+
+{% assign path_parts = 'Blocks.UL_IconText' | split: '.' %}
+{% if include.data_path %}
+  {% assign path_parts = include.data_path | split: '.' %}
+{% endif %}
+
+{% assign data_object = site.data %}
+{% for part in path_parts %}
+  {% assign data_object = data_object[part] %}
+{% endfor %}
+
+{% if include.container_modifier %}
+  <section
+    label="UL_IconText"
+    class="reading-typography p_5 {{ include.container_modifier }}"
+    style="--custom-font-size-up: {% if include.custom_fontsize %}{{ include.custom_fontsize }}{% else %} 1 {% endif %} ;"
+  >
+{% else %}
+  <div
+    label="UL_IconText"
+    class="reading-typography"
+    style="--custom-font-size-up: {% if include.custom_fontsize %}{{ include.custom_fontsize }}{% else %} 1 {% endif %} ;"
+  >
+{% endif %}
+
+<ul
+  class="{% if include.grid_modifier %}{{ include.grid_modifier }}{% else %} columns_2:md columns_1 gap-x_6 gap-y_4 {% endif %}  grid p-x_4:lg ul_none text_left"
+>
+  {% for listItem in data_object %}
+    {% if forloop.last and include.lastItem %}
+      <!-- Custom pattern for the last item -->
+      <li class="flex flex_row items_center justify_start isolate relative c_accent-n1 h:c_accent-n3">
+      <span class="font-size_up font_medium c_black">
+          Read about more of our
+          {% if listItem.guid != blank and listItem.guid != nil and listItem.guid != "" %}
+          {% assign cleaned_guid = listItem.guid | remove: '{' | remove: '}' | remove: '-' | strip %}
+          <a rel="noopener noreferrer" class="expanded-click-area c_inherit not-link h:underline" target="_self" href="https://www.acc.org/~/link.aspx?_id={{ cleaned_guid }}&amp;_z=z">
+            {{- listItem.link_text -}}
+          </a>
+        {% elsif listItem.url %}
+          <a rel="noopener noreferrer" class="expanded-click-area c_inherit not-link h:underline" target="_self" href="{{ listItem.url }}">
+            {{- listItem.link_text -}}
+          </a>
+        {% endif %}
+          &nbsp;
+        </span>
+        <span class="flex flex_row p-l_4">
+          <i class="c_inherit font_6 fas fa-solid fa-ellipsis" aria-hidden="true"></i>
+          <i class="c_inherit fa-chevron-right fa-solid fas font_6 m-l_n3 " aria-hidden="true"></i>
+        </span>
+      </li>
+    {% else %}
+      <!-- Default pattern for other items -->
+      <li class="flex flex_row items_center justify_start isolate relative  {% if listItem.url %}c_accent-n1 h:c_accent-n3{% endif %} ">
+        <em class="{% if listItem.url %}c_inherit{% else %}c_accent-n1{% endif %} font_7 p-r_4 far fa-solid {{ listItem.icon_class }}" aria-hidden="true"></em>
+        <span class="font-size_up font_medium">
+          {{ listItem.description }}
+          {% if listItem.guid != blank and listItem.guid != nil and listItem.guid != "" %}
+          {% assign cleaned_guid = listItem.guid | remove: '{' | remove: '}' | remove: '-' | strip %}
+          <a rel="noopener noreferrer" class="expanded-click-area c_inherit not-link h:underline" target="_self" href="https://www.acc.org/~/link.aspx?_id={{ cleaned_guid }}&amp;_z=z">
+            {{- listItem.link_text -}}
+          </a>
+        {% elsif listItem.url %}
+          <a rel="noopener noreferrer" class="expanded-click-area c_inherit not-link h:underline" target="_self" href="{{ listItem.url }}">
+            {{- listItem.link_text -}}
+          </a>
+        {% endif %}
+        </span>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
+{% if include.container_modifier %}
+  </section>
+{% else %}
+  </div>
+{% endif %}

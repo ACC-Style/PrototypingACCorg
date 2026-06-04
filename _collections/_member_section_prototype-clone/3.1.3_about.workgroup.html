@@ -1,0 +1,62 @@
+---
+layout: arches-sidebar
+name: "About/Leadership/Work Group"
+position: "Section Member"
+hero-title: "Women in Cardiology: Member Section"
+hero_image_base: "MEMBER"
+hero-cta-text: "DocMatter"
+sidebarRoot: Women in Cardiology
+sidebarRootURL: ../3.0_home/
+masthead: MicroSite/heroimage.micro.dynamic.html
+sidebarArray:
+  - label: "About"
+    url: ../3.1.0_about/
+    active: true
+    sidebarArraySub: 
+      - label: Leadership
+        url: ../3.1.1_about.leadership/
+      - label: Message from the Chair
+        url: ../3.1.2_about.chair-message/
+      - label: Work Group
+        active: true
+        url: ../3.1.3_about.workgroup/
+  - label: "Resources"
+    url: ../3.2_resources/
+  - label: "Announcements"
+    url: ../3.3_announcements/
+  - label: "Library"
+    url: ../3.4_library/
+  - label: "Iniatives & Activities"
+    url: ../3.5.0_feature/
+
+---
+<section zone-label="startingSection" class="grid columns_1 columns_2:lg gap_5:lg gap_4 m-b_4:md">
+    <main zone-label="introduction"
+        class="reading-typography font-size_up  max-w_65 col-start_start col-end_end col-end_n2:lg wrapper-container"
+        style="--custom-font-size-up: 1.06">
+        <hgroup class="lh_2 m-b_4">
+            <h1>Work Groups</h1>
+        </hgroup>
+        <p>Work Groups are a great way to get involved in Section initiatives, share your perspective, and help drive the priorities that matter most to you. Explore the opportunities below to make a difference-and elevate your impact and visibility within the ACC. </p>
+    </main>
+    <aside
+        class="col-end_end col-start_start col-start_n2:lg reading-typography wrapper-container flex flex_column gap_4">
+        <section id="leadership" aria-labelledby="leadership-heading"
+            class="bg_primary-5 h:bg_primary-4 br_round m-b_4 m-b_5:lg p_4 relative">
+            <hgroup id="leadership-heading" class="lh_0 section-title">
+              <small>Interested in</small>
+              <h2 class="m_0">Getting Involved?</h2>
+            </hgroup>
+            <p>Contact us to learn more about opportunities to get involved and to join a Work Group.
+            </p>
+            <a href="#MailToLink" class="btn btn-secondary expanded-click-area col_all">Contact Us
+                Today</a>
+        </section>
+    </aside>
+</section>
+<ul aria-role="feed" class="ul_none wrapper-container">
+{% include_relative PageBlocks/about/workgroup.html title="Adult Congenital and Pediatric Cardiology (ACPC)" %}
+{% include_relative PageBlocks/about/workgroup.html title="Advocacy" %}
+{% include_relative PageBlocks/about/workgroup.html title="Communications" %}
+</ul>
+
