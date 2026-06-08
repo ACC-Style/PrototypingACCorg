@@ -1,0 +1,17 @@
+---
+layout: arches
+name: "side donate button"
+position: "Concept Page"
+---
+<style>
+.donate-btn{transform:translateY(-50%); bottom:10%;  z-index:100}
+.donate-btn:hover{background:#16a385}
+.donate-btn span{writing-mode:vertical-rl;text-orientation:upright;letter-spacing:-.05em;}
+.donate-btn svg{stroke:#fff}
+@keyframes beat{0%,100%{transform:scale(1)}25%{transform:scale(1.25)}50%{transform:scale(1)}}
+.donate-btn:hover svg{animation:beat .45s ease 2}
+</style>
+<a href="https://my.acc.org/OrderApi__campaign?id=a1o5f000005PrXSAA0&site=a1Z5f000004IxvKEAS&_gl=1*uwoswh*_gcl_aw*R0NMLjE3ODA2Njg5NzkuQ2owS0NRanc1NG5SQmhEQ0FSSXNBTWNZX1NDTkFoZUdBTFVGdWdtZjF1bG5GaDJER3FuWUFfV3h0MUg3eF9iaDNoZHBYeWhqZ0FLU3lfOGFBcXRpRUFMd193Y0I.*_gcl_au*MTcyNzI3NzI2MS4xNzc4MDkwMzc1*_ga*NDk3ODMyNDE4LjE3NzgwOTAzNzU.*_ga_2V8VW4Y237*czE3ODA5Mjg0OTkkbzE1JGcxJHQxNzgwOTQ0MDIwJGo2MCRsMCRoMA.." class="shadow_bevel-bold donate-btn btn btn-danger bg_alert-n3 c_white h:bg_primary-n2  font_xbold font_mono flex flex_column no_wrap items_center justify_center gap_3 p_3 l_auto r_0 fixed lh_1 transition_3 br-tr_square br-br_square br_0">
+  <span class="uppercase font_mono">Donate</span>
+  <svg fill="none" height="28" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="28" xmlns="http://www.w3.org/2000/svg"><path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"/></svg>
+</a>
