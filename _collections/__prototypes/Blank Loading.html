@@ -1,0 +1,67 @@
+---
+layout: default
+name: "Simple Loading Page"
+position: "Concept Page"
+---
+<style>
+.load-wrap{min-height:100vh;display:grid;place-items:center;font-family:Arial,Helvetica,sans-serif}
+.load-box{display:grid;justify-items:center;gap:1.5rem}
+.load-box img{width:200px;height:auto}
+.loader{display:flex;align-items:center;gap:.75rem}
+.loader span{font-size:1.25rem;color:#004176;font-weight:600;letter-spacing:.05em}
+</style>
+<div class="load-wrap">
+  <div class="load-box">
+    <img src="https://www.acc.org/-/media/Images/Logos/2022-Update/v2-ACC_SIG_BLUE_OUTLINE_BLUE.svg" alt="ACC Logo">
+    <div class="loader">
+      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+        <g transform="translate(20 20)">
+          <rect x="-15" y="-15" width="30" height="30" fill="#004176">
+            <animateTransform attributeName="transform" type="scale" calcMode="spline" values="1;1;0.2;1;1" keyTimes="0;0.2;0.5;0.8;1" dur="1s" keySplines="0.5 0.5 0.5 0.5;0 0.1 0.9 1;0.1 0 1 0.9;0.5 0.5 0.5 0.5" begin="-0.4s" repeatCount="indefinite"/>
+          </rect>
+        </g>
+        <g transform="translate(50 20)">
+          <rect x="-15" y="-15" width="30" height="30" fill="#065a7a">
+            <animateTransform attributeName="transform" type="scale" calcMode="spline" values="1;1;0.2;1;1" keyTimes="0;0.2;0.5;0.8;1" dur="1s" keySplines="0.5 0.5 0.5 0.5;0 0.1 0.9 1;0.1 0 1 0.9;0.5 0.5 0.5 0.5" begin="-0.3s" repeatCount="indefinite"/>
+          </rect>
+        </g>
+        <g transform="translate(80 20)">
+          <rect x="-15" y="-15" width="30" height="30" fill="#0b727e">
+            <animateTransform attributeName="transform" type="scale" calcMode="spline" values="1;1;0.2;1;1" keyTimes="0;0.2;0.5;0.8;1" dur="1s" keySplines="0.5 0.5 0.5 0.5;0 0.1 0.9 1;0.1 0 1 0.9;0.5 0.5 0.5 0.5" begin="-0.2s" repeatCount="indefinite"/>
+          </rect>
+        </g>
+        <g transform="translate(20 50)">
+          <rect x="-15" y="-15" width="30" height="30" fill="#065a7a">
+            <animateTransform attributeName="transform" type="scale" calcMode="spline" values="1;1;0.2;1;1" keyTimes="0;0.2;0.5;0.8;1" dur="1s" keySplines="0.5 0.5 0.5 0.5;0 0.1 0.9 1;0.1 0 1 0.9;0.5 0.5 0.5 0.5" begin="-0.3s" repeatCount="indefinite"/>
+          </rect>
+        </g>
+        <g transform="translate(50 50)">
+          <rect x="-15" y="-15" width="30" height="30" fill="#0b727e">
+            <animateTransform attributeName="transform" type="scale" calcMode="spline" values="1;1;0.2;1;1" keyTimes="0;0.2;0.5;0.8;1" dur="1s" keySplines="0.5 0.5 0.5 0.5;0 0.1 0.9 1;0.1 0 1 0.9;0.5 0.5 0.5 0.5" begin="-0.2s" repeatCount="indefinite"/>
+          </rect>
+        </g>
+        <g transform="translate(80 50)">
+          <rect x="-15" y="-15" width="30" height="30" fill="#118b81">
+            <animateTransform attributeName="transform" type="scale" calcMode="spline" values="1;1;0.2;1;1" keyTimes="0;0.2;0.5;0.8;1" dur="1s" keySplines="0.5 0.5 0.5 0.5;0 0.1 0.9 1;0.1 0 1 0.9;0.5 0.5 0.5 0.5" begin="-0.1s" repeatCount="indefinite"/>
+          </rect>
+        </g>
+        <g transform="translate(20 80)">
+          <rect x="-15" y="-15" width="30" height="30" fill="#0b727e">
+            <animateTransform attributeName="transform" type="scale" calcMode="spline" values="1;1;0.2;1;1" keyTimes="0;0.2;0.5;0.8;1" dur="1s" keySplines="0.5 0.5 0.5 0.5;0 0.1 0.9 1;0.1 0 1 0.9;0.5 0.5 0.5 0.5" begin="-0.2s" repeatCount="indefinite"/>
+          </rect>
+        </g>
+        <g transform="translate(50 80)">
+          <rect x="-15" y="-15" width="30" height="30" fill="#118b81">
+            <animateTransform attributeName="transform" type="scale" calcMode="spline" values="1;1;0.2;1;1" keyTimes="0;0.2;0.5;0.8;1" dur="1s" keySplines="0.5 0.5 0.5 0.5;0 0.1 0.9 1;0.1 0 1 0.9;0.5 0.5 0.5 0.5" begin="-0.1s" repeatCount="indefinite"/>
+          </rect>
+        </g>
+        <g transform="translate(80 80)">
+          <rect x="-15" y="-15" width="30" height="30" fill="#16a385">
+            <animateTransform attributeName="transform" type="scale" calcMode="spline" values="1;1;0.2;1;1" keyTimes="0;0.2;0.5;0.8;1" dur="1s" keySplines="0.5 0.5 0.5 0.5;0 0.1 0.9 1;0.1 0 1 0.9;0.5 0.5 0.5 0.5" begin="0s" repeatCount="indefinite"/>
+          </rect>
+        </g>
+      </svg>
+      <span>Loading</span>
+    </div>
+  </div>
+</div>
