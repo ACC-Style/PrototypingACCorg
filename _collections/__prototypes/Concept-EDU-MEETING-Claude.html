@@ -170,15 +170,15 @@ masthead: "empty.html"
 {%- include_relative EDU/events.html -%}
 {%- include_relative EDU/career.html -%}
 {%- include_relative EDU/institution.html -%}
-<section id="nav-gone"></section>
-<ul id="sticky_nav" class="b_2 br_1 br_black-2 br_round br_solid flex flex_row flex_wrap font_n1:lg font_n2:md font_n3 gap_2 items_center justify_center m-x_5:md m-x_6:lg m-x_n3 p-x_0 p-y_3 relative shadow_overlap-light sticky ul_none w_auto z_2">
+<section class="anchor-nav-gone"></section>
+<ul class="anchor-nav b_2 br_1 br_black-2 br_round br_solid flex flex_row flex_wrap font_n1:lg font_n2:md font_n3 gap_2 items_center justify_center m-x_5:md m-x_6:lg m-x_n3 p-x_0 p-y_3 relative shadow_overlap-light sticky ul_none w_auto z_2">
   <li><a class="p-x_3 p-y_2 a:bg_accent-n1 a:c_white br_radius active" href="#Online-Learning" aria-current="true">Learning</a></li>
   <li><a class="p-x_3 p-y_2 a:bg_accent-n1 a:c_white br_radius" href="#Events" aria-current="false">Meetings &amp; Events</a></li>
   <li><a class="p-x_3 p-y_2 a:bg_accent-n1 a:c_white br_radius" href="#Professional" aria-current="false">Professional</a></li>
   <li><a class="p-x_3 p-y_2 a:bg_accent-n1 a:c_white br_radius" href="#Institutional" aria-current="false">Institutional</a></li>
 </ul>
 <style>
-    #sticky_nav::after {
+    .anchor-nav::after {
         content:"";
         position: absolute;
         inset: 0;
@@ -191,16 +191,18 @@ masthead: "empty.html"
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
-  const nav = document.querySelector("#sticky_nav");
+  const nav = document.querySelector(".anchor-nav");
+  if (!nav) return;
 
   const navLinks = [
-    ...document.querySelectorAll('#sticky_nav a[href^="#"]')
+    ...nav.querySelectorAll('a[href^="#"]')
   ];
 
   const items = navLinks
     .map(link => {
-      const id = link.getAttribute("href");
-      const section = document.querySelector(id);
+      const anchorId = link.getAttribute("href").slice(1);
+      const anchor = document.getElementById(anchorId);
+      const section = anchor?.closest(".anchor-section");
       return section ? { link, section } : null;
     })
     .filter(Boolean);
@@ -232,10 +234,10 @@ document.addEventListener("DOMContentLoaded", () => {
   items.forEach(item => sectionObserver.observe(item.section));
 
   /* -----------------------------
-     Hide nav when #nav-gone visible
+     Hide nav when .anchor-nav-gone visible
   ----------------------------- */
 
-  const navGoneSection = document.querySelector("#nav-gone");
+  const navGoneSection = document.querySelector(".anchor-nav-gone");
 
   if (navGoneSection) {
 
