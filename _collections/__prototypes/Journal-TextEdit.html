@@ -1,0 +1,137 @@
+---
+layout: acc/fullscreen
+name: "Journals on ACC.org"
+position: "Concept Anchors Page"
+masthead: "empty.html"
+---
+
+{%
+  include MicroSite/heroimage.dynamic.html
+  parent_link="https://www.acc.org/"
+  parent_page="ACC.org"
+  hero_image_base="Dynamic"
+  hero_image_alt="Dynamic Hero Image"
+  hero_title="American College of Cardiology and JACC Journals"
+  cta_title="75+ Years of Cardiovascular Publishing"
+  cta_description="The JACC family of journals delivers trusted, peer-reviewed science that transforms discovery into better patient care worldwide."
+  cta_link="https://www.jacc.org"
+  cta_button_text="Go to JACC"
+%}
+
+<section zone-label="startingSection" class="grid columns_1 columns_3:md columns_5:lg p_4 gap_5:lg gap_4 m-b_4:md">
+  <main zone-label="introduction" class="reading-typography font-size_up p-l_4:lg max-w_65 p-t_5:lg p-t_4 col-start_start col-end_end col-end_n2:md col-end_n3:lg" style="--custom-font-size-up: 1.06">
+    <h2 class="lh_2 m-b_4">
+      Publishing That Advances Cardiovascular Care
+      <small class="block font-size_down-1">ACC&rsquo;s journal program connects science to practice.</small>
+    </h2>
+    <p>
+      The ACC publishes to disseminate information, and to transform discovery into trusted evidence that clinicians use in daily practice. Through <em>JACC</em> Journals, the College and the journal editors ensure that guidance is rigorously developed, widely disseminated, and accessible at the point of care.
+    </p>
+  </main>
+  <aside class="col-end_end col-start_start col-start_n2:md col-start_n3:lg reading-typography wrapper-container p-l_4:lg">
+    <div data-item="cta-overlay" class="bg_primary-n2 br_round c_white color_inherit shadow_overlap-light p_4 p_5:lg reading-typography z_1 sticky t_3">
+      <h3 data-item="cta-title" class="font_medium">Quick Links</h3>
+      <div data-item="cta-description" class="font-size_up lh_2">
+        <ul class="ul_none">
+          <li><a href="https://www.jacc.org/author-center"><em class="fas fa-pen-fancy p-r_3" aria-hidden="true"></em>Submit a Manuscript</a></li>
+          <li><a href="https://www.jacc.org/pb/subscriptions"><em class="fas fa-envelope-open-text p-r_3" aria-hidden="true"></em>Subscribe to Email Alerts</a></li>
+          <li><a href="https://www.jacc.org"><em class="fas fa-external-link-alt p-r_3" aria-hidden="true"></em>Browse <em>JACC.org</em></a></li>
+          <li><a href="https://www.acc.org/membership"><em class="fas fa-id-card p-r_3" aria-hidden="true"></em>Join ACC For Full Access</a></li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+</section>
+
+{%- include_relative JOURNALS/value-cards.html -%}
+<div class="p_4 p-y_5:lg isolation_isolate">
+{%- include_relative JOURNALS/journal-family.html -%}
+{%- include_relative JOURNALS/why-publishing.html -%}
+{%- include_relative JOURNALS/how-we-publish.html -%}
+{%- include_relative JOURNALS/for-members.html -%}
+<section id="nav-gone"></section>
+<ul id="sticky_nav" class="b_2 br_1 br_black-2 br_round br_solid flex flex_row flex_wrap font_n1:lg font_n2:md font_n3 gap_2 items_center justify_center m-x_5:md m-x_6:lg m-x_n3 p-x_0 p-y_3 relative shadow_overlap-light sticky ul_none w_auto z_2">
+  <li><a class="p-x_3 p-y_2 a:bg_accent-n1 a:c_white br_radius" href="#Journal-Family" aria-current="false">Our Journals</a></li>
+  <li><a class="p-x_3 p-y_2 a:bg_accent-n1 a:c_white br_radius active" href="#Why-Publishing" aria-current="true">Why We Publish</a></li>
+  <li><a class="p-x_3 p-y_2 a:bg_accent-n1 a:c_white br_radius" href="#How-We-Publish" aria-current="false">How We Publish</a></li>
+  <li><a class="p-x_3 p-y_2 a:bg_accent-n1 a:c_white br_radius" href="#For-Members" aria-current="false">Members & Authors</a></li>
+</ul>
+<style>
+    #sticky_nav::after {
+        content:"";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: rgba(255,255,255,0.8);
+        backdrop-filter: blur(10px);
+            border-radius: 1.5rem;
+    }
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const nav = document.querySelector("#sticky_nav");
+
+  const navLinks = [
+    ...document.querySelectorAll('#sticky_nav a[href^="#"]')
+  ];
+
+  const items = navLinks
+    .map(link => {
+      const id = link.getAttribute("href");
+      const section = document.querySelector(id);
+      return section ? { link, section } : null;
+    })
+    .filter(Boolean);
+
+  const sectionObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+      const item = items.find(i => i.section === entry.target);
+      if (!item) return;
+
+      item.link.classList.toggle("active", entry.isIntersecting);
+
+      item.link.setAttribute(
+        "aria-current",
+        entry.isIntersecting ? "true" : "false"
+      );
+    });
+
+  }, {
+    root: null,
+    rootMargin: "-80px 0px 0px -80px",
+    threshold: 0
+  });
+
+  items.forEach(item => sectionObserver.observe(item.section));
+
+  const navGoneSection = document.querySelector("#nav-gone");
+
+  if (navGoneSection) {
+
+    const navObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        nav.classList.toggle("display_none", entry.isIntersecting);
+      });
+    }, {
+      root: null,
+      rootMargin: "-80px 0px 0px 0px",
+      threshold: 0
+    });
+
+    navObserver.observe(navGoneSection);
+  }
+
+});
+</script>
+</div>
+
+<style>
+  :where(h1,h2,h3,h4,h5) + p { margin-block-start:0; }
+  .reading-typography :where(h1,h2,h3,h4,h5):has(+ p) {margin-block-end: .125em;}
+  h4:has(+p){margin-block-end: .25em;}
+  p:last-child {
+      margin-block-end: .25em;
+  }
+</style>
