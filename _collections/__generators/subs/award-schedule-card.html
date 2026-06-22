@@ -1,0 +1,99 @@
+{% assign start_ts = include.item.start_date | date: "%s" %}
+{% assign end_input = include.item.end_date | default: include.item.start_date %}
+{% assign end_ts = end_input | date: "%s" %}
+
+{% assign start_iso = start_ts | date: "%Y-%m-%d" %}
+{% assign end_iso   = end_ts   | date: "%Y-%m-%d" %}
+
+{% assign month_abbr = start_ts | date: "%b" %}
+{% assign month_full = start_ts | date: "%B" %}
+{% assign year = start_ts | date: "%Y" %}
+{% assign start_day = start_ts | date: "%-d" %}
+{% assign end_day = end_ts | date: "%-d" %}
+
+{% if end_iso == start_iso %}
+  {% assign day_range = start_day %}
+  {% assign human_range = month_full | append: " " | append: start_day | append: ", " | append: year %}
+{% else %}
+  {% assign day_range = start_day | append: " - " | append: end_day %}
+  {% assign human_range = month_full | append: " " | append: start_day | append: "-" | append: end_day | append: ", " | append: year %}
+{% endif %}
+
+{% assign location = include.item.city | append: ", " | append: include.item.country %}
+{% assign aria = include.item.title | append: ". " | append: human_range | append: ". " | append: location | append: "." %}
+{% assign learn_more_url = include.item.learn_more_url | default: include.item.url | default: "#" %}
+{% assign is_open = include.item.status == "open" %}
+{% assign flags = include.item.flags | split: "," %}
+<li class="m_0 p_0">
+  <article
+    class="bg_white br_round flex flex_column font_copy isolation_isolate justify_start relative self_stretch shadow_bevel-light w_100 wrapper-container h:bg_accent-5"
+    data-component="AwardScheduleCard"
+    data-status="{{ include.item.status }}">
+
+    <div class="flex flex_row:md flex_column gap-x_4 gap-y_3 p-4 flex_1">
+
+      <div class="flex_none m_auto m_0:md" style="width: clamp(120px, 15vw, 140px);">
+        <div class="cal-date text_center">
+          <a target="_blank"
+             class="block btn btn-primary c_white expanded-click-area flex flex_column justify_stretch font-size_down"
+             href="{{ learn_more_url }}"
+             aria-label="{{ aria | escape }}">
+            <span class="block flex_none font-size_up-1 p-y_1">{{ month_abbr }}</span>
+            <span class="block br-b_2 br-t_2 br_solid font-size_up-2 flex_auto font_xbold grid items_center p-x_4 text_center aspect_3x1">
+              <span class="nowrap">{{ day_range }}</span>
+            </span>
+            <span class="block flex_none font-size_up-1 p-y_1">{{ year }}</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="flex_auto flex flex_column gap-y_3">
+        <header class="m-t_0">
+          {% if include.item.flags != "" or is_open %}
+          <ul class="ul_inline-pipe font_n3 c_accent-n3 items_center w_auto font_bold m-t_0 m-b_3 m-r_n3 flex">
+            {% for flag in flags %}
+              {% assign flag_trim = flag | strip %}
+              {% if flag_trim != "" %}
+                <li{% if forloop.last and is_open == false %} class="no-after"{% endif %}>{{ flag_trim }}</li>
+              {% endif %}
+            {% endfor %}
+            {% if is_open %}
+            <li open-flag class="no-after br_radius p_2 c_black-7 font_xbold uppercase bg_warning-3 m-r_3 lh_0 m-l_auto">Open</li>
+            {% endif %}
+          </ul>
+          {% endif %}
+          <h3 data-type="title" class="h4 lh_1 wrap_pretty m_0 font_display">{{ include.item.title }}</h3>
+        </header>
+
+        <main class="reading-typography font-size_down flex_1">
+          {% if include.item.description and include.item.description != "" %}
+          <p data-type="description" class="lh_3 m-y_0">{{ include.item.description }}</p>
+          {% endif %}
+          <strong class="meta m-y_2 block c_shade-n2 font-size_down">
+            <time datetime="{{ start_iso }}">{{ human_range }}</time>
+            <span class="m-x_2">|</span>
+            <span>{{ location }}</span>
+          </strong>
+        </main>
+
+        {% if is_open %}
+        <footer class="m-t_auto flex flex_row-reverse flex_wrap gap_4:md gap_3:sm gap_2">
+          <a href="{{ include.item.apply_url | default: '#' }}"
+             class="btn btn-sm btn-primary nowrap z_2" target="_blank">
+            <span class="display_none inline-block:sm m-r_3">Apply Now</span>
+            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </a>
+          <a href="{{ learn_more_url }}"
+             class="btn btn-sm btn-outline-shade z_1 expanded-click-area" target="_blank">Learn More</a>
+        </footer>
+        {% else %}
+        <footer class="m-t_auto flex flex_row flex_wrap gap_4:md gap_3:sm gap_2">
+          <a href="{{ learn_more_url }}"
+             class="btn btn-sm btn-outline-shade z_1 expanded-click-area" target="_blank">Learn More</a>
+        </footer>
+        {% endif %}
+      </div>
+
+    </div>
+  </article>
+</li>

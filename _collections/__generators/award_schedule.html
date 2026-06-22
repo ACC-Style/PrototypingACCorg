@@ -1,0 +1,506 @@
+---
+layout: playground
+name: "Award Schedule List"
+position: "Generator"
+csv_file: "award-schedule"
+---
+
+{% assign items = site.data.award-schedule %}
+{% capture example_csv %}title,start_date,end_date,city,country,status,flags,description,learn_more_url,apply_url
+{% for item in items %}"{{ item.title | replace: '"', '""' }}","{{ item.start_date }}","{{ item.end_date | default: item.start_date }}","{{ item.city | replace: '"', '""' }}","{{ item.country | replace: '"', '""' }}","{{ item.status }}","{{ item.flags | replace: '"', '""' }}","{{ item.description | replace: '"', '""' }}","{{ item.learn_more_url }}","{{ item.apply_url }}"
+{% endfor %}{% endcapture %}
+{% assign preview_items = items | slice: 0, 3 %}
+{% capture preview_csv %}title,start_date,end_date,city,country,status,flags,description,learn_more_url,apply_url
+{% for item in preview_items %}"{{ item.title | replace: '"', '""' }}","{{ item.start_date }}","{{ item.end_date | default: item.start_date }}","{{ item.city | replace: '"', '""' }}","{{ item.country | replace: '"', '""' }}","{{ item.status }}","{{ item.flags | replace: '"', '""' }}","{{ item.description | replace: '"', '""' }}","{{ item.learn_more_url }}","{{ item.apply_url }}"
+{% endfor %}{% endcapture %}
+
+<div class="grid columns_1 columns_2:lg gap_5 reading-typography">
+  <aside class="flex flex_column gap_4">
+    <section class="bg_white br_1 br_black-3 br_round br_solid overflow_hidden">
+      <header class="bg_black-1 br-b_1 br_black-3 br_solid font_bold p_4">
+        Paste award schedule CSV
+      </header>
+      <div class="flex flex_column gap_4 p_4">
+        <p class="c_black-7 font-size_down m_0">
+          Paste or edit CSV below. Awards are grouped into Open, Upcoming, and Past.
+          The preview and HTML output update as you type.
+        </p>
+        <label class="font_bold font-size_down" for="csvInput">CSV data</label>
+        <textarea
+          id="csvInput"
+          class="br_1 br_black-3 br_round br_solid font_n1 m_0 min-h_20 p_3 w_100"
+          rows="14"
+          spellcheck="false">{{ preview_csv | strip }}</textarea>
+        <div class="flex flex_row flex_wrap gap_3">
+          <button type="button" class="btn btn-link" id="loadExampleBtn">Load full example CSV</button>
+          <button type="button" class="btn btn-shade" id="clearCsvBtn">Clear</button>
+        </div>
+        <p class="c_black-7 font-size_down m_0" id="statusText" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section class="bg_black-1 br_round p_4">
+      <h2 class="c_primary font_2 m-t_0">Expected columns</h2>
+      <ol class="font_n1 marker_primary m-b_0">
+        <li><code>title</code></li>
+        <li><code>start_date</code> (YYYY-MM-DD)</li>
+        <li><code>end_date</code> (YYYY-MM-DD, optional)</li>
+        <li><code>city</code></li>
+        <li><code>country</code></li>
+        <li><code>status</code> — <code>open</code>, <code>upcoming</code>, or <code>past</code></li>
+        <li><code>flags</code> — comma-separated (e.g. FIT, International)</li>
+        <li><code>description</code></li>
+        <li><code>learn_more_url</code></li>
+        <li><code>apply_url</code> — open awards only</li>
+      </ol>
+    </section>
+  </aside>
+
+  <main class="flex flex_column gap_4">
+    <section class="bg_white br_1 br_black-3 br_round br_solid overflow_hidden sticky t_3 z_1">
+      <header class="bg_black-1 br-b_1 br_black-3 br_solid font_bold p_4">
+        Preview
+      </header>
+      <div class="bg_black-1 br-b_1 br_black-3 br_dashed p_4">
+        <div id="previewArea" class="reading-typography wrapper-container"></div>
+      </div>
+    </section>
+
+    <section class="bg_white br_1 br_black-3 br_round br_solid overflow_hidden">
+      <header class="bg_black-1 br-b_1 br_black-3 br_solid font_bold p_4">
+        Generated HTML
+      </header>
+      <div class="p_4">
+        <textarea
+          id="outputHtml"
+          class="br_1 br_black-3 br_round br_solid font_n2 m_0 min-h_20 p_3 w_100"
+          rows="12"
+          readonly
+          spellcheck="false"></textarea>
+        <div class="flex flex_row flex_wrap gap_3 m-t_3">
+          <button type="button" class="btn btn-primary" id="copyHtmlBtn">Copy HTML</button>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script type="text/plain" id="exampleCsvData">{{ example_csv | strip }}</script>
+
+<script>
+  (function () {
+    const csvInput = document.getElementById("csvInput");
+    const previewArea = document.getElementById("previewArea");
+    const outputHtml = document.getElementById("outputHtml");
+    const statusText = document.getElementById("statusText");
+    const loadExampleBtn = document.getElementById("loadExampleBtn");
+    const clearCsvBtn = document.getElementById("clearCsvBtn");
+    const copyHtmlBtn = document.getElementById("copyHtmlBtn");
+    const exampleCsvData = document.getElementById("exampleCsvData");
+
+    const SECTIONS = [
+      { key: "open", id: "open-awards", title: "Open Awards" },
+      { key: "upcoming", id: "upcoming-awards", title: "Upcoming Awards" },
+      { key: "past", id: "past-awards", title: "Past Awards" },
+    ];
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    function escapeAttribute(value) {
+      return escapeHtml(value);
+    }
+
+    function parseCsv(text) {
+      const rows = [];
+      let row = [];
+      let field = "";
+      let inQuotes = false;
+
+      for (let i = 0; i < text.length; i += 1) {
+        const char = text[i];
+
+        if (inQuotes) {
+          if (char === '"') {
+            if (text[i + 1] === '"') {
+              field += '"';
+              i += 1;
+            } else {
+              inQuotes = false;
+            }
+          } else {
+            field += char;
+          }
+          continue;
+        }
+
+        if (char === '"') {
+          inQuotes = true;
+          continue;
+        }
+
+        if (char === ",") {
+          row.push(field);
+          field = "";
+          continue;
+        }
+
+        if (char === "\n" || char === "\r") {
+          if (char === "\r" && text[i + 1] === "\n") {
+            i += 1;
+          }
+          row.push(field);
+          field = "";
+          if (row.some((cell) => cell.trim() !== "")) {
+            rows.push(row);
+          }
+          row = [];
+          continue;
+        }
+
+        field += char;
+      }
+
+      row.push(field);
+      if (row.some((cell) => cell.trim() !== "")) {
+        rows.push(row);
+      }
+
+      return rows;
+    }
+
+    function csvToItems(text) {
+      const rows = parseCsv(text.trim());
+      if (!rows.length) {
+        return [];
+      }
+
+      const headers = rows[0].map((header) => header.trim().toLowerCase());
+
+      return rows
+        .slice(1)
+        .map((cells) => {
+          const item = {};
+          headers.forEach((header, index) => {
+            item[header] = (cells[index] ?? "").trim();
+          });
+          if (!item.learn_more_url && item.url) {
+            item.learn_more_url = item.url;
+          }
+          item.resolvedStatus = resolveStatus(item);
+          return item;
+        })
+        .filter((item) => item.title);
+    }
+
+    function parseIsoDate(value) {
+      if (!value) {
+        return null;
+      }
+
+      const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value.trim());
+      if (!match) {
+        return null;
+      }
+
+      const year = Number(match[1]);
+      const month = Number(match[2]);
+      const day = Number(match[3]);
+      const date = new Date(year, month - 1, day);
+
+      if (
+        date.getFullYear() !== year ||
+        date.getMonth() !== month - 1 ||
+        date.getDate() !== day
+      ) {
+        return null;
+      }
+
+      return date;
+    }
+
+    function resolveStatus(item) {
+      const explicit = (item.status || "").toLowerCase();
+      if (["open", "upcoming", "past"].includes(explicit)) {
+        return explicit;
+      }
+
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      const end = parseIsoDate(item.end_date || item.start_date);
+      const start = parseIsoDate(item.start_date);
+
+      if (end && end < today) {
+        return "past";
+      }
+      if (start && start > today) {
+        return "upcoming";
+      }
+      return "open";
+    }
+
+    function formatItemDates(item) {
+      const startDate = parseIsoDate(item.start_date);
+      const endDate = parseIsoDate(item.end_date || item.start_date) || startDate;
+
+      if (!startDate) {
+        return {
+          startIso: "",
+          monthAbbr: "",
+          year: "",
+          dayRange: "",
+          humanRange: "",
+        };
+      }
+
+      const startIso = item.start_date;
+      const endIso = item.end_date || item.start_date;
+      const monthAbbr = startDate.toLocaleString("en-US", { month: "short" });
+      const monthFull = startDate.toLocaleString("en-US", { month: "long" });
+      const year = String(startDate.getFullYear());
+      const startDay = String(startDate.getDate());
+      const endDay = String(endDate.getDate());
+      const sameDay = endIso === startIso;
+
+      return {
+        startIso,
+        monthAbbr,
+        year,
+        dayRange: sameDay ? startDay : `${startDay} - ${endDay}`,
+        humanRange: sameDay
+          ? `${monthFull} ${startDay}, ${year}`
+          : `${monthFull} ${startDay}-${endDay}, ${year}`,
+      };
+    }
+
+    function parseFlags(value) {
+      return String(value || "")
+        .split(",")
+        .map((flag) => flag.trim())
+        .filter(Boolean);
+    }
+
+    function buildFlagList(flags, isOpen) {
+      const items = flags.map((flag, index) => {
+        const isLastCategory = index === flags.length - 1;
+        const className = isLastCategory && !isOpen ? ' class="no-after"' : "";
+        return `<li${className}>${escapeHtml(flag)}</li>`;
+      });
+
+      if (isOpen) {
+        items.push(
+          '<li open-flag class="no-after br_radius p_2 c_black-7 font_xbold uppercase bg_warning-3 m-r_3 lh_0 m-l_auto">Open</li>',
+        );
+      }
+
+      return items.join("\n            ");
+    }
+
+    function buildFlagContainer(flags, isOpen) {
+      if (!flags.length && !isOpen) {
+        return "";
+      }
+
+      return `<ul class="ul_inline-pipe font_n3 c_accent-n3 items_center w_auto font_bold m-t_0 m-b_3 m-r_n3 flex">
+            ${buildFlagList(flags, isOpen)}
+          </ul>`;
+    }
+
+    function buildFooter(item, isOpen) {
+      const learnMoreUrl = escapeAttribute(item.learn_more_url || "#");
+      const applyUrl = escapeAttribute(item.apply_url || "#");
+
+      if (isOpen) {
+        return `<footer class="m-t_auto flex flex_row-reverse flex_wrap gap_4:md gap_3:sm gap_2">
+          <a href="${applyUrl}"
+             class="btn btn-sm btn-primary nowrap z_2" target="_blank">
+            <span class="display_none inline-block:sm m-r_3">Apply Now</span>
+            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </a>
+          <a href="${learnMoreUrl}"
+             class="btn btn-sm btn-outline-shade z_1 expanded-click-area" target="_blank">Learn More</a>
+        </footer>`;
+      }
+
+      return `<footer class="m-t_auto flex flex_row flex_wrap gap_4:md gap_3:sm gap_2">
+          <a href="${learnMoreUrl}"
+             class="btn btn-sm btn-outline-shade z_1 expanded-click-area" target="_blank">Learn More</a>
+        </footer>`;
+    }
+
+    function renderScheduleCard(item) {
+      const dates = formatItemDates(item);
+      const location = [item.city, item.country].filter(Boolean).join(", ");
+      const learnMoreUrl = item.learn_more_url || item.url || "#";
+      const aria = [item.title, dates.humanRange, location].filter(Boolean).join(". ") + ".";
+      const isOpen = item.resolvedStatus === "open";
+      const flags = parseFlags(item.flags);
+      const flagMarkup = buildFlagContainer(flags, isOpen);
+      const description = item.description
+        ? `          <p data-type="description" class="lh_3 m-y_0">${escapeHtml(item.description)}</p>\n`
+        : "";
+
+      return `<li class="m_0 p_0">
+  <article
+    class="bg_white br_round flex flex_column font_copy isolation_isolate justify_start relative self_stretch shadow_bevel-light w_100 wrapper-container h:bg_accent-5"
+    data-component="AwardScheduleCard"
+    data-status="${escapeAttribute(item.resolvedStatus)}">
+
+    <div class="flex flex_row:md flex_column gap-x_4 gap-y_3 p-4 flex_1">
+
+      <div class="flex_none m_auto m_0:md" style="width: clamp(120px, 15vw, 140px);">
+        <div class="cal-date text_center">
+          <a target="_blank"
+             class="block btn btn-primary c_white expanded-click-area flex flex_column justify_stretch font-size_down"
+             href="${escapeAttribute(learnMoreUrl)}"
+             aria-label="${escapeAttribute(aria)}">
+            <span class="block flex_none font-size_up-1 p-y_1">${escapeHtml(dates.monthAbbr)}</span>
+            <span class="block br-b_2 br-t_2 br_solid font-size_up-2 flex_auto font_xbold grid items_center p-x_4 text_center aspect_3x1">
+              <span class="nowrap">${escapeHtml(dates.dayRange)}</span>
+            </span>
+            <span class="block flex_none font-size_up-1 p-y_1">${escapeHtml(dates.year)}</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="flex_auto flex flex_column gap-y_3">
+        <header class="m-t_0">
+          ${flagMarkup}
+          <h3 data-type="title" class="h4 lh_1 wrap_pretty m_0 font_display">${escapeHtml(item.title)}</h3>
+        </header>
+
+        <main class="reading-typography font-size_down flex_1">
+${description}          <strong class="meta m-y_2 block c_shade-n2 font-size_down">
+            <time datetime="${escapeAttribute(dates.startIso)}">${escapeHtml(dates.humanRange)}</time>
+            <span class="m-x_2">|</span>
+            <span>${escapeHtml(location)}</span>
+          </strong>
+        </main>
+
+        ${buildFooter(item, isOpen)}
+      </div>
+
+    </div>
+  </article>
+</li>`;
+    }
+
+    function buildSection(section, items) {
+      if (!items.length) {
+        return "";
+      }
+
+      const cards = items.map(renderScheduleCard).join("\n");
+      return `  <section id="${section.id}" class="award-schedule-section" aria-labelledby="${section.id}-title">
+    <h2 id="${section.id}-title" class="award-schedule-section__title bg_black-1 br_round c_primary font_display font-size_up-1 m-b_4 m-t_0 p-4 shadow_overlap-light sticky t_3 z_1">${section.title}</h2>
+    <ul class="ul_none m_0 p_0 grid columns_1 columns_2:lg gap_4">
+${cards}
+    </ul>
+  </section>`;
+    }
+
+    function buildPageHtml(items) {
+      if (!items.length) {
+        return "";
+      }
+
+      const grouped = {
+        open: [],
+        upcoming: [],
+        past: [],
+      };
+
+      items.forEach((item) => {
+        grouped[item.resolvedStatus].push(item);
+      });
+
+      const sections = SECTIONS.map((section) =>
+        buildSection(section, grouped[section.key]),
+      ).filter(Boolean);
+
+      return `<div data-role="award-schedule" class="flex flex_column gap_6 reading-typography wrapper-container p-b_3">
+${sections.join("\n")}
+</div>`;
+    }
+
+    function setStatus(message) {
+      statusText.textContent = message;
+    }
+
+    function refresh() {
+      const items = csvToItems(csvInput.value);
+      const html = buildPageHtml(items);
+
+      previewArea.innerHTML = html;
+      outputHtml.value = html;
+
+      if (!csvInput.value.trim()) {
+        setStatus("Paste CSV data to generate the award schedule.");
+        return;
+      }
+
+      if (!items.length) {
+        setStatus("No awards found. Check the header row and that each row has a title.");
+        return;
+      }
+
+      const openCount = items.filter((item) => item.resolvedStatus === "open").length;
+      const upcomingCount = items.filter((item) => item.resolvedStatus === "upcoming").length;
+      const pastCount = items.filter((item) => item.resolvedStatus === "past").length;
+
+      setStatus(
+        `${items.length} awards — ${openCount} open, ${upcomingCount} upcoming, ${pastCount} past.`,
+      );
+    }
+
+    csvInput.addEventListener("input", refresh);
+
+    loadExampleBtn.addEventListener("click", function () {
+      csvInput.value = exampleCsvData.textContent.trim();
+      refresh();
+      setStatus("Example CSV loaded.");
+    });
+
+    clearCsvBtn.addEventListener("click", function () {
+      csvInput.value = "";
+      refresh();
+    });
+
+    copyHtmlBtn.addEventListener("click", async function () {
+      try {
+        await navigator.clipboard.writeText(outputHtml.value);
+        setStatus("HTML copied to clipboard.");
+      } catch (error) {
+        outputHtml.focus();
+        outputHtml.select();
+        setStatus("Clipboard unavailable. Select and copy the HTML manually.");
+      }
+    });
+
+    refresh();
+  })();
+</script>
+
+<style>
+  #csvInput,
+  #outputHtml {
+    font-family: Consolas, Monaco, monospace;
+    resize: vertical;
+  }
+
+  #previewArea:empty::before {
+    color: var(--c_black-7, #59636e);
+    content: "Award schedule preview will appear here.";
+    display: block;
+    font-size: 0.875rem;
+  }
+
+  .award-schedule-section {
+    scroll-margin-top: 5rem;
+  }
+</style>
