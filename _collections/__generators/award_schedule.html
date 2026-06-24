@@ -6,12 +6,12 @@ csv_file: "award-schedule"
 ---
 
 {% assign items = site.data.award-schedule %}
-{% capture example_csv %}title,start_date,end_date,city,country,flags,description,learn_more_url,action_url
-{% for item in items %}"{{ item.title | replace: '"', '""' }}","{{ item.start_date }}","{{ item.end_date | default: item.start_date }}","{{ item.city | replace: '"', '""' }}","{{ item.country | replace: '"', '""' }}","{{ item.flags | replace: '"', '""' }}","{{ item.description | replace: '"', '""' }}","{{ item.learn_more_url }}","{{ item.apply_url | default: item.action_url }}"
+{% capture example_csv %}title,start_date,end_date,city,country,presenter,flags,description,learn_more_url,action_url
+{% for item in items %}"{{ item.title | replace: '"', '""' }}","{{ item.start_date }}","{{ item.end_date }}","{{ item.city | replace: '"', '""' }}","{{ item.country | replace: '"', '""' }}","{{ item.presenter | replace: '"', '""' | default: '' }}","{{ item.flags | replace: '"', '""' }}","{{ item.description | replace: '"', '""' }}","{{ item.learn_more_url }}","{{ item.action_url | default: item.apply_url }}"
 {% endfor %}{% endcapture %}
-{% assign preview_items = items | slice: 0, 3 %}
-{% capture preview_csv %}title,start_date,end_date,city,country,flags,description,learn_more_url,action_url
-{% for item in preview_items %}"{{ item.title | replace: '"', '""' }}","{{ item.start_date }}","{{ item.end_date | default: item.start_date }}","{{ item.city | replace: '"', '""' }}","{{ item.country | replace: '"', '""' }}","{{ item.flags | replace: '"', '""' }}","{{ item.description | replace: '"', '""' }}","{{ item.learn_more_url }}","{{ item.apply_url | default: item.action_url }}"
+{% assign preview_items = items %}
+{% capture preview_csv %}title,start_date,end_date,city,country,presenter,flags,description,learn_more_url,action_url
+{% for item in preview_items %}"{{ item.title | replace: '"', '""' }}","{{ item.start_date }}","{{ item.end_date }}","{{ item.city | replace: '"', '""' }}","{{ item.country | replace: '"', '""' }}","{{ item.presenter | replace: '"', '""' | default: '' }}","{{ item.flags | replace: '"', '""' }}","{{ item.description | replace: '"', '""' }}","{{ item.learn_more_url }}","{{ item.action_url | default: item.apply_url }}"
 {% endfor %}{% endcapture %}
 
 <div class="grid columns_1 columns_2:lg gap_5 reading-typography">
@@ -22,10 +22,11 @@ csv_file: "award-schedule"
       </header>
       <div class="flex flex_column gap_4 p_4">
         <p class="c_black-7 font-size_down m_0">
-          Generic date-oriented list pattern. Items render in a flat CMS-style
-          <code>data-role="items"</code> list, then client-side JavaScript
-          toggles each card into Open, Upcoming, or Past. This generator uses
-          awards as the example dataset.
+          Generic date-oriented list pattern. The CMS copy is a single flat
+          <code>data-role="source"</code> list — web authors paste items in any
+          order and add new rows during the year without sorting. Client-side
+          JavaScript builds Open, Upcoming, and Past sections at runtime based on
+          the visitor&apos;s date.
         </p>
         <label class="font_bold font-size_down" for="csvInput">CSV data</label>
         <textarea
@@ -47,37 +48,41 @@ csv_file: "award-schedule"
         <li><code>title</code></li>
         <li><code>start_date</code> (MM-DD, evergreen — current year applied at runtime)</li>
         <li><code>end_date</code> (MM-DD, optional)</li>
-        <li><code>city</code></li>
-        <li><code>country</code></li>
+        <li><code>city</code> (optional)</li>
+        <li><code>country</code> (optional)</li>
+        <li><code>presenter</code> (optional)</li>
         <li><code>flags</code> — comma-separated (e.g. FIT, International)</li>
         <li><code>description</code></li>
-        <li><code>learn_more_url</code></li>
-        <li><code>action_url</code> — optional CTA when item is open (e.g. apply link)</li>
+        <li><code>learn_more_url</code> — date badge link; also Learn More button when open</li>
+        <li><code>action_url</code> — Apply Now button (open items only)</li>
       </ol>
       <p class="c_black-7 font-size_down m-b_0 m-t_3">
         Rows sort chronologically by <code>start_date</code>, then alphabetically
-        by title (leading <em>The</em> and <em>ACC</em> are ignored). Section
-        headings and labels are configurable on the root
-        <code>data-component="DateList"</code> element.
+        by title (leading <em>The</em> and <em>ACC</em> are ignored). Item metadata displays as:
+        <strong>date | location (if present) | presenter (if present)</strong>. 
+        Section headings and labels are configurable on the root
+        <code>data-component="DateList"</code> element. The date badge always links to
+        <code>learn_more_url</code>. Apply Now and Learn More footer buttons appear only
+        when an item is open. Paste the flat source list into the CMS, then add the
+        companion CMS script below it. The script builds Open, Upcoming, and Past
+        sections at runtime, sorts by the visitor&apos;s date, updates card visuals, and
+        removes empty sections from the DOM. To add items later, append new
+        <code>&lt;li&gt;</code> cards inside <code>data-role="source"</code> in
+        HTML source view — no manual sorting required.
       </p>
     </section>
-  </aside>
-
-  <main class="flex flex_column gap_4">
-    <section class="bg_white br_1 br_black-3 br_round br_solid overflow_hidden sticky t_3 z_1">
-      <header class="bg_black-1 br-b_1 br_black-3 br_solid font_bold p_4">
-        Preview (after client-side toggle)
-      </header>
-      <div class="bg_black-1 br-b_1 br_black-3 br_dashed p_4">
-        <div id="previewArea" class="reading-typography wrapper-container"></div>
-      </div>
-    </section>
-
     <section class="bg_white br_1 br_black-3 br_round br_solid overflow_hidden">
       <header class="bg_black-1 br-b_1 br_black-3 br_solid font_bold p_4">
-        Generated HTML (CMS list + toggle script)
+        CMS output (flat HTML + CMS runtime script)
       </header>
       <div class="p_4">
+        <p class="c_black-7 font-size_down m-t_0">
+          Copy both blocks into the CMS: the flat
+          <code>data-role="source"</code> list first, then the self-contained CMS
+          runtime script below it. The script is a standalone IIFE for CMS paste only.
+          The preview pane uses the same logic via the generator&apos;s embedded
+          preview driver — not the copy string in this textarea.
+        </p>
         <textarea
           id="outputHtml"
           class="br_1 br_black-3 br_round br_solid font_n2 m_0 min-h_20 p_3 w_100"
@@ -85,8 +90,19 @@ csv_file: "award-schedule"
           readonly
           spellcheck="false"></textarea>
         <div class="flex flex_row flex_wrap gap_3 m-t_3">
-          <button type="button" class="btn btn-primary" id="copyHtmlBtn">Copy HTML</button>
+          <button type="button" class="btn btn-primary" id="copyHtmlBtn">Copy CMS output</button>
         </div>
+      </div>
+    </section>
+  </aside>
+
+  <main class="flex flex_column gap_4">
+    <section class="bg_white br_1 br_black-3 br_round br_solid overflow_hidden sticky t_3 z_1">
+      <header class="bg_black-1 br-b_1 br_black-3 br_solid font_bold p_4">
+        Live preview (embedded runtime)
+      </header>
+      <div class="bg_black-1 br-b_1 br_black-3 br_dashed p_4">
+        <div id="previewArea" class="reading-typography wrapper-container"></div>
       </div>
     </section>
   </main>
@@ -312,19 +328,6 @@ csv_file: "award-schedule"
       );
     }
 
-    function resolveStatus(startDate, endDate) {
-      const today = new Date();
-      today.setHours(0, 0, 0, 0);
-
-      if (endDate && endDate < today) {
-        return "past";
-      }
-      if (startDate && startDate > today) {
-        return "upcoming";
-      }
-      return "open";
-    }
-
     function formatItemDates(item) {
       const startDate = parseMonthDay(item.start_date);
       const endDate = parseMonthDay(item.end_date || item.start_date) || startDate;
@@ -382,20 +385,13 @@ csv_file: "award-schedule"
           </ul>`;
     }
 
-    function buildFlatFooter(item) {
-      const learnMoreUrl = escapeAttribute(item.learn_more_url || "#");
-
-      return `<footer class="m-t_auto flex flex_row flex_wrap gap_4:md gap_3:sm gap_2" data-role="card-footer">
-          <a href="${learnMoreUrl}"
-             class="btn btn-sm btn-outline-shade z_1 expanded-click-area" target="_blank">Learn More</a>
-        </footer>`;
-    }
-
     function renderFlatDateCard(item) {
       const dates = formatItemDates(item);
       const location = [item.city, item.country].filter(Boolean).join(", ");
+      const presenter = item.presenter || "";
       const learnMoreUrl = item.learn_more_url || item.url || "#";
-      const aria = [item.title, dates.humanRange, location].filter(Boolean).join(". ") + ".";
+      const metaParts = [dates.humanRange, location, presenter].filter(Boolean);
+      const aria = [item.title, ...metaParts].join(". ") + ".";
       const flags = parseFlags(item.flags);
       const flagMarkup = buildFlatFlagList(flags);
       const description = item.description
@@ -407,9 +403,10 @@ csv_file: "award-schedule"
     class="bg_white br_round flex flex_column font_copy isolation_isolate justify_start relative self_stretch shadow_bevel-light w_100 wrapper-container h:bg_accent-5"
     data-component="DateCard"
     data-end-date="${escapeAttribute(item.end_date || item.start_date)}"
-    data-action-url="${escapeAttribute(item.action_url || "")}">
+    data-action-url="${escapeAttribute(item.action_url || "")}"
+    data-learn-more-url="${escapeAttribute(learnMoreUrl)}">
 
-    <div class="flex flex_row:md flex_column gap-x_4 gap-y_3 p-4 flex_1">
+    <div class="flex flex_row:md flex_column gap-x_4 gap-y_3 p_4 flex_1">
 
       <div class="flex_none m_auto m_0:md" style="width: clamp(120px, 15vw, 140px);">
         <div class="cal-date text_center">
@@ -435,12 +432,10 @@ csv_file: "award-schedule"
         <main class="reading-typography font-size_down flex_1">
 ${description}          <strong class="meta m-y_2 block c_shade-n2 font-size_down">
             <time itemprop="startDate" datetime="${escapeAttribute(dates.startIso)}">${escapeHtml(dates.humanRange)}</time>
-            <span class="m-x_2">|</span>
-            <span>${escapeHtml(location)}</span>
-          </strong>
+${location ? `            <span class="m-x_2">|</span>
+            <span>${escapeHtml(location)}</span>\n` : ""}${presenter ? `            <span class="m-x_2">|</span>
+            <span>${escapeHtml(presenter)}</span>\n` : ""}          </strong>
         </main>
-
-        ${buildFlatFooter(item)}
       </div>
 
     </div>
@@ -448,7 +443,7 @@ ${description}          <strong class="meta m-y_2 block c_shade-n2 font-size_dow
 </li>`;
     }
 
-    function buildFlatListHtml(items, config) {
+    function buildCmsSourceHtml(items, config) {
       if (!items.length) {
         return "";
       }
@@ -463,39 +458,42 @@ ${description}          <strong class="meta m-y_2 block c_shade-n2 font-size_dow
   data-open-label="${escapeAttribute(config.openLabel)}"
   data-action-label="${escapeAttribute(config.actionLabel)}">
 
-  <section data-role="open-wrapper" id="date-list-open" class="date-list-section" aria-labelledby="date-list-open-title">
-    <h2 id="date-list-open-title" class="date-list-section__title bg_black-1 br_round c_primary font_display font-size_up-1 m-b_4 m-t_0 p-4 shadow_overlap-light sticky t_3 z_1">${escapeHtml(config.headingOpen)}</h2>
-    <ul data-role="open" class="ul_none m_0 p_0 grid columns_1 columns_2:lg gap_4"></ul>
-  </section>
-
-  <section data-role="upcoming-wrapper" id="date-list-upcoming" class="date-list-section" aria-labelledby="date-list-upcoming-title">
-    <h2 id="date-list-upcoming-title" class="date-list-section__title bg_black-1 br_round c_primary font_display font-size_up-1 m-b_4 m-t_0 p-4 shadow_overlap-light sticky t_3 z_1">${escapeHtml(config.headingUpcoming)}</h2>
-    <ul data-role="items" class="ul_none m_0 p_0 grid columns_1 columns_2:lg gap_4">
+  <ul data-role="source" class="ul_none m_0 p_0 grid columns_1 gap_4">
 ${cards}
-    </ul>
-  </section>
-
-  <section data-role="past-wrapper" id="date-list-past" class="date-list-section m-t_4" aria-labelledby="date-list-past-title">
-    <h2 id="date-list-past-title" class="date-list-section__title bg_black-1 br_round c_primary font_display font-size_up-1 m-b_4 m-t_0 p-4 shadow_overlap-light sticky t_3 z_1">${escapeHtml(config.headingPast)}</h2>
-    <ul data-role="past" class="ul_none m_0 p_0 grid columns_1 columns_2:lg gap_4"></ul>
-  </section>
+  </ul>
 
 </section>`;
     }
 
-    function initDateList(scope) {
-      const root = scope || document;
+    // Shared runtime: preview via initDateList; CMS copy serializes this function.
+    function runDateListInit(root) {
       const lists = root.querySelectorAll('[data-component="DateList"]');
       if (!lists.length) return;
 
       const cutoff = new Date();
       cutoff.setHours(0, 0, 0, 0);
 
+      function escapeHtml(value) {
+        return String(value ?? "")
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;");
+      }
+
       function parseMonthDayAttr(value, year) {
         const match = /^(\d{2})-(\d{2})$/.exec(String(value || "").trim());
         if (!match) return null;
 
         const date = new Date(year, Number(match[1]) - 1, Number(match[2]));
+        return Number.isNaN(date.getTime()) ? null : date;
+      }
+
+      function parseIsoDateLocal(value) {
+        const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(value || "").trim());
+        if (!match) return null;
+
+        const date = new Date(Number(match[1]), Number(match[2]) - 1, Number(match[3]));
         return Number.isNaN(date.getTime()) ? null : date;
       }
 
@@ -510,8 +508,7 @@ ${cards}
 
         if (!t) return null;
 
-        const dt = new Date(t.getAttribute("datetime"));
-        return Number.isNaN(dt.getTime()) ? null : dt;
+        return parseIsoDateLocal(t.getAttribute("datetime"));
       }
 
       function getEndDateFromItem(itemEl) {
@@ -545,23 +542,86 @@ ${cards}
         return b.dt - a.dt;
       }
 
-      function disableLinks(container) {
-        container.querySelectorAll("a[href]").forEach((a) => {
-          a.classList.add("disabled");
-          a.setAttribute("aria-disabled", "true");
-          a.setAttribute("tabindex", "-1");
-          a.addEventListener("click", (e) => e.preventDefault());
-        });
+      function buildOpenFooterMarkup(actionUrl, actionLabel, learnMoreUrl) {
+        const links = [];
+
+        if (actionUrl) {
+          links.push(
+            '<a href="' +
+              actionUrl +
+              '" class="btn btn-sm btn-primary nowrap z_2" target="_blank"><span class="display_none inline-block:sm m-r_3 ">' +
+              actionLabel +
+              '</span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>',
+          );
+        }
+
+        if (learnMoreUrl) {
+          links.push(
+            '<a href="' +
+              learnMoreUrl +
+              '" class="btn btn-sm btn-outline-shade z_1 expanded-click-area" target="_blank">Learn More</a>',
+          );
+        }
+
+        if (!links.length) return "";
+
+        return (
+          '<footer class="m-t_auto p-x_5:md p-x_4:sm p-x_3 p-b_4:sm p-b_3 p-b_3 flex flex_row-reverse gap_4:md gap_3:sm gap_2 col_all" data-role="card-footer">' +
+          links.join("") +
+          "</footer>"
+        );
+      }
+
+      function removeCardFooter(card) {
+        const footer = card.querySelector('[data-role="card-footer"]');
+        if (footer) footer.remove();
+      }
+
+      function removeOpenBadge(card) {
+        const badge = card.querySelector("li[data-role='open-badge']");
+        if (badge) badge.remove();
+
+        const flagList = card.querySelector('[data-role="flag-list"]');
+        if (flagList) {
+          const lastFlag = flagList.querySelector("li:last-child");
+          if (lastFlag) lastFlag.classList.add("no-after");
+        }
+      }
+
+      function clearOpenFooter(card) {
+        removeCardFooter(card);
+        removeOpenBadge(card);
+      }
+
+      function applyOpenFooter(card, listRoot) {
+        const actionLabel = listRoot.getAttribute("data-action-label") || "Apply Now";
+        const actionUrl = card.getAttribute("data-action-url") || "";
+        const learnMoreUrl = card.getAttribute("data-learn-more-url") || "";
+        const footerMarkup = buildOpenFooterMarkup(actionUrl, actionLabel, learnMoreUrl);
+        const column = card.querySelector(".flex_auto.flex.flex_column");
+
+        removeCardFooter(card);
+
+        if (!footerMarkup || !column) return;
+
+        column.insertAdjacentHTML("beforeend", footerMarkup);
       }
 
       function updatePastState(item) {
-        item.classList.add("is-past", "cursor_not-allowed", "opacity_8");
+        item.classList.add("is-past");
 
         const card = getDateCard(item);
         if (card) {
           card.setAttribute("data-status", "past");
           card.classList.remove("shadow_bevel-light", "h:bg_accent-5");
-          card.classList.add("font-size_down");
+          card.classList.add("font-size_down", "h:bg_shade-4");
+          clearOpenFooter(card);
+
+          const dateLink = card.querySelector(".cal-date a");
+          if (dateLink) {
+            dateLink.classList.remove("btn-primary", "c_white");
+            dateLink.classList.add("bg_shade-3", "c_black-7");
+          }
         }
       }
 
@@ -570,10 +630,10 @@ ${cards}
         if (!card) return;
 
         card.setAttribute("data-status", "open");
+        card.classList.remove("font-size_down", "h:bg_shade-4");
+        card.classList.add("shadow_bevel-light", "h:bg_accent-5");
 
         const openLabel = listRoot.getAttribute("data-open-label") || "Open";
-        const actionLabel = listRoot.getAttribute("data-action-label") || "Apply Now";
-        const actionUrl = card.getAttribute("data-action-url") || "";
         let flagList = card.querySelector('[data-role="flag-list"]');
 
         if (!flagList) {
@@ -589,45 +649,117 @@ ${cards}
 
         if (flagList && !flagList.querySelector("li[data-role='open-badge']")) {
           flagList.querySelectorAll("li").forEach((node) => node.classList.remove("no-after"));
+
+          const lastFlag = flagList.querySelector("li:last-child");
+          if (lastFlag) lastFlag.classList.add("no-after");
+
           flagList.insertAdjacentHTML(
             "beforeend",
-            `<li data-role="open-badge" class="no-after br_radius p_2 c_black-7 font_xbold uppercase bg_warning-3 m-r_3 lh_0 m-l_auto">${openLabel}</li>`,
+            '<li data-role="open-badge" class="no-after br_radius p_2 c_black-7 font_xbold uppercase bg_warning-3 m-r_3 lh_0 m-l_auto">' +
+              openLabel +
+              "</li>",
           );
         }
 
-        const footer = card.querySelector('[data-role="card-footer"]');
-        if (!footer) return;
-
-        const learnMore = footer.querySelector("a");
-        const learnMoreUrl = learnMore ? learnMore.getAttribute("href") : "#";
-
-        if (actionUrl) {
-          footer.className =
-            "m-t_auto flex flex_row-reverse flex_wrap gap_4:md gap_3:sm gap_2";
-          footer.innerHTML = `<a href="${actionUrl}"
-             class="btn btn-sm btn-primary nowrap z_2" target="_blank">
-            <span class="display_none inline-block:sm m-r_3">${actionLabel}</span>
-            <i class="fas fa-arrow-right" aria-hidden="true"></i>
-          </a>
-          <a href="${learnMoreUrl}"
-             class="btn btn-sm btn-outline-shade z_1 expanded-click-area" target="_blank">Learn More</a>`;
+        const dateLink = card.querySelector(".cal-date a");
+        if (dateLink) {
+          dateLink.classList.remove("bg_shade-3", "c_black-7", "btn-shade");
+          dateLink.classList.add("btn-primary", "c_white");
         }
+
+        applyOpenFooter(card, listRoot);
       }
 
       function updateUpcomingState(item) {
         const card = getDateCard(item);
-        if (card) {
-          card.setAttribute("data-status", "upcoming");
+        if (!card) return;
+
+        card.setAttribute("data-status", "upcoming");
+        card.classList.remove("font-size_down", "h:bg_shade-4");
+        card.classList.add("shadow_bevel-light", "h:bg_accent-5");
+        clearOpenFooter(card);
+      }
+
+      function removeEmptySection(wrapper) {
+        if (wrapper) wrapper.remove();
+      }
+
+      function ensureSectionStructure(listRoot) {
+        if (listRoot.querySelector('[data-role="open-wrapper"]')) return;
+
+        const headingOpen = escapeHtml(listRoot.getAttribute("data-heading-open") || "Open");
+        const headingUpcoming = escapeHtml(listRoot.getAttribute("data-heading-upcoming") || "Upcoming");
+        const headingPast = escapeHtml(listRoot.getAttribute("data-heading-past") || "Past");
+        const markup =
+          '<section data-role="open-wrapper" id="date-list-open" class="date-list-section" aria-labelledby="date-list-open-title">' +
+          '<h2 id="date-list-open-title" class="date-list-section__title">' +
+          headingOpen +
+          "</h2>" +
+          '<ul data-role="open" class="ul_none m_0 p_0 grid columns_1 gap_4"></ul></section>' +
+          '<section data-role="upcoming-wrapper" id="date-list-upcoming" class="date-list-section" aria-labelledby="date-list-upcoming-title">' +
+          '<h2 id="date-list-upcoming-title" class="date-list-section__title">' +
+          headingUpcoming +
+          "</h2>" +
+          '<ul data-role="items" class="ul_none m_0 p_0 grid columns_1 gap_4"></ul></section>' +
+          '<section data-role="past-wrapper" id="date-list-past" class="date-list-section m-t_4" aria-labelledby="date-list-past-title">' +
+          '<h2 id="date-list-past-title" class="date-list-section__title">' +
+          headingPast +
+          "</h2>" +
+          '<ul data-role="past" class="ul_none m_0 p_0 grid columns_1 gap_4"></ul></section>';
+
+        const sourceList = listRoot.querySelector('[data-role="source"]');
+        if (sourceList) {
+          sourceList.insertAdjacentHTML("beforebegin", markup);
+          return;
+        }
+
+        listRoot.insertAdjacentHTML("afterbegin", markup);
+      }
+
+      function resetItemState(item) {
+        item.classList.remove("is-past");
+
+        const card = getDateCard(item);
+        if (!card) return;
+
+        card.removeAttribute("data-status");
+        card.classList.remove("font-size_down", "h:bg_shade-4");
+        card.classList.add("shadow_bevel-light", "h:bg_accent-5");
+        clearOpenFooter(card);
+
+        const dateLink = card.querySelector(".cal-date a");
+        if (dateLink) {
+          dateLink.classList.remove("btn-shade", "c_black-7", "bg_shade-3");
+          dateLink.classList.add("btn-primary", "c_white");
         }
       }
 
-      function hideWrapper(wrapper) {
-        if (wrapper) {
-          wrapper.style.display = "none";
+      function collectItems(listRoot) {
+        const sourceList = listRoot.querySelector('[data-role="source"]');
+        if (sourceList) {
+          const items = Array.from(sourceList.children);
+          ensureSectionStructure(listRoot);
+          sourceList.remove();
+          return items;
         }
+
+        ensureSectionStructure(listRoot);
+
+        const openList = listRoot.querySelector('[data-role="open"]');
+        const itemsList = listRoot.querySelector('[data-role="items"]');
+        const pastList = listRoot.querySelector('[data-role="past"]');
+        if (!itemsList) return [];
+
+        return []
+          .concat(openList ? Array.from(openList.children) : [])
+          .concat(Array.from(itemsList.children))
+          .concat(pastList ? Array.from(pastList.children) : []);
       }
 
       lists.forEach((listRoot) => {
+        const items = collectItems(listRoot);
+        if (!items.length) return;
+
         const openWrapper = listRoot.querySelector('[data-role="open-wrapper"]');
         const openList = listRoot.querySelector('[data-role="open"]');
         const upcomingWrapper = listRoot.querySelector('[data-role="upcoming-wrapper"]');
@@ -637,7 +769,8 @@ ${cards}
 
         if (!itemsList || !pastList) return;
 
-        const items = Array.from(itemsList.children);
+        items.forEach((el) => resetItemState(el));
+
         const open = [];
         const upcoming = [];
         const past = [];
@@ -678,217 +811,53 @@ ${cards}
 
         past.forEach(({ el }) => {
           updatePastState(el);
-          disableLinks(el);
           pastList.appendChild(el);
         });
 
         if (openWrapper && (!openList || !openList.children.length)) {
-          hideWrapper(openWrapper);
+          removeEmptySection(openWrapper);
         }
 
         if (upcomingWrapper && !itemsList.children.length) {
-          hideWrapper(upcomingWrapper);
+          removeEmptySection(upcomingWrapper);
         }
 
         if (pastWrapper && !pastList.children.length) {
-          hideWrapper(pastWrapper);
+          removeEmptySection(pastWrapper);
         }
       });
     }
 
-    const DATE_LIST_TOGGLE_SCRIPT = `<script>
-  (() => {
-    const lists = document.querySelectorAll('[data-component="DateList"]');
-    if (!lists.length) return;
-
-    const cutoff = new Date();
-    cutoff.setHours(0, 0, 0, 0);
-
-    function parseMonthDay(value, year) {
-      const match = /^(\d{2})-(\d{2})$/.exec(String(value || "").trim());
-      if (!match) return null;
-      const date = new Date(year, Number(match[1]) - 1, Number(match[2]));
-      return Number.isNaN(date.getTime()) ? null : date;
+    function initDateList(scope) {
+      runDateListInit(scope || document);
     }
 
-    function getDateCard(itemEl) {
-      return itemEl.querySelector('[data-component="DateCard"]');
-    }
+    const DATE_LIST_CMS_SCRIPT =
+      "<script>\n(" + runDateListInit.toString() + ")(document);\n<\\/script>";
 
-    function getStartDateFromItem(itemEl) {
-      const t =
-        itemEl.querySelector('time[itemprop="startDate"][datetime]') ||
-        itemEl.querySelector('time[datetime]');
-      if (!t) return null;
-      const dt = new Date(t.getAttribute("datetime"));
-      return Number.isNaN(dt.getTime()) ? null : dt;
-    }
+    function countPreviewStatuses(root) {
+      const counts = { open: 0, upcoming: 0, past: 0 };
+      const listRoot = root.querySelector('[data-component="DateList"]');
 
-    function getEndDateFromItem(itemEl) {
-      const startDt = getStartDateFromItem(itemEl);
-      const card = getDateCard(itemEl);
-      if (!card || !startDt) return startDt;
-      const endAttr = card.getAttribute("data-end-date");
-      if (!endAttr) return startDt;
-      return parseMonthDay(endAttr, startDt.getFullYear()) || startDt;
-    }
-
-    function resolveStatus(startDt, endDt) {
-      if (endDt && endDt < cutoff) return "past";
-      if (startDt && startDt > cutoff) return "upcoming";
-      return "open";
-    }
-
-    function sortAsc(a, b) {
-      if (!a.dt && !b.dt) return 0;
-      if (!a.dt) return 1;
-      if (!b.dt) return -1;
-      return a.dt - b.dt;
-    }
-
-    function sortDesc(a, b) {
-      if (!a.dt && !b.dt) return 0;
-      if (!a.dt) return 1;
-      if (!b.dt) return -1;
-      return b.dt - a.dt;
-    }
-
-    function disableLinks(container) {
-      container.querySelectorAll("a[href]").forEach((a) => {
-        a.classList.add("disabled");
-        a.setAttribute("aria-disabled", "true");
-        a.setAttribute("tabindex", "-1");
-        a.addEventListener("click", (e) => e.preventDefault());
-      });
-    }
-
-    function updatePastState(item) {
-      item.classList.add("is-past", "cursor_not-allowed", "opacity_8");
-      const card = getDateCard(item);
-      if (card) {
-        card.setAttribute("data-status", "past");
-        card.classList.remove("shadow_bevel-light", "h:bg_accent-5");
-        card.classList.add("font-size_down");
-      }
-    }
-
-    function updateOpenState(item, listRoot) {
-      const card = getDateCard(item);
-      if (!card) return;
-
-      card.setAttribute("data-status", "open");
-
-      const openLabel = listRoot.getAttribute("data-open-label") || "Open";
-      const actionLabel = listRoot.getAttribute("data-action-label") || "Apply Now";
-      const actionUrl = card.getAttribute("data-action-url") || "";
-      let flagList = card.querySelector('[data-role="flag-list"]');
-
-      if (!flagList) {
-        const header = card.querySelector("header");
-        if (!header) return;
-        header.insertAdjacentHTML(
-          "afterbegin",
-          '<ul class="ul_inline-pipe font_n3 c_accent-n3 items_center w_auto font_bold m-t_0 m-b_3 m-r_n3 flex" data-role="flag-list"></ul>',
-        );
-        flagList = card.querySelector('[data-role="flag-list"]');
+      if (!listRoot) {
+        return counts;
       }
 
-      if (flagList && !flagList.querySelector("li[data-role='open-badge']")) {
-        flagList.querySelectorAll("li").forEach((node) => node.classList.remove("no-after"));
-        flagList.insertAdjacentHTML(
-          "beforeend",
-          '<li data-role="open-badge" class="no-after br_radius p_2 c_black-7 font_xbold uppercase bg_warning-3 m-r_3 lh_0 m-l_auto">' + openLabel + "</li>",
-        );
-      }
-
-      const footer = card.querySelector('[data-role="card-footer"]');
-      if (!footer || !actionUrl) return;
-
-      const learnMore = footer.querySelector("a");
-      const learnMoreUrl = learnMore ? learnMore.getAttribute("href") : "#";
-
-      footer.className = "m-t_auto flex flex_row-reverse flex_wrap gap_4:md gap_3:sm gap_2";
-      footer.innerHTML = '<a href="' + actionUrl + '" class="btn btn-sm btn-primary nowrap z_2" target="_blank"><span class="display_none inline-block:sm m-r_3">' + actionLabel + '</span><i class="fas fa-arrow-right" aria-hidden="true"></i></a><a href="' + learnMoreUrl + '" class="btn btn-sm btn-outline-shade z_1 expanded-click-area" target="_blank">Learn More</a>';
-    }
-
-    function updateUpcomingState(item) {
-      const card = getDateCard(item);
-      if (card) card.setAttribute("data-status", "upcoming");
-    }
-
-    function hideWrapper(wrapper) {
-      if (wrapper) wrapper.style.display = "none";
-    }
-
-    lists.forEach((listRoot) => {
-      const openWrapper = listRoot.querySelector('[data-role="open-wrapper"]');
       const openList = listRoot.querySelector('[data-role="open"]');
-      const upcomingWrapper = listRoot.querySelector('[data-role="upcoming-wrapper"]');
       const itemsList = listRoot.querySelector('[data-role="items"]');
-      const pastWrapper = listRoot.querySelector('[data-role="past-wrapper"]');
       const pastList = listRoot.querySelector('[data-role="past"]');
 
-      if (!itemsList || !pastList) return;
-
-      const items = Array.from(itemsList.children);
-      const open = [];
-      const upcoming = [];
-      const past = [];
-
-      items.forEach((el) => {
-        const startDt = getStartDateFromItem(el);
-        const endDt = getEndDateFromItem(el) || startDt;
-        const status = resolveStatus(startDt, endDt);
-
-        if (status === "past") {
-          past.push({ el, dt: endDt || startDt });
-          return;
-        }
-        if (status === "upcoming") {
-          upcoming.push({ el, dt: startDt });
-          return;
-        }
-        open.push({ el, dt: startDt });
-      });
-
-      open.sort(sortAsc);
-      upcoming.sort(sortAsc);
-      past.sort(sortDesc);
-
       if (openList) {
-        open.forEach(({ el }) => {
-          updateOpenState(el, listRoot);
-          openList.appendChild(el);
-        });
+        counts.open = openList.children.length;
       }
 
-      upcoming.forEach(({ el }) => {
-        updateUpcomingState(el);
-        itemsList.appendChild(el);
-      });
+      if (itemsList) {
+        counts.upcoming = itemsList.children.length;
+      }
 
-      past.forEach(({ el }) => {
-        updatePastState(el);
-        disableLinks(el);
-        pastList.appendChild(el);
-      });
-
-      if (openWrapper && (!openList || !openList.children.length)) hideWrapper(openWrapper);
-      if (upcomingWrapper && !itemsList.children.length) hideWrapper(upcomingWrapper);
-      if (pastWrapper && !pastList.children.length) hideWrapper(pastWrapper);
-    });
-  })();
-<\\/script>`;
-
-    function countStatuses(items) {
-      const counts = { open: 0, upcoming: 0, past: 0 };
-
-      items.forEach((item) => {
-        const startDate = parseMonthDay(item.start_date);
-        const endDate = parseMonthDay(item.end_date || item.start_date) || startDate;
-        const status = resolveStatus(startDate, endDate);
-        counts[status] += 1;
-      });
+      if (pastList) {
+        counts.past = pastList.children.length;
+      }
 
       return counts;
     }
@@ -899,11 +868,9 @@ ${cards}
 
     function refresh() {
       const items = csvToItems(csvInput.value);
-      const flatHtml = buildFlatListHtml(items, LIST_CONFIG);
+      const flatHtml = buildCmsSourceHtml(items, LIST_CONFIG);
 
-      outputHtml.value = items.length
-        ? `${flatHtml}\n\n${DATE_LIST_TOGGLE_SCRIPT}`
-        : "";
+      outputHtml.value = items.length ? `${flatHtml}\n\n${DATE_LIST_CMS_SCRIPT}` : "";
 
       if (!csvInput.value.trim()) {
         previewArea.innerHTML = "";
@@ -920,7 +887,7 @@ ${cards}
       previewArea.innerHTML = flatHtml;
       initDateList(previewArea);
 
-      const counts = countStatuses(items);
+      const counts = countPreviewStatuses(previewArea);
 
       setStatus(
         `${items.length} items — ${counts.open} open, ${counts.upcoming} upcoming, ${counts.past} past (based on today).`,
@@ -943,7 +910,7 @@ ${cards}
     copyHtmlBtn.addEventListener("click", async function () {
       try {
         await navigator.clipboard.writeText(outputHtml.value);
-        setStatus("CMS HTML and toggle script copied to clipboard.");
+        setStatus("Flat source HTML and CMS runtime script copied to clipboard.");
       } catch (error) {
         outputHtml.focus();
         outputHtml.select();

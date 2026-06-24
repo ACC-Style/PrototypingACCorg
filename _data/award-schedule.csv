@@ -1,8 +1,8 @@
-title,start_date,end_date,city,country,flags,description,learn_more_url,apply_url
-Distinguished Scientist Award,01-15,03-31,Washington,United States,"FIT, International","The ACC Distinguished Awards recognize individuals making outstanding contributions to the cardiovascular profession.",https://www.acc.org/,https://www.acc.org/
-Simon Dack Outstanding Scholar Award,04-01,04-01,Washington,United States,International,"Final day to submit applications for the Simon Dack Outstanding Scholar Award.",https://www.acc.org/,https://www.acc.org/
-Young Investigator Awards,05-10,05-24,Chicago,United States,"FIT, Early Career","Eligible early-career investigators may submit abstracts for Young Investigator Award consideration.",https://www.acc.org/,
-ACC Distinguished Award Ceremony,09-12,09-12,Chicago,United States,,"Honorees recognized during the Opening Ceremony at ACC Scientific Session.",https://www.acc.org/,
-International Service Award,06-30,06-30,Virtual,Virtual,International,"Nominations close for leaders advancing global cardiovascular care.",https://www.acc.org/,
-Lifetime Achievement Award,11-20,11-20,Washington,United States,,"Previous honorees celebrated for career-long impact on cardiovascular medicine.",https://www.acc.org/,
-Distinguished Teacher Award,03-01,03-15,Chicago,United States,FIT,"Recognized educators who advanced training and mentorship across the cardiovascular community.",https://www.acc.org/,
+title,start_date,end_date,city,country,flags,description,learn_more_url,action_url
+Distinguished Scientist Award,06-01,06-30,Washington,United States,"FIT, International","The ACC Distinguished Awards recognize individuals making outstanding contributions to the cardiovascular profession.",https://www.acc.org/awards/distinguished-scientist,https://www.acc.org/awards/distinguished-scientist/apply
+Young Investigator Awards,06-15,06-22,Chicago,United States,"FIT, Early Career","Eligible early-career investigators may submit abstracts for Young Investigator Award consideration.",https://www.acc.org/awards/young-investigator,https://www.acc.org/awards/young-investigator/apply
+International Service Award,07-01,07-31,Virtual,Virtual,International,"Nominations close for leaders advancing global cardiovascular care.",https://www.acc.org/awards/international-service,https://www.acc.org/awards/international-service/apply
+Distinguished Teacher Award,08-01,08-07,Chicago,United States,FIT,"Recognized educators who advanced training and mentorship across the cardiovascular community.",https://www.acc.org/awards/distinguished-teacher,https://www.acc.org/awards/distinguished-teacher/apply
+Simon Dack Outstanding Scholar Award,03-01,04-15,Washington,United States,International,"Final day to submit applications for the Simon Dack Outstanding Scholar Award.",https://www.acc.org/awards/simon-dack,https://www.acc.org/awards/simon-dack/apply
+Lifetime Achievement Award,04-20,04-25,Washington,United States,,"Previous honorees celebrated for career-long impact on cardiovascular medicine.",https://www.acc.org/awards/lifetime-achievement,https://www.acc.org/awards/lifetime-achievement/apply
+ACC Distinguished Award Ceremony,05-10,05-12,Chicago,United States,,"Honorees recognized during the Opening Ceremony at ACC Scientific Session.",https://www.acc.org/awards/ceremony,https://www.acc.org/awards/ceremony/apply
