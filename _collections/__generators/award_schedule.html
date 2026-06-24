@@ -57,8 +57,10 @@ csv_file: "award-schedule"
         <li><code>action_url</code> — Apply Now button (open items only)</li>
       </ol>
       <p class="c_black-7 font-size_down m-b_0 m-t_3">
-        Rows sort chronologically by <code>start_date</code>, then alphabetically
-        by title (leading <em>The</em> and <em>ACC</em> are ignored). Item metadata displays as:
+        Rows in the flat source list are ordered alphabetically by title (leading
+        <em>The</em> and <em>ACC</em> are ignored). At runtime, <strong>Open</strong>
+        awards sort alphabetically; <strong>Upcoming</strong> and <strong>Past</strong>
+        sort chronologically, then alphabetically by title. Item metadata displays as:
         <strong>date | location (if present) | presenter (if present)</strong>. 
         Section headings and labels are configurable on the root
         <code>data-component="DateList"</code> element. The date badge always links to
@@ -279,23 +281,9 @@ csv_file: "award-schedule"
     }
 
     function sortItems(items) {
-      return items.slice().sort((a, b) => {
-        const startA = parseMonthDay(a.start_date);
-        const startB = parseMonthDay(b.start_date);
-
-        if (startA && startB) {
-          const dateDiff = startA.getTime() - startB.getTime();
-          if (dateDiff !== 0) {
-            return dateDiff;
-          }
-        } else if (startA) {
-          return -1;
-        } else if (startB) {
-          return 1;
-        }
-
-        return sortKeyTitle(a.title).localeCompare(sortKeyTitle(b.title));
-      });
+      return items.slice().sort((a, b) =>
+        sortKeyTitle(a.title).localeCompare(sortKeyTitle(b.title)),
+      );
     }
 
     function csvToItems(text) {
@@ -335,30 +323,48 @@ csv_file: "award-schedule"
       if (!startDate) {
         return {
           startIso: "",
-          monthAbbr: "",
+          endIso: "",
+          badgeMonths: "",
           year: "",
-          dayRange: "",
           humanRange: "",
         };
       }
 
       const year = String(startDate.getFullYear());
+      const endYear = String(endDate.getFullYear());
       const startIso = `${year}-${item.start_date}`;
-      const endIso = `${year}-${item.end_date || item.start_date}`;
-      const monthAbbr = startDate.toLocaleString("en-US", { month: "short" });
-      const monthFull = startDate.toLocaleString("en-US", { month: "long" });
+      const endIso = `${endYear}-${item.end_date || item.start_date}`;
+      const startMonthAbbr = startDate.toLocaleString("en-US", { month: "short" });
+      const endMonthAbbr = endDate.toLocaleString("en-US", { month: "short" });
+      const startMonthFull = startDate.toLocaleString("en-US", { month: "long" });
+      const endMonthFull = endDate.toLocaleString("en-US", { month: "long" });
       const startDay = String(startDate.getDate());
       const endDay = String(endDate.getDate());
       const sameDay = endIso === startIso;
+      const sameMonth =
+        startDate.getMonth() === endDate.getMonth() &&
+        startDate.getFullYear() === endDate.getFullYear();
+
+      let humanRange;
+      let badgeMonths;
+
+      if (sameDay) {
+        humanRange = `${startMonthFull} ${startDay}, ${year}`;
+        badgeMonths = startMonthAbbr;
+      } else if (sameMonth) {
+        humanRange = `${startMonthFull} ${startDay}-${endDay}, ${year}`;
+        badgeMonths = startMonthAbbr;
+      } else {
+        humanRange = `${startMonthFull} ${startDay} - ${endMonthFull} ${endDay}, ${endYear}`;
+        badgeMonths = `${startMonthAbbr} - ${endMonthAbbr}`;
+      }
 
       return {
         startIso,
-        monthAbbr,
+        endIso,
+        badgeMonths,
         year,
-        dayRange: sameDay ? startDay : `${startDay} - ${endDay}`,
-        humanRange: sameDay
-          ? `${monthFull} ${startDay}, ${year}`
-          : `${monthFull} ${startDay}-${endDay}, ${year}`,
+        humanRange,
       };
     }
 
@@ -411,14 +417,13 @@ csv_file: "award-schedule"
       <div class="flex_none m_auto m_0:md" style="width: clamp(120px, 15vw, 140px);">
         <div class="cal-date text_center">
           <a target="_blank"
-             class="block btn btn-primary c_white expanded-click-area flex flex_column justify_stretch font-size_down"
+             class="aspect_4x3 block btn btn-primary c_white expanded-click-area flex flex_column font-size_down justify_center"
              href="${escapeAttribute(learnMoreUrl)}"
              aria-label="${escapeAttribute(aria)}">
-            <span class="block flex_none font-size_up-1 p-y_1">${escapeHtml(dates.monthAbbr)}</span>
-            <span class="block br-b_2 br-t_2 br_solid font-size_up-2 flex_auto font_xbold grid items_center p-x_4 text_center aspect_3x1">
-              <span class="nowrap">${escapeHtml(dates.dayRange)}</span>
+            <span class="aspect_3x1 block br-b_2 br_solid font-size_up-1 font_xbold grid items_center m-t_auto p-x_4 text_center">
+              <span class="nowrap">${escapeHtml(dates.badgeMonths)}</span>
             </span>
-            <span class="block flex_none font-size_up-1 p-y_1">${escapeHtml(dates.year)}</span>
+            <span class="block flex_none font-size_up-1 m-b_auto p-y_1">${escapeHtml(dates.year)}</span>
           </a>
         </div>
       </div>
@@ -528,18 +533,49 @@ ${cards}
         return "open";
       }
 
-      function sortAsc(a, b) {
-        if (!a.dt && !b.dt) return 0;
-        if (!a.dt) return 1;
-        if (!b.dt) return -1;
-        return a.dt - b.dt;
+      const TITLE_PREFIX_PATTERN = /^(the|acc)\s+/i;
+
+      function sortKeyTitle(title) {
+        let normalized = String(title || "").trim();
+
+        while (TITLE_PREFIX_PATTERN.test(normalized)) {
+          normalized = normalized.replace(TITLE_PREFIX_PATTERN, "");
+        }
+
+        return normalized.toLowerCase();
       }
 
-      function sortDesc(a, b) {
-        if (!a.dt && !b.dt) return 0;
+      function getTitleFromItem(itemEl) {
+        const titleEl = itemEl.querySelector('[data-type="title"]');
+        return titleEl ? titleEl.textContent : "";
+      }
+
+      function sortByAlpha(a, b) {
+        return sortKeyTitle(getTitleFromItem(a.el)).localeCompare(
+          sortKeyTitle(getTitleFromItem(b.el)),
+        );
+      }
+
+      function sortByDateAscThenAlpha(a, b) {
+        if (!a.dt && !b.dt) return sortByAlpha(a, b);
         if (!a.dt) return 1;
         if (!b.dt) return -1;
-        return b.dt - a.dt;
+
+        const dateDiff = a.dt - b.dt;
+        if (dateDiff !== 0) return dateDiff;
+
+        return sortByAlpha(a, b);
+      }
+
+      function sortByDateDescThenAlpha(a, b) {
+        if (!a.dt && !b.dt) return sortByAlpha(a, b);
+        if (!a.dt) return 1;
+        if (!b.dt) return -1;
+
+        const dateDiff = b.dt - a.dt;
+        if (dateDiff !== 0) return dateDiff;
+
+        return sortByAlpha(a, b);
       }
 
       function buildOpenFooterMarkup(actionUrl, actionLabel, learnMoreUrl) {
@@ -793,9 +829,9 @@ ${cards}
           open.push({ el, dt: startDt });
         });
 
-        open.sort(sortAsc);
-        upcoming.sort(sortAsc);
-        past.sort(sortDesc);
+        open.sort(sortByAlpha);
+        upcoming.sort(sortByDateAscThenAlpha);
+        past.sort(sortByDateDescThenAlpha);
 
         if (openList) {
           open.forEach(({ el }) => {
