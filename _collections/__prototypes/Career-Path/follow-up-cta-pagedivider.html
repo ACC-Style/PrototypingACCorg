@@ -21,15 +21,15 @@
 {% assign show_secondary = include.show_secondary | default: "true" %}
 
 <div label="CTA_follow_up" class="reading-typography font-size_up p_4 p_5:md p_4 p-y_5:md p-y_6:lg {% if include.container_modifier %}{{ include.container_modifier }}{% endif %}" style="--custom-font-size-up: 1;">
-  <div data-item="cta" class="p_4 p-t_6 p-x_5:lg bg_white br-t_1 br_solid br_primary-1 font-size_up m-t_6:lg m-y_4 m-y_5:md m_auto max-w_60 relative text_center">
-    <h2 data-item="cta-title" class="m-b_3 lh_1 font_medium font_display">
-      <strong data-item="title" class="font-size_up m-b_2 block">{{ cta_title }}</strong>
+  <div data-item="cta" class="p_4 p-t_6 p-x_5:lg bg_white br-t_1 br_solid br_primary-1 m-t_6:lg m-y_4 m-y_5:md m_auto max-w_60 relative text_center">
+    <h2 data-item="cta-title" class="m-b_3 lh_1">
+      {{ cta_title }}
       {% if cta_subtitle != "" %}
-      <small data-item="subtitle" class="font-size_down block">{{ cta_subtitle }}</small>
+      <small data-item="subtitle" class="block">{{ cta_subtitle }}</small>
       {% endif %}
     </h2>
     {% if cta_description != "" %}
-    <p data-item="paragraph" class="font-size_up wrap_balance m-b_0">{{ cta_description }}</p>
+    <p data-item="paragraph" class="wrap_balance m-b_0">{{ cta_description }}</p>
     {% endif %}
     <div class="flex flex_row flex_wrap gap_4 gap_5:lg items_center justify_center m-t_4" data-item="cta-buttons">
       <a href="{{ primary_url }}" data-item="cta-button" class="btn btn-primary capitalize wrap wrap_balanced btn-lg expanded-click-area">{{ primary_text }}</a>
