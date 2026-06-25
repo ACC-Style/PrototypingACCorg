@@ -2,11 +2,11 @@
 {% assign topic = site.data.ClinicalSolutions.spokes[topic_key] %}
 {% assign cs = site.data.ClinicalSolutions.pages %}
 {% assign ct = topic.clinical_topic %}
-<section class="reading-typography wrapper-container m-b_5 p-x_4 p-x_5:lg" aria-labelledby="related-topics-title">
+<section class="reading-typography wrapper-container p-x_4 p-x_5:lg" aria-labelledby="related-topics-title">
   <h2 id="related-topics-title" class="m-b_4">Related Content</h2>
 
   {% if topic.related_spokes.size > 0 %}
-  <ul class="ul_none grid columns_1 columns_2:md gap_3 m-b_4 m-b_5:md">
+  <ul class="ul_none grid columns_1 columns_2:md gap_3 m-b_0">
     {% for rel in topic.related_spokes %}
     {% assign rel_url = cs[rel.key] %}
     <li class="bg_black-1 br_radius p_3">
@@ -20,17 +20,18 @@
     {% endfor %}
   </ul>
   {% endif %}
-
-  {% if ct %}
-  <div data-component="related-clinical-topic-cta" class="bg_black-1 br_radius p_4 p_5:md flex flex_column gap_4 items_start">
-    <div>
-      <h3 class="m-t_0 m-b_2">What's Next?</h3>
-      <p class="m-b_0">Dive deeper on the <strong>{{ ct.title }}</strong> Clinical Topic — guidelines, education, and news that update on ACC.org. Or return to browse every curated solution set.</p>
-    </div>
-    <div class="flex flex_row flex_wrap gap_3 items_center">
-      <a href="{{ ct.url }}" class="btn btn-primary btn-sm expanded-click-area" rel="noopener noreferrer" aria-label="Dive deeper into {{ ct.title }} on ACC.org Clinical Topics">Dive Deeper on ACC.org <i class="fas fa-arrow-right p-l_2" aria-hidden="true"></i></a>
-      <a href="{{ cs.hub | relative_url }}" class="btn btn-shade btn-sm expanded-click-area">Explore All Solutions</a>
-    </div>
-  </div>
-  {% endif %}
 </section>
+
+{% if ct %}
+{% capture cta_description %}The <strong>{{ ct.title }} Clinical Topic</strong> on ACC.org adds guidelines, education, and news as ACC publishes.{% endcapture %}
+{% capture hub_url %}{{ cs.hub | relative_url }}{% endcapture %}
+{% include_relative partials/follow-up-cta.html
+  title="What's Next?"
+  subtitle="Dive deeper or explore all solutions"
+  description=cta_description
+  primary_url=ct.url
+  primary_text="Dive Deeper on ACC.org"
+  secondary_url=hub_url
+  secondary_text="Explore All Solutions"
+%}
+{% endif %}
