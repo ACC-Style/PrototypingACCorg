@@ -1,0 +1,46 @@
+sidebarRoot: Cardiology as a Career Path
+sidebarRootURL: Concept-Career-Path.html
+items:
+  - key: hub
+    label: Overview
+    url: Concept-Career-Path.html
+  - key: start
+    label: Start Here
+    url: Concept-Career-Path-Start.html
+    children:
+      - key: high-school
+        label: High school
+        url: Concept-Career-Path-Start.html#High-School
+      - key: college-premed
+        label: College & pre-med
+        url: Concept-Career-Path-Start.html#College-PreMed
+      - key: medical-student
+        label: Medical student
+        url: Concept-Career-Path-Start.html#Medical-Student
+      - key: resident-fellow
+        label: Resident or fellow
+        url: Concept-Career-Path-Start.html#Resident-Fellow
+      - key: cv-team
+        label: CV Team
+        url: Concept-Career-Path-Start.html#CV-Team
+      - key: research-change
+        label: Research & career change
+        url: Concept-Career-Path-Start.html#Research-Change
+  - key: physician
+    label: Physician Pathway
+    url: Concept-Career-Path-Physician.html
+  - key: cvteam
+    label: CV Team Pathway
+    url: Concept-Career-Path-CVTeam.html
+  - key: research
+    label: Clinical Research
+    url: Concept-Career-Path-ClinicalResearch.html
+  - key: inspiration
+    label: Stories & Videos
+    url: Concept-Career-Path-Inspiration.html
+  - key: levelup
+    label: Level Up
+    url: Concept-Career-Path-Leadership.html
+  - key: contact
+    label: Contact Us
+    url: Concept-Career-Path-Contact.html

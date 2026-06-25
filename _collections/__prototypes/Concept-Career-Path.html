@@ -1,0 +1,102 @@
+---
+layout: acc/fullscreen
+name: "Concept Career Path Hub"
+position: "Concept Refactor"
+masthead: "empty.html"
+notes: >-
+  Refactored hub for Cardiology-as-a-Career-Path. Strategy: hub & spoke + audience fork.
+  See Career-Path/content-collection.md for IA, goals, and SME notes.
+---
+
+{%
+  include MicroSite/heroimage.dynamic.html
+  parent_link="https://www.acc.org/Tools-and-Practice-Support"
+  parent_page="Tools &amp; Practice Support"
+  hero_image_base="Dynamic"
+  hero_image_alt="Cardiology career path hero"
+  hero_title="Cardiology as a Career Path"
+  cta_title="Start Here"
+  cta_description="Not sure where to begin? Pick the description that fits you — get three next steps, not every resource on the site."
+  cta_link="Concept-Career-Path-Start.html#start-here"
+  cta_button_text="Find Your Next Step"
+%}
+
+<section zone-label="startingSection" class="grid columns_1 columns_3:md columns_5:lg p_4 gap_5:lg gap_4 m-b_4:md">
+  <main zone-label="introduction" class="reading-typography font-size_up p-l_4:lg max-w_65 p-t_5:lg p-t_4 col-start_start col-end_end col-end_n2:md col-end_n3:lg" style="--custom-font-size-up: 1.06">
+    <h2 class="lh_2 m-b_4">
+      Empowering Future Cardiologists
+      <small class="block font-size_down-1">Explore the field, choose your pathway, and grow with ACC.</small>
+    </h2>
+    <p>
+      Cardiology focuses on the heart and circulatory system — prevention, diagnosis, and treatment of conditions that affect millions worldwide. Whether you are exploring as a student or advancing as a trained professional, ACC helps you navigate the journey.
+    </p>
+  </main>
+  <aside class="col-end_end col-start_start col-start_n2:md col-start_n3:lg reading-typography wrapper-container p-l_4:lg">
+    <div data-item="cta-overlay" class="bg_primary-n2 br_round c_white color_inherit shadow_overlap-light p_4 p_5:lg reading-typography z_1 sticky t_3">
+      <h3 data-item="cta-title" class="font_medium">Quick Links</h3>
+      <ul class="ul_none font-size_down lh_2">
+        <li><a href="Concept-Career-Path-Start.html"><em class="fas fa-route p-r_3" aria-hidden="true"></em>Start Here — Find Your Next Step</a></li>
+        <li><a href="Concept-Career-Path-Inspiration.html"><em class="fas fa-heart p-r_3" aria-hidden="true"></em>Stories &amp; Videos</a></li>
+        <li><a href="https://www.acc.org/Education-and-Meetings/Professional-Development-Programs" rel="noopener noreferrer"><em class="fas fa-chart-line p-r_3" aria-hidden="true"></em>Level Up — Professional Development</a></li>
+        <li><a href="Concept-Career-Path-Contact.html"><em class="fas fa-envelope p-r_3" aria-hidden="true"></em>Contact Us</a></li>
+        <li><a href="https://careers.acc.org/" target="_blank" rel="noopener noreferrer"><em class="fas fa-briefcase p-r_3" aria-hidden="true"></em>Cardiology Careers Job Board</a></li>
+      </ul>
+    </div>
+  </aside>
+</section>
+
+{%- include_relative Career-Path/hub-nav-cards.html -%}
+
+<div class="p_4 p-y_5:lg isolation_isolate reading-typography">
+  {%- include_relative Career-Path/audience-fork.html -%}
+  {%- include_relative Career-Path/pathway-cards.html -%}
+  {%- include_relative Career-Path/why-and-profiles.html -%}
+  {%- include_relative Career-Path/level-up-cta.html -%}
+</div>
+
+<section id="nav-gone"></section>
+<ul id="sticky_nav" class="b_2 br_1 br_black-2 br_round br_solid flex flex_row flex_wrap font_n1:lg font_n2:md font_n3 gap_2 items_center justify_center m-x_5:md m-x_6:lg m-x_n3 p-x_0 p-y_3 relative shadow_overlap-light sticky ul_none w_auto z_2">
+  <li><a class="p-x_3 p-y_2 a:bg_accent-n1 a:c_white br_radius active" href="#Where-You-Are" aria-current="true">Where You Are</a></li>
+  <li><a class="p-x_3 p-y_2 a:bg_accent-n1 a:c_white br_radius" href="#Choose-Pathway" aria-current="false">Pathways</a></li>
+  <li><a class="p-x_3 p-y_2 a:bg_accent-n1 a:c_white br_radius" href="#Why-Cardiology" aria-current="false">Why Cardiology</a></li>
+  <li><a class="p-x_3 p-y_2 a:bg_accent-n1 a:c_white br_radius" href="#Level-Up" aria-current="false">Level Up</a></li>
+  <li><a class="p-x_3 p-y_2 a:bg_accent-n1 a:c_white br_radius" href="#Day-in-Life" aria-current="false">Day in the Life</a></li>
+</ul>
+<style>
+  #sticky_nav::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 1.5rem;
+  }
+  #sticky_nav a.active { font-weight: bold; }
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const nav = document.querySelector("#sticky_nav");
+  if (!nav) return;
+  const navLinks = [...document.querySelectorAll('#sticky_nav a[href^="#"]')];
+  const items = navLinks.map(link => {
+    const section = document.querySelector(link.getAttribute("href"));
+    return section ? { link, section } : null;
+  }).filter(Boolean);
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const item = items.find(i => i.section === entry.target);
+      if (!item) return;
+      item.link.classList.toggle("active", entry.isIntersecting);
+      item.link.setAttribute("aria-current", entry.isIntersecting ? "true" : "false");
+    });
+  }, { root: null, rootMargin: "-80px 0px 0px -80px", threshold: 0 });
+  items.forEach(item => sectionObserver.observe(item.section));
+  const navGoneSection = document.querySelector("#nav-gone");
+  if (navGoneSection) {
+    new IntersectionObserver((entries) => {
+      entries.forEach(entry => nav.classList.toggle("display_none", entry.isIntersecting));
+    }, { root: null, rootMargin: "-80px 0px 0px 0px", threshold: 0 }).observe(navGoneSection);
+  }
+});
+</script>

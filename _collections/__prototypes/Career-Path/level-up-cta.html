@@ -1,0 +1,70 @@
+{% assign pdp_url = include.url | default: "https://www.acc.org/Education-and-Meetings/Professional-Development-Programs" %}
+{% assign variant = include.variant | default: "default" %}
+
+{% if variant == "compact" %}
+<section class="reading-typography wrapper-container m-b_5 p-x_4 p-x_5:lg" data-component="level-up-cta" aria-labelledby="level-up-cta-title-{{ variant }}">
+  <article class="bg_primary-n2 br_radius c_white color_inherit p_4 p_5:lg flex flex_column flex_row:md gap_4 items_start items_center:md justify_between">
+    <div class="flex_1">
+      <h2 id="level-up-cta-title-{{ variant }}" class="font_display font-size_up m-t_0 m-b_2">
+        {% if include.headline %}{{ include.headline }}{% else %}Ready to level up?{% endif %}
+      </h2>
+      <p class="font-size_down m_0 opacity_9">
+        {% if include.body %}{{ include.body }}{% else %}ACC Professional Development Programs help you build leadership, teaching, and career skills for the role you want next.{% endif %}
+      </p>
+    </div>
+    <div class="flex flex_column flex_row:sm gap_3 flex_none">
+      <a href="{{ pdp_url }}" class="btn btn-primary expanded-click-area" rel="noopener noreferrer">Explore Programs <i class="fas fa-arrow-right p-l_2" aria-hidden="true"></i></a>
+      {% if include.secondary_url %}
+      <a href="{{ include.secondary_url }}" class="btn btn-shade expanded-click-area" rel="noopener noreferrer">{{ include.secondary_label | default: "Learn more" }}</a>
+      {% endif %}
+    </div>
+  </article>
+</section>
+
+{% else %}
+<section id="Level-Up" class="reading-typography wrapper-container m-b_5 m-b_6:lg p-x_4 p-x_5:lg scroll-mt_5" data-component="level-up-cta" aria-labelledby="level-up-cta-title">
+  <article class="bg_black-1 br_radius overflow_hidden shadow_bevel-light">
+    <div class="grid columns_1 columns_5:lg gap_0">
+      <div class="col-span_3 p_4 p_5:lg p_6:lg">
+        <p class="font-size_down c_accent-n1 font_bold m-b_2 m-t_0">Career crossroads</p>
+        <h2 id="level-up-cta-title" class="font_display font_3 m-t_0 m-b_3">
+          {% if include.headline %}{{ include.headline }}{% else %}You have the clinical foundation. What comes next?{% endif %}
+        </h2>
+        <p class="font-size_up m-b_4">
+          {% if include.body %}{{ include.body }}{% else %}Many cardiovascular professionals hit a point where the question is not <em>what specialty</em> — but how to lead a team, teach the next generation, shape policy, or grow into a new role. That is what professional development is for.{% endif %}
+        </p>
+        <ul class="gap_3 grid ul_none font-size_down m-b_5">
+          <li class="flex gap_3 items_start">
+            <i class="c_accent-n1 far fa-chalkboard-teacher flex_none m-t_1" aria-hidden="true"></i>
+            <span><strong>Teach and mentor</strong> — educator programs for rising faculty and program leaders.</span>
+          </li>
+          <li class="flex gap_3 items_start">
+            <i class="c_accent-n1 far fa-users-crown flex_none m-t_1" aria-hidden="true"></i>
+            <span><strong>Lead with confidence</strong> — academies for early- and mid-career physicians.</span>
+          </li>
+          <li class="flex gap_3 items_start">
+            <i class="c_accent-n1 far fa-compass flex_none m-t_1" aria-hidden="true"></i>
+            <span><strong>Find your program</strong> — one destination for ACC&rsquo;s full development portfolio.</span>
+          </li>
+        </ul>
+        <div class="flex flex_column flex_row:sm gap_3">
+          <a href="{{ pdp_url }}" class="btn btn-primary expanded-click-area" rel="noopener noreferrer">Explore Professional Development Programs</a>
+          {% if include.secondary_url %}
+          <a href="{{ include.secondary_url }}" class="btn btn-shade expanded-click-area" rel="noopener noreferrer">{{ include.secondary_label | default: "Learn more" }}</a>
+          {% endif %}
+        </div>
+      </div>
+      <aside class="bg_primary-n2 c_white color_inherit p_4 p_5:lg flex flex_column justify_center col-span_2">
+        <h3 class="font_display font-size_up m-t_0 m-b_3">Who this is for</h3>
+        <ul class="ul_none gap_2 grid font-size_down lh_2 m-b_0">
+          <li>Fellows and early-career physicians planning leadership or academic tracks</li>
+          <li>Mid-career clinicians ready for section, committee, or program director roles</li>
+          <li>Educators building a teaching portfolio</li>
+          <li>CV Team members pursuing formal leadership or certificate credentials</li>
+        </ul>
+        <p class="font-size_down-2 m-t_4 m-b_0 opacity_8">Program details, eligibility, and applications live on ACC&rsquo;s Professional Development hub — not duplicated here.</p>
+      </aside>
+    </div>
+  </article>
+</section>
+{% endif %}
