@@ -8,12 +8,15 @@ goals:
 clinical_topic:
   title: Prevention
   url: https://www.acc.org/Clinical-Topics/Prevention
-  description: Stay current on prevention — guidelines, JACC articles, education, and news, updated as ACC publishes.
   secondary:
     - label: Dyslipidemia
       url: https://www.acc.org/Clinical-Topics/Dyslipidemia
     - label: Diabetes and Cardiometabolic Disease
       url: https://www.acc.org/Clinical-Topics/Diabetes-and-Cardiometabolic-Disease
+member_section:
+  title: Prevention of Cardiovascular Disease Section
+  url: https://www.acc.org/Membership/Sections-and-Councils/Prevention-of-Cardiovascular-Disease-Section
+  description: The best insight often comes from peers — see how others put prevention into practice.
 related_spokes:
   - key: anticoagulation
     title: Anticoagulation / Antithrombotic Therapy

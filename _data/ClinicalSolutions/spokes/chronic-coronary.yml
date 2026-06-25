@@ -7,7 +7,6 @@ goals:
 clinical_topic:
   title: Stable Ischemic Heart Disease
   url: https://www.acc.org/Clinical-Topics/Stable-Ischemic-Heart-Disease
-  description: Browse guidelines, JACC coverage, education, and latest news on stable ischemic heart disease — updated dynamically on ACC.org.
   secondary:
     - label: Chronic Angina
       url: https://www.acc.org/Clinical-Topics/Stable-Ischemic-Heart-Disease/Chronic-Angina

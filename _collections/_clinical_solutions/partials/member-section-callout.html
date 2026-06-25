@@ -1,0 +1,12 @@
+{% assign topic_key = page.topic_key %}
+{% if topic_key %}
+{% assign topic = site.data.ClinicalSolutions.spokes[topic_key] %}
+{% assign ms = topic.member_section %}
+{% if ms %}
+<div data-component="member-section-callout" class="m-t_4 m-x_4 bg_shade-n2 br_round c_white color_inherit shadow_bevel-bold p_4 reading-typography flex flex_column gap_3 min-w_0">
+  <h3 class="m-t_0 m-b_0"><small class="font-size_down-2 block opacity_7 m-b_1">Turn to Your Community</small> {{ ms.title }}</h3>
+  <p class="m_0 opacity_9">{{ ms.description }}</p>
+  <a href="{{ ms.url }}" class="btn btn-shade btn-sm w_100 font_bold" rel="noopener noreferrer" aria-label="Explore the {{ ms.title }} on ACC.org">Explore Member Section <i class="fas fa-arrow-right p-l_2" aria-hidden="true"></i></a>
+</div>
+{% endif %}
+{% endif %}
