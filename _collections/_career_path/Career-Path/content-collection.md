@@ -1,3 +1,7 @@
+---
+published: false
+---
+
 # Cardiology as a Career Path — Content Collection & Refactor Plan
 
 ## Legend
@@ -58,7 +62,7 @@ https://www.acc.org/Tools-and-Practice-Support/Cardiology-as-a-Career-Path and c
 | **Inspiration** | `Concept-Career-Path-Inspiration.html` | Unified stories + video gallery |
 | **Contact** | `Concept-Career-Path-Contact.html` | Single-purpose support CTA |
 
-<span style="color:red">**Prototype partials**</span> — `_collections/__prototypes/Career-Path/*.html`
+<span style="color:red">**Prototype partials**</span> — `_includes/Career-Path/*.html`
 
 ---
 

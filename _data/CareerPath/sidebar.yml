@@ -1,52 +1,52 @@
 sidebarRoot: Cardiology as a Career Path
-sidebarRootURL: /acc/Concept-Career-Path/
+sidebarRootURL: /career-path/Concept-Career-Path/
 items:
   - key: hub
     label: Overview
-    url: /acc/Concept-Career-Path/
+    url: /career-path/Concept-Career-Path/
   - key: start
     label: Start Here
-    url: /acc/Concept-Career-Path-Start/
+    url: /career-path/Concept-Career-Path-Start/
     children:
       - key: high-school
         label: High school
-        url: /acc/Concept-Career-Path-Start/
+        url: /career-path/Concept-Career-Path-Start/
         anchor: High-School
       - key: college-premed
         label: College & pre-med
-        url: /acc/Concept-Career-Path-Start/
+        url: /career-path/Concept-Career-Path-Start/
         anchor: College-PreMed
       - key: medical-student
         label: Medical student
-        url: /acc/Concept-Career-Path-Start/
+        url: /career-path/Concept-Career-Path-Start/
         anchor: Medical-Student
       - key: resident-fellow
         label: Resident or fellow
-        url: /acc/Concept-Career-Path-Start/
+        url: /career-path/Concept-Career-Path-Start/
         anchor: Resident-Fellow
       - key: cv-team
         label: CV Team
-        url: /acc/Concept-Career-Path-Start/
+        url: /career-path/Concept-Career-Path-Start/
         anchor: CV-Team
       - key: research-change
         label: Research & career change
-        url: /acc/Concept-Career-Path-Start/
+        url: /career-path/Concept-Career-Path-Start/
         anchor: Research-Change
   - key: physician
     label: Physician Pathway
-    url: /acc/Concept-Career-Path-Physician/
+    url: /career-path/Concept-Career-Path-Physician/
   - key: cvteam
     label: CV Team Pathway
-    url: /acc/Concept-Career-Path-CVTeam/
+    url: /career-path/Concept-Career-Path-CVTeam/
   - key: research
     label: Clinical Research
-    url: /acc/Concept-Career-Path-ClinicalResearch/
+    url: /career-path/Concept-Career-Path-ClinicalResearch/
   - key: inspiration
     label: Stories & Videos
-    url: /acc/Concept-Career-Path-Inspiration/
+    url: /career-path/Concept-Career-Path-Inspiration/
   - key: levelup
     label: Level Up
-    url: /acc/Concept-Career-Path-Leadership/
+    url: /career-path/Concept-Career-Path-Leadership/
   - key: contact
     label: Contact Us
-    url: /acc/Concept-Career-Path-Contact/
+    url: /career-path/Concept-Career-Path-Contact/

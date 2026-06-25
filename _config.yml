@@ -56,6 +56,9 @@ collections:
   annual_meeting_prototype:
     output: true
     permalink: /AnnualMeeting/:path/
+  career_path:
+    output: true
+    permalink: /career-path/:path/
 
 # Exclude from processing.
 
