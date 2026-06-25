@@ -1,0 +1,7 @@
+{%- assign pages = site.data.CareerPath.pages -%}
+{%- if include.page -%}
+  {%- assign path = pages[include.page] -%}
+{%- elsif include.path -%}
+  {%- assign path = include.path -%}
+{%- endif -%}
+{{- path | relative_url -}}{%- if include.hash -%}#{{- include.hash -}}{%- endif -%}

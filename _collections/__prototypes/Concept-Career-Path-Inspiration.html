@@ -7,6 +7,7 @@ parent-page: "Tools & Practice Support"
 career_nav: inspiration
 ---
 
+{% assign cp = site.data.CareerPath.pages %}
 <h1>Stories &amp; Videos</h1>
 <hr class="br_primary">
 
@@ -24,5 +25,5 @@ career_nav: inspiration
 {%- include_relative Career-Path/inspiration.html -%}
 
 <section class="reading-typography wrapper-container p_4 p-x_5:lg m-b_6 text_center">
-  <a href="Concept-Career-Path-Start.html" class="btn btn-primary expanded-click-area">Ready to start? Choose your pathway</a>
+  <a href="{{ cp.start | relative_url }}" class="btn btn-primary expanded-click-area">Ready to start? Choose your pathway</a>
 </section>

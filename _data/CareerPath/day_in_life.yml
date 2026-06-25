@@ -1,0 +1,45 @@
+# Day in the Life profiles — SME: confirm youtube_id when production videos are hosted on YouTube.
+# Transcript URL pattern: https://www.youtube.com/api/timedtext?v={id}&lang=en&fmt=vtt
+videos:
+  - key: mcrae
+    title: "One congenital heart program from fetus to adulthood"
+    person: "Marion McRae, ACNP-BC"
+    role: "Nurse Practitioner"
+    youtube_id: ""
+    transcript_lang: en
+    article_url: "https://www.acc.org/Membership/Sections-and-Councils/Cardiovascular-Team-Section/Section-Updates/2016/03/01/07/12/A-Day-in-the-Life-Marion-McRae"
+  - key: ijioma
+    title: "Inside the cath lab as a cardiology fellow in training"
+    person: 'Nkechinyere "Nkechi" Ijioma, MD'
+    role: "Fellow in Training"
+    youtube_id: ""
+    transcript_lang: en
+    article_url: ""
+  - key: reed
+    title: "Stopping the revolving door after heart failure admission"
+    person: "Brent N. Reed, PharmD, BCPS-AQ Cardiology"
+    role: "Clinical Pharmacist"
+    youtube_id: ""
+    transcript_lang: en
+    article_url: "https://www.acc.org/Membership/Sections-and-Councils/Cardiovascular-Team-Section/Section-Updates/2016/02/01/10/47/day-in-the-life-an-interview-with-brent-n-reed-pharmd-bcps-aq-cardiology"
+  - key: price
+    title: "When your day is data, data, and more data"
+    person: "Andrea Price, MS, RCIS, CCA"
+    role: "Data Analyst"
+    youtube_id: ""
+    transcript_lang: en
+    article_url: "https://www.acc.org/Membership/Sections-and-Councils/Cardiovascular-Team-Section/Section-Updates/2016/10/31/12/39/a-day-in-the-life"
+  - key: perlmutter
+    title: "Outpatient heart care as part of the CV Team"
+    person: "Sandy Perlmutter, MSN, ARNP, AACC"
+    role: "Advanced Practice Nurse"
+    youtube_id: ""
+    transcript_lang: en
+    article_url: "https://www.acc.org/Membership/Sections-and-Councils/Cardiovascular-Team-Section/Section-Updates/2016/05/31/07/34/a-day-in-the-life"
+  - key: park
+    title: "Why pregnancy can be a window into women's heart health"
+    person: "Ki Park, MD, MS, FACC"
+    role: "Interventional Cardiologist"
+    youtube_id: ""
+    transcript_lang: en
+    article_url: ""

@@ -1,3 +1,4 @@
+{% assign cp = site.data.CareerPath.pages %}
 <section id="Where-You-Are" class="reading-typography wrapper-container m-b_5 m-b_6:lg p-x_4 p-x_5:lg" aria-labelledby="where-you-are-title">
   <header class="m-b_4">
     <h2 id="where-you-are-title" class="font_display font_3 m-t_0 m-b_2">Where Are You Now?</h2>
@@ -8,19 +9,19 @@
       <i class="c_accent-n1 far fa-school font_4" aria-hidden="true"></i>
       <h3 class="h4 font_display m_0">Exploring as a Student</h3>
       <p class="font-size_down m_0 flex_1">High school or college — learn what cardiology is and try research with a mentor.</p>
-      <a class="btn btn-shade btn-sm expanded-click-area m-t_auto" href="Concept-Career-Path-Start.html#Students">For Students</a>
+      <a class="btn btn-shade btn-sm expanded-click-area m-t_auto" href="{{ cp.start | relative_url }}#Students">For Students</a>
     </article>
     <article class="bg_white br_1 br_black-3 br_radius br_solid p_4 flex flex_column gap_3 shadow_bevel-light">
       <i class="c_accent-n1 far fa-stethoscope font_4" aria-hidden="true"></i>
       <h3 class="h4 font_display m_0">In Training</h3>
       <p class="font-size_down m_0 flex_1">Medical student, resident, or fellow — timelines, advice, and FIT resources.</p>
-      <a class="btn btn-shade btn-sm expanded-click-area m-t_auto" href="Concept-Career-Path-Physician.html">Physician Training Path</a>
+      <a class="btn btn-shade btn-sm expanded-click-area m-t_auto" href="{{ cp.physician | relative_url }}">Physician Training Path</a>
     </article>
     <article class="bg_white br_1 br_black-3 br_radius br_solid p_4 flex flex_column gap_3 shadow_bevel-light">
       <i class="c_accent-n1 far fa-users-medical font_4" aria-hidden="true"></i>
       <h3 class="h4 font_display m_0">CV Team Professional</h3>
       <p class="font-size_down m_0 flex_1">Nurse, NP, PA, pharmacist, technologist, or allied role on the care team.</p>
-      <a class="btn btn-shade btn-sm expanded-click-area m-t_auto" href="Concept-Career-Path-CVTeam.html">CV Team Roles</a>
+      <a class="btn btn-shade btn-sm expanded-click-area m-t_auto" href="{{ cp.cvteam | relative_url }}">CV Team Roles</a>
     </article>
     <article class="bg_white br_1 br_black-3 br_radius br_solid p_4 flex flex_column gap_3 shadow_bevel-light">
       <i class="c_accent-n1 far fa-seedling font_4" aria-hidden="true"></i>

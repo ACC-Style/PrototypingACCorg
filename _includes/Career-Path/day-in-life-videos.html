@@ -1,0 +1,53 @@
+{% assign cp = site.data.CareerPath.pages %}
+{% assign day_in_life = site.data.CareerPath.day_in_life %}
+<div class="grid columns_1 columns_2:md columns_3:lg gap_4 lh_1">
+  {% for video in day_in_life.videos %}
+  {% assign has_youtube = video.youtube_id | size %}
+  {% assign has_article = video.article_url | size %}
+  {% assign transcript_lang = video.transcript_lang | default: "en" %}
+  {% if has_youtube > 0 %}
+    {% assign watch_url = "https://www.youtube.com/watch?v=" | append: video.youtube_id %}
+    {% assign transcript_url = "https://www.youtube.com/api/timedtext?v=" | append: video.youtube_id | append: "&lang=" | append: transcript_lang | append: "&fmt=vtt" %}
+    {% assign card_url = watch_url %}
+    {% assign card_external = true %}
+  {% elsif has_article > 0 %}
+    {% assign card_url = video.article_url %}
+    {% assign card_external = true %}
+  {% else %}
+    {% assign card_url = cp.inspiration | relative_url | append: '#Videos' %}
+    {% assign card_external = false %}
+  {% endif %}
+  <article class="flex flex_column">
+    <div class="relative isolation_isolate flex_auto">
+      <a href="{{ card_url }}" class="block not-link h:undecorated expanded-click-area"{% if card_external %} target="_blank" rel="noopener noreferrer"{% endif %}>
+        <div class="aspect aspect_16x9 bg_primary br_radius c_white grid items_center justify_center m-b_3" aria-hidden="true"><i class="far fa-play-circle font_5"></i></div>
+        <h3 class="font_display font-size_down-1 m-t_0 m-b_1" style="text-wrap-style: balance;">{{ video.title }}</h3>
+        <p class="font-size_down c_shade-n2 m_0">{{ video.person }} &middot; {{ video.role }}</p>
+        {% if has_youtube > 0 %}
+        <span class="sr-only">Watch video on YouTube: {{ video.title }}. Opens in a new tab.</span>
+        {% elsif has_article > 0 %}
+        <span class="sr-only">Read profile: {{ video.title }}. Opens in a new tab.</span>
+        {% else %}
+        <span class="sr-only">View more stories and videos.</span>
+        {% endif %}
+      </a>
+    </div>
+    {% if has_youtube > 0 or has_article > 0 %}
+    <footer class="font-size_down flex flex_wrap gap-x_3 gap-y_1 items_center m-t_2" role="group" aria-label="Accessible media for {{ video.title }}">
+      {% if has_youtube > 0 %}
+      <a href="{{ watch_url }}" class="c_primary h:undecorated h:underline relative z_2" target="_blank" rel="noopener noreferrer">
+        <i class="far fa-external-link p-r_1" aria-hidden="true"></i>Watch on YouTube<span class="sr-only"> (opens in new tab)</span>
+      </a>
+      <a href="{{ transcript_url }}" class="c_primary h:undecorated h:underline relative z_2" target="_blank" rel="noopener noreferrer" lang="{{ transcript_lang }}" hreflang="{{ transcript_lang }}" type="text/vtt">
+        <i class="far fa-file-alt p-r_1" aria-hidden="true"></i>Read transcript<span class="sr-only"> for {{ video.title }} (YouTube captions, opens in new tab)</span>
+      </a>
+      {% elsif has_article > 0 %}
+      <a href="{{ video.article_url }}" class="c_primary h:undecorated h:underline relative z_2" target="_blank" rel="noopener noreferrer">
+        <i class="far fa-file-alt p-r_1" aria-hidden="true"></i>Read transcript<span class="sr-only"> for {{ video.title }} (written profile on ACC.org, opens in new tab)</span>
+      </a>
+      {% endif %}
+    </footer>
+    {% endif %}
+  </article>
+  {% endfor %}
+</div>

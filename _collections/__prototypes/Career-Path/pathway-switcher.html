@@ -1,8 +1,9 @@
+{% assign cp = site.data.CareerPath.pages %}
 <nav class="reading-typography wrapper-container m-b_4 p-x_4 p-x_5:lg font-size_down" aria-label="Explore pathways">
   <p class="m-b_2 c_shade-n2"><strong>Explore pathways:</strong></p>
   <ul class="ul_inline-pipe m_0">
-    <li><a href="Concept-Career-Path-Physician.html">Physician</a></li>
-    <li><a href="Concept-Career-Path-CVTeam.html">CV Team</a></li>
-    <li><a href="Concept-Career-Path-ClinicalResearch.html">Clinical Research</a></li>
+    <li><a href="{{ cp.physician | relative_url }}">Physician</a></li>
+    <li><a href="{{ cp.cvteam | relative_url }}">CV Team</a></li>
+    <li><a href="{{ cp.research | relative_url }}">Clinical Research</a></li>
   </ul>
 </nav>

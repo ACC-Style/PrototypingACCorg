@@ -1,3 +1,4 @@
+{% assign cp = site.data.CareerPath.pages %}
 <section class="reading-typography wrapper-container m-b_5 p-x_4 p-x_5:lg" aria-labelledby="cv-categories-title">
   <header class="m-b_4">
     <h2 id="cv-categories-title" class="font_display font_3 m-t_0 m-b_2">Browse by Role Category</h2>
@@ -163,7 +164,7 @@
       <p class="font-size_down m_0">Navigate clinical research, grants, and manuscript development.</p>
     </article>
     <article class="bg_black-1 br_radius p_4">
-      <h3 class="font_display h5 m-t_0"><a href="Concept-Career-Path-ClinicalResearch.html">Clinical trials pathway</a></h3>
+      <h3 class="font_display h5 m-t_0"><a href="{{ cp.research | relative_url }}">Clinical trials pathway</a></h3>
       <p class="font-size_down m_0">Move into trial coordination, investigation, and principal investigator roles.</p>
     </article>
   </div>

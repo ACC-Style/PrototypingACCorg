@@ -1,3 +1,4 @@
+{% assign cp = site.data.CareerPath.pages %}
 <div class="wrapper-container p-x_4 p-x_5:lg flex flex_column gap_6 gap_7:lg m-b_6" data-component="career-start-guides">
 
   <article id="High-School" class="bg_black-1 br_radius p_4 p_5:lg scroll-mt_5">
@@ -12,7 +13,7 @@
         <li class="bg_white br_radius br_solid br_1 br_black-3 p_4 shadow_bevel-light">
           <h3>See the field through real people</h3>
           <p>Short videos and #ChooseCardiology stories from members who were once where you are.</p>
-          <p><a href="Concept-Career-Path-Inspiration.html" class="btn btn-primary btn-sm">Watch &amp; Read Stories</a></p>
+          <p><a href="{{ cp.inspiration | relative_url }}" class="btn btn-primary btn-sm">Watch &amp; Read Stories</a></p>
         </li>
         <li class="bg_white br_radius br_solid br_1 br_black-3 p_4 shadow_bevel-light">
           <h3>Try research with a mentor</h3>
@@ -48,7 +49,7 @@
         <li class="bg_white br_radius br_solid br_1 br_black-3 p_4 shadow_bevel-light">
           <h3>Learn what physician training actually requires</h3>
           <p>Preview the full timeline — med school, internal medicine residency, cardiology fellowship — so you know what you are signing up for.</p>
-          <p><a href="Concept-Career-Path-Physician.html" class="btn btn-shade btn-sm">Physician Training Overview</a></p>
+          <p><a href="{{ cp.physician | relative_url }}" class="btn btn-shade btn-sm">Physician Training Overview</a></p>
         </li>
       </ol>
     </div>
@@ -71,12 +72,12 @@
         <li class="bg_white br_radius br_solid br_1 br_black-3 p_4 shadow_bevel-light">
           <h3>Use the med student roadmap</h3>
           <p>Timeline, FAQs, and advice from ACC Fellows in Training on electives, research, and letters.</p>
-          <p><a href="Concept-Career-Path-Physician.html#Pre-Med" class="btn btn-shade btn-sm">Med Student Resources</a></p>
+          <p><a href="{{ cp.physician | relative_url }}#Pre-Med" class="btn btn-shade btn-sm">Med Student Resources</a></p>
         </li>
         <li class="bg_white br_radius br_solid br_1 br_black-3 p_4 shadow_bevel-light">
           <h3>Hear how others chose subspecialties</h3>
           <p>FITs on the Go videos cover interventional, EP, HF, imaging, and more — in under 10 minutes each.</p>
-          <p><a href="Concept-Career-Path-Inspiration.html#Videos" class="btn btn-shade btn-sm">Video Gallery</a></p>
+          <p><a href="{{ cp.inspiration | relative_url }}#Videos" class="btn btn-shade btn-sm">Video Gallery</a></p>
         </li>
       </ol>
     </div>
@@ -94,7 +95,7 @@
         <li class="bg_white br_radius br_solid br_1 br_black-3 p_4 shadow_bevel-light">
           <h3>Jump to your training stage</h3>
           <p>Residency interview advice, fellowship application tips, and advanced fellowship match guides — organized by where you are now.</p>
-          <p><a href="Concept-Career-Path-Physician.html" class="btn btn-primary btn-sm">Physician Training Stages</a></p>
+          <p><a href="{{ cp.physician | relative_url }}" class="btn btn-primary btn-sm">Physician Training Stages</a></p>
         </li>
         <li class="bg_white br_radius br_solid br_1 br_black-3 p_4 shadow_bevel-light">
           <h3>Connect with your trainee community</h3>
@@ -122,12 +123,12 @@
         <li class="bg_white br_radius br_solid br_1 br_black-3 p_4 shadow_bevel-light">
           <h3>Browse roles by category</h3>
           <p>Imaging, advanced practice, therapy, and support roles — with education paths for each.</p>
-          <p><a href="Concept-Career-Path-CVTeam.html" class="btn btn-primary btn-sm">CV Team Role Guide</a></p>
+          <p><a href="{{ cp.cvteam | relative_url }}" class="btn btn-primary btn-sm">CV Team Role Guide</a></p>
         </li>
         <li class="bg_white br_radius br_solid br_1 br_black-3 p_4 shadow_bevel-light">
           <h3>Read a day-in-the-life profile</h3>
           <p>NPs, pharmacists, and technologists describe what their work actually looks like day to day.</p>
-          <p><a href="Concept-Career-Path-Inspiration.html" class="btn btn-shade btn-sm">Member Profiles</a></p>
+          <p><a href="{{ cp.inspiration | relative_url }}" class="btn btn-shade btn-sm">Member Profiles</a></p>
         </li>
         <li class="bg_white br_radius br_solid br_1 br_black-3 p_4 shadow_bevel-light">
           <h3>Validate your knowledge with ACC certificates</h3>
@@ -150,17 +151,17 @@
         <li class="bg_white br_radius br_solid br_1 br_black-3 p_4 shadow_bevel-light">
           <h3>Map the clinical trials pathway</h3>
           <p>From coordinator to principal investigator — education, awards, and ACC&rsquo;s trials development program.</p>
-          <p><a href="Concept-Career-Path-ClinicalResearch.html" class="btn btn-primary btn-sm">Clinical Research Path</a></p>
+          <p><a href="{{ cp.research | relative_url }}" class="btn btn-primary btn-sm">Clinical Research Path</a></p>
         </li>
         <li class="bg_white br_radius br_solid br_1 br_black-3 p_4 shadow_bevel-light">
           <h3>Explore paths beyond the clinic</h3>
           <p>Industry, entrepreneurship, and alternative cardiology careers — for physicians and allied professionals.</p>
-          <p><a href="Concept-Career-Path-CVTeam.html#alt-careers-title" class="btn btn-shade btn-sm">Alternative Careers</a></p>
+          <p><a href="{{ cp.cvteam | relative_url }}#alt-careers-title" class="btn btn-shade btn-sm">Alternative Careers</a></p>
         </li>
         <li class="bg_white br_radius br_solid br_1 br_black-3 p_4 shadow_bevel-light">
           <h3>Target funding and investigator awards</h3>
           <p>Young investigator awards and fellowship grants help you build credibility early.</p>
-          <p><a href="Concept-Career-Path-ClinicalResearch.html" class="btn btn-shade btn-sm">Award Opportunities</a></p>
+          <p><a href="{{ cp.research | relative_url }}" class="btn btn-shade btn-sm">Award Opportunities</a></p>
         </li>
       </ol>
     </div>

@@ -1,46 +1,52 @@
 sidebarRoot: Cardiology as a Career Path
-sidebarRootURL: Concept-Career-Path.html
+sidebarRootURL: /acc/Concept-Career-Path/
 items:
   - key: hub
     label: Overview
-    url: Concept-Career-Path.html
+    url: /acc/Concept-Career-Path/
   - key: start
     label: Start Here
-    url: Concept-Career-Path-Start.html
+    url: /acc/Concept-Career-Path-Start/
     children:
       - key: high-school
         label: High school
-        url: Concept-Career-Path-Start.html#High-School
+        url: /acc/Concept-Career-Path-Start/
+        anchor: High-School
       - key: college-premed
         label: College & pre-med
-        url: Concept-Career-Path-Start.html#College-PreMed
+        url: /acc/Concept-Career-Path-Start/
+        anchor: College-PreMed
       - key: medical-student
         label: Medical student
-        url: Concept-Career-Path-Start.html#Medical-Student
+        url: /acc/Concept-Career-Path-Start/
+        anchor: Medical-Student
       - key: resident-fellow
         label: Resident or fellow
-        url: Concept-Career-Path-Start.html#Resident-Fellow
+        url: /acc/Concept-Career-Path-Start/
+        anchor: Resident-Fellow
       - key: cv-team
         label: CV Team
-        url: Concept-Career-Path-Start.html#CV-Team
+        url: /acc/Concept-Career-Path-Start/
+        anchor: CV-Team
       - key: research-change
         label: Research & career change
-        url: Concept-Career-Path-Start.html#Research-Change
+        url: /acc/Concept-Career-Path-Start/
+        anchor: Research-Change
   - key: physician
     label: Physician Pathway
-    url: Concept-Career-Path-Physician.html
+    url: /acc/Concept-Career-Path-Physician/
   - key: cvteam
     label: CV Team Pathway
-    url: Concept-Career-Path-CVTeam.html
+    url: /acc/Concept-Career-Path-CVTeam/
   - key: research
     label: Clinical Research
-    url: Concept-Career-Path-ClinicalResearch.html
+    url: /acc/Concept-Career-Path-ClinicalResearch/
   - key: inspiration
     label: Stories & Videos
-    url: Concept-Career-Path-Inspiration.html
+    url: /acc/Concept-Career-Path-Inspiration/
   - key: levelup
     label: Level Up
-    url: Concept-Career-Path-Leadership.html
+    url: /acc/Concept-Career-Path-Leadership/
   - key: contact
     label: Contact Us
-    url: Concept-Career-Path-Contact.html
+    url: /acc/Concept-Career-Path-Contact/

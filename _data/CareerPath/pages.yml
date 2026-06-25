@@ -1,0 +1,9 @@
+# Collection permalink: /acc/:path/ — always link from site root, not relative to current page.
+hub: /acc/Concept-Career-Path/
+start: /acc/Concept-Career-Path-Start/
+physician: /acc/Concept-Career-Path-Physician/
+cvteam: /acc/Concept-Career-Path-CVTeam/
+research: /acc/Concept-Career-Path-ClinicalResearch/
+inspiration: /acc/Concept-Career-Path-Inspiration/
+leadership: /acc/Concept-Career-Path-Leadership/
+contact: /acc/Concept-Career-Path-Contact/
