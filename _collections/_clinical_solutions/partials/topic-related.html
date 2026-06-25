@@ -1,31 +1,36 @@
 {% assign topic_key = page.topic_key %}
 {% assign topic = site.data.ClinicalSolutions.spokes[topic_key] %}
 {% assign cs = site.data.ClinicalSolutions.pages %}
+{% assign ct = topic.clinical_topic %}
 <section class="reading-typography wrapper-container m-b_5 p-x_4 p-x_5:lg" aria-labelledby="related-topics-title">
   <h2 id="related-topics-title" class="m-b_4">Related Content</h2>
-  <div class="grid columns_1 columns_2:lg gap_4">
+
+  {% if topic.related_spokes.size > 0 %}
+  <ul class="ul_none grid columns_1 columns_2:md gap_3 m-b_4 m-b_5:md">
+    {% for rel in topic.related_spokes %}
+    {% assign rel_url = cs[rel.key] %}
+    <li class="bg_black-1 br_radius p_3">
+      {% if rel_url %}
+      <a href="{{ rel_url | relative_url }}" class="font_bold h:undecorated h:underline display_block">{{ rel.title }}</a>
+      {% else %}
+      <span class="font_bold c_shade-n1 display_block">{{ rel.title }}</span>
+      <span class="block font-size_down c_shade-n1 m-t_1">Coming soon</span>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
+  {% if ct %}
+  <div data-component="related-clinical-topic-cta" class="bg_black-1 br_radius p_4 p_5:md flex flex_column gap_4 items_start">
     <div>
-      <h3 class="m-b_3">Other Solution Sets</h3>
-      <ul class="ul_none gap_3 grid">
-        {% for rel in topic.related_spokes %}
-        {% assign rel_url = cs[rel.key] %}
-        <li class="bg_black-1 br_radius p_3">
-          {% if rel_url %}
-          <a href="{{ rel_url | relative_url }}" class="font_bold h:undecorated h:underline">{{ rel.title }}</a>
-          {% else %}
-          <span class="font_bold c_shade-n1">{{ rel.title }}</span>
-          <span class="block font-size_down">Coming soon</span>
-          {% endif %}
-        </li>
-        {% endfor %}
-      </ul>
+      <h3 class="m-t_0 m-b_2">What's Next?</h3>
+      <p class="m-b_0">Dive deeper on the <strong>{{ ct.title }}</strong> Clinical Topic — guidelines, education, and news that update on ACC.org. Or return to browse every curated solution set.</p>
     </div>
-    {% if topic.clinical_topic %}
-    <div>
-      <h3 class="m-b_3">Clinical Topics on ACC.org</h3>
-      <p class="m-t_0">For guidelines, education, JACC articles, and news that update automatically:</p>
-      <a href="{{ topic.clinical_topic.url }}" class="btn btn-shade" rel="noopener noreferrer">{{ topic.clinical_topic.title }} Clinical Topic</a>
+    <div class="flex flex_row flex_wrap gap_3 items_center">
+      <a href="{{ ct.url }}" class="btn btn-primary btn-sm expanded-click-area" rel="noopener noreferrer" aria-label="Dive deeper into {{ ct.title }} on ACC.org Clinical Topics">Dive Deeper on ACC.org <i class="fas fa-arrow-right p-l_2" aria-hidden="true"></i></a>
+      <a href="{{ cs.hub | relative_url }}" class="btn btn-shade btn-sm expanded-click-area">Explore All Solutions</a>
     </div>
-    {% endif %}
   </div>
+  {% endif %}
 </section>
