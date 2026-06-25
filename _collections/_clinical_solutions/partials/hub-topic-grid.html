@@ -1,0 +1,53 @@
+{% assign cs = site.data.ClinicalSolutions.pages %}
+{% assign groups = site.data.ClinicalSolutions.hub_topics.groups %}
+<section id="Topics" class="scroll-mt_5" aria-labelledby="topics-title">
+  <div data-role="filter-active-banner" class="bg_primary-5 br_radius p_3 p_4:md m-b_4 display_none" aria-live="polite">
+    <p class="m-b_0 flex flex_row flex_wrap gap_2 items_center">
+      <span><i class="fas fa-filter c_primary p-r_2" aria-hidden="true"></i>Showing topics with <strong data-filter-label></strong></span>
+      <span class="font-size_down c_shade-n1">(<span data-filter-count></span> of <span data-filter-total></span>)</span>
+      <button type="button" class="btn btn-shade btn-sm intent-filter-clear m-l_auto">Show all</button>
+    </p>
+  </div>
+
+  <header class="m-b_4">
+    <h2 id="topics-title">Clinical Topics</h2>
+    <p class="m-b_0" data-role="filter-summary" aria-live="polite">
+      <span data-filter-default>Prioritized solution sets with curated guidance, tools, and patient resources for each clinical topic.</span>
+      <span data-filter-active class="display_none">Filtered to topics that include <strong data-filter-label></strong>.</span>
+    </p>
+  </header>
+
+  {% for group in groups %}
+  <div class="m-b_5 topic-group reading-typography" data-topic-group="{{ group.id }}">
+    <h3 class="c_shade-n1 m-b_3">{{ group.title }}</h3>
+    <div class="grid columns_1 columns_2:lg gap_4">
+      {% for topic in group.topics %}
+      {% assign spoke_url = "" %}
+      {% if topic.spoke != "" %}
+        {% assign spoke_url = cs[topic.spoke] | relative_url %}
+      {% endif %}
+      <article
+        class="topic-card bg_white br_1 br_black-3 br_radius br_solid p_4 flex flex_column shadow_bevel-light relative"
+        data-topic-card
+        data-intents="{{ topic.intents | join: ',' }}"
+        {% if spoke_url == "" %}data-topic-unbuilt{% endif %}>
+        <h4 class="m-t_0 m-b_2">{{ topic.title }}</h4>
+        {% if topic.badges.size > 0 %}
+        <div class="flex flex_wrap gap_2 m-b_3" aria-label="Resource types in this solution set">
+          {% for badge in topic.badges %}
+          <span class="bg_black-2 br_radius font-size_down-2 font_bold p-x_2 p-y_1">{{ badge }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+        <p class="m-t_0 flex_1">{{ topic.description }}</p>
+        {% if spoke_url != "" %}
+        <a href="{{ spoke_url }}" class="btn btn-primary btn-sm expanded-click-area m-t_3">View Solution Set</a>
+        {% else %}
+        <span class="btn btn-primary btn-sm disabled m-t_3" aria-disabled="true">View Solution Set</span>
+        {% endif %}
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+  {% endfor %}
+</section>

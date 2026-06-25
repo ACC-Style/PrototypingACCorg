@@ -59,6 +59,9 @@ collections:
   career_path:
     output: true
     permalink: /career-path/:path/
+  clinical_solutions:
+    output: true
+    permalink: /clinical-solutions/:path/
 
 # Exclude from processing.
 

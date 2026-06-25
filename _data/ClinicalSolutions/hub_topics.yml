@@ -1,0 +1,112 @@
+groups:
+  - id: prevention-risk
+    title: Prevention & Risk
+    topics:
+      - key: primary-prevention
+        title: Primary Prevention of CV Disease
+        description: Lifetime risk assessment, lipids, diabetes risk, and lifestyle interventions.
+        spoke: primary-prevention
+        badges: [ECDP, Tools, CardioSmart]
+        intents: [guidance, tools, patient, implementation]
+        clinical_topic_url: https://www.acc.org/Clinical-Topics/Prevention
+        clinical_topic_label: Prevention
+      - key: immunization
+        title: Advancing Adult Immunization
+        description: Immunization standards and vaccination for cardiovascular patients.
+        spoke: ""
+        badges: [Guidance, Tools]
+        intents: [guidance, patient, implementation]
+        clinical_topic_url: https://www.acc.org/Clinical-Topics/Geriatric-Cardiology
+        clinical_topic_label: Geriatric Cardiology
+  - id: heart-failure
+    title: Heart Failure
+    topics:
+      - key: hf-medications
+        title: Medication Management in HF
+        description: GDMT optimization and prescribing gaps in heart failure.
+        spoke: ""
+        badges: [ECDP, Tools]
+        intents: [guidance, tools, patient]
+        clinical_topic_url: https://www.acc.org/Clinical-Topics/Heart-Failure-and-Cardiomyopathies/Chronic-Heart-Failure
+        clinical_topic_label: Chronic Heart Failure
+      - key: hf-hospitalization
+        title: Optimization of Hospitalization for HF
+        description: Inpatient and transition-of-care pathways for heart failure.
+        spoke: ""
+        badges: [ECDP, Policy]
+        intents: [guidance, implementation]
+        clinical_topic_url: https://www.acc.org/Clinical-Topics/Heart-Failure-and-Cardiomyopathies/Acute-Heart-Failure
+        clinical_topic_label: Acute Heart Failure
+  - id: structural
+    title: Structural Heart & Cardiomyopathy
+    topics:
+      - key: valve-disease
+        title: Procedural Intervention in Valve Disease
+        description: TAVR, TMVR, and valve intervention decisions.
+        spoke: ""
+        badges: [ECDP, AUC, Tools]
+        intents: [guidance, tools]
+        clinical_topic_url: https://www.acc.org/Clinical-Topics/Valvular-Heart-Disease
+        clinical_topic_label: Valvular Heart Disease
+      - key: hcm
+        title: HCM
+        description: Diagnosis and management of hypertrophic cardiomyopathy.
+        spoke: ""
+        badges: [Tools, CardioSmart]
+        intents: [guidance, tools, patient]
+        clinical_topic_url: https://www.acc.org/Clinical-Topics/Heart-Failure-and-Cardiomyopathies
+        clinical_topic_label: Heart Failure and Cardiomyopathies
+      - key: amyloidosis
+        title: Cardiac Amyloidosis
+        description: Detection, typing, and treatment pathways.
+        spoke: ""
+        badges: [ECDP, CCG]
+        intents: [guidance, patient]
+        clinical_topic_url: https://www.acc.org/Clinical-Topics/Heart-Failure-and-Cardiomyopathies
+        clinical_topic_label: Heart Failure and Cardiomyopathies
+  - id: coronary-antithrombotic
+    title: Coronary & Antithrombotic Care
+    topics:
+      - key: chronic-coronary
+        title: Chronic Coronary Disease
+        description: Diagnosis and initial treatment of chronic coronary artery disease.
+        spoke: chronic-coronary
+        badges: [AUC, CardioSmart]
+        intents: [guidance, patient]
+        clinical_topic_url: https://www.acc.org/Clinical-Topics/Stable-Ischemic-Heart-Disease
+        clinical_topic_label: Stable Ischemic Heart Disease
+      - key: anticoagulation
+        title: Anticoagulation / Antithrombotic Therapy
+        description: Peri-procedural and long-term antithrombotic management.
+        spoke: ""
+        badges: [ECDP, Tools]
+        intents: [guidance, tools, patient]
+        clinical_topic_url: https://www.acc.org/Clinical-Topics/Anticoagulation-Management
+        clinical_topic_label: Anticoagulation Management
+  - id: systems-emerging
+    title: Systems & Emerging Areas
+    topics:
+      - key: systems-of-care
+        title: Systems of Care
+        description: Team-based cardiovascular intervention models.
+        spoke: ""
+        badges: [Policy, Implementation]
+        intents: [implementation, guidance]
+        clinical_topic_url: https://www.acc.org/Clinical-Topics/Cardiovascular-Care-Team
+        clinical_topic_label: Cardiovascular Care Team
+      - key: covid-cvd
+        title: COVID-19 in Patients With CVD
+        description: Cardiovascular considerations in COVID-19 management.
+        spoke: ""
+        badges: [ECDP, Policy]
+        intents: [guidance, implementation]
+        clinical_topic_url: https://www.acc.org/Clinical-Topics/COVID-19-Hub
+        clinical_topic_label: COVID-19 Hub
+      - key: additional-topics
+        title: Additional Topics
+        description: Maternal CV care, myocarditis, imaging AUC, and more.
+        spoke: ""
+        badges: [ECDP, AUC]
+        intents: [guidance]
+        clinical_topic_url: https://www.acc.org/Clinical-Topics
+        clinical_topic_label: Clinical Topics

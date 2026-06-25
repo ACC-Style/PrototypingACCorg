@@ -1,0 +1,14 @@
+<div label="CTA_follow_up" class="reading-typography p_4 p_5:md p-y_5:md p-y_6:lg">
+  <div data-item="cta" class="p_4 p-t_6 p-x_5:lg bg_white br-t_1 br_solid br_primary-1 m-t_6:lg m-y_4 m-y_5:md m_auto max-w_60 relative text_center">
+    <h2 data-item="cta-title" class="m-b_3 lh_1">{{ include.title }}</h2>
+    {% if include.description != "" %}
+    <p data-item="paragraph" class="wrap_balance m-b_0">{{ include.description }}</p>
+    {% endif %}
+    <div class="flex flex_row flex_wrap gap_4 gap_5:lg items_center justify_center m-t_4" data-item="cta-buttons">
+      <a href="{{ include.primary_url }}" data-item="cta-button" class="btn btn-primary capitalize wrap wrap_balanced btn-lg expanded-click-area" rel="noopener noreferrer">{{ include.primary_text }}</a>
+      {% if include.secondary_url %}
+      <a href="{{ include.secondary_url }}" data-item="cta-button" class="btn btn-shade capitalize wrap wrap_balanced btn-lg" rel="noopener noreferrer">{{ include.secondary_text }}</a>
+      {% endif %}
+    </div>
+  </div>
+</div>

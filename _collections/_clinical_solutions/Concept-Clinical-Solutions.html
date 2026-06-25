@@ -1,0 +1,135 @@
+---
+layout: arches-clinical-solutions
+name: "Concept Clinical Solutions Hub"
+position: "Concept Refactor"
+masthead: "empty.html"
+notes: >-
+  Refactored hub for Clinical Solutions. Strategy: hub & spoke + intent fork.
+  See Clinical-Solutions/content-collection.md for IA and Clinical Topics mapping.
+---
+
+{% assign cs = site.data.ClinicalSolutions.pages %}
+{% capture topics_cta %}{{ cs.hub | relative_url }}#Topics{% endcapture %}
+{%
+  include MicroSite/heroimage.dynamic.html
+  parent_link="https://www.acc.org/Tools-and-Practice-Support"
+  parent_page="Tools &amp; Practice Support"
+  hero_image_base="Dynamic"
+  hero_image_alt="Clinical solutions for everyday practice"
+  hero_title="Clinical Solutions for Everyday Practice"
+  cta_title="Browse by Topic"
+  cta_description="Practical, evidence-based resources ACC prioritizes to close care gaps — organized by clinical topic and resource type."
+  cta_link=topics_cta
+  cta_button_text="Browse Topics"
+%}
+
+<section zone-label="startingSection" class="grid columns_1 columns_3:md columns_5:lg p_4 gap_5:lg gap_4 m-b_4:md">
+  <main zone-label="introduction" style="--custom-font-size-up: 1;" class="reading-typography font-size_up p-l_4:lg max-w_65 p-t_5:lg p-t_4 col-start_start col-end_end col-end_n2:md col-end_n3:lg">
+    <h2 class="lh_2 m-b_4">
+      Implementation Resources for Everyday Practice
+      <small class="block">Curated solution sets — separate from dynamic Clinical Topics hubs.</small>
+    </h2>
+    <p>
+      ACC selects high-value clinical topics and builds coordinated outputs: expert consensus pathways, appropriate use criteria, clinician tools, CardioSmart patient resources, and Heart House roundtables. Use this hub when you need actionable materials for a specific care problem.
+    </p>
+  </main>
+  {%- include_relative partials/hub-member-section-cta.html -%}
+</section>
+
+<div class="p_4 p-y_5:lg isolation_isolate reading-typography">
+  {%- include_relative partials/hub-layout-open.html -%}
+  {%- include_relative partials/hub-topic-grid.html -%}
+  {%- include_relative partials/hub-layout-close.html -%}
+
+  <section id="About" class="reading-typography wrapper-container m-b_5 p-x_4 p-x_5:lg scroll-mt_5 max-w_65" aria-labelledby="about-title">
+    <h2 id="about-title">How ACC Builds Clinical Solutions</h2>
+    <p>ACC selects high-value topics and develops coordinated outputs — including Heart House roundtables, ECDPs, AUC, decision support, and clinician and patient tools — to transform cardiovascular care.</p>
+    <p class="m-b_0">
+      <a href="https://www.jacc.org/doi/10.1016/j.jacc.2025.01.006" class="link_icons" target="_blank" rel="noopener noreferrer">
+        Empowering the Profession — The ACC&rsquo;s Commitment to Cutting-Edge Clinical Guidance <i class="fas fa-external-link-square" aria-hidden="true"></i>
+      </a>
+    </p>
+  </section>
+
+  {%- include_relative partials/hub-clinical-topics-escape.html -%}
+</div>
+
+<style>
+  .topic-card[data-topic-unbuilt] { opacity: 0.72; }
+  .topic-card.is-filtered-out { display: none !important; }
+  .topic-group.is-filter-empty { display: none !important; }
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const filterButtons = document.querySelectorAll(".intent-filter-btn");
+  const topicCards = document.querySelectorAll("[data-topic-card]");
+  const topicGroups = document.querySelectorAll("[data-topic-group]");
+  const totalCount = topicCards.length;
+
+  const setPressed = (activeBtn) => {
+    filterButtons.forEach((btn) => {
+      const isActive = btn === activeBtn;
+      btn.classList.toggle("active", isActive);
+      btn.classList.toggle("br_accent-n1", isActive);
+      btn.classList.toggle("br_black-3", !isActive);
+      btn.setAttribute("aria-pressed", isActive ? "true" : "false");
+    });
+  };
+
+  const updateFilterUI = (intent, label, visibleCount) => {
+    const isAll = intent === "all";
+    document.querySelectorAll("[data-filter-default]").forEach((el) => el.classList.toggle("display_none", !isAll));
+    document.querySelectorAll("[data-filter-active]").forEach((el) => {
+      el.classList.toggle("display_none", isAll);
+      const labelEl = el.querySelector("[data-filter-label]");
+      if (labelEl) labelEl.textContent = label;
+    });
+    document.querySelectorAll("[data-role='filter-active-banner']").forEach((banner) => {
+      banner.classList.toggle("display_none", isAll);
+      const labelEl = banner.querySelector("[data-filter-label]");
+      const countEl = banner.querySelector("[data-filter-count]");
+      const totalEl = banner.querySelector("[data-filter-total]");
+      if (labelEl) labelEl.textContent = label;
+      if (countEl) countEl.textContent = visibleCount;
+      if (totalEl) totalEl.textContent = totalCount;
+    });
+  };
+
+  const applyFilter = (intent, label, activeBtn) => {
+    let visibleCount = 0;
+    setPressed(activeBtn);
+
+    topicCards.forEach((card) => {
+      if (intent === "all") {
+        card.classList.remove("is-filtered-out");
+        visibleCount += 1;
+        return;
+      }
+      const intents = (card.dataset.intents || "").split(",");
+      const show = intents.includes(intent);
+      card.classList.toggle("is-filtered-out", !show);
+      if (show) visibleCount += 1;
+    });
+
+    topicGroups.forEach((group) => {
+      const visibleInGroup = group.querySelectorAll("[data-topic-card]:not(.is-filtered-out)").length;
+      group.classList.toggle("is-filter-empty", visibleInGroup === 0);
+    });
+
+    updateFilterUI(intent, label, visibleCount);
+  };
+
+  filterButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      applyFilter(btn.dataset.intentFilter, btn.dataset.intentLabel, btn);
+    });
+  });
+
+  document.querySelectorAll(".intent-filter-clear").forEach((clearBtn) => {
+    clearBtn.addEventListener("click", () => {
+      const allBtn = document.querySelector('[data-intent-filter="all"]');
+      if (allBtn) allBtn.click();
+    });
+  });
+});
+</script>

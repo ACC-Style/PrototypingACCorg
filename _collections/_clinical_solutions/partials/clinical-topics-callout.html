@@ -1,0 +1,20 @@
+{% assign topic_key = page.topic_key %}
+{% if topic_key %}
+{% assign topic = site.data.ClinicalSolutions.spokes[topic_key] %}
+{% assign ct = topic.clinical_topic %}
+{% if ct %}
+<div data-component="clinical-topics-callout" class=" m-t_4:md m-x_4 bg_secondary-n2 br_round c_white color_inherit shadow_bevel-bold p_4 reading-typography flex flex_column gap_3">
+  <h3 class="m-t_3"><small class="font-size_down-2 block opacity_7">Explore the Broader Topic</small> {{ ct.title }} Clinical Topic</h3>
+  <p class="">{{ ct.description }}</p>
+  {% if ct.secondary %}
+  <p class="font-size_down-1 opacity_7 font_italic">
+    Also see:
+    {% for link in ct.secondary %}
+    <a href="{{ link.url }}" class="c_white h:c_white h:underline" rel="noopener noreferrer">{{ link.label }}</a>{% unless forloop.last %}, {% endunless %}
+    {% endfor %}
+  </p>
+  {% endif %}
+  <a href="{{ ct.url }}" class="btn btn-shade btn-sm w_100 font_bold" rel="noopener noreferrer" aria-label="Explore {{ ct.title }} Clinical Topic on ACC.org">Explore Topic <i class="fas fa-arrow-right p-l_2" aria-hidden="true"></i></a>
+</div>
+{% endif %}
+{% endif %}

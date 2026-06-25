@@ -1,0 +1,55 @@
+{% assign filter_btn = "intent-filter-btn w_100 text_left br_radius p_3 flex flex_row gap_3 items_start bg_white br_1 br_solid br_black-3 shadow_bevel-light c_primary h:bg_accent-5 h:br_accent-n1 a:bg_accent-4" %}
+{% assign filter_icon = "c_accent-n1 font_3 flex_none m-t_1" %}
+<div class="sticky t_3 z_1 min-w_0">
+  <nav data-component="intent-fork" class="reading-typography bg_black-1 br_radius p_4 shadow_bevel-light" aria-labelledby="what-you-need-title">
+    <h2 id="what-you-need-title" class="font-size_down font_bold m-t_0 m-b_1">Filter Topics</h2>
+    <p class="font-size_down c_shade-n1 m-b_3 m-t_0">Show solution sets by resource type.</p>
+    <ul class="ul_none flex flex_column gap_2 m-b_0">
+      <li>
+        <button type="button" class="{{ filter_btn }} br_accent-n1 active" data-intent-filter="all" data-intent-label="All Resources" aria-pressed="true">
+          <i class="{{ filter_icon }} far fa-border-all" aria-hidden="true"></i>
+          <span>
+            <span class="display_block font_bold lh_1 m-b_1">All Resources</span>
+            <span class="display_block font-size_down c_shade-n1 m-t_0">Every clinical topic</span>
+          </span>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="{{ filter_btn }}" data-intent-filter="guidance" data-intent-label="Clinical Guidance" aria-pressed="false">
+          <i class="{{ filter_icon }} far fa-book-medical" aria-hidden="true"></i>
+          <span>
+            <span class="display_block font_bold lh_1 m-b_1">Clinical Guidance</span>
+            <span class="display_block font-size_down c_shade-n1 m-t_0">ECDPs, AUC, and policy statements</span>
+          </span>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="{{ filter_btn }}" data-intent-filter="tools" data-intent-label="Point-of-Care Tools" aria-pressed="false">
+          <i class="{{ filter_icon }} far fa-mobile-alt" aria-hidden="true"></i>
+          <span>
+            <span class="display_block font_bold lh_1 m-b_1">Point-of-Care Tools</span>
+            <span class="display_block font-size_down c_shade-n1 m-t_0">Apps, calculators, and pocket guides</span>
+          </span>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="{{ filter_btn }}" data-intent-filter="patient" data-intent-label="Patient Resources" aria-pressed="false">
+          <i class="{{ filter_icon }} far fa-user-injured" aria-hidden="true"></i>
+          <span>
+            <span class="display_block font_bold lh_1 m-b_1">Patient Resources</span>
+            <span class="display_block font-size_down c_shade-n1 m-t_0">CardioSmart handouts and action plans</span>
+          </span>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="{{ filter_btn }}" data-intent-filter="implementation" data-intent-label="Implementation Support" aria-pressed="false">
+          <i class="{{ filter_icon }} far fa-users" aria-hidden="true"></i>
+          <span>
+            <span class="display_block font_bold lh_1 m-b_1">Implementation Support</span>
+            <span class="display_block font-size_down c_shade-n1 m-t_0">Roundtables and systems-of-care documents</span>
+          </span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+</div>

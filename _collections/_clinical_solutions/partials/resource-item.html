@@ -1,0 +1,32 @@
+{% assign res = include.res %}
+<li class="p-y_3 {% unless forloop.last %}br-b_1 br_black-2 br_solid{% endunless %}">
+  <div class="flex flex_column flex_row:md gap_2 items_start justify_between">
+    <div class="flex_1">
+      {% if res.url %}
+      <a href="{{ res.url }}" class="font_bold h:undecorated h:underline link_icons" {% if res.format == 'external' or res.format == 'journal' %}rel="noopener noreferrer" target="_blank"{% endif %}>
+        {{ res.title }}
+        {% if res.format == 'external' or res.format == 'journal' %}<i class="fas fa-external-link-square font-size_down p-l_1" aria-hidden="true"></i>{% endif %}
+      </a>
+      {% else %}
+      <span class="font_bold">{{ res.title }}</span>
+      {% endif %}
+      {% if res.note %}
+      <span class="block font-size_down c_shade-n1 m-t_1">{{ res.note }}</span>
+      {% endif %}
+      {% if res.supplement %}
+      <span class="block font-size_down m-t_1">
+        <a href="{{ res.supplement.url }}" class="link_icons" target="_blank" rel="noopener noreferrer">{{ res.supplement.label }} <i class="fas fa-file-pdf" aria-hidden="true"></i></a>
+      </span>
+      {% endif %}
+    </div>
+    <div class="flex flex_row flex_none gap_2 items_center font-size_down c_shade-n1">
+      {% if res.year %}<span class="bg_black-2 br_radius p-x_2 p-y_1">{{ res.year }}</span>{% endif %}
+      {% case res.format %}
+      {% when 'journal' %}<span title="Journal article"><i class="fas fa-book-medical" aria-hidden="true"></i><span class="sr-only">Journal</span></span>
+      {% when 'pdf' %}<span title="PDF"><i class="fas fa-file-pdf" aria-hidden="true"></i><span class="sr-only">PDF</span></span>
+      {% when 'app' %}<span title="Mobile app"><i class="fas fa-mobile-alt" aria-hidden="true"></i><span class="sr-only">App</span></span>
+      {% when 'external' %}<span title="External resource"><i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="sr-only">External</span></span>
+      {% endcase %}
+    </div>
+  </div>
+</li>

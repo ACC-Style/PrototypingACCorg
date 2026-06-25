@@ -1,0 +1,17 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const links = document.querySelectorAll(".topic-jump-link");
+  const sections = [...links].map((a) => document.getElementById(a.dataset.section)).filter(Boolean);
+  if (!sections.length) return;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      links.forEach((link) => {
+        const active = link.dataset.section === entry.target.id;
+        link.classList.toggle("bg_accent-5", active);
+        link.classList.toggle("is-current", active);
+        link.setAttribute("aria-current", active ? "true" : "false");
+      });
+    });
+  }, { rootMargin: "-15% 0px -55% 0px", threshold: 0 });
+  sections.forEach((section) => observer.observe(section));
+});

@@ -1,0 +1,151 @@
+title: Primary Prevention of CV Disease
+compact: false
+intro: Cardiovascular prevention works best when risk is found early and managed over a lifetime. This solution set helps clinicians assess risk, start the right therapies, and coordinate team-based prevention.
+goals:
+  - Guide early risk assessment and interventions with lifetime benefit in mind
+  - Support team-based prevention that lowers cumulative risk
+  - Promote equitable cardiovascular health across the lifespan
+clinical_topic:
+  title: Prevention
+  url: https://www.acc.org/Clinical-Topics/Prevention
+  description: Stay current on prevention — guidelines, JACC articles, education, and news, updated as ACC publishes.
+  secondary:
+    - label: Dyslipidemia
+      url: https://www.acc.org/Clinical-Topics/Dyslipidemia
+    - label: Diabetes and Cardiometabolic Disease
+      url: https://www.acc.org/Clinical-Topics/Diabetes-and-Cardiometabolic-Disease
+related_spokes:
+  - key: anticoagulation
+    title: Anticoagulation / Antithrombotic Therapy
+  - key: immunization
+    title: Advancing Adult Immunization
+sections:
+  - id: guidance
+    title: Clinical Guidance
+    collapse_after: 6
+    resources:
+      - title: Non-Statin Therapies For LDL-Cholesterol Lowering in the Management of ASCVD Risk
+        year: 2022
+        format: journal
+        url: https://www.jacc.org/doi/10.1016/j.jacc.2022.07.006
+      - title: Management of ASCVD Risk Reduction in Patients With Persistent Hypertriglyceridemia
+        year: 2021
+        format: journal
+        url: https://www.jacc.org/doi/10.1016/j.jacc.2021.06.011
+      - title: Novel Therapies for CV Risk Reductions in Patients with Type 2 Diabetes
+        year: 2020
+        format: journal
+        url: https://www.jacc.org/doi/10.1016/j.jacc.2020.05.037
+      - title: Tobacco Cessation Treatment
+        year: 2018
+        format: journal
+        url: https://www.jacc.org/doi/10.1016/j.jacc.2018.10.027
+      - title: Nutrition Food Labeling as a Catalyst for Cardiovascular Health
+        year: 2025
+        format: journal
+        url: https://www.jacc.org/doi/10.1016/j.jacc.2025.11.003
+        supplement:
+          label: Key Takeaways
+          url: https://www.acc.org/-/media/Non-Clinical/Files-PDFs-Excel-MS-Word-etc/Tools-and-Practice-Support/Clinical-Solutions/2026/B26025-Nutrition-CCG-Key-Takeaways.pdf
+          format: pdf
+      - title: Medical Weight Management for Optimization of Cardiovascular Health
+        year: 2025
+        format: journal
+        url: https://www.jacc.org/doi/10.1016/j.jacc.2025.05.024
+  - id: tools
+    title: Point-of-Care Tools
+    collapse_after: 8
+    resources:
+      - title: Statin Intolerance App
+        format: app
+        url: https://www.acc.org/Tools-and-Practice-Support/Mobile-Resources/Features/Statin-Intolerance-App
+      - title: Nonstatin Pocket Guide
+        format: pdf
+        url: https://www.acc.org/Tools-and-Practice-Support/Features/Clinical-Solutions/Medication-Management-of-Lipids/Nonstatin-Pocket-Guide
+      - title: Lipid Manager
+        format: app
+        url: https://www.acc.org/tools-and-practice-support/mobile-resources/features/ldl-c-manager
+      - title: ASCVD Risk Estimator Plus
+        format: app
+        url: https://www.acc.org/Tools-and-Practice-Support/Mobile-Resources/Features/2013-Prevention-Guidelines-ASCVD-Risk-Estimator
+      - title: Multilingual ASCVD Risk Estimator
+        format: app
+        url: https://www.acc.org/Tools-and-Practice-Support/Mobile-Resources/Features/Multilingual-ASCVD-Risk-Estimator
+      - title: Guidance For Initiating and Monitoring SGLT2 Inhibitors and GLP-1RAs
+        year: 2018
+        format: pdf
+        url: https://www.acc.org/-/media/Non-Clinical/Files-PDFs-Excel-MS-Word-etc/Guidelines/2018/KeyConsidforGLP1RAsandSGLT2is.pdf
+      - title: Tobacco Cessation for Patients with Cardiovascular Disease
+        format: pdf
+        url: https://www.acc.org/-/media/Non-Clinical/Files-PDFs-Excel-MS-Word-etc/Guidelines/2018/Tobacco-Cessation-Clinician-ToolFINAL112918.pdf
+      - title: 6 Steps for Optimizing Cardiovascular Risk Reduction Among Patients With Diabetes
+        format: external
+        url: https://www.cardiosmart.org/assets/discussion-guide/6-steps-for-optimizing-cardiovascular-risk-reduction-among-patients-with-diabetes
+  - id: patient
+    title: Patient Resources
+    collapse_after: 6
+    resources:
+      - title: My Plan for Starting a PCSK9 Inhibitor
+        format: external
+        url: https://www.cardiosmart.org/topics/high-cholesterol/assets/action-plan/my-plan-for-starting-a-pcsk9-inhibitor
+        note: CardioSmart action plan
+      - title: Lower your bad cholesterol and protect your heart
+        format: external
+        url: https://www.cardiosmart.org/topics/high-cholesterol/assets/infographic/lower-your-bad-cholesterol-to-protect-your-heart
+        note: Infographic
+      - title: Your action plan for lowering LDL-cholesterol and related heart risks
+        format: external
+        url: https://www.cardiosmart.org/topics/high-cholesterol/assets/action-plan/your-action-plan-for-lowering-ldl-cholesterol-and-related-heart-risks
+      - title: Assessing your heart health
+        format: external
+        url: https://www.cardiosmart.org/topics/high-cholesterol/assets/worksheet/high-cholesterol-assessing-your-heart-health
+      - title: Your Action Plan for Managing Diabetes and Protecting Your Heart
+        format: external
+        url: https://www.cardiosmart.org/topics/diabetes-and-your-heart/assets/action-plan/your-action-plan-for-managing-diabetes-and-protecting-your-heart
+      - title: 10 Steps to Lower Your Chance of Diabetes-Related Heart Problems
+        format: external
+        url: https://www.cardiosmart.org/topics/diabetes-and-your-heart/assets/worksheet/10-steps-to-lower-your-chance-of-diabetes-related-heart-problems
+      - title: Healthy Habits Protect Your Heart
+        format: external
+        url: https://www.cardiosmart.org/assets/fact-sheet/healthy-habits-protect-your-heart
+      - title: Patient Voices — Managing High Cholesterol (video series)
+        format: external
+        url: https://www.cardiosmart.org/topics/high-cholesterol/patient-voices-managing-high-cholesterol
+  - id: implementation
+    title: Implementation & Policy
+    collapse_after: 4
+    resources:
+      - title: Advanced Cardiovascular Risk Detection for the Critical Decades
+        year: 2025
+        format: pdf
+        url: https://www.acc.org/-/media/Non-Clinical/Files-PDFs-Excel-MS-Word-etc/Tools-and-Practice-Support/Quality-Programs/PRIME-Heart-Roundtable/B26007-PRIME-Heart-Roundtable-Takeaways.pdf
+        note: Heart House Roundtable
+      - title: From Pressure to Problems — Navigating the Impact of Hypertension on CVD
+        year: 2024
+        format: pdf
+        url: https://www.acc.org/-/media/Non-Clinical/Files-PDFs-Excel-MS-Word-etc/Tools-and-Practice-Support/Quality-Programs/Roundtables-Key-Takeaways/B24127-Hypertension-Roundtable-Key-Takeaways.pdf
+        note: Heart House Roundtable
+      - title: Risk to Resilience — Addressing Weight Management in CV Care
+        year: 2024
+        format: pdf
+        url: https://www.acc.org/-/media/Non-Clinical/Files-PDFs-Excel-MS-Word-etc/Tools-and-Practice-Support/Quality-Programs/Roundtables-Key-Takeaways/B24126-Weight-Mgmt-Roundtable-Key-Takeaways.pdf
+        note: Heart House Roundtable
+      - title: LDL-C Lowering Therapies — The Changing Lipid Landscape
+        year: 2020
+        format: pdf
+        note: Heart House Roundtable
+      - title: LDL & Beyond — Emerging Management Strategies for Patients with Dyslipidemia
+        year: 2019
+        format: pdf
+        note: Heart House Roundtable
+      - title: Managing CV Disease Risk in Diabetes
+        year: 2017
+        format: pdf
+        note: Heart House Patient Forum
+  - id: other
+    title: Other Resources
+    resources:
+      - title: Empowering the Profession — The ACC's Commitment to Cutting-Edge Clinical Guidance
+        year: 2025
+        format: journal
+        url: https://www.jacc.org/doi/10.1016/j.jacc.2025.01.006

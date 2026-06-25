@@ -1,0 +1,31 @@
+{% assign topic_key = page.topic_key %}
+{% assign topic = site.data.ClinicalSolutions.spokes[topic_key] %}
+{% assign cs = site.data.ClinicalSolutions.pages %}
+<section class="reading-typography wrapper-container m-b_5 p-x_4 p-x_5:lg" aria-labelledby="related-topics-title">
+  <h2 id="related-topics-title" class="m-b_4">Related Content</h2>
+  <div class="grid columns_1 columns_2:lg gap_4">
+    <div>
+      <h3 class="m-b_3">Other Solution Sets</h3>
+      <ul class="ul_none gap_3 grid">
+        {% for rel in topic.related_spokes %}
+        {% assign rel_url = cs[rel.key] %}
+        <li class="bg_black-1 br_radius p_3">
+          {% if rel_url %}
+          <a href="{{ rel_url | relative_url }}" class="font_bold h:undecorated h:underline">{{ rel.title }}</a>
+          {% else %}
+          <span class="font_bold c_shade-n1">{{ rel.title }}</span>
+          <span class="block font-size_down">Coming soon</span>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% if topic.clinical_topic %}
+    <div>
+      <h3 class="m-b_3">Clinical Topics on ACC.org</h3>
+      <p class="m-t_0">For guidelines, education, JACC articles, and news that update automatically:</p>
+      <a href="{{ topic.clinical_topic.url }}" class="btn btn-shade" rel="noopener noreferrer">{{ topic.clinical_topic.title }} Clinical Topic</a>
+    </div>
+    {% endif %}
+  </div>
+</section>

@@ -1,0 +1,26 @@
+sidebarRoot: Clinical Solutions
+sidebarRootURL: /clinical-solutions/Concept-Clinical-Solutions/
+items:
+  - key: primary-prevention
+    label: Primary Prevention
+    url: /clinical-solutions/Concept-Clinical-Solutions-Primary-Prevention/
+    children:
+      - key: guidance
+        label: Clinical Guidance
+        url: /clinical-solutions/Concept-Clinical-Solutions-Primary-Prevention/
+        anchor: guidance
+      - key: tools
+        label: Point-of-Care Tools
+        url: /clinical-solutions/Concept-Clinical-Solutions-Primary-Prevention/
+        anchor: tools
+      - key: patient
+        label: Patient Resources
+        url: /clinical-solutions/Concept-Clinical-Solutions-Primary-Prevention/
+        anchor: patient
+      - key: implementation
+        label: Implementation
+        url: /clinical-solutions/Concept-Clinical-Solutions-Primary-Prevention/
+        anchor: implementation
+  - key: chronic-coronary
+    label: Chronic Coronary Disease
+    url: /clinical-solutions/Concept-Clinical-Solutions-Chronic-Coronary/

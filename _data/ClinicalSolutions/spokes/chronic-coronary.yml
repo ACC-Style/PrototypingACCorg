@@ -1,0 +1,40 @@
+title: Chronic Coronary Disease
+compact: true
+intro: Chronic coronary disease requires clear diagnosis and evidence-based initial treatment. This lean solution set points to appropriate use criteria and patient education for stable ischemic presentations.
+goals:
+  - Support appropriate imaging use in chronic coronary disease
+  - Connect clinicians to patient-facing CAD education
+clinical_topic:
+  title: Stable Ischemic Heart Disease
+  url: https://www.acc.org/Clinical-Topics/Stable-Ischemic-Heart-Disease
+  description: Browse guidelines, JACC coverage, education, and latest news on stable ischemic heart disease — updated dynamically on ACC.org.
+  secondary:
+    - label: Chronic Angina
+      url: https://www.acc.org/Clinical-Topics/Stable-Ischemic-Heart-Disease/Chronic-Angina
+    - label: Interventions and Coronary Artery Disease
+      url: https://www.acc.org/Clinical-Topics/Invasive-Cardiovascular-Angiography-and-Intervention/Interventions-and-Coronary-Artery-Disease
+related_spokes:
+  - key: primary-prevention
+    title: Primary Prevention of CV Disease
+  - key: anticoagulation
+    title: Anticoagulation / Antithrombotic Therapy
+sections:
+  - id: guidance
+    title: Clinical Guidance
+    resources:
+      - title: Multimodality Imaging in Chronic Coronary Disease
+        year: 2023
+        format: journal
+        url: https://www.jacc.org/doi/10.1016/j.jacc.2023.03.410
+        note: Appropriate Use Criteria
+  - id: patient
+    title: Patient Resources
+    resources:
+      - title: Coronary Artery Disease Patient Hub
+        format: external
+        url: https://www.cardiosmart.org/topics/coronary-artery-disease
+        note: CardioSmart
+      - title: Coronary Artery Disease Infographic
+        format: external
+        url: https://www.cardiosmart.org/topics/coronary-artery-disease/assets/infographic/coronary-artery-disease
+        note: CardioSmart
