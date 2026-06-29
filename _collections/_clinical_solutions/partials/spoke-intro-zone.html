@@ -2,6 +2,7 @@
 {% assign topic = site.data.ClinicalSolutions.spokes[topic_key] %}
 {% assign cs = site.data.ClinicalSolutions.pages %}
 
+<div class="spoke-content-zone relative isolation_isolate" data-component="spoke-content-zone">
 <section zone-label="spokeIntro" class="grid columns_1 columns_3:md columns_5:lg gap_5:lg gap_4 m-b_5 m-b_6:lg">
   <main zone-label="introduction" class="reading-typography col-start_start col-end_end col-end_n2:md col-end_n3:lg">
     <h1 class="m-b_3">{{ topic.title }}</h1>
@@ -24,7 +25,7 @@
 
   <aside zone-label="jumpSidebar" class="col-end_end col-start_start col-start_n2:md col-start_n3:lg min-w_0">
     <div class="sticky t_3 gap_4 grid z_1 min-w_0">
-      <nav class="reading-typography bg_white br_1 br_black-3 br_radius br_solid shadow_bevel-light p_4" aria-labelledby="spoke-jump-title">
+      <nav id="spoke-jump-nav" class="reading-typography bg_white br_1 br_black-3 br_radius br_solid shadow_bevel-light p_4" aria-labelledby="spoke-jump-title">
         <h2 id="spoke-jump-title" class="m-t_0 m-b_3">On This Page</h2>
         <ul class="ul_none gap_2 grid m-b_3">
           {% for section in topic.sections %}

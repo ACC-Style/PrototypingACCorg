@@ -17,6 +17,12 @@ member_section:
   title: Prevention of Cardiovascular Disease Section
   url: https://www.acc.org/Membership/Sections-and-Councils/Prevention-of-Cardiovascular-Disease-Section
   description: The best insight often comes from peers — see how others put prevention into practice.
+guideline:
+  title: Primary Prevention
+  full_title: 2019 ACC/AHA Guideline on the Primary Prevention of Cardiovascular Disease
+  year: 2019
+  url: https://www.jacc.org/doi/10.1016/j.jacc.2019.03.010
+  hub_url: https://www.acc.org/Guidelines
 related_spokes:
   - key: anticoagulation
     title: Anticoagulation / Antithrombotic Therapy
@@ -29,22 +35,27 @@ sections:
     resources:
       - title: Non-Statin Therapies For LDL-Cholesterol Lowering in the Management of ASCVD Risk
         year: 2022
+        doc_type: ecdp
         format: journal
         url: https://www.jacc.org/doi/10.1016/j.jacc.2022.07.006
       - title: Management of ASCVD Risk Reduction in Patients With Persistent Hypertriglyceridemia
         year: 2021
+        doc_type: ecdp
         format: journal
         url: https://www.jacc.org/doi/10.1016/j.jacc.2021.06.011
       - title: Novel Therapies for CV Risk Reductions in Patients with Type 2 Diabetes
         year: 2020
+        doc_type: ecdp
         format: journal
         url: https://www.jacc.org/doi/10.1016/j.jacc.2020.05.037
       - title: Tobacco Cessation Treatment
         year: 2018
+        doc_type: ecdp
         format: journal
         url: https://www.jacc.org/doi/10.1016/j.jacc.2018.10.027
       - title: Nutrition Food Labeling as a Catalyst for Cardiovascular Health
         year: 2025
+        doc_type: ccg
         format: journal
         url: https://www.jacc.org/doi/10.1016/j.jacc.2025.11.003
         supplement:
@@ -53,6 +64,7 @@ sections:
           format: pdf
       - title: Medical Weight Management for Optimization of Cardiovascular Health
         year: 2025
+        doc_type: ccg
         format: journal
         url: https://www.jacc.org/doi/10.1016/j.jacc.2025.05.024
   - id: tools

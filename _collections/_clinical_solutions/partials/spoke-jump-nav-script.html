@@ -1,17 +1,42 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const links = document.querySelectorAll(".topic-jump-link");
-  const sections = [...links].map((a) => document.getElementById(a.dataset.section)).filter(Boolean);
+  const sidebarLinks = document.querySelectorAll("#spoke-jump-nav .topic-jump-link");
+  const compactLinks = document.querySelectorAll("#spoke-sticky-jump-nav .topic-jump-link");
+  const allLinks = document.querySelectorAll(".topic-jump-link");
+  const sections = [...allLinks]
+    .map((a) => document.getElementById(a.dataset.section))
+    .filter((value, index, array) => value && array.indexOf(value) === index);
+
   if (!sections.length) return;
-  const observer = new IntersectionObserver((entries) => {
+
+  const setActive = (sectionId) => {
+    sidebarLinks.forEach((link) => {
+      const active = link.dataset.section === sectionId;
+      link.classList.toggle("bg_accent-5", active);
+      link.classList.toggle("is-current", active);
+      link.setAttribute("aria-current", active ? "location" : "false");
+    });
+    compactLinks.forEach((link) => {
+      const active = link.dataset.section === sectionId;
+      link.classList.toggle("active", active);
+      link.setAttribute("aria-current", active ? "true" : "false");
+    });
+  };
+
+  const sectionObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
-      links.forEach((link) => {
-        const active = link.dataset.section === entry.target.id;
-        link.classList.toggle("bg_accent-5", active);
-        link.classList.toggle("is-current", active);
-        link.setAttribute("aria-current", active ? "true" : "false");
-      });
+      setActive(entry.target.id);
     });
-  }, { rootMargin: "-15% 0px -55% 0px", threshold: 0 });
-  sections.forEach((section) => observer.observe(section));
+  }, { root: null, rootMargin: "-80px 0px 0px -80px", threshold: 0 });
+  sections.forEach((section) => sectionObserver.observe(section));
+
+  const nav = document.getElementById("spoke-sticky-jump-nav");
+  const navGone = document.getElementById("spoke-anchor-nav-gone");
+  if (!nav || !navGone) return;
+
+  new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      nav.classList.toggle("display_none", entry.isIntersecting);
+    });
+  }, { root: null, rootMargin: "-80px 0px 0px 0px", threshold: 0 }).observe(navGone);
 });

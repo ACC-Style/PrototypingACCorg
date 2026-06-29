@@ -1,0 +1,19 @@
+{% assign g = include.guideline %}
+{% assign types = site.data.ClinicalSolutions.document_types %}
+{% assign type_meta = types.guideline %}
+<div data-component="guideline-feature" class="relative isolation_isolate p_3 br-b_1 br_black-2 br_solid bg_accent-5 h:br_accent-n2 br_accent-3 br_1 br_solid m-b_4 br_round">
+  <div class="flex flex_column flex_row:md gap_2 items_start justify_between">
+    <h3 class="flex_1 min-w_0 font_bold z_1 p_3 m_0">
+      <a href="{{ g.url }}" class="font_bold h:undecorated h:underline expanded-click-area" target="_blank" rel="noopener noreferrer">{{ g.title }}</a>
+      {% if g.full_title %}
+      <span class="inline-block font-size_down-2 font_light opacity_7 lh_1 m-t_1 wrap_balance">{{ g.full_title }}</span>
+      {% endif %}
+    </h3>
+    <div class="flex flex_column flex_none gap_2 items_end font-size_down z_2 self_stretch">
+      <div class="flex flex_row gap_2 items_center c_shade-n1 m-b_3">
+        <abbr class="br_radius p-x_2 p-y_1 font_bold bg_accent-n3 c_white undecorated" title="{{ type_meta.title }}">{{ type_meta.label }}</abbr>
+      </div>
+      <a href="{{ g.hub_url | default: 'https://www.acc.org/Guidelines' }}" class="m-t_auto br_radius btn btn-link btn-sm h:underline m-t_3 relative z_2 h:bg_white-6" rel="noopener noreferrer">Browse all Guidelines <i class="fas fa-arrow-right p-l_1" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+# Labels aligned with acc.org/Guidelines document library groupings.
+guideline:
+  label: Guideline
+  title: Clinical Practice Guideline
+ecdp:
+  label: ECDP
+  title: Expert Consensus Decision Pathway
+ccg:
+  label: CCG
+  title: Concise Clinical Guidance
+auc:
+  label: AUC
+  title: Appropriate Use Criteria
+policy:
+  label: Policy
+  title: Health Policy Statement
+scientific:
+  label: Statement
+  title: Scientific Statement
+consensus:
+  label: Consensus
+  title: Expert Consensus Document

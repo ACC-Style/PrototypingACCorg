@@ -1,0 +1,27 @@
+{% assign topic_key = page.topic_key %}
+{% assign topic = site.data.ClinicalSolutions.spokes[topic_key] %}
+
+<ul id="spoke-sticky-jump-nav" class="anchor-nav b_2 br_1 br_black-2 br_round br_solid flex flex_row flex_wrap font_n1:lg font_n2:md font_n3 gap_2 items_center justify_center m-x_0 p-x_0 p-y_3 relative shadow_overlap-light sticky ul_none w_auto z_2" aria-label="On this page">
+  {% for section in topic.sections %}
+  <li class="m-y_2">
+    <a href="#{{ section.id }}" class="topic-jump-link topic-jump-link--compact p-x_3 p-y_2 a:bg_accent-n1 a:c_white br_radius" data-section="{{ section.id }}">{{ section.title }}</a>
+  </li>
+  {% endfor %}
+</ul>
+<section id="spoke-anchor-nav-gone" class="anchor-nav-gone" aria-hidden="true"></section>
+</div>
+
+<style>
+  #spoke-sticky-jump-nav::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 1.5rem;
+  }
+  #spoke-sticky-jump-nav a.active {
+    font-weight: bold;
+  }
+</style>

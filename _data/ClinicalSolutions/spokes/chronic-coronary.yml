@@ -23,9 +23,9 @@ sections:
     resources:
       - title: Multimodality Imaging in Chronic Coronary Disease
         year: 2023
+        doc_type: auc
         format: journal
         url: https://www.jacc.org/doi/10.1016/j.jacc.2023.03.410
-        note: Appropriate Use Criteria
   - id: patient
     title: Patient Resources
     resources:

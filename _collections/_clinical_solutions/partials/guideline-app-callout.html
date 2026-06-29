@@ -1,0 +1,7 @@
+{% assign topic_key = page.topic_key %}
+{% if topic_key %}
+{% assign topic = site.data.ClinicalSolutions.spokes[topic_key] %}
+{% if topic.guideline %}
+{%- include_relative partials/guideline-app-cta.html -%}
+{% endif %}
+{% endif %}
