@@ -80,25 +80,28 @@ sections:
       - title: Lipid Manager
         format: app
         url: https://www.acc.org/tools-and-practice-support/mobile-resources/features/ldl-c-manager
+      - title: 6 Steps for Optimizing Cardiovascular Risk Reduction Among Patients With Diabetes
+        format: external
+        url: https://www.cardiosmart.org/assets/discussion-guide/6-steps-for-optimizing-cardiovascular-risk-reduction-among-patients-with-diabetes
+      - title: Guidance For Initiating and Monitoring SGLT2 Inhibitors and GLP-1RAs
+        year: 2018
+        format: pdf
+        url: https://www.acc.org/-/media/Non-Clinical/Files-PDFs-Excel-MS-Word-etc/Guidelines/2018/KeyConsidforGLP1RAsandSGLT2is.pdf
+      - title: Type 2 Diabetes Cardiovascular Risk Discussion Guide
+        format: external
+        url: https://www.cardiosmart.org/assets/discussion-guide/what-you-and-your-patients-need-to-know-about-managing-diabetes-and-cv-risk
       - title: ASCVD Risk Estimator Plus
         format: app
         url: https://www.acc.org/Tools-and-Practice-Support/Mobile-Resources/Features/2013-Prevention-Guidelines-ASCVD-Risk-Estimator
       - title: Multilingual ASCVD Risk Estimator
         format: app
         url: https://www.acc.org/Tools-and-Practice-Support/Mobile-Resources/Features/Multilingual-ASCVD-Risk-Estimator
-      - title: Guidance For Initiating and Monitoring SGLT2 Inhibitors and GLP-1RAs
-        year: 2018
-        format: pdf
-        url: https://www.acc.org/-/media/Non-Clinical/Files-PDFs-Excel-MS-Word-etc/Guidelines/2018/KeyConsidforGLP1RAsandSGLT2is.pdf
       - title: Tobacco Cessation for Patients with Cardiovascular Disease
         format: pdf
         url: https://www.acc.org/-/media/Non-Clinical/Files-PDFs-Excel-MS-Word-etc/Guidelines/2018/Tobacco-Cessation-Clinician-ToolFINAL112918.pdf
-      - title: 6 Steps for Optimizing Cardiovascular Risk Reduction Among Patients With Diabetes
-        format: external
-        url: https://www.cardiosmart.org/assets/discussion-guide/6-steps-for-optimizing-cardiovascular-risk-reduction-among-patients-with-diabetes
   - id: patient
     title: Patient Resources
-    collapse_after: 6
+    collapse_after: 8
     resources:
       - title: My Plan for Starting a PCSK9 Inhibitor
         format: external
@@ -111,21 +114,45 @@ sections:
       - title: Your action plan for lowering LDL-cholesterol and related heart risks
         format: external
         url: https://www.cardiosmart.org/topics/high-cholesterol/assets/action-plan/your-action-plan-for-lowering-ldl-cholesterol-and-related-heart-risks
+        note: CardioSmart action plan
       - title: Assessing your heart health
         format: external
         url: https://www.cardiosmart.org/topics/high-cholesterol/assets/worksheet/high-cholesterol-assessing-your-heart-health
-      - title: Your Action Plan for Managing Diabetes and Protecting Your Heart
-        format: external
-        url: https://www.cardiosmart.org/topics/diabetes-and-your-heart/assets/action-plan/your-action-plan-for-managing-diabetes-and-protecting-your-heart
-      - title: 10 Steps to Lower Your Chance of Diabetes-Related Heart Problems
-        format: external
-        url: https://www.cardiosmart.org/topics/diabetes-and-your-heart/assets/worksheet/10-steps-to-lower-your-chance-of-diabetes-related-heart-problems
-      - title: Healthy Habits Protect Your Heart
-        format: external
-        url: https://www.cardiosmart.org/assets/fact-sheet/healthy-habits-protect-your-heart
+        note: CardioSmart worksheet
       - title: Patient Voices — Managing High Cholesterol (video series)
         format: external
         url: https://www.cardiosmart.org/topics/high-cholesterol/patient-voices-managing-high-cholesterol
+      - title: Patient Voices — On Finding the Right Statin or What Works for You
+        format: external
+        url: https://www.cardiosmart.org/topics/high-cholesterol/assets/video/patient-voices-on-finding-the-right-statin-or-what-works-for-you
+        note: Patient Voices video
+      - title: Patient Voices — On Making Healthy Choices and Knowing Your Family History
+        format: external
+        url: https://www.cardiosmart.org/topics/high-cholesterol/assets/video/patient-voices-on-making-healthy-choices-and-knowing-your-family-history
+        note: Patient Voices video
+      - title: Patient Voices — Paying Attention to Your LDL Cholesterol Over Your Lifetime
+        format: external
+        url: https://www.cardiosmart.org/topics/high-cholesterol/assets/video/patient-voices-on-paying-attention-to-your-ldl-cholesterol-over-your-lifetime
+        note: Patient Voices video
+      - title: Your Action Plan for Managing Diabetes and Protecting Your Heart
+        format: external
+        url: https://www.cardiosmart.org/topics/diabetes-and-your-heart/assets/action-plan/your-action-plan-for-managing-diabetes-and-protecting-your-heart
+        note: CardioSmart action plan
+      - title: 10 Steps to Lower Your Chance of Diabetes-Related Heart Problems
+        format: external
+        url: https://www.cardiosmart.org/topics/diabetes-and-your-heart/assets/worksheet/10-steps-to-lower-your-chance-of-diabetes-related-heart-problems
+        note: CardioSmart worksheet
+      - title: My Medication List
+        format: external
+        url: https://www.cardiosmart.org/topics/diabetes-and-your-heart/assets/worksheet/diabetes-and-heart-disease-my-medication-list
+        note: CardioSmart worksheet
+      - title: What You Need to Know — Diabetes & Heart Disease Patient Tool
+        format: external
+        url: https://www.cardiosmart.org/~/media/Documents/Plans/What-You-Need-to-Know_Diabetes-and-Heart-Disease.ashx
+      - title: Healthy Habits Protect Your Heart
+        format: external
+        url: https://www.cardiosmart.org/assets/fact-sheet/healthy-habits-protect-your-heart
+        note: CardioSmart fact sheet
   - id: implementation
     title: Implementation & Policy
     collapse_after: 4
@@ -155,12 +182,31 @@ sections:
         note: Heart House Roundtable
       - title: Managing CV Disease Risk in Diabetes
         year: 2017
+        note: Heart House Roundtable (2017–2018)
+        format: pdf
+      - title: LDL — Address the Risk
+        note: Heart House Roundtable (2013, 2015, 2016, 2017)
+        format: pdf
+      - title: Managing LDL Cholesterol and Cardiovascular Risk — Learning from the Patient Experience
+        year: 2020
+        format: pdf
+        note: Heart House Patient Forum
+      - title: Living Well with T2D and CV Disease — Getting to the Heart of the Matter
+        year: 2019
         format: pdf
         note: Heart House Patient Forum
   - id: other
     title: Other Resources
     resources:
-      - title: Empowering the Profession — The ACC's Commitment to Cutting-Edge Clinical Guidance
-        year: 2025
-        format: journal
-        url: https://www.jacc.org/doi/10.1016/j.jacc.2025.01.006
+      - title: PRIME-Heart Initiative
+        format: external
+        url: https://www.acc.org/Education-and-Meetings/Products-and-Resources/Features/PRIME-Heart
+      - title: Prevention Clinical Topic Collection
+        format: external
+        url: https://www.acc.org/Clinical-Topics/Prevention
+      - title: Dyslipidemia Clinical Topic Collection
+        format: external
+        url: https://www.acc.org/clinical-topics/dyslipidemia
+      - title: Diabetes and Cardiometabolic Disease Clinical Topic Collection
+        format: external
+        url: https://www.acc.org/clinical-topics/diabetes-and-cardiometabolic-disease
