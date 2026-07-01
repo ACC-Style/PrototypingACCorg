@@ -1,0 +1,12 @@
+{% assign cr = site.data.ClinicianWellBeing.cardio_renew %}
+<section id="Course-Details" data-jump-section class="reading-typography m-b_5 scroll-mt_5" aria-labelledby="course-details-title">
+  <h2 id="course-details-title" data-jump-title="Course details" class="font_display m-t_0 m-b_4">Course Details</h2>
+  <dl class="bg_black-1 br_radius m_0 p_4 p_5:md">
+    {% for row in cr.course_details %}
+    <div class="{% unless forloop.last %}m-b_4 p-b_4 br-b_1 br_black-2 br_solid{% endunless %}">
+      <dt class="font_bold m-b_1">{{ row.label }}</dt>
+      <dd class="m_0 c_shade-n2">{{ row.value }}</dd>
+    </div>
+    {% endfor %}
+  </dl>
+</section>

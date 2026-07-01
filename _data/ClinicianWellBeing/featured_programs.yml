@@ -1,0 +1,14 @@
+title: Featured Initiatives
+intro: Programs and campaigns — not buried in a link list.
+programs:
+  - title: Cardio Renew
+    description: Seven-month cohort for mid-career members — resilience, reflection, and reconnection with purpose.
+    url: /clinical-wellbeing/cardio-renew/
+  - title: CardioSafe
+    description: Recognize and respond to patient-initiated mistreatment — modules, guidance, and reporting best practices.
+    url: /clinical-wellbeing/cardiosafe/
+    badge: Coming late 2026
+  - title: Mental Health Care
+    description: Increasing awareness and erasing stigmas — NCD Academy course.
+    url: https://www.acc.org/ncdacademy
+    external: true

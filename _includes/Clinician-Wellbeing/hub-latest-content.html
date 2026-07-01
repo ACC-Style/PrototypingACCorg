@@ -1,0 +1,23 @@
+{% assign topic = site.data.ClinicianWellBeing.latest_content %}
+<section id="Latest" class="scroll-mt_5" aria-labelledby="latest-title" data-jump-section>
+  <header class="m-b_4">
+    <h2 id="latest-title" data-jump-title="Latest">Webinars &amp; Articles</h2>
+    <p class="m-b_0">Grouped by topic — each item explains what you&rsquo;ll learn.</p>
+  </header>
+  {% for section in topic.sections %}
+  {% assign count = section.resources.size %}
+  <section id="{{ section.id }}" data-jump-section data-jump-count="{{ count }}" class="reading-typography wrapper-container m-b_5 p-x_4 p-x_5:lg scroll-mt_5" aria-labelledby="section-{{ section.id }}">
+    <header class="flex flex_row flex_wrap gap_3 items_baseline justify_between m-b_3">
+      <h3 id="section-{{ section.id }}" data-jump-title="{{ section.title }}" class="m_0">{{ section.title }}</h3>
+      <span class="font-size_down c_shade-n1">({{ count }} resource{% if count != 1 %}s{% endif %})</span>
+    </header>
+    <div class="bg_white br_1 br_black-2 br_radius br_solid shadow_emboss-light">
+      <ul class="ul_none m_0 p-x_4 reading-typography">
+        {% for res in section.resources %}
+        {% include Clinician-Wellbeing/resource-item.html res=res %}
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+  {% endfor %}
+</section>

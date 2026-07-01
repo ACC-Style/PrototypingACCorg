@@ -1,0 +1,17 @@
+{% assign cr = site.data.ClinicianWellBeing.cardio_renew %}
+<div data-element="data-table" style="font-size: inherit;" class="display_none:print flex flex_column m_0 justify_start br_round bg_primary-n2 p_4:md p-y_3 p-x_4 c_white-8 shadow_bevel-bold reading-typography color_inherit t_0 m-b_4:lg m-b_3">
+  <header class="m-t_3">
+    <h2 data-element="table-title" class="font_xbold m-b_0 uppercase font-size_up-1">{{ cr.application.status }}</h2>
+  </header>
+  <main class="p-t_3">
+    <p class="m-t_0">Applications due <strong>{{ cr.application.deadline }}</strong>.</p>
+    <p class="font-size_down m-b_0">{{ cr.application.deadline_note }}</p>
+  </main>
+</div>
+<footer class="columns_1 gap_3 grid">
+  <a href="#Application" class="btn btn-primary shadow_overlap-light">Application Details</a>
+  <a href="{{ cr.application.faq_url }}" class="btn btn-secondary shadow_overlap-light" rel="noopener noreferrer" target="_blank">FAQ Sheet</a>
+  <div class="col_all text_center">
+    <a href="mailto:{{ cr.application.contact_email }}" class="font-size_down-1"><i class="fas fa-user-headset" aria-hidden="true"></i> Contact member engage</a>
+  </div>
+</footer>

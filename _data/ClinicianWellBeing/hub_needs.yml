@@ -1,0 +1,44 @@
+- key: burnout
+  title: Burnout & Resilience
+  descriptor: Recognize, cope, recover
+  icon: fas fa-battery-quarter
+  url: /clinical-wellbeing/burnout-resilience/
+- key: cardiosafe
+  title: Patient Mistreatment
+  descriptor: CardioSafe · respond & report
+  icon: fas fa-shield-alt
+  url: /clinical-wellbeing/cardiosafe/
+- key: culture
+  title: Workplace Culture
+  descriptor: Respect & inclusion
+  icon: fas fa-handshake
+  url: https://www.jacc.org/doi/10.1016/j.jacc.2022.03.006
+  external: true
+- key: career
+  title: Career Flexibility
+  descriptor: Sustain your career
+  icon: fas fa-route
+  url: /clinical-wellbeing/education-resources/#career-flexibility
+- key: admin
+  title: Administrative Burden
+  descriptor: Reduce friction
+  icon: fas fa-tasks
+  url: https://www.acc.org/Quality-Improvement
+  external: true
+- key: education
+  title: Education & Webinars
+  descriptor: Courses & learning
+  icon: fas fa-chalkboard-teacher
+  url: /clinical-wellbeing/education-resources/
+- key: advocacy
+  title: Advocacy & Systems
+  descriptor: Root causes & policy
+  icon: fas fa-bullhorn
+  url: https://www.acc.org/Advocacy
+  external: true
+- key: peers
+  title: Connect with Peers
+  descriptor: DocMatter community
+  icon: fas fa-comments
+  url: https://www.acc.org/Membership/ACC-DocMatter-Community
+  external: true

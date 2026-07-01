@@ -62,8 +62,17 @@ collections:
   clinical_solutions:
     output: true
     permalink: /clinical-solutions/:path/
+  _clinical-wellbeing:
+    output: true
+    permalink: /clinical-wellbeing/:path/
 
 # Exclude from processing.
+exclude:
+  - _collections/__clinical-wellbeing/raw-files
+  - _collections/__clinical-wellbeing/Clinician Well Being
+  - _collections/__clinical-wellbeing/wireframe.md
+
+# Exclude from processing (legacy comment block below).
 
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to

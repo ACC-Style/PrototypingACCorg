@@ -1,0 +1,11 @@
+{% assign commitment = site.data.ClinicianWellBeing.commitment %}
+<aside id="Commitment" class="col-end_end col-start_start col-start_n2:md col-start_n3:lg reading-typography wrapper-container p-l_4:lg scroll-mt_5" data-jump-section aria-labelledby="commitment-title">
+  <div data-item="cta-overlay" class="bg_primary-n2 br_round c_white color_inherit shadow_overlap-light p_4 p_5:lg reading-typography z_1 sticky t_3">
+    <h3 id="commitment-title" data-jump-title="Commitment" data-item="cta-title" class="font_medium m-t_0">
+      <em class="fas fa-hand-holding-heart p-r_3" aria-hidden="true"></em>{{ commitment.title }}
+    </h3>
+    <p class="m-t_3 m-b_2">{{ commitment.intro }}</p>
+    <p class="font-size_down m-b_0">{{ commitment.body }}</p>
+    <p class="font-size_down-1 c_white-7 m-t_3 m-b_0">{{ commitment.footnote }}</p>
+  </div>
+</aside>

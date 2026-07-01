@@ -1,0 +1,15 @@
+{% assign cr = site.data.ClinicianWellBeing.cardio_renew %}
+<section id="Application" data-jump-section class="reading-typography m-b_5 scroll-mt_5 bg_black-1 br_radius p_4 p_5:md" aria-labelledby="application-title">
+  <h2 id="application-title" data-jump-title="Application" class="font_display m-t_0 m-b_3">Application</h2>
+  <p class="m-t_0"><strong>Deadline:</strong> {{ cr.application.deadline }}. {{ cr.application.deadline_note }}</p>
+  <h3 class="font-size_up m-b_2">Who may apply?</h3>
+  <ul class="m-b_4">
+    {% for item in cr.eligibility %}
+    <li>{{ item }}</li>
+    {% endfor %}
+  </ul>
+  <div class="grid columns_1 columns_2:md gap_3">
+    <a href="{{ cr.application.faq_url }}" class="btn btn-primary" rel="noopener noreferrer" target="_blank">Download FAQ</a>
+    <a href="mailto:{{ cr.application.contact_email }}" class="btn btn-shade">Contact member engage</a>
+  </div>
+</section>

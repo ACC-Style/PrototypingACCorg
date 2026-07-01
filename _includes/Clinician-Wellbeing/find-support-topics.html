@@ -1,0 +1,16 @@
+{% assign needs = site.data.ClinicianWellBeing.hub_needs %}
+<section id="Find-Support" class="scroll-mt_5 reading-typography wrapper-container m-b_5 m-b_6:lg p-x_4 p-x_5:lg" aria-labelledby="find-support-title" data-jump-section>
+  <header class="m-b_4">
+    <h2 id="find-support-title" data-jump-title="Find support">Find Support by Need</h2>
+    <p class="m-b_0">Choose the challenge you&rsquo;re facing — not a list of links to scan.</p>
+  </header>
+  <div class="grid columns_1 columns_2:lg gap_4">
+    {% for need in needs %}
+    <article class="topic-card bg_white br_1 br_black-3 br_radius br_solid p_4 flex flex_column shadow_bevel-light relative">
+      <h3 class="m-t_0 m-b_2">{{ need.title }}</h3>
+      <p class="m-t_0 flex_1">{{ need.descriptor }}</p>
+      <a href="{% if need.external %}{{ need.url }}{% else %}{{ need.url | relative_url }}{% endif %}" class="btn btn-primary btn-sm expanded-click-area m-t_3"{% if need.external %} rel="noopener noreferrer" target="_blank"{% endif %}>View Resources</a>
+    </article>
+    {% endfor %}
+  </div>
+</section>

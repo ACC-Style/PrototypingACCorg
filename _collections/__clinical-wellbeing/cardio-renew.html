@@ -1,0 +1,35 @@
+---
+layout: arches-pagelayout
+name: "Cardio Renew"
+position: "Refactor Prototype"
+masthead: "empty.html"
+parent-page: "Tools & Practice Support"
+clinical_nav: cardio_renew
+---
+<main grid-area="content" class="p-t_5:lg p-t_4 p-x_4:lg relative wrapper-container">
+  {% include Clinician-Wellbeing/Cardio-Renew/product-banner.html %}
+  <div id="introduction" class="grid columns_1 columns_5:lg gap_5:lg gap_4">
+    <div
+      class="col-start_start col-end_n3:lg col-end_end reading-typography font-size_up"
+      style="--custom-font-size-modifier: 1.125;"
+    >
+      {% include Clinician-Wellbeing/Cardio-Renew/intro-primary.html %}
+    </div>
+    <div class="col-start_start col-start_n3:lg col-end_end">
+      {% include Clinician-Wellbeing/Cardio-Renew/intro-secondary.html %}
+    </div>
+  </div>
+  {% include Clinician-Wellbeing/Cardio-Renew/program-highlights.html %}
+  {% include Clinician-Wellbeing/Cardio-Renew/course-details.html %}
+  {% include Clinician-Wellbeing/Cardio-Renew/application.html %}
+  {% include Clinician-Wellbeing/Cardio-Renew/key-benefits.html %}
+  {% include Clinician-Wellbeing/Cardio-Renew/follow-up-cta.html %}
+</main>
+<aside grid-area="sidebar-primary">
+  {%- include_relative partials/sidebar-nav.html -%}
+  {% include Clinician-Wellbeing/Cardio-Renew/sidebar-faculty.html %}
+</aside>
+
+<style>
+  .br_round{border-radius: .75rem;}
+</style>

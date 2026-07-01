@@ -1,0 +1,57 @@
+---
+layout: arches-clinical-solutions
+name: "Clinician Well-Being Hub"
+position: "Refactor Prototype"
+masthead: "empty.html"
+clinical_nav: hub
+notes: >-
+  Story-driven hub for Clinician Well-Being refactor. Hub & spoke strategy.
+  Hub: full-width content + nav cards. Spokes: sidebar cross-nav.
+---
+
+{% assign cwb = site.data.ClinicianWellBeing.pages %}
+{% capture find_support_cta %}{{ cwb.hub | relative_url }}#Find-Support{% endcapture %}
+{%
+  include MicroSite/heroimage.dynamic.html
+  parent_link="https://www.acc.org/Tools-and-Practice-Support"
+  parent_page="Tools &amp; Practice Support"
+  hero_image_base="Dynamic"
+  hero_image_alt="Clinician well-being support for cardiovascular professionals"
+  hero_title="Clinician Well-Being"
+  cta_title="You are not alone."
+  cta_description="ACC helps cardiovascular clinicians address burnout, workplace pressures, and system-level challenges so you can sustain a meaningful career in patient care."
+  cta_link=find_support_cta
+  cta_button_text="Find support"
+%}
+
+<section zone-label="startingSection" class="grid columns_1 columns_3:md columns_5:lg p_4 gap_5:lg gap_4 m-b_4:md">
+  <main zone-label="introduction" class="reading-typography font-size_up p-l_4:lg max-w_65 p-t_5:lg p-t_4 col-start_start col-end_end col-end_n2:md col-end_n3:lg" style="--custom-font-size-up: 1.06">
+    <h2 class="lh_2 m-b_4">
+      Why Clinician Well-Being Matters
+      <small class="block">Burnout is a workforce and patient-care issue — not a personal failure.</small>
+    </h2>
+    <p>
+      Burnout is widespread among cardiovascular professionals. Pressures come from patients, colleagues, workload, data burden, and systems of care — not from lacking resilience alone.
+    </p>
+    <p>
+      Clinician well-being is embedded in ACC&rsquo;s strategic plan because healthier clinicians are essential to better cardiovascular care.
+    </p>
+  </main>
+  {%- include Clinician-Wellbeing/hub-commitment-aside.html -%}
+</section>
+
+<div class="isolation_isolate reading-typography">
+  {%- include Clinician-Wellbeing/hub-nav-cards.html -%}
+  <div class="p_4 p-y_5:lg p-x_4:lg">
+    {%- include Clinician-Wellbeing/find-support-topics.html -%}
+    {%- include Clinician-Wellbeing/featured-programs.html -%}
+    {%- include Clinician-Wellbeing/hub-latest-content.html -%}
+    <section data-jump-nav-end id="nav-gone" class="anchor-nav-gone" aria-hidden="true"></section>
+    {% include jump-nav/jump-nav.html %}
+  </div>
+</div>
+
+<style>
+  :where(h1,h2,h3,h4,h5) + p { margin-block-start: 0; }
+  .reading-typography :where(h1,h2,h3,h4,h5):has(+ p) { margin-block-end: .125em; }
+</style>
