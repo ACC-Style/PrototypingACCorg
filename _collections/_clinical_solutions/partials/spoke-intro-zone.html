@@ -1,56 +1,37 @@
-{% assign topic_key = page.topic_key %}
-{% assign topic = site.data.ClinicalSolutions.spokes[topic_key] %}
-{% assign cs = site.data.ClinicalSolutions.pages %}
-
-<div class="spoke-content-zone relative isolation_isolate" data-component="spoke-content-zone">
-<section zone-label="spokeIntro" class="grid columns_1 columns_3:md columns_5:lg gap_5:lg gap_4 m-b_5 m-b_6:lg">
-  <main zone-label="introduction" class="reading-typography col-start_start col-end_end col-end_n2:md col-end_n3:lg">
-    <h1 class="m-b_3">{{ topic.title }}</h1>
-    <hr class="br_primary m-b_4">
-    <p class="m-t_0">{{ topic.intro }}</p>
-    {% if topic.goals.size > 0 %}
-    <div class="bg_black-1 br_radius p_4 p_5:md m-t_4 m-b_0">
-      <p class="font_bold m-b_2 m-t_0">Goals of This Solution Set</p>
-      <ul class="m-b_0">
-        {% for goal in topic.goals %}
-        <li>{{ goal }}</li>
-        {% endfor %}
-      </ul>
-    </div>
-    {% endif %}
-    <p class="font-size_down c_shade-n1 m-t_4 m-b_0 display_none:md">
-      <a href="#spoke-resources" class="h:underline">Jump to resources <i class="fas fa-arrow-down p-l_1" aria-hidden="true"></i></a>
-    </p>
-  </main>
-
-  <aside zone-label="jumpSidebar" class="col-end_end col-start_start col-start_n2:md col-start_n3:lg min-w_0">
-    <div class="sticky t_3 gap_4 grid z_1 min-w_0">
-      <nav id="spoke-jump-nav" class="reading-typography bg_white br_1 br_black-3 br_radius br_solid shadow_bevel-light p_4" aria-labelledby="spoke-jump-title">
-        <h2 id="spoke-jump-title" class="m-t_0 m-b_3">On This Page</h2>
-        <ul class="ul_none gap_2 grid m-b_3">
-          {% for section in topic.sections %}
-          {% assign count = section.resources.size %}
-          <li>
-            <a href="#{{ section.id }}" class="topic-jump-link flex flex_row gap_3 items_center justify_between br_radius p_3 h:bg_black-1 h:undecorated" data-section="{{ section.id }}">
-              <span class="flex flex_row gap_3 items_center">
-                {% case section.id %}
-                {% when 'guidance' %}<em class="c_accent-n1 far fa-book-medical" aria-hidden="true"></em>
-                {% when 'tools' %}<em class="c_accent-n1 far fa-mobile-alt" aria-hidden="true"></em>
-                {% when 'patient' %}<em class="c_accent-n1 far fa-user-injured" aria-hidden="true"></em>
-                {% when 'implementation' %}<em class="c_accent-n1 far fa-users" aria-hidden="true"></em>
-                {% else %}<em class="c_accent-n1 far fa-folder" aria-hidden="true"></em>
-                {% endcase %}
-                <span class="font_bold c_primary">{{ section.title }}</span>
-              </span>
-              <span class="bg_black-2 br_radius font-size_down font_bold p-x_2 p-y_1 flex_none">{{ count }}</span>
-            </a>
-          </li>
-          {% endfor %}
-        </ul>
-        <a href="{{ cs.hub | relative_url }}" class="font-size_down c_primary h:underline">&larr; All Clinical Solutions</a>
-      </nav>
-    </div>
-  </aside>
-</section>
-
-<div id="spoke-resources" class="scroll-mt_5" aria-hidden="true"></div>
+{% assign topic_key = page.topic_key %}
+{% assign topic = site.data.ClinicalSolutions.spokes[topic_key] %}
+{% assign cs = site.data.ClinicalSolutions.pages %}
+
+<div class="spoke-content-zone relative isolation_isolate" data-component="spoke-content-zone">
+<section zone-label="spokeIntro" class="grid columns_1 columns_3:md columns_5:lg gap_5:lg gap_4 m-b_5 m-b_6:lg">
+  <main zone-label="introduction" class="reading-typography col-start_start col-end_end col-end_n2:md col-end_n3:lg">
+    <h1 class="m-b_3">{{ topic.title }}</h1>
+    <hr class="br_primary m-b_4">
+    <p class="m-t_0">{{ topic.intro }}</p>
+    {% if topic.goals.size > 0 %}
+    <div class="bg_black-1 br_radius p_4 p_5:md m-t_4 m-b_0">
+      <p class="font_bold m-b_2 m-t_0">Goals of This Solution Set</p>
+      <ul class="m-b_0">
+        {% for goal in topic.goals %}
+        <li>{{ goal }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+    <p class="font-size_down c_shade-n1 m-t_4 m-b_0 display_none:md">
+      <a href="#spoke-resources" class="h:underline">Jump to resources <i class="fas fa-arrow-down p-l_1" aria-hidden="true"></i></a>
+    </p>
+  </main>
+
+  <aside zone-label="jumpSidebar" class="col-end_end col-start_start col-start_n2:md col-start_n3:lg min-w_0">
+    <div class="sticky t_3 gap_4 grid z_1 min-w_0">
+      <nav data-jump-sidebar class="reading-typography bg_white br_1 br_black-3 br_radius br_solid shadow_bevel-light p_4" aria-labelledby="spoke-jump-title">
+        <h2 id="spoke-jump-title" class="m-t_0 m-b_3">On This Page</h2>
+        <ul data-jump-sidebar-list class="ul_none gap_2 grid m-b_3"></ul>
+        <a href="{{ cs.hub | relative_url }}" class="font-size_down c_primary h:underline">&larr; All Clinical Solutions</a>
+      </nav>
+    </div>
+  </aside>
+</section>
+
+<div id="spoke-resources" class="scroll-mt_5" aria-hidden="true"></div>

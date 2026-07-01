@@ -1,0 +1,172 @@
+{% comment %}
+  Jump nav — declarative sticky bottom (and optional sidebar) navigation.
+
+  Markup contract:
+  - Sections: [data-jump-section] + id (scroll target)
+  - Heading: data-jump-title="Short Label" on h2/h3 (fallback: heading text)
+  - Optional: data-jump-count, data-jump-icon (Font Awesome classes, e.g. "far fa-book-medical")
+  - Sentinel: [data-jump-nav-end], #nav-gone, #spoke-anchor-nav-gone, or .anchor-nav-gone
+  - Optional mount: [data-jump-nav-mount] — sticky nav inserted here (else before sentinel)
+  - Optional mount classes: data-jump-nav-class on mount element (appended to sticky UL)
+  - Optional sidebar: [data-jump-sidebar] with empty [data-jump-sidebar-list] ul inside
+
+  Usage: {% include jump-nav/jump-nav.html %}
+{% endcomment %}
+<style>
+  [data-component="jump-nav-sticky"]::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 1.5rem;
+  }
+  [data-component="jump-nav-sticky"] a.active {
+    font-weight: bold;
+  }
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = [...document.querySelectorAll("[data-jump-section]")].filter((el) => el.id);
+  if (!sections.length) return;
+
+  const getTitle = (section) => {
+    const labeled = section.querySelector("[data-jump-title]");
+    if (labeled) {
+      const dataTitle = labeled.getAttribute("data-jump-title");
+      if (dataTitle) return dataTitle;
+      return labeled.textContent.trim();
+    }
+    const heading = section.querySelector("h2, h3");
+    return heading ? heading.textContent.trim() : section.id;
+  };
+
+  const createLink = (section, compact) => {
+    const a = document.createElement("a");
+    a.href = `#${section.id}`;
+    a.className = compact
+      ? "topic-jump-link topic-jump-link--compact p-x_3 p-y_2 a:bg_accent-n1 a:c_white br_radius"
+      : "topic-jump-link flex flex_row gap_3 items_center justify_between br_radius p_3 h:bg_black-1 h:undecorated";
+    a.dataset.section = section.id;
+    a.setAttribute("aria-current", "false");
+
+    if (compact) {
+      a.textContent = getTitle(section);
+      return a;
+    }
+
+    const labelRow = document.createElement("span");
+    labelRow.className = "flex flex_row gap_3 items_center";
+
+    const iconClass = section.dataset.jumpIcon;
+    if (iconClass) {
+      const icon = document.createElement("em");
+      icon.className = `c_accent-n1 ${iconClass}`;
+      icon.setAttribute("aria-hidden", "true");
+      labelRow.appendChild(icon);
+    }
+
+    const label = document.createElement("span");
+    label.className = "font_bold c_primary";
+    label.textContent = getTitle(section);
+    labelRow.appendChild(label);
+    a.appendChild(labelRow);
+
+    const count = section.dataset.jumpCount;
+    if (count) {
+      const badge = document.createElement("span");
+      badge.className = "bg_black-2 br_radius font-size_down font_bold p-x_2 p-y_1 flex_none";
+      badge.textContent = count;
+      a.appendChild(badge);
+    }
+
+    return a;
+  };
+
+  const stickyBaseClass =
+    "anchor-nav b_2 br_1 br_black-2 br_round br_solid flex flex_row flex_wrap font_n1:lg font_n2:md font_n3 gap_2 items_center justify_center m-x_5:md m-x_6:lg m-x_n3 p-x_0 p-y_3 relative shadow_overlap-light sticky ul_none w_auto z_2";
+
+  const mount = document.querySelector("[data-jump-nav-mount]");
+  const sentinel =
+    document.querySelector("[data-jump-nav-end]") ||
+    document.getElementById("spoke-anchor-nav-gone") ||
+    document.getElementById("nav-gone") ||
+    document.querySelector(".anchor-nav-gone");
+
+  const extraClass = mount?.dataset.jumpNavClass || "";
+  let navClasses = stickyBaseClass;
+  if (/\bitems_(start|end|baseline|stretch)\b/.test(extraClass)) {
+    navClasses = navClasses.replace(/\bitems_center\b/, "").replace(/\s+/g, " ").trim();
+  }
+
+  const nav = document.createElement("ul");
+  nav.dataset.component = "jump-nav-sticky";
+  nav.setAttribute("aria-label", "On this page");
+  nav.className = [navClasses, extraClass].filter(Boolean).join(" ");
+
+  sections.forEach((section) => {
+    const li = document.createElement("li");
+    li.className = "m-y_2";
+    li.appendChild(createLink(section, true));
+    nav.appendChild(li);
+  });
+
+  if (mount) {
+    mount.appendChild(nav);
+  } else if (sentinel) {
+    sentinel.parentNode.insertBefore(nav, sentinel);
+  } else {
+    document.body.appendChild(nav);
+  }
+
+  const sidebar = document.querySelector("[data-jump-sidebar]");
+  const sidebarList = sidebar?.querySelector("[data-jump-sidebar-list]");
+  if (sidebarList) {
+    sections.forEach((section) => {
+      const li = document.createElement("li");
+      li.appendChild(createLink(section, false));
+      sidebarList.appendChild(li);
+    });
+  }
+
+  const sidebarLinks = sidebar ? [...sidebar.querySelectorAll(".topic-jump-link")] : [];
+  const compactLinks = [...nav.querySelectorAll(".topic-jump-link")];
+
+  const setActive = (sectionId) => {
+    sidebarLinks.forEach((link) => {
+      const active = link.dataset.section === sectionId;
+      link.classList.toggle("bg_accent-5", active);
+      link.classList.toggle("is-current", active);
+      link.setAttribute("aria-current", active ? "location" : "false");
+    });
+    compactLinks.forEach((link) => {
+      const active = link.dataset.section === sectionId;
+      link.classList.toggle("active", active);
+      link.setAttribute("aria-current", active ? "true" : "false");
+    });
+  };
+
+  const sectionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        setActive(entry.target.id);
+      });
+    },
+    { root: null, rootMargin: "-80px 0px 0px -80px", threshold: 0 }
+  );
+  sections.forEach((section) => sectionObserver.observe(section));
+
+  if (sentinel) {
+    new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          nav.classList.toggle("display_none", entry.isIntersecting);
+        });
+      },
+      { root: null, rootMargin: "-80px 0px 0px 0px", threshold: 0 }
+    ).observe(sentinel);
+  }
+});
+</script>
