@@ -9,6 +9,8 @@ data_path: specifies the path for data to be used in the CTA follow-up. Example:
 
 
 grid_modifier: modify the grid styles for CTA layout. Example: "columns_4:lg columns_2:md columns_1 gap_6:lg gap_3"
+
+One CTA per include — data_path must resolve to a single-item array; only the first entry renders.
 -->
 
 {% assign path_parts = 'Blocks.FollowUpCTA' | split: '.' %}
@@ -21,6 +23,7 @@ grid_modifier: modify the grid styles for CTA layout. Example: "columns_4:lg col
 {% for part in path_parts %}
   {% assign data_object = data_object[part] %}
 {% endfor %}
+{% assign cta = data_object | first %}
 
 {% assign grid_styles = " columns_3:lg columns_2:md columns_1 gap_5:lg gap_4 grid " %}
 {% if include.grid_modifier %}
@@ -48,11 +51,13 @@ grid_modifier: modify the grid styles for CTA layout. Example: "columns_4:lg col
 
 
 
-    <div data-item="cta" class="{{ cta_styles }} font-size_up m-t_6:lg m-y_4 m-y_5:md m_auto max-w_60 isolation_isolate relative text_center" > 
-        {% for cta in data_object %}
+    <div data-item="cta" class="{{ cta_styles }} font-size_up m-t_6:lg m-y_4 m-y_5:md m_auto max-w_60 isolation_isolate relative text_center" >
+        {% if cta %}
             <h2 data-item="cta-title" class="m-b_3 lh_1 font_medium font_display">
                 <strong class="font-size_up m-b_2 block">{{ cta.title }}</strong>
+                {% if cta.subtitle != blank %}
                 <small class="font-size_down block">{{ cta.subtitle }}</small>
+                {% endif %}
             </h2>
             <div class="p-t_2 p-b_3" data-item="cta-description">
                 <p class="font-size_up">{{ cta.description }}</p>
@@ -79,6 +84,6 @@ grid_modifier: modify the grid styles for CTA layout. Example: "columns_4:lg col
           </a>
         {% endif %}
             </footer>
-        {% endfor %}
+        {% endif %}
     </div>
 </div>

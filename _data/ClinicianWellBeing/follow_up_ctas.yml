@@ -18,23 +18,13 @@ workplace:
     description: Download the ACC Clinician Well-Being Toolkit to lead a grand rounds, section meeting, or chapter discussion.
     link_text: Download Toolkit (PPT)
     link_url: https://www.acc.org/~/media/Non-Clinical/Files-PDFs-Excel-MS-Word-etc/2020/05/26/Clinician-Well-Being-Toolkit.pptx
-  - title: Facing Uncivil Behavior?
-    subtitle: Bullying, bias, and harassment
-    description: Step-by-step guidance if you experience or witness uncivil behavior — including safety, documentation, and the ACTION and Five D's frameworks.
-    link_text: Read the Workplace Guide
-    link_url: /clinical-wellbeing/Concept-Clinician-Well-Being-Uncivil-Behavior/
 
 protect:
   - title: Lead a Team Conversation
     subtitle: ""
-    description: Use the Coaching for CV Leaders webinar series and Toolkit to support culture change in your practice — or guide colleagues through uncivil behavior with step-by-step workplace guidance.
+    description: Use the Coaching for CV Leaders webinar series and Toolkit to support culture change in your practice.
     link_text: Explore Well-Being Resources
     link_url: /clinical-wellbeing/Concept-Clinician-Well-Being/#hub-support
-  - title: Witnessing Harassment or Bullying?
-    subtitle: Support peers under pressure
-    description: The Five D's and ACTION frameworks can help when you see a colleague targeted by bias, bullying, or harassment.
-    link_text: Read the Workplace Guide
-    link_url: /clinical-wellbeing/Concept-Clinician-Well-Being-Uncivil-Behavior/
 
 future:
   - title: Policy Sets the Direction

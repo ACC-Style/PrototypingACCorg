@@ -20,17 +20,19 @@ notes: Child of Strengthen Your Team — Health Policy Statement guidance on wor
 
 {% assign page = site.data.ClinicianWellBeing.uncivil_behavior %}
 
-<section id="uncivil-intro" zone-label="Introduction" class="wrapper-container reading-typography m-b_5 grid columns_1 columns_2:md gap_5:lg gap_4">
-  <main class="col-start_start col-end_end col-end_n2:md max-w_65">
-    <h1 class="font_display m-t_0">{{ page.intro.heading }}</h1>
-    <p class="m-b_0">{{ page.intro.body }}</p>
-  </main>
-  <aside class="col-start_start col-start_n2:md col-end_end bg_accent-n2 br_radius c_white color_inherit p_4 p_5:lg reading-typography shadow_bevel-light sticky t_3">
-    <h2 class="font_display m-t_0 font-size_up-1">{{ page.disclaimer.heading }}</h2>
-    <p class="font-size_down-1 lh_2">{{ page.disclaimer.body_1 }}</p>
-    <p class="font-size_down-1 lh_2 m-b_0">{{ page.disclaimer.body_2 }}</p>
-  </aside>
-</section>
+{%- include Blocks/IntroAside.html
+  zone_id="uncivil-intro"
+  heading=page.intro.heading
+  body=page.intro.body
+  aside_id="uncivil-disclaimer"
+  aside_zone_label="Important Note"
+  aside_variant="disclaimer"
+  aside_heading=page.disclaimer.heading
+  aside_body=page.disclaimer.body_1
+  aside_body_2=page.disclaimer.body_2
+  source_url=page.disclaimer.source_url
+  source_text=page.disclaimer.source_text
+-%}
 
 <section id="uncivil-safety" zone-label="Safety First" class="bg_primary-n2 br_round c_white color_inherit m-b_4 m-b_5:lg p_4 p_5:lg reading-typography shadow_bevel-light wrapper-container">
   <h2 class="font_display m-t_0">{{ page.safety.heading }}</h2>

@@ -18,21 +18,17 @@ hero-cta-link: https://www.physiciansupportline.com/
 notes: Deep spoke — accordions with evergreen content from semi-retired COVID pages.
 ---
 
-<section id="mental-health-intro" zone-label="Introduction" class="wrapper-container reading-typography m-b_5:lg m-b_4 grid columns_1 columns_2:md gap_5:lg gap_4">
-  <main class="col-start_start col-end_end col-end_n2:md max-w_65 reading-typography font-size_up" style="--custom-font-size-up: 1; ">
-    <h1>Care for Yourself</h1>
-    <p class="m-t_0">Stress keeps you going. Burnout depletes you. Know the difference — and act before symptoms become a crisis.</p>
-  </main>
-  <aside class="col-start_start col-start_n2:md col-end_end">
-    <div id="burnout-screen" zone-label="Screen for Burnout" class="bg_primary-n2 br_round c_white reading-typography color_inherit p_4 p_5:md shadow_bevel-light relative isolation_isolate sticky t_3">
-      <h2 class="font_display m-t_0">Self Evaluate Your Burn Out</h2>
-      <p class="m-b_4 font-size_down-1 lh_2">Ten quick questions with automatic scoring. See whether your workplace scores in a supportive range or suggests elevated burnout stress.</p>
-      <footer class="relative isolation_isolate">
-        <a href="{{ site.data.ClinicianWellBeing.pages.mini_z | relative_url }}" class="btn btn-primary bg_white c_primary h:bg_white-8 expanded-click-area">Mini Z Assessment</a>
-      </footer>
-    </div>
-  </aside>
-</section>
+{%- include Blocks/IntroAside.html
+  zone_id="mental-health-intro"
+  heading="Care for Yourself"
+  body="Stress keeps you going. Burnout depletes you. Know the difference — and act before symptoms become a crisis."
+  aside_id="burnout-screen"
+  aside_zone_label="Screen for Burnout"
+  aside_heading="Self Evaluate Your Burn Out"
+  aside_body="Ten quick questions with automatic scoring. See whether your workplace scores in a supportive range or suggests elevated burnout stress."
+  aside_button_text="Mini Z Assessment"
+  aside_button_url=site.data.ClinicianWellBeing.pages.mini_z
+-%}
 
 {% assign burnout = site.data.ClinicianWellBeing.grids.burnout_dimensions %}
 <section id="recognize-burnout" zone-label="Recognize Burnout" class="wrapper-container reading-typography m-b_5:lg m-b_4">
@@ -47,8 +43,8 @@ notes: Deep spoke — accordions with evergreen content from semi-retired COVID 
 
 {%- include Blocks/AccordionStack.html
   data_path="ClinicianWellBeing.mental_health_accordions.mental_health_accordions"
-  zone_id="coping-guides"
-  zone_label="Coping Guides"
+  zone_id="mental-health-guides"
+  zone_label="Self-Care Guides"
   group_name="mental-health-guides"
 -%}
 

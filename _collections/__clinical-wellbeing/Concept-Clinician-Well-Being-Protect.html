@@ -18,9 +18,19 @@ hero-cta-link: https://www.acc.org/Education-and-Meetings/Products-and-Resources
 notes: Deep spoke — crisis communication, patient mental health, stigma.
 ---
 
-<section id="protect-intro" zone-label="Introduction" class="reading-typography wrapper-container m-b_5 max-w_65">
-  <p class="m-t_0">Well-being is not only personal. Leaders protect teams through how they communicate. Clinicians protect patients by recognizing mental health needs early — and by responding when colleagues face bullying, bias, or harassment. <a href="{{ site.data.ClinicianWellBeing.pages.uncivil_behavior | relative_url }}">Guidance for witnesses and targets</a>.</p>
-</section>
+{% assign wb = site.data.ClinicianWellBeing.pages %}
+
+{%- include Blocks/IntroAside.html
+  zone_id="protect-intro"
+  heading="Protect Patients & Peers"
+  body="Well-being is not only personal. Leaders protect teams through how they communicate. Clinicians protect patients by recognizing mental health needs early — and by responding when colleagues face bullying, bias, or harassment."
+  aside_id="uncivil-behavior-callout"
+  aside_zone_label="Uncivil Behavior"
+  aside_heading="Witnessing Harassment or Bullying?"
+  aside_body="When it is safe to do so, the Five D&rsquo;s and ACTION frameworks can help you support a colleague targeted by bias, bullying, or harassment."
+  aside_button_text="Read the Workplace Guide"
+  aside_button_url=wb.uncivil_behavior
+-%}
 
 {% assign trust = site.data.ClinicianWellBeing.grids.trust_pillars %}
 <section id="trust-pillars" zone-label="Trust Pillars" class="wrapper-container reading-typography m-b_5:lg m-b_4">

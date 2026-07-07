@@ -1,0 +1,52 @@
+<!--
+Intro + aside secondary action (Care for Yourself pattern).
+zone_id / zone_label: section metadata
+heading: optional h1 in main column
+body / body_2: intro paragraphs
+intro_html: optional extra main-column markup
+aside_id / aside_zone_label: aside panel metadata
+aside_heading / aside_body / aside_body_2: aside content
+aside_button_text / aside_button_url: optional CTA (action variant)
+aside_variant: action (default, bg_primary-n2 + CTA) | disclaimer (bg_accent-n2, no CTA)
+source_url / source_text: optional cite in disclaimer aside
+-->
+{% assign aside_variant = include.aside_variant | default: 'action' %}
+{% assign section_id = include.zone_id | default: 'page-intro' %}
+
+<section id="{{ section_id }}" zone-label="{{ include.zone_label | default: 'Introduction' }}" class="wrapper-container reading-typography m-b_5:lg m-b_4 grid columns_1 columns_2:md gap_5:lg gap_4">
+  <main class="col-start_start col-end_end col-end_n2:md max-w_65 reading-typography font-size_up" style="--custom-font-size-up: 1;">
+    {% if include.heading %}
+    <h1 class="font_display m-t_0">{{ include.heading }}</h1>
+    {% endif %}
+    {% if include.body %}
+    <p class="{% if include.heading %}m-t_0{% else %}m-t_0{% endif %}">{{ include.body }}</p>
+    {% endif %}
+    {% if include.body_2 %}
+    <p class="m-b_0">{{ include.body_2 }}</p>
+    {% endif %}
+    {% if include.intro_html %}
+    {{ include.intro_html }}
+    {% endif %}
+  </main>
+  <aside class="col-start_start col-start_n2:md col-end_end">
+    <div id="{{ include.aside_id | default: section_id | append: '-aside' }}"
+      zone-label="{{ include.aside_zone_label | default: 'Secondary Action' }}"
+      class="{% if aside_variant == 'disclaimer' %}bg_accent-n2 br_radius{% else %}bg_primary-n2 br_round{% endif %} c_white reading-typography color_inherit p_4 p_5:md shadow_bevel-light relative isolation_isolate sticky t_3">
+      <h2 class="font_display m-t_0">{{ include.aside_heading }}</h2>
+      {% if include.aside_body %}
+      <p class="font-size_down-1 lh_2{% if include.aside_button_text %} m-b_4{% elsif include.aside_body_2 %} m-b_3{% else %} m-b_0{% endif %}">{{ include.aside_body }}</p>
+      {% endif %}
+      {% if include.aside_body_2 %}
+      <p class="font-size_down-1 lh_2 m-b_0">{{ include.aside_body_2 }}</p>
+      {% endif %}
+      {% if include.source_url %}
+      <p class="font-size_down-2 lh_2 m-b_0 m-t_4"><cite>Source: <a href="{{ include.source_url }}" class="c_white h:underline" target="_blank" rel="noopener noreferrer"><i class="far fa-file-pdf p-r_1" aria-hidden="true"></i>{{ include.source_text }}</a></cite></p>
+      {% endif %}
+      {% if include.aside_button_text and include.aside_button_url %}
+      <footer class="relative isolation_isolate">
+        <a href="{% if include.aside_button_url contains '://' %}{{ include.aside_button_url }}{% else %}{{ include.aside_button_url | relative_url }}{% endif %}" class="btn btn-primary bg_white c_primary h:bg_white-8 expanded-click-area">{{ include.aside_button_text }}</a>
+      </footer>
+      {% endif %}
+    </div>
+  </aside>
+</section>
