@@ -183,8 +183,11 @@ uncivil_behavior_accordions:
     - type: p
       text: The Five D&rsquo;s can help bystanders choose a response.
     - type: icon_list
+      heading: The Five D's
+      intro: Options for bystanders when it is safe to intervene.
       data_path: ClinicianWellBeing.uncivil_behavior.five_ds.items
-      grid_modifier: columns_1 columns_2:md gap-x_4 gap-y_4 grid
+      grid_modifier: columns_1 gap-y_2 grid
+      always_row: true
       emphasize_first_letter: true
       container_modifier: bg_black-1 br_radius p_4 wrapper-container m-y_4
     - type: p
