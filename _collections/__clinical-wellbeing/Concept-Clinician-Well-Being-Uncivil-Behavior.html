@@ -1,0 +1,71 @@
+---
+layout: Global/sidebar
+name: "Uncivil Behavior in the Workplace"
+position: "SME Prototype"
+masthead: MicroSite/heroimage.micro.dynamic.html
+hero_data_path: ClinicianWellBeing.hero
+hub_url_path: ClinicianWellBeing.pages.hub
+sidebar_data_path: ClinicianWellBeing.sidebar
+nav_active_key: wellbeing_nav
+nav_sub_active_key: wellbeing_nav_sub
+sidebar_aria_label: Clinician Well-Being
+wellbeing_nav: workplace
+wellbeing_nav_sub: uncivil_behavior
+hero_image_alt: Clinician well-being
+hero-title: Uncivil Behavior
+hero-cta-text: Back to Strengthen Your Team
+hero-cta-link: /clinical-wellbeing/Concept-Clinician-Well-Being-Workplace/
+notes: Child of Strengthen Your Team — Health Policy Statement guidance on workplace incivility.
+---
+
+{% assign page = site.data.ClinicianWellBeing.uncivil_behavior %}
+
+<section id="uncivil-intro" zone-label="Introduction" class="wrapper-container reading-typography m-b_5 grid columns_1 columns_2:md gap_5:lg gap_4">
+  <main class="col-start_start col-end_end col-end_n2:md max-w_65">
+    <h1 class="font_display m-t_0">{{ page.intro.heading }}</h1>
+    <p class="m-b_0">{{ page.intro.body }}</p>
+  </main>
+  <aside class="col-start_start col-start_n2:md col-end_end bg_accent-n2 br_radius c_white color_inherit p_4 p_5:lg reading-typography shadow_bevel-light sticky t_3">
+    <h2 class="font_display m-t_0 font-size_up-1">{{ page.disclaimer.heading }}</h2>
+    <p class="font-size_down-1 lh_2">{{ page.disclaimer.body_1 }}</p>
+    <p class="font-size_down-1 lh_2 m-b_0">{{ page.disclaimer.body_2 }}</p>
+  </aside>
+</section>
+
+<section id="uncivil-safety" zone-label="Safety First" class="bg_primary-n2 br_round c_white color_inherit m-b_4 m-b_5:lg p_4 p_5:lg reading-typography shadow_bevel-light wrapper-container">
+  <h2 class="font_display m-t_0">{{ page.safety.heading }}</h2>
+  <p class="font-size_down-1 lh_2 m-b_3 max-w_65">{{ page.safety.intro }}</p>
+  {% if page.safety.steps_intro %}
+  <p class="font-size_down-1 lh_2 m-b_4">{{ page.safety.steps_intro }}</p>
+  {% endif %}
+  <ul class="columns_1 columns_2:md columns_3:lg gap-x_5 gap-y_3 grid lh_2 m-b_0 ul_none">
+    {% for step in page.safety.steps %}
+    <li class="flex flex_row gap_3 items_start">
+      <i class="far fa-regular fa-circle-check font_4 opacity_8 flex_none m-t_1" aria-hidden="true"></i>
+      <span>{{ step }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+{%- include Blocks/AccordionStack.html
+  data_path="ClinicianWellBeing.uncivil_behavior.uncivil_behavior_accordions"
+  zone_id="uncivil-guidance"
+  zone_label="Guidance by Situation"
+  group_name="uncivil-behavior-guides"
+-%}
+
+<section id="uncivil-training" zone-label="Training Resource" class="wrapper-container reading-typography m-b_5">
+  <div class="bg_black-2 br_radius p_4 p_5:lg max-w_65">
+    <h2 class="font_display m-t_0">{{ page.training.heading }}</h2>
+    <p class="m-b_4">{{ page.training.body }}</p>
+    {% if page.training.related_resource %}
+    <p class="m-b_4">{{ page.training.related_resource | markdownify }}</p>
+    {% endif %}
+    <footer class="relative isolation_isolate">
+      <a href="{{ page.training.link_url }}" class="btn btn-primary expanded-click-area" target="_blank" rel="noopener noreferrer">{{ page.training.link_text }}</a>
+    </footer>
+  </div>
+</section>
+
+{%- include_relative partials/toolkit-citation.html -%}

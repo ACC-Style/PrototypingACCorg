@@ -17,7 +17,7 @@ tools_branches:
     url_key: mental_health
   - icon: fa-hospital
     title: Strengthen Your Team
-    description: Change practice efficiency, culture, and team support — not just individual coping.
+    description: Change practice efficiency, culture, and team support — including guidance on uncivil behavior.
     url_key: workplace
   - icon: fa-people-group
     title: Protect Patients & Peers

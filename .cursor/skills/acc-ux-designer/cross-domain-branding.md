@@ -111,6 +111,16 @@ Applies to `c_`, `bg_`, and `br_` prefixes: `c_white-8`, `bg_black-_05`, `br_bla
 
 Do not substitute `bg_shade-2` when you need a **tinted overlay** on primary or imagery — use `bg_black-N` or `bg_white-N`.
 
+### Reversed text panels
+
+For full panels (not hero breadcrumbs), put **`reading-typography` + `color_inherit` + `c_{role}`** on the same element as **`bg_{role}`** so headings, paragraphs, and lists inherit when you swap palette. Do not wrap an extra unstyled `div` inside a `wrapper-container` section.
+
+```html
+<section class="bg_primary-n2 br_round c_white color_inherit reading-typography p_4 wrapper-container">…</section>
+```
+
+Full pattern, examples, and anti-patterns: [design-system.md — Reversed text panels](design-system.md#reversed-text-panels-color-on-color).
+
 ## Functional font roles
 
 | Class | Role | ACC | CardioSmart | CVQuality | Virtual |

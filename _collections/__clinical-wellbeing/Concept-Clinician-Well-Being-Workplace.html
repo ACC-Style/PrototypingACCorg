@@ -9,7 +9,7 @@ sidebar_data_path: ClinicianWellBeing.sidebar
 nav_active_key: wellbeing_nav
 nav_sub_active_key: wellbeing_nav_sub
 sidebar_aria_label: Clinician Well-Being
-wellbeing_nav: tools
+wellbeing_nav: workplace
 wellbeing_nav_sub: workplace
 hero_image_alt: Clinician well-being
 hero-title: Strengthen Your Team
@@ -20,6 +20,7 @@ notes: Deep spoke — three domains + Crisis Communication accordions (evergreen
 
 <section id="workplace-intro" zone-label="Introduction" class="reading-typography wrapper-container m-b_5 max-w_65">
   <p class="m-t_0">Telling burned-out clinicians to &ldquo;be more resilient&rdquo; is not enough. Sustainable well-being requires changes in how practices run, how cultures support people, and how institutions invest in their teams.</p>
+  <p>When behavior crosses the line into bullying, bias, or harassment, clinicians need practical guidance — not just culture talk. See <a href="{{ site.data.ClinicianWellBeing.pages.uncivil_behavior | relative_url }}">responding to uncivil behavior in the workplace</a>.</p>
 </section>
 
 {% assign workplace = site.data.ClinicianWellBeing.grids.workplace_domains %}
@@ -28,6 +29,19 @@ notes: Deep spoke — three domains + Crisis Communication accordions (evergreen
   <p class="m-b_4 max-w_65">{{ workplace.intro }}</p>
   <div class="bg_black-1 br_radius p_4 p_5:lg">
     {%- include Blocks/UL_IconHeadlineText.html data_path="ClinicianWellBeing.grids.workplace_domains_items" grid_modifier="columns_1 columns_3:md gap-x_4 gap-y_4 grid" -%}
+  </div>
+</section>
+
+{% assign wb = site.data.ClinicianWellBeing.pages %}
+<section id="uncivil-behavior-callout" zone-label="Uncivil Behavior" class="wrapper-container reading-typography m-b_5:lg m-b_4">
+  <div class="bg_black-2 br_radius p_4 p_5:lg grid columns_1 columns_4:md gap_4 items_center">
+    <div class="col-start_start col-end_n3:md col-end_end">
+      <h2 class="font_display m-t_0">Responding to Uncivil Behavior</h2>
+      <p class="m-b_0">Bullying, harassment, discrimination, and bias can affect anyone on the care team. Use step-by-step guidance — safety first, then ACTION and Five D&rsquo;s frameworks — if you experience or witness uncivil behavior.</p>
+    </div>
+    <footer class="col-start_start col-start_n3:md col-end_end relative isolation_isolate text_center text_left:md">
+      <a href="{{ wb.uncivil_behavior | relative_url }}" class="btn btn-primary expanded-click-area">Explore the Guide</a>
+    </footer>
   </div>
 </section>
 

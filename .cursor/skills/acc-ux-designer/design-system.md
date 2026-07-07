@@ -120,6 +120,68 @@ Named grids (heroes): see [heroes.md](heroes.md) — `grid-template="hero-area"`
 Shadows: `shadow_bevel-light`, `shadow_bevel-bold`, `shadow_overlap-light`  
 Hover: `h:bg_accent-5`, `h:bg_primary-5`, `h:undecorated`
 
+## Reversed text panels (color-on-color)
+
+A **reversed panel** is a block where the surface is a brand color and body copy reads in a contrasting text color (usually white on `bg_primary-n*` or `bg_accent-n*`).
+
+**Put these three on the same container** — the `<section>`, `<aside>`, or `<article>` that owns the panel — so all semantic children inherit when you swap themes:
+
+| Class | Role |
+|-------|------|
+| `reading-typography` | Prose rhythm for `h2`–`p`, lists, links inside the panel |
+| `color_inherit` | Children inherit the container's text color |
+| `c_{role}` | Text color token — e.g. `c_white` on primary/accent backgrounds |
+
+Also on that **same** element: `bg_{role}`, padding, radius, shadow, and `wrapper-container` when the panel should align to content width.
+
+```html
+<!-- Good — one surface; swap bg + c_ together to retheme -->
+<section
+  class="bg_primary-n2 br_round c_white color_inherit p_4 p_5:lg reading-typography shadow_bevel-light wrapper-container">
+  <h2 class="font_display m-t_0">Start Here — Safety Comes First</h2>
+  <p class="font-size_down-1 lh_2 m-b_3">If you feel unsafe…</p>
+  <ul class="columns_1 columns_2:md columns_3:lg gap-x_5 gap-y_3 grid ul_none">
+    <li class="flex flex_row gap_3 items_start">
+      <i class="far fa-circle-check opacity_8 flex_none" aria-hidden="true"></i>
+      <span>Write down what happened.</span>
+    </li>
+  </ul>
+</section>
+
+<aside class="bg_accent-n2 br_radius c_white color_inherit p_4 p_5:lg reading-typography shadow_bevel-light sticky t_3">
+  <h2 class="font_display m-t_0">Important Note</h2>
+  <p class="font-size_down-1 lh_2 m-b_0">Disclaimer copy…</p>
+</aside>
+```
+
+```html
+<!-- Avoid — extra wrapper; color not on the semantic panel root -->
+<section class="wrapper-container reading-typography">
+  <div class="bg_primary-n2 c_white p_4">…</div>
+</section>
+
+<!-- Avoid — sprinkling c_white on every child instead of color_inherit on the panel -->
+<section class="bg_primary-n2 p_4">
+  <h2 class="c_white">…</h2>
+  <p class="c_white">…</p>
+</section>
+```
+
+| Do | Don't |
+|----|-------|
+| `reading-typography` + `color_inherit` + `c_white` on the **panel root** | Nest a bare `div` only for background while outer `section` stays uncolored |
+| Use `c_white-8` / `c_white-9` only for **de-emphasis** (icons, meta) | Repeat `c_white` on every `h2`, `p`, `li`, `span` |
+| Use **`opacity_8`** (or similar) on icons inside the panel — they inherit the root `c_*` and soften | Hard-code `c_white-8` on every icon when `color_inherit` already sets panel text |
+| Change `bg_primary-n2` + `c_white` together to retheme | Mix `color_inherit` without a `c_*` text token on the same node |
+
+**Icon de-emphasis:** On a reversed panel with `color_inherit` + `c_white` on the root, icons inherit white. Add `opacity_8` (or `opacity_9`) on the `<i>` instead of a separate `c_white-8` — the icon stays in sync if you swap the panel's `c_*` token.
+
+```html
+<i class="far fa-circle-check font_4 opacity_8 flex_none m-t_1" aria-hidden="true"></i>
+```
+
+See also [cross-domain-branding.md](cross-domain-branding.md) — transparent `c_white-8` on heroes vs opaque reversed panels.
+
 ## Buttons
 
 Bootstrap + UC combined. **Default supporting action:** `btn-shade` (light grey background, black text — lower contrast than `btn-secondary`, reads better on white cards).
@@ -207,3 +269,4 @@ Images are used **sparingly** — branding, audience grounding, humanization. Ne
 - **Overusing `secondary`** on ACC — grey secondary; prefer shade/black/white first
 - Guessing class names — grep `acc_uc.css` or copy from gold standard
 - Missing `reading-typography` on long prose blocks
+- **Reversed panels** without `reading-typography` + `color_inherit` + `c_*` on the same node as `bg_*` — see [Reversed text panels](design-system.md#reversed-text-panels-color-on-color)

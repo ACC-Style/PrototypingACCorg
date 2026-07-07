@@ -1,0 +1,195 @@
+intro:
+  heading: Responding to Uncivil Behavior in the Workplace
+  body: Workplace bullying, harassment, discrimination and bias can affect any member of the health care team. Use the guidance below to think through your options if you experience or witness uncivil behavior.
+
+disclaimer:
+  heading: Important Note
+  body_1: This information reflects expert opinion from the Health Policy Statement Writing Committee. It is for informational purposes only. It does not represent the views, policy or practice of the American College of Cardiology.
+  body_2: Every situation is different. Use your own judgment. When appropriate, speak with someone you trust, such as an advisor, ombudsperson, Human Resources representative, legal counsel or another professional.
+
+safety:
+  heading: "Start Here: Safety Comes First"
+  intro: If you feel unsafe or at risk, leave the situation and get to a safe place.
+  steps_intro: "Then, when you are able:"
+  steps:
+  - Write down what happened.
+  - Include the date, time and location.
+  - List the people involved and any witnesses.
+  - Save relevant emails, texts, photos, social media posts or other records.
+  - Review your institution's policies and reporting process.
+  - Consider speaking with someone you trust before taking next steps.
+
+action_framework:
+  heading: ACTION Framework
+  intro: One option when addressing a microaggression directly — or when supporting someone as a bystander.
+  items:
+  - icon_class: fa-circle-question
+    headline: Ask
+    description: clarifying questions.
+  - icon_class: fa-magnifying-glass
+    headline: Curiosity
+    description: approach the person with curiosity, not judgment.
+  - icon_class: fa-comment-dots
+    headline: Tell
+    description: what you observed.
+  - icon_class: fa-bullseye
+    headline: Impact
+    description: explain how the behavior affected you or others.
+  - icon_class: fa-user
+    headline: Own
+    description: your thoughts and feelings.
+  - icon_class: fa-arrow-right
+    headline: Next steps
+    description: request a specific change.
+
+five_ds:
+  heading: The Five D's
+  intro: Options for bystanders when it is safe to intervene.
+  items:
+  - icon_class: fa-hand
+    headline: Direct
+    description: address the behavior and ask the person to stop.
+  - icon_class: fa-shuffle
+    headline: Distract
+    description: interrupt the incident with a question, unrelated conversation or reason to leave the space.
+  - icon_class: fa-people-arrows
+    headline: Delegate
+    description: ask a supervisor, Human Resources representative, security officer or colleague to help.
+  - icon_class: fa-clock
+    headline: Delay
+    description: follow up with the targeted person afterward. Offer support. Ask what they need.
+  - icon_class: fa-file-lines
+    headline: Document
+    description: record key details. Ask the targeted person what they want done with the documentation. Do not share it without their consent.
+
+training:
+  heading: Training Resource
+  body: Right To Be offers training and resources on preventing, responding to and intervening in harassment.
+  link_text: Explore Right To Be Training Resources
+  link_url: https://righttobe.org/
+  related_resource: '<strong>Related resource:</strong> <a href="https://righttobe.org/" target="_blank" rel="noopener noreferrer">Explore Right To Be training resources</a>.'
+
+uncivil_behavior_accordions:
+  heading: Guidance by Situation
+  intro: Expand the section that matches what you are facing or witnessing.
+  items:
+  - id: microaggression
+    title: If You Experience a Microaggression
+    open: true
+    blocks:
+    - type: two_column
+      left:
+      - type: p
+        text: You may decide to address the behavior directly. One option is the ACTION framework.
+      - type: p
+        text: You do not have to respond to every microaggression. That can be exhausting. Prioritize your well-being and decide what is reasonable for the moment.
+      - type: p
+        text: Bystanders can also use the ACTION framework to respond in the moment.
+      right:
+      - type: icon_list
+        heading: ACTION Framework
+        intro: One option when addressing a microaggression directly — or when supporting someone as a bystander.
+        data_path: ClinicianWellBeing.uncivil_behavior.action_framework.items
+        grid_modifier: columns_1 gap-y_2 grid
+        always_row: true
+        emphasize_first_letter: true
+        container_modifier: bg_black-1 br_radius p_4 wrapper-container m-t_0
+      after:
+      - type: p
+        text: '<strong>Related resource:</strong> <a href="https://s35691.pcdn.co/wp-content/uploads/images/FF-Special-Report-2016-Diversity-and-Inclusion.pdf" target="_blank" rel="noopener noreferrer">Read <em>Microaggressions and Microresistance: Supporting and Empowering Students</em> in the Faculty Focus/Magna report, <em>Diversity and Inclusion in the College Classroom</em></a>.'
+
+  - id: bias-opportunities
+    title: If Bias May Be Limiting Your Professional Opportunities
+    blocks:
+    - type: p
+      text: If the bias appears unconscious or implicit, consider using the ACTION framework to start a direct conversation.
+    - type: h4
+      text: You may also want to
+    - type: ul
+      items:
+      - Speak with your supervisor, training director or another leader.
+      - Ask for clarity about expectations, decisions and available remedies.
+      - Document patterns that may affect evaluations, assignments, promotions or opportunities.
+    - type: p
+      text: If the bias is overt or affects opportunities based on a protected class, such as race or sex, consider using your institution's reporting process. You may also want to seek legal advice.
+
+  - id: bullying
+    title: If You Experience Bullying
+    blocks:
+    - type: p
+      text: Focus on safety first. If you feel uncomfortable or in danger, leave the situation.
+    - type: h4
+      text: Then
+    - type: ul
+      items:
+      - Document what happened.
+      - Save relevant records.
+      - Talk with someone you trust.
+      - Review your institution's bullying and harassment policies.
+    - type: p
+      text: If there is no physical risk, you may choose to speak directly with the person. Consider doing this with a witness present. Describe the behavior clearly and ask the person to stop.
+    - type: p
+      text: If you decide to report the behavior, follow your institution's reporting process. If no policy exists, consider speaking with a senior leader or Human Resources.
+
+  - id: racial-sexual-discrimination
+    title: If You Experience Racial or Sexual Discrimination
+    blocks:
+    - type: p
+      text: Document the incident as soon as possible. Include the date, time, location, people involved and witnesses. Save any relevant records.
+    - type: h4
+      text: Before reporting, review your institution's anti-discrimination policy. Consider
+    - type: ul
+      items:
+      - Whether you want to report the behavior.
+      - What outcome you are seeking.
+      - Whether the person you are speaking with can keep the conversation confidential.
+    - type: p
+      text: In universities and educational institutions, some employees may be mandatory reporters. This may include deans, provosts and department or division heads.
+    - type: p
+      text: Consider seeking legal counsel from someone experienced in employment discrimination law.
+    - type: p
+      text: '<strong>Related resource:</strong> <a href="https://www.eeoc.gov/time-limits-filing-charge" target="_blank" rel="noopener noreferrer">Review the EEOC&rsquo;s guidance on time limits for filing a charge of discrimination</a>.'
+
+  - id: sexual-harassment
+    title: If You Experience Sexual Harassment
+    blocks:
+    - type: p
+      text: Get to a safe place first.
+    - type: h4
+      text: Then
+    - type: ul
+      items:
+      - Document the incident.
+      - Save relevant records.
+      - Speak with someone you trust.
+      - Review your institution's sexual harassment policy.
+      - Decide whether you want to report and what outcome you want.
+    - type: p
+      text: If you are at a university or educational institution, ask whether the person you are speaking with can maintain confidentiality before sharing details. Some employees may be required to report allegations of sex- or gender-based harassment.
+    - type: p
+      text: If you decide not to report right away, continue documenting incidents. Be aware that delaying a report may affect future legal options. Deadlines for discrimination complaints vary by state.
+    - type: p
+      text: If there is no physical risk, you may choose to speak directly with the person, preferably with a witness present. Describe the behavior and ask them to stop.
+    - type: p
+      text: If you decide to report, follow your institution's process. You may also want to seek legal advice. If your institution does not have a harassment policy, consider speaking with a senior leader, Human Resources or the equivalent office for faculty or trainees. You can also file a complaint directly with the Equal Employment Opportunity Commission.
+    - type: p
+      text: '<strong>Related resource:</strong> <a href="https://www.eeoc.gov/time-limits-filing-charge" target="_blank" rel="noopener noreferrer">Review the EEOC&rsquo;s guidance on time limits for filing a charge of discrimination</a>.'
+
+  - id: witness
+    title: If You Witness Harassment, Discrimination or Bullying
+    blocks:
+    - type: p
+      text: When it is safe to do so, consider intervening to support the person being targeted.
+    - type: p
+      text: The Five D&rsquo;s can help bystanders choose a response.
+    - type: icon_list
+      data_path: ClinicianWellBeing.uncivil_behavior.five_ds.items
+      grid_modifier: columns_1 columns_2:md gap-x_4 gap-y_4 grid
+      emphasize_first_letter: true
+      container_modifier: bg_black-1 br_radius p_4 wrapper-container m-y_4
+    - type: p
+      text: If you are in a supervisory or leadership role, you may have a reporting obligation. Ask Human Resources if you are unsure.
+    - type: p
+      text: After speaking with the targeted person, consider reporting the behavior through your institution&rsquo;s process.
+    - type: p
+      text: '<strong>Related resources:</strong> <a href="https://www.nationalpartnership.org/our-work/resources/economic-justice/sexual-harassment/know-your-rights-witnessing-sexual-harassment-work.pdf" target="_blank" rel="noopener noreferrer">Review <em>Know Your Rights: Witnessing Sexual Harassment at Work</em> from the National Partnership for Women &amp; Families</a> and <a href="https://righttobe.org/" target="_blank" rel="noopener noreferrer">Right To Be&rsquo;s bystander intervention resources</a>.'

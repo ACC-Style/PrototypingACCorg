@@ -1,0 +1,32 @@
+{% case include.block.type %}
+{% when 'p' %}
+<p class="{% if include.first_margin %}m-t_0{% endif %}">{{ include.block.text | markdownify }}</p>
+{% when 'h4' %}
+<h4 class="font_display m-b_2 {% unless include.first_margin %}m-t_4{% endunless %}">{{ include.block.text }}</h4>
+{% when 'ul' %}
+<ul class="lh_2">
+  {% for li in include.block.items %}
+  <li>{{ li | markdownify }}</li>
+  {% endfor %}
+</ul>
+{% when 'ol' %}
+<ol class="lh_2">
+  {% for li in include.block.items %}
+  <li>{{ li | markdownify }}</li>
+  {% endfor %}
+</ol>
+{% when 'icon_list' %}
+<div class="{% if include.block.container_modifier %}{{ include.block.container_modifier }}{% else %}bg_black-1 br_radius p_4 wrapper-container m-y_4{% endif %}">
+  {% if include.block.heading %}
+  <h4 class="font_display m-t_0 m-b_2">{{ include.block.heading }}</h4>
+  {% endif %}
+  {% if include.block.intro %}
+  <p class="font-size_down-1 m-b_4">{{ include.block.intro }}</p>
+  {% endif %}
+  {% if include.block.emphasize_first_letter %}
+  {%- include Blocks/UL_IconHeadlineText.html data_path=include.block.data_path grid_modifier=include.block.grid_modifier emphasize_first_letter=true always_row=include.block.always_row -%}
+  {% else %}
+  {%- include Blocks/UL_IconHeadlineText.html data_path=include.block.data_path grid_modifier=include.block.grid_modifier always_row=include.block.always_row -%}
+  {% endif %}
+</div>
+{% endcase %}

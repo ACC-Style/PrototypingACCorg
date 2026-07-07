@@ -15,6 +15,10 @@ items:
 - key: protect
   label: Protect Patients & Peers
   url: /clinical-wellbeing/Concept-Clinician-Well-Being-Protect/
+  children:
+  - key: uncivil_behavior
+    label: Uncivil Behavior
+    url: /clinical-wellbeing/Concept-Clinician-Well-Being-Uncivil-Behavior/
 - key: future
   label: Shaping the Future
   url: /clinical-wellbeing/Concept-Clinician-Well-Being-Future/
