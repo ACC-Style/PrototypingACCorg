@@ -19,10 +19,19 @@ notes: Policy spoke — statements, advocacy, partnerships.
 
 {% assign wb = site.data.ClinicianWellBeing.pages %}
 
-<section id="future-intro" zone-label="Introduction" class="reading-typography wrapper-container m-b_5 max-w_65">
-  <p class="m-t_0">Tools help you today. Policy and advocacy change the system tomorrow. ACC publishes health policy statements, advances workforce priorities, and partners with national leaders.</p>
-  <p><strong>North star:</strong> A cardiovascular profession where every clinician can build a sustainable career in a respectful, flexible, and inclusive workplace — and where seeking support is a sign of strength, not weakness.</p>
-</section>
+{%- include Blocks/IntroAside.html
+  zone_id="future-intro"
+  heading="Shaping the Future"
+  body="Tools help you today. Policy and advocacy change the system tomorrow. ACC publishes health policy statements, advances workforce priorities, and partners with national leaders."
+  aside_id="north-star"
+  aside_zone_label="North Star"
+  aside_icon="fa-star"
+  aside_heading="North Star"
+  aside_body="A cardiovascular profession where every clinician can build a sustainable career in a respectful, flexible, and inclusive workplace — and where seeking support is a sign of strength, not weakness."
+  aside_button_text="Workforce Advocacy"
+  aside_button_url=wb.workforce_advocacy
+  aside_button_style="shade"
+-%}
 
 {%- include Blocks/SmallImageTextPanel.html
   zone_id="career-flexibility"

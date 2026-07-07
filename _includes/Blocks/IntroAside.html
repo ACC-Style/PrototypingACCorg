@@ -8,6 +8,8 @@ aside_id / aside_zone_label: aside panel metadata
 aside_heading / aside_body / aside_body_2: aside content
 aside_button_text / aside_button_url: optional CTA (action variant)
 aside_variant: action (default, bg_primary-n2 + CTA) | disclaimer (bg_accent-n2, no CTA)
+aside_icon: optional Font Awesome class above aside heading (hub north-star pattern)
+aside_button_style: primary (default) | shade
 source_url / source_text: optional cite in disclaimer aside
 -->
 {% assign aside_variant = include.aside_variant | default: 'action' %}
@@ -32,6 +34,9 @@ source_url / source_text: optional cite in disclaimer aside
     <div id="{{ include.aside_id | default: section_id | append: '-aside' }}"
       zone-label="{{ include.aside_zone_label | default: 'Secondary Action' }}"
       class="{% if aside_variant == 'disclaimer' %}bg_accent-n2 br_radius{% else %}bg_primary-n2 br_round{% endif %} c_white reading-typography color_inherit p_4 p_5:md shadow_bevel-light relative isolation_isolate sticky t_3">
+      {% if include.aside_icon %}
+      <i class="far fa-regular {{ include.aside_icon }} font-size_up-2 m-b_3 opacity_8 block" aria-hidden="true"></i>
+      {% endif %}
       <h2 class="font_display m-t_0">{{ include.aside_heading }}</h2>
       {% if include.aside_body %}
       <p class="font-size_down-1 lh_2{% if include.aside_button_text %} m-b_4{% elsif include.aside_body_2 %} m-b_3{% else %} m-b_0{% endif %}">{{ include.aside_body }}</p>
@@ -44,7 +49,7 @@ source_url / source_text: optional cite in disclaimer aside
       {% endif %}
       {% if include.aside_button_text and include.aside_button_url %}
       <footer class="relative isolation_isolate">
-        <a href="{% if include.aside_button_url contains '://' %}{{ include.aside_button_url }}{% else %}{{ include.aside_button_url | relative_url }}{% endif %}" class="btn btn-primary bg_white c_primary h:bg_white-8 expanded-click-area">{{ include.aside_button_text }}</a>
+        <a href="{% if include.aside_button_url contains '://' %}{{ include.aside_button_url }}{% else %}{{ include.aside_button_url | relative_url }}{% endif %}" class="{% if include.aside_button_style == 'shade' %}btn btn-shade{% else %}btn btn-primary bg_white c_primary h:bg_white-8{% endif %} expanded-click-area"{% if include.aside_button_url contains '://' %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ include.aside_button_text }}</a>
       </footer>
       {% endif %}
     </div>
