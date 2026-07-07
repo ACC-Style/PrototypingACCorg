@@ -15,6 +15,7 @@ layout: home
       <h2 >{{ collection.label | replace: "_", " " | capitalize }}</h2>
       <ul class="ul_none font_1:lg font_0  grid gap_2 columns_1">
       {% for doc in collection.docs %}
+        {% if doc.published != false and doc.name and doc.name != '' %}
         <li class="p_3 bg_black-1 h:bg_primary-5 m_0">
           <a class="not-link" href="{{ doc.url | append: site.github.build_revision | relative_url }}">
             <strong>{{ doc.name }}</strong>
@@ -23,6 +24,7 @@ layout: home
             {% endif %}
           </a>
         </li>
+        {% endif %}
       {% endfor %}
       </ul>
     </div>
@@ -36,6 +38,7 @@ layout: home
       <h2 >{{ collection.label | replace: "_", " " | capitalize }}</h2>
       <ul class="ul_none grid gap_2 columns_1 font_1:lg font_0">
       {% for doc in collection.docs %}
+        {% if doc.published != false and doc.name and doc.name != '' %}
         <li class="p_3 bg_black-1 h:bg_primary-5 m_0">
           <a class="not-link" href="{{ doc.url | append: site.github.build_revision | relative_url }}">
             <strong>{{ doc.name }}</strong>
@@ -44,6 +47,7 @@ layout: home
             {% endif %}
           </a>
         </li>
+        {% endif %}
       {% endfor %}
       </ul>
     </div>

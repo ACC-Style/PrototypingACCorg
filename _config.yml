@@ -66,11 +66,21 @@ collections:
     output: true
     permalink: /clinical-wellbeing/:path/
 
+defaults:
+  - scope:
+      path: "_collections/__clinical-wellbeing/raw-files"
+    values:
+      published: false
+  - scope:
+      path: "_collections/__clinical-wellbeing/working-files"
+    values:
+      published: false
+
 # Exclude from processing.
 exclude:
-  - _collections/__clinical-wellbeing/raw-files
-  - _collections/__clinical-wellbeing/Clinician Well Being
-  - _collections/__clinical-wellbeing/wireframe.md
+  - _collections/__clinical-wellbeing/raw-files/
+  - _collections/__clinical-wellbeing/partials
+  - _collections/__clinical-wellbeing/working-files
 
 # Exclude from processing (legacy comment block below).
 
