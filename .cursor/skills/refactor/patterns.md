@@ -21,6 +21,7 @@ Apply [acc-ux-designer](../acc-ux-designer/design-system.md) color and button ru
 | Anchor / jump nav | Return visitors, long pages | `AnchorPageNav.html` |
 | Date/status lists | Time-sliced content | `award_schedule.html` |
 | Hero + short intro | Replace long header prose — pick correct hero tier first | [heroes.md](../acc-ux-designer/heroes.md) |
+| **Microsite pattern set** | Initiative hub + sub pages (root hero, micro branding, linked grids, footer CTA) | [microsite-patterns.md](../acc-ux-designer/microsite-patterns.md) |
 | Accordion (strategic) | Return-visit / reference depth on product pages | [accordions.md](accordions.md), `SAP/wrap-up-content.html` |
 
 ## Topic hub tiles

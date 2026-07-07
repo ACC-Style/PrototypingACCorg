@@ -1,0 +1,51 @@
+---
+layout: arches-clinical-wellbeing
+name: "Protect Yourself & Others"
+position: "SME Prototype"
+masthead: MicroSite/heroimage.micro.dynamic.html
+wellbeing_nav: tools
+wellbeing_nav_sub: protect
+hero_image_alt: Clinician well-being
+hero-title: Protect Yourself & Others
+hero-cta-text: NCD Mental Health Course
+hero-cta-link: https://www.acc.org/Education-and-Meetings/Products-and-Resources/NCD-Academy/Course-List/mental-health-care-increasing-awareness-erasing-stigmas
+notes: Deep spoke — crisis communication, patient mental health, stigma.
+---
+
+{%- include_relative partials/spoke-layout-open.html -%}
+
+<section id="protect-intro" zone-label="Introduction" class="reading-typography wrapper-container m-b_5 max-w_65">
+  <p class="m-t_0">Well-being is not only personal. Leaders protect teams through how they communicate. Clinicians protect patients by recognizing mental health needs early.</p>
+</section>
+
+{%- include_relative partials/icon-grid.html grid_key="trust_pillars" zone_id="trust-pillars" zone_label="Trust Pillars" linked=false -%}
+
+<section id="crisis-communication" zone-label="Crisis Communication" class="reading-typography wrapper-container m-b_5 max-w_65">
+  <h2 class="font_display">Communicating With Your Team in High-Stress Times</h2>
+  <p>When people are stressed, they struggle to hear and remember information. Lead with empathy. Limit key messages to three to five. Repeat what matters most at the beginning and end.</p>
+  <p><a href="https://www.acc.org//-/media/Non-Clinical/Files-PDFs-Excel-MS-Word-etc/2020/03/27/Crisis-Communication-Infographic.pdf" target="_blank" rel="noopener noreferrer">Crisis Communication Infographic (PDF)</a></p>
+</section>
+
+{%- include_relative partials/feature-panel.html
+  zone_id="ncd-course"
+  zone_label="Patient Mental Health Panel"
+  title="Recognize and Respond to Patient Mental Health"
+  body="The NCD Academy course covers screening, intervention, and engaging specialists across six common mental health disorder categories."
+  image="https://www.acc.org//-/media/Non-Clinical/Images/2020/04/13/Stressed-Medical-Professional-COVID-19-1200x800.jpg"
+  image_alt="Clinician supporting patient mental health"
+  link="https://www.acc.org/Education-and-Meetings/Products-and-Resources/NCD-Academy/Course-List/mental-health-care-increasing-awareness-erasing-stigmas"
+  button="View NCD Course"
+-%}
+
+<section id="confront-stigma" zone-label="Confront Stigma" class="reading-typography wrapper-container m-b_5 max-w_65">
+  <h2 class="font_display">When a Colleague Is Struggling</h2>
+  <p>Most cardiologists who need help will not ask for it. Post the <a href="https://www.acc.org/education-and-meetings/image-and-slide-gallery/media-detail?id=9837bbc35b74465b9e97f7d620e85080" target="_blank" rel="noopener noreferrer">ACC well-being infographic</a> in your break room. Know your institution&rsquo;s EAP. Normalize the conversation.</p>
+</section>
+
+{%- include Blocks/FollowUpCTA.html
+  data_path="ClinicianWellBeing.follow_up_ctas.protect"
+  container_modifier="bg_black-2 p_4 p-y_5:md p-y_6:lg m-t_5"
+  cta_type="bevel"
+-%}
+
+{%- include_relative partials/spoke-layout-close.html -%}

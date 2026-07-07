@@ -1,0 +1,76 @@
+{% assign data_file = include.data_file | default: 'mental_health_accordions' %}
+{% assign accordion = site.data.ClinicianWellBeing[data_file][data_file] %}
+{% assign group_name = include.group_name | default: accordion.zone_id | default: 'wellbeing-accordion' %}
+<style>
+  details[accordion]::details-content {
+    overflow: hidden;
+    block-size: 0;
+    transition: block-size 0.35s ease, content-visibility 0.35s;
+    transition-behavior: allow-discrete;
+  }
+  details[accordion][open]::details-content {
+    block-size: auto;
+  }
+  details[accordion] summary {
+    list-style: none;
+    cursor: pointer;
+  }
+  details[accordion] summary::-webkit-details-marker,
+  details[accordion] summary::marker {
+    display: none;
+  }
+  details[accordion] summary .fa-stack .a\:rotation {
+    transition: transform 0.35s ease;
+  }
+  details[accordion][open] summary .fa-stack .a\:rotation {
+    transform: rotate(0deg);
+  }
+</style>
+<section id="{{ include.zone_id | default: accordion.zone_id | default: 'coping-guides' }}" zone-label="{{ include.zone_label | default: 'Coping Guides' }}" class="reading-typography wrapper-container m-b_5 p-x_4:lg">
+  {% if accordion.heading %}
+  <h2 class="font_display m-b_3">{{ accordion.heading }}</h2>
+  {% endif %}
+  {% if accordion.intro %}
+  <p class="max-w_65 m-b_4">{{ accordion.intro }}</p>
+  {% endif %}
+  <div grid-template="container">
+    {% for item in accordion.items %}
+    <details accordion name="{{ group_name }}" id="{{ item.id }}" class="isolation_isolate m-b_3" {% if item.open %}open{% endif %}>
+      <summary class="sticky inset_0 b_auto z_3 bg_white h:bg_primary-5 c_primary-n2 br_radius shadow_bevel-light br_solid br_1 br_black-2">
+        <hgroup class="flex flex_row">
+          <span class="fa-stack flex_shrink m_2 br_radius" aria-hidden="true">
+            <i class="fa-solid fa-minus fa-stack-1x"></i>
+            <i class="fa-solid fa-minus rotate_90 a:rotation fa-stack-1x"></i>
+          </span>
+          <h3 class="flex_auto m-y_2 inline-block self_center font_display font-size_up-1 m-b_0">{{ item.title }}</h3>
+        </hgroup>
+      </summary>
+      <div class="z_0 bg_black-_05 br-bl_radius br-br_radius m-x_3:md p_3 p_4:md reading-typography shadow_emboss-light m-b_2">
+        {% for block in item.blocks %}
+          {% case block.type %}
+          {% when 'p' %}
+          <p class="{% if forloop.first %}m-t_0{% endif %}">{{ block.text }}</p>
+          {% when 'h4' %}
+          <h4 class="font_display m-b_2 {% unless forloop.first %}m-t_4{% endunless %}">{{ block.text }}</h4>
+          {% when 'ul' %}
+          <ul class="lh_2">
+            {% for li in block.items %}
+            <li>{{ li }}</li>
+            {% endfor %}
+          </ul>
+          {% when 'ol' %}
+          <ol class="lh_2">
+            {% for li in block.items %}
+            <li>{{ li }}</li>
+            {% endfor %}
+          </ol>
+          {% endcase %}
+        {% endfor %}
+        {% if item.source %}
+        <p class="font-size_down-1 opacity_8 m-b_0 m-t_4"><em>Source: {{ item.source }}</em></p>
+        {% endif %}
+      </div>
+    </details>
+    {% endfor %}
+  </div>
+</section>

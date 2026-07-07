@@ -1,27 +1,30 @@
 {% assign hero_image_base = include.hero_image_base | default: 'Dynamic' %}
+{% assign hero_image_dir = include.hero_image_dir | default: 'assets/images/MicroSite' %}
+{% assign hero_image_ext = include.hero_image_ext | default: 'png' %}
+{% assign parent_link = include.parent_link | default: '../' %}
 <div grid-template="hero-image-cta" template-option="micro" class="isolation_isolate overflow_hidden relative">
     <picture data-item="responsive-hero-image" class="absolute bg_cover flex flex_column inset_0 ">
         <source
-          srcset="{{ 'assets/images/MicroSite/' | append: hero_image_base | append: '_1200x300.png' | relative_url }}"
+          srcset="{{ hero_image_dir | append: '/' | append: hero_image_base | append: '_1200x300.' | append: hero_image_ext | relative_url }}"
           media="(min-width: 1024px)"
           class="display_none">
         <source
-          srcset="{{ 'assets/images/MicroSite/' | append: hero_image_base | append: '_1024x256.png' | relative_url }}"
+          srcset="{{ hero_image_dir | append: '/' | append: hero_image_base | append: '_1024x256.' | append: hero_image_ext | relative_url }}"
           media="(min-width: 768px)"
           class="display_none">
         <source
-          srcset="{{ 'assets/images/MicroSite/' | append: hero_image_base | append: '_600x300.png' | relative_url }}"
+          srcset="{{ hero_image_dir | append: '/' | append: hero_image_base | append: '_600x300.' | append: hero_image_ext | relative_url }}"
           media="(min-width: 400px)"
           class="display_none">
         <img
-          src="{{ 'assets/images/MicroSite/' | append: hero_image_base | append: '_320x300.png' | relative_url }}"
+          src="{{ hero_image_dir | append: '/' | append: hero_image_base | append: '_320x300.' | append: hero_image_ext | relative_url }}"
           alt="{{ include.hero_image_alt | default: 'Hero Image' }}"
           class="bg_cover flex_100">
-      </picture> 
+      </picture>
     <div grid-area="title">
         <h1 data-item="hero-title" class="lh_3 m_0 m-y_3 m-y_0:lg c_white isolation_isolate relative">
             <span class="display_none:md">
-                <a href="../" class="h:c_white h:underline font_bold c_white-8 expanded-click-area h:c_white">
+                <a href="{{ parent_link }}" class="h:c_white h:underline font_bold c_white-8 expanded-click-area h:c_white">
                     <i class="fas fa-solid fa-arrow-left m-l_n3" aria-hidden="true"></i>
                 </a>
             </span>
@@ -31,9 +34,11 @@
             {% endfor %}
         </h1>
     </div>
+    {% if include.cta_text != blank %}
     <div grid-area="cta" class="relative font-size_down-1 grid justify_center items_center">
         <div class="grid justify_center items_center">
-            <a href="{{ include.cta_link | default: '#' }}" class="br_white-3 btn btn-primary c_white expanded-click-area shadow_overlap-bold">{{ include.cta_text | default: 'Start Now' }}</a>
+            <a href="{{ include.cta_link | default: '#' }}" class="br_white-3 btn btn-primary c_white expanded-click-area shadow_overlap-bold">{{ include.cta_text }}</a>
         </div>
     </div>
+    {% endif %}
 </div>

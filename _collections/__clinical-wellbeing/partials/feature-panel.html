@@ -1,0 +1,16 @@
+{% assign pages = site.data.ClinicianWellBeing.pages %}
+<section id="{{ include.zone_id | default: 'featured-program' }}" zone-label="{{ include.zone_label | default: 'Small Image-Text Panel' }}" class="m-y_5">
+  <div label="CTA-Callout" class="bg_black-1 br_radius columns_1 columns_2:lg block grid:lg m-x_0:lg m-x_auto reading-typography" style="--col-1:min(100%, 375px); --col-2:1fr;">
+    <div grid-label="image" class="col-end_2:lg col_all">
+      <img src="{{ include.image | default: 'https://www.acc.org//-/media/Non-Clinical/Images/Features/WellBeingHub/CardioRenew/S25097-Cardio-Renew-Branding-1024x256.png' }}"
+        alt="{{ include.image_alt | default: 'Cardio Renew program' }}" class="w_100 br_radius">
+    </div>
+    <div grid-label="content-container" class="col-start_2:lg col_all columns_1 grid p-y_4 p-y_4:md">
+      <div grid-label="content" class="m_auto max-w_40 p-x_4">
+        <h3 class="c_black font_display lh_1 m-b_4 wrap_balance">{{ include.title }}</h3>
+        <p class="lh_2 wrap_pretty m-b_4">{{ include.body }}</p>
+        <a href="{{ include.link | default: pages.cardio_renew }}" class="btn btn-shade float_right expanded-click-area">{{ include.button | default: 'Learn More' }}</a>
+      </div>
+    </div>
+  </div>
+</section>

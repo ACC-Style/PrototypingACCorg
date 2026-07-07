@@ -1,0 +1,46 @@
+---
+layout: arches-clinical-wellbeing
+name: "Mental Health & Burnout"
+position: "SME Prototype"
+masthead: MicroSite/heroimage.micro.dynamic.html
+wellbeing_nav: tools
+wellbeing_nav_sub: mental_health
+hero_image_alt: Clinician well-being
+hero-title: Mental Health & Burnout
+hero-cta-text: Get Support
+hero-cta-link: https://www.physiciansupportline.com/
+notes: Deep spoke — accordions with evergreen content from semi-retired COVID pages.
+---
+
+{%- include_relative partials/spoke-layout-open.html -%}
+
+<section id="mental-health-intro" zone-label="Introduction" class="reading-typography wrapper-container m-b_5 max-w_65">
+  <p class="m-t_0">Stress keeps you going. Burnout depletes you. Know the difference — and act before symptoms become a crisis.</p>
+</section>
+
+{%- include_relative partials/icon-grid.html grid_key="burnout_dimensions" zone_id="recognize-burnout" zone_label="Recognize Burnout" linked=false columns="3" -%}
+
+<section id="burnout-screen" zone-label="Screen for Burnout" class="reading-typography wrapper-container m-b_5 p-x_4:lg">
+  <div class="bg_primary-n2 br_round c_white color_inherit p_4 p_5:md shadow_bevel-light max-w_65">
+    <h2 class="font_display m-t_0">Screen for Burnout — Mini Z</h2>
+    <p class="m-b_4">Ten quick questions with automatic scoring. See whether your workplace scores in a supportive range or suggests elevated burnout stress.</p>
+    <a href="{{ site.data.ClinicianWellBeing.pages.mini_z | relative_url }}" class="btn btn-primary bg_white c_primary h:bg_white-8 expanded-click-area">Start Mini Z Assessment</a>
+  </div>
+</section>
+
+{%- include_relative partials/accordion-stack.html
+  data_file="mental_health_accordions"
+  zone_id="coping-guides"
+  zone_label="Coping Guides"
+  group_name="mental-health-guides"
+-%}
+
+{%- include Blocks/FollowUpCTA.html
+  data_path="ClinicianWellBeing.follow_up_ctas.mental_health"
+  container_modifier="bg_black-2 p_4 p-y_5:md p-y_6:lg m-t_5"
+  cta_type="bevel"
+-%}
+
+{%- include_relative partials/toolkit-citation.html -%}
+
+{%- include_relative partials/spoke-layout-close.html -%}

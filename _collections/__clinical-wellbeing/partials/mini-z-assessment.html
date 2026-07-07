@@ -1,0 +1,130 @@
+{% assign mz = site.data.ClinicianWellBeing.mini_z %}
+<section id="mini-z-assessment" zone-label="Mini Z Burnout Screen" class="reading-typography wrapper-container m-b_5 p-x_4:lg" data-component="mini-z-assessment" data-threshold-total="{{ mz.threshold_total }}" data-threshold-subscale="{{ mz.threshold_subscale }}">
+  <header class="m-b_4 max-w_65">
+    <h2 class="font_display m-b_2">{{ include.title | default: mz.title }}</h2>
+    {% if mz.subtitle %}
+    <p class="font-size_down-1 opacity_8 m-b_2">{{ mz.subtitle }}</p>
+    {% endif %}
+    <p class="m-b_0">{{ mz.intro }}</p>
+  </header>
+
+  <div id="mini-z-score-panel" class="br_round p_4 p_5:md m-b_4 shadow_bevel-light bg_black-1" aria-live="polite" aria-atomic="true" hidden>
+    <p class="font_display font_bold font-size_up-1 m-t_0 m-b_2">Your score</p>
+    <dl class="grid columns_1 columns_3:md gap_3 m-b_0 font_copy">
+      <div>
+        <dt class="font-size_down-1 opacity_8 m-b_1">Total (questions 1–10)</dt>
+        <dd class="font_5 font_bold m-b_0"><span id="mini-z-total">—</span> <span class="font-size_down-1 font_normal">/ 50</span></dd>
+      </div>
+      <div>
+        <dt class="font-size_down-1 opacity_8 m-b_1">Supportive work environment (1–5)</dt>
+        <dd class="font_5 font_bold m-b_0"><span id="mini-z-subscale-1">—</span> <span class="font-size_down-1 font_normal">/ 25</span></dd>
+      </div>
+      <div>
+        <dt class="font-size_down-1 opacity_8 m-b_1">Work pace &amp; EMR stress (6–10)</dt>
+        <dd class="font_5 font_bold m-b_0"><span id="mini-z-subscale-2">—</span> <span class="font-size_down-1 font_normal">/ 25</span></dd>
+      </div>
+    </dl>
+    <p id="mini-z-result" class="m-t_4 m-b_0 font_medium"></p>
+    <p id="mini-z-q2-alert" class="m-t_3 m-b_0 c_alert-n2 font_medium" hidden>If you selected a high burnout level on question 2, consider seeking assistance through your EAP or insurance provider.</p>
+  </div>
+
+  <form id="mini-z-form" class="max-w_65" novalidate>
+    {% for question in mz.questions %}
+    <fieldset class="br_round bg_white shadow_bevel-light p_4 p_5:md m-b_4 border_0" id="{{ question.id }}">
+      <legend class="font_display font-size_up-1 font_bold m-b_3 p-x_0">
+        <span class="c_primary">{{ question.number }}.</span> {{ question.text }}
+      </legend>
+      <ul class="ul_none flex flex_column gap_2 m_0 p_0">
+        {% for option in question.options %}
+        <li>
+          <label class="flex flex_row gap_3 items_start cursor_pointer p_2 br_radius h:bg_primary-5">
+            <input
+              type="radio"
+              name="{{ question.id }}"
+              value="{{ option.value }}"
+              class="m-t_1 flex_shrink"
+              data-subscale="{{ question.subscale }}"
+              {% if question.low_score_alert %}data-low-alert="true"{% endif %}
+              required>
+            <span><span class="font_bold c_primary m-r_2">{{ option.value }}</span>{{ option.label }}</span>
+          </label>
+        </li>
+        {% endfor %}
+      </ul>
+    </fieldset>
+    {% endfor %}
+
+    {% if mz.optional_question %}
+    <fieldset class="br_round bg_white shadow_bevel-light p_4 p_5:md m-b_4 border_0">
+      <legend class="font_display font-size_up-1 font_bold m-b_3 p-x_0">
+        <span class="c_primary">{{ mz.optional_question.number }}.</span> {{ mz.optional_question.text }}
+      </legend>
+      <textarea
+        id="{{ mz.optional_question.id }}"
+        name="{{ mz.optional_question.id }}"
+        rows="4"
+        class="w_100 p_3 br_radius br_solid br_1 br_black-2 font_copy"
+        placeholder="{{ mz.optional_question.placeholder }}"></textarea>
+    </fieldset>
+    {% endif %}
+  </form>
+
+  <aside class="font-size_down-1 opacity_8 max-w_65 m-t_4">
+    <p class="m-b_2"><strong>Scoring:</strong> Add numbered responses for questions 1–10 (range 10–50). Subscale 1 (questions 1–5) and subscale 2 (questions 6–10) each range 5–25.</p>
+    <p class="m-b_0">Questions drawn from the Physician Worklife Study, MEMO study, and Healthy Workplace study. Mini Z developed by Dr. Mark Linzer and team, Hennepin County Medical Center. <a href="{{ mz.pdf_url }}" target="_blank" rel="noopener noreferrer">View source PDF</a> · <a href="http://www.cpperesearch.org/" target="_blank" rel="noopener noreferrer">CPPE Research</a></p>
+  </aside>
+</section>
+
+<script>
+(function () {
+  var root = document.querySelector('[data-component="mini-z-assessment"]');
+  if (!root) return;
+  var form = document.getElementById('mini-z-form');
+  var panel = document.getElementById('mini-z-score-panel');
+  var totalEl = document.getElementById('mini-z-total');
+  var sub1El = document.getElementById('mini-z-subscale-1');
+  var sub2El = document.getElementById('mini-z-subscale-2');
+  var resultEl = document.getElementById('mini-z-result');
+  var q2Alert = document.getElementById('mini-z-q2-alert');
+  var thresholdTotal = parseInt(root.getAttribute('data-threshold-total'), 10) || 40;
+  var thresholdSub = parseInt(root.getAttribute('data-threshold-subscale'), 10) || 20;
+
+  function sumSubscale(num) {
+    var sum = 0;
+    var count = 0;
+    form.querySelectorAll('input[type="radio"][data-subscale="' + num + '"]:checked').forEach(function (input) {
+      sum += parseInt(input.value, 10);
+      count += 1;
+    });
+    return { sum: sum, count: count };
+  }
+
+  function updateScore() {
+    var s1 = sumSubscale(1);
+    var s2 = sumSubscale(2);
+    var answered = s1.count + s2.count;
+    if (answered < 10) {
+      panel.hidden = true;
+      return;
+    }
+    var total = s1.sum + s2.sum;
+    panel.hidden = false;
+    totalEl.textContent = total;
+    sub1El.textContent = s1.sum;
+    sub2El.textContent = s2.sum;
+
+    var stressful = total < thresholdTotal;
+    resultEl.className = 'm-t_4 m-b_0 font_medium br_round p_3 ' + (stressful ? 'bg_alert-n2 c_white' : 'bg_success-2 c_white');
+    if (stressful) {
+      resultEl.innerHTML = '<strong>Elevated burnout stress.</strong> Your total score is below ' + thresholdTotal + ', which may indicate a stressful work environment. Consider the support resources on this page or speak with a trusted colleague, EAP, or your physician.';
+    } else {
+      resultEl.innerHTML = '<strong>Score in a supportive range.</strong> Your total score is ' + thresholdTotal + ' or above, which the Mini Z associates with a more joyful, supportive workplace. Continue monitoring — especially if individual questions flagged concern.';
+    }
+
+    var q2 = form.querySelector('input[name="q2"]:checked');
+    q2Alert.hidden = !(q2 && q2.getAttribute('data-low-alert') && parseInt(q2.value, 10) <= 2);
+  }
+
+  form.addEventListener('change', updateScore);
+})();
+</script>

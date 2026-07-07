@@ -1,0 +1,10 @@
+# Clinician Well-Being microsite hero art (text-free geometric strips from wellBeingHeader)
+image_base: WellBeing
+image_dir: assets/images/ACC/WellBeing
+alt: Clinician well-being
+
+# Cardio Renew branding — remote hero art (separate product-style pages)
+cardio_renew:
+  alt: Clinician well-being
+  src_1300x300: https://www.acc.org//-/media/Non-Clinical/Images/Features/WellBeingHub/CardioRenew/S25097-Cardio-Renew-Branding-1300x300.png
+  src_1024x256: https://www.acc.org//-/media/Non-Clinical/Images/Features/WellBeingHub/CardioRenew/S25097-Cardio-Renew-Branding-1024x256.png

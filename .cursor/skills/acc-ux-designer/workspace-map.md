@@ -13,6 +13,8 @@ Where work lives and how it ships.
 | `_collections/_member_section_prototype/` | `/MemberSection/:path/` | Gated member experiences |
 | `_collections/_annual_meeting_prototype/` | `/AnnualMeeting/:path/` | Annual meeting flows |
 | `_collections/_ncd/` | `/NCD/:path/` | NCD academy |
+| `_collections/_clinical_solutions/` | `/clinical-solutions/:path/` | Clinical Solutions hub & spoke |
+| `_collections/__clinical-wellbeing/` | `/clinical-wellbeing/:path/` | Clinician Well-Being microsite |
 
 Config: `_config.yml` (`collections_dir`, `permalink` per collection).
 
@@ -23,7 +25,7 @@ Build output: `docs/` (GitHub Pages).
 | Path | Role |
 |------|------|
 | `_layouts/` | Page shells — `arches.html`, `playground.html`, `ui/tripple_slot.html`, `acc/fullscreen.html` |
-| `_includes/` | Fragments — `arches-head.html`, `Blocks/*`, `URL.html`, `MicroSite/*` |
+| `_includes/` | Fragments — `arches-head.html`, `Blocks/*`, `URL.html`, `MicroSite/*` (cross-project only) |
 | `_data/` | CSV/YAML driving generators and PageBlocks |
 | `assets/css/` | Local Arches copies (`acc_boot.css`, `acc_uc.css`) for reference |
 
@@ -67,8 +69,21 @@ Data: `_data/{name}.csv` referenced by `csv_file` in front matter.
 ```liquid
 {% include URL.html url='https://www.acc.org/...' %}
 {% include URL.html media='{GUID}' %}
-{% include_relative subs/date-card.html item=item %}
 {% include Blocks/FollowUpCTA.html data_path="Blocks.FollowUpCTA" %}
+```
+
+**Collection-local partials** (project-specific UI — not shared across collections):
+
+```liquid
+{%- include_relative partials/icon-grid.html grid_key="tools_branches" -%}
+```
+
+See [collection-partials.md](collection-partials.md) for when to use `_includes/` vs `partials/` + `include_relative`.
+
+Generator subs use the same `include_relative` pattern from `__generators/{name}.html`:
+
+```liquid
+{% include_relative subs/date-card.html item=item %}
 ```
 
 ## Local preview

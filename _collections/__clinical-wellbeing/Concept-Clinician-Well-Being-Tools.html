@@ -1,0 +1,39 @@
+---
+layout: arches-clinical-wellbeing
+name: "Tools for Today"
+position: "SME Prototype"
+masthead: MicroSite/heroimage.micro.dynamic.html
+wellbeing_nav: tools
+hero_image_alt: Clinician well-being
+hero-title: Tools for Today
+hero-cta-text: Download Toolkit
+hero-cta-link: https://www.acc.org/~/media/Non-Clinical/Files-PDFs-Excel-MS-Word-etc/2020/05/26/Clinician-Well-Being-Toolkit.pptx
+notes: Spoke hub — three branches under Tools for Today.
+---
+
+{%- include_relative partials/spoke-layout-open.html -%}
+
+{% assign wb = site.data.ClinicianWellBeing.pages %}
+
+<section id="tools-intro" zone-label="Introduction" class="reading-typography wrapper-container m-b_5 max-w_65">
+  <p class="m-t_0">Burnout is treatable and preventable — but not by willpower alone. Choose the path that matches what you need right now.</p>
+</section>
+
+{%- include_relative partials/icon-grid.html grid_key="tools_branches" zone_id="tools-branches" zone_label="Three Branches" linked=true columns="3" -%}
+
+<section id="featured-resources" zone-label="Featured Resources" class="reading-typography wrapper-container m-b_5 max-w_65">
+  <h2 class="font_display">Start Anywhere</h2>
+  <ul class="lh_2">
+    <li><a href="{{ wb.mental_health | relative_url }}">Mental Health &amp; Burnout</a> — self-care, stigma, and confidential support</li>
+    <li><a href="{{ wb.workplace | relative_url }}">Strengthen Your Workplace</a> — efficiency, culture, and chapter-level action</li>
+    <li><a href="{{ wb.protect | relative_url }}">Protect Yourself &amp; Others</a> — leadership communication and patient mental health</li>
+  </ul>
+</section>
+
+{%- include Blocks/FollowUpCTA.html
+  data_path="ClinicianWellBeing.follow_up_ctas.tools"
+  container_modifier="bg_black-2 p_4 p-y_5:md p-y_6:lg m-t_5"
+  cta_type="bevel"
+-%}
+
+{%- include_relative partials/spoke-layout-close.html -%}

@@ -1,0 +1,32 @@
+{% assign pages = site.data.ClinicianWellBeing.pages %}
+{% assign grid_key = include.grid_key | default: 'hub_fork' %}
+{% assign grid = site.data.ClinicianWellBeing.grids[grid_key] %}
+<section id="{{ include.zone_id | default: 'hub-fork' }}" class="m-b_5:lg m-b_4 reading-typography wrapper-container p_4 p-x_5:lg" zone-label="{{ include.zone_label | default: 'Two-Lane Entry' }}">
+  {% if grid.heading %}
+  <h2 class="font_display m-b_4">{{ grid.heading }}</h2>
+  {% endif %}
+  {% if grid.intro %}
+  <p class="m-b_4 max-w_65">{{ grid.intro }}</p>
+  {% endif %}
+  <ul class="columns_1 columns_2:md gap_4 grid ul_none m_0">
+    {% for item in grid.items %}
+    {% if item.url_key %}
+      {% assign item_url = pages[item.url_key] | relative_url %}
+    {% else %}
+      {% assign item_url = item.external_url %}
+    {% endif %}
+    <li class="bg_white br_round shadow_bevel-light flex flex_column overflow_hidden isolate relative">
+      <a href="{{ item_url }}" class="expanded-click-area not-link h:undecorated color_inherit flex flex_column flex_grow" {% if item.external_url %}target="_blank" rel="noopener noreferrer"{% endif %}>
+        <div class="bg_black-2 aspect_16x9 flex items_center justify_center pointer-events_none">
+          <i class="far fa-regular {{ item.icon }} font_7 c_black-5" aria-hidden="true"></i>
+        </div>
+        <div class="flex flex_column flex_grow p_4 p_5:md gap_3">
+          <h3 class="font_display font_bold m-b_0">{{ item.title }}</h3>
+          <p class="font-size_down m-b_0 opacity_8 flex_grow">{{ item.description }}</p>
+          <span class="btn btn-shade self_start pointer-events_none">{{ item.button | default: item.title }}</span>
+        </div>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>

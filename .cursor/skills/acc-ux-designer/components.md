@@ -14,7 +14,7 @@ Prefer `data-component` on the outermost interactive unit authors will recognize
 
 ## Expanded click area
 
-Use `expanded-click-area` (or `expanded-click-area-beforeAlt`) when a small visible control should receive clicks across a larger region — e.g. a footer button that activates the whole card.
+Use `expanded-click-area` (or `expanded-click-area-beforeAlt`) when a small visible control should receive clicks across a larger region — e.g. a footer button that activates the whole card. The container must have a `relative` class on it to bound the region of what is being clicked on to stop it from taking over the entire page.
 
 The utility uses an absolutely positioned pseudo-element. **Bound the click zone** with a `relative` wrapper around the intended target area. Without it, the pseudo-element can expand to a distant positioned ancestor and hijack clicks across the page.
 
@@ -26,6 +26,20 @@ The utility uses an absolutely positioned pseudo-element. **Bound the click zone
     <a href="#" class="btn btn-shade expanded-click-area">Start Here</a>
   </footer>
 </div>
+```
+
+```css
+.expanded-click-area-beforeAlt:before, .expanded-click-area:after {
+    background-color: transparent;
+    bottom: 0;
+    content: "";
+    left: 0;
+    pointer-events: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+}
 ```
 
 For a full-card link, put `relative` on the card and `expanded-click-area` on the `<a>` inside it. See [design-system.md](design-system.md#expanded-click-area).
@@ -117,7 +131,7 @@ Config on root: `data-heading-open`, `data-open-label`, `data-action-label`, etc
 Use dictionary icons for each row concept — see [icons.md](icons.md).
 
 ```liquid
-{% include Blocks/IconDecoratedLists.html data_path="Blocks.IconDecoratedLists" %}
+{% include Blocks/UL_IconList.html data_path="Blocks.IconDecoratedLists" %}
 ```
 
 ```html
@@ -170,3 +184,11 @@ Preview area: `#previewArea` inside sticky header section.
 - [ ] Footer actions only when status warrants (open items)
 - [ ] `aria-label` on date badges and icon-only buttons
 - [ ] `target="_blank"` on external ACC links where prototypes already do
+
+## Collection-local partials
+
+Initiative-specific markup (custom heroes, sidebars, zone blocks tied to one collection's YAML) lives in `_collections/{name}/partials/` and is included with `{% include_relative partials/file.html %}` from pages in that collection.
+
+Global `_includes/` is for cross-project fragments only (`MicroSite/`, `Blocks/`, Arches chrome). Do not add `{ProjectName}/` folders under `_includes/`.
+
+Full rules and examples: [collection-partials.md](collection-partials.md).

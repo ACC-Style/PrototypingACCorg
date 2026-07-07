@@ -4,8 +4,9 @@ description: >-
   UX/UI designer for ACC Arches prototypes, CMS builders, and production-ready
   pages in PrototypingACCorg. Uses acc_boot + acc_uc utilities, gold-standard
   patterns, and generator workflows. Use when designing UI, layouts, components,
-  generators, page blocks, Arches, ACC design stack, builders, CMS copy output,
-  or imagery (no text baked into images; HTML layered on photos).
+  generators, page blocks, Arches, ACC design stack, builders, CMS copy output, microsite
+  patterns, hub and spoke layouts, or imagery (no text baked into images; HTML layered
+  on photos).
 disable-model-invocation: false
 ---
 
@@ -36,20 +37,23 @@ existing patterns, and the right delivery path (concept, builder, or production)
 ## Before you build
 
 1. **Classify the deliverable** (see [workflows.md](workflows.md))
-2. **Find the nearest reference** — start at `_collections/_ui_gold_standard/`, then `__prototypes/`, then `__generators/`
-3. **Read only what you need** from the reference files below
-4. **Match layout shell** to the collection you are writing into
+2. **Initiative / hub-spoke page?** → Read [microsite-patterns.md](microsite-patterns.md) for shell + component selection; put bespoke markup in `{collection}/partials/` per [collection-partials.md](collection-partials.md)
+3. **Find the nearest reference** — start at `_collections/_ui_gold_standard/`, then `__prototypes/`, then `__generators/`
+4. **Read only what you need** from the reference files below
+5. **Match layout shell** to the collection you are writing into
 
 ## Reference map (read on demand)
 
 | File | When to read |
 |------|----------------|
 | [workspace-map.md](workspace-map.md) | Unsure where a file belongs or which layout/collection to use |
+| [collection-partials.md](collection-partials.md) | **`_includes/` vs `partials/`** — global `include` vs collection `include_relative` |
 | [cross-domain-branding.md](cross-domain-branding.md) | **Functional color/font roles**, ACC usage order, domain brands |
 | [design-system.md](design-system.md) | Project conventions — prose wrappers, buttons, lists, recipes |
 | [arches-utilities.md](arches-utilities.md) | **Arches UC anatomy** — naming, steps, breakpoints, shorthand |
 | [icons.md](icons.md) | **Font Awesome** — ACC Icon Dictionary, concept → icon mapping |
 | [heroes.md](heroes.md) | **Hero treatments** — Anchor, Section, Product by IA role |
+| [microsite-patterns.md](microsite-patterns.md) | **Initiative microsites** — root hero, micro branding, forks, featured grids, quotes, footer CTA |
 | [imagery.md](imagery.md) | **When to use images**, text-in-image anti-pattern, HTML-over-photo patterns |
 | [components.md](components.md) | Cards, lists, heroes, CTAs, `data-*` conventions |
 | [workflows.md](workflows.md) | Concept vs prototype vs generator vs CMS output |
@@ -156,10 +160,11 @@ Add to this folder as patterns mature:
 
 | Future file | Purpose |
 |-------------|---------|
-| `patterns/heroes.md` | Hero grid templates, `grid-template` areas |
 | `patterns/forms.md` | Inputs, validation, login roadblocks |
 | `patterns/data-lists.md` | DateList, EventList, A–Z patterns |
 | `checklists/accessibility.md` | ACC-specific a11y review |
 | `checklists/cms-handoff.md` | Copy-paste QA before CMS publish |
+
+**Live:** [microsite-patterns.md](microsite-patterns.md) — initiative root/sub page patterns (hero, grids, quote, footer CTA, accordion).
 
 Keep **SKILL.md** as the entry point; push detail into sibling files.

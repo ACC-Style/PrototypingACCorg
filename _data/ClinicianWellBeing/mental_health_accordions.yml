@@ -1,0 +1,128 @@
+# Mental Health spoke — accordion content (evergreen, reframed from semi-retired COVID pages)
+mental_health_accordions:
+  heading: Take Action Against Burnout and Stress
+  intro: Practical strategies you can use now. Content adapted from ACC semi-retired well-being resources and the Clinician Well-Being Toolkit — with pandemic-specific framing removed.
+  items:
+  - id: self-care-plan
+    title: Combat Burnout — Build a Self-Care Plan
+    source: ACC Clinician Well-Being Toolkit
+    open: true
+    blocks:
+    - type: p
+      text: Self-care is not indulgence — it is maintenance. Elements of a self-care plan include journaling, meditation, mindfulness, stretching, breath techniques, and regular exercise.
+    - type: h4
+      text: Daily practices
+    - type: ul
+      items:
+      - "<strong>Sleep hygiene</strong> — protect rest as a clinical skill, not a luxury"
+      - "<strong>Mindfulness and meditation</strong> — build self-awareness and reduce stress"
+      - "<strong>Movement</strong> — yoga, regular exercise, relaxation techniques"
+      - "<strong>Connection</strong> — stay connected with friends, family, and community"
+    - type: h4
+      text: Detect early and act
+    - type: ul
+      items:
+      - Watch for deteriorating health before symptoms become severe
+      - Make a personal vision plan and prioritize goals
+      - Set work-life boundaries and hold them
+      - Schedule time for self-care, hobbies, and the people who matter
+    - type: h4
+      text: Self-leadership — lead yourself first
+    - type: ul
+      items:
+      - "<strong>Be real</strong> — know what matters; align actions with values"
+      - "<strong>Be whole</strong> — clarify expectations, build networks, manage boundaries"
+
+  - id: high-stress-self-care
+    title: Self-Care During High-Stress Periods
+    source: Adapted from Tips to Cope (Metro Health / Center for the Study of Traumatic Stress)
+    blocks:
+    - type: p
+      text: To care for others, care for yourself first. These practices sustain well-being when demand is high.
+    - type: ul
+      items:
+      - "<strong>Remember self-care</strong> — monitor stress; take breaks; exercise; get outside when you can"
+      - "<strong>Stay connected</strong> — check in with colleagues, family, and supervisors"
+      - "<strong>Respect differences</strong> — some people need to talk; others need space"
+      - "<strong>Limit media exposure</strong> — alarming content raises stress and lowers effectiveness"
+      - "<strong>Self check-ins</strong> — watch for prolonged sadness, sleep problems, intrusive memories, hopelessness"
+      - "<strong>Honor your service</strong> — recognize the work you and your colleagues do"
+      - "<strong>Practice compassion</strong> — patience and gratitude sustain the team"
+    - type: p
+      text: '<a href="https://www.cstsonline.org/assets/media/documents/CSTS_FS_Sustaining_Well_Being_Healthcare_Personnel_during.pdf" target="_blank" rel="noopener noreferrer">Center for the Study of Traumatic Stress — sustaining well-being for health care personnel (PDF)</a>'
+
+  - id: manage-stress
+    title: Manage Stress and Anxiety
+    source: Adapted from Stress Management Resources
+    blocks:
+    - type: p
+      text: Psychosocial well-being matters as much as physical health. Feeling stressed under pressure is normal — it is not proof you cannot do your job. Stress can also help you stay focused and purposeful.
+    - type: h4
+      text: Steady yourself — ask
+    - type: ul
+      items:
+      - What happens to your body when worries mount?
+      - How worried are you? What do you fear most?
+      - What usually helps you handle worries?
+    - type: h4
+      text: Techniques that work
+    - type: ul
+      items:
+      - "<strong>Diaphragmatic breathing</strong> — inhale and expand your belly; pause; exhale slowly to a count of five. Repeat four times."
+      - "<strong>Box breathing</strong> — slow, deep breaths to heighten focus and relieve stress"
+      - "<strong>Guided imagery</strong> — envision a calming place; engage all senses"
+      - "<strong>Mindfulness and meditation</strong> — especially effective for time pressure and excessive workload"
+      - "<strong>Movement</strong> — yoga or short exercise breaks to slow heart rate and steady breathing"
+
+  - id: resilience-reboot
+    title: Resilience Reboot — 30-Minute Check-In
+    source: Adapted from Resilience Building in Times of Crisis
+    blocks:
+    - type: p
+      text: Resilience only works when you pause to recharge. Set aside 30 minutes alone or with a trusted colleague to re-establish a realistic baseline — not business as usual.
+    - type: h4
+      text: Six domains of resilience
+    - type: ul
+      items:
+      - Vision / clarity / congruence
+      - Composure
+      - Reasoning
+      - Tenacity
+      - Collaboration
+      - Health
+    - type: h4
+      text: Nine reflection questions
+    - type: ol
+      items:
+      - What matters to me most right now?
+      - What is my greatest strength at this time?
+      - How can I channel that strength toward what matters most?
+      - What is one step I need to take right now?
+      - What can I safely stop doing for now?
+      - Who is one person I can involve?
+      - What is the most important reason I will not neglect my vision, myself, and others?
+      - I will take care of my physical health by ___
+      - I will take care of my emotional health by ___
+
+  - id: break-stigma
+    title: Break the Stigma — Seek Help
+    source: ACC Clinician Well-Being Toolkit
+    blocks:
+    - type: p
+      text: "<strong>79%</strong> of cardiologists said they would not seek help for burnout. <strong>45%</strong> are unlikely to participate in a workplace program. Professional support is not weakness — early intervention protects you and your patients."
+    - type: h4
+      text: Common barriers
+    - type: ul
+      items:
+      - "\"I can handle this myself\" — peer and professional support exists"
+      - "\"Symptoms are not severe enough\" — early action prevents crisis"
+      - "\"Too busy\" — burnout reduces effectiveness at work"
+      - "\"Do not want to risk disclosure\" — confidential resources are available"
+    - type: h4
+      text: Confidential support
+    - type: ul
+      items:
+      - '<a href="https://www.physiciansupportline.com/" target="_blank" rel="noopener noreferrer">Physician Support Line</a> — free, confidential peer support'
+      - '<a href="tel:988">988 Suicide &amp; Crisis Lifeline</a> — call or text 988'
+      - '<a href="https://www.acc.org/Education-and-Meetings/Products-and-Resources/NCD-Academy/Course-List/mental-health-care-increasing-awareness-erasing-stigmas" target="_blank" rel="noopener noreferrer">NCD Academy: Mental Health Care — Increasing Awareness, Erasing Stigmas</a>'
+      - '<a href="https://www.acc.org/latest-in-cardiology/articles/2020/06/08/09/39/counseling-resources-for-health-care-workers-during-covid-19" target="_blank" rel="noopener noreferrer">Counseling resources for health care workers</a>'

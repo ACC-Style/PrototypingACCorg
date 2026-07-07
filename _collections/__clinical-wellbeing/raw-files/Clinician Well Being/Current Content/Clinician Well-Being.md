@@ -15,7 +15,7 @@ This interactive program provides tools for emotional regulation, self leadershi
 
 **Hot Topics**
 
-- [NCD Academy Course | Mental Health Care: Increasing Awareness, Erasing Stigmas](https://www.acc.org/ncdacademy)
+- [NCD Academy Course | Mental Health Care: Increasing Awareness, Erasing Stigmas](https://www.acc.org/Education-and-Meetings/Products-and-Resources/NCD-Academy/Course-List/mental-health-care-increasing-awareness-erasing-stigmas)
 - [*Cardiology* Magazine: Physician Burnout: An Enemy We Must Recognize to Battle](https://www.acc.org/Latest-in-Cardiology/Articles/2024/02/01/01/42/from-the-member-sections-physician-burnout-an-enemy-we-must-recognize-to-battle)
 - [ACC Joins NAM Change Maker Campaign to Advance Health Workforce Well-Being](https://www.acc.org/Latest-in-Cardiology/Articles/2023/10/04/14/06/ACC-Joins-NAM-Change-Maker-Campaign-to-Advance-Health-Workforce-Well-Being)
 - ACC Coaching for CV Leaders Webinar Series

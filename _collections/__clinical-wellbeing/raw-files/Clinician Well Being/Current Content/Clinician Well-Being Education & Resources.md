@@ -10,7 +10,7 @@ tags:
 ---
 **ACC Education**
 
-- [NCD Academy Course | Mental Health Care: Increasing Awareness, Erasing Stigmas](https://www.acc.org/ncdacademy)
+- [NCD Academy Course | Mental Health Care: Increasing Awareness, Erasing Stigmas](https://www.acc.org/Education-and-Meetings/Products-and-Resources/NCD-Academy/Course-List/mental-health-care-increasing-awareness-erasing-stigmas)
 - [Coaching Fundamentals for Cardiovascular Leaders (Webinar Series)](https://www.acc.org/Education-and-Meetings/Meetings/Meeting-Items/2023/10/01/01/Webinar-Coaching-Fundamentals-For-Cardiovascular-Leaders)
 - [Webinar: Embracing Career Flexibility as an Organizational Value](https://www.acc.org/Education-and-Meetings/Meetings/Meeting-Items/2023/07/01/01/Webinar-Embracing-Career-Flexibility-as-an-Organizational-Value)
 - [Webinar: Advocating for Career Flexibility for Early Career and FIT Members](https://www.acc.org/Education-and-Meetings/Meetings/Meeting-Items/2023/10/01/01/Webinar-Advocating-For-Career-Flexibility)

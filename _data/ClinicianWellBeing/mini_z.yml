@@ -1,0 +1,119 @@
+# Mini Z survey 2.0 — individual scoring (Linzer et al., Hennepin County Medical Center)
+# Source: https://www.ssmhealth.com/getmedia/2fd26020-d205-45fb-b34c-5179568bcd19/minizburnoutassessment2.pdf
+title: Mini Z Burnout Assessment
+subtitle: Mini Z survey 2.0 (for individual scoring)
+intro: For questions 1–10, choose the best answer. Your total score updates automatically. Range 10–50. Per the Mini Z, scores **below 40** may indicate elevated workplace burnout stress; **40 or above** is associated with a more supportive work environment.
+pdf_url: https://www.ssmhealth.com/getmedia/2fd26020-d205-45fb-b34c-5179568bcd19/minizburnoutassessment2.pdf
+threshold_total: 40
+threshold_subscale: 20
+questions:
+  - id: q1
+    number: 1
+    text: Overall, I am satisfied with my current job
+    subscale: 1
+    options:
+      - { value: 5, label: Agree strongly }
+      - { value: 4, label: Agree }
+      - { value: 3, label: Neither agree nor disagree }
+      - { value: 2, label: Disagree }
+      - { value: 1, label: Strongly disagree }
+  - id: q2
+    number: 2
+    text: Using your own definition of “burnout”, please choose one of the numbers below
+    subscale: 1
+    low_score_alert: true
+    options:
+      - { value: 5, label: I enjoy my work. I have no symptoms of burnout. }
+      - { value: 4, label: "4" }
+      - { value: 3, label: I am beginning to burn out and have one or more symptoms of burnout, e.g. emotional exhaustion. }
+      - { value: 2, label: "2" }
+      - { value: 1, label: I feel completely burned out. I am at the point where I may need to seek help. }
+  - id: q3
+    number: 3
+    text: My professional values are well aligned with those of my clinical leaders
+    subscale: 1
+    options:
+      - { value: 5, label: Agree strongly }
+      - { value: 4, label: Agree }
+      - { value: 3, label: Neither agree nor disagree }
+      - { value: 2, label: Disagree }
+      - { value: 1, label: Strongly disagree }
+  - id: q4
+    number: 4
+    text: The degree to which my care team works efficiently together is
+    subscale: 1
+    options:
+      - { value: 5, label: Optimal }
+      - { value: 4, label: Good }
+      - { value: 3, label: Satisfactory }
+      - { value: 2, label: Marginal }
+      - { value: 1, label: Poor }
+  - id: q5
+    number: 5
+    text: My control over my workload is
+    subscale: 1
+    options:
+      - { value: 5, label: Optimal }
+      - { value: 4, label: Good }
+      - { value: 3, label: Satisfactory }
+      - { value: 2, label: Marginal }
+      - { value: 1, label: Poor }
+  - id: q6
+    number: 6
+    text: I feel a great deal of stress because of my job
+    subscale: 2
+    options:
+      - { value: 5, label: Strongly disagree }
+      - { value: 4, label: Disagree }
+      - { value: 3, label: Neither agree nor disagree }
+      - { value: 2, label: Agree }
+      - { value: 1, label: Agree strongly }
+  - id: q7
+    number: 7
+    text: Sufficiency of time for documentation is
+    subscale: 2
+    options:
+      - { value: 5, label: Optimal }
+      - { value: 4, label: Good }
+      - { value: 3, label: Satisfactory }
+      - { value: 2, label: Marginal }
+      - { value: 1, label: Poor }
+  - id: q8
+    number: 8
+    text: The amount of time I spend on the electronic medical record (EMR) at home is
+    subscale: 2
+    options:
+      - { value: 5, label: Minimal/none }
+      - { value: 4, label: Modest }
+      - { value: 3, label: Satisfactory }
+      - { value: 2, label: Moderately high }
+      - { value: 1, label: Excessive }
+  - id: q9
+    number: 9
+    text: The EMR adds to the frustration of my day
+    subscale: 2
+    options:
+      - { value: 5, label: Strongly disagree }
+      - { value: 4, label: Disagree }
+      - { value: 3, label: Neither agree nor disagree }
+      - { value: 2, label: Agree }
+      - { value: 1, label: Agree strongly }
+  - id: q10
+    number: 10
+    text: Which number best describes the atmosphere in your primary work area?
+    subscale: 2
+    options:
+      - { value: 5, label: Calm }
+      - { value: 4, label: "4" }
+      - { value: 3, label: Busy, but reasonable }
+      - { value: 2, label: "2" }
+      - { value: 1, label: Hectic, chaotic }
+optional_question:
+  id: q11
+  number: 11
+  text: Tell us more about your stresses and what we can do to minimize them
+  placeholder: Optional — for your own reflection or to share with a trusted colleague or wellness lead
+support_links:
+  - { label: Physician Support Line, url: https://www.physiciansupportline.com/ }
+  - { label: 988 Suicide & Crisis Lifeline, url: tel:988 }
+  - { label: NCD Academy — Mental Health Care, url: https://www.acc.org/Education-and-Meetings/Products-and-Resources/NCD-Academy/Course-List/mental-health-care-increasing-awareness-erasing-stigmas }

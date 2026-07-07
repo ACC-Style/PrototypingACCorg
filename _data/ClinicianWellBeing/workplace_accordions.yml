@@ -1,0 +1,126 @@
+# Workplace spoke — accordion content (Toolkit + Crisis Communication, evergreen)
+workplace_accordions:
+  heading: Strengthen Your Workplace — Practical Guides
+  intro: Sustainable well-being requires changes in how practices run, how cultures support people, and how leaders communicate. These guides draw on the ACC Clinician Well-Being Toolkit and semi-retired crisis communication resources — reframed for everyday practice.
+  items:
+  - id: workplace-efficiency
+    title: Make Practice Sustainable
+    source: ACC Clinician Well-Being Toolkit (Bohman et al., NEJM Catalyst, 2017)
+    open: true
+    blocks:
+    - type: p
+      text: Cardiologists cite administrative burden among the strongest burnout drivers. These are structural fixes — not self-help — and they require leadership buy-in.
+    - type: ul
+      items:
+      - "<strong>Reduce administrative burden</strong> — audit non-clinical tasks; remove what does not serve patients"
+      - "<strong>Medical scribes</strong> — hire and train scribes to offload documentation"
+      - "<strong>Protected admin time</strong> — block dedicated time in schedules for charts and inbox"
+      - "<strong>Team-based care</strong> — designated health care teams, daily huddles, shared workflows"
+      - "<strong>Clinician-led design</strong> — involve clinicians in developing clinic flows and processes"
+
+  - id: culture-of-wellness
+    title: Create a Culture Where Well-Being Is Expected
+    source: ACC Clinician Well-Being Toolkit
+    blocks:
+    - type: p
+      text: Environment shapes whether people seek help or hide struggle. A wellness program fails if clinicians drown in paperwork — culture and efficiency must work together.
+    - type: ul
+      items:
+      - "<strong>Wellness program</strong> — establish a formal program with leadership sponsorship"
+      - "<strong>Wellness committee and champions</strong> — recruit a committee; identify champions in each division or site"
+      - "<strong>Mental health support</strong> — dedicated counselors or therapists for trainees and faculty"
+      - "<strong>Invest in clinicians</strong> — family-supportive policies, childcare where feasible"
+      - "<strong>Listening sessions</strong> — create space for clinicians to share what is and is not working"
+      - '<a href="https://www.acc.org/About-ACC/Diversity-and-Inclusion" target="_blank" rel="noopener noreferrer">Diversity &amp; Inclusion</a> — respectful, inclusive culture as a pillar of well-being'
+      - '<a href="https://www.acc.org/Education-and-Meetings/Meetings/Meeting-Items/2024/07/01/Webinar-Culture-Change-Through-Coaching" target="_blank" rel="noopener noreferrer">Webinar: Culture Change Through Coaching</a>'
+      - '<a href="https://www.acc.org/Education-and-Meetings/Meetings/Meeting-Items/2023/10/01/01/Webinar-Coaching-Fundamentals-For-Cardiovascular-Leaders" target="_blank" rel="noopener noreferrer">Coaching Fundamentals for Cardiovascular Leaders</a>'
+
+  - id: crisis-communication
+    title: Communicate With Clarity When Your Team Is Under Stress
+    source: Adapted from Crisis Communication for the CV Professional (Dr. V. Covello, Center for Risk Communication)
+    blocks:
+    - type: p
+      text: Communication builds trust — or breaks it. Trust is your primary currency as a leader, especially when stress is high. When people are concerned, stressed, or upset, they often have difficulty hearing, understanding, and remembering information.
+    - type: p
+      text: Be <strong>concise, consistent, and clear</strong>. When in doubt, consider what you would want to hear — that perspective keeps you focused on what matters most.
+    - type: h4
+      text: Three factors that shape trust
+    - type: ul
+      items:
+      - Perceptions of knowledge and expertise
+      - Perceptions of openness and honesty
+      - Perceptions of concern and care
+    - type: h4
+      text: Four trust pillars for team communication
+    - type: ol
+      items:
+      - "<strong>Caring and empathy</strong> — acknowledge worry; let others voice concern at the start"
+      - "<strong>Dedication and commitment</strong> — address and confirm team needs"
+      - "<strong>Competence and expertise</strong> — share knowledge; cite trusted sources"
+      - "<strong>Honesty and openness</strong> — be transparent about facts and feelings"
+    - type: h4
+      text: Before you communicate
+    - type: ol
+      items:
+      - "<strong>Anticipation</strong> — anticipate needs and fears of your audience"
+      - "<strong>Preparation</strong> — prepare around those needs"
+      - "<strong>Practice</strong> — rehearse before you deliver"
+      - "<strong>Solicit input</strong> — invite concerns and ongoing dialogue"
+    - type: h4
+      text: Key principles
+    - type: ul
+      items:
+      - Lead with empathy and compassion
+      - Focus on what you communicate first and last — the primacy/recency effect helps retention
+      - Limit key messages to three to five; use as few words as possible
+      - Use graphics, analogies, and narratives to aid recall
+      - Cite sources; reiterate critical topics; invite feedback to grow trust
+    - type: p
+      text: '<a href="https://www.acc.org//-/media/Non-Clinical/Files-PDFs-Excel-MS-Word-etc/2020/03/27/Crisis-Communication-Infographic.pdf" target="_blank" rel="noopener noreferrer">Crisis Communication Infographic (PDF)</a> · <a href="https://www.acc.org/Education-and-Meetings/Meetings/Meeting-Items/2024/07/01/Webinar-A-View-Within-the-Room" target="_blank" rel="noopener noreferrer">Webinar: A View Within the Room — Leadership Coaching</a>'
+
+  - id: organizational-resilience
+    title: Support the Whole Clinician
+    source: ACC Clinician Well-Being Toolkit
+    blocks:
+    - type: p
+      text: Personal resilience tools work better when the organization supports their use. These interventions operate at the institutional level — not as individual tips alone.
+    - type: ul
+      items:
+      - "<strong>Coaching</strong> — stress management, mindfulness, and wellness techniques"
+      - "<strong>Peer dialogue</strong> — small groups to share stories of managing burnout"
+      - "<strong>Financial wellness</strong> — counselors for early-career professionals; retirement and family planning resources"
+
+  - id: eap
+    title: Employee Assistance Programs (EAP)
+    source: ACC Clinician Well-Being Toolkit
+    blocks:
+    - type: p
+      text: A work-based program staffed by licensed professionals — clinical social workers, mental health counselors, and substance abuse specialists. Services may include counseling (phone or in-person), well-being coaching, and referrals for childcare, eldercare, legal, and financial needs.
+    - type: p
+      text: Sessions are typically limited in number and protected under HIPAA. <strong>Contact your Human Resources office</strong> to learn what your institution offers.
+
+  - id: chapter-action
+    title: What ACC Chapters Can Do
+    source: ACC Clinician Well-Being Toolkit
+    blocks:
+    - type: p
+      text: National policy sets direction. Chapters make it real in your state — host listening sessions, share best practices, and develop a local wellness plan.
+    - type: h4
+      text: Practical chapter activities
+    - type: ul
+      items:
+      - Build social networks to reduce isolation
+      - Celebrate successes and reinforce positive culture
+      - Host listening sessions to surface what members need
+      - Share self-care practices and best practices for team processes
+      - Communicate your "why" — reconnect members to purpose
+    - type: h4
+      text: Develop a chapter wellness plan
+    - type: ul
+      items:
+      - Form a workgroup to address burnout at the grassroots level
+      - Meet at regular intervals and solicit feedback from state members
+      - Document what has worked individually and institutionally
+      - Implement practical strategies for clinicians experiencing burnout
+    - type: p
+      text: 'Email <a href="mailto:memberengage@acc.org">memberengage@acc.org</a> for chapter support. Post the <a href="https://www.acc.org/education-and-meetings/image-and-slide-gallery/media-detail?id=9837bbc35b74465b9e97f7d620e85080" target="_blank" rel="noopener noreferrer">ACC Clinician Well-Being Infographic</a> in break rooms.'

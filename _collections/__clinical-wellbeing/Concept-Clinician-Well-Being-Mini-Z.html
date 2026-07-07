@@ -1,0 +1,36 @@
+---
+layout: arches-clinical-wellbeing
+name: "Mini Z Burnout Screen"
+position: "SME Prototype"
+masthead: MicroSite/heroimage.micro.dynamic.html
+wellbeing_nav: tools
+wellbeing_nav_sub: mini_z
+hero_image_alt: Clinician well-being
+hero-title: Screen for Burnout
+hero-cta-text: Get Support
+hero-cta-link: https://www.physiciansupportline.com/
+notes: Interactive Mini Z 2.0 — replaces static Screen for Burnout accordion.
+---
+
+{%- include_relative partials/spoke-layout-open.html -%}
+
+<section id="mini-z-intro" zone-label="Introduction" class="reading-typography wrapper-container m-b_4 max-w_65">
+  <p class="m-t_0">The Mini Z is a brief burnout screen used in physician wellness programs. Answer all 10 scored questions — your total updates automatically.</p>
+</section>
+
+{%- include_relative partials/mini-z-assessment.html -%}
+
+<section id="mini-z-support" zone-label="If You Need Help" class="reading-typography wrapper-container m-b_5 max-w_65">
+  <h2 class="font_display">If Your Score Suggests Elevated Stress</h2>
+  <ul class="lh_2">
+    {% assign mz = site.data.ClinicianWellBeing.mini_z %}
+    {% for link in mz.support_links %}
+    <li><a href="{{ link.url }}" {% unless link.url contains 'tel:' %}target="_blank" rel="noopener noreferrer"{% endunless %}>{{ link.label }}</a></li>
+    {% endfor %}
+    <li><a href="{{ site.data.ClinicianWellBeing.pages.mental_health | relative_url }}">Return to Mental Health &amp; Burnout resources</a></li>
+  </ul>
+</section>
+
+{%- include_relative partials/toolkit-citation.html zone_id="mini-z-toolkit-citation" -%}
+
+{%- include_relative partials/spoke-layout-close.html -%}

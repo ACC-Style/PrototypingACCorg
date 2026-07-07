@@ -1,0 +1,54 @@
+---
+layout: acc/fullscreen
+name: "Clinician Well-Being Hub"
+position: "SME Prototype"
+masthead: empty.html
+notes: >-
+  Concept root — zone order matches Whimsical wireframe (Jul 2026).
+  See wireframe.md. Content source: content-collection.md
+---
+
+{% assign wb = site.data.ClinicianWellBeing.pages %}
+{% assign hub = site.data.ClinicianWellBeing.hub %}
+{% assign hero_cfg = site.data.ClinicianWellBeing.hero %}
+{% capture tools_url %}{{ wb.tools | relative_url }}{% endcapture %}
+
+{%
+  include MicroSite/heroimage.dynamic.html
+  hero_image_base=hero_cfg.image_base
+  hero_image_dir=hero_cfg.image_dir
+  hero_image_ext="jpg"
+  hero_image_alt=hero_cfg.alt
+  parent_link="https://www.acc.org/"
+  parent_page="ACC.org"
+  hero_title=hub.hero.title
+  cta_title=hub.hero.cta_title
+  cta_description=hub.hero.cta_description
+  cta_link=tools_url
+  cta_button_text=hub.hero.cta_button
+%}
+
+<section id="intro" zone-label="Introduction" class="grid columns_1 columns_3:md columns_5:lg p_4 gap_5:lg gap_4 m-b_4:md">
+  <main class="reading-typography font-size_up p-l_4:lg max-w_65 p-t_5:lg p-t_4 col-start_start col-end_end col-end_n2:md col-end_n3:lg" style="--custom-font-size-up: 1.06">
+    <h2 class="lh_2 m-b_4 font_display">{{ hub.intro.heading }}</h2>
+    <p>{{ hub.intro.body_1 }}</p>
+    <p class="m-b_0">{{ hub.intro.body_2 }}</p>
+  </main>
+  <aside class="col-end_end col-start_start col-start_n2:md col-start_n3:lg reading-typography wrapper-container p-l_4:lg">
+    <div data-item="cta-overlay" class="bg_primary-n2 br_round c_white color_inherit shadow_overlap-light p_4 p_5:lg reading-typography z_1 sticky t_3">
+      <h3 data-item="cta-title" class="font_display font_medium m-t_0">{{ hub.intro.cardio_renew.title }}</h3>
+      <p class="font-size_down-1 lh_2 m-b_4">{{ hub.intro.cardio_renew.body }}</p>
+      <a href="{{ wb.cardio_renew }}" class="btn btn-primary expanded-click-area" target="_blank" rel="noopener noreferrer">{{ hub.intro.cardio_renew.button }}</a>
+    </div>
+  </aside>
+</section>
+
+{%- include_relative partials/stat-row.html stats_key="wellbeing_evidence" zone_id="why-wellbeing" zone_label="Why Well-Being Matters" -%}
+
+{%- include_relative partials/hub-fork-cards.html grid_key="hub_fork" zone_id="hub-fork" zone_label="Two-Lane Entry" -%}
+
+<section id="tools-branches-preview" zone-label="Tools Branches Preview" class="p_4 p-x_5:lg">
+  {%- include_relative partials/icon-grid.html grid_key="tools_branches" zone_id="tools-branches" zone_label="Tools for Today Branches" linked=true columns="3" -%}
+</section>
+
+{%- include_relative partials/toolkit-citation.html zone_id="hub-toolkit-citation" -%}

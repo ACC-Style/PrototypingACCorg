@@ -1,0 +1,10 @@
+wellbeing_evidence:
+  heading: Why Cardiologist Well-Being Needs Urgent Attention
+  items:
+  - value: "40%"
+    context: of cardiologists reported work-related burnout
+    citation: 2018 Medscape data, ACC Toolkit
+  - value: "17%"
+    context: would consider professional mental health support
+  - value: "2×"
+    context: greater suicide risk than the general public
