@@ -34,12 +34,10 @@ notes: Deep spoke — three domains + Crisis Communication accordions (evergreen
 -%}
 
 {% assign workplace = site.data.ClinicianWellBeing.grids.workplace_domains %}
-<section id="workplace-domains" zone-label="Three Domains" class="wrapper-container reading-typography m-b_5:lg m-b_4">
+<section id="workplace-domains" zone-label="Three Domains" class="wrapper-container reading-typography m-b_5:lg m-b_4 bg_black-1 br_round p_4 p_5:lg">
   <h2 class="font_display m-b_3">{{ workplace.heading }}</h2>
   <p class="m-b_4 max-w_65">{{ workplace.intro }}</p>
-  <div class="bg_black-1 br_radius p_4 p_5:lg">
-    {%- include Blocks/UL_IconHeadlineText.html data_path="ClinicianWellBeing.grids.workplace_domains_items" grid_modifier="columns_1 columns_3:md gap-x_4 gap-y_4 grid" -%}
-  </div>
+    {%- include Blocks/UL_IconHeadlineText.html data_path="ClinicianWellBeing.grids.workplace_domains_items" grid_modifier="columns_1 columns_2:md gap-x_4 gap-y_4 grid" -%}
 </section>
 
 {%- include Blocks/AccordionStack.html

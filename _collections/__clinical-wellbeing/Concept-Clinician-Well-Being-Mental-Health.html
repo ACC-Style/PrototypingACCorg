@@ -31,12 +31,10 @@ notes: Deep spoke — accordions with evergreen content from semi-retired COVID 
 -%}
 
 {% assign burnout = site.data.ClinicianWellBeing.grids.burnout_dimensions %}
-<section id="recognize-burnout" zone-label="Recognize Burnout" class="wrapper-container reading-typography m-b_5:lg m-b_4">
+<section id="recognize-burnout" zone-label="Recognize Burnout" class="wrapper-container reading-typography m-b_5:lg m-b_4 bg_black-1 br_round p_4 p_5:lg">
   <h2 class="font_display m-b_3">{{ burnout.heading }}</h2>
   <p class="m-b_4 max-w_65">{{ burnout.intro }}</p>
-  <div class="bg_black-1 br_radius p_4 p_5:lg">
-    {%- include Blocks/UL_IconHeadlineText.html data_path="ClinicianWellBeing.grids.burnout_dimensions_items" grid_modifier="columns_1 columns_3:md gap-x_4 gap-y_4 grid" -%}
-  </div>
+    {%- include Blocks/UL_IconHeadlineText.html data_path="ClinicianWellBeing.grids.burnout_dimensions_items" grid_modifier="columns_1 columns_3:md gap-x_4 gap-y_4 grid m-x_n4:lg" -%}
 </section>
 
 {%- include Blocks/DecorativeQuote.html data_path="ClinicianWellBeing.quotes.mental_health_burnout" zone_id="burnout-quote" zone_label="Burnout Perspective" -%}

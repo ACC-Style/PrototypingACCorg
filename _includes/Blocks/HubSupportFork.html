@@ -26,9 +26,9 @@ zone_id / zone_label: section metadata
 {% endif %}
 <section id="{{ include.zone_id | default: 'hub-support' }}" zone-label="{{ include.zone_label | default: 'College Support' }}" class="reading-typography wrapper-container m-b_5:lg m-b_4 p-x_4 p-x_5:lg" aria-labelledby="{{ include.zone_id | default: 'hub-support' }}-title">
   <div class="bg_white shadow_bevel-light br_radius br_solid br_1 br_black-3 grid columns_1 columns_4:md columns_5:lg m-b_0 overflow_hidden isolation_isolate">
-    <div class="col-start_start col-end_n3:md col-end_end reading-typography bg_black-1 br-tl_radius br-bl_radius:md p_4 p_5:lg">
+    <div class="col-start_start col-end_n3:md col-end_end reading-typography  br-tl_radius br-bl_radius:md p_4 p_5:lg">
       {% if hub.heading %}
-      <h2 id="{{ include.zone_id | default: 'hub-support' }}-title" class="font_display m-b_3">{{ hub.heading }}</h2>
+      <h2 id="{{ include.zone_id | default: 'hub-support' }}-title" class="font_display m-b_3 wrap_pretty">{{ hub.heading }}</h2>
       {% endif %}
       {% if hub.intro %}
       <p class="m-b_4 max-w_65">{{ hub.intro }}</p>
@@ -59,7 +59,7 @@ zone_id / zone_label: section metadata
       <span class="font_display font_medium m-t_0 block lh_1">{{ hub.future.title }}</span>
       <p class="lh_2 m-b_4 opacity_8">{{ hub.future.description }}</p>
       <footer class=" isolation_isolate m-t_auto">
-        <a href="{{ future_url }}" class="btn btn-shade expanded-click-area" {% if hub.future.external_url %}target="_blank" rel="noopener noreferrer"{% endif %}>{{ hub.future.button | default: hub.future.title }}</a>
+        <a href="{{ future_url }}" class="btn btn-shade expanded-click-area" {% if hub.future.external_url %}target="_blank" rel="noopener noreferrer"{% endif %}>{{ hub.future.button | default: hub.future.title }} <i class="fas fa-arrow-right p-l_3"></i></a>
       </footer>
     </aside>
   </div>

@@ -1,5 +1,5 @@
 <!--
-data_path: YAML path to stats object (heading, items with value, context, citation)
+data_path: YAML path to stats object (heading, items with value, context, citation; optional resource_reading with title, url)
 zone_id / zone_label: section metadata
 -->
 {% assign path_parts = include.data_path | split: '.' %}
@@ -7,7 +7,7 @@ zone_id / zone_label: section metadata
 {% for part in path_parts %}
   {% assign stats = stats[part] %}
 {% endfor %}
-<section id="{{ include.zone_id | default: stats.heading | slugify }}" zone-label="{{ include.zone_label | default: stats.heading }}" class="reading-typography wrapper-container p_4 p-x_5:lg m-b_5 relative isolation_isolate">
+<section id="{{ include.zone_id | default: stats.heading | slugify }}" zone-label="{{ include.zone_label | default: stats.heading }}" class="reading-typography wrapper-container p_4 p-x_5:lg m-b_5 relative isolation_isolate bg_black-1">
   {% if stats.heading %}
   <h2 class="font_display m-b_4">{{ stats.heading }}</h2>
   {% endif %}
@@ -28,5 +28,12 @@ zone_id / zone_label: section metadata
     </li>
     {% endfor %}
   </ul>
-  <a href="https://www.acc.org/Latest-in-Cardiology/Articles/2024/02/01/01/42/from-the-member-sections-physician-burnout-an-enemy-we-must-recognize-to-battle" class="block expanded-click-area not-link btn btn-link p_3 p_4:lg m_auto max-w_65 text_center">Physician Burnout: An Enemy We Must Recognize to Battle</a>
+  {% if stats.resource_reading %}
+  <ul class="ul_inline-pipe font-size_down-1 m-t_4 m-b_0 c_black-7 p_3 bg_black-_05 shadow_emboss-light br_radius w_100">
+    <li class="font_bold no-after c_black">Resource Reading:</li>
+    {% for link in stats.resource_reading %}
+    <li><a href="{{ link.url }}" class="link" target="_blank" rel="noopener noreferrer">{{ link.title }}</a></li>
+    {% endfor %}
+  </ul>
+  {% endif %}
 </section>

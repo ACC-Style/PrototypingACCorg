@@ -1,9 +1,11 @@
 # Mini Z survey 2.0 — individual scoring (Linzer et al., Hennepin County Medical Center)
-# Source: https://www.ssmhealth.com/getmedia/2fd26020-d205-45fb-b34c-5179568bcd19/minizburnoutassessment2.pdf
+# Source PDF: https://www.ssmhealth.com/getmedia/2fd26020-d205-45fb-b34c-5179568bcd19/minizburnoutassessment2.pdf
+# AMA instrument page (cite only): https://www.ama-assn.org/practice-management/physician-health/mini-z-burnout-survey
 title: Mini Z Burnout Assessment
 subtitle: Mini Z survey 2.0 (for individual scoring)
 intro: For questions 1–10, choose the best answer. Your total score updates automatically. Range 10–50. Per the Mini Z, scores **below 40** may indicate elevated workplace burnout stress; **40 or above** is associated with a more supportive work environment.
 pdf_url: https://www.ssmhealth.com/getmedia/2fd26020-d205-45fb-b34c-5179568bcd19/minizburnoutassessment2.pdf
+ama_url: https://www.ama-assn.org/practice-management/physician-health/mini-z-burnout-survey
 threshold_total: 40
 threshold_subscale: 20
 questions:

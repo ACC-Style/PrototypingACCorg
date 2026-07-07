@@ -1,9 +1,9 @@
 mental_health:
-  - title: Member Sections
-    subtitle: Learn from peers who understand
-    description: Connect with cardiovascular colleagues facing similar pressures. Share strategies, compare notes, and learn from others who have been there.
-    link_text: Explore Member Sections
-    link_url: https://www.acc.org/Membership/Sections-and-Councils
+  - title: DocMatter
+    subtitle: Connect with peers who understand
+    description: Share strategies, compare notes, and discuss well-being with cardiovascular colleagues in ACC's members-only community.
+    link_text: Connect on DocMatter
+    link_url: https://www.acc.org/Membership/ACC-DocMatter-Community
 
 tools:
   - title: Need a Cohort Experience?

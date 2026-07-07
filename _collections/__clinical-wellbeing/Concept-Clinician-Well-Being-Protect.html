@@ -33,11 +33,9 @@ notes: Deep spoke — crisis communication, patient mental health, stigma.
 -%}
 
 {% assign trust = site.data.ClinicianWellBeing.grids.trust_pillars %}
-<section id="trust-pillars" zone-label="Trust Pillars" class="wrapper-container reading-typography m-b_5:lg m-b_4">
-  <h2 class="font_display m-b_4">{{ trust.heading }}</h2>
-  <div class="bg_black-1 br_radius p_4 p_5:lg">
-    {%- include Blocks/UL_IconHeadlineText.html data_path="ClinicianWellBeing.grids.trust_pillars_items" grid_modifier="columns_1 columns_2:md columns_4:lg gap-x_4 gap-y_4 grid" -%}
-  </div>
+<section id="trust-pillars" zone-label="Trust Pillars" class="wrapper-container reading-typography m-b_5:lg m-b_4 bg_black-1 br_round p_4 p_5:lg">
+    <h2 class="font_display m-b_4">{{ trust.heading }}</h2>
+    {%- include Blocks/UL_IconHeadlineText.html data_path="ClinicianWellBeing.grids.trust_pillars_items" grid_modifier="columns_1 columns_2:md gap-x_4 gap-y_4 grid" -%}
 </section>
 
 <section id="crisis-communication" zone-label="Crisis Communication" class="reading-typography wrapper-container m-b_5 max-w_65">

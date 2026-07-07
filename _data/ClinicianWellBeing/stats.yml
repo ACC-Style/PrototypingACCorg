@@ -8,3 +8,10 @@ wellbeing_evidence:
     context: would consider professional mental health support
   - value: "2×"
     context: greater suicide risk than the general public
+  resource_reading:
+  - title: Prevalence of Mental Health Among Cardiologists
+    url: https://www.jacc.org/doi/full/10.1016/j.jacc.2022.11.025
+  - title: Silent Suffering editorial
+    url: https://www.jacc.org/doi/full/10.1016/j.jacc.2022.11.026
+  - title: Physician Burnout
+    url: https://www.acc.org/Latest-in-Cardiology/Articles/2024/02/01/01/42/from-the-member-sections-physician-burnout-an-enemy-we-must-recognize-to-battle

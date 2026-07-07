@@ -45,6 +45,16 @@ notes: Policy spoke — statements, advocacy, partnerships.
   external=true
 -%}
 
+{% assign cf_webinars = site.data.ClinicianWellBeing.future.career_flexibility_webinars %}
+<div class="wrapper-container reading-typography m-b_5 m-t_n4">
+  <ul class="ul_inline-pipe font-size_down-1 m-b_0 max-w_65">
+    <li class="font_bold no-after">{{ cf_webinars.label }}:</li>
+    {% for link in cf_webinars.items %}
+    <li><a href="{{ link.url }}" class="link" target="_blank" rel="noopener noreferrer">{{ link.title }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+
 {%- include Blocks/SmallImageTextPanel.html
   zone_id="civility-policy"
   zone_label="Policy Panel — Civility"
