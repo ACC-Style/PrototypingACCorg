@@ -1,7 +1,11 @@
-{% assign hero_image_base = include.hero_image_base | default: 'Dynamic' %}
-{% assign hero_image_dir = include.hero_image_dir | default: 'assets/images/MicroSite' %}
-{% assign hero_image_ext = include.hero_image_ext | default: 'png' %}
-{% assign parent_link = include.parent_link | default: '../' %}
+{% assign hero_image_base = include.hero_image_base | default: hero_image_base | default: 'Dynamic' %}
+{% assign hero_image_dir = include.hero_image_dir | default: hero_image_dir | default: 'assets/images/MicroSite' %}
+{% assign hero_image_ext = include.hero_image_ext | default: hero_image_ext | default: 'png' %}
+{% assign _parent_link = include.parent_link | default: parent_link | default: '../' %}
+{% assign _hero_title = include.hero_title | default: hero_title %}
+{% assign _cta_text = include.cta_text | default: cta_text %}
+{% assign _cta_link = include.cta_link | default: cta_link %}
+{% assign _hero_image_alt = include.hero_image_alt | default: hero_image_alt %}
 <div grid-template="hero-image-cta" template-option="micro" class="isolation_isolate overflow_hidden relative">
     <picture data-item="responsive-hero-image" class="absolute bg_cover flex flex_column inset_0 ">
         <source
@@ -18,27 +22,27 @@
           class="display_none">
         <img
           src="{{ hero_image_dir | append: '/' | append: hero_image_base | append: '_320x300.' | append: hero_image_ext | relative_url }}"
-          alt="{{ include.hero_image_alt | default: 'Hero Image' }}"
+          alt="{{ _hero_image_alt | default: 'Hero Image' }}"
           class="bg_cover flex_100">
       </picture>
     <div grid-area="title">
         <h1 data-item="hero-title" class="lh_3 m_0 m-y_3 m-y_0:lg c_white isolation_isolate relative">
-            <span class="display_none:md">
-                <a href="{{ parent_link }}" class="h:c_white h:underline font_bold c_white-8 expanded-click-area h:c_white">
+            <span class="display_none:md relative isolation_isolate inline-block">
+                <a href="{{ _parent_link }}" class="h:c_white h:underline font_bold c_white-8 expanded-click-area h:c_white">
                     <i class="fas fa-solid fa-arrow-left m-l_n3" aria-hidden="true"></i>
                 </a>
             </span>
-            {% assign title_parts = include.hero_title | default: 'Section Title Goes Here' | split: ' ' %}
+            {% assign title_parts = _hero_title | default: 'Section Title Goes Here' | split: ' ' %}
             {% for part in title_parts %}
                 <span class="text">{{ part }}</span>
             {% endfor %}
         </h1>
     </div>
-    {% if include.cta_text != blank %}
-    <div grid-area="cta" class="relative font-size_down-1 grid justify_center items_center">
-        <div class="grid justify_center items_center">
-            <a href="{{ include.cta_link | default: '#' }}" class="br_white-3 btn btn-primary c_white expanded-click-area shadow_overlap-bold">{{ include.cta_text }}</a>
-        </div>
+    {% if _cta_text != blank %}
+    <div grid-area="cta" class="relative isolation_isolate font-size_down-1 grid justify_center items_center">
+        <footer class="relative isolation_isolate grid justify_center items_center">
+            <a href="{{ _cta_link | default: '#' }}" class="br_white-3 btn btn-primary c_white expanded-click-area shadow_overlap-bold">{{ _cta_text }}</a>
+        </footer>
     </div>
     {% endif %}
 </div>

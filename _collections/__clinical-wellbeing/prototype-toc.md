@@ -15,7 +15,7 @@ SME presentation map: **Page → Zone (`id`) → UI Item → Content Collection*
 
 ## Concept-Clinician-Well-Being.html
 
-**Layout:** `acc/fullscreen` (concept root — no sidebar)  
+**Layout:** `Global/fullscreen` (concept root — no sidebar)  
 **URL:** `/clinical-wellbeing/Concept-Clinician-Well-Being/`
 
 ### Zone: `hero` — Hero + Primary CTA
@@ -40,7 +40,7 @@ SME presentation map: **Page → Zone (`id`) → UI Item → Content Collection*
 
 ### Zone: `why-wellbeing` — Evidence
 
-- **UI Item:** Stat row (`stat-row.html` — 3 stats across, teal number · divider · text)
+- **UI Item:** Stat row (`Blocks/StatRow.html` — 3 stats across, teal number · divider · text)
   - **Content Collection:**
     - **H2:** Why Cardiologist Well-Being Needs Urgent Attention
     - **Stat 1:** 40%* — of cardiologists reported work-related burnout / (2018 Medscape data, ACC Toolkit)
@@ -49,7 +49,7 @@ SME presentation map: **Page → Zone (`id`) → UI Item → Content Collection*
 
 ### Zone: `hub-fork` — Two-Lane Entry
 
-- **UI Item:** Fork cards with CTA buttons (`hub-fork-cards.html`, 2 items — whole card links to spoke)
+- **UI Item:** Fork cards with CTA buttons (`Blocks/HubForkCards.html`, 2 items — whole card links to spoke)
   - **Content Collection:**
     - **H2:** How The College is Supporting Clinician Well-Being
     - **Intro:** The ACC is committed to the problems of today and the solutions of tomorrow.
@@ -61,9 +61,9 @@ SME presentation map: **Page → Zone (`id`) → UI Item → Content Collection*
 - **UI Item:** Grid List with Linked Descriptions (3 items)
   - **Content Collection:**
     - **H2:** Choose Your Path
-    - **Card:** Mental Health & Burnout → spoke URL
-    - **Card:** Strengthen Your Workplace → spoke URL
-    - **Card:** Protect Yourself & Others → spoke URL
+    - **Card:** Care for Yourself → spoke URL
+    - **Card:** Strengthen Your Team → spoke URL
+    - **Card:** Protect Patients & Peers → spoke URL
 
 ### Zone: `hub-toolkit-citation` — Attribution
 
@@ -75,7 +75,7 @@ SME presentation map: **Page → Zone (`id`) → UI Item → Content Collection*
 
 ## Concept-Clinician-Well-Being-Tools.html
 
-**Layout:** `arches-clinical-wellbeing` (sidebar + micro hero)  
+**Layout:** `Global/sidebar` (sidebar + micro hero)
 **URL:** `/clinical-wellbeing/Concept-Clinician-Well-Being-Tools/`
 
 ### Zone: `hero` — Micro Branding
@@ -118,7 +118,7 @@ SME presentation map: **Page → Zone (`id`) → UI Item → Content Collection*
 
 ## Concept-Clinician-Well-Being-Mental-Health.html
 
-**Layout:** `arches-clinical-wellbeing`  
+**Layout:** `Global/sidebar`  
 **URL:** `/clinical-wellbeing/Concept-Clinician-Well-Being-Mental-Health/`
 
 ### Zone: `hero` — Micro Branding
@@ -126,7 +126,7 @@ SME presentation map: **Page → Zone (`id`) → UI Item → Content Collection*
 - **UI Item:** Micro Branding with CTA Button (`masthead: MicroSite/heroimage.micro.dynamic.html`)
   - **Art:** Text-free `WellBeing_*` JPG crops via `hero.yml` (`hero_image_dir` / `hero_image_ext` params).
   - **Content Collection:**
-    - **H1:** Mental Health & Burnout
+    - **H1:** Care for Yourself
     - `btn-primary` → **Button label:** Get Support
     - `href` → Physician Support Line
 
@@ -148,7 +148,7 @@ SME presentation map: **Page → Zone (`id`) → UI Item → Content Collection*
 
 ### Zone: `coping-guides` — Evergreen coping detail
 
-- **UI Item:** Accordion stack (`accordion-stack.html`, `mental_health_accordions.yml`)
+- **UI Item:** Accordion stack (`Blocks/AccordionStack.html`, `mental_health_accordions.yml`)
   - **Panels:** (Screen for Burnout moved to dedicated Mini Z page)
 
 ### Zone: `mental-health-follow-up` — Follow Up CTA
@@ -166,7 +166,7 @@ SME presentation map: **Page → Zone (`id`) → UI Item → Content Collection*
 
 ## Concept-Clinician-Well-Being-Mini-Z.html
 
-**Layout:** `arches-clinical-wellbeing`  
+**Layout:** `Global/sidebar`  
 **URL:** `/clinical-wellbeing/Concept-Clinician-Well-Being-Mini-Z/`
 
 ### Zone: `hero` — Micro Branding
@@ -189,7 +189,7 @@ SME presentation map: **Page → Zone (`id`) → UI Item → Content Collection*
 
 ## Concept-Clinician-Well-Being-Workplace.html
 
-**Layout:** `arches-clinical-wellbeing`  
+**Layout:** `Global/sidebar`  
 **URL:** `/clinical-wellbeing/Concept-Clinician-Well-Being-Workplace/`
 
 ### Zone: `hero` — Micro Branding
@@ -197,7 +197,7 @@ SME presentation map: **Page → Zone (`id`) → UI Item → Content Collection*
 - **UI Item:** Micro Branding with CTA Button (`masthead: MicroSite/heroimage.micro.dynamic.html`)
   - **Art:** Text-free `WellBeing_*` JPG crops via `hero.yml` (`hero_image_dir` / `hero_image_ext` params).
   - **Content Collection:**
-    - **H1:** Strengthen Your Workplace
+    - **H1:** Strengthen Your Team
     - `btn-primary` → **Button label:** Download Toolkit
 
 ### Zone: `workplace-intro` — Introduction
@@ -217,7 +217,7 @@ SME presentation map: **Page → Zone (`id`) → UI Item → Content Collection*
 
 ### Zone: `workplace-guides` — Toolkit + communication detail
 
-- **UI Item:** Accordion stack (`accordion-stack.html`, `workplace_accordions.yml`)
+- **UI Item:** Accordion stack (`Blocks/AccordionStack.html`, `workplace_accordions.yml`)
   - **Panels:**
     - Make Practice Sustainable *(Toolkit, open by default)*
     - Create a Culture Where Well-Being Is Expected *(Toolkit)*
@@ -239,7 +239,7 @@ SME presentation map: **Page → Zone (`id`) → UI Item → Content Collection*
 
 ## Concept-Clinician-Well-Being-Protect.html
 
-**Layout:** `arches-clinical-wellbeing`  
+**Layout:** `Global/sidebar`  
 **URL:** `/clinical-wellbeing/Concept-Clinician-Well-Being-Protect/`
 
 ### Zone: `hero` — Micro Branding
@@ -247,7 +247,7 @@ SME presentation map: **Page → Zone (`id`) → UI Item → Content Collection*
 - **UI Item:** Micro Branding with CTA Button (`masthead: MicroSite/heroimage.micro.dynamic.html`)
   - **Art:** Text-free `WellBeing_*` JPG crops via `hero.yml` (`hero_image_dir` / `hero_image_ext` params).
   - **Content Collection:**
-    - **H1:** Protect Yourself & Others
+    - **H1:** Protect Patients & Peers
     - `btn-primary` → **Button label:** NCD Mental Health Course
 
 ### Zone: `protect-intro` — Introduction
@@ -293,7 +293,7 @@ SME presentation map: **Page → Zone (`id`) → UI Item → Content Collection*
 
 ## Concept-Clinician-Well-Being-Future.html
 
-**Layout:** `arches-clinical-wellbeing`  
+**Layout:** `Global/sidebar`  
 **URL:** `/clinical-wellbeing/Concept-Clinician-Well-Being-Future/`
 
 ### Zone: `hero` — Micro Branding
@@ -355,7 +355,7 @@ SME presentation map: **Page → Zone (`id`) → UI Item → Content Collection*
 
 ## Sidebar navigation (all sub pages)
 
-- **UI Item:** Side navigation (`partials/sidebar-nav.html`)
+- **UI Item:** Side navigation (`Global/sidebar` + `sidebar_data_path` → `MicroSite/sidebar-nav.html`)
   - **Content Collection:**
     - **Root:** Clinician Well-Being → hub
     - **Items:** Overview · Tools for Today (children: Mental Health, Workplace, Protect) · Shaping the Future

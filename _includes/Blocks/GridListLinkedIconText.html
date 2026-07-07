@@ -1,7 +1,26 @@
-{% assign pages = site.data.ClinicianWellBeing.pages %}
-{% assign grid = site.data.ClinicianWellBeing.grids[include.grid_key] %}
+<!--
+data_path: YAML path to grid object (heading, intro, items)
+pages_data_path: optional YAML path for url_key → relative_url resolution
+linked: true (default) for linked descriptions; false for key-point grid
+columns: optional "3" for columns_3:lg
+zone_id / zone_label: section metadata
+container_modifier: optional section class additions
+-->
+{% assign path_parts = include.data_path | split: '.' %}
+{% assign grid = site.data %}
+{% for part in path_parts %}
+  {% assign grid = grid[part] %}
+{% endfor %}
+{% assign pages = nil %}
+{% if include.pages_data_path %}
+  {% assign pages_parts = include.pages_data_path | split: '.' %}
+  {% assign pages = site.data %}
+  {% for part in pages_parts %}
+    {% assign pages = pages[part] %}
+  {% endfor %}
+{% endif %}
 {% assign linked = include.linked | default: true %}
-<section id="{{ include.zone_id | default: grid.heading | slugify }}" class="m-b_5:lg m-b_4 reading-typography" zone-label="{{ include.zone_label | default: grid.heading }}">
+<section id="{{ include.zone_id | default: grid.heading | slugify }}" class="m-b_5:lg m-b_4 reading-typography {% if include.container_modifier %}{{ include.container_modifier }}{% endif %}" zone-label="{{ include.zone_label | default: grid.heading }}">
   {% if grid.heading %}
   <h2 class="font_display m-b_3 p-x_5:lg p-x_4:md p-x_0">{{ grid.heading }}</h2>
   {% endif %}
@@ -11,11 +30,13 @@
   <div class="bg_black-1 br_radius m-x_n4 p_4 p_5:lg">
     <ul class="columns_1 columns_2:md {% if include.columns == '3' %}columns_3:lg{% endif %} gap-x_4 gap-y_4 grid ul_none m_0">
       {% for item in grid.items %}
-      <li class="flex flex_row:md flex_column items_start:md items_center justify_start isolate relative c_accent-n1 p_3 p_4:md br_radius {% if linked %}h:bg_primary-4{% endif %}">
+      <li class="flex flex_row:md flex_column items_start:md items_center justify_start isolation_isolate relative c_accent-n1 p_3 p_4:md br_radius overflow_hidden {% if linked %}h:bg_primary-4{% endif %}">
         <i class="c_inherit-all font_7 self_center self_start:md p_4 p_0:md m-t_4 m-t_3:md p-r_4:md far fa-regular {{ item.icon }}" aria-hidden="true"></i>
         {% if linked %}
-          {% if item.url_key %}
+          {% if item.url_key and pages %}
             {% assign item_url = pages[item.url_key] | relative_url %}
+          {% elsif item.url %}
+            {% assign item_url = item.url | relative_url %}
           {% else %}
             {% assign item_url = item.external_url %}
           {% endif %}

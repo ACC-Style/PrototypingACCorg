@@ -1,6 +1,18 @@
-{% assign pages = site.data.ClinicianWellBeing.pages %}
-{% assign grid_key = include.grid_key | default: 'hub_fork' %}
-{% assign grid = site.data.ClinicianWellBeing.grids[grid_key] %}
+<!--
+data_path: YAML path to fork grid (heading, intro, items with icon, title, description, button, url_key)
+pages_data_path: YAML path for url_key → relative_url resolution
+zone_id / zone_label: section metadata
+-->
+{% assign path_parts = include.data_path | split: '.' %}
+{% assign grid = site.data %}
+{% for part in path_parts %}
+  {% assign grid = grid[part] %}
+{% endfor %}
+{% assign pages_parts = include.pages_data_path | split: '.' %}
+{% assign pages = site.data %}
+{% for part in pages_parts %}
+  {% assign pages = pages[part] %}
+{% endfor %}
 <section id="{{ include.zone_id | default: 'hub-fork' }}" class="m-b_5:lg m-b_4 reading-typography wrapper-container p_4 p-x_5:lg" zone-label="{{ include.zone_label | default: 'Two-Lane Entry' }}">
   {% if grid.heading %}
   <h2 class="font_display m-b_4">{{ grid.heading }}</h2>
@@ -15,7 +27,7 @@
     {% else %}
       {% assign item_url = item.external_url %}
     {% endif %}
-    <li class="bg_white br_round shadow_bevel-light flex flex_column overflow_hidden isolate relative">
+    <li class="bg_white br_round shadow_bevel-light flex flex_column overflow_hidden isolation_isolate relative">
       <a href="{{ item_url }}" class="expanded-click-area not-link h:undecorated color_inherit flex flex_column flex_grow" {% if item.external_url %}target="_blank" rel="noopener noreferrer"{% endif %}>
         <div class="bg_black-2 aspect_16x9 flex items_center justify_center pointer-events_none">
           <i class="far fa-regular {{ item.icon }} font_7 c_black-5" aria-hidden="true"></i>

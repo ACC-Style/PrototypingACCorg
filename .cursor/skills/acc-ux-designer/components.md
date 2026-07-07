@@ -187,8 +187,16 @@ Preview area: `#previewArea` inside sticky header section.
 
 ## Collection-local partials
 
-Initiative-specific markup (custom heroes, sidebars, zone blocks tied to one collection's YAML) lives in `_collections/{name}/partials/` and is included with `{% include_relative partials/file.html %}` from pages in that collection.
+Initiative-specific markup belongs in `_collections/{name}/partials/` only when **no global pattern exists** — e.g. interactive assessments, initiative-only legal/attribution copy.
 
-Global `_includes/` is for cross-project fragments only (`MicroSite/`, `Blocks/`, Arches chrome). Do not add `{ProjectName}/` folders under `_includes/`.
+Prefer global includes first:
 
-Full rules and examples: [collection-partials.md](collection-partials.md).
+```liquid
+{% include Blocks/GridListLinkedIconText.html data_path="ClinicianWellBeing.grids.tools_branches" pages_data_path="ClinicianWellBeing.pages" %}
+```
+
+Spoke pages: `layout: Global/sidebar` + `sidebar_data_path` in front matter (see [global-layouts.md](global-layouts.md)).
+
+Global `_includes/` is for cross-project fragments (`MicroSite/`, `Blocks/`, Arches chrome).
+
+Full rules: [collection-partials.md](collection-partials.md).

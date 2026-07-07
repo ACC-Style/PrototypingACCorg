@@ -12,7 +12,7 @@
 |---|-----------|------------|---------------|
 | 1 | `hero` | Hero Image with CTA | `_data/ClinicianWellBeing/hub.yml` — “Self Care is also part of the job” · Explore Resources |
 | 2 | `intro` | Two-column + Cardio Renew aside | Why ACC Cares for You · Cardio Renew CTA (replaces Quick Links) |
-| 3 | `why-wellbeing` | Stat row (3 across) | `stat-row.html` — big teal number · divider · text |
+| 3 | `why-wellbeing` | Stat row (3 across) | `Blocks/StatRow.html` — big teal number · divider · text |
 | 4 | `hub-fork` | Fork cards with CTA buttons | Tools for Today · Shaping the Future → spoke pages |
 | 5 | `tools-branches` | Linked icon grid (3) | Mental Health · Workplace · Protect → tool spokes |
 | 6 | `hub-toolkit-citation` | Toolkit attribution | Footer |

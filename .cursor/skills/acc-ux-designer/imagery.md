@@ -39,21 +39,27 @@ Separate **visual atmosphere** (photo, gradient, brand art) from **readable cont
 
 | Pattern | Reference |
 |---------|-----------|
-| Hero title + CTA over photo | [heroes.md](heroes.md) — `cta-overlay`, `page-title`, `c_white-8` on scrim |
+| Hero title + CTA over photo | [heroes.md](heroes.md) — `grid-template="hero-image-cta"`, `hero-title`, `cta-callout`, `c_white-8` |
 | Photo beside copy | `_collections/_ui_gold_standard/photo-text-lockup.html` |
 | Text on tinted overlay | [cross-domain-branding.md](cross-domain-branding.md) — `bg_black-4 bg-blend_multiply` + HTML type |
 | Responsive art only | `<picture data-item="responsive-hero-image">` — breakpoints swap **image**, not text |
 
 ```html
 <!-- Good: image is atmosphere; copy is HTML -->
-<div data-item="hero-image-cta" class="grid …">
-  <picture data-item="responsive-hero-image">
-    <img alt="" src="…" class="bg_cover w_100">
-  </picture>
-  <div data-item="cta-overlay" class="bg_black-4 bg-blend_multiply …">
-    <h1 data-item="page-title" class="font_display c_white">Real heading in HTML</h1>
-    <p class="c_white-8">Supporting copy crawlers and assistive tech can read.</p>
-    <a class="btn btn-primary" href="…">Start here</a>
+<div grid-template="hero-image-cta" id="hero" class="font_3:lg font_2:md font_1">
+  <div grid-area="background">
+    <picture data-item="responsive-hero-image">
+      <img alt="" src="…" class="flex_100">
+    </picture>
+  </div>
+  <div grid-area="title">
+    <h1 data-item="hero-title" class="c_white"><span class="text">Real</span> <span class="text">heading</span></h1>
+  </div>
+  <div grid-area="cta">
+    <div data-item="cta-callout" class="c_white">
+      <p data-item="cta-description">Supporting copy crawlers and assistive tech can read.</p>
+      <a class="br_white-3 btn btn-primary c_white" href="…">Start here</a>
+    </div>
   </div>
 </div>
 ```

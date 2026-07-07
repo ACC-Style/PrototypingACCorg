@@ -1,8 +1,9 @@
 hero:
   title: Clinician Well-Being
-  cta_title: Self Care is also part of the job
-  cta_description: Burnout is not a personal failing. Practical resources can help you recover, recharge, and sustain your career in cardiovascular care.
+  cta_title: Self Care is also part of the job.
+  cta_description: Burnout is not a personal failing. Start with practical resources you can use now — or explore where ACC is leading the profession.
   cta_button: Explore Resources
+  cta_link: "#hub-support-title"
 
 intro:
   heading: Why ACC Cares for You

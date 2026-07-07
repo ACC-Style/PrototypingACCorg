@@ -1,25 +1,20 @@
+# Clinician Well-Being sidebar — each node with `children` must have a unique `key` (collapse ID).
 sidebarRoot: Clinician Well-Being
 sidebarRootURL: /clinical-wellbeing/Concept-Clinician-Well-Being/
 items:
-  - key: hub
-    label: Overview
-    url: /clinical-wellbeing/Concept-Clinician-Well-Being/
-  - key: tools
-    label: Tools for Today
-    url: /clinical-wellbeing/Concept-Clinician-Well-Being-Tools/
-    children:
-      - key: mental_health
-        label: Mental Health & Burnout
-        url: /clinical-wellbeing/Concept-Clinician-Well-Being-Mental-Health/
-      - key: mini_z
-        label: Screen for Burnout (Mini Z)
-        url: /clinical-wellbeing/Concept-Clinician-Well-Being-Mini-Z/
-      - key: workplace
-        label: Strengthen Your Workplace
-        url: /clinical-wellbeing/Concept-Clinician-Well-Being-Workplace/
-      - key: protect
-        label: Protect Yourself & Others
-        url: /clinical-wellbeing/Concept-Clinician-Well-Being-Protect/
-  - key: future
-    label: Shaping the Future
-    url: /clinical-wellbeing/Concept-Clinician-Well-Being-Future/
+- key: mental_health
+  label: Care for Yourself
+  url: /clinical-wellbeing/Concept-Clinician-Well-Being-Mental-Health/
+  children:
+  - key: mini_z
+    label: Burn Out Survey
+    url: /clinical-wellbeing/Concept-Clinician-Well-Being-Mini-Z/
+- key: workplace
+  label: Strengthen Your Team
+  url: /clinical-wellbeing/Concept-Clinician-Well-Being-Workplace/
+- key: protect
+  label: Protect Patients & Peers
+  url: /clinical-wellbeing/Concept-Clinician-Well-Being-Protect/
+- key: future
+  label: Shaping the Future
+  url: /clinical-wellbeing/Concept-Clinician-Well-Being-Future/

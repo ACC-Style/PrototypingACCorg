@@ -1,0 +1,13 @@
+{% comment %}
+  Resolves dotted YAML path into `resolved_data` (e.g. ClinicianWellBeing.hero).
+  Param: data_path
+{% endcomment %}
+{% assign resolved_data = site.data %}
+{% if include.data_path != blank %}
+  {% assign path_parts = include.data_path | split: '.' %}
+  {% for part in path_parts %}
+    {% assign resolved_data = resolved_data[part] %}
+  {% endfor %}
+{% else %}
+  {% assign resolved_data = nil %}
+{% endif %}

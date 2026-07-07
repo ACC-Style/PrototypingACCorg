@@ -1,9 +1,9 @@
 mental_health:
-  - title: Download the ACC Toolkit
-    subtitle: ""
-    description: Use the Clinician Well-Being Toolkit to facilitate conversations in your section or institution.
-    link_text: Download Toolkit (PPT)
-    link_url: https://www.acc.org/~/media/Non-Clinical/Files-PDFs-Excel-MS-Word-etc/2020/05/26/Clinician-Well-Being-Toolkit.pptx
+  - title: Member Sections
+    subtitle: Learn from peers who understand
+    description: Connect with cardiovascular colleagues facing similar pressures. Share strategies, compare notes, and learn from others who have been there.
+    link_text: Explore Member Sections
+    link_url: https://www.acc.org/Membership/Sections-and-Councils
 
 tools:
   - title: Need a Cohort Experience?
@@ -23,12 +23,12 @@ protect:
   - title: Lead a Team Conversation
     subtitle: ""
     description: Use the Coaching for CV Leaders webinar series and Toolkit to support culture change in your practice.
-    link_text: Back to Tools for Today
-    link_url: /clinical-wellbeing/Concept-Clinician-Well-Being-Tools/
+    link_text: Explore Well-Being Resources
+    link_url: /clinical-wellbeing/Concept-Clinician-Well-Being/#hub-support
 
 future:
   - title: Policy Sets the Direction
     subtitle: Practice starts with you
-    description: Return to Tools for Today for resources you can use now — or download the Toolkit to start a conversation in your chapter.
-    link_text: Explore Tools for Today
-    link_url: /clinical-wellbeing/Concept-Clinician-Well-Being-Tools/
+    description: Return to the hub for resources you can use now — or download the Toolkit to start a conversation in your chapter.
+    link_text: Explore Well-Being Resources
+    link_url: /clinical-wellbeing/Concept-Clinician-Well-Being/#hub-support

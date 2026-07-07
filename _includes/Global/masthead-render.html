@@ -1,0 +1,64 @@
+{% comment %}
+  Section + micro hero variable resolution for Global layouts.
+  Default masthead: MicroSite/heroimage.dynamic.html (section hero with CTA).
+  Override with page.masthead — e.g. heroimage.micro.dynamic.html, empty.html.
+{% endcomment %}
+{% assign hero_cfg = site.data %}
+{% if page.hero_data_path != blank %}
+  {% assign hero_cfg_parts = page.hero_data_path | split: '.' %}
+  {% for part in hero_cfg_parts %}
+    {% assign hero_cfg = hero_cfg[part] %}
+  {% endfor %}
+{% endif %}
+
+{% assign hero_content = site.data %}
+{% if page.hero_content_path != blank %}
+  {% assign hero_content_parts = page.hero_content_path | split: '.' %}
+  {% for part in hero_content_parts %}
+    {% assign hero_content = hero_content[part] %}
+  {% endfor %}
+{% endif %}
+
+{% assign hub_hero = hero_content['hero'] %}
+
+{% assign hero_image_base = page.hero_image_base | default: hero_cfg.image_base %}
+{% assign hero_image_dir = page.hero_image_dir | default: hero_cfg.image_dir %}
+{% assign hero_image_ext = page.hero_image_ext | default: hero_cfg.image_ext | default: 'jpg' %}
+{% assign hero_image_alt = page.hero_image_alt | default: hero_cfg.alt %}
+
+{% assign hero_title = page['hero-title'] | default: hub_hero['title'] %}
+{% assign cta_title = page['hero-cta-title'] | default: hub_hero['cta_title'] %}
+{% assign cta_description = page['hero-cta-description'] | default: hub_hero['cta_description'] %}
+{% assign cta_button_text = page['hero-cta-button-text'] | default: page['hero-cta-button'] | default: hub_hero['cta_button'] %}
+{% assign cta_text = page['hero-cta-text'] %}
+{% assign cta_link = page['hero-cta-link'] | default: hub_hero['cta_link'] %}
+
+{% if cta_link == blank and page.hero_cta_url_key != blank %}
+  {% assign url_key = page.hero_cta_url_key %}
+  {% assign cta_link = site.data.ClinicianWellBeing.pages[url_key] | relative_url %}
+{% endif %}
+
+{% assign hub_url = page['hub-url'] | default: page.hub_url %}
+{% if hub_url == blank and page.hub_url_path != blank %}
+  {% assign hub_url_node = site.data %}
+  {% assign hub_url_parts = page.hub_url_path | split: '.' %}
+  {% for part in hub_url_parts %}
+    {% assign hub_url_node = hub_url_node[part] %}
+  {% endfor %}
+  {% assign hub_url = hub_url_node | relative_url %}
+{% endif %}
+
+{% assign parent_link = page.parent_link | default: page['parent-link'] | default: hub_url | default: '../' %}
+{% assign parent_page = page['parent-page'] %}
+{% assign masthead = page.masthead | default: 'MicroSite/heroimage.dynamic.html' %}
+
+{% if masthead == 'empty.html' or masthead == 'MicroSite/empty.html' %}
+{% elsif masthead == 'MicroSite/heroimage.dynamic.html' %}
+{% include MicroSite/heroimage.dynamic.html hero_title=hero_title hero_image_base=hero_image_base hero_image_dir=hero_image_dir hero_image_ext=hero_image_ext hero_image_alt=hero_image_alt cta_title=cta_title cta_description=cta_description cta_link=cta_link cta_button_text=cta_button_text parent_link=parent_link parent_page=parent_page %}
+{% elsif masthead == 'MicroSite/heroimage.micro.dynamic.html' %}
+{% include MicroSite/heroimage.micro.dynamic.html hero_title=hero_title hero_image_base=hero_image_base hero_image_dir=hero_image_dir hero_image_ext=hero_image_ext hero_image_alt=hero_image_alt cta_text=cta_text cta_link=cta_link parent_link=parent_link parent_page=parent_page %}
+{% elsif masthead == 'MicroSite/teasermodeandheroimage.micro.dynamic.html' %}
+{% include MicroSite/teasermodeandheroimage.micro.dynamic.html hero_title=hero_title hero_image_base=hero_image_base hero_image_alt=hero_image_alt cta_title=cta_title cta_description=cta_description cta_link=cta_link cta_button_text=cta_button_text parent_link=parent_link parent_page=parent_page %}
+{% else %}
+  {% comment %} Unknown masthead: {{ masthead }} — add a branch above or set masthead in front matter. {% endcomment %}
+{% endif %}

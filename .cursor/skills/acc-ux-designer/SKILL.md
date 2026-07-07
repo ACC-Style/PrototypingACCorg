@@ -37,7 +37,7 @@ existing patterns, and the right delivery path (concept, builder, or production)
 ## Before you build
 
 1. **Classify the deliverable** (see [workflows.md](workflows.md))
-2. **Initiative / hub-spoke page?** → Read [microsite-patterns.md](microsite-patterns.md) for shell + component selection; put bespoke markup in `{collection}/partials/` per [collection-partials.md](collection-partials.md)
+2. **Initiative / hub-spoke page?** → Read [microsite-patterns.md](microsite-patterns.md); use `Global/fullscreen` or `Global/sidebar` ([global-layouts.md](global-layouts.md)); bespoke zones in `{collection}/partials/` per [collection-partials.md](collection-partials.md)
 3. **Find the nearest reference** — start at `_collections/_ui_gold_standard/`, then `__prototypes/`, then `__generators/`
 4. **Read only what you need** from the reference files below
 5. **Match layout shell** to the collection you are writing into
@@ -47,6 +47,7 @@ existing patterns, and the right delivery path (concept, builder, or production)
 | File | When to read |
 |------|----------------|
 | [workspace-map.md](workspace-map.md) | Unsure where a file belongs or which layout/collection to use |
+| [global-layouts.md](global-layouts.md) | **`Global/fullscreen` / `Global/sidebar`** — YAML sidebar + hero front matter |
 | [collection-partials.md](collection-partials.md) | **`_includes/` vs `partials/`** — global `include` vs collection `include_relative` |
 | [cross-domain-branding.md](cross-domain-branding.md) | **Functional color/font roles**, ACC usage order, domain brands |
 | [design-system.md](design-system.md) | Project conventions — prose wrappers, buttons, lists, recipes |

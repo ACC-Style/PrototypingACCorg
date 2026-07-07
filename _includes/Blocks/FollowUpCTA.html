@@ -48,7 +48,7 @@ grid_modifier: modify the grid styles for CTA layout. Example: "columns_4:lg col
 
 
 
-    <div data-item="cta" class="{{ cta_styles }} font-size_up m-t_6:lg m-y_4 m-y_5:md m_auto max-w_60 relative text_center relative" > 
+    <div data-item="cta" class="{{ cta_styles }} font-size_up m-t_6:lg m-y_4 m-y_5:md m_auto max-w_60 isolation_isolate relative text_center" > 
         {% for cta in data_object %}
             <h2 data-item="cta-title" class="m-b_3 lh_1 font_medium font_display">
                 <strong class="font-size_up m-b_2 block">{{ cta.title }}</strong>
@@ -57,7 +57,7 @@ grid_modifier: modify the grid styles for CTA layout. Example: "columns_4:lg col
             <div class="p-t_2 p-b_3" data-item="cta-description">
                 <p class="font-size_up">{{ cta.description }}</p>
             </div>
-            <div class="grid justify_center">
+            <footer class="relative isolation_isolate grid justify_center p-y_1">
         {% if cta.guid != blank and cta.guid != nil and cta.guid != "" %}
           {% assign cleaned_guid = cta.guid | remove: '{' | remove: '}' | remove: '-' | strip %}
           <a
@@ -78,7 +78,7 @@ grid_modifier: modify the grid styles for CTA layout. Example: "columns_4:lg col
             {{ cta.link_text }}
           </a>
         {% endif %}
-            </div>
+            </footer>
         {% endfor %}
     </div>
 </div>

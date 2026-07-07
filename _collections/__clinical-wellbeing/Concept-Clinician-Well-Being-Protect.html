@@ -1,24 +1,34 @@
 ---
-layout: arches-clinical-wellbeing
-name: "Protect Yourself & Others"
+layout: Global/sidebar
+name: "Protect Patients & Peers"
 position: "SME Prototype"
 masthead: MicroSite/heroimage.micro.dynamic.html
+hero_data_path: ClinicianWellBeing.hero
+hub_url_path: ClinicianWellBeing.pages.hub
+sidebar_data_path: ClinicianWellBeing.sidebar
+nav_active_key: wellbeing_nav
+nav_sub_active_key: wellbeing_nav_sub
+sidebar_aria_label: Clinician Well-Being
 wellbeing_nav: tools
 wellbeing_nav_sub: protect
 hero_image_alt: Clinician well-being
-hero-title: Protect Yourself & Others
+hero-title: Protect Patients & Peers
 hero-cta-text: NCD Mental Health Course
 hero-cta-link: https://www.acc.org/Education-and-Meetings/Products-and-Resources/NCD-Academy/Course-List/mental-health-care-increasing-awareness-erasing-stigmas
 notes: Deep spoke — crisis communication, patient mental health, stigma.
 ---
 
-{%- include_relative partials/spoke-layout-open.html -%}
-
 <section id="protect-intro" zone-label="Introduction" class="reading-typography wrapper-container m-b_5 max-w_65">
   <p class="m-t_0">Well-being is not only personal. Leaders protect teams through how they communicate. Clinicians protect patients by recognizing mental health needs early.</p>
 </section>
 
-{%- include_relative partials/icon-grid.html grid_key="trust_pillars" zone_id="trust-pillars" zone_label="Trust Pillars" linked=false -%}
+{% assign trust = site.data.ClinicianWellBeing.grids.trust_pillars %}
+<section id="trust-pillars" zone-label="Trust Pillars" class="wrapper-container reading-typography m-b_5:lg m-b_4">
+  <h2 class="font_display m-b_4">{{ trust.heading }}</h2>
+  <div class="bg_black-1 br_radius p_4 p_5:lg">
+    {%- include Blocks/UL_IconHeadlineText.html data_path="ClinicianWellBeing.grids.trust_pillars_items" grid_modifier="columns_1 columns_2:md columns_4:lg gap-x_4 gap-y_4 grid" -%}
+  </div>
+</section>
 
 <section id="crisis-communication" zone-label="Crisis Communication" class="reading-typography wrapper-container m-b_5 max-w_65">
   <h2 class="font_display">Communicating With Your Team in High-Stress Times</h2>
@@ -26,7 +36,7 @@ notes: Deep spoke — crisis communication, patient mental health, stigma.
   <p><a href="https://www.acc.org//-/media/Non-Clinical/Files-PDFs-Excel-MS-Word-etc/2020/03/27/Crisis-Communication-Infographic.pdf" target="_blank" rel="noopener noreferrer">Crisis Communication Infographic (PDF)</a></p>
 </section>
 
-{%- include_relative partials/feature-panel.html
+{%- include Blocks/SmallImageTextPanel.html
   zone_id="ncd-course"
   zone_label="Patient Mental Health Panel"
   title="Recognize and Respond to Patient Mental Health"
@@ -35,6 +45,7 @@ notes: Deep spoke — crisis communication, patient mental health, stigma.
   image_alt="Clinician supporting patient mental health"
   link="https://www.acc.org/Education-and-Meetings/Products-and-Resources/NCD-Academy/Course-List/mental-health-care-increasing-awareness-erasing-stigmas"
   button="View NCD Course"
+  external=true
 -%}
 
 <section id="confront-stigma" zone-label="Confront Stigma" class="reading-typography wrapper-container m-b_5 max-w_65">
@@ -47,5 +58,3 @@ notes: Deep spoke — crisis communication, patient mental health, stigma.
   container_modifier="bg_black-2 p_4 p-y_5:md p-y_6:lg m-t_5"
   cta_type="bevel"
 -%}
-
-{%- include_relative partials/spoke-layout-close.html -%}

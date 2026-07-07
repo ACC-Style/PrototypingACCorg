@@ -1,0 +1,37 @@
+<!--
+data_path: optional YAML path (quote, author_name, author_title, author_image)
+quote / author_name / author_title / author_image: include overrides
+zone_id / zone_label: section metadata
+-->
+{% assign data = nil %}
+{% if include.data_path %}
+  {% assign path_parts = include.data_path | split: '.' %}
+  {% assign data = site.data %}
+  {% for part in path_parts %}
+    {% assign data = data[part] %}
+  {% endfor %}
+{% endif %}
+{% assign quote_text = include.quote | default: data.quote %}
+{% assign author_name = include.author_name | default: data.author_name %}
+{% assign author_title = include.author_title | default: data.author_title %}
+{% assign author_image = include.author_image | default: data.author_image %}
+<section id="{{ include.zone_id | default: 'decorative-quote' }}" zone-label="{{ include.zone_label | default: 'Quote' }}" class="wrapper-container reading-typography m-b_5:lg m-b_4">
+  <blockquote class="block bg_black-_05 br_1 br_round br_solid br_white-5 font_display m-x_0 p_4 p-y_5:md relative shadow_bevel-light z1" aria-label="Quote from {{ author_name }}">
+    <em class="absolute t_3:md t_n3 l_3 l_n4:md c_accent-n1 fa-fw fa-quote-left fa-solid font_5 font_7:md font_9:lg text-shadow_black-1 z_1" aria-hidden="true"></em>
+    <div class="flex_auto p-x_2 p-x_3:sm p-y_0 p-y_4:md p-x_4:md c_black z_2 flex flex_column" role="article">
+      <p class="lh_3 m-t_0">{{ quote_text }}</p>
+      <cite class="c_accent-n3 flex flex_row:md flex_column font_normal m-t_auto:md m-t_3 m-l_n3 justify_end:md justify_start font-size_down-1 not-italic" itemprop="author" itemscope itemtype="https://schema.org/Person">
+        {% if author_image %}
+        <img src="{{ author_image }}" alt="Headshot of {{ author_name }}" class="aspect_1x1 br_1 br_circle br_solid br_white-1 flex_none max-w_5 shadow_1 self_start" itemprop="image" style="width: 50px;">
+        {% endif %}
+        <span class="flex_shrink:md lh_2 {% if author_image %}m-l_3{% endif %} self_center">
+          <span class="block font_accent font_bold" itemprop="name">{{ author_name }}</span>
+          {% if author_title %}
+          <span class="font-size_down-1 opacity_8 font_ui block" itemprop="jobTitle">{{ author_title }}</span>
+          {% endif %}
+        </span>
+      </cite>
+    </div>
+    <em class="absolute b_3:md b_n4 r_3 r_n4:md c_accent-n1 fa-fw fa-quote-right fa-solid font_5 font_7:md font_9:lg text-shadow_black-1 z_1" aria-hidden="true"></em>
+  </blockquote>
+</section>

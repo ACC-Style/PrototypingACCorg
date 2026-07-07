@@ -179,9 +179,9 @@ Use native `<details>` / `<summary>` when prototyping unless CMS requires the bo
 |------|-------|----------|
 | **Hub** (concept root) | Fullscreen | Hero Image with CTA · two-lane Linked Icon Grid (2) · Linked Icon Grid for Tools branches (3) · Grid List icon-text for burnout dimensions · Decorative Quote (Cardio Renew faculty) · Small Image-Text Panel for Cardio Renew if solo feature |
 | **Tools for Today** (spoke) | Sidebar + micro hero | Micro Branding · Linked Icon Grid (3 branches) · body chunks · Follow Up CTA → hub or Cardio Renew |
-| **Mental Health & Burnout** | Sidebar + micro hero | Micro Branding · Grid List key points (burnout definition, stigma barriers) · prose zones · Follow Up CTA (Physician Support Line / Toolkit) |
-| **Strengthen Your Workplace** | Sidebar + micro hero | Micro Branding · Grid List key points (3 reciprocal domains) · intervention lists · Follow Up CTA (Toolkit download) |
-| **Protect Yourself & Others** | Sidebar + micro hero | Micro Branding · trust pillars grid · Small Image-Text for crisis comms PDF · Follow Up CTA |
+| **Care for Yourself** | Sidebar + micro hero | Micro Branding · Grid List key points (burnout definition, stigma barriers) · prose zones · Follow Up CTA (Physician Support Line / Toolkit) |
+| **Strengthen Your Team** | Sidebar + micro hero | Micro Branding · Grid List key points (3 reciprocal domains) · intervention lists · Follow Up CTA (Toolkit download) |
+| **Protect Patients & Peers** | Sidebar + micro hero | Micro Branding · trust pillars grid · Small Image-Text for crisis comms PDF · Follow Up CTA |
 | **Shaping the Future** | Sidebar + micro hero | Micro Branding · Small Image-Text panels for policy statements (<3) · Linked grid for partnerships · Follow Up CTA → advocacy |
 | **Cardio Renew** | Product-style or micro | See [heroes.md § Product](heroes.md) — may differ from section microsite |
 

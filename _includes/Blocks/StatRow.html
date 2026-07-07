@@ -1,0 +1,32 @@
+<!--
+data_path: YAML path to stats object (heading, items with value, context, citation)
+zone_id / zone_label: section metadata
+-->
+{% assign path_parts = include.data_path | split: '.' %}
+{% assign stats = site.data %}
+{% for part in path_parts %}
+  {% assign stats = stats[part] %}
+{% endfor %}
+<section id="{{ include.zone_id | default: stats.heading | slugify }}" zone-label="{{ include.zone_label | default: stats.heading }}" class="reading-typography wrapper-container p_4 p-x_5:lg m-b_5 relative isolation_isolate">
+  {% if stats.heading %}
+  <h2 class="font_display m-b_4">{{ stats.heading }}</h2>
+  {% endif %}
+  <ul class="grid columns_3:lg columns_2:md columns_1 gap_5:lg gap_4 ul_none font_copy font_0 m_0 p_0">
+    {% for item in stats.items %}
+    <li data-element="data-stat" class="flex flex_row:lg flex_column items_start gap_3 ">
+    
+        <strong class="c_accent-n2 flex flex_none flex_row font_4 font_6:md font_8:lg font_display font_xbold lh_1 m_0 nowrap vertical-align_top">
+          {{ item.value }}{% if item.citation %}<span class="font-size_down-2">*</span>{% endif %}
+        </strong>
+        <div class="flex_auto flex flex_column br-l_2 br_solid br_accent-3 p-l_3 m-l_2">
+          <p class="font_medium m-t_0 c_primary-n2 w_100 font_bold font-size_up-1 lh_1 wrap_balance">{{ item.context }}</p>
+          {% if item.citation %}
+          <p class="font-size_down-1 m-t_2 m-b_0 c_black-7 m-t_auto"><em><sup>*</sup>({{ item.citation }})</em></p>
+          {% endif %}
+        </div>
+
+    </li>
+    {% endfor %}
+  </ul>
+  <a href="https://www.acc.org/Latest-in-Cardiology/Articles/2024/02/01/01/42/from-the-member-sections-physician-burnout-an-enemy-we-must-recognize-to-battle" class="block expanded-click-area not-link btn btn-link p_3 p_4:lg m_auto max-w_65 text_center">Physician Burnout: An Enemy We Must Recognize to Battle</a>
+</section>

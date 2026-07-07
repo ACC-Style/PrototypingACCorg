@@ -1,27 +1,38 @@
 ---
-layout: arches-clinical-wellbeing
-name: "Strengthen Your Workplace"
+layout: Global/sidebar
+name: "Strengthen Your Team"
 position: "SME Prototype"
 masthead: MicroSite/heroimage.micro.dynamic.html
+hero_data_path: ClinicianWellBeing.hero
+hub_url_path: ClinicianWellBeing.pages.hub
+sidebar_data_path: ClinicianWellBeing.sidebar
+nav_active_key: wellbeing_nav
+nav_sub_active_key: wellbeing_nav_sub
+sidebar_aria_label: Clinician Well-Being
 wellbeing_nav: tools
 wellbeing_nav_sub: workplace
 hero_image_alt: Clinician well-being
-hero-title: Strengthen Your Workplace
+hero-title: Strengthen Your Team
 hero-cta-text: Download Toolkit
 hero-cta-link: https://www.acc.org/~/media/Non-Clinical/Files-PDFs-Excel-MS-Word-etc/2020/05/26/Clinician-Well-Being-Toolkit.pptx
 notes: Deep spoke — three domains + Crisis Communication accordions (evergreen).
 ---
 
-{%- include_relative partials/spoke-layout-open.html -%}
-
 <section id="workplace-intro" zone-label="Introduction" class="reading-typography wrapper-container m-b_5 max-w_65">
   <p class="m-t_0">Telling burned-out clinicians to &ldquo;be more resilient&rdquo; is not enough. Sustainable well-being requires changes in how practices run, how cultures support people, and how institutions invest in their teams.</p>
 </section>
 
-{%- include_relative partials/icon-grid.html grid_key="workplace_domains" zone_id="workplace-domains" zone_label="Three Domains" linked=false columns="3" -%}
+{% assign workplace = site.data.ClinicianWellBeing.grids.workplace_domains %}
+<section id="workplace-domains" zone-label="Three Domains" class="wrapper-container reading-typography m-b_5:lg m-b_4">
+  <h2 class="font_display m-b_3">{{ workplace.heading }}</h2>
+  <p class="m-b_4 max-w_65">{{ workplace.intro }}</p>
+  <div class="bg_black-1 br_radius p_4 p_5:lg">
+    {%- include Blocks/UL_IconHeadlineText.html data_path="ClinicianWellBeing.grids.workplace_domains_items" grid_modifier="columns_1 columns_3:md gap-x_4 gap-y_4 grid" -%}
+  </div>
+</section>
 
-{%- include_relative partials/accordion-stack.html
-  data_file="workplace_accordions"
+{%- include Blocks/AccordionStack.html
+  data_path="ClinicianWellBeing.workplace_accordions.workplace_accordions"
   zone_id="workplace-guides"
   zone_label="Workplace Guides"
   group_name="workplace-guides"
@@ -34,5 +45,3 @@ notes: Deep spoke — three domains + Crisis Communication accordions (evergreen
 -%}
 
 {%- include_relative partials/toolkit-citation.html -%}
-
-{%- include_relative partials/spoke-layout-close.html -%}

@@ -31,12 +31,11 @@ When a second collection needs the same bespoke component, **promote** it: move 
 
 Jekyll's `{% include_relative %}` resolves paths from the **current collection page file**, not from `_includes/`. That keeps initiative-specific sidebars, zone blocks, and interactive widgets co-located with the pages and data that drive them.
 
-Layouts in `_layouts/` **cannot** use `include_relative` for collection partials. Spoke shells therefore live in the collection:
+Layouts in `_layouts/` **cannot** use `include_relative` for collection partials. Prefer **`Global/sidebar`** for spoke pages (sidebar + content grid in one layout). Use collection `partials/spoke-layout-open.html` only when the sidebar zone needs initiative-specific blocks below the nav (e.g. Clinical Solutions callouts).
 
-1. Thin layout (`arches-clinical-wellbeing`, `arches-clinical-solutions`) — header, **masthead hero** (global `MicroSite/`), `{{ content }}`, footer.
-2. Collection page opens shell + sidebar via `partials/spoke-layout-open.html`.
+1. Spoke page uses `layout: Global/sidebar` with `sidebar_data_path` + nav keys in front matter; body is zones only.
+2. Or legacy: thin layout + `partials/spoke-layout-open.html` that includes `MicroSite/sidebar-nav.html` and any sidebar extras.
 3. Page body zones use global `{% include Blocks/... %}` or `{% include_relative partials/... %}` when no global pattern fits.
-4. `partials/spoke-layout-close.html` closes the grid.
 
 ---
 
@@ -48,9 +47,8 @@ Layouts in `_layouts/` **cannot** use `include_relative` for collection partials
 _collections/_clinical_solutions/
   Concept-Clinical-Solutions-Chronic-Coronary.html
   partials/
-    spoke-layout-open.html      ← sidebar + <main>
+    spoke-layout-open.html      ← MicroSite/sidebar-nav + sidebar callouts + <main>
     spoke-layout-close.html
-    sidebar-nav.html
     topic-resource-sections.html
     follow-up-cta.html          ← inline-param CTA (no Blocks data yet)
     …
@@ -69,29 +67,23 @@ Layout: `arches-clinical-solutions` — `masthead: empty.html`; hero optional vi
 
 ```
 _collections/__clinical-wellbeing/
-  Concept-Clinician-Well-Being.html          ← hub: fullscreen, global section hero in body
-  Concept-Clinician-Well-Being-Mental-Health.html
   partials/
-    spoke-layout-open.html
-    spoke-layout-close.html
-    sidebar-nav.html
-    icon-grid.html              ← url_key resolution + linked/unlinked modes
-    hub-fork-cards.html
-    stat-row.html
-    accordion-stack.html
-    feature-panel.html
-    mini-z-assessment.html      ← interactive JS
-    toolkit-citation.html
+    mini-z-assessment.html      ← interactive JS (initiative-only)
+    toolkit-citation.html       ← initiative-specific attribution copy
 ```
 
-**Heroes (global, not partials):**
+**Everything else uses global includes + `_data/ClinicianWellBeing/`:**
 
-- Hub root: `{% include MicroSite/heroimage.dynamic.html %}` with `hero_image_dir` / `hero_image_ext` from `_data/ClinicianWellBeing/hero.yml`
-- Spokes: `masthead: MicroSite/heroimage.micro.dynamic.html` — layout passes hero vars + hub back-link
-
-**Follow-up CTAs (global):** `{% include Blocks/FollowUpCTA.html data_path="ClinicianWellBeing.follow_up_ctas.{key}" cta_type="bevel" %}`
-
-Data: `_data/ClinicianWellBeing/*.yml`
+| Pattern | Global include |
+|---------|----------------|
+| Hub / spoke heroes | `MicroSite/heroimage.dynamic.html`, `MicroSite/heroimage.micro.dynamic.html` |
+| Spoke shell + sidebar | `Global/sidebar` layout + `MicroSite/sidebar-nav.html` |
+| Linked / key-point grids | `Blocks/GridListLinkedIconText.html` |
+| Hub fork cards | `Blocks/HubForkCards.html` |
+| Stat row | `Blocks/StatRow.html` |
+| Accordions | `Blocks/AccordionStack.html` |
+| Small image-text panel | `Blocks/SmallImageTextPanel.html` |
+| Follow-up CTA | `Blocks/FollowUpCTA.html` |
 
 ### Member Section prototype
 
@@ -109,6 +101,13 @@ Data: `_data/ClinicianWellBeing/*.yml`
 |------|-----|
 | Section hero (hub root) | `MicroSite/heroimage.dynamic.html` — pass `hero_image_base`, optional `hero_image_dir`, `hero_image_ext` |
 | Micro hero (spoke) | `MicroSite/heroimage.micro.dynamic.html` via `masthead:` + layout/front matter |
+| Spoke page shell | `Global/sidebar` | `sidebar_data_path`, `nav_active_key`, `masthead`, `hero_data_path` |
+| Side navigation | `MicroSite/sidebar-nav.html` + `data_path`, `active_key`, `sub_active_key` |
+| Linked icon grid (microsite) | `Blocks/GridListLinkedIconText.html` + `pages_data_path` for `url_key` |
+| Hub fork cards | `Blocks/HubForkCards.html` |
+| Horizontal stat row | `Blocks/StatRow.html` |
+| YAML-driven accordions | `Blocks/AccordionStack.html` |
+| Small image-text panel | `Blocks/SmallImageTextPanel.html` (inline params) |
 | Follow-up CTA (data-driven) | `Blocks/FollowUpCTA.html` + `_data/{Initiative}/follow_up_ctas.yml` |
 | Icon headline lists (generic) | `Blocks/UL_IconHeadlineText.html` |
 | Arches chrome | `arches-head.html`, `arches-header.html`, `arches-footer.html` |
@@ -121,7 +120,7 @@ Initiative-specific art paths belong in `_data/{Initiative}/hero.yml` (or page f
 
 1. Create `_collections/{name}/partials/` only when you identify markup with **no** reasonable global pattern.
 2. Prefer `{% include MicroSite/... %}` and `{% include Blocks/... %}` with `_data/{name}/` first.
-3. Use `{% include_relative partials/... %}` for sidebar nav, layout shells, and truly bespoke zones.
+3. Use `{% include MicroSite/... %}` and `{% include Blocks/... %}` with `_data/{name}/` first; `{% include_relative partials/... %}` only when no global pattern fits.
 4. Keep `_layouts/arches-{name}.html` thin — pass masthead hero params from layout; no `{% include CollectionName/... %}`.
 5. Note partial paths in `{name}/content-collection.md` (red meta line).
 6. Promote to `_includes/` + skill docs when a second project needs the same component.

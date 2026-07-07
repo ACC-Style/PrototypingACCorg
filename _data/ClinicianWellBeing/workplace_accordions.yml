@@ -1,6 +1,6 @@
 # Workplace spoke — accordion content (Toolkit + Crisis Communication, evergreen)
 workplace_accordions:
-  heading: Strengthen Your Workplace — Practical Guides
+  heading: Strengthen Your Team — Practical Guides
   intro: Sustainable well-being requires changes in how practices run, how cultures support people, and how leaders communicate. These guides draw on the ACC Clinician Well-Being Toolkit and semi-retired crisis communication resources — reframed for everyday practice.
   items:
   - id: workplace-efficiency
@@ -114,6 +114,7 @@ workplace_accordions:
       - Host listening sessions to surface what members need
       - Share self-care practices and best practices for team processes
       - Communicate your "why" — reconnect members to purpose
+      - Engage with your <a class="link" href="https://www.acc.org/Membership/Chapters" target="_blank" rel="noopener noreferrer">State Chapters</a>
     - type: h4
       text: Develop a chapter wellness plan
     - type: ul

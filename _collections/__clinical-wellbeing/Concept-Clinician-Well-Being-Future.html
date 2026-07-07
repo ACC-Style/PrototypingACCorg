@@ -1,8 +1,14 @@
 ---
-layout: arches-clinical-wellbeing
+layout: Global/sidebar
 name: "Shaping the Future"
 position: "SME Prototype"
 masthead: MicroSite/heroimage.micro.dynamic.html
+hero_data_path: ClinicianWellBeing.hero
+hub_url_path: ClinicianWellBeing.pages.hub
+sidebar_data_path: ClinicianWellBeing.sidebar
+nav_active_key: wellbeing_nav
+nav_sub_active_key: wellbeing_nav_sub
+sidebar_aria_label: Clinician Well-Being
 wellbeing_nav: future
 hero_image_alt: Clinician well-being
 hero-title: Shaping the Future
@@ -11,8 +17,6 @@ hero-cta-link: https://www.acc.org/Tools-and-Practice-Support/Advocacy-at-the-AC
 notes: Policy spoke — statements, advocacy, partnerships.
 ---
 
-{%- include_relative partials/spoke-layout-open.html -%}
-
 {% assign wb = site.data.ClinicianWellBeing.pages %}
 
 <section id="future-intro" zone-label="Introduction" class="reading-typography wrapper-container m-b_5 max-w_65">
@@ -20,7 +24,7 @@ notes: Policy spoke — statements, advocacy, partnerships.
   <p><strong>North star:</strong> A cardiovascular profession where every clinician can build a sustainable career in a respectful, flexible, and inclusive workplace — and where seeking support is a sign of strength, not weakness.</p>
 </section>
 
-{%- include_relative partials/feature-panel.html
+{%- include Blocks/SmallImageTextPanel.html
   zone_id="career-flexibility"
   zone_label="Policy Panel — Career Flexibility"
   title="Career Flexibility in Cardiology"
@@ -29,9 +33,10 @@ notes: Policy spoke — statements, advocacy, partnerships.
   image_alt="ACC well-being resources"
   link="https://www.jacc.org/doi/10.1016/j.jacc.2022.08.748"
   button="Read Policy Statement"
+  external=true
 -%}
 
-{%- include_relative partials/feature-panel.html
+{%- include Blocks/SmallImageTextPanel.html
   zone_id="civility-policy"
   zone_label="Policy Panel — Civility"
   title="Respect, Civility & Inclusion in the CV Workplace"
@@ -40,6 +45,7 @@ notes: Policy spoke — statements, advocacy, partnerships.
   image_alt="Diversity and inclusion"
   link="https://www.jacc.org/doi/10.1016/j.jacc.2022.03.006"
   button="Read Policy Statement"
+  external=true
 -%}
 
 <section id="workforce-advocacy" zone-label="Workforce Advocacy" class="reading-typography wrapper-container m-b_5 max-w_65">
@@ -47,7 +53,7 @@ notes: Policy spoke — statements, advocacy, partnerships.
   <p>Projected cardiologist shortages and practice conditions that drive burnout require national policy action. ACC advocates through <a href="{{ wb.workforce_advocacy }}" target="_blank" rel="noopener noreferrer">Bolster the Workforce Now and For the Future</a>.</p>
 </section>
 
-{%- include_relative partials/icon-grid.html grid_key="future_partnerships" zone_id="partnerships" zone_label="Partnerships" linked=true -%}
+{%- include Blocks/GridListLinkedIconText.html data_path="ClinicianWellBeing.grids.future_partnerships" pages_data_path="ClinicianWellBeing.pages" zone_id="partnerships" zone_label="Partnerships" linked=true -%}
 
 {%- include Blocks/FollowUpCTA.html
   data_path="ClinicianWellBeing.follow_up_ctas.future"
@@ -56,5 +62,3 @@ notes: Policy spoke — statements, advocacy, partnerships.
 -%}
 
 {%- include_relative partials/toolkit-citation.html -%}
-
-{%- include_relative partials/spoke-layout-close.html -%}

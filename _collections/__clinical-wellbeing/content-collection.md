@@ -19,7 +19,7 @@ Hub & spoke with a **two-lane fork**: **Tools for Today** vs **Shaping the Futur
 <span style="color:red">**Source inventory**</span>  
 `raw-files/Clinician Well Being/Current Content/`, `Semi-Retired/`, and `Slide Content.md` (ACC Clinician Well-Being Toolkit scrape).
 
-<span style="color:red">**Prototype partials**</span> — `_collections/__clinical-wellbeing/partials/*.html` for initiative-only zones (sidebar, icon grids, Mini Z, etc.). Heroes use global `MicroSite/heroimage.*`; follow-up CTAs use `Blocks/FollowUpCTA.html`. See `.cursor/skills/acc-ux-designer/collection-partials.md`.
+<span style="color:red">**Prototype partials**</span> — Only `partials/mini-z-assessment.html` and `partials/toolkit-citation.html` (initiative-only). All other zones use global `MicroSite/` and `Blocks/` includes with `_data/ClinicianWellBeing/`. See `.cursor/skills/acc-ux-designer/collection-partials.md`.
 
 <span style="color:red">**Toolkit citation rule**</span>  
 Any page zone that uses concepts from the Toolkit includes the citation block at the bottom of that zone (see [Toolkit citation](#toolkit-citation-block)).
@@ -211,16 +211,16 @@ Burnout is treatable and preventable — but not by willpower alone. Use these r
 
 | Card | Descriptor |
 |------|------------|
-| **Mental Health & Burnout** | Understand burnout, build self-care habits, and find confidential support |
-| **Strengthen Your Workplace** | Change practice efficiency, culture, and team support — not just individual coping |
-| **Protect Yourself & Others** | Lead through crisis, support patient mental health, and break the stigma around seeking help |
+| **Care for Yourself** | Understand burnout, build self-care habits, and find confidential support |
+| **Strengthen Your Team** | Change practice efficiency, culture, and team support — not just individual coping |
+| **Protect Patients & Peers** | Lead through crisis, support patient mental health, and break the stigma around seeking help |
 
 ---
 
-## 2A. Mental Health & Burnout
+## 2A. Care for Yourself
 
 **H2**  
-Mental Health & Burnout
+Care for Yourself
 
 **Intro (draft)**  
 Stress keeps you going. Burnout depletes you. Know the difference — and act before symptoms become a crisis.
@@ -401,10 +401,10 @@ Why Cardiologists Don't Seek Help — and What to Do
 
 ---
 
-## 2B. Strengthen Your Workplace
+## 2B. Strengthen Your Team
 
 **H2**  
-Strengthen Your Workplace
+Strengthen Your Team
 
 **Intro (draft)**  
 Telling burned-out clinicians to "be more resilient" is not enough. Sustainable well-being requires changes in how practices run, how cultures support people, and how institutions invest in their teams. ACC's model identifies three reciprocal domains — each reinforces the others.
@@ -538,10 +538,10 @@ National policy sets direction. Chapters make it real in your state. Email [memb
 
 ---
 
-## 2C. Protect Yourself & Others
+## 2C. Protect Patients & Peers
 
 **H2**  
-Protect Yourself & Others
+Protect Patients & Peers
 
 **Intro (draft)**  
 Well-being is not only personal. Leaders protect teams through how they communicate. Clinicians protect patients by recognizing mental health needs early. And the profession protects its own when we confront the stigma that keeps cardiologists from seeking help.
@@ -727,16 +727,16 @@ Clinician Well-Being (Hub)
 │   ├── Risk factors (Toolkit)
 │   └── Quadruple aim & wellness (Toolkit)
 ├── 2. Tools for Today
-│   ├── 2A Mental Health & Burnout
+│   ├── 2A Care for Yourself
 │   │   ├── Self-care plan & self-leadership (Toolkit)
 │   │   ├── Stress & resilience exercises (evergreen)
 │   │   └── Stigma & seeking help (Toolkit)
-│   ├── 2B Strengthen Your Workplace  ← reworked
+│   ├── 2B Strengthen Your Team  ← reworked
 │   │   ├── Three reciprocal domains (Toolkit / NEJM Catalyst)
 │   │   ├── Efficiency · Culture · Org-level resilience (Toolkit)
 │   │   ├── EAP (Toolkit)
 │   │   └── Chapter-level action (Toolkit)
-│   └── 2C Protect Yourself & Others
+│   └── 2C Protect Patients & Peers
 │       ├── Crisis communication (evergreen)
 │       ├── Patient mental health (NCD)
 │       └── Confront stigma (Toolkit)

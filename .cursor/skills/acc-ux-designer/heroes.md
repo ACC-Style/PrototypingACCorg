@@ -97,12 +97,13 @@ Standalone product or product family root (SAP, CMP, course)?
 
 ### Section parent (full hero)
 
-- `grid-template="hero-image-cta"` or `data-item="hero-image-cta"`
-- `data-item="responsive-hero-image"` — breakpoint art (`_1200x300`, `_1024x256`, etc.)
-- `data-item="hero-image-breadcrumb-nav"` — back link to parent silo
-- `data-item="page-title"` — section title (often `bg_acc` span chips or clone box-decoration)
-- **`data-item="cta-overlay"`** — **required** — title, description, `btn-primary` conversion
-- CTA overlay: `bg_acc` + `bg-blend_multiply` + `opacity_8` scrim pattern
+- `grid-template="hero-image-cta"` with `id="hero"` and `class="font_3:lg font_2:md font_1"`
+- Grid areas: `background`, `breadcrumb`, `title`, `cta`
+- `data-item="responsive-hero-image"` — breakpoint art inside `grid-area="background"`
+- `data-item="hero-image-breadcrumb-nav"` — back link; parent name as plain text after `|`
+- `data-item="hero-title"` — word spans (`<span class="text">`) for overlay chips via acc_boot CSS
+- **`data-item="cta-callout"`** — **required** — `cta-title`, `cta-description`, `btn-primary` conversion
+- Overlay scrims come from acc_boot `::after` on `hero-image-breadcrumb-nav`, `hero-title span`, and `cta-callout` — not manual `bg_acc` divs
 
 ### Section child (micro banner)
 
@@ -133,14 +134,22 @@ Pages under the section parent use a **thin micro hero** that **echoes** the sec
 
 ```html
 <!-- Section parent -->
-<div data-item="hero-image-cta" class="grid rows_3 rows_2:md columns_4:md …">
-  <picture data-item="responsive-hero-image">…</picture>
-  <nav data-item="hero-image-breadcrumb-nav" class="c_white-8">…</nav>
-  <h1 data-item="page-title">…</h1>
-  <div data-item="cta-overlay" class="…">
-    <h2 data-item="cta-title">…</h2>
-    <p data-item="cta-description">…</p>
-    <a class="btn btn-primary">…</a>
+<div grid-template="hero-image-cta" id="hero" class="font_3:lg font_2:md font_1">
+  <div grid-area="background">
+    <picture data-item="responsive-hero-image">…</picture>
+  </div>
+  <div grid-area="breadcrumb">
+    <nav data-item="hero-image-breadcrumb-nav">…Back</a> | Parent name</nav>
+  </div>
+  <div grid-area="title">
+    <h1 data-item="hero-title"><span class="text">Section</span> <span class="text">Title</span></h1>
+  </div>
+  <div grid-area="cta">
+    <div data-item="cta-callout">
+      <h2 data-item="cta-title">…</h2>
+      <p data-item="cta-description">…</p>
+      <a class="br_white-3 btn btn-primary c_white expanded-click-area shadow_overlap-bold">…</a>
+    </div>
   </div>
 </div>
 
@@ -226,20 +235,19 @@ This is a key difference from Section heroes.
 
 | Attribute | Used in |
 |-----------|---------|
-| `hero-image-cta` | Section + Product root |
+| `hero-image-cta` | Section + Product root (`grid-template`) |
 | `responsive-hero-image` | Section + Product |
 | `hero-image-breadcrumb-nav` | Section + Product |
-| `page-title` / `hero-title` | All types |
-| `cta-overlay` / `cta-callout` | Section (required), Product (optional) |
-| `cta-title`, `cta-description` | CTA zones |
+| `hero-title` | Section + Product (word spans for chip overlay) |
+| `cta-callout` / `cta-title` / `cta-description` | Section (required), Product (optional) |
 | `hero-area` grid template | Anchor only |
 | `template-option="micro"` | Section children only |
 
 ## Anti-patterns
 
-- **Hero artwork with titles, taglines, or CTAs burned in** — use `responsive-hero-image` for atmosphere only; put `page-title`, `cta-overlay`, and links in HTML ([imagery.md](imagery.md))
+- **Hero artwork with titles, taglines, or CTAs burned in** — use `responsive-hero-image` for atmosphere only; put `hero-title`, `cta-callout`, and links in HTML ([imagery.md](imagery.md))
 - Anchor hero on a product or section child page
-- Section hero **without** a CTA overlay
+- Section hero **without** a `cta-callout`
 - Micro banner echo on **product** children (sections only)
 - Product-specific art on **anchor** capstone pages
 - Using `hero-area` for Join Us, FACC, or ACCSAP — wrong tier

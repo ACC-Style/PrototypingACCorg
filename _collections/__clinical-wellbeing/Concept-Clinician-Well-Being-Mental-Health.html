@@ -1,35 +1,52 @@
 ---
-layout: arches-clinical-wellbeing
-name: "Mental Health & Burnout"
+layout: Global/sidebar
+name: "Care for Yourself"
 position: "SME Prototype"
 masthead: MicroSite/heroimage.micro.dynamic.html
+hero_data_path: ClinicianWellBeing.hero
+hub_url_path: ClinicianWellBeing.pages.hub
+sidebar_data_path: ClinicianWellBeing.sidebar
+nav_active_key: wellbeing_nav
+nav_sub_active_key: wellbeing_nav_sub
+sidebar_aria_label: Clinician Well-Being
 wellbeing_nav: tools
 wellbeing_nav_sub: mental_health
 hero_image_alt: Clinician well-being
-hero-title: Mental Health & Burnout
+hero-title: Clinician Well-Being
 hero-cta-text: Get Support
 hero-cta-link: https://www.physiciansupportline.com/
 notes: Deep spoke — accordions with evergreen content from semi-retired COVID pages.
 ---
 
-{%- include_relative partials/spoke-layout-open.html -%}
-
-<section id="mental-health-intro" zone-label="Introduction" class="reading-typography wrapper-container m-b_5 max-w_65">
-  <p class="m-t_0">Stress keeps you going. Burnout depletes you. Know the difference — and act before symptoms become a crisis.</p>
+<section id="mental-health-intro" zone-label="Introduction" class="wrapper-container reading-typography m-b_5:lg m-b_4 grid columns_1 columns_2:md gap_5:lg gap_4">
+  <main class="col-start_start col-end_end col-end_n2:md max-w_65 reading-typography font-size_up" style="--custom-font-size-up: 1; ">
+    <h1>Care for Yourself</h1>
+    <p class="m-t_0">Stress keeps you going. Burnout depletes you. Know the difference — and act before symptoms become a crisis.</p>
+  </main>
+  <aside class="col-start_start col-start_n2:md col-end_end">
+    <div id="burnout-screen" zone-label="Screen for Burnout" class="bg_primary-n2 br_round c_white reading-typography color_inherit p_4 p_5:md shadow_bevel-light relative isolation_isolate sticky t_3">
+      <h2 class="font_display m-t_0">Self Evaluate Your Burn Out</h2>
+      <p class="m-b_4 font-size_down-1 lh_2">Ten quick questions with automatic scoring. See whether your workplace scores in a supportive range or suggests elevated burnout stress.</p>
+      <footer class="relative isolation_isolate">
+        <a href="{{ site.data.ClinicianWellBeing.pages.mini_z | relative_url }}" class="btn btn-primary bg_white c_primary h:bg_white-8 expanded-click-area">Mini Z Assessment</a>
+      </footer>
+    </div>
+  </aside>
 </section>
 
-{%- include_relative partials/icon-grid.html grid_key="burnout_dimensions" zone_id="recognize-burnout" zone_label="Recognize Burnout" linked=false columns="3" -%}
-
-<section id="burnout-screen" zone-label="Screen for Burnout" class="reading-typography wrapper-container m-b_5 p-x_4:lg">
-  <div class="bg_primary-n2 br_round c_white color_inherit p_4 p_5:md shadow_bevel-light max-w_65">
-    <h2 class="font_display m-t_0">Screen for Burnout — Mini Z</h2>
-    <p class="m-b_4">Ten quick questions with automatic scoring. See whether your workplace scores in a supportive range or suggests elevated burnout stress.</p>
-    <a href="{{ site.data.ClinicianWellBeing.pages.mini_z | relative_url }}" class="btn btn-primary bg_white c_primary h:bg_white-8 expanded-click-area">Start Mini Z Assessment</a>
+{% assign burnout = site.data.ClinicianWellBeing.grids.burnout_dimensions %}
+<section id="recognize-burnout" zone-label="Recognize Burnout" class="wrapper-container reading-typography m-b_5:lg m-b_4">
+  <h2 class="font_display m-b_3">{{ burnout.heading }}</h2>
+  <p class="m-b_4 max-w_65">{{ burnout.intro }}</p>
+  <div class="bg_black-1 br_radius p_4 p_5:lg">
+    {%- include Blocks/UL_IconHeadlineText.html data_path="ClinicianWellBeing.grids.burnout_dimensions_items" grid_modifier="columns_1 columns_3:md gap-x_4 gap-y_4 grid" -%}
   </div>
 </section>
 
-{%- include_relative partials/accordion-stack.html
-  data_file="mental_health_accordions"
+{%- include Blocks/DecorativeQuote.html data_path="ClinicianWellBeing.quotes.mental_health_burnout" zone_id="burnout-quote" zone_label="Burnout Perspective" -%}
+
+{%- include Blocks/AccordionStack.html
+  data_path="ClinicianWellBeing.mental_health_accordions.mental_health_accordions"
   zone_id="coping-guides"
   zone_label="Coping Guides"
   group_name="mental-health-guides"
@@ -42,5 +59,3 @@ notes: Deep spoke — accordions with evergreen content from semi-retired COVID 
 -%}
 
 {%- include_relative partials/toolkit-citation.html -%}
-
-{%- include_relative partials/spoke-layout-close.html -%}

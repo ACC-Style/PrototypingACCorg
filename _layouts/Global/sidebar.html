@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+{% include arches-head.html %}
+
+<body id="ng-app" ng-app="AccApp" class="user-not-logged-in ng-scope medium-viewport"
+  style="background-color: #c1d6d9;">
+  <div class="max-w_75 m_auto">
+    <div class="bg_white shadow_overlap-light">
+      {% include arches-header.html %}
+      {% include Global/masthead-render.html %}
+      <div grid-template="page-layout"{% if page.page_layout_option %} template-option="{{ page.page_layout_option }}"{% endif %}>
+        <section grid-area="sidebar-primary">
+          {% assign nav_active_key_name = page.nav_active_key | default: 'nav_active' %}
+          {% assign nav_sub_active_key_name = page.nav_sub_active_key | default: 'nav_sub_active' %}
+          {% assign sidebar_active_key = page[nav_active_key_name] %}
+          {% assign sidebar_sub_active_key = page[nav_sub_active_key_name] %}
+          {% include MicroSite/sidebar-nav.html
+            data_path=page.sidebar_data_path
+            active_key=sidebar_active_key
+            sub_active_key=sidebar_sub_active_key
+            aria_label=page.sidebar_aria_label %}
+        </section>
+        <main grid-area="content" class="p-t_5:lg p-t_4 p-x_4:lg reading-typography">
+          {{ content }}
+        </main>
+      </div>
+      {% include arches-footer.html %}
+    </div>
+  </div>
+  {% include Global/page-shell-styles.html %}
+</body>

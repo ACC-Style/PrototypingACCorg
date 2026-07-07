@@ -1,0 +1,66 @@
+<!--
+data_path: YAML path to hub fork (heading, intro, future with icon, title, description, button, url_key)
+tools_data_path: YAML path to tools branch grid (items with icon, title, description, url_key)
+pages_data_path: YAML path for url_key → relative_url resolution
+zone_id / zone_label: section metadata
+-->
+{% assign path_parts = include.data_path | split: '.' %}
+{% assign hub = site.data %}
+{% for part in path_parts %}
+  {% assign hub = hub[part] %}
+{% endfor %}
+{% assign tools_parts = include.tools_data_path | split: '.' %}
+{% assign tools = site.data %}
+{% for part in tools_parts %}
+  {% assign tools = tools[part] %}
+{% endfor %}
+{% assign pages_parts = include.pages_data_path | split: '.' %}
+{% assign pages = site.data %}
+{% for part in pages_parts %}
+  {% assign pages = pages[part] %}
+{% endfor %}
+{% if hub.future.url_key %}
+  {% assign future_url = pages[hub.future.url_key] | relative_url %}
+{% else %}
+  {% assign future_url = hub.future.external_url %}
+{% endif %}
+<section id="{{ include.zone_id | default: 'hub-support' }}" zone-label="{{ include.zone_label | default: 'College Support' }}" class="reading-typography wrapper-container m-b_5:lg m-b_4 p-x_4 p-x_5:lg" aria-labelledby="{{ include.zone_id | default: 'hub-support' }}-title">
+  <div class="bg_white shadow_bevel-light br_radius br_solid br_1 br_black-3 grid columns_1 columns_4:md columns_5:lg m-b_0 overflow_hidden isolation_isolate">
+    <div class="col-start_start col-end_n3:md col-end_end reading-typography bg_black-1 br-tl_radius br-bl_radius:md p_4 p_5:lg">
+      {% if hub.heading %}
+      <h2 id="{{ include.zone_id | default: 'hub-support' }}-title" class="font_display m-b_3">{{ hub.heading }}</h2>
+      {% endif %}
+      {% if hub.intro %}
+      <p class="m-b_4 max-w_65">{{ hub.intro }}</p>
+      {% endif %}
+      <ul class="columns_1 gap-y_2 grid ul_none m_0">
+        {% for item in tools.items %}
+        {% if item.url_key %}
+          {% assign item_url = pages[item.url_key] | relative_url %}
+        {% else %}
+          {% assign item_url = item.external_url %}
+        {% endif %}
+        <li class="flex flex_row:md flex_column items_start:md items_center justify_start isolation_isolate relative c_accent-n1 p_3 p_4:md br_radius overflow_hidden h:bg_primary-4">
+          <i class="c_inherit-all font_7 self_center self_start:md p_4 p_0:md m-t_4 m-t_3:md p-r_4:md far fa-regular {{ item.icon }}" aria-hidden="true"></i>
+          <a href="{{ item_url }}" class="expanded-click-area not-link h:undecorated font-size_up block" {% if item.external_url %}target="_blank" rel="noopener noreferrer"{% endif %}>
+            <strong class="font_bold not-link c_inherit-all lh_2 text_center text_left:md m-b_3 m-b_0:md" style="text-wrap-style: balance;">{{ item.title }}</strong>
+            <span class="block font-size_down opacity_8 c_black">{{ item.description }}</span>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <aside class="relative col-start_start col-start_n3:md col-end_end reading-typography font-size_up bg_primary-n2 c_white color_inherit br-tr_radius br-br_radius p_4 p_5:lg flex flex_column justify_center relative isolation_isolate" style="--custom-font-size-modifier: 1.35;">
+
+      <h3 class="font_display font_medium m-t_0">
+              {% if hub.future.icon %}
+      <i class="far fa-regular {{ hub.future.icon }} font-size_up-2 m-b_3 opacity_8 block" aria-hidden="true"></i>
+      {% endif %}
+      <span class="font_display font_medium m-t_0 block lh_1">{{ hub.future.title }}</span>
+      <p class="lh_2 m-b_4 opacity_8">{{ hub.future.description }}</p>
+      <footer class=" isolation_isolate m-t_auto">
+        <a href="{{ future_url }}" class="btn btn-shade expanded-click-area" {% if hub.future.external_url %}target="_blank" rel="noopener noreferrer"{% endif %}>{{ hub.future.button | default: hub.future.title }}</a>
+      </footer>
+    </aside>
+  </div>
+</section>

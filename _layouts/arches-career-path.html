@@ -15,7 +15,10 @@ layout: default
           {{content}}
         </main>
         <section grid-area="sidebar-primary">
-          {% include Career-Path/sidebar-nav.html %}
+          {% include MicroSite/sidebar-nav.html
+            data_path="CareerPath.sidebar"
+            active_key=page.career_nav
+            sub_active_key=page.career_nav_sub %}
         </section>
       </div>
       {% include arches-footer.html %}

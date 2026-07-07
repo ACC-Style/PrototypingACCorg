@@ -1,5 +1,6 @@
 # Collection permalink: /clinical-wellbeing/:path/
 hub: /clinical-wellbeing/Concept-Clinician-Well-Being/
+# Intermediary spoke — hub links directly to branches; kept for legacy nav/bookmarks
 tools: /clinical-wellbeing/Concept-Clinician-Well-Being-Tools/
 mental_health: /clinical-wellbeing/Concept-Clinician-Well-Being-Mental-Health/
 mini_z: /clinical-wellbeing/Concept-Clinician-Well-Being-Mini-Z/

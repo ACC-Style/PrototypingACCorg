@@ -38,7 +38,10 @@ Build output: `docs/` (GitHub Pages).
 | `ui/dual_slot` | Side-by-side comparison |
 | `playground` | Generators — sidebar nav, `data-note="Copy Me"` wrapper |
 | `arches` | Production-like ACC page shell |
-| `acc/fullscreen` | ACC fullscreen with optional `masthead` |
+| `acc/fullscreen` | ACC fullscreen — use `Global/fullscreen` for YAML-driven heroes |
+| `acc/sidebar` | Sidebar + content grid — use `Global/sidebar` for YAML-driven nav |
+| `Global/fullscreen` | Microsite hub root — masthead + full-width body ([global-layouts.md](global-layouts.md)) |
+| `Global/sidebar` | Microsite spoke — masthead + sidebar + content ([global-layouts.md](global-layouts.md)) |
 
 ## Standard page front matter
 
@@ -75,7 +78,7 @@ Data: `_data/{name}.csv` referenced by `csv_file` in front matter.
 **Collection-local partials** (project-specific UI — not shared across collections):
 
 ```liquid
-{%- include_relative partials/icon-grid.html grid_key="tools_branches" -%}
+{%- include Blocks/GridListLinkedIconText.html data_path="ClinicianWellBeing.grids.tools_branches" pages_data_path="ClinicianWellBeing.pages" -%}
 ```
 
 See [collection-partials.md](collection-partials.md) for when to use `_includes/` vs `partials/` + `include_relative`.

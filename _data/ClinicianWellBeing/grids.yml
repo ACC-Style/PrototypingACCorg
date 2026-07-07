@@ -1,15 +1,10 @@
 hub_fork:
   heading: How The College is Supporting Clinician Well-Being
-  intro: The ACC is committed to the problems of today and the solutions of tomorrow.
-  items:
-  - icon: fa-toolbox
-    title: Tools for Today
-    description: Practical resources for burnout, mental health, workplace stress, and leadership.
-    button: Explore Tools for Today
-    url_key: tools
-  - icon: fa-compass
+  intro: The ACC is committed to the problems of today and the solutions of tomorrow. Start with the path that matches what you need right now.
+  future:
+    icon: fa-compass
     title: Shaping the Future
-    description: ACC policy, workforce advocacy, and the north star for cardiology.
+    description: ACC policy, workforce advocacy, and the north star for cardiology — where the College is leading the profession.
     button: Explore Shaping the Future
     url_key: future
 
@@ -17,60 +12,63 @@ tools_branches:
   heading: Choose Your Path
   items:
   - icon: fa-brain
-    title: Mental Health & Burnout
+    title: Care for Yourself
     description: Recognize burnout, build self-care habits, and find confidential support.
     url_key: mental_health
   - icon: fa-hospital
-    title: Strengthen Your Workplace
+    title: Strengthen Your Team
     description: Change practice efficiency, culture, and team support — not just individual coping.
     url_key: workplace
   - icon: fa-people-group
-    title: Protect Yourself & Others
+    title: Protect Patients & Peers
     description: Lead your team, support patient mental health, and break the stigma around seeking help.
     url_key: protect
 
 burnout_dimensions:
   heading: What Is Burnout?
   intro: Adapted from the World Health Organization — burnout has three dimensions.
-  items:
-  - icon: fa-battery-quarter
-    title: Exhaustion
+
+burnout_dimensions_items:
+  - icon_class: fa-battery-quarter
+    headline: Exhaustion
     description: Feeling overextended and depleted of the emotional and physical resources you need to recover.
-  - icon: fa-user-slash
-    title: Cynicism
+  - icon_class: fa-user-slash
+    headline: Cynicism
     description: A negative or detached response to the job — loss of idealism and dehumanization of others.
-  - icon: fa-chart-line-down
-    title: Inefficacy
+  - icon_class: fa-chart-line-down
+    headline: Inefficacy
     description: Feeling incompetent and unproductive — a lack of achievement at work.
 
 workplace_domains:
   heading: Three Domains of Workplace Well-Being
   intro: Sustainable well-being requires changes in how practices run, how cultures support people, and how institutions invest in teams.
-  items:
-  - icon: fa-gauge-high
-    title: Workplace Efficiency
+
+workplace_domains_items:
+  - icon_class: fa-gauge-high
+    headline: Workplace Efficiency
     description: Reduce administrative burden, protect documentation time, and involve clinicians in workflow design.
-  - icon: fa-hand-holding-heart
-    title: Culture of Wellness
+  - icon_class: fa-hand-holding-heart
+    headline: Culture of Wellness
     description: Wellness committees, champions, mental health support, and family-supportive policies.
-  - icon: fa-seedling
-    title: Personal Resilience (Organizational)
+  - icon_class: fa-seedling
+    headline: Personal Resilience (Organizational)
     description: Coaching, peer dialogue, financial wellness resources, and Employee Assistance Programs.
 
 trust_pillars:
   heading: Four Trust Pillars for Team Communication
-  items:
-  - icon: fa-heart
-    title: Caring and Empathy
+
+trust_pillars_items:
+  - icon_class: fa-heart
+    headline: Caring and Empathy
     description: Acknowledge worry and let others voice concern before delivering information.
-  - icon: fa-handshake
-    title: Dedication and Commitment
+  - icon_class: fa-handshake
+    headline: Dedication and Commitment
     description: Address and confirm team needs — show you are invested in their well-being.
-  - icon: fa-user-md
-    title: Competence and Expertise
+  - icon_class: fa-user-md
+    headline: Competence and Expertise
     description: Share knowledge and cite trusted sources so messages carry credibility.
-  - icon: fa-comments
-    title: Honesty and Openness
+  - icon_class: fa-comments
+    headline: Honesty and Openness
     description: Be transparent about facts and feelings to maintain trust over time.
 
 future_partnerships:

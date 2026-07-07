@@ -1,6 +1,9 @@
 <div grid-template="page-layout">
   <section grid-area="sidebar-primary">
-    {%- include_relative partials/sidebar-nav.html -%}
+    {%- include MicroSite/sidebar-nav.html
+      data_path="ClinicalSolutions.sidebar"
+      active_key=page.clinical_nav
+      sub_active_key=page.clinical_nav_sub -%}
     {%- include_relative partials/clinical-topics-callout.html -%}
     {%- include_relative partials/member-section-callout.html -%}
     {%- include_relative partials/guideline-app-callout.html -%}

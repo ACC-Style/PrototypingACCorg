@@ -1,32 +1,16 @@
-{% assign data_file = include.data_file | default: 'mental_health_accordions' %}
-{% assign accordion = site.data.ClinicianWellBeing[data_file][data_file] %}
-{% assign group_name = include.group_name | default: accordion.zone_id | default: 'wellbeing-accordion' %}
-<style>
-  details[accordion]::details-content {
-    overflow: hidden;
-    block-size: 0;
-    transition: block-size 0.35s ease, content-visibility 0.35s;
-    transition-behavior: allow-discrete;
-  }
-  details[accordion][open]::details-content {
-    block-size: auto;
-  }
-  details[accordion] summary {
-    list-style: none;
-    cursor: pointer;
-  }
-  details[accordion] summary::-webkit-details-marker,
-  details[accordion] summary::marker {
-    display: none;
-  }
-  details[accordion] summary .fa-stack .a\:rotation {
-    transition: transform 0.35s ease;
-  }
-  details[accordion][open] summary .fa-stack .a\:rotation {
-    transform: rotate(0deg);
-  }
-</style>
-<section id="{{ include.zone_id | default: accordion.zone_id | default: 'coping-guides' }}" zone-label="{{ include.zone_label | default: 'Coping Guides' }}" class="reading-typography wrapper-container m-b_5 p-x_4:lg">
+<!--
+data_path: YAML path to accordion object (heading, intro, items with blocks)
+group_name: optional details name attribute
+zone_id / zone_label: section metadata
+-->
+{% assign path_parts = include.data_path | split: '.' %}
+{% assign accordion = site.data %}
+{% for part in path_parts %}
+  {% assign accordion = accordion[part] %}
+{% endfor %}
+{% assign group_name = include.group_name | default: accordion.zone_id | default: 'accordion-group' %}
+
+<section id="{{ include.zone_id | default: accordion.zone_id | default: 'accordion-stack' }}" zone-label="{{ include.zone_label | default: 'Accordion' }}" class="reading-typography wrapper-container m-b_5 p-x_4:lg">
   {% if accordion.heading %}
   <h2 class="font_display m-b_3">{{ accordion.heading }}</h2>
   {% endif %}

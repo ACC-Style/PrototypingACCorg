@@ -1,0 +1,148 @@
+<!--
+  Microsite side navigation (YAML-driven).
+
+  data_path — e.g. ClinicianWellBeing.sidebar
+  active_key, sub_active_key — active item keys from page front matter
+  aria_label — optional nav aria-label
+
+  YAML: each item with `children` must have a unique `key` (collapse IDs).
+-->
+{% assign path_parts = include.data_path | split: '.' %}
+{% assign nav = site.data %}
+{% for part in path_parts %}
+  {% assign nav = nav[part] %}
+{% endfor %}
+<nav class="nav-sub bg_primary c_white font_2 font_ui"{% if include.aria_label %} aria-label="{{ include.aria_label }}"{% endif %}>
+  <ul class="ul_none flex_column flex">
+    <li class="nav-item font-size_up" data-nav="parent">
+      <div class="bg_black-4">
+        <a href="{{ nav.sidebarRootURL | relative_url }}"
+          class="text-shadow_black-1 block w_100 c_white p-y_2 p-x_4 h:c_white inline-block h:underline self_center">{{ nav.sidebarRoot }}</a>
+      </div>
+    </li>
+    {% for item in nav.items %}
+    {% assign item_key = item.key | default: item.label | slugify %}
+    {% assign item_active = false %}
+    {% if item.key == include.active_key %}
+      {% assign item_active = true %}
+    {% endif %}
+    {% assign item_branch_open = item_active %}
+    {% if item.children and item_branch_open == false %}
+      {% for subitem in item.children %}
+        {% if subitem.key == include.sub_active_key %}
+          {% assign item_branch_open = true %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    {% if item.children %}
+    {% assign collapse_id = 'childNavCollapse-' | append: item_key %}
+    <li class="nav-item{% if item_branch_open %} active{% endif %}" data-nav="child">
+      <div class="flex flex_row">
+        <div class="{% if item_branch_open %}active {% endif %}br-r_1 br_solid br_white-2 flex flex_column flex_none justify_start text-shadow_black-n1 c_white">
+          <div class="flex_none{% unless item_branch_open %} collapsed{% endunless %}" aria-expanded="{% if item_branch_open %}true{% else %}false{% endif %}" data-bs-toggle="collapse"
+            data-bs-target="#{{ collapse_id }}" aria-controls="{{ collapse_id }}" role="button">
+            <span class="fa-stack">
+              <i class="fas fa-minus fa-stack-1x" aria-hidden="true"></i>
+              <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x" aria-hidden="true"></i>
+            </span>
+          </div>
+        </div>
+        <div class="flex_auto self_center">
+          {% if item.url %}
+          <a href="{{ item.url | relative_url }}{% if item.anchor %}#{{ item.anchor }}{% endif %}"
+            class="text-shadow_black-1 c_white-9 p-y_2 p-x_3 w_100 h:c_white inline-block h:underline self_center a:bg_black-3{% if item_active %} active{% endif %}">{{ item.label }}</a>
+          {% else %}
+          <span class="text-shadow_black-1 c_white-9 p-y_2 p-x_3 w_100 inline-block self_center font_medium">{{ item.label }}</span>
+          {% endif %}
+          <nav id="{{ collapse_id }}" class="nav-sub-child bg_white-2 font-size_down collapse{% if item_branch_open %} show{% endif %}">
+            <ul class="ul_none flex_column flex">
+              {% for subitem in item.children %}
+              {% assign sub_key = subitem.key | default: subitem.label | slugify %}
+              {% assign sub_active = false %}
+              {% if subitem.key == include.sub_active_key %}
+                {% assign sub_active = true %}
+              {% endif %}
+              {% if subitem.children %}
+              {% assign sub_collapse_id = collapse_id | append: '-' | append: sub_key %}
+              {% assign sub_branch_open = sub_active %}
+              {% if sub_branch_open == false %}
+                {% for grandchild in subitem.children %}
+                  {% if grandchild.key == include.sub_active_key %}
+                    {% assign sub_branch_open = true %}
+                  {% endif %}
+                {% endfor %}
+              {% endif %}
+              <li class="nav-item{% if sub_branch_open %} active{% endif %}" data-nav="grandchild">
+                <div class="flex flex_row">
+                  <div class="{% if sub_branch_open %}active {% endif %}br-r_1 br_solid br_white-2 flex flex_column flex_none justify_start text-shadow_black-n1 c_white">
+                    <div class="flex_none{% unless sub_branch_open %} collapsed{% endunless %}" aria-expanded="{% if sub_branch_open %}true{% else %}false{% endif %}" data-bs-toggle="collapse"
+                      data-bs-target="#{{ sub_collapse_id }}" aria-controls="{{ sub_collapse_id }}" role="button">
+                      <span class="fa-stack">
+                        <i class="fas fa-minus fa-stack-1x" aria-hidden="true"></i>
+                        <i class="fas fa-minus rotate_90 a:rotation fa-stack-1x" aria-hidden="true"></i>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="flex_auto self_center">
+                    <a href="{{ subitem.url | relative_url }}{% if subitem.anchor %}#{{ subitem.anchor }}{% endif %}"
+                      class="text-shadow_black-1 c_white-9 p-y_2 p-x_3 w_100 h:c_white inline-block h:underline self_center a:bg_black-3{% if sub_active %} active{% endif %}">{{ subitem.label }}</a>
+                    <nav id="{{ sub_collapse_id }}" class="nav-sub-child bg_white-2 collapse{% if sub_branch_open %} show{% endif %}">
+                      <ul class="ul_none flex_column flex">
+                        {% for grandchild in subitem.children %}
+                        {% assign gc_active = false %}
+                        {% if grandchild.key == include.sub_active_key %}
+                          {% assign gc_active = true %}
+                        {% endif %}
+                        <li class="nav-item{% if gc_active %} active{% endif %}" data-nav="greatGrandChild">
+                          <div class="flex flex_row">
+                            <div class="flex_auto self_center">
+                              <a href="{{ grandchild.url | relative_url }}{% if grandchild.anchor %}#{{ grandchild.anchor }}{% endif %}"
+                                class="text-shadow_black-1 a:bg_black-3 c_white-9 p-y_2 p-r_3 p-l_4 w_100 h:c_white inline-block h:underline self_center{% if gc_active %} active{% endif %}">{{ grandchild.label }}</a>
+                            </div>
+                          </div>
+                        </li>
+                        {% endfor %}
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+              </li>
+              {% else %}
+              <li class="nav-item{% if sub_active %} active{% endif %}" data-nav="child">
+                <div class="flex flex_row">
+                  <div class="flex flex_column flex_none justify_start">
+                    <div class="flex_none">
+                      <span class="fa-stack"><i class="fas fa-spacer fa-stack-1x" aria-hidden="true"></i></span>
+                    </div>
+                  </div>
+                  <div class="flex_auto self_center">
+                    <a href="{{ subitem.url | relative_url }}{% if subitem.anchor %}#{{ subitem.anchor }}{% endif %}"
+                      class="text-shadow_black-1 c_white-9 p-y_2 p-x_3 w_100 h:c_white inline-block h:underline self_center a:bg_black-3{% if sub_active %} active{% endif %}">{{ subitem.label }}</a>
+                  </div>
+                </div>
+              </li>
+              {% endif %}
+              {% endfor %}
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </li>
+    {% else %}
+    <li class="nav-item{% if item_active %} active{% endif %}" data-nav="child">
+      <div class="flex flex_row">
+        <div class="flex flex_column flex_none justify_start">
+          <div class="flex_none">
+            <span class="fa-stack"><i class="fas fa-spacer fa-stack-1x" aria-hidden="true"></i></span>
+          </div>
+        </div>
+        <div class="flex_auto self_center">
+          <a href="{{ item.url | relative_url }}{% if item.anchor %}#{{ item.anchor }}{% endif %}"
+            class="text-shadow_black-1 c_white-9 p-y_2 p-x_3 w_100 h:c_white inline-block h:underline self_center a:bg_black-3{% if item_active %} active{% endif %}">{{ item.label }}</a>
+        </div>
+      </div>
+    </li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+</nav>
