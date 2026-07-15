@@ -214,7 +214,7 @@ Separate stylesheets for product semantics — see [Color Codes](https://assets.
 
 <!-- Interactive row — relative bounds the ::after hit zone -->
 <div class="relative isolation_isolate">
-  <a class="block p_4 h:bg_accent-5 undecorated expanded-click-area" href="…">…</a>
+  <a class="expanded-click-area not-link h:bg_accent-5 undecorated block p_4" href="…">…</a>
 </div>
 
 <!-- Supporting CTA on white surface -->

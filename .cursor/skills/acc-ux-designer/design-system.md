@@ -206,9 +206,23 @@ Bootstrap + UC combined. **Default supporting action:** `btn-shade` (light grey 
 
 `expanded-click-area` adds a `::after` pseudo-element that is **absolutely positioned** (`inset: 0`) to enlarge the tap/click target beyond the visible link or button text.
 
-**The pseudo-element positions against the nearest positioned ancestor.** If that ancestor is too large — or is the page shell — the invisible hit zone can cover the entire viewport.
+**The pseudo-element positions against the nearest positioned ancestor.** If that ancestor is too large — or is the page shell — the invisible hit zone can cover the entire viewport and **overlap other clickable items**.
 
-**Rule:** Wrap the control in a container with `relative` (and usually `isolation_isolate` or `z_1` stacking) so the expanded area is bounded to the card, row, or footer you intend.
+#### Required pairing
+
+`expanded-click-area` must appear on the same element as **`btn`** (any variant), **`not-link`**, or **`btn-link`**. Never on a bare anchor or unstyled link.
+
+```html
+<a href="#" class="btn btn-shade expanded-click-area">Start Here</a>
+<a href="#" class="expanded-click-area not-link h:undecorated">Card title + description</a>
+<a href="#" class="btn btn-link link expanded-click-area">Learn more</a>
+```
+
+#### Required `relative` wrapper
+
+**Always** wrap the expanded control in a `relative` container at some point in the ancestry — the smallest region that should receive the click (card, row, footer, list item). Use `isolation_isolate` when neighbors must stay independently clickable.
+
+When multiple expanded controls share a page, each needs its own bounded `relative` wrapper so hit zones do not bleed into adjacent links or buttons.
 
 ```html
 <!-- Card footer — hit zone = footer only -->
@@ -218,7 +232,7 @@ Bootstrap + UC combined. **Default supporting action:** `btn-shade` (light grey 
 
 <!-- Full-row card link — hit zone = card -->
 <article class="relative isolation_isolate br_radius shadow_bevel-light h:bg_accent-5">
-  <a href="#" class="block p_4 undecorated expanded-click-area">
+  <a href="#" class="expanded-click-area not-link h:undecorated block p_4">
     <h3>Title</h3>
     <p>Description</p>
   </a>
@@ -227,7 +241,9 @@ Bootstrap + UC combined. **Default supporting action:** `btn-shade` (light grey 
 
 | Do | Don't |
 |----|-------|
+| Pair with `btn`, `not-link`, or `btn-link` | Put `expanded-click-area` on a bare `<a>` |
 | Put `relative` on the **smallest** wrapper that should receive the click | Put `expanded-click-area` on a link inside an unpositioned `<main>` or page grid |
+| Give each expanded control its own bounded `relative` wrapper when neighbors are also clickable | Let multiple expanded hit zones share one unbounded ancestor |
 | Use `isolation_isolate` / `z_1` when overlapping content must stay clickable | Assume the class only affects the link's own box |
 
 Same rule applies to `expanded-click-area-beforeAlt` (uses `::before` instead of `::after`).

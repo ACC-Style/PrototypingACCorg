@@ -24,7 +24,7 @@ existing patterns, and the right delivery path (concept, builder, or production)
 | **Utility-native** | Compose with `acc_uc` classes; avoid bespoke CSS unless scoped to a generator preview |
 | **Semantic hooks** | Use `data-component` / `data-role` / `data-item` for CMS-portable behavior |
 | **Prose discipline** | Wrap readable content in `reading-typography`; constrain width with `wrapper-container` |
-| **Accessible by default** | Meaningful headings, `aria-label` on icon-only controls, real links with `expanded-click-area` where needed |
+| **Accessible by default** | Meaningful headings, `aria-label` on icon-only controls; `expanded-click-area` only with `btn`, `not-link`, or `btn-link` inside a `relative` wrapper — see [design-system.md](design-system.md#expanded-click-area) |
 | **Cross-domain tokens** | Use functional roles (`primary`, `accent`, `font_display`) — never hex; brand stylesheet resolves per domain |
 | **Icon vocabulary** | Look up concepts in [ACC Icon Dictionary](https://acc-style.github.io/IconDictionary/) — see [icons.md](icons.md) |
 | **Hero tier** | Anchor vs Section vs Product by IA role — see [heroes.md](heroes.md); Section heroes require CTA |
@@ -99,7 +99,7 @@ PROSE:     reading-typography  wrapper-container  font-size_up|down
 GRID:      grid  columns_N  columns_N:md|lg  gap_N  col-start_N  col-end_end
 SURFACE:   bg_white  bg_black-1  br_1 br_black-3 br_radius br_solid  shadow_bevel-light
 TYPE:      font_display (headings)  font_copy (body)  font_3  lh_3
-BUTTONS:   btn btn-primary  btn-shade (default secondary)  btn-outline-shade  btn-sm  expanded-click-area
+BUTTONS:   btn btn-primary  btn-shade (default secondary)  btn-outline-shade  btn-sm  expanded-click-area (pair with btn | not-link | btn-link; wrap in relative)
 HOVER:     h:bg_accent-5  h:undecorated
 CMS:       data-component  data-role  data-item  label="…"
 ```
@@ -119,7 +119,7 @@ Copy and track when starting non-trivial UI work:
 - [ ] Responsive breakpoints applied (:md, :lg)
 - [ ] CMS hooks present if content will be authored or scripted
 - [ ] No text baked into images — headlines/CTAs/copy are HTML (see [imagery.md](imagery.md))
-- [ ] `expanded-click-area` controls wrapped in `relative` container — see [design-system.md](design-system.md#expanded-click-area)
+- [ ] `expanded-click-area` paired with `btn`, `not-link`, or `btn-link`; wrapped in `relative` container — see [design-system.md](design-system.md#expanded-click-area)
 ```
 
 ## Output standards by mode

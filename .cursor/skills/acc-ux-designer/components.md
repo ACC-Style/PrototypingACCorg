@@ -14,9 +14,29 @@ Prefer `data-component` on the outermost interactive unit authors will recognize
 
 ## Expanded click area
 
-Use `expanded-click-area` (or `expanded-click-area-beforeAlt`) when a small visible control should receive clicks across a larger region — e.g. a footer button that activates the whole card. The container must have a `relative` class on it to bound the region of what is being clicked on to stop it from taking over the entire page.
+Use `expanded-click-area` (or `expanded-click-area-beforeAlt`) when a small visible control should receive clicks across a larger region — e.g. a footer button that activates the whole card.
 
-The utility uses an absolutely positioned pseudo-element. **Bound the click zone** with a `relative` wrapper around the intended target area. Without it, the pseudo-element can expand to a distant positioned ancestor and hijack clicks across the page.
+### Required pairing
+
+**Always** pair `expanded-click-area` with one of:
+
+| Class | Use when |
+|-------|----------|
+| `btn` (+ variant) | Button-styled control — card footer CTA, primary action |
+| `not-link` | Full-card or full-row link that should not look like inline prose |
+| `btn-link` | Text-link-styled control with expanded hit zone |
+
+Do **not** put `expanded-click-area` on a bare `<a>` without `btn`, `not-link`, or `btn-link`.
+
+### Required `relative` wrapper
+
+The utility uses an absolutely positioned pseudo-element (`::after` or `::before`). **At some point in the ancestry, the expanded control must sit inside a `relative` container** that bounds the intended click region.
+
+Without a `relative` wrapper, the pseudo-element positions against a distant ancestor and can **overlap other clickable items** on the page.
+
+- Put `relative` on the **smallest** wrapper that should receive the click — card, row, footer, list item
+- Add `isolation_isolate` when stacked content must stay independently clickable
+- When multiple expanded controls appear in one view, each needs its **own** bounded `relative` wrapper so hit zones do not bleed into neighbors
 
 ```html
 <div class="relative isolation_isolate br_1 br_black-3 br_radius br_solid">
@@ -42,7 +62,7 @@ The utility uses an absolutely positioned pseudo-element. **Bound the click zone
 }
 ```
 
-For a full-card link, put `relative` on the card and `expanded-click-area` on the `<a>` inside it. See [design-system.md](design-system.md#expanded-click-area).
+For a full-card link, put `relative` on the card and `expanded-click-area not-link` on the `<a>` inside it. See [design-system.md](design-system.md#expanded-click-area).
 
 ## Segmented card
 
@@ -74,7 +94,7 @@ Preferred alternative to **text-in-image** tiles: photo carries mood or humaniza
     <h4 class="font_display">…</h4>
     <p>…</p>
     <ul class="ul_inline-pipe">
-      <li><a class="expanded-click-area-beforeAlt">Learn More<i class="fas fa-arrow-right p-x_3"></i></a></li>
+      <li class="relative isolation_isolate"><a class="expanded-click-area-beforeAlt not-link" href="#">Learn More<i class="fas fa-arrow-right p-x_3"></i></a></li>
     </ul>
   </div>
 </div>
