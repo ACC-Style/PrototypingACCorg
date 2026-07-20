@@ -1,0 +1,513 @@
+---
+layout: arches_empty
+name: "Header Nav (No Bootstrap)"
+position: "Experiment — popover + invoker commands, no Bootstrap JS"
+notes: "Multi-tab main nav demo. Popover submenus use commandfor (click), interestfor (hover), and per-tab anchor positioning."
+---
+<section class="reading-typography p_4">
+  <h1 class="font_display font_3 ">Header navigation (no Bootstrap)</h1>
+  <p class="c_shade-n2 m-b_4">
+    Multi-dropdown main nav prototype: each tab with children uses
+    <code>commandfor</code>, <code>interestfor</code>, and
+    <code>anchor</code> on its popover. CSS uses scoped
+    <code>anchor-name</code> / <code>anchor-scope</code> so many tabs can coexist.
+  </p>
+</section>
+
+
+<div class="flex flex_row:md c_white relative isolation_isolate z_3">
+  <nav id="header_nav-arches"
+       class="flex_auto p_0 bg_acc font_2 font_1:md relative"
+       aria-label="Main navigation">
+    <div class="relative">
+      <button class="br_solid br_2 br_white-2 m-l_3 m-y_3 navbar-toggler p_2"
+              type="button"
+              commandfor="header_nav_content"
+              command="toggle-popover"
+              aria-controls="header_nav_content"
+              aria-expanded="false"
+              aria-label="Toggle navigation">
+        <i class="icon-toggle_bars-times fas fa a:c_acc-2 c_white" aria-hidden="true"></i>
+        <span class="a:c_acc-2 c_white p-x_3 uppercase font_accent">Menu</span>
+      </button>
+    </div>
+
+    <div id="header_nav_content"
+         popover="auto"
+         class="navbar-collapse bg_acc">
+      <ul class="b_0 flex flex_column flex_row:md m_0 navbar-nav-arches p_0 ul_none text_center:md text_left w_100 font_accent">
+        <li id="nav_tab_home"
+            class="relative flex_auto items_center m_0 p_0 flex flex_row active">
+          <a href="/"
+             id="home"
+             class="nav-link-arches flex_100 flex_shrink nav-submenu-label-arches nowrap p-x_3 p-y_3 a:bg_accent-n3 h:bg_accent-n1 c_white not-link block h:undecorated"
+             aria-current="page"
+             title="Home">
+            <i class="fas fa-home p-x_3:md" aria-hidden="true"></i>
+            <span class="p-l_3">Home</span>
+          </a>
+        </li>
+
+        <li id="nav_tab_clinical_topics"
+            class="relative flex_auto nav-has-submenu items_center m_0 p_0  flex flex_row">
+          <button type="button"
+                  id="nav_toggle_clinical_topics"
+                  class="bg_transparent br_0 c_white display_none:md flex_none grid items_center justify_center nav-link-arches nav-submenu-toggle not-link nowrap p-x_3 p-y_3 self_stretch text_center"
+                  interestfor="nav_menu_clinical_topics"
+                  commandfor="nav_menu_clinical_topics"
+                  command="toggle-popover"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  aria-controls="nav_menu_clinical_topics">
+            <i class="far fa icon-toggle_plus-minus " aria-hidden="true"></i>
+            <span class="visually-hidden">Toggle Clinical Topics menu</span>
+          </button>
+
+          <a href="/clinical-topics"
+             id="nav_link_clinical_topics"
+             class="nav-link-arches flex_100 flex_shrink nav-submenu-label-arches nowrap p-x_3 p-y_3 a:bg_accent-n3 h:bg_accent-n1 c_white not-link block h:undecorated"
+             interestfor="nav_menu_clinical_topics">
+            Clinical Topics
+          </a>
+
+          <div id="nav_menu_clinical_topics"
+               popover="auto"
+               anchor="nav_tab_clinical_topics"
+               class="nav-submenu-popover dropdown-menu-arches font_0 m-x_3 shadow_overlap-light br_black-1 br_solid br_1 br-bl_round br-br_round font_copy br-t_0 br_none br_solid:md br_square w_auto:md z_5"
+               aria-labelledby="nav_toggle_clinical_topics">
+            <div class="grid columns_1 columns_2:md p-t_2 p-b_3 p-x_3:md gap-x_3">
+              <div class="dropdown_column">
+                <ul class="ul_none lh_2 m_0 flex flex_column gap_1 c_black text_left font_ui">
+                  <li>
+                    <a class="h:bg_accent-4 a:bg_accent-3 block p-y_3 p-x_4 br_radius not-link c_inherit-all wrap sub-menu-item-arches h:undecorated" href="/clinical-topics/acute-coronary-syndromes">
+                      <span class="text-indent_n1 block m-l_4">Acute Coronary Syndromes</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="h:bg_accent-4 a:bg_accent-3 block p-y_3 p-x_4 br_radius not-link c_inherit-all wrap sub-menu-item-arches h:undecorated" href="/clinical-topics/arrhythmias">
+                      <span class="text-indent_n1 block m-l_4">Arrhythmias and Clinical EP</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="h:bg_accent-4 a:bg_accent-3 block p-y_3 p-x_4 br_radius not-link c_inherit-all wrap sub-menu-item-arches h:undecorated" href="/clinical-topics/heart-failure">
+                      <span class="text-indent_n1 block m-l_4">Heart Failure</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="dropdown_column br-l_1 br_solid:md br_none br_black-2 p-l_3:md">
+                <ul class="ul_none lh_2 m_0 flex flex_column gap_1 c_black text_left font_ui">
+                  <li>
+                    <a class="h:bg_accent-4 a:bg_accent-3 block p-y_3 p-x_4 br_radius not-link c_inherit-all wrap sub-menu-item-arches h:undecorated" href="/clinical-topics/prevention">
+                      <span class="text-indent_n1 block m-l_4">Prevention</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="h:bg_accent-4 a:bg_accent-3 block p-y_3 p-x_4 br_radius not-link c_inherit-all wrap sub-menu-item-arches h:undecorated" href="/clinical-topics/valvular-heart-disease">
+                      <span class="text-indent_n1 block m-l_4">Valvular Heart Disease</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="h:bg_accent-4 a:bg_accent-3 block p-y_3 p-x_4 br_radius not-link c_inherit-all wrap sub-menu-item-arches h:undecorated" href="/clinical-topics">
+                      <span class="text-indent_n1 block m-l_4">View all topics</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li id="nav_tab_education"
+            class="relative flex_auto nav-has-submenu items_center m_0 p_0  flex flex_row">
+          <button type="button"
+                  id="nav_toggle_education"
+                  class="bg_transparent br_0 c_white display_none:md flex_none grid items_center justify_center nav-link-arches nav-submenu-toggle not-link nowrap p-x_3 p-y_3 self_stretch text_center"
+                  interestfor="nav_menu_education"
+                  commandfor="nav_menu_education"
+                  command="toggle-popover"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  aria-controls="nav_menu_education">
+            <i class="far fa icon-toggle_plus-minus " aria-hidden="true"></i>
+            <span class="visually-hidden">Toggle Education menu</span>
+          </button>
+
+          <a href="/education"
+             id="nav_link_education"
+             class="nav-link-arches flex_100 flex_shrink nav-submenu-label-arches nowrap p-x_3 p-y_3 a:bg_accent-n3 h:bg_accent-n1 c_white not-link block h:undecorated"
+             interestfor="nav_menu_education">
+            Education
+          </a>
+
+          <div id="nav_menu_education"
+               popover="auto"
+               anchor="nav_tab_education"
+               class="nav-submenu-popover dropdown-menu-arches font_0 m-x_3 shadow_overlap-light br_black-1 br_solid br_1 br-bl_round br-br_round font_copy br-t_0 br_none br_solid:md br_square z_5"
+               aria-labelledby="nav_toggle_education">
+            <div class="grid columns_1 p-t_2 p-b_3 p-x_3:md">
+              <div class="dropdown_column">
+                <ul class="ul_none lh_2 m_0 flex flex_column gap_1 c_black text_left font_ui">
+                  <li>
+                    <a class="h:bg_accent-4 a:bg_accent-3 block p-y_3 p-x_4 br_radius not-link c_inherit-all wrap sub-menu-item-arches h:undecorated" href="/education/cme-moc">
+                      <span class="text-indent_n1 block m-l_4">CME &amp; MOC</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="h:bg_accent-4 a:bg_accent-3 block p-y_3 p-x_4 br_radius not-link c_inherit-all wrap sub-menu-item-arches h:undecorated" href="/education/meetings">
+                      <span class="text-indent_n1 block m-l_4">Meetings</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="h:bg_accent-4 a:bg_accent-3 block p-y_3 p-x_4 br_radius not-link c_inherit-all wrap sub-menu-item-arches h:undecorated" href="/education/online-learning">
+                      <span class="text-indent_n1 block m-l_4">Online Learning</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li id="nav_tab_submit_science"
+            class="relative flex_auto nav-has-submenu items_center m_0 p_0  flex flex_row">
+          <button type="button"
+                  id="nav_toggle_submit_science"
+                  class="bg_transparent br_0 c_white display_none:md flex_none grid items_center justify_center nav-link-arches nav-submenu-toggle not-link nowrap p-x_3 p-y_3 self_stretch text_center"
+                  interestfor="nav_menu_submit_science"
+                  commandfor="nav_menu_submit_science"
+                  command="toggle-popover"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  aria-controls="nav_menu_submit_science">
+            <i class="far fa icon-toggle_plus-minus " aria-hidden="true"></i>
+            <span class="visually-hidden">Toggle Submit Science menu</span>
+          </button>
+
+          <a href="/submit-science"
+             id="nav_link_submit_science"
+             class="nav-link-arches flex_100 flex_shrink nav-submenu-label-arches nowrap p-x_3 p-y_3 a:bg_accent-n3 h:bg_accent-n1 c_white not-link block h:undecorated"
+             interestfor="nav_menu_submit_science">
+            Submit Science
+          </a>
+
+          <div id="nav_menu_submit_science"
+               popover="auto"
+               anchor="nav_tab_submit_science"
+               class="nav-submenu-popover dropdown-menu-arches font_0 m-x_3 shadow_overlap-light br_black-1 br_solid br_1 br-bl_round br-br_round font_copy br-t_0 br_none br_solid:md br_square z_5"
+               aria-labelledby="nav_toggle_submit_science">
+            <div class="grid columns_1 p-t_2 p-b_3 p-x_3:md">
+              <div class="dropdown_column">
+                <ul class="ul_none lh_2 m_0 flex flex_column gap_1 c_black text_left font_ui">
+                  <li>
+                    <a class="h:bg_accent-4 a:bg_accent-3 block p-y_3 p-x_4 br_radius not-link c_inherit-all wrap sub-menu-item-arches h:undecorated" href="/submit-science/jacc">
+                      <span class="text-indent_n1 block m-l_4">JACC Journals</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="h:bg_accent-4 a:bg_accent-3 block p-y_3 p-x_4 br_radius not-link c_inherit-all wrap sub-menu-item-arches h:undecorated" href="/submit-science/guidelines">
+                      <span class="text-indent_n1 block m-l_4">Guideline Papers</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="h:bg_accent-4 a:bg_accent-3 block p-y_3 p-x_4 br_radius not-link c_inherit-all wrap sub-menu-item-arches h:undecorated" href="/submit-science/abstracts">
+                      <span class="text-indent_n1 block m-l_4">Abstract Submissions</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li id="nav_tab_guidelines"
+            class="relative flex_auto items_center m_0 p_0 flex flex_row">
+          <a href="/guidelines"
+             id="nav_link_guidelines"
+             class="nav-link-arches flex_100 flex_shrink nav-submenu-label-arches nowrap p-x_3 p-y_3 a:bg_accent-n3 h:bg_accent-n1 c_white not-link block h:undecorated"
+             title="Guidelines">
+            Guidelines
+          </a>
+        </li>
+
+        <li id="nav_tab_membership"
+            class="relative flex_auto nav-has-submenu items_center m_0 p_0  flex flex_row">
+          <button type="button"
+                  id="nav_toggle_membership"
+                  class="bg_transparent br_0 c_white display_none:md flex_none grid items_center justify_center nav-link-arches nav-submenu-toggle not-link nowrap p-x_3 p-y_3 self_stretch text_center"
+                  interestfor="nav_menu_membership"
+                  commandfor="nav_menu_membership"
+                  command="toggle-popover"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  aria-controls="nav_menu_membership">
+            <i class="far fa icon-toggle_plus-minus " aria-hidden="true"></i>
+            <span class="visually-hidden">Toggle Membership menu</span>
+          </button>
+
+          <a href="/membership"
+             id="nav_link_membership"
+             class="nav-link-arches flex_100 flex_shrink nav-submenu-label-arches nowrap p-x_3 p-y_3 a:bg_accent-n3 h:bg_accent-n1 c_white not-link block h:undecorated"
+             interestfor="nav_menu_membership">
+            Membership
+          </a>
+
+          <div id="nav_menu_membership"
+               popover="auto"
+               anchor="nav_tab_membership"
+               class="nav-submenu-popover dropdown-menu-arches font_0 m-x_3 shadow_overlap-light br_black-1 br_solid br_1 br-bl_round br-br_round font_copy br-t_0 br_none br_solid:md br_square z_5"
+               aria-labelledby="nav_toggle_membership">
+            <div class="grid columns_1 p-t_2 p-b_3 p-x_3:md">
+              <div class="dropdown_column">
+                <ul class="ul_none lh_2 m_0 flex flex_column gap_1 c_black text_left font_ui">
+                  <li>
+                    <a class="h:bg_accent-4 a:bg_accent-3 block p-y_3 p-x_4 br_radius not-link c_inherit-all wrap sub-menu-item-arches h:undecorated" href="/membership/join">
+                      <span class="text-indent_n1 block m-l_4">Join ACC</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="h:bg_accent-4 a:bg_accent-3 block p-y_3 p-x_4 br_radius not-link c_inherit-all wrap sub-menu-item-arches h:undecorated" href="/membership/benefits">
+                      <span class="text-indent_n1 block m-l_4">Member Benefits</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="h:bg_accent-4 a:bg_accent-3 block p-y_3 p-x_4 br_radius not-link c_inherit-all wrap sub-menu-item-arches h:undecorated" href="/membership/renew">
+                      <span class="text-indent_n1 block m-l_4">Renew Membership</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<section class="reading-typography p_4 m-t_4">
+  <h2 class="font_display font_2">Tab map (DOM order)</h2>
+  <ul class="ul_none flex flex_column gap_2 font_n1">
+    <li><strong>Home</strong> — plain link (active)</li>
+    <li><strong>Clinical Topics</strong> — 2-column dropdown (6 links; rule: &gt; 5 children → 2 cols)</li>
+    <li><strong>Education</strong> — 1-column dropdown (3 links)</li>
+    <li><strong>Submit Science</strong> — 1-column dropdown (3 links)</li>
+    <li><strong>Guidelines</strong> — plain link</li>
+    <li><strong>Membership</strong> — 1-column dropdown (3 links)</li>
+  </ul>
+
+  <h2 class="font_display font_2 m-t_4">Canonical patterns (backend recipes)</h2>
+  <p class="c_shade-n2 m-b_3 font_n1">
+    Three tab kinds. Backend should pick one recipe per nav page based on
+    <code>SubPagesExist</code> and child count.
+  </p>
+
+  <h3 class="font_display font_1 m-t_3 m-b_2">A. Plain link (no children)</h3>
+  <ul class="ul_none flex flex_column gap_2 font_n1">
+    <li><code>&lt;li id="nav_tab_*" class="relative flex_auto items_center m_0 p_0 flex flex_row"&gt;</code> — no <code>nav-has-submenu</code></li>
+    <li>One <code>&lt;a class="nav-link-arches flex_100 flex_shrink nav-submenu-label-arches nowrap p-x_3 p-y_3 a:bg_accent-n3 h:bg_accent-n1 c_white not-link block h:undecorated"&gt;</code></li>
+    <li>Current page: add <code>active</code> on <code>&lt;li&gt;</code> + <code>aria-current="page"</code> on the link</li>
+  </ul>
+
+  <h3 class="font_display font_1 m-t_3 m-b_2">B. Dropdown — 1 column (1–5 children)</h3>
+  <ul class="ul_none flex flex_column gap_2 font_n1">
+    <li><code>&lt;li id="nav_tab_*" class="relative flex_auto nav-has-submenu items_center m_0 p_0  flex flex_row"&gt;</code></li>
+    <li>Toggle <code>&lt;button class="nav-link-arches flex_none nav-submenu-toggle … display_none:md block"&gt;</code> with <code>interestfor</code> + <code>commandfor</code> + <code>command="toggle-popover"</code></li>
+    <li>Label <code>&lt;a class="nav-link-arches flex_100 flex_shrink nav-submenu-label-arches … block h:undecorated" interestfor="…"&gt;</code></li>
+    <li>Panel <code>&lt;div id="nav_menu_*" popover="auto" anchor="nav_tab_*" class="nav-submenu-popover dropdown-menu-arches font_0 m-x_3 shadow_overlap-light br_black-1 br_solid br_1 br-bl_round br-br_round font_copy br-t_0 br_none br_solid:md br_square z_5"&gt;</code></li>
+    <li>Inner grid: <code>grid columns_1 p-t_2 p-b_3 p-x_3:md</code> — no <code>gap-x_3</code> (single column)</li>
+    <li>One <code>.dropdown_column</code> → <code>ul.ul_none lh_2 m_0 flex flex_column gap_1 c_black text_left font_ui</code></li>
+    <li>Child <code>&lt;li&gt;</code> has no empty <code>class</code></li>
+    <li>Each child link: <code>h:bg_accent-4 a:bg_accent-3 block p-y_3 p-x_4 br_radius not-link c_inherit-all wrap sub-menu-item-arches h:undecorated</code> wrapping <code>span.text-indent_n1.block.m-l_4</code></li>
+  </ul>
+
+  <h3 class="font_display font_1 m-t_3 m-b_2">C. Dropdown — 2 columns (&gt; 5 children) — additive on B</h3>
+  <ul class="ul_none flex flex_column gap_2 font_n1">
+    <li><strong>Why:</strong> long child lists need a wider panel and a visual split so items stay scannable</li>
+    <li>Same as B, plus these deltas only:</li>
+    <li>Panel adds <code>w_auto:md</code></li>
+    <li>Inner grid adds <code>columns_2:md gap-x_3</code> (<code>gap-x_3</code> is C-only — column gutter)</li>
+    <li>Split children into two <code>.dropdown_column</code> blocks (≈ half each)</li>
+    <li>2nd column only: <code>br-l_1 br_solid:md br_none br_black-2 p-l_3:md</code></li>
+  </ul>
+
+  <h2 class="font_display font_2 m-t_4">Shared behavior (all dropdown tabs)</h2>
+  <ul class="ul_none flex flex_column gap_2 font_n1">
+    <li><code>commandfor</code> / <code>command="toggle-popover"</code> → click open (mobile + desktop)</li>
+    <li><code>interestfor</code> on toggle + label → hover open (desktop)</li>
+    <li><code>anchor="nav_tab_*"</code> on popover → panel tethers to the tab <code>&lt;li&gt;</code></li>
+    <li>Scoped CSS <code>anchor-name: --nav-tab</code> + <code>anchor-scope</code> — no per-tab CSS</li>
+    <li>Breakpoint family: <code>md</code> — <code>min-width: 768px</code> / <code>max-width: 767.98px</code></li>
+    <li>
+      <strong>Mobile in-flow (open):</strong> Popover API always promotes open panels to the top layer,
+      so they cannot push following nav items in document flow. That needs a separate mobile pattern
+      (not stripping <code>popover</code> at runtime — that broke desktop). TBD with care.
+    </li>
+  </ul>
+
+  <h2 class="font_display font_2 m-t_4">Resolved decisions</h2>
+  <ol class="flex flex_column gap_2 font_n1 p-l_4">
+    <li>Home: removed <code>nav-has-submenu</code> (plain = recipe A)</li>
+    <li>Guidelines: added <code>id="nav_tab_guidelines"</code></li>
+    <li>All top-level labels: <code>h:undecorated</code></li>
+    <li>All panels: <code>dropdown-menu-arches font_0</code> (no Bootstrap <code>dropdown-menu</code>)</li>
+    <li><code>gap-x_3</code> is additive for recipe C only</li>
+    <li>Empty <code>class=""</code> stripped from submenu <code>&lt;li&gt;</code>s</li>
+    <li>Page CSS aligned to <code>md</code> / 768 (see breakpoint review below)</li>
+  </ol>
+
+  <h2 class="font_display font_2 m-t_4">Breakpoint review (item 7)</h2>
+  <p class="c_shade-n2 m-b_3 font_n1">
+    Markup utilities use <code>:md</code> (768). Scoped CSS must use the same cut so toggler hide,
+    row layout, and popover positioning flip together.
+  </p>
+  <ul class="ul_none flex flex_column gap_2 font_n1">
+    <li><strong>Mobile main-nav panel</strong> — was <code>max-width: 991.98px</code> → now <code>max-width: 767.98px</code>. Anchors the collapsed menu under the bar only while the Menu button is shown.</li>
+    <li><strong>Desktop: hide toggler / force nav visible</strong> — already <code>min-width: 768px</code>. Keep.</li>
+    <li><strong>Desktop: tab anchor + fixed submenu</strong> — already <code>min-width: 768px</code>. Keep.</li>
+    <li><strong>Desktop hover / interest</strong> — already <code>min-width: 768px</code> + <code>hover: hover</code>. Keep.</li>
+    <li><strong>Mobile: submenu positioning</strong> — below md, attempt <code>position: static</code> on open panels. Note: Popover top-layer still overlays rather than expanding the nav; a safe in-flow mobile recipe is still TBD.</li>
+  </ul>
+</section>
+
+
+
+<style>
+  #header_nav-arches button.nav-link-arches {
+    appearance: none;
+    border: none;
+    font: inherit;
+    text-align: inherit;
+    cursor: pointer;
+  }
+
+  /* ── Shared popover reset for nav panels ── */
+  #header_nav-arches [popover] {
+    margin: 0;
+    padding: 0;
+    border: none;
+    color: inherit;
+    overflow: visible;
+    inset: auto;
+  }
+
+  #header_nav-arches [popover]::backdrop {
+    display: none;
+  }
+
+  /* ── Mobile main nav — below md ── */
+  @media (max-width: 767.98px) {
+    #header_nav-arches {
+      anchor-name: --header-nav-bar;
+      anchor-scope: --header-nav-bar;
+    }
+
+    #header_nav_content {
+      position: absolute;
+      position-anchor: --header-nav-bar;
+      inset: auto;
+      top: anchor(bottom);
+      left: 0;
+      right: 0;
+      width: 100%;
+      max-height: min(75vh, calc(100dvh - anchor(bottom)));
+      overflow-y: auto;
+      background-color: inherit;
+    }
+
+    #header_nav-arches:not(:has(#header_nav_content:popover-open)) .navbar-toggler .icon-toggle_bars-times::before {
+      content: "\f0c9";
+    }
+
+    #header_nav-arches .nav-submenu-popover {
+      position: static !important;
+      width: 100%;
+      transform: none !important;
+    }
+
+    #header_nav-arches .nav-has-submenu:has(.nav-submenu-popover:popover-open) .icon-toggle_plus-minus::before {
+      content: "\f146";
+    }
+  }
+
+  /* ── Desktop (md+): main nav always visible ── */
+  @media (min-width: 768px) {
+    #header_nav-arches .navbar-toggler {
+      display: none;
+    }
+
+    #header_nav_content,
+    #header_nav_content:not(:popover-open) {
+      display: flex !important;
+      position: static;
+      inset: unset;
+      width: auto;
+      max-height: none;
+      overflow: visible;
+    }
+  }
+
+  /* ── Sub-nav popover: each tab scopes its own anchor ── */
+  #header_nav-arches .nav-has-submenu {
+    position: relative;
+  }
+
+  @position-try --main-nav-align-end {
+    inset: auto;
+    top: anchor(bottom);
+    right: anchor(right);
+    left: auto;
+  }
+
+  @position-try --main-nav-drop-up {
+    inset: auto;
+    bottom: anchor(top);
+    left: anchor(left);
+    top: auto;
+  }
+
+  @media (min-width: 768px) {
+    #header_nav-arches .nav-has-submenu {
+      anchor-name: --nav-tab;
+      anchor-scope: --nav-tab;
+    }
+
+    #header_nav-arches .nav-submenu-popover {
+      position: fixed;
+      position-anchor: --nav-tab;
+      inset: auto;
+      top: anchor(bottom);
+      left: anchor(left);
+      min-width: anchor-size(width);
+      width: max-content;
+      margin: 0;
+      position-try-fallbacks:
+        --main-nav-align-end,
+        --main-nav-drop-up,
+        flip-block,
+        flip-inline;
+    }
+  }
+
+  @media (min-width: 768px) and (hover: hover) {
+    #header_nav-arches .nav-submenu-toggle,
+    #header_nav-arches .nav-has-submenu > .nav-submenu-label-arches {
+      interest-delay: 0ms 250ms;
+    }
+
+    #header_nav-arches .nav-submenu-popover {
+      interest-delay: 250ms 250ms;
+    }
+
+    /* Only when the Popover API has opened the panel — do not force-show closed popovers via :hover
+       (that fights top-layer / anchor behavior and can break desktop). */
+    #header_nav-arches .nav-submenu-popover:popover-open {
+      display: block !important;
+    }
+
+    #header_nav-arches .nav-has-submenu:has(.nav-submenu-popover:popover-open) .icon-toggle_plus-minus::before,
+    #header_nav-arches .nav-has-submenu:is(:hover, :focus-within):has(.nav-submenu-toggle) .icon-toggle_plus-minus::before {
+      content: "\f146";
+    }
+  }
+</style>

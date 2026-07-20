@@ -1,0 +1,158 @@
+@using ScientificSessions.Models
+@using ScientificSessions.Models.sitecore.templates.User_Defined.ScientificSessions.BasePages
+@using ScientificSessions.Utilities
+@using Glass.Mapper.Sc.Web.Mvc
+@using System.Configuration
+@model BaseNavigation
+
+@{
+    var hasVirtualRole = Sitecore.Context.User.IsInRole(ACC.Constants.Settings.ImisDomain + "\\" + ConfigurationManager.AppSettings["RegisterVirtualRole"]);
+    var hasFullRole = Sitecore.Context.User.IsInRole(ACC.Constants.Settings.ImisDomain + "\\" + ConfigurationManager.AppSettings["RegisterRole"]);
+}
+
+<style>
+    #header_nav-arches .arches-nav-item.dropdown {
+        position: relative;
+    }
+
+    #header_nav-arches .arches-nav-item.dropdown > .dropdown-menu {
+        min-width: 100%;
+        margin-top: 0;
+    }
+
+    @@position-try --main-nav-align-end {
+        inset: auto;
+        top: anchor(bottom);
+        right: anchor(right);
+    }
+
+    @@position-try --main-nav-drop-up {
+        inset: auto;
+        bottom: anchor(top);
+        left: anchor(left);
+    }
+
+    @@supports (anchor-name: --main-nav-dropdown) {
+        @@media (min-width: 992px) {
+            #header_nav-arches .arches-nav-item.dropdown {
+                anchor-name: --main-nav-dropdown;
+                anchor-scope: --main-nav-dropdown;
+            }
+
+            #header_nav-arches .arches-nav-item.dropdown > .dropdown-menu {
+                position: absolute;
+                position-anchor: --main-nav-dropdown;
+                inset: auto;
+                top: anchor(bottom);
+                left: anchor(left);
+                min-width: anchor-size(width);
+                position-try-fallbacks:
+                    --main-nav-align-end,
+                    --main-nav-drop-up,
+                    flip-block,
+                    flip-inline;
+            }
+        }
+    }
+
+    @@media (max-width: 991.98px) {
+        #header_nav-arches .arches-nav-item.dropdown > .dropdown-menu {
+            position: static !important;
+            width: 100%;
+            transform: none !important;
+        }
+    }
+</style>
+
+<div class="flex c_white relative">
+    <nav id="header_nav-arches"
+         class="flex_auto navbar navbar-primary p_0 navbar-expand-lg navbar-dark bg_acc font_2 font_1:lg relative"
+         aria-label="Main navigation">
+        <div class="relative">
+            <button class="br_solid br_2 br_white-2 collapsed m-l_3 m-y_3 navbar-toggler p_2 expanded-click-area"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#header_nav_content"
+                    aria-controls="header_nav_content"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <i class="icon-toggle_bars-times fas fa a:c_acc-2 c_white" aria-hidden="true"></i>
+                <span class="a:c_acc-2 c_white p-x_3 uppercase font_accent">Menu</span>
+            </button>
+        </div>
+
+        <div id="header_nav_content" class="collapse navbar-collapse">
+            <ul class="navbar-nav flex flex_row:lg flex_column justify_around w_100">
+                <li class="arches-nav-item relative text_left text_center:lg flex_shrink a:bg_accent br_0 br_none @(Model.ParentId == Model.Id ? "active" : "")">
+                    <a href="@Model.Url"
+                       id="home"
+                       class="nav-link expanded-click-area nowrap p-l_4 p-l_0:lg @(Model.ParentId == Model.Id ? "active" : "")"
+                       aria-current="@(Model.ParentId == Model.Id ? "page" : null)"
+                       title="Home">
+                        <i class="fas fa-home p-x_3:lg" aria-hidden="true"></i>
+                        <span class="display_none:lg">&nbsp;Home</span>
+                    </a>
+                </li>
+
+                @foreach (var Page in Model.Pages)
+                {
+                    if (!Page.Hide_From_Navigation)
+                    {
+                        Page.SubPages = Page.GetAllChildren<BaseNavigation>();
+                        Page.SubPagesExist = Page.SubPages.Count() > 0;
+
+                        <li class="arches-nav-item relative text_left text_center:lg flex_auto @(Page.SubPagesExist ? "dropdown" : "") @(Model.ParentId == Page.Id ? "active" : "")">
+                            @if (Page.SubPagesExist)
+                            {
+                                <a id="@(Page.Navigation_Title.Replace(' ', '_').ToLower())_toggle"
+                                   class="nav-link nowrap p-l_4 p-l_0:lg a:c_white inline-block"
+                                   role="button"
+                                   data-bs-toggle="dropdown"
+                                   data-bs-display="static"
+                                   aria-haspopup="true"
+                                   aria-expanded="false">
+                                    <i class="far fa icon-toggle_plus-minus m-l_n2 m-r_2" aria-hidden="true"></i>
+                                    <span class="visually-hidden">Toggle @Page.Navigation_Title menu</span>
+                                </a>
+                            }
+
+                            @if (Page.Navigation_Link != null && !string.IsNullOrEmpty(Page.Navigation_Link.Url))
+                            {
+                                if (Sitecore.Context.User.IsAuthenticated && Page.Navigation_Title.ToUpper().Contains("REGISTER NOW"))
+                                {
+                                    @* Show the register button if user does NOT have the main registation role (i.e.: ACC20xx) AND has the new virtual registration role (i.e.: ACC20xxV) *@
+                                    if (!hasFullRole)
+                                    {
+                                        @* If the customer has the virtual registration role, the button should read 'Upgrade Now' otherwise should be the default 'Register Now' *@
+                                        @(Html.Glass().RenderLink<BaseNavigation>(Page, x => x.Navigation_Link, new { @class = (Page.SubPagesExist ? "nav-link nowrap p-l_0 a:c_white inline-block " : "nav-link expanded-click-area nowrap p-l_4 p-l_0:lg ") + (Model.ParentId == Page.Id ? "active" : ""), aria_current = (Model.ParentId == Page.Id ? "page" : null), @ID = Page.Navigation_Title.Replace(' ', '_').ToLower() }, false, (hasVirtualRole ? "Upgrade Now" : Page.Navigation_Title)))
+                                    }
+                                }
+                                else
+                                {
+                                    @(Html.Glass().RenderLink<BaseNavigation>(Page, x => x.Navigation_Link, new { @class = (Page.SubPagesExist ? "nav-link nowrap p-l_0 a:c_white inline-block " : "nav-link expanded-click-area nowrap p-l_4 p-l_0:lg ") + (Model.ParentId == Page.Id ? "active" : ""), aria_current = (Model.ParentId == Page.Id ? "page" : null), @ID = Page.Navigation_Title.Replace(' ', '_').ToLower() }, false, Page.Navigation_Title))
+                                }
+                            }
+                            else
+                            {
+                                <a href="@Page.Url"
+                                   id="@Page.Navigation_Title.Replace(" ", "_").ToLower()"
+                                   class="@(Page.SubPagesExist ? "nav-link nowrap p-l_0 a:c_white inline-block " : "nav-link expanded-click-area nowrap p-l_4 p-l_0:lg ")@(Model.ParentId == Page.Id ? "active" : "")"
+                                   aria-current="@(Model.ParentId == Page.Id ? "page" : null)">
+                                    @Page.Navigation_Title
+                                </a>
+                            }
+
+                            @if (Page.SubPagesExist)
+                            {
+                                <div class="dropdown-menu m-x_3 shadow_overlap-light br_black-1 br_solid br_1 br-bl_round br-br_round font_copy br-t_0 br_none br_solid:lg br_square m-t_0 m-t_2:lg"
+                                     aria-labelledby="@(Page.Navigation_Title.Replace(' ', '_').ToLower())_toggle">
+                                    @Html.Partial("../Common/_HeaderSubNavigation", Page)
+                                </div>
+                            }
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+    </nav>
+</div>
