@@ -1,16 +1,17 @@
 ---
 layout: arches_empty
 name: "Header Nav (No Bootstrap)"
-position: "Experiment — popover + invoker commands, no Bootstrap JS"
-notes: "Multi-tab main nav. No submenu popovers. Mobile Menu panel is position:absolute under the toggle row. Submenus in-flow on mobile, absolute under tabs on desktop."
+position: "Experiment — utility-first header nav; scoped CSS for state + CSS anchor only"
+notes: "Multi-tab main nav. Utilities on DOM; scoped CSS only for open-state, icon swaps, mobile Menu overlay, desktop CSS anchor + position-try. Submenu class: nav-submenu-panel."
 ---
 <section class="reading-typography p_4">
   <h1 class="font_display font_3 ">Header navigation (no Bootstrap)</h1>
   <p class="c_shade-n2 m-b_4">
-    Mobile: Menu row stays put; tab list opens as an overlay under it.
-    Submenus expand in-flow inside that list. Desktop: tabs always visible;
-    submenus sit under each tab. Open via hover (fine pointer) or
-    <code>.is-open</code> / <code>.is-menu-open</code> on tap.
+    Utility-first main nav: no Bootstrap JS, no Popover API.
+    Mobile Menu row stays put; tab list overlays under it; submenus expand in-flow.
+    Desktop tabs stay visible; panels anchor under <code>.nav-tab-trigger</code>.
+    Open via fine-pointer hover or <code>.is-open</code> / <code>.is-menu-open</code> on tap.
+    Full recipes below the demo.
   </p>
 </section>
 
@@ -19,7 +20,7 @@ notes: "Multi-tab main nav. No submenu popovers. Mobile Menu panel is position:a
   <nav id="header_nav-arches"
        class="flex_auto p_0 bg_acc font_2 font_1:md relative"
        aria-label="Main navigation">
-    <div id="header_nav_toggle_row" class="nav-toggle-row relative">
+    <div id="header_nav_toggle_row" class="nav-toggle-row relative display_none:md">
       <button class="br_solid br_2 br_white-2 m-l_3 m-y_3 navbar-toggler-arches p_2 bg_acc-n1 h:bg_acc-n3 br_solid br_white-6 br_2 p-x_3 p-y_2 shadow_bevel-light"
               type="button"
               aria-controls="header_nav_content"
@@ -31,11 +32,11 @@ notes: "Multi-tab main nav. No submenu popovers. Mobile Menu panel is position:a
     </div>
 
     <div id="header_nav_content"
-         class="navbar-collapse bg_acc p-x_3 max-w_90">
+         class="navbar-collapse-arches bg_acc p-x_3:md max-w_90 display_none flex:md w_100 max-h_100 overflow_auto scroll-bar-mini">
       <ul class="b_0 flex flex_column flex_row:md m_0 navbar-nav-arches p_0 ul_none text_center:md text_left w_100 font_accent">
         <li id="nav_tab_home"
             class="relative flex_auto m_0 p_0 flex flex_column ">
-          <div class="nav-tab-trigger flex flex_row items_center flex_auto w_100 active">
+          <div class="nav-tab-trigger flex flex_row-reverse items_center flex_auto w_100 active">
             <a href="/"
                id="home"
                class="nav-link-arches flex_70 flex_auto nav-submenu-label-arches nowrap p-x_3 p-y_3 a:bg_accent-n3 h:bg_accent-n1 c_white not-link block h:undecorated"
@@ -49,10 +50,10 @@ notes: "Multi-tab main nav. No submenu popovers. Mobile Menu panel is position:a
 
         <li id="nav_tab_clinical_topics"
             class="relative flex_auto nav-has-submenu m_0 p_0 flex flex_column">
-          <div class="nav-tab-trigger flex flex_row items_center flex_auto w_100">
+          <div class="nav-tab-trigger flex flex_row-reverse items_center flex_auto w_100">
             <button type="button"
                     id="nav_toggle_clinical_topics"
-                    class="bg_transparent h:bg_acc-n3 c_white block display_none:md block:touch flex_none grid items_center justify_center nav-link-arches nav-submenu-toggle not-link nowrap p-x_3 p-y_3 self_stretch text_center "
+                    class="bg_transparent br_none h:bg_acc-n3 c_white block display_none:md block:touch flex_none grid items_center justify_center nav-link-arches nav-submenu-toggle not-link nowrap p-x_3 p-y_3 self_stretch text_center cursor_pointer"
                     aria-haspopup="true"
                     aria-expanded="false"
                     aria-controls="nav_menu_clinical_topics">
@@ -68,7 +69,7 @@ notes: "Multi-tab main nav. No submenu popovers. Mobile Menu panel is position:a
           </div>
 
           <div id="nav_menu_clinical_topics"
-               class="nav-submenu-popover dropdown-menu-arches m-b_3 bg_white font_0 m-x_3 shadow_overlap-light br_black-1 br_solid br_1 br-bl_round br-br_round font_copy br-t_0 br_none br_solid:md  w_auto:md z_5"
+               class="nav-submenu-panel dropdown-menu-arches m-b_3 bg_white font_0 m-x_3 m-x_0:md shadow_overlap-light br_black-1 br_solid br_1 br-bl_round br-br_round font_copy br-t_0 br_none br_solid:md w_auto:md z_5"
                aria-labelledby="nav_toggle_clinical_topics">
             <div class="grid columns_1 columns_2:md p-x_2 p-t_2 p-b_3 p-x_3:md gap-x_3">
               <div class="dropdown_column">
@@ -115,10 +116,10 @@ notes: "Multi-tab main nav. No submenu popovers. Mobile Menu panel is position:a
 
         <li id="nav_tab_education"
             class="relative flex_auto nav-has-submenu m_0 p_0 flex flex_column">
-          <div class="nav-tab-trigger flex flex_row items_center flex_auto w_100">
+          <div class="nav-tab-trigger flex flex_row-reverse items_center flex_auto w_100">
             <button type="button"
                     id="nav_toggle_education"
-                    class="bg_transparent h:bg_acc-n3 c_white block display_none:md block:touch flex_none grid items_center justify_center nav-link-arches nav-submenu-toggle not-link nowrap p-x_3 p-y_3 self_stretch text_center"
+                    class="bg_transparent br_none h:bg_acc-n3 c_white block display_none:md block:touch flex_none grid items_center justify_center nav-link-arches nav-submenu-toggle not-link nowrap p-x_3 p-y_3 self_stretch text_center cursor_pointer"
                     aria-haspopup="true"
                     aria-expanded="false"
                     aria-controls="nav_menu_education">
@@ -128,15 +129,15 @@ notes: "Multi-tab main nav. No submenu popovers. Mobile Menu panel is position:a
 
             <a href="/education"
                id="nav_link_education"
-               class="nav-link-arches flex_70 flex_auto nav-submenu-label-arches nowrap p-x_3 p-y_3 a:bg_accent-n3 h:bg_accent-n1 c_white not-link block h:undecorated">
+               class="nav-link-arches flex_70 flex_auto nav-submenu-label-arches nowrap p-x_3 p-y_3 a:bg_accent-n3 h:bg_accent-n1 c_white not-link block h:undecorated text_left:touch">
               Education
             </a>
           </div>
 
           <div id="nav_menu_education"
-               class="nav-submenu-popover dropdown-menu-arches m-b_3 bg_white font_0 m-x_3 shadow_overlap-light br_black-1 br_solid br_1 br-bl_round br-br_round font_copy br-t_0 br_none br_solid:md  z_5 bg_white"
+               class="nav-submenu-panel dropdown-menu-arches m-b_3 bg_white font_0 m-x_3 m-x_0:md shadow_overlap-light br_black-1 br_solid br_1 br-bl_round br-br_round font_copy br-t_0 br_none br_solid:md z_5"
                aria-labelledby="nav_toggle_education">
-            <div class="grid columns_1 p-t_2 p-b_3  p-x_2p-x_3:md">
+            <div class="grid columns_1 p-t_2 p-b_3  p-x_2 p-x_3:md">
               <div class="dropdown_column">
                 <ul class="ul_none lh_2 m_0 flex flex_column gap_1 c_black text_left font_ui">
                   <li>
@@ -162,10 +163,10 @@ notes: "Multi-tab main nav. No submenu popovers. Mobile Menu panel is position:a
 
         <li id="nav_tab_submit_science"
             class="relative flex_auto nav-has-submenu m_0 p_0 flex flex_column">
-          <div class="nav-tab-trigger flex flex_row items_center flex_auto w_100">
+          <div class="nav-tab-trigger flex flex_row-reverse items_center flex_auto w_100">
             <button type="button"
                     id="nav_toggle_submit_science"
-                    class="bg_transparent h:bg_acc-n3 c_white block display_none:md block:touch flex_none grid items_center justify_center nav-link-arches nav-submenu-toggle not-link nowrap p-x_3 p-y_3 self_stretch text_center"
+                    class="bg_transparent br_none h:bg_acc-n3 c_white block display_none:md block:touch flex_none grid items_center justify_center nav-link-arches nav-submenu-toggle not-link nowrap p-x_3 p-y_3 self_stretch text_center cursor_pointer"
                     aria-haspopup="true"
                     aria-expanded="false"
                     aria-controls="nav_menu_submit_science">
@@ -175,15 +176,15 @@ notes: "Multi-tab main nav. No submenu popovers. Mobile Menu panel is position:a
 
             <a href="/submit-science"
                id="nav_link_submit_science"
-               class="nav-link-arches flex_60 flex_auto nav-submenu-label-arches nowrap p-x_3 p-y_3 a:bg_accent-n3 h:bg_accent-n1 c_white not-link block h:undecorated">
+               class="nav-link-arches flex_60 flex_auto nav-submenu-label-arches nowrap p-x_3 p-y_3 a:bg_accent-n3 h:bg_accent-n1 c_white not-link block h:undecorated text_left:touch">
               Submit Science
             </a>
           </div>
 
           <div id="nav_menu_submit_science"
-               class="nav-submenu-popover dropdown-menu-arches m-b_3 bg_white font_0 m-x_3 shadow_overlap-light br_black-1 br_solid br_1 br-bl_round br-br_round font_copy br-t_0 br_none br_solid:md  z_5"
+               class="nav-submenu-panel dropdown-menu-arches m-b_3 bg_white font_0 m-x_3 m-x_0:md shadow_overlap-light br_black-1 br_solid br_1 br-bl_round br-br_round font_copy br-t_0 br_none br_solid:md z_5"
                aria-labelledby="nav_toggle_submit_science">
-            <div class="grid columns_1 p-t_2 p-b_3  p-x_2p-x_3:md">
+            <div class="grid columns_1 p-t_2 p-b_3  p-x_2 p-x_3:md">
               <div class="dropdown_column">
                 <ul class="ul_none lh_2 m_0 flex flex_column gap_1 c_black text_left font_ui">
                   <li>
@@ -209,7 +210,7 @@ notes: "Multi-tab main nav. No submenu popovers. Mobile Menu panel is position:a
 
         <li id="nav_tab_guidelines"
             class="relative flex_auto m_0 p_0 flex flex_column">
-          <div class="nav-tab-trigger flex flex_row items_center flex_auto w_100">
+          <div class="nav-tab-trigger flex flex_row-reverse items_center flex_auto w_100">
             <a href="/guidelines"
                id="nav_link_guidelines"
                class="nav-link-arches flex_70 flex_auto nav-submenu-label-arches nowrap p-x_3 p-y_3 a:bg_accent-n3 h:bg_accent-n1 c_white not-link block h:undecorated"
@@ -221,10 +222,10 @@ notes: "Multi-tab main nav. No submenu popovers. Mobile Menu panel is position:a
 
         <li id="nav_tab_membership"
             class="relative flex_auto nav-has-submenu m_0 p_0 flex flex_column">
-          <div class="nav-tab-trigger flex flex_row items_center flex_auto w_100">
+          <div class="nav-tab-trigger flex flex_row-reverse items_center flex_auto w_100">
             <button type="button"
                     id="nav_toggle_membership"
-                    class="bg_transparent h:bg_acc-n3 c_white block display_none:md block:touch flex_none grid items_center justify_center nav-link-arches nav-submenu-toggle not-link nowrap p-x_3 p-y_3 self_stretch text_center"
+                    class="bg_transparent br_none h:bg_acc-n3 c_white block display_none:md block:touch flex_none grid items_center justify_center nav-link-arches nav-submenu-toggle not-link nowrap p-x_3 p-y_3 self_stretch text_center cursor_pointer"
                     aria-haspopup="true"
                     aria-expanded="false"
                     aria-controls="nav_menu_membership">
@@ -234,15 +235,15 @@ notes: "Multi-tab main nav. No submenu popovers. Mobile Menu panel is position:a
 
             <a href="/membership"
                id="nav_link_membership"
-               class="nav-link-arches flex_70 flex_auto nav-submenu-label-arches nowrap p-x_3 p-y_3 a:bg_accent-n3 h:bg_accent-n1 c_white not-link block h:undecorated">
+               class="nav-link-arches flex_70 flex_auto nav-submenu-label-arches nowrap p-x_3 p-y_3 a:bg_accent-n3 h:bg_accent-n1 c_white not-link block h:undecorated text_left:touch">
               Membership
             </a>
           </div>
 
           <div id="nav_menu_membership"
-               class="nav-submenu-popover dropdown-menu-arches m-b_3 bg_white font_0 m-x_3 shadow_overlap-light br_black-1 br_solid br_1 br-bl_round br-br_round font_copy br-t_0 br_none br_solid:md  z_5 bg_white"
+               class="nav-submenu-panel dropdown-menu-arches m-b_3 bg_white font_0 m-x_3 m-x_0:md shadow_overlap-light br_black-1 br_solid br_1 br-bl_round br-br_round font_copy br-t_0 br_none br_solid:md z_5"
                aria-labelledby="nav_toggle_membership">
-            <div class="grid columns_1 p-t_2 p-b_3  p-x_2p-x_3:md">
+            <div class="grid columns_1 p-t_2 p-b_3  p-x_2 p-x_3:md">
               <div class="dropdown_column">
                 <ul class="ul_none lh_2 m_0 flex flex_column gap_1 c_black text_left font_ui">
                   <li>
@@ -271,86 +272,145 @@ notes: "Multi-tab main nav. No submenu popovers. Mobile Menu panel is position:a
 </div>
 
 <section class="reading-typography p_4 m-t_4">
-  <h2 class="font_display font_2">Tab map (DOM order)</h2>
-  <ul class="ul_none flex flex_column gap_2 font_n1">
-    <li><strong>Home</strong> — plain link (active)</li>
-    <li><strong>Clinical Topics</strong> — 2-column dropdown (6 links; rule: &gt; 5 children → 2 cols)</li>
-    <li><strong>Education</strong> — 1-column dropdown (3 links)</li>
-    <li><strong>Submit Science</strong> — 1-column dropdown (3 links)</li>
-    <li><strong>Guidelines</strong> — plain link</li>
-    <li><strong>Membership</strong> — 1-column dropdown (3 links)</li>
-  </ul>
-
-  <h2 class="font_display font_2 m-t_4">Canonical patterns (backend recipes)</h2>
+  <h2 class="font_display font_2">Rules (current pattern)</h2>
   <p class="c_shade-n2 m-b_3 font_n1">
-    Three tab kinds. Backend should pick one recipe per nav page based on
-    <code>SubPagesExist</code> and child count.
+    Source of truth for backend / CMS. Utilities live on the DOM.
+    Scoped <code>&lt;style&gt;</code> is state + positioning only (no Popover API, no Bootstrap JS).
+    Breakpoint family: <code>md</code> = <code>768px</code> (<code>:md</code> utilities / <code>min-width: 768px</code>).
   </p>
 
-  <h3 class="font_display font_1 m-t_3 m-b_2">A. Plain link (no children)</h3>
+  <h2 class="font_display font_2 m-t_4">Tab map (DOM order)</h2>
   <ul class="ul_none flex flex_column gap_2 font_n1">
-    <li><code>&lt;li id="nav_tab_*" class="relative flex_auto m_0 p_0 flex flex_column"&gt;</code> — no <code>nav-has-submenu</code></li>
-    <li>Trigger row: <code>&lt;div class="nav-tab-trigger flex flex_row items_center flex_auto w_100"&gt;</code></li>
-    <li>One <code>&lt;a class="nav-link-arches flex_70 flex_auto nav-submenu-label-arches nowrap p-x_3 p-y_3 a:bg_accent-n3 h:bg_accent-n1 c_white not-link block h:undecorated"&gt;</code></li>
-    <li>Current page: add <code>active</code> on <code>&lt;li&gt;</code> + <code>aria-current="page"</code> on the link</li>
+    <li><strong>Home</strong> — A plain link (current / active)</li>
+    <li><strong>Clinical Topics</strong> — C 2-column (6 children; rule: &gt; 5 → C)</li>
+    <li><strong>Education</strong> — B 1-column (3)</li>
+    <li><strong>Submit Science</strong> — B 1-column (3); label uses <code>flex_60</code> (long title exception)</li>
+    <li><strong>Guidelines</strong> — A plain link</li>
+    <li><strong>Membership</strong> — B 1-column (3)</li>
   </ul>
 
-  <h3 class="font_display font_1 m-t_3 m-b_2">B. Dropdown — 1 column (1–5 children)</h3>
+  <h2 class="font_display font_2 m-t_4">0. Shell (once per page)</h2>
+  <ul class="ul_none flex flex_column gap_2 font_n1">
+    <li>Wrapper: <code>flex flex_row:md c_white relative isolation_isolate z_3</code></li>
+    <li><code>&lt;nav id="header_nav-arches" class="flex_auto p_0 bg_acc font_2 font_1:md relative" aria-label="Main navigation"&gt;</code></li>
+    <li>Menu row (mobile only): <code>#header_nav_toggle_row</code> → <code>nav-toggle-row relative display_none:md</code> + <code>.navbar-toggler-arches</code> button (<code>aria-controls="header_nav_content"</code>)</li>
+    <li>Tab list host: <code>#header_nav_content</code> → <code>navbar-collapse-arches bg_acc p-x_3:md max-w_90 display_none flex:md w_100 max-h_100 overflow_auto scroll-bar-mini</code></li>
+    <li>List: <code>ul.navbar-nav-arches</code> → <code>b_0 flex flex_column flex_row:md m_0 p_0 ul_none text_center:md text_left w_100 font_accent</code></li>
+  </ul>
+
+  <h2 class="font_display font_2 m-t_4">IDs &amp; hooks (every tab)</h2>
+  <ul class="ul_none flex flex_column gap_2 font_n1">
+    <li>Tab: <code>id="nav_tab_{slug}"</code> on every top-level <code>&lt;li&gt;</code></li>
+    <li>Dropdown only — toggle: <code>id="nav_toggle_{slug}"</code>; panel: <code>id="nav_menu_{slug}"</code>; label: <code>id="nav_link_{slug}"</code></li>
+    <li>Wire a11y: toggle <code>aria-controls</code> / <code>aria-expanded</code> / <code>aria-haspopup="true"</code>; panel <code>aria-labelledby</code> → toggle id</li>
+    <li>Behavior classes: <code>.nav-has-submenu</code>, <code>.nav-tab-trigger</code>, <code>.nav-submenu-toggle</code>, <code>.nav-submenu-label-arches</code>, <code>.nav-submenu-panel</code>, <code>.dropdown-menu-arches</code></li>
+    <li>State classes (JS / CSS): <code>.is-menu-open</code> on <code>#header_nav-arches</code>; <code>.is-open</code> on dropdown <code>&lt;li&gt;</code></li>
+  </ul>
+
+  <h2 class="font_display font_2 m-t_4">Backend decision</h2>
+  <ol class="flex flex_column gap_2 font_n1 p-l_4">
+    <li>No children / <code>!SubPagesExist</code> → <strong>A</strong></li>
+    <li>1–5 children → <strong>B</strong></li>
+    <li>&gt; 5 children → <strong>C</strong> (B + 2-col additives)</li>
+  </ol>
+
+  <h2 class="font_display font_2 m-t_4">A. Plain link (no children)</h2>
+  <ul class="ul_none flex flex_column gap_2 font_n1">
+    <li><code>&lt;li id="nav_tab_*" class="relative flex_auto m_0 p_0 flex flex_column"&gt;</code> — <strong>no</strong> <code>nav-has-submenu</code>, no toggle, no panel</li>
+    <li>Trigger: <code>&lt;div class="nav-tab-trigger flex flex_row-reverse items_center flex_auto w_100"&gt;</code></li>
+    <li>Label only: <code>&lt;a class="nav-link-arches flex_70 flex_auto nav-submenu-label-arches nowrap p-x_3 p-y_3 a:bg_accent-n3 h:bg_accent-n1 c_white not-link block h:undecorated"&gt;</code></li>
+    <li>Current page: <code>active</code> on <code>.nav-tab-trigger</code> + <code>aria-current="page"</code> on the link</li>
+  </ul>
+
+  <h2 class="font_display font_2 m-t_4">B. Dropdown — 1 column (1–5 children)</h2>
   <ul class="ul_none flex flex_column gap_2 font_n1">
     <li><code>&lt;li id="nav_tab_*" class="relative flex_auto nav-has-submenu m_0 p_0 flex flex_column"&gt;</code></li>
-    <li>Trigger row: <code>&lt;div class="nav-tab-trigger flex flex_row items_center flex_auto w_100"&gt;</code></li>
-    <li>Toggle <code>&lt;button class="… nav-submenu-toggle … display_none:md block:touch …" aria-controls="nav_menu_*"&gt;</code> — tap toggles <code>.is-open</code> on the <code>li</code></li>
-    <li>Label <code>&lt;a class="… nav-submenu-label-arches …"&gt;</code> — no <code>interestfor</code></li>
-    <li>Panel sibling (in flow, <strong>no</strong> <code>popover</code>): <code>class="nav-submenu-popover dropdown-menu-arches m-b_3 bg_white …"</code></li>
-    <li>Inner grid: <code>grid columns_1 p-t_2 p-b_3  p-x_2p-x_3:md</code></li>
-    <li>One <code>.dropdown_column</code> → child list + link recipe unchanged</li>
+    <li>Trigger: <code>&lt;div class="nav-tab-trigger flex flex_row-reverse items_center flex_auto w_100"&gt;</code> — <code>flex_row-reverse</code> so toggle (first in DOM) sits on the right on mobile</li>
+    <li>
+      Toggle (first child of trigger):
+      <code>class="bg_transparent br_none h:bg_acc-n3 c_white block display_none:md block:touch flex_none grid items_center justify_center nav-link-arches nav-submenu-toggle not-link nowrap p-x_3 p-y_3 self_stretch text_center cursor_pointer"</code>
+      — hidden at <code>md</code>; tap toggles <code>.is-open</code> on the <code>li</code>
+    </li>
+    <li>Toggle icon: <code>&lt;i class="far fa icon-toggle_plus-minus" aria-hidden="true"&gt;</code> + visually-hidden label</li>
+    <li>
+      Label: <code>class="nav-link-arches flex_70 flex_auto nav-submenu-label-arches nowrap p-x_3 p-y_3 a:bg_accent-n3 h:bg_accent-n1 c_white not-link block h:undecorated text_left:touch"</code>
+      — exception: long titles may use <code>flex_60</code> instead of <code>flex_70</code> (see Submit Science)
+    </li>
+    <li>
+      Panel = <strong>sibling</strong> of trigger (not nested inside it):
+      <code>class="nav-submenu-panel dropdown-menu-arches m-b_3 bg_white font_0 m-x_3 m-x_0:md shadow_overlap-light br_black-1 br_solid br_1 br-bl_round br-br_round font_copy br-t_0 br_none br_solid:md z_5"</code>
+    </li>
+    <li>Inner grid: <code>grid columns_1 p-t_2 p-b_3 p-x_2 p-x_3:md</code></li>
+    <li>One <code>.dropdown_column</code> → child <code>ul</code> (see child link recipe)</li>
   </ul>
 
-  <h3 class="font_display font_1 m-t_3 m-b_2">C. Dropdown — 2 columns (&gt; 5 children) — additive on B</h3>
+  <h2 class="font_display font_2 m-t_4">C. Dropdown — 2 columns (&gt; 5 children) — additives on B</h2>
   <ul class="ul_none flex flex_column gap_2 font_n1">
-    <li><strong>Why:</strong> long child lists need a wider panel and a visual split</li>
+    <li><strong>Why:</strong> longer lists need a wider desktop panel and a visual split</li>
     <li>Panel adds <code>w_auto:md</code></li>
-    <li>Inner grid adds <code>columns_2:md gap-x_3</code></li>
-    <li>Split children into two <code>.dropdown_column</code> blocks</li>
-    <li>2nd column only: <code>br-l_1 br_solid:md br_none br_black-2 p-l_3:md</code></li>
+    <li>Inner grid: <code>grid columns_1 columns_2:md p-x_2 p-t_2 p-b_3 p-x_3:md gap-x_3</code></li>
+    <li>Split children into two <code>.dropdown_column</code> blocks (roughly half / half)</li>
+    <li>2nd column only: add <code>br-l_1 br_solid:md br_none br_black-2 p-l_3:md</code></li>
   </ul>
 
-  <h2 class="font_display font_2 m-t_4">Shared behavior</h2>
+  <h2 class="font_display font_2 m-t_4">Child link (inside every <code>.dropdown_column</code>)</h2>
   <ul class="ul_none flex flex_column gap_2 font_n1">
-    <li><strong>Mobile Menu:</strong> toggle adds <code>.is-menu-open</code> on <code>#header_nav-arches</code>. Panel is <code>position: absolute; top: 100%</code> under the toggle row — Menu does not move.</li>
-    <li><strong>Submenus (mobile):</strong> <code>position: static</code> inside that panel — push following tabs</li>
-    <li><strong>Submenus (desktop):</strong> anchor to <code>.nav-tab-trigger</code> bottom (main nav bar edge) + <code>position-try-fallbacks</code>; <code>m-x_3</code> zeroed so it doesn’t skew the box</li>
-    <li><strong>Open (fine pointer):</strong> <code>:hover</code> / <code>:focus-within</code> on <code>.nav-has-submenu</code></li>
-    <li><strong>Open (tap):</strong> <code>.is-open</code> on tab <code>li</code>; <code>.is-menu-open</code> for Menu</li>
-    <li>No <code>popover</code> on submenus or the mobile panel — popover top-layer fought layout</li>
+    <li>List: <code>ul.ul_none lh_2 m_0 flex flex_column gap_1 c_black text_left font_ui</code></li>
+    <li>
+      Link:
+      <code>&lt;a class="h:bg_accent-4 a:bg_accent-3 block p-y_3 p-x_4:md p-x_3 br_radius not-link c_inherit-all wrap sub-menu-item-arches h:undecorated" href="…"&gt;</code>
+      <code>&lt;span class="text-indent_n1 block m-l_4"&gt;Label&lt;/span&gt;</code>
+    </li>
   </ul>
 
-  <h2 class="font_display font_2 m-t_4">Resolved decisions</h2>
-  <ol class="flex flex_column gap_2 font_n1 p-l_4">
-    <li>Dropped Popover API for nav panels — class toggles + CSS positioning only</li>
-    <li><code>#header_nav_toggle_row</code> is the only in-flow mobile chrome; list overlays below it</li>
-    <li><code>.nav-tab-trigger</code> + <code>li.flex_column</code> for submenu stacking inside the list</li>
-    <li>Hover gated by <code>(hover: hover) and (pointer: fine)</code></li>
-  </ol>
+  <h2 class="font_display font_2 m-t_4">Behavior (JS + CSS)</h2>
+  <ul class="ul_none flex flex_column gap_2 font_n1">
+    <li><strong>Mobile Menu:</strong> <code>.navbar-toggler-arches</code> toggles <code>.is-menu-open</code> on <code>#header_nav-arches</code> + <code>aria-expanded</code>. CSS shows <code>#header_nav_content</code> as an absolute overlay under the Menu row (bar height stays put).</li>
+    <li><strong>Submenus mobile (&lt; md):</strong> panels stay in document flow inside the open Menu list — open tab pushes following tabs.</li>
+    <li><strong>Submenus desktop (≥ md):</strong> CSS anchor from <code>.nav-tab-trigger</code> + <code>position-try-fallbacks</code> (align-end / drop-up / flip). Fallback: <code>position: absolute; top: 100%</code>.</li>
+    <li><strong>Open (fine pointer):</strong> <code>@media (hover: hover) and (pointer: fine)</code> → <code>:hover</code> / <code>:focus-within</code> on <code>.nav-has-submenu</code>.</li>
+    <li><strong>Open (tap):</strong> <code>.nav-submenu-toggle</code> toggles <code>.is-open</code> on its tab; closes sibling open tabs (accordion).</li>
+    <li><strong>Do not use</strong> Popover API / <code>commandfor</code> / <code>interestfor</code> for these panels — top layer fights in-flow mobile accordion.</li>
+  </ul>
+
+  <h2 class="font_display font_2 m-t_4">Scoped <code>&lt;style&gt;</code> — keep only</h2>
+  <ul class="ul_none flex flex_column gap_2 font_n1">
+    <li>Toggle <code>appearance</code> / <code>font: inherit</code></li>
+    <li>Panel closed by default; show on <code>.is-open</code> / fine-pointer hover</li>
+    <li>Icon <code>::before</code> swaps (bars ↔ times, plus ↔ minus)</li>
+    <li>Mobile Menu overlay positioning + scroll on <code>#header_nav_content</code></li>
+    <li>Desktop <code>anchor-name</code> / <code>position-anchor</code> / <code>position-try-fallbacks</code></li>
+  </ul>
+
+  <h2 class="font_display font_2 m-t_4">Utilities on DOM (not in <code>&lt;style&gt;</code>)</h2>
+  <ul class="ul_none flex flex_column gap_2 font_n1">
+    <li><code>relative</code> on nav / tabs; <code>display_none:md</code> on Menu row; <code>display_none flex:md</code> on content</li>
+    <li>Panel gutters: <code>m-x_3 m-x_0:md</code> (no CSS <code>!important</code> margin)</li>
+    <li>Toggle chrome: <code>bg_transparent br_none cursor_pointer</code></li>
+    <li>Color, type, flex, borders, shadows — Arches utilities on markup</li>
+  </ul>
 </section>
 
 
 
 <style>
-  #header_nav-arches button.nav-link-arches {
+  /*
+    Scoped behavior only — layout/color/type live on Arches utilities in the DOM.
+    Kept here: open-state display, icon glyph swaps, mobile Menu overlay,
+    desktop CSS anchor + position-try.
+  */
+
+  #header_nav-arches .nav-submenu-toggle {
     appearance: none;
-    border: none;
     font: inherit;
-    text-align: inherit;
-    cursor: pointer;
   }
 
-  /* Submenus: hidden until open */
-  #header_nav-arches .nav-submenu-popover {
+  /* Submenu panels: closed by default */
+  #header_nav-arches .nav-submenu-panel {
     display: none;
   }
 
-  #header_nav-arches .nav-has-submenu.is-open > .nav-submenu-popover {
+  #header_nav-arches .nav-has-submenu.is-open > .nav-submenu-panel {
     display: block;
   }
 
@@ -358,25 +418,14 @@ notes: "Multi-tab main nav. No submenu popovers. Mobile Menu panel is position:a
     content: "\f146";
   }
 
-  /*
-    Mobile (< md):
-    Nav height = toggle row only.
-    #header_nav_content is absolute under the toggle (out of flow).
-    Submenus static inside the panel.
-  */
+  /* Mobile Menu overlay — toggle row stays in flow; panel is out of flow */
   @media (max-width: 767.98px) {
-    #header_nav-arches {
-      position: relative;
-    }
-
     #header_nav_content {
-      display: none;
       position: absolute;
       top: 100%;
       left: 0;
       right: 0;
       z-index: 5;
-      width: 100%;
       max-height: min(75vh, 100dvh);
       overflow-x: hidden;
       overflow-y: auto;
@@ -384,10 +433,6 @@ notes: "Multi-tab main nav. No submenu popovers. Mobile Menu panel is position:a
 
     #header_nav-arches.is-menu-open > #header_nav_content {
       display: block;
-    }
-
-    #header_nav-arches .nav-submenu-popover {
-      position: static;
     }
 
     #header_nav-arches .navbar-toggler-arches .icon-toggle_bars-times::before {
@@ -399,12 +444,7 @@ notes: "Multi-tab main nav. No submenu popovers. Mobile Menu panel is position:a
     }
   }
 
-  /*
-    Desktop (md+):
-    Hide Menu row; show tab list in bar.
-    Anchor to .nav-tab-trigger (the visible tab chrome = bottom of the main nav bar),
-    not the whole <li> (which also wraps the panel and skews the box).
-  */
+  /* Desktop: tether submenu to .nav-tab-trigger + edge fallbacks */
   @position-try --main-nav-align-end {
     inset: auto;
     top: anchor(bottom);
@@ -420,41 +460,24 @@ notes: "Multi-tab main nav. No submenu popovers. Mobile Menu panel is position:a
   }
 
   @media (min-width: 768px) {
-    #header_nav_toggle_row {
-      display: none;
-    }
-
-    #header_nav_content {
-      display: flex !important;
-      position: relative;
-      width: 100%;
-      max-height: none;
-      overflow: visible;
-    }
-
     #header_nav-arches .nav-has-submenu {
-      position: relative;
       anchor-scope: --nav-tab;
     }
 
-    /* Tether point = tab label row, flush with main nav bottom */
     #header_nav-arches .nav-has-submenu > .nav-tab-trigger {
       anchor-name: --nav-tab;
     }
 
-    /* Fallback if anchor positioning is unavailable */
-    #header_nav-arches .nav-submenu-popover {
+    #header_nav-arches .nav-submenu-panel {
       position: absolute;
       top: 100%;
       left: 0;
-      z-index: 5;
       width: max-content;
       min-width: 100%;
-      margin: 0 !important; /* beat utility m-x_3 */
     }
 
     @supports (anchor-name: --nav-tab) {
-      #header_nav-arches .nav-submenu-popover {
+      #header_nav-arches .nav-submenu-panel {
         position: fixed;
         position-anchor: --nav-tab;
         inset: auto;
@@ -462,7 +485,6 @@ notes: "Multi-tab main nav. No submenu popovers. Mobile Menu panel is position:a
         left: anchor(left);
         min-width: anchor-size(width);
         width: max-content;
-        margin: 0 !important;
         position-try-fallbacks:
           --main-nav-align-end,
           --main-nav-drop-up,
@@ -472,8 +494,9 @@ notes: "Multi-tab main nav. No submenu popovers. Mobile Menu panel is position:a
     }
   }
 
-  @media (hover: hover) and (pointer: fine) {
-    #header_nav-arches .nav-has-submenu:is(:hover, :focus-within) > .nav-submenu-popover {
+  /* Hover-open only on fine pointers (touch uses .is-open / tap) */
+  @media (hover: hover) and (pointer: fine) and (min-width: 768px) {
+    #header_nav-arches .nav-has-submenu:is(:hover, :focus-within) > .nav-submenu-panel {
       display: block;
     }
 
