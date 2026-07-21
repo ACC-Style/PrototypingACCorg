@@ -1,0 +1,436 @@
+---
+layout: playground
+name: "Calendar Invite Buttons"
+position: "Generator"
+csv_file: "none"
+---
+
+<div class="grid columns_1 columns_2:lg gap_5 reading-typography">
+  <aside class="flex flex_column gap_4">
+    <section class="bg_white br_1 br_black-3 br_round br_solid overflow_hidden">
+      <header class="bg_black-1 br-b_1 br_black-3 br_solid font_bold p_4">
+        Event settings
+      </header>
+      <form id="calendarInviteForm" class="flex flex_column gap_4 p_4">
+        <div>
+          <label class="font_bold font-size_down" for="eventTitle">Event title</label>
+          <input
+            id="eventTitle"
+            name="eventTitle"
+            type="text"
+            class="br_1 br_black-3 br_round br_solid m-t_1 p_3 w_100"
+            value="Submit Science for ACC Annual Scientific Session"
+            required />
+        </div>
+
+        <div class="grid columns_1 columns_2:md gap_3">
+          <div>
+            <label class="font_bold font-size_down" for="startDateTime">Start</label>
+            <input
+              id="startDateTime"
+              name="startDateTime"
+              type="datetime-local"
+              class="br_1 br_black-3 br_round br_solid m-t_1 p_3 w_100"
+              value="2026-03-28T09:00"
+              required />
+          </div>
+          <div>
+            <label class="font_bold font-size_down" for="endDateTime">End</label>
+            <input
+              id="endDateTime"
+              name="endDateTime"
+              type="datetime-local"
+              class="br_1 br_black-3 br_round br_solid m-t_1 p_3 w_100"
+              value="2026-03-30T17:00" />
+          </div>
+        </div>
+
+        <div>
+          <label class="font_bold font-size_down" for="eventDescription">Description</label>
+          <textarea
+            id="eventDescription"
+            name="eventDescription"
+            rows="3"
+            class="br_1 br_black-3 br_round br_solid m-t_1 p_3 w_100">Join cardiologists from around the world for the ACC Annual Scientific Session.</textarea>
+        </div>
+
+        <div>
+          <label class="font_bold font-size_down" for="eventLocation">Location</label>
+          <input
+            id="eventLocation"
+            name="eventLocation"
+            type="text"
+            class="br_1 br_black-3 br_round br_solid m-t_1 p_3 w_100"
+            value="Chicago, IL" />
+        </div>
+
+        <div>
+          <label class="font_bold font-size_down" for="outlookAccount">Outlook account type</label>
+          <select
+            id="outlookAccount"
+            name="outlookAccount"
+            class="br_1 br_black-3 br_round br_solid m-t_1 p_3 w_100">
+            <option value="office" selected>Microsoft 365 / work (outlook.office.com)</option>
+            <option value="live">Personal Outlook.com (outlook.live.com)</option>
+          </select>
+        </div>
+      </form>
+    </section>
+
+    <section class="bg_black-1 br_round p_4">
+      <h2 class="c_primary font_2 m-t_0">How to use</h2>
+      <p class="font-size_down m-t_0">
+        Fill in the event fields, then copy the CMS output below into your page.
+        Paste the HTML block first, then the script immediately after it. The script
+        is self-contained and reads event details from the
+        <code>data-*</code> attributes on
+        <code>data-component="CalendarInvite"</code>.
+      </p>
+      <ul class="font-size_down marker_primary m-b_0">
+        <li>Google and Outlook open a web compose screen in a new tab.</li>
+        <li>Apple and the ICS link download a universal <code>.ics</code> file.</li>
+        <li>Use <strong>office</strong> for visitors on Microsoft 365; use <strong>live</strong> for personal Outlook.com accounts.</li>
+      </ul>
+    </section>
+
+    <section class="bg_white br_1 br_black-3 br_round br_solid overflow_hidden">
+      <header class="bg_black-1 br-b_1 br_black-3 br_solid font_bold p_4">
+        CMS output (HTML + runtime script)
+      </header>
+      <div class="p_4">
+        <p class="c_black-7 font-size_down m-t_0">
+          Copy both blocks into the CMS. To change the event later, edit the
+          <code>data-*</code> attributes in HTML source view — no script changes needed.
+        </p>
+        <textarea
+          id="outputHtml"
+          class="br_1 br_black-3 br_round br_solid font_n2 m_0 min-h_20 p_3 w_100"
+          rows="16"
+          readonly
+          spellcheck="false"></textarea>
+        <div class="flex flex_row flex_wrap gap_3 m-t_3">
+          <button type="button" class="btn btn-primary" id="copyHtmlBtn">Copy CMS output</button>
+        </div>
+        <p class="c_black-7 font-size_down m-b_0 m-t_3" id="statusText" aria-live="polite"></p>
+      </div>
+    </section>
+  </aside>
+
+  <main class="flex flex_column gap_4">
+    <section class="bg_white br_1 br_black-3 br_round br_solid overflow_hidden sticky t_3 z_1">
+      <header class="bg_black-1 br-b_1 br_black-3 br_solid font_bold p_4">
+        Live preview
+      </header>
+      <div class="bg_black-1 br-b_1 br_black-3 br_dashed p_4">
+        <div id="previewArea" class="reading-typography"></div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script>
+  (function () {
+    var form = document.getElementById("calendarInviteForm");
+    var previewArea = document.getElementById("previewArea");
+    var outputHtml = document.getElementById("outputHtml");
+    var copyHtmlBtn = document.getElementById("copyHtmlBtn");
+    var statusText = document.getElementById("statusText");
+
+    function escapeAttribute(value) {
+      return String(value == null ? "" : value)
+        .replace(/&/g, "&amp;")
+        .replace(/"/g, "&quot;")
+        .replace(/</g, "&lt;");
+    }
+
+    function toDataDateTime(value) {
+      if (!value) return "";
+      if (/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/.test(value)) {
+        return value + ":00";
+      }
+      return value.trim();
+    }
+
+    function readFormValues() {
+      return {
+        title: form.eventTitle.value.trim() || "Event",
+        start: toDataDateTime(form.startDateTime.value),
+        end: toDataDateTime(form.endDateTime.value),
+        description: form.eventDescription.value.trim(),
+        location: form.eventLocation.value.trim(),
+        outlookAccount: form.outlookAccount.value || "office"
+      };
+    }
+
+    function buildCalendarInviteHtml(values) {
+      var attrs = [
+        'data-component="CalendarInvite"',
+        'data-event-title="' + escapeAttribute(values.title) + '"',
+        'data-start="' + escapeAttribute(values.start) + '"'
+      ];
+
+      if (values.end) {
+        attrs.push('data-end="' + escapeAttribute(values.end) + '"');
+      }
+
+      if (values.description) {
+        attrs.push('data-description="' + escapeAttribute(values.description) + '"');
+      }
+
+      if (values.location) {
+        attrs.push('data-location="' + escapeAttribute(values.location) + '"');
+      }
+
+      if (values.outlookAccount && values.outlookAccount !== "office") {
+        attrs.push('data-outlook-account="' + escapeAttribute(values.outlookAccount) + '"');
+      }
+
+      return (
+        "<section class='wrapper-container' " + attrs.join(" ") + ">\n" +
+        '  <strong class="block text_center c_inherit">Mark Your Calendar</strong>\n' +  
+        '  <div class="grid columns_3:xs columns_1 gap_2 justify_center items_center">\n' +
+        '    <button type="button" class="btn btn-shade btn-sm" data-role="google">\n' +
+        '      <i class="fab fa-google m-r_2" aria-hidden="true"></i>\n' +
+        "      Google\n" +
+        "    </button>\n" +
+        '    <button type="button" class="btn btn-shade btn-sm" data-role="apple">\n' +
+        '      <i class="fab fa-apple m-r_2" aria-hidden="true"></i>\n' +
+        "      Apple\n" +
+        "    </button>\n" +
+        '    <button type="button" class="btn btn-shade btn-sm" data-role="microsoft">\n' +
+        '      <i class="fab fa-microsoft m-r_2" aria-hidden="true"></i>\n' +
+        "      Outlook\n" +
+        "    </button>\n" +
+        "  </div>\n" +
+        '  <p class="m-t_3 m-b_0 text_center">\n' +
+        '    <button type="button" class="btn btn-link p_0" data-role="ics-download">Download ICS file</button>\n' +
+        "  </p>\n" +
+        "</section>"
+      );
+    }
+
+    function initCalendarInvite(scope) {
+      var roots = (scope || document).querySelectorAll('[data-component="CalendarInvite"]');
+
+      roots.forEach(function (root) {
+        if (root.getAttribute("data-calendar-invite-ready") === "true") {
+          return;
+        }
+
+        var config = {
+          title: root.getAttribute("data-event-title") || "Event",
+          start: root.getAttribute("data-start") || "",
+          end: root.getAttribute("data-end") || "",
+          description: root.getAttribute("data-description") || "",
+          location: root.getAttribute("data-location") || "",
+          outlookAccount: root.getAttribute("data-outlook-account") || "office"
+        };
+
+        function normalizeDateTime(value, fallbackTime) {
+          if (!value) return null;
+          var trimmed = value.trim();
+          if (/^\d{4}-\d{2}-\d{2}$/.test(trimmed)) {
+            return new Date(trimmed + "T" + fallbackTime);
+          }
+          var parsed = new Date(trimmed);
+          return isNaN(parsed.getTime()) ? null : parsed;
+        }
+
+        function getStartDate() {
+          return normalizeDateTime(config.start, "09:00:00");
+        }
+
+        function getEndDate(start) {
+          var end = normalizeDateTime(config.end, "17:00:00");
+          if (end) return end;
+          return new Date(start.getTime() + (60 * 60 * 1000));
+        }
+
+        function toUtcCompact(date) {
+          return date.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}Z$/, "Z");
+        }
+
+        function escapeIcs(value) {
+          return String(value)
+            .replace(/\\/g, "\\\\")
+            .replace(/;/g, "\\;")
+            .replace(/,/g, "\\,")
+            .replace(/\r?\n/g, "\\n");
+        }
+
+        function safeFileName(title) {
+          var cleaned = title.replace(/[^\w\s-]/g, "").trim().replace(/\s+/g, "-");
+          return cleaned || "event";
+        }
+
+        function buildGoogleUrl(start, end) {
+          var params = new URLSearchParams({
+            action: "TEMPLATE",
+            text: config.title,
+            dates: toUtcCompact(start) + "/" + toUtcCompact(end)
+          });
+          if (config.description) params.set("details", config.description);
+          if (config.location) params.set("location", config.location);
+          return "https://calendar.google.com/calendar/render?" + params.toString();
+        }
+
+        function toOutlookDateTime(date) {
+          return date.toISOString().replace(/\.\d{3}Z$/, "Z");
+        }
+
+        function getOutlookHost() {
+          return config.outlookAccount === "live"
+            ? "https://outlook.live.com"
+            : "https://outlook.office.com";
+        }
+
+        function buildMicrosoftUrl(start, end) {
+          var params = new URLSearchParams({
+            path: "/calendar/action/compose",
+            rru: "addevent",
+            subject: config.title,
+            startdt: toOutlookDateTime(start),
+            enddt: toOutlookDateTime(end)
+          });
+          if (config.description) params.set("body", config.description);
+          if (config.location) params.set("location", config.location);
+          return getOutlookHost() + "/calendar/deeplink/compose?" + params.toString();
+        }
+
+        function buildIcsContent(start, end) {
+          var lines = [
+            "BEGIN:VCALENDAR",
+            "VERSION:2.0",
+            "PRODID:-//ACC//Calendar Invite Buttons//EN",
+            "CALSCALE:GREGORIAN",
+            "METHOD:PUBLISH",
+            "BEGIN:VEVENT",
+            "UID:" + Date.now() + "@acc.org",
+            "DTSTAMP:" + toUtcCompact(new Date()),
+            "DTSTART:" + toUtcCompact(start),
+            "DTEND:" + toUtcCompact(end),
+            "SUMMARY:" + escapeIcs(config.title)
+          ];
+
+          if (config.description) lines.push("DESCRIPTION:" + escapeIcs(config.description));
+          if (config.location) lines.push("LOCATION:" + escapeIcs(config.location));
+
+          lines.push("END:VEVENT", "END:VCALENDAR");
+          return lines.join("\r\n");
+        }
+
+        function downloadIcs(start, end) {
+          var blob = new Blob([buildIcsContent(start, end)], { type: "text/calendar;charset=utf-8" });
+          var url = URL.createObjectURL(blob);
+          var link = document.createElement("a");
+          link.href = url;
+          link.download = safeFileName(config.title) + ".ics";
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          URL.revokeObjectURL(url);
+        }
+
+        function openExternal(url) {
+          window.open(url, "_blank", "noopener,noreferrer");
+        }
+
+        var start = getStartDate();
+        if (!start) {
+          console.warn("CalendarInvite: invalid or missing data-start value.");
+          return;
+        }
+
+        var end = getEndDate(start);
+        if (end <= start) {
+          end = new Date(start.getTime() + (60 * 60 * 1000));
+        }
+
+        var googleBtn = root.querySelector('[data-role="google"]');
+        var appleBtn = root.querySelector('[data-role="apple"]');
+        var microsoftBtn = root.querySelector('[data-role="microsoft"]');
+        var icsLink = root.querySelector('[data-role="ics-download"]');
+
+        if (googleBtn) {
+          googleBtn.addEventListener("click", function () {
+            openExternal(buildGoogleUrl(start, end));
+          });
+        }
+
+        if (appleBtn) {
+          appleBtn.addEventListener("click", function () {
+            downloadIcs(start, end);
+          });
+        }
+
+        if (icsLink) {
+          icsLink.addEventListener("click", function () {
+            downloadIcs(start, end);
+          });
+        }
+
+        if (microsoftBtn) {
+          microsoftBtn.addEventListener("click", function () {
+            openExternal(buildMicrosoftUrl(start, end));
+          });
+        }
+
+        root.setAttribute("data-calendar-invite-ready", "true");
+      });
+    }
+
+    var CALENDAR_INVITE_CMS_SCRIPT =
+      "<script>\n(" + initCalendarInvite.toString() + ")(document);\n<\\/script>";
+
+    function setStatus(message) {
+      statusText.textContent = message;
+    }
+
+    function refresh() {
+      var values = readFormValues();
+      var html = buildCalendarInviteHtml(values);
+
+      if (!values.start) {
+        previewArea.innerHTML = "";
+        outputHtml.value = "";
+        setStatus("Enter a start date and time to generate output.");
+        return;
+      }
+
+      outputHtml.value = html + "\n\n" + CALENDAR_INVITE_CMS_SCRIPT;
+      previewArea.innerHTML = html;
+      initCalendarInvite(previewArea);
+      setStatus("Preview updated. Copy the CMS output when ready.");
+    }
+
+    form.addEventListener("input", refresh);
+    form.addEventListener("change", refresh);
+
+    copyHtmlBtn.addEventListener("click", async function () {
+      try {
+        await navigator.clipboard.writeText(outputHtml.value);
+        setStatus("CMS HTML and runtime script copied to clipboard.");
+      } catch (error) {
+        outputHtml.focus();
+        outputHtml.select();
+        setStatus("Clipboard unavailable. Select and copy the output manually.");
+      }
+    });
+
+    refresh();
+  })();
+</script>
+
+<style>
+  #outputHtml {
+    font-family: Consolas, Monaco, monospace;
+    resize: vertical;
+  }
+
+  #previewArea:empty::before {
+    color: var(--c_black-7, #59636e);
+    content: "Calendar invite preview will appear here.";
+    display: block;
+    font-size: 0.875rem;
+  }
+</style>

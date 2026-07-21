@@ -1,51 +1,188 @@
+@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
 @using ScientificSessions.Models
 @using ScientificSessions.Models.sitecore.templates.User_Defined.ScientificSessions.BasePages
 @using ScientificSessions.Utilities
 @using Glass.Mapper.Sc.Web.Mvc
 @using System.Configuration
+@using System.Linq
 @model BaseNavigation
 
 @{
-    var hasVirtualRole = Sitecore.Context.User.IsInRole(ACC.Constants.Settings.ImisDomain + "\\" + ConfigurationManager.AppSettings["RegisterVirtualRole"]);
-    var hasFullRole = Sitecore.Context.User.IsInRole(ACC.Constants.Settings.ImisDomain + "\\" + ConfigurationManager.AppSettings["RegisterRole"]);
+    var hasVirtualRole = false;
+    var hasFullRole = false;
+    try
+    {
+        var imisDomain = ACC.Constants.Settings.ImisDomain;
+        var virtualRole = ConfigurationManager.AppSettings["RegisterVirtualRole"];
+        var fullRole = ConfigurationManager.AppSettings["RegisterRole"];
+        if (Sitecore.Context.User != null && !string.IsNullOrEmpty(imisDomain))
+        {
+            if (!string.IsNullOrEmpty(virtualRole))
+            {
+                hasVirtualRole = Sitecore.Context.User.IsInRole(imisDomain + "\\" + virtualRole);
+            }
+            if (!string.IsNullOrEmpty(fullRole))
+            {
+                hasFullRole = Sitecore.Context.User.IsInRole(imisDomain + "\\" + fullRole);
+            }
+        }
+    }
+    catch
+    {
+        hasVirtualRole = false;
+        hasFullRole = false;
+    }
+
+    Func<string, string> NavSlug = title =>
+        string.IsNullOrWhiteSpace(title)
+            ? "item"
+            : title.Replace(' ', '_').ToLowerInvariant();
+
+    const string labelClassBase = "nav-link-arches flex_auto nav-submenu-label-arches nowrap p-x_3 p-y_3 a:bg_accent-n3 h:bg_accent-n1 c_white not-link block h:undecorated";
+    const string labelClassPlain = labelClassBase + " flex_70";
+    const string labelClassDropdown = labelClassBase + " flex_70 text_left:touch";
+    const string labelClassDropdownLong = labelClassBase + " flex_60 text_left:touch";
+    const string toggleClass = "bg_transparent br_none h:bg_acc-n3 c_white block display_none:md block:touch flex_none grid items_center justify_center nav-link-arches nav-submenu-toggle not-link nowrap p-x_3 p-y_3 self_stretch text_center cursor_pointer";
+    const string panelClassBase = "nav-submenu-panel dropdown-menu-arches m-b_3 bg_white font_0 m-x_3 m-x_0:md shadow_overlap-light br_black-1 br_solid br_1 br-bl_round br-br_round font_copy br-t_0 br_none br_solid:md z_5";
+    const string panelClassWide = panelClassBase + " w_auto:md";
+    const string childLinkClass = "h:bg_accent-4 a:bg_accent-3 block p-y_3 p-x_4:md p-x_3 br_radius not-link c_inherit-all wrap sub-menu-item-arches h:undecorated";
+    const string childListClass = "ul_none lh_2 m_0 flex flex_column gap_1 c_black text_left font_ui";
+
+    var navPages = Model.Pages != null
+        ? Model.Pages.Where(p => p != null)
+        : Enumerable.Empty<BaseNavigation>();
+}
+
+@helper RenderChildColumn(IEnumerable<BaseNavigation> children, string childLinkClass, string childListClass, bool secondColumn)
+{
+    var safeChildren = children ?? Enumerable.Empty<BaseNavigation>();
+    <div class="dropdown_column@(secondColumn ? " br-l_1 br_solid:md br_none br_black-2 p-l_3:md" : "")">
+        <ul class="@childListClass">
+            @foreach (var child in safeChildren)
+            {
+                if (child == null)
+                {
+                    continue;
+                }
+
+                var childHref = "#";
+                try
+                {
+                    if (child.Navigation_Link != null && !string.IsNullOrEmpty(child.Navigation_Link.Url))
+                    {
+                        childHref = child.Navigation_Link.Url;
+                    }
+                    else if (!string.IsNullOrEmpty(child.Url))
+                    {
+                        childHref = child.Url;
+                    }
+                }
+                catch
+                {
+                    childHref = "#";
+                }
+
+                <li>
+                    <a class="@childLinkClass" href="@childHref">
+                        <span class="text-indent_n1 block m-l_4">@(child.Navigation_Title ?? string.Empty)</span>
+                    </a>
+                </li>
+            }
+        </ul>
+    </div>
 }
 
 <style>
-    #header_nav-arches .arches-nav-item.dropdown {
-        position: relative;
+    /*
+      Scoped behavior only — layout/color/type live on Arches utilities in the DOM.
+      Kept here: open-state display, icon glyph swaps, mobile Menu overlay,
+      desktop CSS anchor + position-try.
+      Breakpoint family: md = 768px.
+    */
+
+    #header_nav-arches .nav-submenu-toggle {
+        appearance: none;
+        font: inherit;
     }
 
-    #header_nav-arches .arches-nav-item.dropdown > .dropdown-menu {
-        min-width: 100%;
-        margin-top: 0;
+    #header_nav-arches .nav-submenu-panel {
+        display: none;
+    }
+
+    #header_nav-arches .nav-has-submenu.is-open > .nav-submenu-panel {
+        display: block;
+    }
+
+    #header_nav-arches .nav-has-submenu.is-open .icon-toggle_plus-minus::before {
+        content: "\f146";
+    }
+
+    @@media (max-width: 767.98px) {
+        #header_nav_content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            z-index: 5;
+            max-height: min(75vh, 100dvh);
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        #header_nav-arches.is-menu-open > #header_nav_content {
+            display: block;
+        }
+
+        #header_nav-arches .navbar-toggler-arches .icon-toggle_bars-times::before {
+            content: "\f0c9";
+        }
+
+        #header_nav-arches.is-menu-open .navbar-toggler-arches .icon-toggle_bars-times::before {
+            content: "\f00d";
+        }
     }
 
     @@position-try --main-nav-align-end {
         inset: auto;
         top: anchor(bottom);
         right: anchor(right);
+        left: auto;
     }
 
     @@position-try --main-nav-drop-up {
         inset: auto;
         bottom: anchor(top);
         left: anchor(left);
+        top: auto;
     }
 
-    @@supports (anchor-name: --main-nav-dropdown) {
-        @@media (min-width: 992px) {
-            #header_nav-arches .arches-nav-item.dropdown {
-                anchor-name: --main-nav-dropdown;
-                anchor-scope: --main-nav-dropdown;
-            }
+    @@media (min-width: 768px) {
+        #header_nav-arches .nav-has-submenu {
+            anchor-scope: --nav-tab;
+        }
 
-            #header_nav-arches .arches-nav-item.dropdown > .dropdown-menu {
-                position: absolute;
-                position-anchor: --main-nav-dropdown;
+        #header_nav-arches .nav-has-submenu > .nav-tab-trigger {
+            anchor-name: --nav-tab;
+        }
+
+        #header_nav-arches .nav-submenu-panel {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: max-content;
+            min-width: 100%;
+        }
+
+        @@supports (anchor-name: --nav-tab) {
+            #header_nav-arches .nav-submenu-panel {
+                position: fixed;
+                position-anchor: --nav-tab;
                 inset: auto;
                 top: anchor(bottom);
                 left: anchor(left);
                 min-width: anchor-size(width);
+                width: max-content;
                 position-try-fallbacks:
                     --main-nav-align-end,
                     --main-nav-drop-up,
@@ -55,104 +192,312 @@
         }
     }
 
-    @@media (max-width: 991.98px) {
-        #header_nav-arches .arches-nav-item.dropdown > .dropdown-menu {
-            position: static !important;
-            width: 100%;
-            transform: none !important;
+    @@media (hover: hover) and (pointer: fine) and (min-width: 768px) {
+        #header_nav-arches .nav-has-submenu:is(:hover, :focus-within) > .nav-submenu-panel {
+            display: block;
+        }
+
+        #header_nav-arches .nav-has-submenu:is(:hover, :focus-within) .icon-toggle_plus-minus::before {
+            content: "\f146";
         }
     }
 </style>
 
-<div class="flex c_white relative">
+<div class="flex flex_row:md c_white relative isolation_isolate z_3">
     <nav id="header_nav-arches"
-         class="flex_auto navbar navbar-primary p_0 navbar-expand-lg navbar-dark bg_acc font_2 font_1:lg relative"
+         class="flex_auto p_0 bg_acc font_2 font_1:md relative"
          aria-label="Main navigation">
-        <div class="relative">
-            <button class="br_solid br_2 br_white-2 collapsed m-l_3 m-y_3 navbar-toggler p_2 expanded-click-area"
+        <div id="header_nav_toggle_row" class="nav-toggle-row relative display_none:md">
+            <button class="br_solid br_2 br_white-2 m-l_3 m-y_3 navbar-toggler-arches p_2 bg_acc-n1 h:bg_acc-n3 br_solid br_white-6 br_2 p-x_3 p-y_2 shadow_bevel-light"
                     type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#header_nav_content"
                     aria-controls="header_nav_content"
                     aria-expanded="false"
                     aria-label="Toggle navigation">
-                <i class="icon-toggle_bars-times fas fa a:c_acc-2 c_white" aria-hidden="true"></i>
+                <i class="icon-toggle_bars-times fas fa-fw a:c_acc-2 c_white" aria-hidden="true"></i>
                 <span class="a:c_acc-2 c_white p-x_3 uppercase font_accent">Menu</span>
             </button>
         </div>
 
-        <div id="header_nav_content" class="collapse navbar-collapse">
-            <ul class="navbar-nav flex flex_row:lg flex_column justify_around w_100">
-                <li class="arches-nav-item relative text_left text_center:lg flex_shrink a:bg_accent br_0 br_none @(Model.ParentId == Model.Id ? "active" : "")">
-                    <a href="@Model.Url"
-                       id="home"
-                       class="nav-link expanded-click-area nowrap p-l_4 p-l_0:lg @(Model.ParentId == Model.Id ? "active" : "")"
-                       aria-current="@(Model.ParentId == Model.Id ? "page" : null)"
-                       title="Home">
-                        <i class="fas fa-home p-x_3:lg" aria-hidden="true"></i>
-                        <span class="display_none:lg">&nbsp;Home</span>
-                    </a>
+        <div id="header_nav_content"
+             class="navbar-collapse-arches bg_acc p-x_3:md max-w_90 display_none flex:md w_100 max-h_100 overflow_auto scroll-bar-mini">
+            <ul class="b_0 flex flex_column flex_row:md m_0 navbar-nav-arches p_0 ul_none text_center:md text_left w_100 font_accent">
+                @{
+                    var homeIsCurrent = Model.ParentId == Model.Id;
+                    var homeHref = !string.IsNullOrEmpty(Model.Url) ? Model.Url : "/";
+                }
+                <li id="nav_tab_home"
+                    class="relative flex_auto m_0 p_0 flex flex_column">
+                    <div class="nav-tab-trigger flex flex_row-reverse items_center flex_auto w_100@(homeIsCurrent ? " active" : "")">
+                        <a href="@homeHref"
+                           id="home"
+                           class="@labelClassPlain"
+                           aria-current="@(homeIsCurrent ? "page" : null)"
+                           title="Home">
+                            <i class="fas fa-home p-x_3:md" aria-hidden="true"></i>
+                            <span class="p-l_3">Home</span>
+                        </a>
+                    </div>
                 </li>
 
-                @foreach (var Page in Model.Pages)
+                @foreach (var Page in navPages)
                 {
-                    if (!Page.Hide_From_Navigation)
+                    if (Page.Hide_From_Navigation)
                     {
-                        Page.SubPages = Page.GetAllChildren<BaseNavigation>();
-                        Page.SubPagesExist = Page.SubPages.Count() > 0;
+                        continue;
+                    }
 
-                        <li class="arches-nav-item relative text_left text_center:lg flex_auto @(Page.SubPagesExist ? "dropdown" : "") @(Model.ParentId == Page.Id ? "active" : "")">
+                    IEnumerable<BaseNavigation> rawSubPages = Enumerable.Empty<BaseNavigation>();
+                    try
+                    {
+                        rawSubPages = Page.GetAllChildren<BaseNavigation>() ?? Enumerable.Empty<BaseNavigation>();
+                    }
+                    catch
+                    {
+                        rawSubPages = Enumerable.Empty<BaseNavigation>();
+                    }
+
+                    Page.SubPages = rawSubPages;
+                    var navChildren = rawSubPages.Where(p => p != null && !p.Hide_From_Navigation).ToList();
+                    Page.SubPagesExist = navChildren.Count > 0;
+
+                    var title = Page.Navigation_Title ?? string.Empty;
+                    var slug = NavSlug(title);
+                    var tabId = "nav_tab_" + slug;
+                    var toggleId = "nav_toggle_" + slug;
+                    var menuId = "nav_menu_" + slug;
+                    var linkId = "nav_link_" + slug;
+                    var isCurrent = Model.ParentId == Page.Id;
+                    var useTwoColumns = navChildren.Count > 5;
+                    var labelClass = Page.SubPagesExist
+                        ? (title.Length > 14 ? labelClassDropdownLong : labelClassDropdown)
+                        : labelClassPlain;
+                    var pageHref = !string.IsNullOrEmpty(Page.Url) ? Page.Url : "#";
+
+                    <li id="@tabId"
+                        class="relative flex_auto m_0 p_0 flex flex_column@(Page.SubPagesExist ? " nav-has-submenu" : "")">
+                        <div class="nav-tab-trigger flex flex_row-reverse items_center flex_auto w_100@(isCurrent ? " active" : "")">
                             @if (Page.SubPagesExist)
                             {
-                                <a id="@(Page.Navigation_Title.Replace(' ', '_').ToLower())_toggle"
-                                   class="nav-link nowrap p-l_4 p-l_0:lg a:c_white inline-block"
-                                   role="button"
-                                   data-bs-toggle="dropdown"
-                                   data-bs-display="static"
-                                   aria-haspopup="true"
-                                   aria-expanded="false">
-                                    <i class="far fa icon-toggle_plus-minus m-l_n2 m-r_2" aria-hidden="true"></i>
-                                    <span class="visually-hidden">Toggle @Page.Navigation_Title menu</span>
-                                </a>
+                                <button type="button"
+                                        id="@toggleId"
+                                        class="@toggleClass"
+                                        aria-haspopup="true"
+                                        aria-expanded="false"
+                                        aria-controls="@menuId">
+                                    <i class="far fa icon-toggle_plus-minus" aria-hidden="true"></i>
+                                    <span class="visually-hidden">Toggle @title menu</span>
+                                </button>
                             }
 
                             @if (Page.Navigation_Link != null && !string.IsNullOrEmpty(Page.Navigation_Link.Url))
                             {
-                                if (Sitecore.Context.User.IsAuthenticated && Page.Navigation_Title.ToUpper().Contains("REGISTER NOW"))
+                                if (Sitecore.Context.User != null
+                                    && Sitecore.Context.User.IsAuthenticated
+                                    && title.ToUpperInvariant().Contains("REGISTER NOW"))
                                 {
-                                    @* Show the register button if user does NOT have the main registation role (i.e.: ACC20xx) AND has the new virtual registration role (i.e.: ACC20xxV) *@
+                                    @* Show the register button if user does NOT have the main registration role AND has the virtual registration role *@
                                     if (!hasFullRole)
                                     {
-                                        @* If the customer has the virtual registration role, the button should read 'Upgrade Now' otherwise should be the default 'Register Now' *@
-                                        @(Html.Glass().RenderLink<BaseNavigation>(Page, x => x.Navigation_Link, new { @class = (Page.SubPagesExist ? "nav-link nowrap p-l_0 a:c_white inline-block " : "nav-link expanded-click-area nowrap p-l_4 p-l_0:lg ") + (Model.ParentId == Page.Id ? "active" : ""), aria_current = (Model.ParentId == Page.Id ? "page" : null), @ID = Page.Navigation_Title.Replace(' ', '_').ToLower() }, false, (hasVirtualRole ? "Upgrade Now" : Page.Navigation_Title)))
+                                        @(Html.Glass().RenderLink<BaseNavigation>(
+                                            Page,
+                                            x => x.Navigation_Link,
+                                            new
+                                            {
+                                                @class = labelClass,
+                                                aria_current = (isCurrent ? "page" : null),
+                                                @ID = linkId
+                                            },
+                                            false,
+                                            (hasVirtualRole ? "Upgrade Now" : title)))
                                     }
                                 }
                                 else
                                 {
-                                    @(Html.Glass().RenderLink<BaseNavigation>(Page, x => x.Navigation_Link, new { @class = (Page.SubPagesExist ? "nav-link nowrap p-l_0 a:c_white inline-block " : "nav-link expanded-click-area nowrap p-l_4 p-l_0:lg ") + (Model.ParentId == Page.Id ? "active" : ""), aria_current = (Model.ParentId == Page.Id ? "page" : null), @ID = Page.Navigation_Title.Replace(' ', '_').ToLower() }, false, Page.Navigation_Title))
+                                    @(Html.Glass().RenderLink<BaseNavigation>(
+                                        Page,
+                                        x => x.Navigation_Link,
+                                        new
+                                        {
+                                            @class = labelClass,
+                                            aria_current = (isCurrent ? "page" : null),
+                                            @ID = linkId
+                                        },
+                                        false,
+                                        title))
                                 }
                             }
                             else
                             {
-                                <a href="@Page.Url"
-                                   id="@Page.Navigation_Title.Replace(" ", "_").ToLower()"
-                                   class="@(Page.SubPagesExist ? "nav-link nowrap p-l_0 a:c_white inline-block " : "nav-link expanded-click-area nowrap p-l_4 p-l_0:lg ")@(Model.ParentId == Page.Id ? "active" : "")"
-                                   aria-current="@(Model.ParentId == Page.Id ? "page" : null)">
-                                    @Page.Navigation_Title
+                                <a href="@pageHref"
+                                   id="@linkId"
+                                   class="@labelClass"
+                                   aria-current="@(isCurrent ? "page" : null)">
+                                    @title
                                 </a>
                             }
+                        </div>
 
-                            @if (Page.SubPagesExist)
-                            {
-                                <div class="dropdown-menu m-x_3 shadow_overlap-light br_black-1 br_solid br_1 br-bl_round br-br_round font_copy br-t_0 br_none br_solid:lg br_square m-t_0 m-t_2:lg"
-                                     aria-labelledby="@(Page.Navigation_Title.Replace(' ', '_').ToLower())_toggle">
-                                    @Html.Partial("../Common/_HeaderSubNavigation", Page)
-                                </div>
-                            }
-                        </li>
-                    }
+                        @if (Page.SubPagesExist)
+                        {
+                            <div id="@menuId"
+                                 class="@(useTwoColumns ? panelClassWide : panelClassBase)"
+                                 aria-labelledby="@toggleId">
+                                @if (useTwoColumns)
+                                {
+                                    var mid = (int)Math.Ceiling(navChildren.Count / 2.0);
+                                    var col1 = navChildren.Take(mid);
+                                    var col2 = navChildren.Skip(mid);
+                                    <div class="grid columns_1 columns_2:md p-x_2 p-t_2 p-b_3 p-x_3:md gap-x_3">
+                                        @RenderChildColumn(col1, childLinkClass, childListClass, false)
+                                        @RenderChildColumn(col2, childLinkClass, childListClass, true)
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="grid columns_1 p-t_2 p-b_3 p-x_2 p-x_3:md">
+                                        @RenderChildColumn(navChildren, childLinkClass, childListClass, false)
+                                    </div>
+                                }
+                            </div>
+                        }
+                    </li>
                 }
             </ul>
         </div>
     </nav>
 </div>
+
+<script>
+    (function () {
+        var nav = document.getElementById('header_nav-arches');
+        if (!nav) return;
+
+        var MD_MIN = 768;
+        var menuBtn = nav.querySelector('.navbar-toggler-arches');
+        var navContent = document.getElementById('header_nav_content');
+        var lastIsMd = window.innerWidth >= MD_MIN;
+
+        function isMdViewport() {
+            return window.innerWidth >= MD_MIN;
+        }
+
+        function setBodyScrollLock(locked) {
+            document.body.style.overflow = locked ? 'hidden' : '';
+        }
+
+        function resetNavOpenState() {
+            nav.classList.remove('is-menu-open');
+            nav.querySelectorAll('.nav-has-submenu.is-open').forEach(function (tab) {
+                tab.classList.remove('is-open');
+            });
+
+            if (menuBtn) {
+                menuBtn.setAttribute('aria-expanded', 'false');
+            }
+
+            nav.querySelectorAll('.nav-submenu-toggle').forEach(function (btn) {
+                btn.setAttribute('aria-expanded', 'false');
+            });
+
+            setBodyScrollLock(false);
+        }
+
+        function openMobileMenu() {
+            nav.classList.add('is-menu-open');
+            if (menuBtn) {
+                menuBtn.setAttribute('aria-expanded', 'true');
+            }
+            setBodyScrollLock(true);
+
+            if (navContent) {
+                var firstLink = navContent.querySelector('a[href]');
+                if (firstLink) {
+                    firstLink.focus();
+                }
+            }
+        }
+
+        function closeMobileMenu(returnFocus) {
+            nav.classList.remove('is-menu-open');
+            if (menuBtn) {
+                menuBtn.setAttribute('aria-expanded', 'false');
+            }
+            setBodyScrollLock(false);
+
+            if (returnFocus && menuBtn) {
+                menuBtn.focus();
+            }
+        }
+
+        function onViewportResize() {
+            var isMd = isMdViewport();
+            if (isMd !== lastIsMd) {
+                resetNavOpenState();
+                lastIsMd = isMd;
+            }
+        }
+
+        if (typeof ResizeObserver !== 'undefined') {
+            var resizeObserver = new ResizeObserver(onViewportResize);
+            resizeObserver.observe(document.documentElement);
+        } else {
+            window.addEventListener('resize', onViewportResize);
+        }
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key !== 'Escape' && e.key !== 'Esc') {
+                return;
+            }
+
+            if (nav.classList.contains('is-menu-open')) {
+                e.preventDefault();
+                closeMobileMenu(true);
+                return;
+            }
+
+            var openTab = nav.querySelector('.nav-has-submenu.is-open');
+            if (!openTab) {
+                return;
+            }
+
+            e.preventDefault();
+            openTab.classList.remove('is-open');
+            var toggleBtn = openTab.querySelector('.nav-submenu-toggle');
+            if (toggleBtn) {
+                toggleBtn.setAttribute('aria-expanded', 'false');
+                toggleBtn.focus();
+            }
+        });
+
+        nav.addEventListener('click', function (e) {
+            var clickedMenuBtn = e.target.closest('.navbar-toggler-arches');
+            if (clickedMenuBtn && nav.contains(clickedMenuBtn)) {
+                e.preventDefault();
+                if (nav.classList.contains('is-menu-open')) {
+                    closeMobileMenu(true);
+                } else {
+                    openMobileMenu();
+                }
+                return;
+            }
+
+            var btn = e.target.closest('.nav-submenu-toggle');
+            if (!btn || !nav.contains(btn)) return;
+            e.preventDefault();
+
+            var tab = btn.closest('.nav-has-submenu');
+            if (!tab) return;
+
+            var willOpen = !tab.classList.contains('is-open');
+            nav.querySelectorAll('.nav-has-submenu.is-open').forEach(function (openTab) {
+                if (openTab === tab) return;
+                openTab.classList.remove('is-open');
+                var otherBtn = openTab.querySelector('.nav-submenu-toggle');
+                if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+            });
+
+            tab.classList.toggle('is-open', willOpen);
+            btn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+        });
+    })();
+</script>
