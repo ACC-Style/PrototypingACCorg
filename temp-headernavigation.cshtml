@@ -39,14 +39,14 @@
             ? "item"
             : title.Replace(' ', '_').ToLowerInvariant();
 
-    const string labelClassBase = "nav-link-arches flex_auto nav-submenu-label-arches nowrap p-x_3 p-y_3 a:bg_accent-n3 h:bg_accent-n1 c_white not-link block h:undecorated";
+    const string labelClassBase = "nav-link-arches flex_auto nav-submenu-label-arches nowrap p-x_3 p-y_3 a:bg_primary-n1 h:bg_accent-n1 c_white not-link block h:undecorated";
     const string labelClassPlain = labelClassBase + " flex_70";
     const string labelClassDropdown = labelClassBase + " flex_70 text_left:touch";
     const string labelClassDropdownLong = labelClassBase + " flex_60 text_left:touch";
-    const string toggleClass = "bg_transparent br_none h:bg_acc-n3 c_white block display_none:md block:touch flex_none grid items_center justify_center nav-link-arches nav-submenu-toggle not-link nowrap p-x_3 p-y_3 self_stretch text_center cursor_pointer";
+    const string toggleClass = "bg_transparent br_none h:bg_accent-4 c_white block display_none:md block:touch flex_none grid items_center justify_center nav-link-arches nav-submenu-toggle not-link nowrap p-x_3 p-y_3 self_stretch text_center cursor_pointer";
     const string panelClassBase = "nav-submenu-panel dropdown-menu-arches m-b_3 bg_white font_0 m-x_3 m-x_0:md shadow_overlap-light br_black-1 br_solid br_1 br-bl_round br-br_round font_copy br-t_0 br_none br_solid:md z_5";
     const string panelClassWide = panelClassBase + " w_auto:md";
-    const string childLinkClass = "h:bg_accent-4 a:bg_accent-3 block p-y_3 p-x_4:md p-x_3 br_radius not-link c_inherit-all wrap sub-menu-item-arches h:undecorated";
+    const string childLinkClass = "h:bg_accent-4 a:bg_primary-3 block p-y_3 p-x_4:md p-x_3 br_radius not-link c_inherit-all wrap sub-menu-item-arches h:undecorated";
     const string childListClass = "ul_none lh_2 m_0 flex flex_column gap_1 c_black text_left font_ui";
 
     var navPages = Model.Pages != null
@@ -208,13 +208,13 @@
          class="flex_auto p_0 bg_acc font_2 font_1:md relative"
          aria-label="Main navigation">
         <div id="header_nav_toggle_row" class="nav-toggle-row relative display_none:md">
-            <button class="br_solid br_2 br_white-2 m-l_3 m-y_3 navbar-toggler-arches p_2 bg_acc-n1 h:bg_acc-n3 br_solid br_white-6 br_2 p-x_3 p-y_2 shadow_bevel-light"
+            <button class="br_solid br_2 br_white-2 m-l_3 m-y_3 navbar-toggler-arches p_2 bg_acc-n1 h:bg_accent-4 br_solid br_white-6 br_2 p-x_3 p-y_2 shadow_bevel-light a:bg_primary-n1 a:c_acc-2 c_white"
                     type="button"
                     aria-controls="header_nav_content"
                     aria-expanded="false"
                     aria-label="Toggle navigation">
-                <i class="icon-toggle_bars-times fas fa-fw a:c_acc-2 c_white" aria-hidden="true"></i>
-                <span class="a:c_acc-2 c_white p-x_3 uppercase font_accent">Menu</span>
+                <i class="icon-toggle_bars-times fas fa-fw" aria-hidden="true"></i>
+                <span class="p-x_3 uppercase font_accent">Menu</span>
             </button>
         </div>
 
@@ -392,6 +392,7 @@
             });
 
             if (menuBtn) {
+                menuBtn.classList.remove('active');
                 menuBtn.setAttribute('aria-expanded', 'false');
             }
 
@@ -406,6 +407,7 @@
             nav.classList.add('is-menu-open');
             if (menuBtn) {
                 menuBtn.setAttribute('aria-expanded', 'true');
+                menuBtn.classList.add('active');
             }
             setBodyScrollLock(true);
 
@@ -421,6 +423,7 @@
             nav.classList.remove('is-menu-open');
             if (menuBtn) {
                 menuBtn.setAttribute('aria-expanded', 'false');
+                menuBtn.classList.remove('active');
             }
             setBodyScrollLock(false);
 
