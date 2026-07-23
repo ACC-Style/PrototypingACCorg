@@ -1799,7 +1799,7 @@ csv_file: "none"
   function deriveShadeHexFromPrimary(primaryHex) {
     var p = hexToRgb(primaryHex || '#808080');
     var grey = 128; /* 50% grey */
-    var t = 0.05;
+    var t = 0.1;
     return rgbToHex(
       grey * (1 - t) + p.r * t,
       grey * (1 - t) + p.g * t,
@@ -2306,7 +2306,7 @@ csv_file: "none"
       '  --highlight-l: ' + (g('--highlight-l') || '') + ';',
       '  --highlight: hsl(var(--highlight-h), var(--highlight-s), var(--highlight-l));',
       '',
-      '  /* Shade: 50% grey + 5% primary (auto-derived) */',
+      '  /* Shade: 50% grey + 10% primary (auto-derived) */',
       '  --shade-h: ' + (g('--shade-h') || '') + ';',
       '  --shade-s: ' + (g('--shade-s') || '') + ';',
       '  --shade-l: ' + (g('--shade-l') || '') + ';',
