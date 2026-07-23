@@ -5,6 +5,7 @@
 @using ScientificSessions.Utilities
 @using Glass.Mapper.Sc.Web.Mvc
 @using System.Configuration
+@using System.Collections.Generic
 @using System.Linq
 @model BaseNavigation
 
@@ -43,15 +44,31 @@
     const string labelClassPlain = labelClassBase + " flex_70";
     const string labelClassDropdown = labelClassBase + " flex_70 text_left:touch";
     const string labelClassDropdownLong = labelClassBase + " flex_60 text_left:touch";
+    const string labelClassRegister = "bg_highlight-n1 block br_radius c_white font_0:md font_1:lg font_medium font_xbold grid h:bg_highlight-n4 items_center p-x_4 p-x_5:lg p-y_3 text_center:md text_right uppercase";
     const string toggleClass = "bg_transparent br_none h:bg_accent-4 c_white block display_none:md block:touch flex_none grid items_center justify_center nav-link-arches nav-submenu-toggle not-link nowrap p-x_3 p-y_3 self_stretch text_center cursor_pointer";
     const string panelClassBase = "nav-submenu-panel dropdown-menu-arches m-b_3 bg_white font_0 m-x_3 m-x_0:md shadow_overlap-light br_black-1 br_solid br_1 br-bl_round br-br_round font_copy br-t_0 br_none br_solid:md z_5";
     const string panelClassWide = panelClassBase + " w_auto:md";
     const string childLinkClass = "h:bg_accent-4 a:bg_primary-3 block p-y_3 p-x_4:md p-x_3 br_radius not-link c_inherit-all wrap sub-menu-item-arches h:undecorated";
     const string childListClass = "ul_none lh_2 m_0 flex flex_column gap_1 c_black text_left font_ui";
 
-    var navPages = Model.Pages != null
-        ? Model.Pages.Where(p => p != null)
-        : Enumerable.Empty<BaseNavigation>();
+    Func<BaseNavigation, bool> IsRegisterPage = page =>
+        !string.IsNullOrEmpty(page.Navigation_Title)
+        && page.Navigation_Title.ToUpperInvariant().Contains("REGISTER NOW");
+
+    var allNavPages = Model.Pages != null
+        ? Model.Pages.Where(p => p != null).ToList()
+        : new List<BaseNavigation>();
+
+    var registerPage = allNavPages.FirstOrDefault(IsRegisterPage);
+    var navPages = allNavPages.Where(p => !IsRegisterPage(p));
+
+    var isAuthenticated = Sitecore.Context.User != null && Sitecore.Context.User.IsAuthenticated;
+    var showRegister = registerPage != null
+        && !registerPage.Hide_From_Navigation
+        && !(isAuthenticated && hasFullRole);
+    var registerLabel = (isAuthenticated && hasVirtualRole)
+        ? "Upgrade Now"
+        : (registerPage != null ? (registerPage.Navigation_Title ?? "Register Now") : "Register Now");
 }
 
 @helper RenderChildColumn(IEnumerable<BaseNavigation> children, string childLinkClass, string childListClass, bool secondColumn)
@@ -219,7 +236,7 @@
         </div>
 
         <div id="header_nav_content"
-             class="navbar-collapse-arches bg_acc p-x_3:md max-w_90 display_none flex:md w_100 max-h_100 overflow_auto scroll-bar-mini">
+             class="navbar-collapse-arches bg_acc p-x_3:md display_none flex:md w_100 max-h_100 scroll-bar-mini">
             <ul class="b_0 flex flex_column flex_row:md m_0 navbar-nav-arches p_0 ul_none text_center:md text_left w_100 font_accent">
                 @{
                     var homeIsCurrent = Model.ParentId == Model.Id;
@@ -291,40 +308,17 @@
 
                             @if (Page.Navigation_Link != null && !string.IsNullOrEmpty(Page.Navigation_Link.Url))
                             {
-                                if (Sitecore.Context.User != null
-                                    && Sitecore.Context.User.IsAuthenticated
-                                    && title.ToUpperInvariant().Contains("REGISTER NOW"))
-                                {
-                                    @* Show the register button if user does NOT have the main registration role AND has the virtual registration role *@
-                                    if (!hasFullRole)
+                                @(Html.Glass().RenderLink<BaseNavigation>(
+                                    Page,
+                                    x => x.Navigation_Link,
+                                    new
                                     {
-                                        @(Html.Glass().RenderLink<BaseNavigation>(
-                                            Page,
-                                            x => x.Navigation_Link,
-                                            new
-                                            {
-                                                @class = labelClass,
-                                                aria_current = (isCurrent ? "page" : null),
-                                                @ID = linkId
-                                            },
-                                            false,
-                                            (hasVirtualRole ? "Upgrade Now" : title)))
-                                    }
-                                }
-                                else
-                                {
-                                    @(Html.Glass().RenderLink<BaseNavigation>(
-                                        Page,
-                                        x => x.Navigation_Link,
-                                        new
-                                        {
-                                            @class = labelClass,
-                                            aria_current = (isCurrent ? "page" : null),
-                                            @ID = linkId
-                                        },
-                                        false,
-                                        title))
-                                }
+                                        @class = labelClass,
+                                        aria_current = (isCurrent ? "page" : null),
+                                        @ID = linkId
+                                    },
+                                    false,
+                                    title))
                             }
                             else
                             {
@@ -360,6 +354,44 @@
                                 }
                             </div>
                         }
+                    </li>
+                }
+
+                @if (showRegister)
+                {
+                    var registerSlug = NavSlug(registerPage.Navigation_Title);
+                    var registerIsCurrent = Model.ParentId == registerPage.Id;
+                    var registerHref = (registerPage.Navigation_Link != null && !string.IsNullOrEmpty(registerPage.Navigation_Link.Url))
+                        ? registerPage.Navigation_Link.Url
+                        : (!string.IsNullOrEmpty(registerPage.Url) ? registerPage.Url : "#");
+
+                    <li id="nav_tab_@registerSlug"
+                        class="flex flex_column flex_none m-l_auto:md m-r_n3:md m_0 p_0 relative">
+                        <div class="flex flex_column flex_grow grid m-y_n3:md nav-tab-trigger w_100@(registerIsCurrent ? " active" : "")">
+                            @if (registerPage.Navigation_Link != null && !string.IsNullOrEmpty(registerPage.Navigation_Link.Url))
+                            {
+                                @(Html.Glass().RenderLink<BaseNavigation>(
+                                    registerPage,
+                                    x => x.Navigation_Link,
+                                    new
+                                    {
+                                        @class = labelClassRegister,
+                                        aria_current = (registerIsCurrent ? "page" : null),
+                                        @ID = "nav_link_" + registerSlug
+                                    },
+                                    false,
+                                    registerLabel))
+                            }
+                            else
+                            {
+                                <a href="@registerHref"
+                                   id="nav_link_@registerSlug"
+                                   class="@labelClassRegister"
+                                   aria-current="@(registerIsCurrent ? "page" : null)">
+                                    @registerLabel
+                                </a>
+                            }
+                        </div>
                     </li>
                 }
             </ul>

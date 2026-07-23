@@ -51,9 +51,12 @@ System state colors (success, warning, alert, info) will be left at defaults but
 - The composed `--*` variable automatically updates via `hsl(var(--*-h), var(--*-s), var(--*-l))`
 
 ### Font Family Picker
-- A `<select>` dropdown with curated Google Fonts grouped by category:
-  - **Serif/Slab** (for accent): Roboto Slab, Playfair Display, Merriweather, Lora, etc.
-  - **Sans-serif** (for display/copy/ui): Maven Pro, Open Sans, Inter, Lato, Montserrat, Raleway, etc.
+- A `<select>` dropdown with Google Fonts from `fonts.google.com/metadata/fonts` (latin Sans Serif + Serif families), grouped with `<optgroup>`:
+  - **Variable Fonts Sans Serif**
+  - **Variable Serif**
+  - **Sans Serif Fonts** (static)
+  - **Serif Fonts** (static)
+- Each group is alphabetical by family name. Variable families appear only in the Variable groups (not duplicated in static).
 - On change, dynamically inject a `<link>` to load the chosen Google Font CSS
 - Build the fallback chain based on font category:
   - Serif: `"[chosen]", "Times New Roman", "Lucida Bright", Georgia, serif`

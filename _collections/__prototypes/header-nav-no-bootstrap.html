@@ -266,6 +266,17 @@ notes: "Multi-tab main nav. Utilities on DOM; scoped CSS only for open-state, ic
             </div>
           </div>
         </li>
+
+        <li id="nav_tab_register_now"
+            class="flex flex_column flex_none m-l_auto:md m-r_n3:md m_0 p_0 relative">
+          <div class="flex flex_column flex_grow grid m-y_n3:md nav-tab-trigger w_100">
+            <a href="/register"
+               id="nav_link_register_now"
+               class="bg_highlight-n1 block br_radius c_white font_0:md font_1:lg font_medium font_xbold grid h:bg_highlight-n4 items_center p-x_4 p-x_5:lg p-y_3 text_center:md text_right uppercase">
+              Register Now
+            </a>
+          </div>
+        </li>
       </ul>
     </div>
   </nav>
@@ -287,6 +298,7 @@ notes: "Multi-tab main nav. Utilities on DOM; scoped CSS only for open-state, ic
     <li><strong>Submit Science</strong> — B 1-column (3); label uses <code>flex_60</code> (long title exception)</li>
     <li><strong>Guidelines</strong> — A plain link</li>
     <li><strong>Membership</strong> — B 1-column (3)</li>
+    <li><strong>Register Now</strong> — D CTA (always last; highlight button)</li>
   </ul>
 
   <h2 class="font_display font_2 m-t_4">0. Shell (once per page)</h2>
@@ -309,10 +321,25 @@ notes: "Multi-tab main nav. Utilities on DOM; scoped CSS only for open-state, ic
 
   <h2 class="font_display font_2 m-t_4">Backend decision</h2>
   <ol class="flex flex_column gap_2 font_n1 p-l_4">
+    <li>Title contains <code>REGISTER NOW</code> → <strong>D</strong> (pull out of order; render last)</li>
     <li>No children / <code>!SubPagesExist</code> → <strong>A</strong></li>
     <li>1–5 children → <strong>B</strong></li>
     <li>&gt; 5 children → <strong>C</strong> (B + 2-col additives)</li>
   </ol>
+
+  <h2 class="font_display font_2 m-t_4">D. Register CTA (always last)</h2>
+  <ul class="ul_none flex flex_column gap_2 font_n1">
+    <li><strong>Detect:</strong> <code>Navigation_Title</code> contains <code>REGISTER NOW</code> (case-insensitive)</li>
+    <li><strong>Order:</strong> remove from normal tab loop; append after all A/B/C tabs</li>
+    <li><code>&lt;li id="nav_tab_*" class="flex flex_column flex_none m-l_auto:md m-r_n3:md m_0 p_0 relative"&gt;</code></li>
+    <li>Trigger: <code>&lt;div class="flex flex_column flex_grow grid m-y_n3:md nav-tab-trigger w_100"&gt;</code> — no toggle / no submenu</li>
+    <li>
+      Link:
+      <code>class="bg_highlight-n1 block br_radius c_white font_0:md font_1:lg font_medium font_xbold grid h:bg_highlight-n4 items_center p-x_4 p-x_5:lg p-y_3 text_center:md text_right uppercase"</code>
+    </li>
+    <li><strong>Visibility:</strong> hide when authenticated + full registration role; otherwise show</li>
+    <li><strong>Label:</strong> authenticated + virtual role → <code>Upgrade Now</code>; else use <code>Navigation_Title</code></li>
+  </ul>
 
   <h2 class="font_display font_2 m-t_4">A. Plain link (no children)</h2>
   <ul class="ul_none flex flex_column gap_2 font_n1">
