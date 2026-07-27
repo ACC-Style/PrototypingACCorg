@@ -1,0 +1,118 @@
+<!-- FAQ runtime shim: desktop Q|A (open + hide marker), filter, hash deep-links.
+     Single source for prototype pages, generator COPY_ME blobs, and CMS paste.
+     Edit this file only — `_includes/annual/faq-runtime.html` -->
+<style data-component="FaqRuntime">
+  @media (min-width: 1024px) {
+    details[data-component="FaqItem"] > summary {
+      list-style: none;
+      cursor: default;
+    }
+    details[data-component="FaqItem"] > summary::-webkit-details-marker {
+      display: none;
+    }
+    details[data-component="FaqItem"] > summary::marker {
+      content: "";
+    }
+  }
+</style>
+<script data-component="FaqRuntime">
+(function () {
+  var DESKTOP_MQ = "(min-width: 1024px)";
+
+  function faqItems(root) {
+    return (root || document).querySelectorAll('details[data-component="FaqItem"]');
+  }
+
+  function updateDesktopDetails(mediaQuery) {
+    faqItems(document).forEach(function (detail) {
+      if (mediaQuery.matches) {
+        detail.open = true;
+      } else {
+        detail.removeAttribute("open");
+      }
+    });
+  }
+
+  function bindDesktopSummaryLock(mediaQuery) {
+    faqItems(document).forEach(function (detail) {
+      var summary = detail.querySelector("summary");
+      if (!summary || summary.getAttribute("data-faq-desktop-bound") === "true") return;
+      summary.setAttribute("data-faq-desktop-bound", "true");
+      summary.addEventListener("click", function (event) {
+        if (mediaQuery.matches) {
+          event.preventDefault();
+        }
+      });
+    });
+  }
+
+  function openHashTarget() {
+    var id = (window.location.hash || "").replace(/^#/, "");
+    if (!id) return;
+    var el = document.getElementById(id);
+    if (!el) return;
+    var details = el.closest("details") || (el.tagName === "DETAILS" ? el : null);
+    if (!details && id.indexOf("a-") === 0) {
+      var q = document.getElementById("q-" + id.slice(2));
+      if (q) details = q;
+    }
+    if (details && details.tagName === "DETAILS") {
+      details.open = true;
+      details.scrollIntoView({ block: "nearest" });
+    } else if (el) {
+      el.scrollIntoView({ block: "start" });
+    }
+  }
+
+  function bindFilter(root) {
+    var input = root.querySelector('[data-role="faq-filter"]');
+    var status = root.querySelector('[data-role="faq-filter-status"]');
+    var items = root.querySelectorAll('[data-item="faq-qa"]');
+    if (!input || !items.length) return;
+
+    input.addEventListener("input", function () {
+      var q = (input.value || "").trim().toLowerCase();
+      var shown = 0;
+      items.forEach(function (item) {
+        var text = (item.getAttribute("data-faq-question") || item.textContent || "").toLowerCase();
+        var match = !q || text.indexOf(q) !== -1;
+        item.hidden = !match;
+        if (match) shown += 1;
+      });
+      root.querySelectorAll('[data-role="faq-group"]').forEach(function (group) {
+        var visible = group.querySelectorAll('[data-item="faq-qa"]:not([hidden])').length;
+        group.hidden = q !== "" && visible === 0;
+      });
+      if (status) {
+        status.textContent = q
+          ? shown + " question" + (shown === 1 ? "" : "s") + " match"
+          : "";
+      }
+    });
+  }
+
+  function init() {
+    var mediaQuery = window.matchMedia(DESKTOP_MQ);
+    bindDesktopSummaryLock(mediaQuery);
+    updateDesktopDetails(mediaQuery);
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener("change", function () {
+        updateDesktopDetails(mediaQuery);
+      });
+    } else if (mediaQuery.addListener) {
+      mediaQuery.addListener(function () {
+        updateDesktopDetails(mediaQuery);
+      });
+    }
+
+    document.querySelectorAll('[data-component="FaqSpoke"]').forEach(function (spoke) {
+      var shell = spoke.closest("main, article, section, [data-role='faq-page']") || spoke.parentElement;
+      if (shell) bindFilter(shell);
+    });
+    openHashTarget();
+  }
+
+  document.addEventListener("DOMContentLoaded", init);
+  window.addEventListener("hashchange", openHashTarget);
+})();
+</script>

@@ -1,0 +1,55 @@
+---
+layout: annual/fullscreen
+name: "FAQs"
+position: "Information > FAQs"
+notes: "Hub triage for ACC.26 FAQ spokes. Demo seed — production-final pending SME date refresh (see _data/annual_meeting/faqs/CONTENT_FLAGS.md)."
+permalink: /AnnualMeeting/faqs/
+---
+{%- assign faq_data = site.data.annual_meeting.faqs.nested -%}
+{%- assign all_spokes = faq_data.spokes -%}
+
+<article class="reading-typography" data-role="faq-page" data-spoke="hub">
+  <header class="m-b_5">
+    <p class="font-size_down c_black-7 m-b_2">
+      <a class="link" href="{{ '/AnnualMeeting/' | relative_url }}">ACC.26</a>
+      <span aria-hidden="true"> / </span>
+      FAQs
+    </p>
+    <h1 class="c_primary font_display m-b_3">ACC.26 FAQs</h1>
+    <p class="font-size_up m-b_3">
+      Find answers by your role. These pages cover faculty and science-submission questions for the ACC Annual Scientific Session. Choose the path that matches what you are doing — answers differ by audience even when the questions look similar.
+    </p>
+    <p class="font-size_down c_black-7 m_0">
+      American College of Cardiology · Scientific Session
+      · Updated <time datetime="2026-07-24">July 24, 2026</time>
+      · <span class="font_italic">Prototype demo content; confirm dates with program owners before production publish.</span>
+    </p>
+  </header>
+
+  <section aria-labelledby="faq-choose-role" class="m-b_5">
+    <h2 id="faq-choose-role" class="c_primary font_display">Choose your FAQ</h2>
+    <p>Jump to the FAQ set that matches your role. You can switch topics from any spoke page.</p>
+    <ul class="ul_none grid columns_1 columns_3:md gap_4 m-t_4">
+      {%- for s in all_spokes -%}
+      <li class="bg_white br_1 br_black-3 br_solid br_radius p_4 relative">
+        <h3 class="m-t_0 m-b_2">
+          <a class="btn-link undecorated expanded-click-area" href="{{ s.canonical_path | relative_url }}">{{ s.spoke_label }}</a>
+        </h3>
+        <p class="m-b_3">{{ s.hub_blurb }}</p>
+        <p class="m_0">
+          <a class="btn btn-primary btn-sm" href="{{ s.canonical_path | relative_url }}">View FAQs</a>
+        </p>
+      </li>
+      {%- endfor -%}
+    </ul>
+  </section>
+
+  <section aria-labelledby="faq-how-to" class="m-b_4">
+    <h2 id="faq-how-to" class="c_primary font_display">How to use these FAQs</h2>
+    <ol class="marker_primary">
+      <li>Pick your audience page (Faculty, Abstracts &amp; Cases, or Late-Breaking Clinical Trials).</li>
+      <li>Use <strong>On this page</strong> jump links to open a journey stage (fees, eligibility, acceptance, and so on).</li>
+      <li>Filter questions on that page, or open a deep link from email or a Submit Science page.</li>
+    </ol>
+  </section>
+</article>
