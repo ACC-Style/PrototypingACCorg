@@ -1,23 +1,38 @@
+<!-- Google Fonts: paste into <head> or CMS global header (static links; no script) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300..800&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&amp;display=swap">
+
 <style>
 :root {
 
-  --page-max-width: 1200px;
-  /* ACC/Brand = Purple */
-  --acc-h:  256.10deg;
-  --acc-s:  47.13%;
-  --acc-l:  34.12%;
+  --page-max-width: 1400px;
+  /* Page backdrop: color beyond the page edges (body gutters L/R of the content column) */
+  --page-backdrop-color: #abcfcc;
+  /* Example: body { background-color: var(--page-backdrop-color); } */
+  /* Brand (--acc) */
+  --acc-h:  210.99deg;
+  --acc-s:  100.00%;
+  --acc-l:  17.84%;
   --acc: hsl(var(--acc-h), var(--acc-s), var(--acc-l));
 
-  /* Primary = Coral */
-  --primary-h: 14.68deg;
-  --primary-s: 83.19%;
-  --primary-l: 55.69%;
+  /* Primary */
+  --primary-h: 355.71deg;
+  --primary-s: 71.65%;
+  --primary-l: 50.20%;
   --primary: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
 
-  /* Accent = Purple */
-  --accent-h:  256.10deg;
-  --accent-s:  47.13%;
-  --accent-l:  34.12%;
+  /* Secondary */
+  --secondary-h: 347.73deg;
+  --secondary-s: 19.13%;
+  --secondary-l: 45.10%;
+  --secondary: hsl(var(--secondary-h), var(--secondary-s), var(--secondary-l));
+
+  /* Accent */
+  --accent-h:  174.93deg;
+  --accent-s:  61.21%;
+  --accent-l:  45.49%;
   --accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
 
   --code-color: hsla(
@@ -27,19 +42,25 @@
     1
   );
 
-  /* Secondary = Neutral gray */
-  --secondary-h: 210deg;
-  --secondary-s: 8%;
-  --secondary-l: 45%;
-  --secondary: hsl(var(--secondary-h), var(--secondary-s), var(--secondary-l));
+  /* Highlight */
+  --highlight-h: 40.74deg;
+  --highlight-s: 91.49%;
+  --highlight-l: 53.92%;
+  --highlight: hsl(var(--highlight-h), var(--highlight-s), var(--highlight-l));
 
-  /* Navigation (deep purple for structure) */
+  /* Shade: 50% grey + 10% primary (auto-derived) */
+  --shade-h: 356.67deg;
+  --shade-s: 7.09%;
+  --shade-l: 50.20%;
+  --shade: hsl(var(--shade-h), var(--shade-s), var(--shade-l));
+
+  /* Navigation (default from root.html; not used in current design patterns) */
   --navigation-h: 254.67deg;
   --navigation-s: 42.06%;
   --navigation-l: 20.98%;
   --navigation: hsl(var(--navigation-h), var(--navigation-s), var(--navigation-l));
 
-  /* System states */
+  /* System states (defaults from root.html) */
   --success-h: 152.14deg;
   --success-s: 65.12%;
   --success-l: 33.73%;
@@ -55,38 +76,27 @@
   --alert-l: 50.78%;
   --alert: hsl(var(--alert-h), var(--alert-s), var(--alert-l));
 
-  /* Neutral shade */
-  --shade-h: 210deg;
-  --shade-s: 6%;
-  --shade-l: 58%;
-  --shade: hsl(var(--shade-h), var(--shade-s), var(--shade-l));
-
-  /* Supporting */
   --info-h: 253.85deg;
   --info-s: 30.95%;
   --info-l: 50.59%;
   --info: hsl(var(--info-h), var(--info-s), var(--info-l));
 
-  /* Highlight = yellow contrast */ 
-  --highlight-h: 39.23deg;
-  --highlight-s: 92.86%;
-  --highlight-l: 56.05%;
-  --highlight: hsl(var(--highlight-h), var(--highlight-s), var(--highlight-l));
-
-  /* Links aligned to primary coral */
-  --link-color-light-h: 14.68deg;
-  --link-color-light-s: 70%;
-  --link-color-light-l: 74%;
+  /* Links (light link tuned from primary) */
+  --link-color-light-h: 355.71deg;
+  --link-color-light-s: 60.19%;
+  --link-color-light-l: 68.20%;
   --link-color-light: hsl(var(--link-color-light-h), var(--link-color-light-s), var(--link-color-light-l));
 
-  --link-color-light--hover-h: 14.68deg;
-  --link-color-light--hover-s: 70%;
-  --start-color: hsl(256.1deg 80.31% 10.28%);--end-color: hsl(256.1deg 47.13% 34.12%);
-   --start-color-alt:#83290b;--end-color-alt:#b73910;
+  --link-color-light--hover-h: 355.71deg;
+  --link-color-light--hover-s: 60.19%;
+  --start-color: hsl(210.99deg 100% 5.35%);
+  --end-color: hsl(210.99deg 100% 17.84%);
+  --start-color-alt: #83290b;
+  --end-color-alt: #b73910;
 
-   /* Fonts */
-  --font-family_accent: "Roboto Slab","Times New Roman","Lucida Bright",Georgia,serif,"slab";
-  --font-family_display: "Maven Pro","Muli","Open Sans",Verdana,Helvetica,sans-serif;
+  /* Fonts */
+  --font-family_accent: "Albert Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --font-family_display: "Albert Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   --font-family_copy: "Open Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   --font-family_ui: "Open Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
