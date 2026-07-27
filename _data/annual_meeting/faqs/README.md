@@ -20,14 +20,13 @@ SMEs should edit the CSV files in Excel and export each worksheet as **CSV UTF-8
 
 - `spokes.csv`: one row per role page; includes display order, hub copy, SEO, canonical, robots, status, and cross-link banner fields.
 - `groups.csv`: `spoke_id`, group ID/label/order, optional intro, and status.
-- `items.csv`: one row per FAQ. Keep `question` in its interrogative form. Put the published answer in **`answer_html`** (semantic HTML). `answer_text` is an optional plain-text skim for Excel review only.
+- `items.csv`: one row per FAQ. Columns: `spoke_id,group_id,item_id,question,answer_html,item_sort,status`. Put the published answer in **`answer_html`** (semantic HTML).
 
 CSV uses standard escaping: quote fields containing commas or line breaks and double embedded quotes. Stable IDs are content keys: do not change `spoke_id`, `group_id`, or `item_id` when editing copy.
 
 ## SME conventions
 - Preserve approved question and answer meaning. Verify dates, fees, contacts, links, and embargo wording with the owning program team.
 - Use `ready` for demo-approved content and `published` for live-approved content. Other statuses are omitted from `nested.json`.
-- Add cross-journey context through `related_spoke_id` and `related_group_id`; do not duplicate another spoke's answer.
 - **`answer_html` is required** and is what pages/CMS blobs render. Prefer `<p>`, `<ul>/<li>`, `<strong>`, `<em>`, and `<a>`. Do not leave raw Markdown (`**`, `_`) in this field.
 
 ## Day-to-day edit loop

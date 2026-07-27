@@ -15,12 +15,11 @@ python3 scripts/faqs/seed_and_convert.py
 `spoke_id,group_id,group_label,group_sort,group_intro`
 
 ### Items
-`spoke_id,group_id,item_id,question,answer_text,answer_html,item_sort,related_spoke_id,related_group_id,status,notes,primary_query`
+`spoke_id,group_id,item_id,question,answer_html,item_sort,status`
 
 ## SME rules
 - Keep questions in interrogative form.
 - Put the published answer in **`answer_html`** (semantic HTML: `<p>`, lists, `<strong>`, `<em>`, links).
-- `answer_text` is optional plain text for skimming in Excel only; it is not rendered on the site.
 - Do not change `item_id` after publish (deep links).
 - Set `status` to `ready` when Web Production may publish.
 

@@ -30,9 +30,8 @@ SPOKE_FIELDS = [
 ]
 GROUP_FIELDS = ["spoke_id", "group_id", "group_label", "group_sort", "group_intro", "status"]
 ITEM_FIELDS = [
-    "spoke_id", "group_id", "item_id", "question", "answer_text",
-    "answer_html", "item_sort", "related_spoke_id", "related_group_id",
-    "status", "notes", "primary_query",
+    "spoke_id", "group_id", "item_id", "question",
+    "answer_html", "item_sort", "status",
 ]
 
 SPOKES = [
@@ -111,16 +110,6 @@ HEADING_MAP = {
 }
 
 
-def clean_markdown(text: str) -> str:
-    """Turn source markdown into editable plain text without changing wording."""
-    text = text.strip()
-    text = re.sub(r"<br\s*/?>", "\n", text, flags=re.I)
-    # Joplin/markdown mailto links → bare email (plain_to_html will linkify)
-    text = re.sub(r"\[_?([^\]\n]+?)_?\]\(mailto:([^)]+)\)", r"\2", text)
-    text = re.sub(r"\[([^\]]+)]\((https?://[^)]+)\)", r"\1 (\2)", text)
-    text = re.sub(r"<(https?://[^>]+)>", r"\1", text)
-    text = text.replace("**", "").replace("_", "").replace("\\$", "$").replace("\\*", "*")
-    return re.sub(r"[ \t]+\n", "\n", text).strip()
 
 
 def format_inline(text: str) -> str:
@@ -186,8 +175,8 @@ def plain_to_html(text: str) -> str:
     return "".join(blocks)
 
 
-def answer_html(source_answer: str, question: str) -> tuple[str, str]:
-    """Return plain answer_text skim + answer_html for the CSV (HTML is canonical)."""
+def answer_html(source_answer: str, question: str) -> str:
+    """Return answer_html for the CSV (HTML is canonical)."""
     if "<table>" in source_answer:
         before, rest = re.split(r'<div class="joplin-table-wrapper">', source_answer, maxsplit=1)
         table_html, after = rest.split("</div>", maxsplit=1)
@@ -198,17 +187,12 @@ def answer_html(source_answer: str, question: str) -> tuple[str, str]:
             .replace("</p>", "")
         )
         table_html = re.sub(r"</?div[^>]*>", "", table_html).strip()
-        rendered = plain_to_html(before) + table_html + plain_to_html(after)
-        return (
-            "See the eligible and not-eligible criteria for submission requirements.",
-            rendered,
-        )
+        return plain_to_html(before) + table_html + plain_to_html(after)
     # Keep light markdown in the source long enough to become <strong>/<em> in HTML.
     source = re.sub(r"<br\s*/?>", "\n", source_answer.strip(), flags=re.I)
     source = re.sub(r"\[_?([^\]\n]+?)_?\]\(mailto:([^)]+)\)", r"\2", source)
     source = re.sub(r"<(https?://[^>]+)>", r"\1", source)
-    plain = clean_markdown(source_answer)
-    return plain, plain_to_html(source)
+    return plain_to_html(source)
 
 
 def parse_questions(spoke_id: str, source: Path) -> list[dict[str, str]]:
@@ -219,8 +203,11 @@ def parse_questions(spoke_id: str, source: Path) -> list[dict[str, str]]:
         nonlocal question, answer
         if question and group_id:
             raw = "\n".join(answer).strip()
-            text, rendered = answer_html(raw, question)
-            found.append({"group_id": group_id, "question": question, "answer_text": text, "answer_html": rendered})
+            found.append({
+                "group_id": group_id,
+                "question": question,
+                "answer_html": answer_html(raw, question),
+            })
         question, answer = None, []
 
     for line in lines:
@@ -285,13 +272,7 @@ def seed() -> Counter:
                 f"{prefixes[spoke_id]}-{slug(group_id)[:14]}-{slug(item['question'])}",
             )
             item["item_sort"] = sort_by_group[group_id] * 10
-            item["related_spoke_id"] = ""
-            item["related_group_id"] = ""
             item["status"] = "ready"
-            item["notes"] = ""
-            item["primary_query"] = item["question"].rstrip("?")
-            if item["question"] == "If I submit my abstract or case to ACC.26, am I allowed to submit it to other conferences or journals?":
-                item["related_spoke_id"], item["related_group_id"] = "lbct", "eligibility"
             items.append(item)
             counts[spoke_id] += 1
     write_csv(DATA_DIR / "spokes.csv", SPOKE_FIELDS, SPOKES)
@@ -347,8 +328,7 @@ def build_nested() -> dict:
                 {
                     "item_id": item["item_id"], "question": item["question"],
                     "answer_html": item["answer_html"],
-                    "item_sort": int(item["item_sort"]), "related_spoke_id": item["related_spoke_id"],
-                    "related_group_id": item["related_group_id"],
+                    "item_sort": int(item["item_sort"]),
                 }
                 for item in group_items
             ]
@@ -365,7 +345,7 @@ def write_documentation() -> None:
         (DATA_DIR / "README.md").write_text("""# ACC.26 FAQ content workflow
 
 ## Editorial files and schemas
-- `items.csv`: put the published answer in **`answer_html`** (semantic HTML). `answer_text` is optional plain-text skim only.
+- `items.csv`: put the published answer in **`answer_html`** (semantic HTML).
 - **`answer_html` is required** and is what pages/CMS blobs render.
 
 ## Day-to-day
