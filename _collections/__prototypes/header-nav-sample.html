@@ -1,0 +1,157 @@
+---
+layout: arches_empty
+name: "Header Nav Sample"
+position: "Flat HTML from temp-headernavigation.cshtml"
+notes: "Sample rendered output for Home + Submit Science (with yolo/foo/bar dropdown). Sub-nav items stand in for _HeaderSubNavigation partial."
+---
+
+<section class="reading-typography wrapper-container p_4">
+  <h1 class="font_display font_3 m-b_2">Header navigation sample</h1>
+  <p class="c_shade-n2 m-b_4">
+    Flat HTML matching the DOM from <code>temp-headernavigation.cshtml</code>
+    with sample Sitecore data: Home, Submit Science, and three children.
+  </p>
+</section>
+
+<style>
+  #header_nav-arches .nav-item.dropdown {
+    position: relative;
+  }
+
+  #header_nav-arches .nav-item.dropdown > .dropdown-menu {
+    min-width: 100%;
+    margin-top: 0;
+  }
+
+  @position-try --main-nav-align-end {
+    inset: auto;
+    top: anchor(bottom);
+    right: anchor(right);
+  }
+
+  @position-try --main-nav-drop-up {
+    inset: auto;
+    bottom: anchor(top);
+    left: anchor(left);
+  }
+
+  @supports (anchor-name: --main-nav-dropdown) {
+    @media (min-width: 992px) {
+      #header_nav-arches .nav-item.dropdown {
+        anchor-name: --main-nav-dropdown;
+        anchor-scope: --main-nav-dropdown;
+      }
+
+      #header_nav-arches .nav-item.dropdown > .dropdown-menu {
+        position: absolute;
+        position-anchor: --main-nav-dropdown;
+        inset: auto;
+        top: anchor(bottom);
+        left: anchor(left);
+        min-width: anchor-size(width);
+        position-try-fallbacks:
+          --main-nav-align-end,
+          --main-nav-drop-up,
+          flip-block,
+          flip-inline;
+      }
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    #header_nav-arches .nav-item.dropdown > .dropdown-menu {
+      position: static !important;
+      width: 100%;
+      transform: none !important;
+    }
+  }
+</style>
+
+<div class="flex c_white relative">
+  <nav id="header_nav-arches"
+       class="flex_auto p_0 navbar-expand-lg navbar-dark bg_acc font_2 font_1:lg relative"
+       aria-label="Main navigation">
+    <div class="relative">
+      <button class="br_solid br_2 br_white-2 collapsed m-l_3 m-y_3 navbar-toggler p_2 expanded-click-area"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#header_nav_content"
+              aria-controls="header_nav_content"
+              aria-expanded="false"
+              aria-label="Toggle navigation">
+        <i class="icon-toggle_bars-times fas fa a:c_acc-2 c_white" aria-hidden="true"></i>
+        <span class="a:c_acc-2 c_white p-x_3 uppercase font_accent">Menu</span>
+      </button>
+    </div>
+
+    <div id="header_nav_content" class="collapse navbar-collapse">
+      <ul class="navbar-nav flex flex_row:lg flex_column justify_around w_100">
+        <li class="active relative text_left text_center:lg flex_shrink a:bg_accent br_0 br_none">
+          <a href="/"
+             id="home"
+             class="nav-link expanded-click-area nowrap p-l_4 p-l_0:lg active "
+             aria-current="page"
+             title="Home">
+            <i class="fas fa-home p-x_3:lg" aria-hidden="true"></i>
+            <span class="display_none:lg">&nbsp;Home</span>
+          </a>
+        </li>
+
+        <li class="relative text_left text_center:lg flex_auto dropdown">
+          <a id="submit_science_toggle"
+             class="nav-link nowrap p-l_4 p-l_0:lg  a:c_white inline-block"
+             role="button"
+             data-bs-toggle="dropdown"
+             data-bs-display="static"
+             aria-haspopup="true"
+             aria-expanded="false">
+            <i class="far fa icon-toggle_plus-minus m-l_n2 m-r_2" aria-hidden="true"></i>
+            <span class="visually-hidden">Toggle Submit Science menu</span>
+          </a>
+
+          <a href="/submit-science"
+             id="submit_science"
+             class="nav-link nowrap p-l_0 a:c_white inline-block">
+            Submit Science
+          </a>
+
+          <div class="dropdown-menu m-x_3  shadow_overlap-light br_black-1 br_solid br_1 br-bl_round br-br_round font_copy br-t_0 br_none br_solid:lg br_square m-t_0 m-t_2:lg"
+               aria-labelledby="submit_science_toggle">
+            <div class="flex flex_column flex_row:md p-x_2:lg m-x_n1 m-x_0:lg">
+              <div class="p-x_2 p-y_0 p-y_2:md dropdown_column ">
+                <ul class="ul_none lh_2 m_0 flex flex_column gap_1">
+                  <li class="m-b_2">
+                    <a class="h:bg_accent-3 block p-y_3 p-x_4  br_radius link transition_4 wrap" href="/submit-science/yolo" id="yolo">
+                      <span class="text-indent_n1 inline-block m-l_4">Yolo</span>
+                    </a>
+                  </li>
+                  <li class="m-b_2">
+                    <a class="h:bg_accent-3 block p-y_3 p-x_4  br_radius link transition_4 wrap" href="/submit-science/foo" id="foo">
+                      <span class="text-indent_n1 inline-block m-l_4">Foo</span>
+                    </a>
+                  </li>
+                  <li class="m-b_2">
+                    <a class="h:bg_accent-3 block p-y_3 p-x_4  br_radius link transition_4 wrap" href="/submit-science/bar" id="bar">
+                      <span class="text-indent_n1 inline-block m-l_4">Bar</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>    
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<section class="reading-typography wrapper-container p_4 m-t_4">
+  <h2 class="font_display font_2 m-b_2">Data → markup map</h2>
+  <ul class="ul_none flex flex_column gap_2 font_n1">
+    <li><code>Model.Url</code> → Home link <code>/</code></li>
+    <li><code>Model.Pages[0]</code> → Submit Science (<code>SubPagesExist = true</code>)</li>
+    <li><code>Page.SubPages</code> → Yolo, Foo, Bar inside <code>.dropdown-menu shadow_overlap-light br_black-1 br_solid br_1 br_raidus</code> (stand-in for <code>_HeaderSubNavigation</code>)</li>
+  </ul>
+</section>
+
+{% include arches-bootstrap.html %}

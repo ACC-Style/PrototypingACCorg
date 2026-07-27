@@ -1,0 +1,63 @@
+@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using ScientificSessions.Models.sitecore.templates.User_Defined.ScientificSessions.BasePages
+@using Glass.Mapper.Sc.Web.Mvc
+@model BaseNavigation
+ 
+
+@{
+    var navItems = Model.Pages;
+    
+}
+@helper ShowTree(IEnumerable<BaseNavigation> Pages)
+{
+    <ul class="ul_none flex flex_column gap_0 bg_white-2 p-l_3 p-l_4:lg font-size_down-1">
+        @foreach (var Page in Pages)
+        {
+            if (!Page.Hide_From_Navigation)
+            {
+                Page.SubPages = Page.GetChildren<BaseNavigation>();
+                var classNames = new List<string>();
+                classNames.AddRange(["m_0", "p_0"]);
+                if (Model.ActiveId == Page.Id)
+                {
+                      classNames.AddRange(["current", "active"]);
+                }
+                if (!Model.UserHasReadAccess(Page))
+                {
+                    classNames.Add("disabled");
+                }
+                <li class="@string.Join(" ", classNames)">
+                    @if (Page.Navigation_Link != null && !string.IsNullOrEmpty(Page.Navigation_Link.Url))
+                    {
+                        @(Html.Glass().RenderLink<BaseNavigation>(Page, x => x.Navigation_Link, new { @ID = Page.Navigation_Title.Replace(' ', '_').ToLower() }, false, Page.Navigation_Title))
+                    }
+                    else
+                    {
+                        <a href="@Page.Url" id="@Page.Navigation_Title.Replace(" ", "_").ToLower()" class="block p-y_2  p-x_3 a:bg_accent-n2 inset_0 h:bg_acc-n4 c_inherit-all" >@Page.Navigation_Title</a>
+                    }
+                    @if ((Model.ActiveId == Page.Id || Model.ActiveParentId == Page.Id) && Page.SubPages.Count() > 0)
+                    {
+                        @ShowTree(Page.SubPages)
+                    }
+                </li>
+            }
+        }
+    </ul>
+}
+
+<nav id="side_nav-arches" class="bg_acc-n1 flex flex_column gap_0 font_1:lg font_0 c_white-8 h:c_white font_ui">
+    @if (Model.Navigation_Link != null && !string.IsNullOrEmpty(Model.Navigation_Link.Url))
+    {
+        
+            @(Html.Glass().RenderLink<BaseNavigation>(Model, x => x.Navigation_Link, new { @class = (Model.ActiveId == Model.Id ? "active" : ""), @ID = Model.Navigation_Title.Replace(' ','_').ToLower() }, false, Model.Navigation_Title))
+        
+    }
+    else
+    {
+        <a href="@Model.Url" id="@Model.Navigation_Title.Replace(" ", "_").ToLower()" class="block p-y_2 p-x_3 p-x_4:lg bg_accent-n3 inset_0 h:bg_acc-n3 c_inherit-all">
+            @Model.Navigation_Title
+        </a>
+    }
+    @ShowTree(navItems)
+</nav>
