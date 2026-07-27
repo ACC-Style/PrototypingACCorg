@@ -1,0 +1,22 @@
+spoke_id,group_id,group_label,group_sort,group_intro,status
+faculty,invitation-disclosures,Invitation & disclosures,1,,ready
+faculty,registration-benefits,Registration & faculty benefits,2,,ready
+faculty,travel-hotel-visa,"Travel, hotel & visa",3,,ready
+faculty,preparing-session,Preparing your session,4,,ready
+faculty,onsite-speaker-center,Onsite & Speaker Service Center,5,,ready
+abstracts-cases,fees,Fees,1,,ready
+abstracts-cases,eligibility,Eligibility & prior presentation,2,,ready
+abstracts-cases,deadlines,Deadlines & changes before close,3,,ready
+abstracts-cases,what-where,What & where to submit,4,,ready
+abstracts-cases,authors-institutions,Authors & institutions,5,,ready
+abstracts-cases,technical,Technical & completion,6,,ready
+abstracts-cases,after-deadline,After the deadline,7,,ready
+abstracts-cases,acceptance,"Acceptance, registration & publication",8,,ready
+lbct,fees,Fees,1,,ready
+lbct,eligibility,Eligibility & embargo,2,,ready
+lbct,deadlines,Deadlines & changes before close,3,,ready
+lbct,what-where,What & where to submit,4,,ready
+lbct,authors-institutions,"Authors, institutions & disclosures",5,,ready
+lbct,technical,Technical & completion,6,,ready
+lbct,after-deadline,After the deadline,7,,ready
+lbct,acceptance,"Acceptance, registration & publication",8,,ready

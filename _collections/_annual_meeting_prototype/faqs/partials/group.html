@@ -1,0 +1,27 @@
+{%- comment -%}
+  FAQ group (parent journey stage).
+  Expects: group (group_id, group_label, group_intro, items[])
+{%- endcomment -%}
+<section
+  class="m-b_5"
+  data-component="FaqGroup"
+  data-role="faq-group"
+  id="g-{{ group.group_id }}"
+  aria-labelledby="h-{{ group.group_id }}">
+  <h2 id="h-{{ group.group_id }}" class="c_primary font_display m-b_3">
+    {{ group.group_label }}
+  </h2>
+  {%- if group.group_intro and group.group_intro != "" -%}
+  <p class="m-b_3">{{ group.group_intro }}</p>
+  {%- endif -%}
+  {%- if group.related_spoke_id and group.related_spoke_id != "" -%}
+  <p class="font-size_down m-b_3">
+    <a class="link" href="/AnnualMeeting/faqs/{{ group.related_spoke_path | default: group.related_spoke_id }}/#g-{{ group.related_group_id }}">Related: {{ group.related_label | default: "See related FAQs" }}</a>
+  </p>
+  {%- endif -%}
+  <div data-role="faq-items">
+    {%- for item in group.items -%}
+      {%- include annual/faq-item.html item=item -%}
+    {%- endfor -%}
+  </div>
+</section>

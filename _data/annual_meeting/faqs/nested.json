@@ -1,0 +1,928 @@
+{
+  "generated_at": "2026-07-24T20:00:17.690846+00:00",
+  "spokes": [
+    {
+      "spoke_id": "abstracts-cases",
+      "spoke_sort": 1,
+      "spoke_label": "Abstracts & Cases",
+      "hub_blurb": "For abstract, complex clinical case, and CV Team submitters",
+      "seo_title": "ACC.26 Abstract & Case Submission FAQs",
+      "seo_meta_description": "Fees, eligibility, deadlines, portal help, and acceptance rules for ACC.26 abstract and complex clinical case submissions.",
+      "seo_h1": "ACC.26 Abstract & Case Submission FAQs",
+      "canonical_path": "/AnnualMeeting/faqs/abstracts-and-cases/",
+      "date_modified": "2026-07-24",
+      "robots": "index,follow",
+      "status": "ready",
+      "cross_banner": "Submitting a Late-Breaking Clinical Trial? See LBCT FAQs.",
+      "cross_banner_href": "/AnnualMeeting/faqs/late-breaking-clinical-trials/",
+      "groups": [
+        {
+          "group_id": "fees",
+          "group_label": "Fees",
+          "group_intro": "",
+          "group_sort": 1,
+          "items": [
+            {
+              "item_id": "abs-fee-submission-fee",
+              "question": "Is there a submission fee?",
+              "answer_html": "<p>Yes. There is a $55 processing fee for general abstracts and complex clinical case submissions. CV Team abstracts and cases cost $25.</p>",
+              "item_sort": 10,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "abs-fees-can-i-submit-multiple-abstracts-or-cases",
+              "question": "Can I submit multiple abstracts or cases?",
+              "answer_html": "<p>Yes, you can submit multiple abstracts, but each submission requires a separate $55 or $25 (depending on your submission type) processing fee.</p>",
+              "item_sort": 20,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "abs-fees-can-i-receive-a-discount-on-the-fee-or-have-the-fee-waived",
+              "question": "Can I receive a discount on the fee or have the fee waived?",
+              "answer_html": "<p>No, the processing fee is required for all submissions.</p>",
+              "item_sort": 30,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            }
+          ]
+        },
+        {
+          "group_id": "eligibility",
+          "group_label": "Eligibility & prior presentation",
+          "group_intro": "",
+          "group_sort": 2,
+          "items": [
+            {
+              "item_id": "abs-eligibility-can-i-submit-my-abstract-case-if-it-has-been-previously-published",
+              "question": "Can I submit my abstract/case if it has been previously published?",
+              "answer_html": "<p>No, we do not accept any abstracts or cases that have been previously published, whether digitally or printed.</p>",
+              "item_sort": 10,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "abs-eligibility-can-i-submit-my-abstract-case-if-it-has-been-previously-presented",
+              "question": "Can I submit my abstract/case if it has been previously presented?",
+              "answer_html": "<p>If it has been previously presented at a large national or international meeting, no. If it has been presented at a smaller state or local meeting, yes.</p><p>For more details, please refer to the following table to determine eligibility for submission of scientific abstracts and complex cases for presentation at ACC.26. These criteria protect the quality, originality, and integrity of the science and case discussions featured during ACC.26.</p><table><tbody><tr><th><strong>Eligible</strong></th><th><strong>Not Eligible</strong></th></tr><tr><td><ul><li>Abstracts/cases that have not previously been presented either live or virtually at another professional society meeting or published prior to ACC.26 <em>are eligible</em> for submission.</li><li>If an abstract/case has been presented (either live or virtually) only at an ACC state chapter meeting or ACC international meeting (ACC Asia, ACC Latin America, ACC Middle East), it <em>is eligible</em> for submission to ACC.26.</li><li>If an abstract/case has been presented (either live or virtually) only to a state medical society or country society meeting, or local institutional meeting, it <em>is eligible</em> for submission to ACC.26.</li><li>If an abstract/case is also planned for submission or presentation at a meeting taking place <strong><em>after</em></strong> ACC.26, it <em>is eligible</em> to be submitted to the ACC Annual Scientific Session.</li><li>Abstracts/cases may be submitted to journals for publication if the journals agree to <em>hold publication</em> until the ACC.26 embargo is lifted on the designated day at 8 am ET.</li></ul></td><td><ul><li>Abstracts/cases are <em>not eligible</em> for consideration if they have been presented either live or virtually at a national meeting held in the United States or any non-ACC international meeting held prior to ACC.26.*</li><li>Abstracts/cases are <em>not eligible</em> for consideration if they have been presented live or virtually at programs held by non-profit organizations (e.g., ACC live U.S. courses).</li><li>Abstracts/cases are <em>not eligible</em> for consideration if the abstract has been published <em>prior</em> to ACC.26.</li><li>If abstracts/cases are submitted to journals for publication and the journals <em>do not agree</em> to hold publication until the embargo is lifted and the abstract/case is published prior to that date, the abstract/case <em>must be withdrawn</em> from ACC.26.</li></ul></td></tr></tbody></table><p>* Examples of this type of meeting include, but are not limited to, scientific sessions by the American Heart Association (AHA), Heart Rhythm Society (HRS), Heart Failure Society of America (HFSA), Transcatheter Cardiovascular Therapeutics (TCT), Society for Cardiovascular Angiography and Interventions (SCAI), and European Society of Cardiology (ESC).</p><p>Requests for exceptions to these eligibility requirements must be made in writing and will be reviewed by the ACC.26 Chair and ACC.26 Vice Chair. These situations are expected to be rare given the comprehensive guidance as detailed above.</p><p>If you have any questions, please contact Ashley Truluck on ACC staff at <a href=\"mailto:atruluck@acc.org\">atruluck@acc.org</a>.</p>",
+              "item_sort": 20,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "abs-eligibility-if-i-submit-my-abstract-or-case-to-acc26-am-i-allowed-to-submit-it-to-other-conferences-or-journals",
+              "question": "If I submit my abstract or case to ACC.26, am I allowed to submit it to other conferences or journals?",
+              "answer_html": "<p>Yes, if the abstract/case will be presented at another meeting taking place after ACC.26. If your abstract/case is accepted by another U.S. national or international conference taking place prior to ACC.26, or if it is published prior to ACC.26, you will need to withdraw it from the ACC.26 program no later than Tuesday, Jan. 27, 2026.</p><p>If it is accepted for publication close to the ACC.26 dates, it is possible to coordinate the date of publication with the ACC Media Relations team and the respective journal so that the ACC.26 embargo policies are not violated.</p>",
+              "item_sort": 30,
+              "related_spoke_id": "lbct",
+              "related_group_id": "eligibility"
+            }
+          ]
+        },
+        {
+          "group_id": "deadlines",
+          "group_label": "Deadlines & changes before close",
+          "group_intro": "",
+          "group_sort": 3,
+          "items": [
+            {
+              "item_id": "abs-deadlines-what-is-the-deadline-for-submission",
+              "question": "What is the deadline for submission?",
+              "answer_html": "<p>The abstract, case, and interventional challenging case deadline is Sept. 30, 2025, at 1 p.m. ET.</p>",
+              "item_sort": 10,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "abs-deadlines-can-i-make-any-changes-after-i-have-submitted-my-abstract-case",
+              "question": "Can I make any changes after I have submitted my abstract/case?",
+              "answer_html": "<p>You can make changes up until the deadline of 1 p.m. ET on Tuesday, Sept. 30, 2025. After that, no further changes can be made to the submission.</p>",
+              "item_sort": 20,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            }
+          ]
+        },
+        {
+          "group_id": "what-where",
+          "group_label": "What & where to submit",
+          "group_intro": "",
+          "group_sort": 4,
+          "items": [
+            {
+              "item_id": "abs-what-where-where-can-i-find-examples-of-abstracts-and-cases",
+              "question": "Where can I find examples of abstracts and cases?",
+              "answer_html": "<p>You can see last year&#x27;s JACC Abstract Supplement to view cases and abstracts that were accepted for ACC.25: &lt;<a href=\"https://www.jacc.org/toc/jacc/85/12_Supplement&gt;.\">https://www.jacc.org/toc/jacc/85/12_Supplement&gt;.</a></p>",
+              "item_sort": 10,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "abs-what-where-what-category-should-i-submit-my-abstract-or-case-to",
+              "question": "What category should I submit my abstract or case to?",
+              "answer_html": "<p>You should submit your abstract or case to the category you think is most appropriate. If you are unsure, we recommend you reach out to a colleague. As staff, we are not able to determine what category your abstract or case falls under.</p>",
+              "item_sort": 20,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "abs-what-where-can-i-submit-a-case-presentation-to-the-general-abstract-category",
+              "question": "Can I submit a case presentation to the general abstract category?",
+              "answer_html": "<p>No. Since the general abstract category is meant for scientific research only, case presentations are likely to receive lower grades from abstract reviewers and are therefore less likely to be accepted. Cases should be submitted to the complex clinical case category.</p>",
+              "item_sort": 30,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "abs-what-where-who-can-submit-to-the-general-abstract-category",
+              "question": "Who can submit to the general abstract category?",
+              "answer_html": "<p>Anyone is eligible to submit to this category, including non-ACC members, medical students and high school students who are working with physicians or CV team members.</p>",
+              "item_sort": 40,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "abs-what-where-who-can-submit-to-the-complex-clinical-case-category",
+              "question": "Who can submit to the Complex Clinical Case Category?",
+              "answer_html": "<p>Medical students, residents, fellows-in-training, medical doctors and researchers are welcome to submit a Complex Clinical Case.</p>",
+              "item_sort": 50,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "abs-what-where-who-can-submit-to-the-cvt-abstract-or-case-category",
+              "question": "Who can submit to the CVT Abstract or Case Category?",
+              "answer_html": "<p>Only CV Team Members are eligible to submit to these categories. Both the first author and presenting author must be a CVT Member to be eligible. Below is the full list of all professions within the CV Team. If you do not fall under one of these professions, please submit under our main abstract or case categories.</p><p>**Allied Health Professionals**</p><ul><li>Cardiovascular Technologists _(Sonographers, Electrophysiology Specialists, Invasive Specialists, Vascular Specialists, Perfusionists)_</li><li>Cardiovascular Rehabilitation Professionals _(Clinical Psychologists, Clinical Social Workers, Exercise Physiologists, Occupational Therapists, Physical Therapists, Registered Dietitians)_</li><li>Genetic Counselors</li><li>Registered Nurses</li></ul><p>**APRNs, PAs and Clinical Pharmacists/Advanced Practice Providers (APPs)**</p><ul><li>Clinical Nurse Specialists</li><li>Clinical Pharmacists</li><li>Nurse Practitioners</li><li>PAs</li></ul>",
+              "item_sort": 60,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "abs-what-where-where-can-i-access-my-submission",
+              "question": "Where can I access my submission?",
+              "answer_html": "<p>Submissions can be accessed in the portal using this link: <a href=\"https://www.abstractsonline.com/dashboard/login.asp?aId=296&amp;targetMKey=%7b385C6FAB-6F2F-4047-9924-8E6528E4BAD2%7d&amp;targetMod=submit\"><a href=\"https://www.abstractsonline.com/dashboard/login.asp?aId=296&amp;targetMKey={385C6FAB-6F2F-4047-9924-8E6528E4BAD2}&amp;targetMod=submit\">https://www.abstractsonline.com/dashboard/login.asp?aId=296&amp;targetMKey={385C6FAB-6F2F-4047-9924-8E6528E4BAD2}&amp;targetMod=submit</a></a></p>",
+              "item_sort": 70,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "abs-what-where-do-i-need-to-get-a-signed-patient-consent-form-for-my-case-submission",
+              "question": "Do I need to get a signed patient consent form for my case submission?",
+              "answer_html": "<p>No, you do not. We work under the assumption that you have already taken all necessary steps to protect your patient&#x27;s identity and respect their privacy.</p>",
+              "item_sort": 80,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            }
+          ]
+        },
+        {
+          "group_id": "authors-institutions",
+          "group_label": "Authors & institutions",
+          "group_intro": "",
+          "group_sort": 5,
+          "items": [
+            {
+              "item_id": "abs-authors-instit-can-i-include-more-than-two-institutions-in-my-submission",
+              "question": "Can I include more than two institutions in my submission?",
+              "answer_html": "<p>No, our system only allows 2 institutions to be listed on the copy of the abstract/case that will be published in JACC. However, if your abstract/case gets accepted, you are welcome to include additional institutions on your poster or presentation.</p>",
+              "item_sort": 10,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "abs-authors-instit-why-is-there-an-n-a-displayed-next-to-my-names-as-the-first-author-on-the-author-tab-why-is-my-institution-information-missing",
+              "question": "Why is there an \"N/A\" displayed next to my names as the first author on the \"Author\" tab? Why is my institution information missing?",
+              "answer_html": "<p>The first author will always have &quot;n/a&quot; displayed to the right of their name. This is normal and does not display anywhere else other than on the &quot;Author&quot; tab. Do NOT enter your name more than once to enter in your institution information since institution information is entered in on a separate tab.</p>",
+              "item_sort": 20,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "abs-authors-instit-are-presenting-authors-and-lead-investigators-required-to-complete-disclosures-before-submitting-an-abstract-or-case-for-acc26",
+              "question": "Are presenting authors and lead investigators required to complete disclosures before submitting an abstract or case for ACC.26?",
+              "answer_html": "<p>No. The ACC.26 Abstract and Case Program is a non-accredited activity, so presenting authors and lead investigators are not required to complete disclosures prior to submission.</p>",
+              "item_sort": 30,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "abs-authors-instit-if-my-abstract-or-case-is-accepted-do-i-still-need-to-provide-disclosures",
+              "question": "If my abstract or case is accepted, do I still need to provide disclosures?",
+              "answer_html": "<p>Yes. If accepted to ACC.26, presenting authors must include both their own and their lead investigator&#x27;s disclosures on their poster or presentation.</p>",
+              "item_sort": 40,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "abs-authors-instit-can-i-add-more-than-25-authors-to-an-abstract-or-case",
+              "question": "Can I add more than 25 authors to an abstract or case?",
+              "answer_html": "<p>No, our system only allows 25 authors (including the submitter) to be listed on the copy of the abstract/case that will be published in _JACC_. However, if your abstract/case gets accepted, you are welcome to include additional authors on your poster or presentation.</p>",
+              "item_sort": 50,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "abs-authors-instit-can-i-change-the-order-authors-are-listed",
+              "question": "Can I change the order authors are listed?",
+              "answer_html": "<p>Yes, you can change the order of all co-authors. To do this, log back into the submission site, click on the submission you want to make the change to, and go to the &quot;Author&quot; tab on the left-hand side of the screen. There, you will see the option to &quot;Change the Order these Author(s) are listed&quot; underneath the author names.</p>",
+              "item_sort": 60,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "abs-authors-instit-who-should-i-list-as-the-lead-investigator-for-my-abstract-or-case",
+              "question": "Who should I list as the Lead Investigator for my abstract or case?",
+              "answer_html": "<p>Generally, the Lead Investigator is the senior author of an abstract or case, but sometimes the presenting author will list themselves as the Lead Investigator.</p>",
+              "item_sort": 70,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            }
+          ]
+        },
+        {
+          "group_id": "technical",
+          "group_label": "Technical & completion",
+          "group_intro": "",
+          "group_sort": 6,
+          "items": [
+            {
+              "item_id": "abs-technical-is-there-a-maximum-character-count-for-my-submission",
+              "question": "Is there a maximum character count for my submission?",
+              "answer_html": "<p>Yes, the maximum character count per submission is 1,900 characters NOT including spaces. If you choose to add an image or table to your submission, it will count as 600 characters towards the total 1,900 characters that are allowed.</p>",
+              "item_sort": 10,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "abs-technical-do-the-section-headers-in-the-body-of-my-submission-count-towards-the-total-character-count-of-my-submission",
+              "question": "Do the section headers in the body of my submission count towards the total character count of my submission?",
+              "answer_html": "<p>Yes, they do, and they cannot be removed. Please account for the section headers in your abstract&#x27;s total character count.</p>",
+              "item_sort": 20,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "abs-technical-can-i-change-the-section-headers-in-the-body-of-the-abstract-or-case-on-the-submission-site",
+              "question": "Can I change the section headers in the body of the abstract or case on the submission site?",
+              "answer_html": "<p>No, the headers in the body of the abstract or case cannot be edited.</p>",
+              "item_sort": 30,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "abs-technical-can-i-include-a-table-image-in-my-abstract-or-case",
+              "question": "Can I include a table/image in my abstract or case?",
+              "answer_html": "<p>Yes, you may include a table in your abstract or case by uploading an image of it as GIF or JPG file. The easiest way to do this is by taking a screenshot. You can do this on a Windows computer by using the snipping tool, and you can do this on an Apple computer by hitting Command-Shift-4.</p>",
+              "item_sort": 40,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "abs-technical-i-m-encountering-technical-issues-with-my-submission-who-should-i-reach-out-to",
+              "question": "I'm encountering technical issues with my submission, who should I reach out to?",
+              "answer_html": "<p>You should send an email to support at <a href=\"mailto:acc@support.ctimeetingtech.com\">acc@support.ctimeetingtech.com</a> with a detailed description and screenshots of the problem you are encountering. This will help them best diagnose and resolve the issue.</p>",
+              "item_sort": 50,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "abs-technical-how-do-i-know-my-abstract-or-case-is-complete",
+              "question": "How do I know my abstract or case is complete?",
+              "answer_html": "<p>All tabs on the left-hand side of the submission site will have checkmarks next to them and the &quot;Review My Work&quot; tab will have a message saying, &quot;Your submission is complete and will be sent to review.&quot; You will also have the option to send yourself a confirmation email that your submission is complete at the top of the &quot;Review My Work&quot; page. This option will only appear if your submission is complete.</p>",
+              "item_sort": 60,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "abs-technical-am-i-able-to-save-a-copy-of-my-abstract-or-case",
+              "question": "Am I able to save a copy of my abstract or case?",
+              "answer_html": "<p>Yes. You can save a copy of your abstract or case by logging into the submission site, clicking on the submission that you want to save, and then going to the &quot;Review My Work&quot; tab on the left-hand side of the screen. On the top of that page, you will have the option to print your abstract or case for your records.</p>",
+              "item_sort": 70,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            }
+          ]
+        },
+        {
+          "group_id": "after-deadline",
+          "group_label": "After the deadline",
+          "group_intro": "",
+          "group_sort": 7,
+          "items": [
+            {
+              "item_id": "abs-after-deadline-can-i-change-the-presenting-author-after-submission",
+              "question": "Can I change the presenting author after submission?",
+              "answer_html": "<p>Yes, you can change the presenting author to any listed author on your abstract until ACC.26. For changes to be reflected in JACC, notify Ashley Truluck (<a href=\"mailto:atruluck@acc.org\">atruluck@acc.org</a>) by Monday, Jan. 5, 2026. Please include the control number of the submission and the name of the new presenting author.</p>",
+              "item_sort": 10,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "abs-after-deadline-can-i-make-edits-to-my-abstract-or-case-after-the-submission-deadline",
+              "question": "Can I make edits to my abstract or case after the submission deadline?",
+              "answer_html": "<p>No, you cannot. Per ACC policies and procedures, no edits can be made to abstract or case submissions after the submission deadline. This includes adding author names or correcting errors in data. Please carefully review your submission prior to the submission deadline to ensure all co-authors are listed and all information is correct. After Sept. 30, 2025, no more edits can be made to your submission.</p>",
+              "item_sort": 20,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "abs-after-deadline-how-do-i-withdraw-my-submission",
+              "question": "How do I withdraw my submission?",
+              "answer_html": "<p>To withdraw your abstract, send a written notification to Ashley Truluck (<a href=\"mailto:atruluck@acc.org\">atruluck@acc.org</a>) with the title, authors, affiliations, control number, and submitter&#x27;s contact details. Use the summary page as part of the notification.</p>",
+              "item_sort": 30,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            }
+          ]
+        },
+        {
+          "group_id": "acceptance",
+          "group_label": "Acceptance, registration & publication",
+          "group_intro": "",
+          "group_sort": 8,
+          "items": [
+            {
+              "item_id": "abs-acceptance-when-will-i-know-if-my-abstract-case-is-accepted",
+              "question": "When will I know if my abstract/case is accepted?",
+              "answer_html": "<p>Notifications will be sent out on Dec. 15, 2025, to the presenting author.</p>",
+              "item_sort": 10,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "abs-acceptance-who-will-be-notified-if-the-abstract-or-case-is-accepted",
+              "question": "Who will be notified if the abstract or case is accepted?",
+              "answer_html": "<p>Only the presenting author for each submission will be notified about whether the abstract has been accepted or not.</p>",
+              "item_sort": 20,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "abs-acceptance-if-my-submission-is-accepted-for-presentation-will-i-need-to-pay-a-registration-fee",
+              "question": "If my submission is accepted for presentation, will I need to pay a registration fee?",
+              "answer_html": "<p>Yes, all accepted presenters will be required to pay a registration fee. However, they will receive a discount off of their registration category. More details will be provided in acceptance notifications.</p>",
+              "item_sort": 30,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "abs-acceptance-if-my-abstract-or-case-is-accepted-will-it-be-published",
+              "question": "If my abstract or case is accepted, will it be published?",
+              "answer_html": "<p>Yes, abstract and cases will be published online in the ACC.26 _JACC_ Abstract Supplement prior to the ACC Annual Scientific Session.</p>",
+              "item_sort": 40,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "spoke_id": "faculty",
+      "spoke_sort": 2,
+      "spoke_label": "Faculty",
+      "hub_blurb": "For invited faculty, chairs, presenters, and panelists",
+      "seo_title": "ACC.26 Faculty FAQs",
+      "seo_meta_description": "Invitation, disclosures, complimentary registration, travel, session prep, and Speaker Service Center guidance for ACC.26 faculty.",
+      "seo_h1": "ACC.26 Faculty FAQs",
+      "canonical_path": "/AnnualMeeting/faqs/faculty/",
+      "date_modified": "2026-07-24",
+      "robots": "index,follow",
+      "status": "ready",
+      "cross_banner": "Also presenting accepted science? See Abstracts & Cases or LBCT acceptance FAQs.",
+      "cross_banner_href": "/AnnualMeeting/faqs/",
+      "groups": [
+        {
+          "group_id": "invitation-disclosures",
+          "group_label": "Invitation & disclosures",
+          "group_intro": "",
+          "group_sort": 1,
+          "items": [
+            {
+              "item_id": "fac-inv-access-invitation",
+              "question": "I can't find my original ACC.26 faculty invitation. Is there an easy way for me to access it?",
+              "answer_html": "<p>Yes. You can access your invitation(s) by visiting the <a href=\"https://accscientificsession.acc.org/faculty-disclosures\">ACC.26 Portal</a> and clicking on the &quot;Tasks&quot; tab at the top of the page if it&#x27;s not already open.</p>",
+              "item_sort": 10,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "fac-invitation-dis-are-any-faculty-roles-eligible-for-virtual-participation",
+              "question": "Are any faculty roles eligible for virtual participation?",
+              "answer_html": "<p>No, all ACC.26 faculty must present live, in-person at the meeting.</p>",
+              "item_sort": 20,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "fac-invitation-dis-how-do-i-complete-my-disclosures",
+              "question": "How do I complete my disclosures?",
+              "answer_html": "<p>All ACC.26 faculty must complete a disclosure statement prior to accepting a faculty invitation. To complete your disclosures, visit <a href=\"https://disclosures.acc.org/\">_<a href=\"https://disclosures.acc.org_\">https://disclosures.acc.org_</a></a> and log in using your ACC username and password. If you do not have an ACC username you can create one for free on that page.</p>",
+              "item_sort": 30,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            }
+          ]
+        },
+        {
+          "group_id": "registration-benefits",
+          "group_label": "Registration & faculty benefits",
+          "group_intro": "",
+          "group_sort": 2,
+          "items": [
+            {
+              "item_id": "fac-registration-b-i-tried-to-register-for-acc26-but-it-tells-me-i-must-pay-i-thought-that-as-a-faculty-member-i-get-free-registration",
+              "question": "I tried to register for ACC.26, but it tells me I must pay. I thought that as a faculty member I get free registration?",
+              "answer_html": "<p>The registration fee is waived for confirmed ACC.26 faculty. Please allow 24 hours after accepting the faculty invitation before you access the registration site so that you can register with a complimentary status.</p>",
+              "item_sort": 10,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "fac-registration-b-will-staff-register-me-or-do-i-need-to-register-myself",
+              "question": "Will staff register me, or do I need to register myself?",
+              "answer_html": "<p>You must register yourself. Registration is NOT automatic when you accept your invitation(s). Invited and confirmed faculty can register for ACC.26 during the Exclusive Member Registration period beginning on Wednesday, October 1, 2025. General Early Bird Registration opens on Wednesday, October 15.</p>",
+              "item_sort": 20,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "fac-registration-b-as-a-faculty-member-will-i-have-access-to-acc-anywhere",
+              "question": "As a faculty member, will I have access to ACC Anywhere?",
+              "answer_html": "<p>Confirmed faculty will receive a free three-month subscription to ACC Anywhere, a comprehensive digital library of ACC&#x27;s in-person and virtual meetings including on demand access to 200+ sessions from ACC.26.</p>",
+              "item_sort": 30,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "fac-registration-b-as-a-faculty-member-do-i-receive-anything-besides-complimentary-registration",
+              "question": "As a faculty member, do I receive anything besides complimentary registration?",
+              "answer_html": "<p>No, you do not. The ACC does not pay an honorarium, nor reimburse for hotel, travel, or per diem expenses for ACC.26 faculty members.</p>",
+              "item_sort": 40,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            }
+          ]
+        },
+        {
+          "group_id": "travel-hotel-visa",
+          "group_label": "Travel, hotel & visa",
+          "group_intro": "",
+          "group_sort": 3,
+          "items": [
+            {
+              "item_id": "fac-travel-hotel-v-where-is-acc26-being-held",
+              "question": "Where is ACC.26 being held?",
+              "answer_html": "<p>At the New Orleans Ernest N. Morial Convention Center, 900 Convention Center Blvd, New Orleans, LA 70130.</p>",
+              "item_sort": 10,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "fac-travel-hotel-v-how-do-i-make-a-hotel-reservation",
+              "question": "How do I make a hotel reservation?",
+              "answer_html": "<p>You can make a hotel reservation through the ACC.26 site. To see which hotels are available, visit our <a href=\"https://accscientificsession.acc.org/Registration-and-Hotels/Registration-Rates-and-Dates\">registration page</a>.</p>",
+              "item_sort": 20,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "fac-travel-hotel-v-i-require-a-visa-to-come-to-acc26-how-do-i-receive-documentation-to-get-it",
+              "question": "I require a visa to come to ACC.26. How do I receive documentation to get it?",
+              "answer_html": "<p>Once you register for the conference, you will be able to obtain official documentation to get a visa. Please visit the <a href=\"https://accscientificsession.acc.org/Registration-and-Hotels/Registration-Rates-and-Dates\">registration page</a> for more information.</p>",
+              "item_sort": 30,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            }
+          ]
+        },
+        {
+          "group_id": "preparing-session",
+          "group_label": "Preparing your session",
+          "group_intro": "",
+          "group_sort": 4,
+          "items": [
+            {
+              "item_id": "fac-preparing-sess-what-do-i-need-to-do-to-prepare-for-my-session",
+              "question": "What do I need to do to prepare for my session?",
+              "answer_html": "<p>That depends on your specific role within a session. Chairs, presenters, and panelists all have different responsibilities within a session. Please refer to the summary page of your invitation(s) to see what type of role(s) you have and the associated responsibilities. We will also send out more detailed information about this in February.</p>",
+              "item_sort": 10,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "fac-preparing-sess-my-presentation-title-just-says-case-presenter-who-comes-up-with-the-cases",
+              "question": "My presentation title just says, \"Case Presenter.\" Who comes up with the cases?",
+              "answer_html": "<p>As a case presenter you should work with the session chairs to develop an appropriate case. If you need the chairs&#x27; email addresses, you can find them on the summary page of your invitation under the &quot;Presentations&quot; header.</p>",
+              "item_sort": 20,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "fac-preparing-sess-i-want-to-contact-the-other-faculty-in-the-session-how-do-i-get-their-contact-information",
+              "question": "I want to contact the other faculty in the session. How do I get their contact information?",
+              "answer_html": "<p>After accepting your invitation, you will be taken to a summary page. That summary page lists all session details, including other presenters within your session and their email addresses. You can find this under the &quot;Presentations&quot; header on the summary page.</p>",
+              "item_sort": 30,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "fac-preparing-sess-is-there-a-presentation-slide-template-for-acc26",
+              "question": "Is there a presentation slide template for ACC.26?",
+              "answer_html": "<p>Yes, the template will be available on your portal page in January 2026.</p>",
+              "item_sort": 40,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "fac-preparing-sess-is-the-presentation-template-required",
+              "question": "Is the presentation template required?",
+              "answer_html": "<p>No. However, we strongly encourage you to use the template to create consistency between presentations and sessions at ACC.26.</p>",
+              "item_sort": 50,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "fac-preparing-sess-i-have-never-spoken-at-acc-before-who-selected-me-for-this-talk",
+              "question": "I have never spoken at ACC before. Who selected me for this talk?",
+              "answer_html": "<p>The sessions are organized by our ACC.26 Program Committee. Therefore, one of our program committee members selected you as faculty.</p>",
+              "item_sort": 60,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            }
+          ]
+        },
+        {
+          "group_id": "onsite-speaker-center",
+          "group_label": "Onsite & Speaker Service Center",
+          "group_intro": "",
+          "group_sort": 5,
+          "items": [
+            {
+              "item_id": "fac-onsite-speaker-will-there-be-childcare-services-available-in-the-convention-center-at-acc26",
+              "question": "Will there be childcare services available in the convention center at ACC.26?",
+              "answer_html": "<p>Yes. Please visit the ACC.26 website for more information.</p>",
+              "item_sort": 10,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "fac-onsite-speaker-what-time-does-the-speaker-service-center-open-and-close-each-day-of-the-meeting",
+              "question": "What time does the Speaker Service Center open and close each day of the meeting?",
+              "answer_html": "<p>Friday, March 27: Noon - 5 p.m.<br>Saturday, March 28: 7:30 a.m. - 5:30 p.m.<br>Sunday, March 29: 7:30 a.m. - 5:30 p.m.<br>Monday, March 30: 7:30 a.m. - 3 p.m.</p>",
+              "item_sort": 20,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "fac-onsite-speaker-i-arrive-on-friday-evening-and-my-talk-is-at-8-a-m-on-saturday-is-this-enough-time-to-check-my-ppt-in-the-speaker-service-center",
+              "question": "I arrive on Friday evening and my talk is at 8 a.m. on Saturday. Is this enough time to check my PPT in the Speaker Service Center?",
+              "answer_html": "<p>Yes. If you arrive at the Speaker Service Center by 7 a.m. on Saturday and you explain to the staff that your presentation is at 8 a.m., they will make every effort to ensure that you are ready on time.</p>",
+              "item_sort": 30,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "fac-onsite-speaker-can-i-upload-my-ppt-presentation-onsite",
+              "question": "Can I upload my PPT presentation onsite?",
+              "answer_html": "<p>Yes, but only at the Speaker Service Center; presenters are unable to present directly from a USB/flash drive.</p>",
+              "item_sort": 40,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "spoke_id": "lbct",
+      "spoke_sort": 3,
+      "spoke_label": "Late-Breaking Clinical Trials",
+      "hub_blurb": "For Late-Breaking Clinical Trial submitters and presenters",
+      "seo_title": "ACC.26 Late-Breaking Clinical Trial FAQs",
+      "seo_meta_description": "Fees, embargo rules, deadlines, disclosures, and acceptance guidance for ACC.26 Late-Breaking Clinical Trial submissions.",
+      "seo_h1": "ACC.26 Late-Breaking Clinical Trial FAQs",
+      "canonical_path": "/AnnualMeeting/faqs/late-breaking-clinical-trials/",
+      "date_modified": "2026-07-24",
+      "robots": "index,follow",
+      "status": "ready",
+      "cross_banner": "Submitting an abstract or complex case? See Abstracts & Cases FAQs.",
+      "cross_banner_href": "/AnnualMeeting/faqs/abstracts-and-cases/",
+      "groups": [
+        {
+          "group_id": "fees",
+          "group_label": "Fees",
+          "group_intro": "",
+          "group_sort": 1,
+          "items": [
+            {
+              "item_id": "lbct-fees-is-there-a-submission-fee",
+              "question": "Is there a submission fee?",
+              "answer_html": "<p>Yes, there is a $399 processing fee per submission.</p>",
+              "item_sort": 10,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "lbct-fees-can-i-submit-multiple-lbcts",
+              "question": "Can I submit multiple LBCTs?",
+              "answer_html": "<p>Yes, you can submit multiple LBCTs, but each submission requires a separate $399 processing fee.</p>",
+              "item_sort": 20,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "lbct-fees-can-i-receive-a-discount-on-the-fee-or-have-the-fee-waived",
+              "question": "Can I receive a discount on the fee or have the fee waived?",
+              "answer_html": "<p>No, the $399 processing fee is required for all submissions.</p>",
+              "item_sort": 30,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            }
+          ]
+        },
+        {
+          "group_id": "eligibility",
+          "group_label": "Eligibility & embargo",
+          "group_intro": "",
+          "group_sort": 2,
+          "items": [
+            {
+              "item_id": "lbct-eligibility-can-i-submit-my-lbct-if-it-has-been-previously-published",
+              "question": "Can I submit my LBCT if it has been previously published?",
+              "answer_html": "<p>No, we do not accept any LBCTs that have been previously published or presented, including as an abstract submitted to ACC.26. Abstracts must be withdrawn immediately if the material is submitted and accepted as an LBCT.</p>",
+              "item_sort": 10,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "lbct-eligibility-if-i-submit-my-lbct-to-acc26-am-i-allowed-to-submit-it-to-other-conferences-or-journals",
+              "question": "If I submit my LBCT to ACC.26, am I allowed to submit it to other conferences or journals?",
+              "answer_html": "<p>Yes, if the LBCT will be presented at another meeting taking place **after** ACC.26. If your LBCT is accepted by another U.S. national or international conference taking place prior to ACC.26, or if it is published prior to ACC.26, you will violate the embargo and you will not be allowed to present.</p><p>If it is accepted for publication close to the ACC.26 dates, it is possible to coordinate the date of publication with the ACC Media Relations team and the respective journal so that the ACC.26 embargo policies are not violated.</p>",
+              "item_sort": 20,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            }
+          ]
+        },
+        {
+          "group_id": "deadlines",
+          "group_label": "Deadlines & changes before close",
+          "group_intro": "",
+          "group_sort": 3,
+          "items": [
+            {
+              "item_id": "lbct-dead-deadline",
+              "question": "What is the deadline for submission?",
+              "answer_html": "<p>The LBCT deadline is Tuesday, Nov. 18, 2025, at 1 p.m. ET.</p>",
+              "item_sort": 10,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "lbct-deadlines-can-i-make-any-changes-after-i-have-submitted-my-lbct",
+              "question": "Can I make any changes after I have submitted my LBCT?",
+              "answer_html": "<p>You can make changes until the deadline of Tuesday, Nov. 18, 2025, at 1 p.m. ET. After that, no further changes can be made to the submission.</p>",
+              "item_sort": 20,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            }
+          ]
+        },
+        {
+          "group_id": "what-where",
+          "group_label": "What & where to submit",
+          "group_intro": "",
+          "group_sort": 4,
+          "items": [
+            {
+              "item_id": "lbct-what-where-what-types-of-research-are-accepted-in-the-lbct-submission-category",
+              "question": "What types of research are accepted in the LBCT submission category?",
+              "answer_html": "<p>You will be able to select from five types of submissions:</p><ul><li>Major study</li><li>Multicenter observational study or registry</li><li>Secondary analysis of major clinical trial</li><li>Smaller study/randomized clinical trial</li><li>Other</li></ul>",
+              "item_sort": 10,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "lbct-what-where-what-category-should-i-submit-my-lbct-to",
+              "question": "What category should I submit my LBCT to?",
+              "answer_html": "<p>You should submit your LBCT to the category you think is most appropriate. If you are unsure, we recommend you reach out to a colleague. As staff, we are not able to determine what category your LBCT falls under.</p>",
+              "item_sort": 20,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "lbct-what-where-where-can-i-access-my-submission",
+              "question": "Where can I access my submission?",
+              "answer_html": "<p>Submissions can be accessed by visiting the <a href=\"https://accscientificsession.acc.org/Submit-Your-Science/Late-Breaking-Clinical-Trials\">Late-Breaking Clinical Trial submission page</a> and clicking the &quot;Submit Science&quot; button.</p>",
+              "item_sort": 30,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            }
+          ]
+        },
+        {
+          "group_id": "authors-institutions",
+          "group_label": "Authors, institutions & disclosures",
+          "group_intro": "",
+          "group_sort": 5,
+          "items": [
+            {
+              "item_id": "lbct-authors-instit-do-all-co-authors-on-my-submission-need-to-have-acc-accounts",
+              "question": "Do all co-authors on my submission need to have ACC accounts?",
+              "answer_html": "<p>Yes, all co-authors must create a free ACC account before you can add them to the author block. You must add all authors to the submission before the deadline.</p>",
+              "item_sort": 10,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "lbct-authors-instit-can-i-include-more-than-two-institutions-in-my-submission",
+              "question": "Can I include more than two institutions in my submission?",
+              "answer_html": "<p>No, our system only allows two institutions to be listed. However, if your LBCT is accepted, you are welcome to include additional institutions on your slides.</p>",
+              "item_sort": 20,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "lbct-authors-instit-why-is-there-an-n-a-displayed-next-to-my-name-as-the-first-author-on-the-author-tab-why-is-my-institution-information-missing",
+              "question": "Why is there an \"N/A\" displayed next to my name as the first author on the \"Author\" tab? Why is my institution information missing?",
+              "answer_html": "<p>The first author will always have &quot;n/a&quot; displayed to the right of their name. This is normal and does not display anywhere else other than on the &quot;Author&quot; tab. Do NOT enter your name more than once to enter in your institution information since institution information is entered in on a separate tab.</p>",
+              "item_sort": 30,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "lbct-authors-instit-do-all-co-authors-need-to-complete-their-disclosures",
+              "question": "Do all co-authors need to complete their disclosures?",
+              "answer_html": "<p>No. Only the presenting author and lead investigator are required to complete their disclosures. If a person is both the presenting author and lead investigator, then only that individual needs to complete their disclosures.</p>",
+              "item_sort": 40,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "lbct-authors-instit-does-the-lead-investigator-need-to-update-their-disclosures-before-my-submission-can-be-considered-complete",
+              "question": "Does the lead investigator need to update their disclosures before my submission can be considered complete?",
+              "answer_html": "<p>No. If you complete all other necessary steps of the process, your submission will be considered complete regardless of whether or not they have completed their disclosures. If your submission is accepted for presentation, ACC staff will reach out to the lead investigator to complete their disclosures.</p>",
+              "item_sort": 50,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "lbct-authors-instit-can-i-add-more-than-25-authors-to-an-lbct",
+              "question": "Can I add more than 25 authors to an LBCT?",
+              "answer_html": "<p>No, our system only allows 25 authors (including the submitter) to be listed. However, if your LBCT is accepted, you are welcome to include additional authors in your slides.</p>",
+              "item_sort": 60,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "lbct-authors-instit-can-i-change-the-order-authors-are-listed",
+              "question": "Can I change the order authors are listed?",
+              "answer_html": "<p>Yes, you can change the order of all co-authors. To do this, log back into the submission site, click on the submission you want to make the change to, and go to the &quot;Author&quot; tab on the left-hand side of the screen. There, you will see the option to &quot;Change the Order these Author(s) are listed&quot; underneath the author names. You can also change who the first author is as long as that person has disclosed.</p>",
+              "item_sort": 70,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            }
+          ]
+        },
+        {
+          "group_id": "technical",
+          "group_label": "Technical & completion",
+          "group_intro": "",
+          "group_sort": 6,
+          "items": [
+            {
+              "item_id": "lbct-technical-is-there-a-maximum-character-count-for-my-submission",
+              "question": "Is there a maximum character count for my submission?",
+              "answer_html": "<p>Yes, the maximum character count per submission is 1,900 characters NOT including spaces. If you choose to add an image or table to your submission, it will count as 600 characters towards the total 1,900 characters that are allowed.</p>",
+              "item_sort": 10,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "lbct-technical-do-the-section-headers-in-the-body-of-my-submission-count-towards-the-total-character-count-of-my-submission",
+              "question": "Do the section headers in the body of my submission count towards the total character count of my submission?",
+              "answer_html": "<p>Yes, they do, and they cannot be removed. Please account for the section headers in your abstract&#x27;s total character count.</p>",
+              "item_sort": 20,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "lbct-technical-can-i-change-the-section-headers-in-the-body-of-the-text-on-the-submission-site",
+              "question": "Can I change the section headers in the body of the text on the submission site?",
+              "answer_html": "<p>No, the headers in the body of the submission cannot be edited.</p>",
+              "item_sort": 30,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "lbct-technical-can-i-include-a-table-image-in-my-submission",
+              "question": "Can I include a table/image in my submission?",
+              "answer_html": "<p>Yes, you may include a table in your submission by uploading an image of it as a GIF or JPG file. The easiest way to do this is by taking a screenshot. You can do this on a Windows computer by using the snipping tool, and you can do this on an Apple computer by hitting Command-Shift-4.</p>",
+              "item_sort": 40,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "lbct-technical-i-m-encountering-technical-issues-with-my-submission-who-should-i-reach-out-to",
+              "question": "I'm encountering technical issues with my submission, who should I reach out to?",
+              "answer_html": "<p>You should send an email to Matthew Parks at <a href=\"mailto:mparks@acc.org\">mparks@acc.org</a> with a detailed description and screenshots of the problem you are encountering. This will help best diagnose and resolve the issue.</p>",
+              "item_sort": 50,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "lbct-technical-how-do-i-know-my-submission-is-complete",
+              "question": "How do I know my submission is complete?",
+              "answer_html": "<p>All tabs on the left-hand side of the submission site will have checkmarks next to them and the &quot;Review My Work&quot; tab will have a message saying, &quot;Your submission is complete and will be sent to review.&quot; You will also have the option to send yourself a confirmation email that your submission is complete at the top of the &quot;Review My Work&quot; page. This option will only appear if your submission is complete.</p>",
+              "item_sort": 60,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "lbct-technical-am-i-able-to-save-a-copy-of-my-submission",
+              "question": "Am I able to save a copy of my submission?",
+              "answer_html": "<p>Yes. You can save a copy of your submission by logging into the submission site, clicking on the submission that you want to save, and then going to the &quot;Review My Work&quot; tab on the left-hand side of the screen. On the top of that page, you will have the option to print your submission for your records.</p>",
+              "item_sort": 70,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            }
+          ]
+        },
+        {
+          "group_id": "after-deadline",
+          "group_label": "After the deadline",
+          "group_intro": "",
+          "group_sort": 7,
+          "items": [
+            {
+              "item_id": "lbct-after-deadline-can-i-change-the-presenting-author-after-submission",
+              "question": "Can I change the presenting author after submission?",
+              "answer_html": "<p>Yes, you can change the presenting author to any listed author on your submission until ACC.26. Please include the control number of the submission and the name of the new presenting author and email <a href=\"mailto:mparks@acc.org\">mparks@acc.org</a>.</p>",
+              "item_sort": 10,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "lbct-after-deadline-can-i-make-edits-to-my-lbct-after-the-submission-deadline",
+              "question": "Can I make edits to my LBCT after the submission deadline?",
+              "answer_html": "<p>No, you cannot. Per ACC policies and procedures, no edits can be made to submissions after the submission deadline. This includes adding author names or correcting errors in data. Please carefully review your submission prior to the submission deadline to ensure all co-authors are listed and all information is correct. After Nov. 18, 2025, no more edits can be made to your submission. Keep in mind the submitted abstract text will not be published; only a PDF of your slides will be available to attendees.</p>",
+              "item_sort": 20,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "lbct-after-deadline-how-do-i-withdraw-my-submission",
+              "question": "How do I withdraw my submission?",
+              "answer_html": "<p>To withdraw your LBCT, send a written notification to <a href=\"mailto:mparks@acc.org\">mparks@acc.org</a> with the title, authors, affiliations, control number, and submitter&#x27;s contact details. Use the summary page as part of the notification.</p>",
+              "item_sort": 30,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            }
+          ]
+        },
+        {
+          "group_id": "acceptance",
+          "group_label": "Acceptance, registration & publication",
+          "group_intro": "",
+          "group_sort": 8,
+          "items": [
+            {
+              "item_id": "lbct-acceptance-when-will-i-know-if-my-lbct-is-accepted",
+              "question": "When will I know if my LBCT is accepted?",
+              "answer_html": "<p>Notifications will be sent out on Jan. 20, 2026 to the presenting author.</p>",
+              "item_sort": 10,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "lbct-acceptance-who-will-be-notified-if-the-lbct-is-accepted",
+              "question": "Who will be notified if the LBCT is accepted?",
+              "answer_html": "<p>Only the presenting author for each submission will be notified about whether the submission has been accepted or not.</p>",
+              "item_sort": 20,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "lbct-acceptance-if-my-submission-is-accepted-for-presentation-will-i-need-to-pay-a-registration-fee",
+              "question": "If my submission is accepted for presentation, will I need to pay a registration fee?",
+              "answer_html": "<p>No, registration is free for LBCT presenters; however, you must register yourself as staff will not register you.</p>",
+              "item_sort": 30,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            },
+            {
+              "item_id": "lbct-acceptance-if-my-lbct-is-accepted-will-it-be-published",
+              "question": "If my LBCT is accepted, will it be published?",
+              "answer_html": "<p>A PDF of your slides will be published on the conference app and program planner. The submitted abstract text will never be published.</p>",
+              "item_sort": 40,
+              "related_spoke_id": "",
+              "related_group_id": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

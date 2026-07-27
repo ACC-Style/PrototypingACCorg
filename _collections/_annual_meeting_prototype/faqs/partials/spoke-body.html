@@ -1,0 +1,12 @@
+{%- comment -%}
+  FAQ spoke Q&A body only (no chrome). Expects: spoke
+  Note: include_relative resolves from the rendering page dir (faqs/), not this file.
+{%- endcomment -%}
+<div
+  data-component="FaqSpoke"
+  data-spoke="{{ spoke.spoke_id }}"
+  data-role="faq-spoke-body">
+  {%- for group in spoke.groups -%}
+    {%- include_relative partials/group.html group=group -%}
+  {%- endfor -%}
+</div>

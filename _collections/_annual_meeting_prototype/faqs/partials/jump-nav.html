@@ -1,0 +1,14 @@
+{%- comment -%}
+  In-page jump nav for FAQ groups.
+  Expects: spoke (with groups[])
+{%- endcomment -%}
+<nav class="m-b_4 p_3 bg_black-1 br_radius" aria-label="On this page" data-role="faq-jump-nav">
+  <p class="font_bold m-b_2 m-t_0">On this page</p>
+  <ul class="ul_none grid gap_2 m_0">
+    {%- for group in spoke.groups -%}
+    <li>
+      <a class="link" href="#g-{{ group.group_id }}">{{ group.group_label }}</a>
+    </li>
+    {%- endfor -%}
+  </ul>
+</nav>

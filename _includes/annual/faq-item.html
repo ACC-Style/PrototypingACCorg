@@ -1,0 +1,22 @@
+{%- comment -%}
+  Canonical FAQ Q&A DOM pattern (shared by Annual Meeting FAQ pages + generator CMS blobs).
+  Mobile/tablet: native <details> accordion.
+  Desktop (lg+): question left / answer right; always open via annual/faq-runtime.html.
+  Expects: item (item_id, question, answer_html)
+{%- endcomment -%}
+<details
+  class="m-b_4 grid:lg columns_3:lg gap_4:lg"
+  data-component="FaqItem"
+  data-item="faq-qa"
+  data-faq-question="{{ item.question | escape }}"
+  id="q-{{ item.item_id }}">
+  <summary class="p-x_3 p-y_2 link c_primary-n2 h:bg_primary-5 br_radius col-start_1:lg col-end_2:lg">
+    <h3 class="font_copy font_bold inline m_0 font-size_up">{{ item.question }}</h3>
+  </summary>
+  <div
+    class="p_3 p-x_4:md reading-typography block:lg bg_black-1 br_radius col-start_2:lg col-end_end:lg"
+    data-role="faq-answer"
+    id="a-{{ item.item_id }}">
+    {{ item.answer_html }}
+  </div>
+</details>
