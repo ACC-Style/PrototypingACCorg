@@ -19,7 +19,8 @@ python3 scripts/faqs/seed_and_convert.py
 
 ## SME rules
 - Keep questions in interrogative form.
-- Prefer `answer_text` (plain). Use `answer_html` only for tables/complex markup.
+- Put the published answer in **`answer_html`** (semantic HTML: `<p>`, lists, `<strong>`, `<em>`, links).
+- `answer_text` is optional plain text for skimming in Excel only; it is not rendered on the site.
 - Do not change `item_id` after publish (deep links).
 - Set `status` to `ready` when Web Production may publish.
 

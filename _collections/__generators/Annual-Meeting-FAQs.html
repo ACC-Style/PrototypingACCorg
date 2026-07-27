@@ -22,7 +22,7 @@ notes: "CMS blobs include shared faq-item + faq-runtime from _includes/annual/. 
 
   {%- for spoke in faq_data.spokes -%}
   {%- capture blob -%}
-<div data-component="FaqSpoke" data-spoke="{{ spoke.spoke_id }}" data-role="faq-spoke-body" class="reading-typography">
+<div data-component="FaqSpoke" data-spoke="{{ spoke.spoke_id }}" data-role="faq-spoke-body" class="reading-typography wrapper-container">
 {%- if spoke.cross_banner and spoke.cross_banner != "" -%}
 <div class="m-b_4 p_3 bg_accent-5 br_radius" data-role="faq-cross-banner" role="note">
   <p class="m_0"><a class="link font_bold" href="{{ spoke.cross_banner_href }}">{{ spoke.cross_banner }}</a></p>
@@ -38,7 +38,7 @@ notes: "CMS blobs include shared faq-item + faq-runtime from _includes/annual/. 
 </nav>
 {%- for group in spoke.groups -%}
 <section class="m-b_5" data-component="FaqGroup" data-role="faq-group" id="g-{{ group.group_id }}" aria-labelledby="h-{{ group.group_id }}">
-  <h2 id="h-{{ group.group_id }}" class="c_primary font_display m-b_3">{{ group.group_label }}</h2>
+  <h2 id="h-{{ group.group_id }}" class="m-b_4 m-b_5:lg p-b_3 br-b_1 br_black-3 br_solid">{{ group.group_label }}</h2>
 {%- for item in group.items -%}
 {%- include annual/faq-item.html item=item -%}
 {%- endfor -%}

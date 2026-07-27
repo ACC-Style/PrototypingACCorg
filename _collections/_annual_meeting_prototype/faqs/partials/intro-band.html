@@ -1,0 +1,35 @@
+{%- comment -%}
+  Top intro band: spoke nav | Introduction | optional cross-link card.
+  Expects: spoke, all_spokes
+
+{%- assign has_cross = false -%}
+{%- if spoke.cross_banner and spoke.cross_banner != "" -%}
+  {%- assign has_cross = true -%}
+{%- endif -%}
+<section
+  class="grid columns_1 {% if has_cross %}columns_3:lg{% else %}columns_2:lg{% endif %} gap_4 m-b_5"
+  data-role="faq-intro-band">
+  <aside class="col-start_1">
+    {%- include_relative partials/spoke-switcher.html current_spoke_id=spoke.spoke_id all_spokes=all_spokes -%}
+  </aside>
+  <div class="col-start_2:lg {% unless has_cross %}col-end_end:lg{% endunless %}" data-role="faq-intro">
+    <h2 class="c_primary font_display m-b_2 m-t_0">Introduction</h2>
+    <p class="m_0">{{ spoke.seo_meta_description }}</p>
+  </div>
+  {%- if has_cross -%}
+  <aside class="col-start_3:lg" data-role="faq-cross-card">
+    <div
+      class="br_radius bg_secondary-5 self_start p_4"
+      data-role="faq-cross-banner"
+      role="note">
+
+      <p class="m_0">
+        {{spoke.cross_banner}}
+
+        <a class="btn btn-shade" href="{{ spoke.cross_banner_href | relative_url }}">Go</a>
+      </p>
+    </div>
+  </aside>
+  {%- endif -%}
+</section>
+{%- endcomment -%}

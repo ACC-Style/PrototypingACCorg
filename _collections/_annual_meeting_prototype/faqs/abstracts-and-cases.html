@@ -18,40 +18,25 @@ permalink: /AnnualMeeting/faqs/abstracts-and-cases/
       <span aria-hidden="true"> / </span>
       {{ spoke.spoke_label }}
     </p>
-    <h1 class="c_primary font_display m-b_2">{{ spoke.seo_h1 }}</h1>
-    <p class="m-b_2">{{ spoke.seo_meta_description }}</p>
-    <p class="font-size_down c_black-7 m_0">
-      American College of Cardiology · Scientific Session
-      · Updated <time datetime="{{ spoke.date_modified }}">{{ spoke.date_modified }}</time>
-    </p>
+    <h1 class="c_primary font_display m-b_2 m-t_0">{{ spoke.seo_h1 }}</h1>
   </header>
 
-  <div class="grid columns_1 columns_4:lg gap_4">
+  {%- include_relative partials/intro-band.html spoke=spoke all_spokes=faq_data.spokes -%}
+
+  <div class="grid columns_1 columns_4:lg gap_4" data-role="faq-main">
     <aside class="col-start_1 col-end_2:lg">
-      {%- include_relative partials/spoke-switcher.html current_spoke_id=spoke.spoke_id all_spokes=faq_data.spokes -%}
-      {%- if spoke.cross_banner and spoke.cross_banner != "" -%}
-      <div class="m-b_4 p_3 bg_accent-5 br_radius" data-role="faq-cross-banner" role="note">
-        <p class="m_0">
-          <a class="link font_bold" href="{{ spoke.cross_banner_href | relative_url }}">{{ spoke.cross_banner }}</a>
-        </p>
-      </div>
-      {%- endif -%}
-      <div class="m-b_4 flex flex_column gap_3" data-role="faq-filter-bar">
-        <label class="font_bold" for="faq-filter-{{ spoke.spoke_id }}">Filter questions</label>
-        <input
-          id="faq-filter-{{ spoke.spoke_id }}"
-          type="search"
-          class="br_1 br_black-3 br_solid br_radius p_3 w_100"
-          data-role="faq-filter"
-          placeholder="Type to filter…"
-          autocomplete="off">
-        <p class="font-size_down c_black-7 m_0" data-role="faq-filter-status" aria-live="polite"></p>
-      </div>
       {%- include_relative partials/jump-nav.html spoke=spoke -%}
     </aside>
     <div class="col-start_2:lg col-end_end">
       {%- include_relative partials/spoke-body.html spoke=spoke -%}
     </div>
   </div>
+
+  <footer class="m-t_5 p-t_4 br-t_1 br_black-3 br_solid" data-role="faq-page-meta">
+    <p class="font-size_down c_black-7 m_0">
+      American College of Cardiology · Scientific Session
+      · Updated <time datetime="{{ spoke.date_modified }}">{{ spoke.date_modified }}</time>
+    </p>
+  </footer>
 </article>
 {%- include annual/faq-runtime.html -%}

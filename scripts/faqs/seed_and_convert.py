@@ -123,37 +123,53 @@ def clean_markdown(text: str) -> str:
     return re.sub(r"[ \t]+\n", "\n", text).strip()
 
 
-def plain_to_html(text: str) -> str:
-    """Escape plain text; render paragraphs, bullet lists, emails, and HTTPS URLs."""
-    text = text.replace("\\$", "$")
-    def linkify(value: str) -> str:
+def format_inline(text: str) -> str:
+    """Escape text and convert light markdown (**bold**, _italic_) plus links."""
+    text = text.replace("\\$", "$").replace("\\*", "*")
+
+    def linkify_escaped(value: str) -> str:
         value = html.escape(value)
-        # Markdown-style links that survived cleaning
         value = re.sub(
             r"\[([^\]]+)]\((https?://[^)\s]+|mailto:[^)]+)\)",
-            lambda m: f'<a href="{m.group(2)}">{m.group(1)}</a>', value,
+            lambda m: f'<a href="{html.unescape(m.group(2))}">{m.group(1)}</a>',
+            value,
         )
         value = re.sub(
             r"(?<![\"'=])(https://[^\s<]+)",
-            r'<a href="\1">\1</a>', value,
+            r'<a href="\1">\1</a>',
+            value,
         )
         value = re.sub(
             r"(?<![\w:/\">])([\w.+-]+@[\w.-]+\.[A-Za-z]{2,})",
-            r'<a href="mailto:\1">\1</a>', value,
+            r'<a href="mailto:\1">\1</a>',
+            value,
         )
-        # Drop leftover "(mailto:…)" artifacts next to an already-linked address
         value = re.sub(r'(</a>)\s*\(mailto:[^)]+\)', r"\1", value)
+        # Bold / italic after escaping so markers are literal asterisks/underscores
+        value = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", value)
+        value = re.sub(
+            r"(?<![A-Za-z0-9/.=])_([^_\s][^_]*)_(?![A-Za-z0-9])",
+            r"<em>\1</em>",
+            value,
+        )
         return value
 
+    return linkify_escaped(text)
+
+
+def plain_to_html(text: str) -> str:
+    """Render paragraphs, bullet lists, inline markdown, emails, and HTTPS URLs as HTML."""
     blocks, paragraph, list_items = [], [], []
+
     def flush() -> None:
         nonlocal paragraph, list_items
         if paragraph:
-            blocks.append(f"<p>{'<br>'.join(linkify(line) for line in paragraph)}</p>")
+            blocks.append(f"<p>{'<br>'.join(format_inline(line) for line in paragraph)}</p>")
             paragraph = []
         if list_items:
-            blocks.append("<ul>" + "".join(f"<li>{linkify(item)}</li>" for item in list_items) + "</ul>")
+            blocks.append("<ul>" + "".join(f"<li>{format_inline(item)}</li>" for item in list_items) + "</ul>")
             list_items = []
+
     for line in text.strip().splitlines():
         bullet = re.match(r"^\s*(?:-|•)\s+(.+)$", line)
         if bullet:
@@ -171,7 +187,7 @@ def plain_to_html(text: str) -> str:
 
 
 def answer_html(source_answer: str, question: str) -> tuple[str, str]:
-    """Return editable text and display HTML, retaining the source eligibility table."""
+    """Return plain answer_text skim + answer_html for the CSV (HTML is canonical)."""
     if "<table>" in source_answer:
         before, rest = re.split(r'<div class="joplin-table-wrapper">', source_answer, maxsplit=1)
         table_html, after = rest.split("</div>", maxsplit=1)
@@ -182,17 +198,17 @@ def answer_html(source_answer: str, question: str) -> tuple[str, str]:
             .replace("</p>", "")
         )
         table_html = re.sub(r"</?div[^>]*>", "", table_html).strip()
-        rendered = (
-            plain_to_html(clean_markdown(before))
-            + table_html
-            + plain_to_html(clean_markdown(after))
-        )
+        rendered = plain_to_html(before) + table_html + plain_to_html(after)
         return (
-            "See the eligible/not-eligible criteria table for submission requirements.",
+            "See the eligible and not-eligible criteria for submission requirements.",
             rendered,
         )
+    # Keep light markdown in the source long enough to become <strong>/<em> in HTML.
+    source = re.sub(r"<br\s*/?>", "\n", source_answer.strip(), flags=re.I)
+    source = re.sub(r"\[_?([^\]\n]+?)_?\]\(mailto:([^)]+)\)", r"\2", source)
+    source = re.sub(r"<(https?://[^>]+)>", r"\1", source)
     plain = clean_markdown(source_answer)
-    return plain, plain_to_html(source_answer)
+    return plain, plain_to_html(source)
 
 
 def parse_questions(spoke_id: str, source: Path) -> list[dict[str, str]]:
@@ -317,14 +333,24 @@ def build_nested() -> dict:
         for group in sorted(groups_by_spoke.get(spoke["spoke_id"], []), key=lambda g: int(g["group_sort"])):
             group_out = {key: group[key] for key in ("group_id", "group_label", "group_intro")}
             group_out["group_sort"] = int(group["group_sort"])
+            group_items = sorted(
+                items_by_group.get((spoke["spoke_id"], group["group_id"]), []),
+                key=lambda i: int(i["item_sort"]),
+            )
+            missing_html = [i["item_id"] for i in group_items if not (i.get("answer_html") or "").strip()]
+            if missing_html:
+                raise ValueError(
+                    "items.csv requires answer_html (HTML is canonical). Missing: "
+                    + ", ".join(missing_html)
+                )
             group_out["items"] = [
                 {
                     "item_id": item["item_id"], "question": item["question"],
-                    "answer_html": item["answer_html"] or plain_to_html(item["answer_text"]),
+                    "answer_html": item["answer_html"],
                     "item_sort": int(item["item_sort"]), "related_spoke_id": item["related_spoke_id"],
                     "related_group_id": item["related_group_id"],
                 }
-                for item in sorted(items_by_group.get((spoke["spoke_id"], group["group_id"]), []), key=lambda i: int(i["item_sort"]))
+                for item in group_items
             ]
             spoke_out["groups"].append(group_out)
         output_spokes.append(spoke_out)
@@ -334,35 +360,17 @@ def build_nested() -> dict:
 
 
 def write_documentation() -> None:
-    (DATA_DIR / "README.md").write_text("""# ACC.26 FAQ content workflow
-
-## Hub content
-- SEO title: ACC.26 Scientific Session FAQs
-- H1: ACC.26 FAQs
-- Canonical path: `/AnnualMeeting/faqs/`
-- Intro: Find answers by your role. Choose Faculty, Abstracts & Cases, or Late-Breaking Clinical Trials.
+    readme = (DATA_DIR / "README.md").read_text(encoding="utf-8") if (DATA_DIR / "README.md").exists() else ""
+    if "answer_html is required" not in readme:
+        (DATA_DIR / "README.md").write_text("""# ACC.26 FAQ content workflow
 
 ## Editorial files and schemas
-SMEs should edit the CSV files in Excel and export each worksheet as **CSV UTF-8** (not XLSX). Do not reorder or rename headers.
+- `items.csv`: put the published answer in **`answer_html`** (semantic HTML). `answer_text` is optional plain-text skim only.
+- **`answer_html` is required** and is what pages/CMS blobs render.
 
-- `spokes.csv`: one row per role page; includes display order, hub copy, SEO, canonical, robots, status, and cross-link banner fields.
-- `groups.csv`: `spoke_id`, group ID/label/order, optional intro, and status.
-- `items.csv`: one row per FAQ. Keep `question` in its interrogative form. Put readable source text in `answer_text`; use `answer_html` only when formatting such as the Abstracts eligibility table is required.
-
-CSV uses standard escaping: quote fields containing commas or line breaks and double embedded quotes. Stable IDs are content keys: do not change `spoke_id`, `group_id`, or `item_id` when editing copy.
-
-## SME conventions
-- Preserve approved question and answer meaning. Verify dates, fees, contacts, links, and embargo wording with the owning program team.
-- Use `ready` for demo-approved content and `published` for live-approved content. Other statuses are omitted from `nested.json`.
-- Add cross-journey context through `related_spoke_id` and `related_group_id`; do not duplicate another spoke's answer.
-- `answer_html` takes precedence. When it is blank, the converter makes paragraphs and bullet lists from `answer_text`, escaping text and linking email addresses and HTTPS URLs.
-
-## Annual refresh
-1. Obtain the approved Faculty, Abstracts/Cases, and LBCT source copy.
-2. Update CSV rows while retaining IDs and group mapping; add rows for genuinely new FAQs.
-3. Reconfirm the content-hygiene flags in `CONTENT_FLAGS.md`.
-4. Run `python3 scripts/faqs/seed_and_convert.py` to validate and rebuild `nested.json`.
-5. Review generated HTML, SEO fields, counts, and source-owner approval before setting production content to `published`.
+## Day-to-day
+1. Edit `answer_html` in `items.csv`
+2. Run `python3 scripts/faqs/seed_and_convert.py`
 """, encoding="utf-8")
     (DATA_DIR / "CONTENT_FLAGS.md").write_text("""# ACC.26 FAQ content hygiene flags
 

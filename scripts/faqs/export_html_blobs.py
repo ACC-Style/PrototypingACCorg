@@ -35,16 +35,16 @@ def render_item(item: dict) -> str:
     answer = item.get("answer_html") or ""
     # Keep class strings in sync with faq-item.html
     return f"""<details
-  class="m-b_4 grid columns_1 columns_3:lg gap_4:lg"
+  class="m-b_4 m-b_5:lg grid:lg columns_2:lg gap_4:lg font_accent font_medium"
   data-component="FaqItem"
   data-item="faq-qa"
   data-faq-question="{q_attr}"
   id="q-{iid}">
-  <summary class="p-x_3 p-y_2 link c_primary-n2 h:bg_primary-5 br_radius col-start_1:lg col-end_2:lg">
-    <h3 class="font_copy font_bold inline m_0 font-size_up">{q_text}</h3>
+  <summary class="p-x_3 p-y_2 link c_primary-n2 br_0 br_none br_secondary-3 br_solid:lg br-r_2 wrap_balance">
+    <h3 class="font_copy font_bold inline m_0 font-size_up sticky:lg t_3:lg">{q_text}</h3>
   </summary>
   <div
-    class="p_3 p-x_4:md reading-typography bg_black-1 br_radius col-start_2:lg col-end_end:lg"
+    class="p_3 reading-typography wrap_pretty"
     data-role="faq-answer"
     id="a-{iid}">
 {answer}
@@ -55,7 +55,7 @@ def render_item(item: dict) -> str:
 
 def render_spoke(spoke: dict) -> str:
     parts: list[str] = [
-        f'<div data-component="FaqSpoke" data-spoke="{html.escape(spoke["spoke_id"])}" data-role="faq-spoke-body" class="reading-typography">',
+        f'<div data-component="FaqSpoke" data-spoke="{html.escape(spoke["spoke_id"])}" data-role="faq-spoke-body" class="reading-typography wrapper-container">',
         f'<header class="m-b_4"><h1 class="c_primary font_display">{html.escape(spoke["seo_h1"])}</h1>',
         f'<p>{html.escape(spoke.get("seo_meta_description", ""))}</p>',
         f'<p class="font-size_down c_black-7">Updated <time datetime="{html.escape(spoke.get("date_modified", ""))}">{html.escape(spoke.get("date_modified", ""))}</time></p></header>',
@@ -80,7 +80,7 @@ def render_spoke(spoke: dict) -> str:
             f'<section class="m-b_5" data-component="FaqGroup" data-role="faq-group" '
             f'id="g-{gid}" aria-labelledby="h-{gid}">'
         )
-        parts.append(f'<h2 id="h-{gid}" class="c_primary font_display m-b_3">{html.escape(group["group_label"])}</h2>')
+        parts.append(f'<h2 id="h-{gid}" class="m-b_4 m-b_5:lg p-b_3 br-b_1 br_black-3 br_solid">{html.escape(group["group_label"])}</h2>')
         for item in group.get("items", []):
             parts.append(render_item(item))
         parts.append("</section>")

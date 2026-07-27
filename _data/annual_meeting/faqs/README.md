@@ -20,7 +20,7 @@ SMEs should edit the CSV files in Excel and export each worksheet as **CSV UTF-8
 
 - `spokes.csv`: one row per role page; includes display order, hub copy, SEO, canonical, robots, status, and cross-link banner fields.
 - `groups.csv`: `spoke_id`, group ID/label/order, optional intro, and status.
-- `items.csv`: one row per FAQ. Keep `question` in its interrogative form. Put readable source text in `answer_text`; use `answer_html` only when formatting such as the Abstracts eligibility table is required.
+- `items.csv`: one row per FAQ. Keep `question` in its interrogative form. Put the published answer in **`answer_html`** (semantic HTML). `answer_text` is an optional plain-text skim for Excel review only.
 
 CSV uses standard escaping: quote fields containing commas or line breaks and double embedded quotes. Stable IDs are content keys: do not change `spoke_id`, `group_id`, or `item_id` when editing copy.
 
@@ -28,11 +28,18 @@ CSV uses standard escaping: quote fields containing commas or line breaks and do
 - Preserve approved question and answer meaning. Verify dates, fees, contacts, links, and embargo wording with the owning program team.
 - Use `ready` for demo-approved content and `published` for live-approved content. Other statuses are omitted from `nested.json`.
 - Add cross-journey context through `related_spoke_id` and `related_group_id`; do not duplicate another spoke's answer.
-- `answer_html` takes precedence. When it is blank, the converter makes paragraphs and bullet lists from `answer_text`, escaping text and linking email addresses and HTTPS URLs.
+- **`answer_html` is required** and is what pages/CMS blobs render. Prefer `<p>`, `<ul>/<li>`, `<strong>`, `<em>`, and `<a>`. Do not leave raw Markdown (`**`, `_`) in this field.
+
+## Day-to-day edit loop
+1. Edit `items.csv` → update `answer_html` (and question/status as needed).
+2. Run `python3 scripts/faqs/seed_and_convert.py` to rebuild `nested.json` (+ blobs when Python export is available).
+3. Preview the FAQ spoke pages.
 
 ## Annual refresh
 1. Obtain the approved Faculty, Abstracts/Cases, and LBCT source copy.
-2. Update CSV rows while retaining IDs and group mapping; add rows for genuinely new FAQs.
+2. Update CSV rows while retaining IDs and group mapping; add rows for genuinely new FAQs. Store answers as HTML in `answer_html`.
 3. Reconfirm the content-hygiene flags in `CONTENT_FLAGS.md`.
 4. Run `python3 scripts/faqs/seed_and_convert.py` to validate and rebuild `nested.json`.
 5. Review generated HTML, SEO fields, counts, and source-owner approval before setting production content to `published`.
+
+Optional one-time seed from Joplin Markdown (writes HTML into the CSV): `python3 scripts/faqs/seed_and_convert.py --seed`.

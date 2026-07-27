@@ -1,20 +1,20 @@
 {%- comment -%}
   Canonical FAQ Q&A DOM pattern (shared by Annual Meeting FAQ pages + generator CMS blobs).
-  Mobile/tablet: native <details> accordion.
-  Desktop (lg+): question left / answer right; always open via annual/faq-runtime.html.
+  Accordion by default; inside wrapper-container, :lg utilities flip to Q|A at container ≥48rem.
+  Runtime only forces open + locks summary when that container is wide.
   Expects: item (item_id, question, answer_html)
 {%- endcomment -%}
 <details
-  class="m-b_4 grid:lg columns_3:lg gap_4:lg"
+  class="m-b_4 m-b_5:lg gap_4:lg font_accent font_medium"
   data-component="FaqItem"
   data-item="faq-qa"
   data-faq-question="{{ item.question | escape }}"
   id="q-{{ item.item_id }}">
-  <summary class="p-x_3 p-y_2 link c_primary-n2 h:bg_primary-5 br_radius col-start_1:lg col-end_2:lg">
-    <h3 class="font_copy font_bold inline m_0 font-size_up">{{ item.question }}</h3>
+  <summary class="p-x_3 p-y_2 link c_secondary-n3 br_0 br_none br_secondary-3 br_solid:lg br-r_2 wrap_balance">
+    <h3 class="font_copy font_bold inline m_0 font-size_up sticky:lg t_3:lg">{{ item.question }}</h3>
   </summary>
   <div
-    class="p_3 p-x_4:md reading-typography block:lg bg_black-1 br_radius col-start_2:lg col-end_end:lg"
+    class="p_3 reading-typography wrap_pretty"
     data-role="faq-answer"
     id="a-{{ item.item_id }}">
     {{ item.answer_html }}

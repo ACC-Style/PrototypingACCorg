@@ -1,18 +1,21 @@
 {%- comment -%}
-  Spoke-to-spoke navigation.
+  Spoke-to-spoke navigation (vertical left nav for spoke pages).
   Expects: current_spoke_id, all_spokes (array)
 {%- endcomment -%}
-<nav class="m-b_4" aria-label="FAQ topics" data-role="faq-spoke-switcher">
-  <ul class="ul_none flex flex_row flex_wrap gap_2 m_0">
+<nav class="m_0" aria-label="FAQ topics" data-role="faq-spoke-switcher">
+  <p class="font_bold m-b_2 m-t_0">FAQ topics</p>
+  <ul class="ul_none flex flex_column gap_2 m_0">
     <li>
       <a
-        class="btn btn-sm {% if current_spoke_id == 'hub' %}btn-primary{% else %}btn-outline-shade{% endif %}"
+        class="link {% if current_spoke_id == 'hub' %}font_bold{% endif %}"
+        {% if current_spoke_id == 'hub' %}aria-current="page"{% endif %}
         href="{{ '/AnnualMeeting/faqs/' | relative_url }}">All FAQs</a>
     </li>
     {%- for s in all_spokes -%}
     <li>
       <a
-        class="btn btn-sm {% if s.spoke_id == current_spoke_id %}btn-primary{% else %}btn-outline-shade{% endif %}"
+        class="link {% if s.spoke_id == current_spoke_id %}font_bold{% endif %}"
+        {% if s.spoke_id == current_spoke_id %}aria-current="page"{% endif %}
         href="{{ s.canonical_path | relative_url }}">{{ s.spoke_label }}</a>
     </li>
     {%- endfor -%}

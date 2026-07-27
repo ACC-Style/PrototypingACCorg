@@ -1,11 +1,29 @@
-<!-- FAQ runtime shim: desktop Q|A (open + hide marker), filter, hash deep-links.
-     Single source for prototype pages, generator COPY_ME blobs, and CMS paste.
+<!-- FAQ runtime shim: force-open + lock summary when faq-spoke-body is ≥48rem,
+     filter, jump-nav scroll spy, hash deep-links.
+     Layout uses Arches :lg utilities inside wrapper-container (container queries).
      Edit this file only — `_includes/annual/faq-runtime.html` -->
 <style data-component="FaqRuntime">
-  @media (min-width: 1024px) {
+  /* Question column width for columns_2:lg */
+
+
+  /* Native <details> chrome — no Acc utility equivalent.
+     Matches Arches lg container breakpoint (width > 48rem). */
+  @container (width > 48rem) { 
+
+
+
+    [data-component="FaqItem"] {  
+      display: grid;
+      grid-template-columns: [start] var(--col-1, 1fr) var(--col-2, 1fr) [end];
+      --col-1: 15rem;
+    }
     details[data-component="FaqItem"] > summary {
       list-style: none;
       cursor: default;
+      text-decoration: none;
+      &:hover {
+        text-decoration: none;
+      }
     }
     details[data-component="FaqItem"] > summary::-webkit-details-marker {
       display: none;
@@ -17,15 +35,37 @@
 </style>
 <script data-component="FaqRuntime">
 (function () {
-  var DESKTOP_MQ = "(min-width: 1024px)";
+  var DESKTOP_MIN_REM = 48;
 
   function faqItems(root) {
     return (root || document).querySelectorAll('details[data-component="FaqItem"]');
   }
 
-  function updateDesktopDetails(mediaQuery) {
-    faqItems(document).forEach(function (detail) {
-      if (mediaQuery.matches) {
+  function remPx() {
+    return parseFloat(window.getComputedStyle(document.documentElement).fontSize) || 16;
+  }
+
+  function isWide(spoke) {
+    return spoke.getBoundingClientRect().width >= DESKTOP_MIN_REM * remPx();
+  }
+
+  function updateSpokeLayout(spoke) {
+    var wide = isWide(spoke);
+    var next = wide ? "wide" : "narrow";
+    var prev = spoke.getAttribute("data-faq-layout");
+    // Opening a <details> grows the spoke and retriggers ResizeObserver.
+    // Only change open state when wide↔narrow actually changes.
+    if (prev === next) {
+      if (wide) {
+        faqItems(spoke).forEach(function (detail) {
+          detail.open = true;
+        });
+      }
+      return;
+    }
+    spoke.setAttribute("data-faq-layout", next);
+    faqItems(spoke).forEach(function (detail) {
+      if (wide) {
         detail.open = true;
       } else {
         detail.removeAttribute("open");
@@ -33,17 +73,32 @@
     });
   }
 
-  function bindDesktopSummaryLock(mediaQuery) {
-    faqItems(document).forEach(function (detail) {
+  function bindSummaryLock(spoke) {
+    faqItems(spoke).forEach(function (detail) {
       var summary = detail.querySelector("summary");
       if (!summary || summary.getAttribute("data-faq-desktop-bound") === "true") return;
       summary.setAttribute("data-faq-desktop-bound", "true");
       summary.addEventListener("click", function (event) {
-        if (mediaQuery.matches) {
+        if (spoke.getAttribute("data-faq-layout") === "wide") {
           event.preventDefault();
         }
       });
     });
+  }
+
+  function observeSpoke(spoke) {
+    bindSummaryLock(spoke);
+    updateSpokeLayout(spoke);
+    if (typeof ResizeObserver !== "undefined") {
+      var observer = new ResizeObserver(function () {
+        updateSpokeLayout(spoke);
+      });
+      observer.observe(spoke);
+    } else {
+      window.addEventListener("resize", function () {
+        updateSpokeLayout(spoke);
+      });
+    }
   }
 
   function openHashTarget() {
@@ -68,7 +123,28 @@
     var input = root.querySelector('[data-role="faq-filter"]');
     var status = root.querySelector('[data-role="faq-filter-status"]');
     var items = root.querySelectorAll('[data-item="faq-qa"]');
+    var jumpLinks = root.querySelectorAll('[data-role="faq-jump-link"]');
     if (!input || !items.length) return;
+
+    function syncJumpNav() {
+      jumpLinks.forEach(function (link) {
+        var href = link.getAttribute("href") || "";
+        if (href.charAt(0) !== "#") return;
+        var group = document.getElementById(href.slice(1));
+        var li = link.closest("li");
+        if (!li) return;
+        if (!group) {
+          li.classList.add("display_none");
+          return;
+        }
+        var visible = group.querySelectorAll('[data-item="faq-qa"]:not([hidden])').length;
+        if (visible === 0) {
+          li.classList.add("display_none");
+        } else {
+          li.classList.remove("display_none");
+        }
+      });
+    }
 
     input.addEventListener("input", function () {
       var q = (input.value || "").trim().toLowerCase();
@@ -83,6 +159,7 @@
         var visible = group.querySelectorAll('[data-item="faq-qa"]:not([hidden])').length;
         group.hidden = q !== "" && visible === 0;
       });
+      syncJumpNav();
       if (status) {
         status.textContent = q
           ? shown + " question" + (shown === 1 ? "" : "s") + " match"
@@ -91,23 +168,88 @@
     });
   }
 
-  function init() {
-    var mediaQuery = window.matchMedia(DESKTOP_MQ);
-    bindDesktopSummaryLock(mediaQuery);
-    updateDesktopDetails(mediaQuery);
-    if (mediaQuery.addEventListener) {
-      mediaQuery.addEventListener("change", function () {
-        updateDesktopDetails(mediaQuery);
-      });
-    } else if (mediaQuery.addListener) {
-      mediaQuery.addListener(function () {
-        updateDesktopDetails(mediaQuery);
+  function bindJumpSpy(root) {
+    var nav = root.querySelector('[data-role="faq-jump-nav"]');
+    if (!nav || typeof IntersectionObserver === "undefined") return;
+    var links = Array.prototype.slice.call(
+      nav.querySelectorAll('[data-role="faq-jump-link"]')
+    );
+    if (!links.length) return;
+
+    var sections = [];
+    links.forEach(function (link) {
+      var href = link.getAttribute("href") || "";
+      if (href.charAt(0) !== "#") return;
+      var section = document.getElementById(href.slice(1));
+      if (section) sections.push({ id: section.id, link: link, section: section });
+    });
+    if (!sections.length) return;
+
+    var visibleIds = {};
+
+    function setActive(id) {
+      links.forEach(function (link) {
+        var match = (link.getAttribute("href") || "") === "#" + id;
+        if (match) {
+          link.setAttribute("aria-current", "location");
+          link.classList.add("active");
+        } else {
+          link.removeAttribute("aria-current");
+          link.classList.remove("active");
+        }
       });
     }
 
+    function syncActive() {
+      var activeId = null;
+      var bestTop = Infinity;
+      sections.forEach(function (entry) {
+        if (!visibleIds[entry.id]) return;
+        if (entry.section.hidden) return;
+        var top = entry.section.getBoundingClientRect().top;
+        if (top < bestTop) {
+          bestTop = top;
+          activeId = entry.id;
+        }
+      });
+      if (!activeId) {
+        sections.forEach(function (entry) {
+          if (entry.section.hidden) return;
+          var top = entry.section.getBoundingClientRect().top;
+          if (top <= window.innerHeight * 0.35) activeId = entry.id;
+        });
+      }
+      if (activeId) setActive(activeId);
+    }
+
+    var observer = new IntersectionObserver(
+      function (observerEntries) {
+        observerEntries.forEach(function (entry) {
+          visibleIds[entry.target.id] = entry.isIntersecting;
+        });
+        syncActive();
+      },
+      {
+        root: null,
+        rootMargin: "-15% 0px -55% 0px",
+        threshold: [0, 0.01, 0.1],
+      }
+    );
+
+    sections.forEach(function (entry) {
+      observer.observe(entry.section);
+    });
+    syncActive();
+  }
+
+  function init() {
     document.querySelectorAll('[data-component="FaqSpoke"]').forEach(function (spoke) {
+      observeSpoke(spoke);
       var shell = spoke.closest("main, article, section, [data-role='faq-page']") || spoke.parentElement;
-      if (shell) bindFilter(shell);
+      if (shell) {
+        bindFilter(shell);
+        bindJumpSpy(shell);
+      }
     });
     openHashTarget();
   }
