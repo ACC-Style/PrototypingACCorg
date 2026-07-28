@@ -1,0 +1,22 @@
+{%- comment -%}
+  FAQ group section. Shared by spoke body + CMS generator.
+  Expects: group (group_id, group_label, group_intro, items[])
+{%- endcomment -%}
+<section
+  class="m-b_5"
+  data-component="FaqGroup"
+  data-role="faq-group"
+  id="g-{{ group.group_id }}"
+  aria-labelledby="h-{{ group.group_id }}">
+  <h2 id="h-{{ group.group_id }}" class="m-b_4 m-b_5:lg p-b_3 br-b_1 br_black-3 br_solid">
+    {{ group.group_label }}
+  </h2>
+  {%- if group.group_intro and group.group_intro != "" -%}
+  <p class="m-b_3">{{ group.group_intro }}</p>
+  {%- endif -%}
+  <div data-role="faq-items">
+    {%- for item in group.items -%}
+      {%- include annual/faq-item.html item=item -%}
+    {%- endfor -%}
+  </div>
+</section>

@@ -1,0 +1,13 @@
+{%- comment -%}
+  FAQ groups + items (main content column). Shared by spoke pages + CMS generator.
+  Expects: spoke (spoke_id, groups[])
+{%- endcomment -%}
+<div
+  class="wrapper-container"
+  data-component="FaqSpoke"
+  data-spoke="{{ spoke.spoke_id }}"
+  data-role="faq-spoke-body">
+  {%- for group in spoke.groups -%}
+    {%- include annual/faq-group.html group=group -%}
+  {%- endfor -%}
+</div>

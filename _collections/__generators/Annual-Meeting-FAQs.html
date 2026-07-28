@@ -2,7 +2,7 @@
 layout: playground
 name: "Annual Meeting FAQs"
 position: "Generator"
-notes: "CMS blobs include shared faq-item + faq-runtime from _includes/annual/. Rebuild data with: python3 scripts/faqs/seed_and_convert.py"
+notes: "CMS copy from shared _includes/annual/ partials. Rebuild data: python3 scripts/faqs/seed_and_convert.py"
 ---
 {%- assign faq_data = site.data.annual_meeting.faqs.nested -%}
 
@@ -10,56 +10,44 @@ notes: "CMS blobs include shared faq-item + faq-runtime from _includes/annual/. 
   <section class="bg_black-1 br_radius p_4">
     <h2 class="c_primary m-t_0">Content ops</h2>
     <ol class="marker_primary m-b_0">
-      <li>SMEs edit Excel → export CSVs into <code>_data/annual_meeting/faqs/</code>.</li>
-      <li>Run <code>python3 scripts/faqs/seed_and_convert.py</code> to rebuild <code>nested.json</code> and <code>blobs/</code>.</li>
-      <li>Edit shared design in <code>_includes/annual/faq-item.html</code> and shim in <code>_includes/annual/faq-runtime.html</code> — both ship in the Copy CMS HTML payload.</li>
+      <li>SMEs edit CSVs in <code>_data/annual_meeting/faqs/</code> (<code>answer_html</code> is canonical).</li>
+      <li>Run <code>python3 scripts/faqs/seed_and_convert.py</code> to rebuild <code>nested.json</code>.</li>
+      <li>Copy each CMS block below into the matching richtext area. Shared markup lives in <code>_includes/annual/</code>.</li>
       <li>Preview spokes under <a class="link" href="{{ '/AnnualMeeting/faqs/' | relative_url }}">/AnnualMeeting/faqs/</a>.</li>
     </ol>
-    <p class="font-size_down m-b_0">
-      See <code>_data/annual_meeting/faqs/README.md</code> and <code>CONTENT_FLAGS.md</code>.
-    </p>
+  </section>
+
+  <section class="br_1 br_black-3 br_solid br_radius p_4">
+    <label class="font_bold" for="faq-spoke-select">FAQ spoke</label>
+    <select id="faq-spoke-select" class="br_1 br_black-3 br_solid br_radius p_3 w_100 m-t_2" data-role="faq-spoke-select">
+      {%- for spoke in faq_data.spokes -%}
+      <option value="{{ spoke.spoke_id }}"{% if forloop.first %} selected{% endif %}>{{ spoke.seo_h1 }}</option>
+      {%- endfor -%}
+    </select>
   </section>
 
   {%- for spoke in faq_data.spokes -%}
-  {%- capture blob -%}
-<div data-component="FaqSpoke" data-spoke="{{ spoke.spoke_id }}" data-role="faq-spoke-body" class="reading-typography wrapper-container">
-{%- if spoke.cross_banner and spoke.cross_banner != "" -%}
-<div class="m-b_4 p_3 bg_accent-5 br_radius" data-role="faq-cross-banner" role="note">
-  <p class="m_0"><a class="link font_bold" href="{{ spoke.cross_banner_href }}">{{ spoke.cross_banner }}</a></p>
-</div>
-{%- endif -%}
-<nav class="m-b_4 p_3 bg_black-1 br_radius" aria-label="On this page" data-role="faq-jump-nav">
-  <p class="font_bold m-b_2 m-t_0">On this page</p>
-  <ul class="ul_none grid gap_2 m_0">
-{%- for group in spoke.groups -%}
-    <li><a class="link" href="#g-{{ group.group_id }}">{{ group.group_label }}</a></li>
-{%- endfor -%}
-  </ul>
-</nav>
-{%- for group in spoke.groups -%}
-<section class="m-b_5" data-component="FaqGroup" data-role="faq-group" id="g-{{ group.group_id }}" aria-labelledby="h-{{ group.group_id }}">
-  <h2 id="h-{{ group.group_id }}" class="m-b_4 m-b_5:lg p-b_3 br-b_1 br_black-3 br_solid">{{ group.group_label }}</h2>
-{%- for item in group.items -%}
-{%- include annual/faq-item.html item=item -%}
-{%- endfor -%}
-</section>
-{%- endfor -%}
-</div>
-{%- include annual/faq-runtime.html -%}
-{%- endcapture -%}
+  {%- capture jump_nav_html -%}{%- include annual/faq-jump-nav.html spoke=spoke -%}{%- endcapture -%}
+  {%- capture body_html -%}{%- include annual/faq-spoke-body.html spoke=spoke -%}{%- endcapture -%}
+  {%- capture runtime_html -%}{%- include annual/faq-runtime.html -%}{%- endcapture -%}
 
-  <section class="br_1 br_black-3 br_solid br_radius overflow_hidden" data-role="faq-generator-spoke" data-spoke="{{ spoke.spoke_id }}">
+  <section
+    class="br_1 br_black-3 br_solid br_radius overflow_hidden"
+    data-role="faq-generator-spoke"
+    data-spoke="{{ spoke.spoke_id }}"
+    {% unless forloop.first %}hidden{% endunless %}>
     <header class="bg_primary c_white p_4">
       <h2 class="m_0">{{ spoke.seo_h1 }}</h2>
       <p class="m-t_2 m-b_0 font-size_down">
-        Blob for <code>{{ spoke.canonical_path }}</code>
+        <code>{{ spoke.canonical_path }}</code>
         · {{ spoke.groups.size }} groups
         · Updated {{ spoke.date_modified }}
       </p>
     </header>
-    <div class="p_4 grid columns_1 gap_4">
+
+    <div class="p_4 grid columns_1 gap_5">
       <div>
-        <p class="font_bold m-t_0">CMS metadata (set in page properties)</p>
+        <p class="font_bold m-t_0">CMS metadata (page properties)</p>
         <ul class="font-size_down m-b_0">
           <li><strong>Title:</strong> {{ spoke.seo_title }}</li>
           <li><strong>Meta description:</strong> {{ spoke.seo_meta_description }}</li>
@@ -69,30 +57,55 @@ notes: "CMS blobs include shared faq-item + faq-runtime from _includes/annual/. 
         </ul>
       </div>
 
-      <div>
-        <div class="flex flex_row flex_wrap justify_between align_center gap_3 m-b_3">
-          <p class="font_bold m_0">CMS HTML (includes faq-item markup + faq-runtime shim)</p>
-          <button
-            type="button"
-            class="btn btn-primary"
-            data-role="copy-cms-html"
-            data-target="faq-output-{{ spoke.spoke_id }}">
-            Copy CMS HTML
-          </button>
+      <div data-role="faq-copy-block">
+        <div class="flex flex_row flex_wrap justify_between align_center gap_3 m-b_2">
+          <p class="font_bold m_0">1. Jump nav + filter</p>
+          <button type="button" class="btn btn-primary btn-sm" data-role="copy-cms-block" data-target="faq-jump-{{ spoke.spoke_id }}">Copy HTML</button>
         </div>
-        <p class="font-size_down c_black-7 m-t_0" data-role="copy-status" aria-live="polite"></p>
+        <p class="font-size_down c_black-7 m-t_0">Sticky sidebar: on-this-page links + filter field.</p>
         <textarea
-          id="faq-output-{{ spoke.spoke_id }}"
-          class="br_1 br_black-3 br_solid br_radius font_n2 m_0 min-h_20 p_3 w_100"
+          id="faq-jump-{{ spoke.spoke_id }}"
+          class="br_1 br_black-3 br_solid br_radius font_n2 m-t_2 m-b_0 min-h_12 p_3 w_100"
+          rows="10"
+          readonly
+          spellcheck="false">{{ jump_nav_html | strip }}</textarea>
+      </div>
+
+      <div data-role="faq-copy-block">
+        <div class="flex flex_row flex_wrap justify_between align_center gap_3 m-b_2">
+          <p class="font_bold m_0">2. FAQ body (groups + Q&amp;A)</p>
+          <button type="button" class="btn btn-primary btn-sm" data-role="copy-cms-block" data-target="faq-body-{{ spoke.spoke_id }}">Copy HTML</button>
+        </div>
+        <p class="font-size_down c_black-7 m-t_0">Main column: group headings and <code>faq-item</code> markup.</p>
+        <textarea
+          id="faq-body-{{ spoke.spoke_id }}"
+          class="br_1 br_black-3 br_solid br_radius font_n2 m-t_2 m-b_0 min-h_20 p_3 w_100"
+          rows="18"
+          readonly
+          spellcheck="false">{{ body_html | strip }}</textarea>
+      </div>
+
+      <div data-role="faq-copy-block">
+        <div class="flex flex_row flex_wrap justify_between align_center gap_3 m-b_2">
+          <p class="font_bold m_0">3. Runtime styles + script</p>
+          <button type="button" class="btn btn-primary btn-sm" data-role="copy-cms-block" data-target="faq-runtime-{{ spoke.spoke_id }}">Copy HTML</button>
+        </div>
+        <p class="font-size_down c_black-7 m-t_0">Paste once per page: layout shim, filter, jump-nav active state, hash deep-links.</p>
+        <textarea
+          id="faq-runtime-{{ spoke.spoke_id }}"
+          class="br_1 br_black-3 br_solid br_radius font_n2 m-t_2 m-b_0 min-h_16 p_3 w_100"
           rows="14"
           readonly
-          spellcheck="false">{{ blob | strip }}</textarea>
+          spellcheck="false">{{ runtime_html | strip }}</textarea>
       </div>
+
+      <p class="font-size_down c_black-7 m_0" data-role="copy-status" aria-live="polite"></p>
 
       <div>
         <p class="font_bold m-t_0">Live preview</p>
-        <div class="br_1 br_black-3 br_solid br_radius p_3 bg_white reading-typography" data-note="Preview only — use Copy CMS HTML for production paste">
-          {{ blob }}
+        <div class="grid columns_1 columns_4:lg gap_4">
+          <aside class="col-start_1 col-end_2:lg">{{ jump_nav_html }}</aside>
+          <div class="col-start_2:lg col-end_end">{{ body_html }}{{ runtime_html }}</div>
         </div>
       </div>
     </div>
@@ -102,6 +115,22 @@ notes: "CMS blobs include shared faq-item + faq-runtime from _includes/annual/. 
 
 <script>
 (function () {
+  var select = document.querySelector('[data-role="faq-spoke-select"]');
+  var panels = document.querySelectorAll('[data-role="faq-generator-spoke"]');
+
+  function showSpoke(id) {
+    panels.forEach(function (panel) {
+      panel.hidden = panel.getAttribute("data-spoke") !== id;
+    });
+  }
+
+  if (select) {
+    showSpoke(select.value);
+    select.addEventListener("change", function () {
+      showSpoke(select.value);
+    });
+  }
+
   function copyText(text) {
     if (navigator.clipboard && window.isSecureContext) {
       return navigator.clipboard.writeText(text);
@@ -125,7 +154,7 @@ notes: "CMS blobs include shared faq-item + faq-runtime from _includes/annual/. 
     });
   }
 
-  document.querySelectorAll('[data-role="copy-cms-html"]').forEach(function (btn) {
+  document.querySelectorAll('[data-role="copy-cms-block"]').forEach(function (btn) {
     btn.addEventListener("click", function () {
       var id = btn.getAttribute("data-target");
       var area = document.getElementById(id);
@@ -136,11 +165,15 @@ notes: "CMS blobs include shared faq-item + faq-runtime from _includes/annual/. 
         .then(function () {
           var original = btn.textContent;
           btn.textContent = "Copied";
-          if (status) status.textContent = "CMS HTML copied to clipboard (items + runtime shim).";
+          if (status) {
+            var label = btn.closest("[data-role=faq-copy-block]");
+            var title = label ? label.querySelector(".font_bold") : null;
+            status.textContent = "Copied “" + (title ? title.textContent : "block") + "”.";
+          }
           setTimeout(function () {
             btn.textContent = original;
             if (status) status.textContent = "";
-          }, 1400);
+          }, 1600);
         })
         .catch(function () {
           area.focus();

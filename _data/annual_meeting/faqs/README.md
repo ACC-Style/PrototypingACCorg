@@ -4,10 +4,13 @@
 
 | File | Used by |
 |------|---------|
-| `_includes/annual/faq-item.html` | FAQ spoke pages, generator CMS blob |
-| `_includes/annual/faq-runtime.html` | FAQ spoke pages, generator CMS blob, `blobs/*-blob.html` |
+| `_includes/annual/faq-item.html` | FAQ Q&A markup |
+| `_includes/annual/faq-group.html` | FAQ group sections |
+| `_includes/annual/faq-spoke-body.html` | Main FAQ column (groups + items) |
+| `_includes/annual/faq-jump-nav.html` | Sticky jump nav + filter |
+| `_includes/annual/faq-runtime.html` | Shared styles + script |
 
-`Copy CMS HTML` on the generator inlines both the rendered items and the runtime shim so Web Production pastes a self-contained richtext payload.
+The generator (`_collections/__generators/Annual-Meeting-FAQs.html`) exposes separate copy areas per spoke: **jump nav**, **FAQ body**, and **runtime**.
 
 ## Hub content
 - SEO title: ACC.26 Scientific Session FAQs

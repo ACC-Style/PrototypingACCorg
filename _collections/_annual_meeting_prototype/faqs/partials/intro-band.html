@@ -1,7 +1,7 @@
 {%- comment -%}
   Top intro band: spoke nav | Introduction | optional cross-link card.
   Expects: spoke, all_spokes
-
+{%- endcomment -%}
 {%- assign has_cross = false -%}
 {%- if spoke.cross_banner and spoke.cross_banner != "" -%}
   {%- assign has_cross = true -%}
@@ -22,14 +22,11 @@
       class="br_radius bg_secondary-5 self_start p_4"
       data-role="faq-cross-banner"
       role="note">
-
       <p class="m_0">
-        {{spoke.cross_banner}}
-
+        {{ spoke.cross_banner }}
         <a class="btn btn-shade" href="{{ spoke.cross_banner_href | relative_url }}">Go</a>
       </p>
     </div>
   </aside>
   {%- endif -%}
 </section>
-{%- endcomment -%}
