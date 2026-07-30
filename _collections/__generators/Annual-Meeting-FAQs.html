@@ -2,31 +2,85 @@
 layout: playground
 name: "Annual Meeting FAQs"
 position: "Generator"
-notes: "CMS copy from shared _includes/annual/ partials. Rebuild data: python3 scripts/faqs/seed_and_convert.py"
+notes: "CMS copy from shared _includes/annual/ partials. Content source: _data/annual_meeting/faqs/*.csv"
 ---
-{%- assign faq_data = site.data.annual_meeting.faqs.nested -%}
+{%- assign all_spokes = site.data.annual_meeting.faqs.spokes
+  | where: "status", "ready"
+  | sort: "spoke_sort" -%}
+{%- assign delete_items = site.data.annual_meeting.faqs.items | where: "status", "delete" -%}
 
 <div class="grid columns_1 gap_5 reading-typography p-x_4" data-component="FaqGenerator">
   <section class="bg_black-1 br_radius p_4">
     <h2 class="c_primary m-t_0">Content ops</h2>
     <ol class="marker_primary m-b_0">
-      <li>SMEs edit CSVs in <code>_data/annual_meeting/faqs/</code> (<code>answer_html</code> is canonical).</li>
-      <li>Run <code>python3 scripts/faqs/seed_and_convert.py</code> to rebuild <code>nested.json</code>.</li>
-      <li>Copy each CMS block below into the matching richtext area. Shared markup lives in <code>_includes/annual/</code>.</li>
+      <li>Edit the FAQ content in <code>_data/annual_meeting/faqs/</code>: <code>spokes.csv</code>, <code>groups.csv</code>, and <code>items.csv</code>.</li>
+      <li>Rebuild / refresh the site so Jekyll picks up the CSV changes.</li>
+      <li>Select the spoke for the page you want to pull content from.</li>
+      <li>Copy the needed content into Sitecore CMS richtext areas.</li>
       <li>Preview spokes under <a class="link" href="{{ '/AnnualMeeting/faqs/' | relative_url }}">/AnnualMeeting/faqs/</a>.</li>
     </ol>
+    <p class="font_bold m-b_2 m-t_4">Status values</p>
+    <ul class="font-size_down m-b_0">
+      <li><code>ready</code> — renders on the page and in the CMS blocks below.</li>
+      <li><code>hold</code> — not ready yet; skipped everywhere.</li>
+      <li><code>delete</code> — skipped everywhere and listed for removal below.</li>
+    </ul>
+  </section>
+
+  {%- if delete_items.size > 0 -%}
+  <div class="alert alert-alert" role="alert" data-role="faq-delete-alert">
+    <div class="flex">
+      <div class="font_10 text_center p_3 justify_center self_center lh_0">
+        <i class="far fa-exclamation-triangle"></i>
+      </div>
+      <div class="flex_auto p_4 p-y_2 self_center">
+        <h4 class="alert-heading">These item_ids are marked for delete</h4>
+        <hr>
+        <ul class="p-l_5 m-b_0">
+          {%- for item in delete_items -%}
+          <li><code>{{ item.item_id }}</code> — {{ item.spoke_id }} / {{ item.group_id }}</li>
+          {%- endfor -%}
+        </ul>
+      </div>
+    </div>
+  </div>
+  {%- endif -%}
+
+  <section class="br_1 br_black-3 br_solid br_radius p_4" data-role="faq-items-override">
+    <h2 class="c_primary m-t_0">Optional items override</h2>
+    <p class="font-size_down c_black-7 m-t_0">
+      Paste a full <code>items.csv</code> export (or a tab-separated copy from Excel) to preview and copy
+      without rebuilding the site. Leave blank to use the CSV already loaded by Jekyll.
+      Groups still come from <code>groups.csv</code>.
+    </p>
+    <label class="font_bold" for="faq-items-override-input">Paste items rows</label>
+    <textarea
+      id="faq-items-override-input"
+      class="br_1 br_black-3 br_solid br_radius font_n2 m-t_2 m-b_3 min-h_12 p_3 w_100"
+      rows="8"
+      spellcheck="false"
+      data-role="faq-items-override-input"
+      placeholder="spoke_id,group_id,item_id,question,answer_text,answer_html,item_sort,...,status,..."></textarea>
+    <div class="flex flex_row flex_wrap gap_3 align_center">
+      <button type="button" class="btn btn-primary btn-sm" data-role="faq-items-override-apply">Apply override</button>
+      <button type="button" class="btn btn-secondary btn-sm" data-role="faq-items-override-clear">Clear override</button>
+      <p class="font-size_down c_black-7 m_0" data-role="faq-items-override-status" aria-live="polite"></p>
+    </div>
   </section>
 
   <section class="br_1 br_black-3 br_solid br_radius p_4">
     <label class="font_bold" for="faq-spoke-select">FAQ spoke</label>
     <select id="faq-spoke-select" class="br_1 br_black-3 br_solid br_radius p_3 w_100 m-t_2" data-role="faq-spoke-select">
-      {%- for spoke in faq_data.spokes -%}
-      <option value="{{ spoke.spoke_id }}"{% if forloop.first %} selected{% endif %}>{{ spoke.seo_h1 }}</option>
+      {%- for spoke in all_spokes -%}
+      <option value="{{ spoke.spoke_id }}"{% if forloop.first %} selected{% endif %}>{{ spoke.seo_h1 | remove_first: "ACC Annual Scientific Session " }}</option>
       {%- endfor -%}
     </select>
   </section>
 
-  {%- for spoke in faq_data.spokes -%}
+  {%- for spoke in all_spokes -%}
+  {%- assign spoke_groups = site.data.annual_meeting.faqs.groups
+    | where: "spoke_id", spoke.spoke_id
+    | where: "status", "ready" -%}
   {%- capture jump_nav_html -%}{%- include annual/faq-jump-nav.html spoke=spoke -%}{%- endcapture -%}
   {%- capture body_html -%}{%- include annual/faq-spoke-body.html spoke=spoke -%}{%- endcapture -%}
   {%- capture runtime_html -%}{%- include annual/faq-runtime.html -%}{%- endcapture -%}
@@ -36,11 +90,11 @@ notes: "CMS copy from shared _includes/annual/ partials. Rebuild data: python3 s
     data-role="faq-generator-spoke"
     data-spoke="{{ spoke.spoke_id }}"
     {% unless forloop.first %}hidden{% endunless %}>
-    <header class="bg_primary c_white p_4">
-      <h2 class="m_0">{{ spoke.seo_h1 }}</h2>
+    <header class="reading-typography color_inherit links_light c_white bg_primary p_4">
+      <h2 class="m_0">{{ spoke.seo_h1 | remove_first: "ACC Annual Scientific Session " }}</h2>
       <p class="m-t_2 m-b_0 font-size_down">
         <code>{{ spoke.canonical_path }}</code>
-        · {{ spoke.groups.size }} groups
+        · {{ spoke_groups.size }} groups
         · Updated {{ spoke.date_modified }}
       </p>
     </header>
@@ -60,12 +114,12 @@ notes: "CMS copy from shared _includes/annual/ partials. Rebuild data: python3 s
       <div data-role="faq-copy-block">
         <div class="flex flex_row flex_wrap justify_between align_center gap_3 m-b_2">
           <p class="font_bold m_0">1. Jump nav + filter</p>
-          <button type="button" class="btn btn-primary btn-sm" data-role="copy-cms-block" data-target="faq-jump-{{ spoke.spoke_id }}">Copy HTML</button>
+          <button type="button" class="btn btn-primary btn-sm" data-role="copy-cms-block" data-target="faq-jump-{{ spoke.spoke_id }}">Copy jump nav + filter</button>
         </div>
-        <p class="font-size_down c_black-7 m-t_0">Sticky sidebar: on-this-page links + filter field.</p>
+        <p class="font-size_down c_black-7 m-t_0 m-b_0">Sticky sidebar richtext area: on-this-page links + filter field. See Live preview below.</p>
         <textarea
           id="faq-jump-{{ spoke.spoke_id }}"
-          class="br_1 br_black-3 br_solid br_radius font_n2 m-t_2 m-b_0 min-h_12 p_3 w_100"
+          class="br_1 br_black-3 br_solid br_radius font_n2 m-t_2 m-b_0 min-h_12 p_3 w_100 display_none"
           rows="10"
           readonly
           spellcheck="false">{{ jump_nav_html | strip }}</textarea>
@@ -74,7 +128,7 @@ notes: "CMS copy from shared _includes/annual/ partials. Rebuild data: python3 s
       <div data-role="faq-copy-block">
         <div class="flex flex_row flex_wrap justify_between align_center gap_3 m-b_2">
           <p class="font_bold m_0">2. FAQ body (groups + Q&amp;A)</p>
-          <button type="button" class="btn btn-primary btn-sm" data-role="copy-cms-block" data-target="faq-body-{{ spoke.spoke_id }}">Copy HTML</button>
+          <button type="button" class="btn btn-primary btn-sm" data-role="copy-cms-block" data-target="faq-body-{{ spoke.spoke_id }}">Copy FAQ body</button>
         </div>
         <p class="font-size_down c_black-7 m-t_0">Main column: group headings and <code>faq-item</code> markup.</p>
         <textarea
@@ -87,13 +141,13 @@ notes: "CMS copy from shared _includes/annual/ partials. Rebuild data: python3 s
 
       <div data-role="faq-copy-block">
         <div class="flex flex_row flex_wrap justify_between align_center gap_3 m-b_2">
-          <p class="font_bold m_0">3. Runtime styles + script</p>
-          <button type="button" class="btn btn-primary btn-sm" data-role="copy-cms-block" data-target="faq-runtime-{{ spoke.spoke_id }}">Copy HTML</button>
+          <p class="font_bold m_0">3. JavaScript + CSS shim</p>
+          <button type="button" class="btn btn-primary btn-sm" data-role="copy-cms-block" data-target="faq-runtime-{{ spoke.spoke_id }}">Copy JavaScript + CSS shim</button>
         </div>
-        <p class="font-size_down c_black-7 m-t_0">Paste once per page: layout shim, filter, jump-nav active state, hash deep-links.</p>
+        <p class="font-size_down c_black-7 m-t_0 m-b_0">Paste once per page: layout shim, filter, jump-nav active state, hash deep-links.</p>
         <textarea
           id="faq-runtime-{{ spoke.spoke_id }}"
-          class="br_1 br_black-3 br_solid br_radius font_n2 m-t_2 m-b_0 min-h_16 p_3 w_100"
+          class="br_1 br_black-3 br_solid br_radius font_n2 m-t_2 m-b_0 min-h_16 p_3 w_100 display_none"
           rows="14"
           readonly
           spellcheck="false">{{ runtime_html | strip }}</textarea>
@@ -117,6 +171,12 @@ notes: "CMS copy from shared _includes/annual/ partials. Rebuild data: python3 s
 (function () {
   var select = document.querySelector('[data-role="faq-spoke-select"]');
   var panels = document.querySelectorAll('[data-role="faq-generator-spoke"]');
+  var overrideInput = document.querySelector('[data-role="faq-items-override-input"]');
+  var overrideStatus = document.querySelector('[data-role="faq-items-override-status"]');
+  var applyBtn = document.querySelector('[data-role="faq-items-override-apply"]');
+  var clearBtn = document.querySelector('[data-role="faq-items-override-clear"]');
+  var originals = null;
+  var REQUIRED_COLS = ["spoke_id", "group_id", "item_id", "question", "answer_html", "status"];
 
   function showSpoke(id) {
     panels.forEach(function (panel) {
@@ -176,11 +236,287 @@ notes: "CMS copy from shared _includes/annual/ partials. Rebuild data: python3 s
           }, 1600);
         })
         .catch(function () {
+          area.classList.remove("display_none");
           area.focus();
           area.select();
-          if (status) status.textContent = "Select the textarea and copy manually (Cmd/Ctrl+C).";
+          if (status) status.textContent = "Copy was blocked. The HTML is now shown — select it and copy manually (Cmd/Ctrl+C).";
         });
     });
   });
+
+  function detectDelimiter(text) {
+    var first = (text.split(/\r?\n/)[0] || "");
+    var tabs = (first.match(/\t/g) || []).length;
+    var commas = (first.match(/,/g) || []).length;
+    return tabs > commas ? "\t" : ",";
+  }
+
+  function parseDelimited(text) {
+    var delim = detectDelimiter(text);
+    var rows = [];
+    var row = [];
+    var field = "";
+    var inQuotes = false;
+    var i = 0;
+    while (i < text.length) {
+      var ch = text.charAt(i);
+      if (inQuotes) {
+        if (ch === '"') {
+          if (text.charAt(i + 1) === '"') {
+            field += '"';
+            i += 2;
+            continue;
+          }
+          inQuotes = false;
+          i += 1;
+          continue;
+        }
+        field += ch;
+        i += 1;
+        continue;
+      }
+      if (ch === '"') {
+        inQuotes = true;
+        i += 1;
+        continue;
+      }
+      if (ch === delim) {
+        row.push(field);
+        field = "";
+        i += 1;
+        continue;
+      }
+      if (ch === "\r") {
+        i += 1;
+        continue;
+      }
+      if (ch === "\n") {
+        row.push(field);
+        rows.push(row);
+        row = [];
+        field = "";
+        i += 1;
+        continue;
+      }
+      field += ch;
+      i += 1;
+    }
+    if (field.length || row.length) {
+      row.push(field);
+      rows.push(row);
+    }
+    return rows.filter(function (r) {
+      return r.some(function (cell) { return String(cell || "").trim() !== ""; });
+    });
+  }
+
+  function rowsToObjects(rows) {
+    if (!rows.length) throw new Error("No rows found.");
+    var headers = rows[0].map(function (h) { return String(h || "").trim().toLowerCase(); });
+    var missing = REQUIRED_COLS.filter(function (col) { return headers.indexOf(col) === -1; });
+    if (missing.length) {
+      throw new Error("Missing required columns: " + missing.join(", ") + ".");
+    }
+    return rows.slice(1).map(function (cells) {
+      var obj = {};
+      headers.forEach(function (header, idx) {
+        obj[header] = cells[idx] != null ? String(cells[idx]) : "";
+      });
+      return obj;
+    });
+  }
+
+  function escapeAttr(value) {
+    return String(value || "")
+      .replace(/&/g, "&amp;")
+      .replace(/"/g, "&quot;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+  }
+
+  function escapeHtml(value) {
+    return String(value || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+  }
+
+  function sortKey(value) {
+    var n = parseInt(value, 10);
+    return isNaN(n) ? 0 : n;
+  }
+
+  function renderItem(item) {
+    var id = item.item_id || "";
+    var q = item.question || "";
+    return (
+      '<details class="m-b_4 m-b_5:lg gap_4:lg font_accent font_medium" data-component="FaqItem" data-item="faq-qa" data-faq-question="' +
+      escapeAttr(q) +
+      '" id="q-' +
+      escapeAttr(id) +
+      '">' +
+      '<summary class="p-x_3 p-y_2 link c_secondary-n3 br_0 br_none br_secondary-3 br_solid:lg br-r_2 wrap_balance">' +
+      '<h3 class="font_copy font_bold inline m_0 font-size_up sticky:lg t_3:lg">' +
+      escapeHtml(q) +
+      "</h3></summary>" +
+      '<div class="p_3 reading-typography wrap_pretty" data-role="faq-answer" id="a-' +
+      escapeAttr(id) +
+      '">' +
+      (item.answer_html || "") +
+      "</div></details>"
+    );
+  }
+
+  function stashOriginals() {
+    if (originals) return;
+    var deleteAlert = document.querySelector('[data-role="faq-delete-alert"]');
+    originals = {
+      deleteHtml: deleteAlert ? deleteAlert.outerHTML : "",
+      panels: []
+    };
+    panels.forEach(function (panel) {
+      var body = panel.querySelector('[data-role="faq-spoke-body"]');
+      var area = panel.querySelector('textarea[id^="faq-body-"]');
+      originals.panels.push({
+        spokeId: panel.getAttribute("data-spoke"),
+        bodyHtml: body ? body.innerHTML : "",
+        areaValue: area ? area.value : ""
+      });
+    });
+  }
+
+  function updateDeleteAlert(items) {
+    var existing = document.querySelector('[data-role="faq-delete-alert"]');
+    var deletes = items.filter(function (item) {
+      return String(item.status || "").trim().toLowerCase() === "delete" && item.item_id;
+    });
+    if (!deletes.length) {
+      if (existing) existing.parentNode.removeChild(existing);
+      return;
+    }
+    var html =
+      '<div class="alert alert-alert" role="alert" data-role="faq-delete-alert">' +
+      '<div class="flex"><div class="font_10 text_center p_3 justify_center self_center lh_0">' +
+      '<i class="far fa-exclamation-triangle"></i></div>' +
+      '<div class="flex_auto p_4 p-y_2 self_center">' +
+      '<h4 class="alert-heading">These item_ids are marked for delete</h4><hr>' +
+      '<ul class="p-l_5 m-b_0">' +
+      deletes
+        .map(function (item) {
+          return (
+            "<li><code>" +
+            escapeHtml(item.item_id) +
+            "</code> — " +
+            escapeHtml(item.spoke_id) +
+            " / " +
+            escapeHtml(item.group_id) +
+            "</li>"
+          );
+        })
+        .join("") +
+      "</ul></div></div></div>";
+    var mount = document.querySelector('[data-role="faq-items-override"]');
+    if (existing) {
+      existing.outerHTML = html;
+    } else if (mount) {
+      mount.insertAdjacentHTML("beforebegin", html);
+    }
+  }
+
+  function applyItems(items) {
+    stashOriginals();
+    var ready = items.filter(function (item) {
+      return String(item.status || "").trim().toLowerCase() === "ready";
+    });
+    panels.forEach(function (panel) {
+      var spokeId = panel.getAttribute("data-spoke");
+      var body = panel.querySelector('[data-role="faq-spoke-body"]');
+      var area = panel.querySelector('textarea[id^="faq-body-"]');
+      if (!body) return;
+      body.querySelectorAll('[data-role="faq-group"]').forEach(function (group) {
+        var groupId = (group.id || "").replace(/^g-/, "");
+        var host = group.querySelector('[data-role="faq-items"]');
+        if (!host) return;
+        var groupItems = ready
+          .filter(function (item) {
+            return item.spoke_id === spokeId && item.group_id === groupId;
+          })
+          .sort(function (a, b) {
+            return sortKey(a.item_sort) - sortKey(b.item_sort);
+          });
+        host.innerHTML = groupItems.map(renderItem).join("");
+      });
+      if (area) area.value = body.outerHTML;
+      if (window.ACCFaqRuntime && typeof window.ACCFaqRuntime.refreshSpoke === "function") {
+        window.ACCFaqRuntime.refreshSpoke(body);
+      }
+    });
+    updateDeleteAlert(items);
+  }
+
+  function clearOverride() {
+    if (!originals) {
+      if (overrideStatus) overrideStatus.textContent = "Using Jekyll CSV data.";
+      return;
+    }
+    originals.panels.forEach(function (saved) {
+      var panel = document.querySelector(
+        '[data-role="faq-generator-spoke"][data-spoke="' + saved.spokeId + '"]'
+      );
+      if (!panel) return;
+      var body = panel.querySelector('[data-role="faq-spoke-body"]');
+      var area = panel.querySelector('textarea[id^="faq-body-"]');
+      if (body) {
+        body.innerHTML = saved.bodyHtml;
+        if (window.ACCFaqRuntime && typeof window.ACCFaqRuntime.refreshSpoke === "function") {
+          window.ACCFaqRuntime.refreshSpoke(body);
+        }
+      }
+      if (area) area.value = saved.areaValue;
+    });
+    var existing = document.querySelector('[data-role="faq-delete-alert"]');
+    if (existing) existing.parentNode.removeChild(existing);
+    if (originals.deleteHtml) {
+      var mount = document.querySelector('[data-role="faq-items-override"]');
+      if (mount) mount.insertAdjacentHTML("beforebegin", originals.deleteHtml);
+    }
+    originals = null;
+    if (overrideInput) overrideInput.value = "";
+    if (overrideStatus) overrideStatus.textContent = "Cleared. Restored Jekyll CSV data.";
+  }
+
+  if (applyBtn) {
+    applyBtn.addEventListener("click", function () {
+      var text = overrideInput ? overrideInput.value.trim() : "";
+      if (!text) {
+        if (overrideStatus) overrideStatus.textContent = "Paste items CSV/TSV first, or leave blank to use Jekyll data.";
+        return;
+      }
+      try {
+        var items = rowsToObjects(parseDelimited(text));
+        applyItems(items);
+        var readyCount = items.filter(function (item) {
+          return String(item.status || "").trim().toLowerCase() === "ready";
+        }).length;
+        var deleteCount = items.filter(function (item) {
+          return String(item.status || "").trim().toLowerCase() === "delete";
+        }).length;
+        if (overrideStatus) {
+          overrideStatus.textContent =
+            "Override applied: " +
+            readyCount +
+            " ready, " +
+            deleteCount +
+            " delete. Live preview and Copy FAQ body now use the paste.";
+        }
+      } catch (err) {
+        if (overrideStatus) overrideStatus.textContent = err.message || "Could not parse pasted rows.";
+      }
+    });
+  }
+
+  if (clearBtn) {
+    clearBtn.addEventListener("click", clearOverride);
+  }
 })();
 </script>

@@ -20,3 +20,12 @@ lbct,authors-institutions,"Authors, institutions & disclosures",5,,ready
 lbct,technical,Technical & completion,6,,ready
 lbct,after-deadline,After the deadline,7,,ready
 lbct,acceptance,"Acceptance, registration & publication",8,,ready
+generic,registration-fees,Registration & fees,1,"Who can register, what each rate includes, and how member pricing works.",ready
+generic,changes-cancellations,"Changes, cancellations & refunds",2,"Substitutions, transfers, refund windows, and how to update a registration.",ready
+generic,hotels-housing,Hotels & housing,3,"The official hotel block, how to book, and how to spot unauthorized housing vendors.",ready
+generic,travel-visa,"Travel, visa & transportation",4,"Invitation letters, visa timing, and getting to the venue.",ready
+generic,program-sessions,Program & sessions,5,"Session types, the online planner, and building a personal schedule.",ready
+generic,credit-certificates,Credit & certificates,6,"Claiming CME and MOC, evaluation deadlines, and where to find your transcript.",ready
+generic,onsite,Onsite logistics,7,"Badge pickup, check-in hours, the mobile app, and the exhibit hall.",ready
+generic,virtual-on-demand,Virtual & on-demand access,8,"Live streaming, how long recordings stay available, and on-demand upgrades.",ready
+generic,accessibility-childcare,Accessibility & childcare,9,"Accommodation requests, accessible services, and family or childcare options.",ready

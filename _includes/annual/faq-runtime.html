@@ -122,9 +122,8 @@
   function bindFilter(root) {
     var input = root.querySelector('[data-role="faq-filter"]');
     var status = root.querySelector('[data-role="faq-filter-status"]');
-    var items = root.querySelectorAll('[data-item="faq-qa"]');
     var jumpLinks = root.querySelectorAll('[data-role="faq-jump-link"]');
-    if (!input || !items.length) return;
+    if (!input) return;
 
     function syncJumpNav() {
       jumpLinks.forEach(function (link) {
@@ -147,6 +146,7 @@
     }
 
     input.addEventListener("input", function () {
+      var items = root.querySelectorAll('[data-item="faq-qa"]');
       var q = (input.value || "").trim().toLowerCase();
       var shown = 0;
       items.forEach(function (item) {
@@ -253,6 +253,14 @@
     });
     openHashTarget();
   }
+
+  window.ACCFaqRuntime = {
+    refreshSpoke: function (spoke) {
+      if (!spoke) return;
+      bindSummaryLock(spoke);
+      updateSpokeLayout(spoke);
+    }
+  };
 
   document.addEventListener("DOMContentLoaded", init);
   window.addEventListener("hashchange", openHashTarget);

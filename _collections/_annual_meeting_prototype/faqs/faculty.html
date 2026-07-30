@@ -5,11 +5,10 @@ position: "FAQs > Faculty"
 notes: "Demo seed — confirm portal/childcare links before production."
 permalink: /AnnualMeeting/faqs/faculty/
 ---
-{%- assign faq_data = site.data.annual_meeting.faqs.nested -%}
-{%- assign spoke = nil -%}
-{%- for s in faq_data.spokes -%}
-  {%- if s.spoke_id == "faculty" -%}{%- assign spoke = s -%}{%- endif -%}
-{%- endfor -%}
+{%- assign all_spokes = site.data.annual_meeting.faqs.spokes
+  | where: "status", "ready"
+  | sort: "spoke_sort" -%}
+{%- assign spoke = all_spokes | where: "spoke_id", "faculty" | first -%}
 
 <article class="reading-typography" data-role="faq-page" data-spoke="{{ spoke.spoke_id }}">
   <header class="m-b_4">
@@ -21,7 +20,7 @@ permalink: /AnnualMeeting/faqs/faculty/
     <h1 class="c_primary font_display m-b_2 m-t_0">{{ spoke.seo_h1 }}</h1>
   </header>
 
-  {%- include_relative partials/intro-band.html spoke=spoke all_spokes=faq_data.spokes -%}
+  {%- include_relative partials/intro-band.html spoke=spoke all_spokes=all_spokes -%}
 
   <div class="grid columns_1 columns_4:lg gap_4" data-role="faq-main">
     <aside class="col-start_1 col-end_2:lg">

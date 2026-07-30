@@ -2,20 +2,21 @@
 layout: annual/fullscreen
 name: "FAQs"
 position: "Information > FAQs"
-notes: "Hub triage for ACC.26 FAQ spokes. Demo seed — production-final pending SME date refresh (see _data/annual_meeting/faqs/CONTENT_FLAGS.md)."
+notes: "Hub triage for ACC Annual Scientific Session FAQ spokes. Evergreen copy — avoid year-specific naming at page and group level."
 permalink: /AnnualMeeting/faqs/
 ---
-{%- assign faq_data = site.data.annual_meeting.faqs.nested -%}
-{%- assign all_spokes = faq_data.spokes -%}
+{%- assign all_spokes = site.data.annual_meeting.faqs.spokes
+  | where: "status", "ready"
+  | sort: "spoke_sort" -%}
 
 <article class="reading-typography" data-role="faq-page" data-spoke="hub">
   <header class="m-b_5">
     <p class="font-size_down c_black-7 m-b_2">
-      <a class="link" href="{{ '/AnnualMeeting/' | relative_url }}">ACC.26</a>
+      <a class="link" href="{{ '/AnnualMeeting/' | relative_url }}">Annual Scientific Session</a>
       <span aria-hidden="true"> / </span>
       FAQs
     </p>
-    <h1 class="c_primary font_display m-b_3">ACC.26 FAQs</h1>
+    <h1 class="c_primary font_display m-b_3">ACC Annual Scientific Session FAQs</h1>
     <p class="font-size_up m-b_3">
       Find answers by your role. These pages cover faculty and science-submission questions for the ACC Annual Scientific Session. Choose the path that matches what you are doing — answers differ by audience even when the questions look similar.
     </p>

@@ -1,11 +1,16 @@
 {%- comment -%}
   In-page jump nav + filter (filter last). Shared by spoke pages + CMS generator.
-  Expects: spoke (groups[], spoke_id)
+  Expects: spoke (spoke_id)
+  Groups come from site.data.annual_meeting.faqs.groups (CSV).
 {%- endcomment -%}
+{%- assign faq_groups = site.data.annual_meeting.faqs.groups
+  | where: "spoke_id", spoke.spoke_id
+  | where: "status", "ready"
+  | sort: "group_sort" -%}
 <nav class="m-b_4 p_3 bg_black-1 br_radius sticky t_3" aria-label="On this page" data-role="faq-jump-nav">
   <p class="font_bold m-b_2 m-t_0">On this page</p>
   <ul class="ul_none grid gap_2 m_0" data-role="faq-jump-list">
-    {%- for group in spoke.groups -%}
+    {%- for group in faq_groups -%}
     <li class="m_0 p_0">
       <a class="link a:bg_secondary-n2 a:c_white block p-x_3 p-y_2" href="#g-{{ group.group_id }}" data-role="faq-jump-link">{{ group.group_label }}</a>
     </li>

@@ -1,14 +1,14 @@
 ---
 layout: annual/fullscreen
-name: "LBCT FAQs"
-position: "FAQs > Late-Breaking Clinical Trials"
-notes: "Demo seed — LBCT deadline conflict flagged in CONTENT_FLAGS.md."
-permalink: /AnnualMeeting/faqs/late-breaking-clinical-trials/
+name: "Generic FAQs"
+position: "FAQs > Generic"
+notes: "Empty starter spoke — add groups/items in CSV as you build content."
+permalink: /AnnualMeeting/faqs/generic/
 ---
 {%- assign all_spokes = site.data.annual_meeting.faqs.spokes
   | where: "status", "ready"
   | sort: "spoke_sort" -%}
-{%- assign spoke = all_spokes | where: "spoke_id", "lbct" | first -%}
+{%- assign spoke = all_spokes | where: "spoke_id", "generic" | first -%}
 
 <article class="reading-typography" data-role="faq-page" data-spoke="{{ spoke.spoke_id }}">
   <header class="m-b_4">

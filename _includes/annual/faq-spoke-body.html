@@ -1,13 +1,18 @@
 {%- comment -%}
   FAQ groups + items (main content column). Shared by spoke pages + CMS generator.
-  Expects: spoke (spoke_id, groups[])
+  Expects: spoke (spoke_id)
+  Groups come from site.data.annual_meeting.faqs.groups (CSV).
 {%- endcomment -%}
+{%- assign faq_groups = site.data.annual_meeting.faqs.groups
+  | where: "spoke_id", spoke.spoke_id
+  | where: "status", "ready"
+  | sort: "group_sort" -%}
 <div
   class="wrapper-container"
   data-component="FaqSpoke"
   data-spoke="{{ spoke.spoke_id }}"
   data-role="faq-spoke-body">
-  {%- for group in spoke.groups -%}
-    {%- include annual/faq-group.html group=group -%}
+  {%- for group in faq_groups -%}
+    {%- include annual/faq-group.html group=group spoke=spoke -%}
   {%- endfor -%}
 </div>

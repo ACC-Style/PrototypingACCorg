@@ -1,7 +1,13 @@
 {%- comment -%}
   FAQ group section. Shared by spoke body + CMS generator.
-  Expects: group (group_id, group_label, group_intro, items[])
+  Expects: group (group_id, group_label, group_intro) and spoke (spoke_id)
+  Items come from site.data.annual_meeting.faqs.items (CSV).
 {%- endcomment -%}
+{%- assign group_items = site.data.annual_meeting.faqs.items
+  | where: "spoke_id", spoke.spoke_id
+  | where: "group_id", group.group_id
+  | where: "status", "ready"
+  | sort: "item_sort" -%}
 <section
   class="m-b_5"
   data-component="FaqGroup"
@@ -15,7 +21,7 @@
   <p class="m-b_3">{{ group.group_intro }}</p>
   {%- endif -%}
   <div data-role="faq-items">
-    {%- for item in group.items -%}
+    {%- for item in group_items -%}
       {%- include annual/faq-item.html item=item -%}
     {%- endfor -%}
   </div>

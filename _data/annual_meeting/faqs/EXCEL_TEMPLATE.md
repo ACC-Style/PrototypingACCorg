@@ -1,10 +1,6 @@
-# ACC.26 FAQ — Excel workbook template (SME)
+# ACC Annual Scientific Session FAQ — Excel workbook template (SME)
 
-Use this as the column contract for `ACC26-FAQ-Content.xlsx`. Export each sheet to CSV into `_data/annual_meeting/faqs/`, then run:
-
-```bash
-python3 scripts/faqs/seed_and_convert.py
-```
+Use this as the column contract for `ACC-Session-FAQ-Content.xlsx`. Export each sheet to CSV into `_data/annual_meeting/faqs/`, then rebuild / refresh the Jekyll site.
 
 ## Sheets
 
@@ -12,7 +8,7 @@ python3 scripts/faqs/seed_and_convert.py
 `spoke_id,spoke_sort,spoke_label,hub_blurb,seo_title,seo_meta_description,seo_h1,canonical_path,date_modified,robots,status,cross_banner,cross_banner_href`
 
 ### Groups
-`spoke_id,group_id,group_label,group_sort,group_intro`
+`spoke_id,group_id,group_label,group_sort,group_intro,status`
 
 ### Items
 `spoke_id,group_id,item_id,question,answer_html,item_sort,status`
@@ -21,7 +17,7 @@ python3 scripts/faqs/seed_and_convert.py
 - Keep questions in interrogative form.
 - Put the published answer in **`answer_html`** (semantic HTML: `<p>`, lists, `<strong>`, `<em>`, links).
 - Do not change `item_id` after publish (deep links).
-- Set `status` to `ready` when Web Production may publish.
+- `status` accepts `ready` (renders), `hold` (not ready yet), or `delete` (queued for removal). Only `ready` renders; `delete` rows are listed in an alert on the generator page.
 
 Full workflow: [README.md](./README.md) · Hygiene flags: [CONTENT_FLAGS.md](./CONTENT_FLAGS.md)
 
