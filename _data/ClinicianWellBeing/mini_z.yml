@@ -110,11 +110,6 @@ questions:
       - { value: 3, label: Busy, but reasonable }
       - { value: 2, label: "" }
       - { value: 1, label: Hectic, chaotic }
-optional_question:
-  id: q11
-  number: 11
-  text: Tell us more about your stresses and what we can do to minimize them
-  placeholder: Optional — for your own reflection or to share with a trusted colleague or wellness lead
 support_links:
   - { label: Physician Support Line, url: https://www.physiciansupportline.com/ }
   - { label: 988 Suicide & Crisis Lifeline, url: tel:988 }

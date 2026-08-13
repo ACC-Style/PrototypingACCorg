@@ -53,20 +53,6 @@
       </ul>
     </fieldset>
     {% endfor %}
-
-    {% if mz.optional_question %}
-    <fieldset class="br_round bg_white shadow_bevel-light p_4 p_5:md m-b_4 border_0">
-      <legend class="font_display font-size_up-1 font_bold m-b_3 p-x_0">
-        <span class="c_primary">{{ mz.optional_question.number }}.</span> {{ mz.optional_question.text }}
-      </legend>
-      <textarea
-        id="{{ mz.optional_question.id }}"
-        name="{{ mz.optional_question.id }}"
-        rows="4"
-        class="w_100 p_3 br_radius br_solid br_1 br_black-2 font_copy"
-        placeholder="{{ mz.optional_question.placeholder }}"></textarea>
-    </fieldset>
-    {% endif %}
   </form>
 
   <aside class="font-size_down-1 opacity_8 max-w_65 m-t_4">
