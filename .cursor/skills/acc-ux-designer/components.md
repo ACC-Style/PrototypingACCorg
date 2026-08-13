@@ -172,6 +172,24 @@ Gold anchor: `_ui_gold_standard/Concept-Anchor-Hero.html`
 Section: `__prototypes/MicroSite/heroimage.html` + `heroimage.micro.dynamic.html`  
 Product: `__prototypes/_archive/CMP-Marketing.html`, `MicroSite/heroimage.basic.ai.html`
 
+## Immediate support callout
+
+Reference: `_collections/_ui_gold_standard/Immediate-Support-Callout.html`
+
+Crisis support under the left nav on Self Care spokes. Opt in:
+
+```yaml
+sidebar_callout_data_path: ClinicianWellBeing.immediate_support
+```
+
+```liquid
+{% include Blocks/ImmediateSupportCallout.html data_path="ClinicianWellBeing.immediate_support" %}
+```
+
+`Global/sidebar` renders it after `MicroSite/sidebar-nav.html` when `sidebar_callout_data_path` is set. Do **not** put `expanded-click-area` on these buttons (multiple `tel:` / `sms:` actions in one card).
+
+Use `tel:988` and `sms:988` — not `tel:+988`.
+
 ## Follow-up CTA
 
 ```liquid

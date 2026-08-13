@@ -1,0 +1,42 @@
+<!--
+Sidebar crisis-support callout (Self Care / mental-health spokes).
+
+data_path: YAML with heading, physician_support (label, href, aria_label),
+  lifeline.body, lifeline.call, lifeline.text
+-->
+{% include Global/resolve-data-path.html data_path=include.data_path %}
+{% assign callout = resolved_data %}
+{% if callout %}
+<aside data-component="immediate-support-callout"
+  class="bg_primary-n2 br_round c_white color_inherit flex flex_column gap_3 m-t_4 m-x_4 p_4 reading-typography shadow_bevel-bold sticky t_3">
+  {% if callout.heading %}
+  <h2 class="font_display font-size_up lh_2 m-b_0 m-t_0 wrap_pretty">{{ callout.heading }}</h2>
+  {% endif %}
+  {% if callout.physician_support %}
+  <a href="{{ callout.physician_support.href }}"
+    class="btn btn-primary bg_white c_primary font_bold h:bg_white-8 w_100"
+    aria-label="{{ callout.physician_support.aria_label | default: callout.physician_support.label }}">
+    <i class="far fa-phone p-r_2" aria-hidden="true"></i>{{ callout.physician_support.label }}
+  </a>
+  {% endif %}
+  {% if callout.lifeline %}
+  <p class="font-size_down-1 lh_2 m_0 opacity_9">{{ callout.lifeline.body }}</p>
+  <div class="flex flex_row gap_2">
+    {% if callout.lifeline.call %}
+    <a href="{{ callout.lifeline.call.href }}"
+      class="btn btn-primary bg_white c_primary flex_auto font_bold h:bg_white-8"
+      aria-label="{{ callout.lifeline.call.aria_label | default: callout.lifeline.call.label }}">
+      <i class="far fa-phone p-r_2" aria-hidden="true"></i>{{ callout.lifeline.call.label }}
+    </a>
+    {% endif %}
+    {% if callout.lifeline.text %}
+    <a href="{{ callout.lifeline.text.href }}"
+      class="btn btn-primary bg_white c_primary flex_auto font_bold h:bg_white-8"
+      aria-label="{{ callout.lifeline.text.aria_label | default: callout.lifeline.text.label }}">
+      <i class="far fa-comment p-r_2" aria-hidden="true"></i>{{ callout.lifeline.text.label }}
+    </a>
+    {% endif %}
+  </div>
+  {% endif %}
+</aside>
+{% endif %}

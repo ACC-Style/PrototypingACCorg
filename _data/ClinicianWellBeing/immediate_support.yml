@@ -1,0 +1,16 @@
+# Sidebar callout — Self Care branch only (Care for Yourself + Mini Z).
+heading: Need Immediate Support?
+physician_support:
+  label: Physician Support
+  href: "tel:+18884090141"
+  aria_label: Call Physician Support Line at 1-888-409-0141
+lifeline:
+  body: If you or someone you know is in emotional distress, experiencing a mental health crisis, or may be at risk of self-harm, reach out to the Suicide & Crisis Lifeline.
+  call:
+    label: Call
+    href: "tel:988"
+    aria_label: Call 988 Suicide and Crisis Lifeline
+  text:
+    label: Text
+    href: "sms:988"
+    aria_label: Text 988 Suicide and Crisis Lifeline

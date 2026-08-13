@@ -3,22 +3,22 @@ sidebarRoot: Clinician Well-Being
 sidebarRootURL: /clinical-wellbeing/Concept-Clinician-Well-Being/
 items:
 - key: mental_health
-  label: Care for Yourself
+  label: Self Care
   url: /clinical-wellbeing/Concept-Clinician-Well-Being-Mental-Health/
   children:
   - key: mini_z
     label: Burn Out Survey
     url: /clinical-wellbeing/Concept-Clinician-Well-Being-Mini-Z/
 - key: workplace
-  label: Strengthen Your Team
+  label: Team Support
   url: /clinical-wellbeing/Concept-Clinician-Well-Being-Workplace/
-- key: protect
-  label: Protect Patients & Peers
-  url: /clinical-wellbeing/Concept-Clinician-Well-Being-Protect/
   children:
   - key: uncivil_behavior
     label: Uncivil Behavior
     url: /clinical-wellbeing/Concept-Clinician-Well-Being-Uncivil-Behavior/
+- key: protect
+  label: Protect Patients & Peers
+  url: /clinical-wellbeing/Concept-Clinician-Well-Being-Protect/
 - key: future
   label: Shaping the Future
   url: /clinical-wellbeing/Concept-Clinician-Well-Being-Future/

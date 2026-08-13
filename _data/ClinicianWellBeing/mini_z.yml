@@ -106,9 +106,9 @@ questions:
     subscale: 2
     options:
       - { value: 5, label: Calm }
-      - { value: 4, label: "4" }
+      - { value: 4, label: "" }
       - { value: 3, label: Busy, but reasonable }
-      - { value: 2, label: "2" }
+      - { value: 2, label: "" }
       - { value: 1, label: Hectic, chaotic }
 optional_question:
   id: q11

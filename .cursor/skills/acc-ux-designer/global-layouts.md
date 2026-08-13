@@ -48,6 +48,7 @@ Legacy layouts that call `{% include {{ page.masthead }} hero_title=page.hero-ti
 | `nav_active_key` | Front-matter field name for active top item (e.g. `wellbeing_nav`) |
 | `nav_sub_active_key` | Front-matter field name for active child (e.g. `wellbeing_nav_sub`) |
 | `sidebar_aria_label` | Optional `aria-label` on `<nav>` |
+| `sidebar_callout_data_path` | Optional YAML for `Blocks/ImmediateSupportCallout.html` under the nav (Self Care crisis support) |
 
 **Sidebar YAML rule:** every item with `children` must have a unique `key` — collapse targets use `#childNavCollapse-{key}` (not a shared class).
 

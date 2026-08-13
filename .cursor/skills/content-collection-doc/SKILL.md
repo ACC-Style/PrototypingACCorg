@@ -24,7 +24,7 @@ Turn a prototype (default) or Whimsical wireframe into a **Content Collection Do
 | Rule | Value |
 |------|--------|
 | **Save path** | `E:\REPO\ObsidianSecondBrain\Work\ACC\Projects\Content Collection Documents\` |
-| **Document name** | **Page Name** (same as the page title / prototype `name`) |
+| **Document name** | **Page Name** (same as the page title / prototype `name`). For a **suite**, use the hub / root page name. |
 | **File name** | `{Page Name}.md` (safe characters; keep readable) |
 | **Source of truth** | **HTML prototype** by default. Use Whimsical (or other) only when the user says so at kickoff. |
 
@@ -44,6 +44,33 @@ Resolve `{% include %}` / `{% include_relative %}` partials into the collected c
    - Legend
    - Content Brief
    - Ticket *(last — filled last)*
+
+### Multi-page suite (one document)
+
+When the user asks for a **suite** / set of related pages in a single document:
+
+- **One file**, named after the hub / root (e.g. `Clinician Well-Being.md`).
+- **Confirm the page list first** (user verifies) before writing landmarks. Source of Sitecore nesting: **live sidebar** (or sidebar YAML), not hub cards or leftover prototype files.
+- **Page title + tree label:** each page heading is `# {Page Name} ({sidebar / tree label})`.
+- **Contents** lists each page under Content Brief in **tree order** (parent, then children, depth-first).
+- **Delineation:** `<div style="page-break-before: always;"></div>` then `---` then the next `# {Page Name} ({tree label})`. Green tree-position note under the H1.
+- **One suite-level** Content Brief intro (ASCII tree + shared chrome) **before** the first page H1. **One Ticket** at the end covering all pages.
+- **Sitecore tree:** ASCII box-drawing tree (not HTML). Trailing `/` on nodes that have children. Start from ACC when the user gives a site path. **Site Structure / Placement** on each page repeats the tree and marks the current page with `← this page`.
+
+```
+ACC/
+└── Tools and Practice Support/
+    └── Clinician/
+        └── Well-Being/
+            ├── Self Care/
+            │   └── Burn Out Survey
+            ├── Team Support/
+            │   └── Uncivil Behavior
+            ├── Protect Patients & Peers
+            └── Shaping the Future
+```
+- Omit prototype pages that are **not** in the verified tree (orphans / deleted intermediaries).
+- Do not invent a separate nav dataset — Sitecore left nav **is** the content tree.
 
 ## Legend (required structure)
 
@@ -84,7 +111,7 @@ Wrong: wrapping `##` or `**` inside the span; wrong: `<span>## Title</span>`.
 ### Section order
 
 1. `# Content Brief`
-2. `# {Page Name}` (H1 — page title)
+2. `# {Page Name}` (H1 — page title). Suite: `# {Page Name} ({tree label})`
 3. `## Meta Content` — purpose, audience, placement, meta fields, layout overview, prototype link
 4. Landmarks (each `##` with **red** title text)
 5. Optional Open Items
@@ -123,13 +150,47 @@ Under `## Meta Content`, use **green** labels/context for collector fields. Meta
 - Group zones / logical sections (`id`, `data-jump-section`, `zone-label`, sticky nav targets).
 - Landmark `##` title text is **red**.
 - Green intro under the landmark orients collector to prototype/wire (no local file paths).
-- **Prototype deep link (HTML prototypes):** In each landmark, include a clickable link using `prototypeBaseUrl#id` so collectors can open the exact page location. Prefer the section’s `id` / jump target from the prototype. If a zone has no id, link the prototype base URL and note the missing id in yellow for UX.
+- **Prototype deep link (HTML prototypes):** In each landmark that has a section `id` / jump target, include a clickable link using `prototypeBaseUrl#id` so collectors can open the exact page location.
   - Example: `[Open in prototype](https://acc-style.github.io/PrototypingACCorg/acc/Journal-TextEdit/#Why-Publishing)`
   - Place the link in **green** collector context near the top of the landmark (under the red landmark title).
+  - **Skip deep links** when no section id is needed:
+  - **Hero Image + CTA Overlay** (and similar Sitecore chrome/renderings)
+  - **Above-the-fold / start-of-page** zones (e.g. Introduction + Quick Links) — orientation note is enough; do not flag missing ids as UX yellow items
 - Sub-UI: red slot label → green constraint → black content.
-- Icons: Font Awesome **class names** (e.g. `fa-users`, `fa-lightbulb`).
-- Links/images in tables: use **`Link:`** and **`Img Src:`** columns (not a bare “URL” dump).
+- Icons: Font Awesome **class names** (e.g. `fa-users`, `fa-lightbulb`) — put in `{DEV: Icon: fa-…}` on the item, not as a wide table column.
+- Links/images: use `{DEV: Link: …}` and `{DEV: Img Src: …}` on the item (not wide URL columns).
 - Pattern Library when useful: https://assets.acc.org/Arches/Latest/docs/
+
+### Tables (Word-safe)
+
+- **Max 3 columns.** Wider tables are hard to edit/read in Word — do not use them.
+- Prefer **stacked item blocks** or lists for repeating cards/grids.
+- **UI Component / layout pattern notes** (e.g. “Icon + text grid with expanded click area jump links”) belong in `{DEV: …}`, not a table and not a multi-column matrix.
+
+**Repeating card / grid pattern (preferred):**
+
+```markdown
+**<span style="color:#8B0000">Card Title</span>**  
+<span style="color:#006400">(Max: 80 chars)</span>  
+Why We Publish  
+
+<span style="color:#006400">(Max: 150 chars)</span>  
+**Mission & Impact**: How publishing advances…  
+
+<span style="color:#8B0000">{DEV: Icon: fa-lightbulb; Jump: #Why-Publishing; Shade jump-link card }</span>
+```
+
+**Journal / media item pattern:**
+
+```markdown
+#### JACC
+
+Top research across all cardiovascular medicine…
+
+**Best for:** All cardiovascular professionals  
+
+<span style="color:#8B0000">{DEV: Link: https://www.jacc.org/journal/jacc; Img Src: https://…/logo-JACC-….png }</span>
+```
 
 ### Inline DEV notes
 
@@ -180,6 +241,7 @@ Boilerplate + page-specific. Contacts: **ECDS Lead / UX: Matt Watier, Rowena**.
 - [ ] Yellow UX / pink SME gaps
 - [ ] Ticket
 - [ ] Save as {Page Name}.md under Obsidian path
+- [ ] Suite: confirm page list + tree; page-break between pages; one Ticket
 - [ ] Iterate; update this skill when rules change
 ```
 

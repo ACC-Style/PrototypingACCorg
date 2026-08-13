@@ -84,6 +84,7 @@ _collections/__clinical-wellbeing/
 | Accordions | `Blocks/AccordionStack.html` |
 | Small image-text panel | `Blocks/SmallImageTextPanel.html` |
 | Follow-up CTA | `Blocks/FollowUpCTA.html` |
+| Immediate support callout | `Blocks/ImmediateSupportCallout.html` + `sidebar_callout_data_path` on `Global/sidebar` |
 
 ### Member Section prototype
 
@@ -109,6 +110,7 @@ _collections/__clinical-wellbeing/
 | YAML-driven accordions | `Blocks/AccordionStack.html` |
 | Small image-text panel | `Blocks/SmallImageTextPanel.html` (inline params) |
 | Follow-up CTA (data-driven) | `Blocks/FollowUpCTA.html` + `_data/{Initiative}/follow_up_ctas.yml` |
+| Immediate support (sidebar) | `Blocks/ImmediateSupportCallout.html` + `sidebar_callout_data_path` |
 | Icon headline lists (generic) | `Blocks/UL_IconHeadlineText.html` |
 | Arches chrome | `arches-head.html`, `arches-header.html`, `arches-footer.html` |
 

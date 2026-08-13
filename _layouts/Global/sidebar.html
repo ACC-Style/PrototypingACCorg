@@ -21,6 +21,9 @@ layout: default
             active_key=sidebar_active_key
             sub_active_key=sidebar_sub_active_key
             aria_label=page.sidebar_aria_label %}
+          {% if page.sidebar_callout_data_path %}
+          {% include Blocks/ImmediateSupportCallout.html data_path=page.sidebar_callout_data_path %}
+          {% endif %}
         </section>
         <main grid-area="content" class="p-t_5:lg p-t_4 p-x_4:lg reading-typography">
           {{ content }}
