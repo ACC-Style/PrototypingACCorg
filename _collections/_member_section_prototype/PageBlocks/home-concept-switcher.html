@@ -1,0 +1,43 @@
+{% assign active = include.active | default: "A" %}
+<nav aria-label="Home layout concepts" class="bg_black-1 p-x_4 p-x_5:lg p-y_4 reading-typography">
+  <p class="c_shade-n2 font-size_down font_ui m-b_3">
+    Home concepts for 22 Member Sections &mdash; same destinations, different density.
+  </p>
+  <ul class="flex flex_row flex_wrap gap_2 m_0 ul_none">
+    <li>
+      <a
+        class="btn btn-sm {% if active == 'original' %}btn-primary{% else %}btn-outline-shade{% endif %}"
+        href="../3.0_home/"
+        {% if active == "original" %}aria-current="page"{% endif %}
+        >Original</a
+      >
+    </li>
+    <li>
+      <a
+        class="btn btn-sm {% if active == 'A' %}btn-primary{% else %}btn-outline-shade{% endif %}"
+        href="../3.0_home-A_action-rail/"
+        {% if active == "A" %}aria-current="page"{% endif %}
+        >A &middot; Action Rail</a
+      >
+    </li>
+    <li>
+      <a
+        class="btn btn-sm {% if active == 'B' %}btn-primary{% else %}btn-outline-shade{% endif %}"
+        href="../3.0_home-B_live-dashboard/"
+        {% if active == "B" %}aria-current="page"{% endif %}
+        >B &middot; Live Dashboard</a
+      >
+    </li>
+    <li>
+      <a
+        class="btn btn-sm {% if active == 'C' %}btn-primary{% else %}btn-outline-shade{% endif %}"
+        href="../3.0_home-C_modular-widgets/"
+        {% if active == "C" %}aria-current="page"{% endif %}
+        >C &middot; Modular Widgets</a
+      >
+    </li>
+  </ul>
+  {% if include.thesis %}
+  <p class="font-size_down lh_2 m-b_0 m-t_3"><strong class="font_ui">This version:</strong> {{ include.thesis }}</p>
+  {% endif %}
+</nav>

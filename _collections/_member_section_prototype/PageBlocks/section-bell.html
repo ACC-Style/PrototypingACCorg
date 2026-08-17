@@ -1,0 +1,42 @@
+{% comment %}
+Ever-present section notification bell. Unread count is chrome; the panel
+keeps the home page feeling current without a full announcements column.
+{% endcomment %}
+<style>
+  [data-component="SectionBell"] > summary {
+    list-style: none;
+  }
+  [data-component="SectionBell"] > summary::-webkit-details-marker,
+  [data-component="SectionBell"] > summary::marker {
+    display: none;
+    content: "";
+  }
+</style>
+<details class="isolation_isolate relative" data-component="SectionBell">
+  <summary
+    aria-label="Section notifications, 3 unread. Open to view latest updates."
+    class="bg_white br_1 br_black-3 br_radius br_solid btn btn-shade font_ui h:bg_accent-5 p-x_4 p-y_2 relative"
+  >
+    <i class="far fa-bell font_3" aria-hidden="true"></i>
+    <span class="p-l_2 font_bold">Updates</span>
+    <span
+      aria-hidden="true"
+      class="bg_primary br_circle c_white font-size_down-2 font_bold font_ui inline-block m-l_2 p-x_2"
+      >3</span
+    >
+  </summary>
+  <div
+    class="absolute bg_white br_1 br_black-3 br_radius br_solid c_black l_n5:md l_auto m-t_2 max-w_30 r_0 shadow_overlap-bold t_100 w_100 z_5"
+    data-role="notification-panel"
+    style="min-width: 18rem;"
+  >
+    <header class="br-b_1 br_black-2 br_solid flex flex_row items_center justify_between p-x_4 p-y_3">
+      <strong class="font_display font_n0">Latest from this Section</strong>
+      <span class="c_shade-n2 font-size_down-1 font_ui">3 new</span>
+    </header>
+    {% include_relative PageBlocks/Notifications-Compact.html %}
+    <footer class="br-t_1 br_black-2 br_solid grid isolation_isolate p_3 relative">
+      <a class="btn btn-shade expanded-click-area" href="../3.3_announcements/">View all announcements</a>
+    </footer>
+  </div>
+</details>

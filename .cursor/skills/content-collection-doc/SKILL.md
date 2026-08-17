@@ -24,6 +24,7 @@ Turn a prototype (default) or Whimsical wireframe into a **Content Collection Do
 | Rule | Value |
 |------|--------|
 | **Save path** | `E:\REPO\ObsidianSecondBrain\Work\ACC\Projects\Content Collection Documents\` |
+| **Suite folder** | Split / multi-doc packages go in a **named subfolder** (e.g. `WIC\`). Single-page docs stay at the root unless the user names a folder. |
 | **Document name** | **Page Name** (same as the page title / prototype `name`). For a **suite**, use the hub / root page name. |
 | **File name** | `{Page Name}.md` (safe characters; keep readable) |
 | **Source of truth** | **HTML prototype** by default. Use Whimsical (or other) only when the user says so at kickoff. |
@@ -43,11 +44,17 @@ Resolve `{% include %}` / `{% include_relative %}` partials into the collected c
 
 `https://acc-style.github.io/PrototypingACCorg/`
 
+Write them as Markdown links, not a labeled two-line URL:
+
+```markdown
+[Prototype](https://acc-style.github.io/PrototypingACCorg/clinical-wellbeing/Concept-Clinician-Well-Being/)
+```
+
 | Use | Example |
 |-----|---------|
-| **Prototype** (after page H1) | `https://acc-style.github.io/PrototypingACCorg/clinical-wellbeing/Concept-Clinician-Well-Being/` |
-| Landmark deep link | `https://acc-style.github.io/PrototypingACCorg/clinical-wellbeing/Concept-Clinician-Well-Being/#why-wellbeing` |
-| Ticket reference | Same hosted hub URL |
+| **Page** (immediately after the page H1) | `[Prototype](https://acc-style.github.io/PrototypingACCorg/…/)` |
+| **Landmark** (section `id`) | `[Prototype](https://acc-style.github.io/PrototypingACCorg/…/#why-wellbeing)` |
+| **Ticket** | Same hosted URLs as Markdown links |
 
 You may **open** a local Jekyll server to inspect the prototype while collecting; the **links you write** must still be hosted.
 
@@ -67,8 +74,9 @@ When the user asks for a **suite** / set of related pages in a single document:
 - **Confirm the page list first** (user verifies) before writing landmarks. Source of Sitecore nesting: **live sidebar** (or sidebar YAML), not hub cards or leftover prototype files.
 - **Page title + tree label:** each page heading is `# {Page Name} ({sidebar / tree label})`.
 - **Contents** lists each page under Content Brief in **tree order** (parent, then children, depth-first).
-- **Delineation:** `<div style="page-break-before: always;"></div>` then `---` then the next `# {Page Name} ({tree label})`. Hosted **Prototype** link immediately under the H1 (before Meta Content).
-- **One suite-level** Content Brief intro (ASCII tree + shared chrome) **before** the first page H1. **One Ticket** at the end covering all pages.
+- **Delineation:** `<div style="page-break-before: always;"></div>` then `---` then the next `# {Page Name} ({tree label})`. `[Prototype](hosted-url)` immediately under the H1 (before Meta Content).
+- **One suite-level** Content Brief intro **before** the first page H1: `###` Sitecore tree, then `####` shared chrome (header graphic, repeating CTAs, Need Help). Keep it compact — no long orientation essays. **One Ticket** at the end covering all pages.
+- Do **not** repeat shared chrome (micro hero, DocMatter, Need Help) as empty zones on every child page when it is already in that suite intro. Keep a child-page Micro hero zone only when it has page-specific slots (e.g. a unique hero title).
 - **Sitecore tree:** ASCII box-drawing tree (not HTML). Trailing `/` on nodes that have children. Start from ACC when the user gives a site path. **Site Structure / Placement** on each page repeats the tree and marks the current page with `← this page`.
 
 ```
@@ -86,16 +94,34 @@ ACC/
 - Omit prototype pages that are **not** in the verified tree (orphans / deleted intermediaries).
 - Do not invent a separate nav dataset — Sitecore left nav **is** the content tree.
 
+### Split suite (core + satellite docs)
+
+When the user asks to **break a collection into separate documents**:
+
+- **Core document** — named after the hub / root, or `{Hub} - Core Pages.md` when the user uses that pattern. Includes the hub / shared pages the user names. One Ticket at the end. Save the **core + satellite files in one suite folder** under the Content Collection Documents path (do not scatter them at the root).
+- **Dynamic listing pages** — Meta Content + intro zone only. Do **not** transcribe feed items. Close the listing zone with `{DEV: FEED}`. Optional: item anatomy / facet labels as DEV notes.
+- **Specialized feature / detail pages** — one document per page, content-only. Short Ticket that points back to the core document (do not repeat suite acceptance criteria, contacts, or shared chrome). Note shared hero/sidebar in green and send collectors to the core file.
+
+Personalization and page variants are **prototype-specific**. Do not assume access-state homes, numbered state files, or that meta can or cannot change. Follow the grouping the user gives for that collection.
+
 ## Legend (required structure)
 
-**How to use this document:**
+Use the **colored** bullets in the document (collectors read Word). Do not add extra process essays to the Legend.
 
-- **Red text** — Landmark titles, UI element / slot labels, developer notes (including `{DEV: }`).
-- **Green text** — UX & content-collector context: background, orientation to prototype/wire, limitations, and **constraints** (e.g. max chars).
-- **`{DEV: }`** — Curly braces = inline developer notes. Only red inline notes use the `DEV:` prefix.
-- **Yellow highlights** — UX still needs to address (e.g. missing URLs).
-- **Pink highlights** — SMEs still need to address (e.g. missing resources, images, confirm text).
-- **Standard (black) text** — End-user / shippable content (including meta title & meta description *values*).
+```markdown
+## Legend
+
+How to use this document:
+
+- <span style="color:#8B0000">Red text – Landmark titles, UI element / slot labels, and developer notes (including {DEV: }).</span>
+- <span style="color:#006400">Green text – UX & content-collector context (background, orientation, limitations) and constraints (e.g. max characters).</span>
+- <span style="color:#8B0000">{DEV: } – Curly braces denote inline developer notes (e.g. button colors, URLs, etc.)</span>
+- <mark>Yellow highlights denote items UX Team still need to address (e.g. missing URLs)</mark>
+- <span style="background-color:#FFC0CB">Pink highlights denote items for SMEs still need to address (e.g. missing resources, images, confirm text, etc.)</span>
+- Text for content will use standard document headers and formatting.
+```
+
+Repeatable-template collections also add the EVERGREEN ZONE / EVERGREEN bullets (see below). Do **not** add a “standard black text” essay — shippable copy is already the uncolored body.
 
 ### Word-safe color markup
 
@@ -105,19 +131,29 @@ ACC/
 | Green | `<span style="color:#006400">…</span>` |
 | Yellow (UX) | `<mark>…</mark>` |
 | Pink (SME) | `<span style="background-color:#FFC0CB">…</span>` |
+| EVERGREEN ZONE | `**<span style="background:rgba(136, 49, 204, 0.2)">EVERGREEN ZONE</span>**` on its own line, immediately after the zone / landmark heading (use this for repeating template UI) |
+| EVERGREEN (single slot) | `**<span style="background:rgba(136, 49, 204, 0.2)">EVERGREEN</span>**` on its own line, immediately before the red slot label — only when the rest of that zone is section-authored |
 
 ### Markdown + color structure (critical)
 
 Put Markdown syntax **outside** the color span:
 
 ```markdown
-### <span style="color:#8B0000">Hero Image + CTA Overlay</span>
+### <span style="color:#8B0000">State 0 — Need to log in</span>
 
-**<span style="color:#8B0000">CTA Title</span>** <span style="color:#006400">(Max: 80 chars)</span>  
-75+ Years of Cardiovascular Publishing
+**<span style="color:#8B0000">Section Name (H1)</span>** <span style="color:#006400">(Max: 80 chars)</span> · **<span style="color:#8B0000">Teaser Body</span>** <span style="color:#006400">(Max: 150 chars)</span>
+
+# Women In Cardiology
+This section offers women cardiologists opportunities to strengthen their professional support system and skills.
+
+## Log In to Access This Content
+This content is reserved for members of the ACC community.
+
+Log In <span style="color:#8B0000">{DEV: Button, Primary, URL: ACC login, FUNCTION: authenticate then return to this Section URL, Label: Log In }</span>
 ```
 
-Wrong: wrapping `##` or `**` inside the span; wrong: `<span>## Title</span>`.
+Wrong: wrapping `##` or `**` inside the span; wrong: `<span>## Title</span>`.  
+Wrong: a red slot label, then one line of copy, then another red label — that ping-pong is hard to copy.
 
 ## Content Brief rules
 
@@ -125,9 +161,9 @@ Wrong: wrapping `##` or `**` inside the span; wrong: `<span>## Title</span>`.
 
 1. `# Content Brief`
 2. `# {Page Name}` (H1 — page title). Suite: `# {Page Name} ({tree label})`
-3. **Prototype** link (hosted GitHub Pages URL) — directly after the H1, before Meta Content
-4. `## Meta Content` — H3s in this order: Page Purpose, Primary Audience, Meta Title, Meta Description, Site Structure / Placement
-5. `## Page Content` — starts with **Page Layout (zones)**, then one `###` per zone
+3. `[Prototype](hosted-url)` — directly after the H1, before Meta Content (one line; no labeled “Prototype” heading)
+4. `## Meta Content` — H3s in this order: Page Purpose, Primary Audience, Meta Title, Meta Description, Site Structure / Placement. Put the **value on the next line** with **no blank line** after the H3.
+5. `## Page Content` — **Page Layout (zones)**, then real heading levels for landmarks (`#` / `##` / `###`) with **dark red** title text. Body copy under them is black.
 6. Optional Open Items
 7. `## Ticket` (document-level; listed last in TOC)
 
@@ -135,30 +171,79 @@ Wrong: wrapping `##` or `**` inside the span; wrong: `<span>## Title</span>`.
 
 | Kind | Color |
 |------|--------|
-| Landmark titles (zone H3s) | **Red** |
+| Landmark / zone / section titles | **Red** — real header level, color on the title text: `## <span style="color:#8B0000">Need Help?</span>` |
+| On-page body copy (paragraphs, lists, names) | **Black** |
 | Site Structure / Placement (Meta H3) | **Red** |
-| UI slot / element labels (CTA Title, Breadcrumb, etc.) | **Red** |
+| UI slot / element labels | **Red** — batch above a copy block when a constraint is needed; do not label every sentence |
 | `{DEV: …}` notes | **Red** |
 | UX / collector context (purpose, audience, orientation, limitations) | **Green** |
 | Constraints (max chars, pattern notes that constrain the slot) | **Green** |
 | Shippable copy & meta *values* | **Black** |
+| Repeatable-template chrome (EVERGREEN ZONE) | **Purple background** on `EVERGREEN ZONE` after the landmark heading |
+| Single template slot (EVERGREEN) | **Purple background** on `EVERGREEN` in front of one red slot in a mixed zone |
 
 ### Constraints before content
 
-Always state the **rule/constraint before** the content it governs. Put the **red slot label and green constraint on the same line** to keep the document short. Do not repeat the element name inside the constraint when the red label already names it:
+Batch **slot labels + constraints above** a content block, then write the **shippable copy as real Markdown headings** matching the UI (`#` = page H1, `##` = section / h2, `###` = subsection / h3). Body copy follows the heading as normal paragraphs. `{DEV: }` trails the line it annotates.
+
+Do **not** sandwich every sentence between a red label and a value.
 
 ```markdown
-**<span style="color:#8B0000">Section Heading</span>** <span style="color:#006400">(Max: 80 chars)</span>  
-Why ACC Cares for You
+**<span style="color:#8B0000">Roadblock Heading</span>** <span style="color:#006400">(Max: 80 chars)</span> · **<span style="color:#8B0000">Roadblock Body</span>**
 
-**<span style="color:#8B0000">CTA Description</span>** <span style="color:#006400">(Max: 150 chars)</span>  
-The JACC family of journals…
+## <span style="color:#8B0000">Log In to Access This Content</span>
+This content is reserved for members of the ACC community. Log in to access these resources and more exclusive member perks.
+
+Log In <span style="color:#8B0000">{DEV: Button, Primary, URL: ACC login, Label: Log In }</span>
 ```
 
-Keep the colors: red label, green `(Max: … chars)`, then black copy on the next line (hard line break after the constraint).  
-Not: `Description (Max: 150 chars)` under a label already called CTA Description.  
-Not: label on one line and `(Max: 80 chars)` on the next.  
-Defaults: Headline slots `(Max: 80 chars)`; description-length slots `(Max: 150 chars)`.
+When the visible heading **is** the landmark, skip a separate unlabeled zone title — use the real heading **in dark red**:
+
+`## <span style="color:#8B0000">Why Should You Join?</span>`
+
+Combine landmarks that are one visual unit (H1 + teaser body; heading + body + CTA; Need Help heading + links).
+
+Keep `{DEV: }` and yellow/pink notes **out of** the copy block when they would interrupt a heading + paragraph the collector needs to paste.
+
+Defaults: Headline slots `(Max: 80 chars)`; description-length slots `(Max: 150 chars)`. Put those on the batched label line, not on a line by themselves.
+
+### Density (page space)
+
+The document is a collector worksheet, not an agent runbook.
+
+- Prefer `###` / `####` over extra labeled paragraphs.
+- One blank line between blocks. No extra blank after an H3 before its value.
+- Green text = **constraints** and short orientation only. Do not paste process rules collectors cannot act on (e.g. “no section id / deep link required”, long EVERGREEN how-to, “Sitecore rendering…”).
+- Do not duplicate a page `[Prototype](url)` inside every zone when Meta Content already has it. Landmark links stay as `[Prototype](url#id)`.
+- If a `[Prototype](url)` already shows the view, do **not** add a **UI visible** inventory of chrome. The link is the explanation. Keep Rule / Page Purpose / Primary Audience.
+
+### Repeatable templates (EVERGREEN) — rare
+
+Use this **only** when the collection is a template reused across many sites (e.g. all ~22 Member Sections). Do not invent EVERGREEN tags on one-off pages.
+
+- **Repeated UI** — put `**<span style="background:rgba(136, 49, 204, 0.2)">EVERGREEN ZONE</span>**` on its **own line immediately after** the zone / landmark heading (`###` or `####`). Do **not** tag every slot inside it. Optional green note: which slots are in the zone vs section-authored.
+- **Single slot in a mixed zone** — put `**<span style="background:rgba(136, 49, 204, 0.2)">EVERGREEN</span>**` on its own line immediately before that red slot label.
+- Mark **immutable template chrome** only: roadblock instructions, Need Help / Member Care, join/unlock bands, listing-page intros, DocMatter closer, zone labels (Announcements, Resources, Library), Work Groups chrome (“Getting Involved?”, status chip string). Do **not** mark Section Benefits items, chair names/roles, or other section-authored lists.
+- **Do not mark** section-authored copy (mission/focus cards, chair letter, quotes, initiative names), **data-model** fields (names, photos, work-group titles/bodies), or feed items.
+- Tokens such as section name, acronym, and hashtag may sit inside an otherwise-evergreen sentence. Keep the zone (or slot) mark; add a short green note that only the token swaps. Do not glue that note onto the shippable line.
+- Add these Legend bullets:
+
+`**<span style="background:rgba(136, 49, 204, 0.2)">EVERGREEN ZONE</span>** A landmark or repeating UI block whose slots are shared template chrome. Do not rewrite the slots inside it.`
+
+`**<span style="background:rgba(136, 49, 204, 0.2)">EVERGREEN</span>** A single immutable slot inside a mixed zone (the rest of that zone is section-authored).`
+
+Example — whole landmark:
+
+```markdown
+## <span style="color:#8B0000">Unlock This Content</span>
+
+**<span style="background:rgba(136, 49, 204, 0.2)">EVERGREEN ZONE</span>**
+```
+
+**Want to gain access to all of the exclusive content and more?** Manage your membership today to join this Member Section and unlock all the benefits.
+
+Manage Membership <span style="color:#8B0000">{DEV: Button, Shade, URL: membership management, Label: Manage Membership }</span>
+```
 
 ### Meta Content
 
@@ -170,13 +255,12 @@ Defaults: Headline slots `(Max: 80 chars)`; description-length slots `(Max: 150 
 4. `### Meta Description` (green heading + `(Max: 150 chars)` on the same line; **value is black**)
 5. `### Site Structure / Placement` (**red** heading; ASCII tree with `← this page`)
 
-**Prototype does not live here.** Put the hosted prototype URL **directly after the page H1** and before `## Meta Content`:
+**Prototype does not live here.** Put `[Prototype](hosted-url)` **directly after the page H1** and before `## Meta Content`:
 
 ```markdown
 # Care for Yourself (Self Care)
 
-**<span style="color:#006400">Prototype</span>**  
-<span style="color:#006400">https://acc-style.github.io/PrototypingACCorg/clinical-wellbeing/Concept-Clinician-Well-Being-Mental-Health/</span>
+[Prototype](https://acc-style.github.io/PrototypingACCorg/clinical-wellbeing/Concept-Clinician-Well-Being-Mental-Health/)
 
 ## Meta Content
 
@@ -194,36 +278,23 @@ Do **not** put Page Layout (zones) here — that belongs at the start of Page Co
 
 ### Page Content
 
-`## Page Content` is an H2. It starts with **Page Layout (zones)** (green numbered list), then one **H3 per zone**. Zone H3 title text is **red** and **must match** the Page Layout list (same wording). Do not rename a zone to a generic pattern name (e.g. do not use `Hero Image + CTA Overlay` when the zone list says `Micro hero + back to Team Support`).
+`## Page Content` is an H2. It starts with **Page Layout (zones)** (green numbered list of **visible** landmarks). Then write those landmarks with **real heading levels** (`#` / `##` / `###`). The **title text is dark red**; paragraphs under it stay black.
 
-```markdown
-## Page Content
+`## <span style="color:#8B0000">Why Should You Join?</span>`
 
-**<span style="color:#006400">Page Layout (zones)</span>**
+Do not add a second unlabeled heading that repeats the same landmark name. Do not rename a landmark to a generic pattern name (e.g. do not use `Hero Image + CTA Overlay` when the page heading is `Why Should You Join?`).
 
-1. <span style="color:#006400">Hero image with CTA overlay</span>
-2. <span style="color:#006400">Introduction + Cardio Safe aside</span>
+### Landmarks (zone headings)
 
----
-
-### <span style="color:#8B0000">Hero image with CTA overlay</span>
-```
-
-Sub-slots inside a zone (accordion panels, questions) stay `####`.
-
-### Landmarks (zone H3s)
-
-- Group zones / logical sections (`id`, `data-jump-section`, `zone-label`, sticky nav targets).
-- Green intro under the H3 orients collector to prototype/wire (no local file paths).
-- **Prototype deep link (HTML prototypes):** In each landmark that has a section `id` / jump target, include a clickable link using the **hosted** `https://acc-style.github.io/PrototypingACCorg/{collection-path}/#id` (never `127.0.0.1` / `localhost`).
-  - Example: `[Open in prototype](https://acc-style.github.io/PrototypingACCorg/acc/Journal-TextEdit/#Why-Publishing)`
-  - Place the link in **green** collector context near the top of the landmark (under the red H3).
-  - **Skip deep links** when no section id is needed:
-  - **Hero / micro hero chrome** (and similar Sitecore renderings)
-  - **Above-the-fold / start-of-page** zones (e.g. Introduction + Quick Links) — orientation note is enough; do not flag missing ids as UX yellow items
-- Sub-UI: red slot label and green constraint **on the same line**, then black content on the next line.
-- Icons: Font Awesome **class names** (e.g. `fa-users`, `fa-lightbulb`) — put in `{DEV: Icon: fa-…}` on the item, not as a wide table column.
-- Links/images: use `{DEV: Link: …}` and `{DEV: Img Src: …}` on the item (not wide URL columns).
+- Group by UI landmarks. Combine adjacent slots that collectors copy as one unit (heading + body + CTA).
+- Shippable headings use real Markdown levels matching the HTML (`h1` → `#`, `h2` → `##`, `h3` → `###`). Put the **dark red** span on the title text: `## <span style="color:#8B0000">Need Help?</span>`. Body copy under the heading stays black.
+- Keep green under a landmark **short**. Skip agent-only notes.
+- **Prototype deep link:** `[Prototype](https://acc-style.github.io/PrototypingACCorg/{collection-path}/#id)` near the landmark. Never `127.0.0.1` / `localhost`.
+  - Example: `[Prototype](https://acc-style.github.io/PrototypingACCorg/acc/Journal-TextEdit/#Why-Publishing)`
+  - **Skip** deep links on hero / micro hero chrome and above-the-fold start-of-page — do not flag missing ids as yellow UX items.
+- `{DEV: }` on the same line as the button, link, or icon it describes.
+- Icons: Font Awesome class names in `{DEV: Icon: fa-…}`.
+- Links/images: `{DEV: Link: …}` and `{DEV: Img Src: …}`.
 - Pattern Library when useful: https://assets.acc.org/Arches/Latest/docs/
 
 ### Tables (Word-safe)
@@ -235,12 +306,8 @@ Sub-slots inside a zone (accordion panels, questions) stay `####`.
 **Repeating card / grid pattern (preferred):**
 
 ```markdown
-**<span style="color:#8B0000">Card Title</span>** <span style="color:#006400">(Max: 80 chars)</span>  
-Why We Publish  
-
-**<span style="color:#8B0000">Body</span>** <span style="color:#006400">(Max: 150 chars)</span>  
+### Why We Publish
 **Mission & Impact**: How publishing advances…  
-
 <span style="color:#8B0000">{DEV: Icon: fa-lightbulb; Jump: #Why-Publishing; Shade jump-link card }</span>
 ```
 
@@ -297,14 +364,15 @@ Boilerplate + page-specific. Contacts: **ECDS Lead / UX: Matt Watier, Rowena**.
 
 ```
 - [ ] Confirm source (prototype default)
-- [ ] Prototype + deep-link URLs: hosted GitHub Pages only (never 127.0.0.1 / localhost)
+- [ ] `[Prototype](hosted-url)` after each page H1; landmark `#id` links the same way (never 127.0.0.1 / localhost)
 - [ ] Extract between Content Collection markers (+ partials)
 - [ ] Cover + TOC: Legend, Content Brief, Ticket (last)
-- [ ] Legend
-- [ ] Content Brief: H1; Prototype URL; `## Meta Content` H3s (Purpose, Audience, Title, Description, Site Structure in red); `## Page Content` (zones list first); zone H3s
+- [ ] Legend (colored bullets; EVERGREEN ZONE / EVERGREEN only on repeatable templates)
+- [ ] Suite Content Brief: `###` tree + `####` shared chrome (compact)
+- [ ] Each page: H1; Prototype link; `## Meta Content`; `## Page Content` with real heading levels for on-page copy; `{DEV: }` on the content line
 - [ ] FA class names; Link: / Img Src: for media rows
 - [ ] Yellow UX / pink SME gaps
-- [ ] Ticket
+- [ ] Ticket (hosted Markdown links)
 - [ ] Save as {Page Name}.md under Obsidian path
 - [ ] Suite: confirm page list + tree; page-break between pages; one Ticket
 - [ ] Iterate; update this skill when rules change
