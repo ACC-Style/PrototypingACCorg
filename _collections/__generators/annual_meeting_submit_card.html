@@ -422,7 +422,7 @@ csv_file: "none"
       var deadlineDisplay = values.deadline ? formatDeadlineDisplay(values.deadline) : "";
       var deadlineDateTime = values.deadline ? formatDeadlineDateTime(values.deadline) : "";
       return (
-        "<!-- Title (Label + Submission Deadline) -->\n" +
+        '<header>\n' +
         '<h2 class="c_primary-n2 m_0">' + escapeHtml(values.submissionType) + "</h2>\n" +
         '<p class="font-size_down-1 m-x_2 m-y_0">\n' +
         '  <strong class="block">Submission Deadline:</strong>' +
@@ -430,7 +430,7 @@ csv_file: "none"
           ? '<time datetime="' + escapeAttribute(deadlineDateTime) + '">' + escapeHtml(deadlineDisplay) + "</time>"
           : "") + "\n" +
         "</p>\n" +
-        "<!-- /Title (Label + Submission Deadline) -->"
+        '</header>'
       );
     }
 
@@ -458,7 +458,6 @@ csv_file: "none"
       }
 
       return (
-        "<!-- STATE PRE: Calendar Reminder (Pre) -->\n" +
         "<section class='wrapper-container' \n" +
         "    " + attrs.join(" \n    ") + "\n" +
         "  >\n" +
@@ -488,10 +487,12 @@ csv_file: "none"
       var buttonId = "submit_" + slugify(values.submissionType);
       var loginHref = buildLoginUrl(values.submissionLocation);
       return (
-        "<!-- STATE ACTIVE + ANNONYMOUS: Submit [Login Needed] -->\n" +
+        '<div>\n' +
         '<input id="' + escapeAttribute(buttonId) + '" class="btn btn-shade cursor_not-allowed disabled m-x_auto opacity_5 p-x_6:lg"  type="button" value="' + escapeAttribute(values.ctaLabel) + '" disabled="" />\n' +
         "\n" +
-        '<p class="font_0 lh_3 text_center relative">Please <a class="link btn-link expanded-click-area" href="' + escapeAttribute(loginHref) + '">Login</a> in order to submit science. <i class="fa-regular fa-sign-in-alt"></i></p>'
+        '<p class="font_0 lh_3 text_center relative m_0">Please <a class="link expanded-click-area-beforeAlt" href="' + escapeAttribute(loginHref) + '">Login</a> in order to submit science. <i class="fa-regular fa-sign-in-alt"></i></p>' +
+        "\n" +
+        '</div>'
       );
     }
 
@@ -504,7 +505,6 @@ csv_file: "none"
 
     function buildClosedHtml() {
       return (
-        "<!-- STATE CLOSED: Closed -->\n" +
         ' <p class="font_bold c_primary text_center">(Submission is currently closed.)</p>'
       );
     }
@@ -519,7 +519,6 @@ csv_file: "none"
       }
 
       var parts = [
-        "<!-- Footer -->\n",
         '<footer class="m-t_auto bg_black-2 br_radius font-size_down lh_1 m-b_n2 m-x_n2 p_3 reading-typography text_center z_3" style="--custom-font-size-modifier: 1.25;">\n'
       ];
 
@@ -540,8 +539,7 @@ csv_file: "none"
         );
       }
 
-      parts.push("  </footer>\n");
-      parts.push("<!-- /Footer -->");
+      parts.push("  </footer>");
       return parts.join("");
     }
 
