@@ -1,0 +1,815 @@
+---
+layout: playground
+name: "Annual Meeting Submit Card"
+position: "Generator"
+csv_file: "none"
+---
+
+<div class="grid columns_1 columns_2:lg gap_5 reading-typography">
+  <aside class="flex flex_column gap_4">
+    <section class="bg_white br_1 br_black-3 br_round br_solid overflow_hidden">
+      <header class="bg_black-1 br-b_1 br_black-3 br_solid font_bold p_4">
+        Submission card
+      </header>
+      <form id="submitCardForm" class="flex flex_column gap_5 p_4">
+        <fieldset class="br_0 flex flex_column gap_4 m_0 p_0">
+          <legend class="c_primary font_bold p_0">Meeting</legend>
+          <div>
+            <label class="font_bold font-size_down" for="eventTitle">Event title</label>
+            <input
+              id="eventTitle"
+              name="eventTitle"
+              type="text"
+              class="br_1 br_black-3 br_round br_solid m-t_1 p_3 w_100"
+              value="ACC Annual Scientific Session"
+              required />
+            <p class="c_black-7 font-size_down m-b_0 m-t_1">The annual meeting this submission belongs to.</p>
+          </div>
+          <div>
+            <label class="font_bold font-size_down" for="eventDescription">Description</label>
+            <textarea
+              id="eventDescription"
+              name="eventDescription"
+              rows="3"
+              class="br_1 br_black-3 br_round br_solid m-t_1 p_3 w_100">Join cardiologists from around the world for the ACC Annual Scientific Session.</textarea>
+            <p class="c_black-7 font-size_down m-b_0 m-t_1">Used on the calendar invite.</p>
+          </div>
+        </fieldset>
+
+        <fieldset class="br-t_1 br_black-3 br_solid br_0 flex flex_column gap_4 m_0 p_0 p-t_4">
+          <legend class="c_primary font_bold p_0">This submission</legend>
+          <div>
+            <label class="font_bold font-size_down" for="submissionType">Submission Type</label>
+            <input
+              id="submissionType"
+              name="submissionType"
+              type="text"
+              class="br_1 br_black-3 br_round br_solid m-t_1 p_3 w_100"
+              value="CT Team Abstracts"
+              required />
+            <p class="c_black-7 font-size_down m-b_0 m-t_1">
+              Calendar event label:
+              <span id="calendarEventLabelPreview" class="c_black font_bold">Submit Science: CT Team Abstracts for ACC Annual Scientific Session</span>
+            </p>
+          </div>
+          <div class="grid columns_1 columns_2:md gap_3">
+            <div>
+              <label class="font_bold font-size_down" for="startDateTime">Start</label>
+              <input
+                id="startDateTime"
+                name="startDateTime"
+                type="datetime-local"
+                class="br_1 br_black-3 br_round br_solid m-t_1 p_3 w_100"
+                value="2026-03-28T09:00"
+                required />
+              <p class="c_black-7 font-size_down m-b_0 m-t_1">Calendar reminder start.</p>
+            </div>
+            <div>
+              <label class="font_bold font-size_down" for="endDateTime">End</label>
+              <input
+                id="endDateTime"
+                name="endDateTime"
+                type="datetime-local"
+                class="br_1 br_black-3 br_round br_solid m-t_1 p_3 w_100"
+                value="2026-10-06T13:00"
+                required />
+              <p class="c_black-7 font-size_down m-b_0 m-t_1">Submission deadline on the card and calendar end. Times are Eastern (ET).</p>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="br-t_1 br_black-3 br_solid br_0 flex flex_column gap_4 m_0 p_0 p-t_4">
+          <legend class="c_primary font_bold p_0">Where to submit</legend>
+          <div>
+            <label class="font_bold font-size_down" for="submissionLocation">Submission Location</label>
+            <input
+              id="submissionLocation"
+              name="submissionLocation"
+              type="text"
+              class="br_1 br_black-3 br_round br_solid m-t_1 p_3 w_100"
+              value="https://accscientificsession.acc.org/Submit-Your-Science/CV-Team-Abstracts"
+              required />
+            <p class="c_black-7 font-size_down m-b_0 m-t_1">URL submit page used in calendar and login return url</p>
+          </div>
+          <div>
+            <label class="font_bold font-size_down" for="submissionLink">Submission Link</label>
+            <input
+              id="submissionLink"
+              name="submissionLink"
+              type="text"
+              class="br_1 br_black-3 br_round br_solid m-t_1 p_3 w_100"
+              value="https://www.abstractsonline.com/dashboard/login.asp?aId=296&amp;targetMKey={0DDA9D68-29AA-4794-BC19-F03393D954E3}&amp;targetMod=submit"
+              required />
+            <p class="c_black-7 font-size_down m-b_0 m-t_1">Direct submit URL used on the active button.</p>
+          </div>
+        </fieldset>
+
+        <fieldset class="br-t_1 br_black-3 br_solid br_0 flex flex_column gap_4 m_0 p_0 p-t_4">
+          <legend class="c_primary font_bold p_0">Downloads and contact</legend>
+          <div>
+            <label class="font_bold font-size_down" for="instructionLocation">Instruction Location (PDF)</label>
+            <input
+              id="instructionLocation"
+              name="instructionLocation"
+              type="text"
+              class="br_1 br_black-3 br_round br_solid m-t_1 p_3 w_100"
+              value="https://www.acc.org/-/media/Non-Clinical/Files-PDFs-Excel-MS-Word-etc/ACC27/ACC27-WCC-YIA-Submission-Instructions.pdf" />
+            <p class="c_black-7 font-size_down m-b_0 m-t_1">URL or Sitecore media ID, e.g. <code>{8EE5EF9E-ADB7-4031-A80F-E7067598F82B}</code>. Media IDs convert to <code>https://www.acc.org/~/media/{id}.ashx</code>.</p>
+          </div>
+          <div>
+            <label class="font_bold font-size_down" for="policyLocation">Policy Location (PDF)</label>
+            <input
+              id="policyLocation"
+              name="policyLocation"
+              type="text"
+              class="br_1 br_black-3 br_round br_solid m-t_1 p_3 w_100"
+              value="https://www.acc.org/-/media/Non-Clinical/Files-PDFs-Excel-MS-Word-etc/ACC27/ACC27-WCC-YIA-Policies-and-Procedures.pdf" />
+            <p class="c_black-7 font-size_down m-b_0 m-t_1">URL or Sitecore media ID, e.g. <code>{8EE5EF9E-ADB7-4031-A80F-E7067598F82B}</code>. Media IDs convert to <code>https://www.acc.org/~/media/{id}.ashx</code>.</p>
+          </div>
+          <div>
+            <label class="font_bold font-size_down" for="customerSupportEmail">Customer support email</label>
+            <input
+              id="customerSupportEmail"
+              name="customerSupportEmail"
+              type="email"
+              class="br_1 br_black-3 br_round br_solid m-t_1 p_3 w_100"
+              value="awards@acc.org" />
+          </div>
+        </fieldset>
+
+        <fieldset class="br-t_1 br_black-3 br_solid br_0 flex flex_column gap_4 m_0 p_0 p-t_4">
+          <legend class="c_primary font_bold p_0">Calendar reminder (PRE)</legend>
+          <div>
+            <label class="font_bold font-size_down" for="outlookAccount">Outlook account type</label>
+            <select
+              id="outlookAccount"
+              name="outlookAccount"
+              class="br_1 br_black-3 br_round br_solid m-t_1 p_3 w_100">
+              <option value="office" selected>Microsoft 365 / work (outlook.office.com)</option>
+              <option value="live">Personal Outlook.com (outlook.live.com)</option>
+            </select>
+          </div>
+        </fieldset>
+      </form>
+    </section>
+
+    <section class="bg_black-1 br_round p_4">
+      <h2 class="c_primary font_2 m-t_0">How to use</h2>
+      <p class="font-size_down m-t_0">
+        Fill in the card fields, then copy only the fragments you need into Sitecore.
+        Title and footer stay on the page; swap the middle block as the window opens
+        (calendar), goes live (login or active submit), then closes.
+      </p>
+      <ul class="font-size_down marker_primary m-b_0">
+        <li>Paste <strong>Title</strong> and <strong>Footer</strong> once.</li>
+        <li>Paste one middle state at a time: PRE, Login needed, Active, or Closed.</li>
+        <li>When using the calendar reminder, also paste the <strong>runtime script</strong> once per page.</li>
+        <li>Policy and instruction fields accept a full URL or a Sitecore media ID. Media IDs are converted to <code>https://www.acc.org/~/media/{id}.ashx</code>.</li>
+      </ul>
+    </section>
+  </aside>
+
+  <main class="flex flex_column gap_4">
+    <section class="bg_white br_1 br_black-3 br_round br_solid overflow_hidden">
+      <header class="bg_black-1 br-b_1 br_black-3 br_solid flex flex_column gap_3 p_4">
+        <strong>Live preview</strong>
+        <div class="flex flex_row flex_wrap gap_2" role="tablist" aria-label="Preview submission state">
+          <button type="button" class="btn btn-primary btn-sm" data-preview-state="pre" aria-pressed="true">PRE: Calendar</button>
+          <button type="button" class="btn btn-shade btn-sm" data-preview-state="login" aria-pressed="false">Login needed</button>
+          <button type="button" class="btn btn-shade btn-sm" data-preview-state="active" aria-pressed="false">Active submit</button>
+          <button type="button" class="btn btn-shade btn-sm" data-preview-state="closed" aria-pressed="false">Closed</button>
+        </div>
+      </header>
+      <div class="bg_black-1 br-b_1 br_black-3 br_dashed p_4">
+        <div id="previewArea" class="grid columns_1 gap_3 bg_white br_round p_4 reading-typography"></div>
+      </div>
+    </section>
+
+    <section class="bg_white br_1 br_black-3 br_round br_solid overflow_hidden">
+      <header class="bg_black-1 br-b_1 br_black-3 br_solid font_bold p_4">
+        Title (Label + Submission Deadline)
+      </header>
+      <div class="p_4">
+        <textarea id="outputTitle" class="js-cms-output br_1 br_black-3 br_round br_solid font_n2 m_0 p_3 w_100" rows="6" readonly spellcheck="false"></textarea>
+        <div class="flex flex_row flex_wrap gap_3 m-t_3">
+          <button type="button" class="btn btn-primary" data-copy="outputTitle" data-copy-label="Title HTML">Copy HTML</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg_white br_1 br_black-3 br_round br_solid overflow_hidden">
+      <header class="bg_black-1 br-b_1 br_black-3 br_solid font_bold p_4">
+        STATE PRE: Calendar Reminder
+      </header>
+      <div class="p_4">
+        <textarea id="outputPre" class="js-cms-output br_1 br_black-3 br_round br_solid font_n2 m_0 p_3 w_100" rows="16" readonly spellcheck="false"></textarea>
+        <div class="flex flex_row flex_wrap gap_3 m-t_3">
+          <button type="button" class="btn btn-primary" data-copy="outputPre" data-copy-label="PRE calendar HTML">Copy HTML</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg_white br_1 br_black-3 br_round br_solid overflow_hidden">
+      <header class="bg_black-1 br-b_1 br_black-3 br_solid font_bold p_4">
+        STATE ACTIVE + ANONYMOUS: Submit [Login Needed]
+      </header>
+      <div class="p_4">
+        <textarea id="outputLogin" class="js-cms-output br_1 br_black-3 br_round br_solid font_n2 m_0 p_3 w_100" rows="8" readonly spellcheck="false"></textarea>
+        <div class="flex flex_row flex_wrap gap_3 m-t_3">
+          <button type="button" class="btn btn-primary" data-copy="outputLogin" data-copy-label="Login needed HTML">Copy HTML</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg_white br_1 br_black-3 br_round br_solid overflow_hidden">
+      <header class="bg_black-1 br-b_1 br_black-3 br_solid font_bold p_4">
+        STATE ACTIVE: Submit [Active]
+      </header>
+      <div class="p_4">
+        <textarea id="outputActive" class="js-cms-output br_1 br_black-3 br_round br_solid font_n2 m_0 p_3 w_100" rows="5" readonly spellcheck="false"></textarea>
+        <div class="flex flex_row flex_wrap gap_3 m-t_3">
+          <button type="button" class="btn btn-primary" data-copy="outputActive" data-copy-label="Active submit HTML">Copy HTML</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg_white br_1 br_black-3 br_round br_solid overflow_hidden">
+      <header class="bg_black-1 br-b_1 br_black-3 br_solid font_bold p_4">
+        STATE CLOSED: Closed
+      </header>
+      <div class="p_4">
+        <textarea id="outputClosed" class="js-cms-output br_1 br_black-3 br_round br_solid font_n2 m_0 p_3 w_100" rows="4" readonly spellcheck="false"></textarea>
+        <div class="flex flex_row flex_wrap gap_3 m-t_3">
+          <button type="button" class="btn btn-primary" data-copy="outputClosed" data-copy-label="Closed HTML">Copy HTML</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg_white br_1 br_black-3 br_round br_solid overflow_hidden">
+      <header class="bg_black-1 br-b_1 br_black-3 br_solid font_bold p_4">
+        Footer
+      </header>
+      <div class="p_4">
+        <textarea id="outputFooter" class="js-cms-output br_1 br_black-3 br_round br_solid font_n2 m_0 p_3 w_100" rows="12" readonly spellcheck="false"></textarea>
+        <div class="flex flex_row flex_wrap gap_3 m-t_3">
+          <button type="button" class="btn btn-primary" data-copy="outputFooter" data-copy-label="Footer HTML">Copy HTML</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg_white br_1 br_black-3 br_round br_solid overflow_hidden">
+      <header class="bg_black-1 br-b_1 br_black-3 br_solid font_bold p_4">
+        Runtime script (Calendar Invite)
+      </header>
+      <div class="p_4">
+        <p class="c_black-7 font-size_down m-t_0">
+          Paste once on any page that includes the PRE calendar block. The script
+          reads <code>data-*</code> attributes on
+          <code>data-component="CalendarInvite"</code>.
+        </p>
+        <textarea id="outputScript" class="js-cms-output br_1 br_black-3 br_round br_solid font_n2 m_0 p_3 w_100" rows="12" readonly spellcheck="false"></textarea>
+        <div class="flex flex_row flex_wrap gap_3 m-t_3">
+          <button type="button" class="btn btn-primary" data-copy="outputScript" data-copy-label="runtime script">Copy script</button>
+        </div>
+      </div>
+    </section>
+
+    <p class="c_black-7 font-size_down m-b_0" id="statusText" aria-live="polite"></p>
+  </main>
+</div>
+
+<script>
+  (function () {
+    var form = document.getElementById("submitCardForm");
+    var previewArea = document.getElementById("previewArea");
+    var statusText = document.getElementById("statusText");
+    var previewState = "pre";
+
+    var MONTHS_ACC = [
+      "Jan.", "Feb.", "March", "April", "May", "June",
+      "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."
+    ];
+    var WEEKDAYS = [
+      "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
+    ];
+
+    function escapeAttribute(value) {
+      return String(value == null ? "" : value)
+        .replace(/&/g, "&amp;")
+        .replace(/"/g, "&quot;")
+        .replace(/</g, "&lt;");
+    }
+
+    function escapeHtml(value) {
+      return String(value == null ? "" : value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    function pad(value) {
+      return String(value).padStart(2, "0");
+    }
+
+    function parseDateTimeLocal(value) {
+      if (!value) return null;
+      var match = String(value).trim().match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})(?::(\d{2}))?$/);
+      if (!match) return null;
+      return {
+        year: Number(match[1]),
+        month: Number(match[2]),
+        day: Number(match[3]),
+        hour: Number(match[4]),
+        minute: Number(match[5]),
+        second: Number(match[6] || 0)
+      };
+    }
+
+    function nthWeekdayOfMonth(year, month, weekday, n) {
+      var first = new Date(Date.UTC(year, month - 1, 1)).getUTCDay();
+      var delta = (weekday - first + 7) % 7;
+      return 1 + delta + (n - 1) * 7;
+    }
+
+    function easternOffsetFor(parts) {
+      var dstStart = nthWeekdayOfMonth(parts.year, 3, 0, 2);
+      var dstEnd = nthWeekdayOfMonth(parts.year, 11, 0, 1);
+      var minutes = parts.hour * 60 + parts.minute;
+      var afterStart =
+        parts.month > 3 ||
+        (parts.month === 3 && (parts.day > dstStart || (parts.day === dstStart && minutes >= 120)));
+      var beforeEnd =
+        parts.month < 11 ||
+        (parts.month === 11 && (parts.day < dstEnd || (parts.day === dstEnd && minutes < 120)));
+      return afterStart && beforeEnd ? "-04:00" : "-05:00";
+    }
+
+    function formatDeadlineDisplay(parts) {
+      var weekday = WEEKDAYS[new Date(Date.UTC(parts.year, parts.month - 1, parts.day, 12, 0, 0)).getUTCDay()];
+      var month = MONTHS_ACC[parts.month - 1];
+      var hour12 = parts.hour % 12 || 12;
+      var meridiem = parts.hour >= 12 ? "p.m." : "a.m.";
+      var time = parts.minute === 0
+        ? hour12 + " " + meridiem
+        : hour12 + ":" + pad(parts.minute) + " " + meridiem;
+      return weekday + ", " + month + " " + parts.day + " at " + time + " ET";
+    }
+
+    function formatDeadlineDateTime(parts) {
+      return (
+        parts.year + "-" + pad(parts.month) + "-" + pad(parts.day) +
+        "T" + pad(parts.hour) + ":" + pad(parts.minute) + ":" + pad(parts.second) +
+        easternOffsetFor(parts)
+      );
+    }
+
+    function toDataDateTime(value) {
+      if (!value) return "";
+      if (/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/.test(value)) {
+        return value + ":00";
+      }
+      return value.trim();
+    }
+
+    function slugify(value) {
+      var slug = String(value || "submission")
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "_")
+        .replace(/^_|_$/g, "");
+      return slug || "submission";
+    }
+
+    function resolveMediaUrl(value) {
+      var trimmed = String(value || "").trim();
+      if (!trimmed) return "";
+      if (/^(https?:\/\/|\/\/|\/|~\/)/i.test(trimmed)) return trimmed;
+      var guid = trimmed.replace(/[{}]/g, "").replace(/-/g, "").trim();
+      if (/^[0-9a-f]{32}$/i.test(guid)) {
+        return "https://www.acc.org/~/media/" + guid + ".ashx";
+      }
+      return trimmed;
+    }
+
+    function buildLoginUrl(submissionLocation) {
+      var base = "https://federated.acc.org/ACCFederatedLogin/PostSP?SP=ScientificSessionSp";
+      if (!submissionLocation) return base;
+      return base + "&target=" + submissionLocation;
+    }
+
+    function readFormValues() {
+      var submissionType = form.submissionType.value.trim() || "Submission";
+      var eventTitle = form.eventTitle.value.trim() || "ACC Annual Scientific Session";
+      return {
+        submissionType: submissionType,
+        deadline: parseDateTimeLocal(form.endDateTime.value),
+        submissionLink: form.submissionLink.value.trim(),
+        submissionLocation: form.submissionLocation.value.trim(),
+        instructionLocation: resolveMediaUrl(form.instructionLocation.value),
+        policyLocation: resolveMediaUrl(form.policyLocation.value),
+        customerSupportEmail: form.customerSupportEmail.value.trim(),
+        eventTitle: eventTitle,
+        title: "Submit Science: " + submissionType + " for " + eventTitle,
+        start: toDataDateTime(form.startDateTime.value),
+        end: toDataDateTime(form.endDateTime.value),
+        description: form.eventDescription.value.trim(),
+        outlookAccount: form.outlookAccount.value || "office",
+        ctaLabel: "Submit Science"
+      };
+    }
+
+    function buildTitleHtml(values) {
+      var deadlineDisplay = values.deadline ? formatDeadlineDisplay(values.deadline) : "";
+      var deadlineDateTime = values.deadline ? formatDeadlineDateTime(values.deadline) : "";
+      return (
+        "<!-- Title (Label + Submission Deadline) -->\n" +
+        '<h2 class="c_primary-n2 m_0">' + escapeHtml(values.submissionType) + "</h2>\n" +
+        '<p class="font-size_down-1 m-x_2 m-y_0">\n' +
+        '  <strong class="block">Submission Deadline:</strong>' +
+        (deadlineDateTime
+          ? '<time datetime="' + escapeAttribute(deadlineDateTime) + '">' + escapeHtml(deadlineDisplay) + "</time>"
+          : "") + "\n" +
+        "</p>\n" +
+        "<!-- /Title (Label + Submission Deadline) -->"
+      );
+    }
+
+    function buildCalendarInviteHtml(values) {
+      var attrs = [
+        'data-component="CalendarInvite"',
+        'data-event-title="' + escapeAttribute(values.title) + '"',
+        'data-start="' + escapeAttribute(values.start) + '"'
+      ];
+
+      if (values.end) {
+        attrs.push('data-end="' + escapeAttribute(values.end) + '"');
+      }
+
+      if (values.description) {
+        attrs.push('data-description="' + escapeAttribute(values.description) + '"');
+      }
+
+      if (values.submissionLocation) {
+        attrs.push('data-location="' + escapeAttribute(values.submissionLocation) + '"');
+      }
+
+      if (values.outlookAccount && values.outlookAccount !== "office") {
+        attrs.push('data-outlook-account="' + escapeAttribute(values.outlookAccount) + '"');
+      }
+
+      return (
+        "<!-- STATE PRE: Calendar Reminder (Pre) -->\n" +
+        "<section class='wrapper-container' \n" +
+        "    " + attrs.join(" \n    ") + "\n" +
+        "  >\n" +
+        '  <strong class="block text_center c_inherit">Mark Your Calendar</strong>\n' +
+        '  <div class="grid columns_3:xs columns_1 gap_2 justify_center items_center">\n' +
+        '    <button type="button" class="btn btn-shade btn-sm" data-role="google">\n' +
+        '      <i class="fab fa-google m-r_2" aria-hidden="true"></i>\n' +
+        "      Google\n" +
+        "    </button>\n" +
+        '    <button type="button" class="btn btn-shade btn-sm" data-role="apple">\n' +
+        '      <i class="fab fa-apple m-r_2" aria-hidden="true"></i>\n' +
+        "      Apple\n" +
+        "    </button>\n" +
+        '    <button type="button" class="btn btn-shade btn-sm" data-role="microsoft">\n' +
+        '      <i class="fab fa-microsoft m-r_2" aria-hidden="true"></i>\n' +
+        "      Outlook\n" +
+        "    </button>\n" +
+        "  </div>\n" +
+        '  <p class="m-t_3 m-b_0 text_center">\n' +
+        '    <button type="button" class="btn btn-link p_0" data-role="ics-download">Download ICS file</button>\n' +
+        "  </p>\n" +
+        "</section>"
+      );
+    }
+
+    function buildLoginHtml(values) {
+      var buttonId = "submit_" + slugify(values.submissionType);
+      var loginHref = buildLoginUrl(values.submissionLocation);
+      return (
+        "<!-- STATE ACTIVE + ANNONYMOUS: Submit [Login Needed] -->\n" +
+        '<input id="' + escapeAttribute(buttonId) + '" class="btn btn-shade cursor_not-allowed disabled m-x_auto opacity_5 p-x_6:lg"  type="button" value="' + escapeAttribute(values.ctaLabel) + '" disabled="" />\n' +
+        "\n" +
+        '<p class="font_0 lh_3 text_center relative">Please <a class="link btn-link expanded-click-area" href="' + escapeAttribute(loginHref) + '">Login</a> in order to submit science. <i class="fa-regular fa-sign-in-alt"></i></p>'
+      );
+    }
+
+    function buildActiveHtml(values) {
+      return (
+        "<!-- STATE ACTIVE: Submit [Active] -->\n" +
+        '<a href="' + escapeAttribute(values.submissionLink) + '" class="btn btn-primary block p-x_6:lg m-x_auto" target="_blank">' + escapeHtml(values.ctaLabel) + "</a>"
+      );
+    }
+
+    function buildClosedHtml() {
+      return (
+        "<!-- STATE CLOSED: Closed -->\n" +
+        ' <p class="font_bold c_primary text_center">(Submission is currently closed.)</p>'
+      );
+    }
+
+    function buildFooterHtml(values) {
+      var links = [];
+      if (values.instructionLocation) {
+        links.push('<li><a class="link" href="' + escapeAttribute(values.instructionLocation) + '">Instructions</a></li>');
+      }
+      if (values.policyLocation) {
+        links.push('<li><a class="link" href="' + escapeAttribute(values.policyLocation) + '">Policies</a></li>');
+      }
+
+      var parts = [
+        "<!-- Footer -->\n",
+        '<footer class="m-t_auto bg_black-2 br_radius font-size_down lh_1 m-b_n2 m-x_n2 p_3 reading-typography text_center z_3" style="--custom-font-size-modifier: 1.25;">\n'
+      ];
+
+      if (links.length) {
+        parts.push('    <p class="lh_1 opacity_7">Submission instructions and policies are available for download.  </p>\n');
+        parts.push('    <ul class="justify_center text_center ul_inline-pipe z_3">\n');
+        parts.push("      " + links.join("\n      ") + "\n");
+        parts.push("    </ul>\n");
+      }
+
+      if (values.customerSupportEmail) {
+        parts.push(
+          '    <p class="lh_1 opacity_7">Questions may be emailed to <a class="link" href="mailto:' +
+          escapeAttribute(values.customerSupportEmail) +
+          '">' +
+          escapeHtml(values.customerSupportEmail) +
+          "</a>.</p>\n"
+        );
+      }
+
+      parts.push("  </footer>\n");
+      parts.push("<!-- /Footer -->");
+      return parts.join("");
+    }
+
+    function initCalendarInvite(scope) {
+      var roots = (scope || document).querySelectorAll('[data-component="CalendarInvite"]');
+
+      roots.forEach(function (root) {
+        if (root.getAttribute("data-calendar-invite-ready") === "true") {
+          return;
+        }
+
+        var config = {
+          title: root.getAttribute("data-event-title") || "Event",
+          start: root.getAttribute("data-start") || "",
+          end: root.getAttribute("data-end") || "",
+          description: root.getAttribute("data-description") || "",
+          location: root.getAttribute("data-location") || "",
+          outlookAccount: root.getAttribute("data-outlook-account") || "office"
+        };
+
+        function normalizeDateTime(value, fallbackTime) {
+          if (!value) return null;
+          var trimmed = value.trim();
+          if (/^\d{4}-\d{2}-\d{2}$/.test(trimmed)) {
+            return new Date(trimmed + "T" + fallbackTime);
+          }
+          var parsed = new Date(trimmed);
+          return isNaN(parsed.getTime()) ? null : parsed;
+        }
+
+        function getStartDate() {
+          return normalizeDateTime(config.start, "09:00:00");
+        }
+
+        function getEndDate(start) {
+          var end = normalizeDateTime(config.end, "17:00:00");
+          if (end) return end;
+          return new Date(start.getTime() + (60 * 60 * 1000));
+        }
+
+        function toUtcCompact(date) {
+          return date.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}Z$/, "Z");
+        }
+
+        function escapeIcs(value) {
+          return String(value)
+            .replace(/\\/g, "\\\\")
+            .replace(/;/g, "\\;")
+            .replace(/,/g, "\\,")
+            .replace(/\r?\n/g, "\\n");
+        }
+
+        function safeFileName(title) {
+          var cleaned = title.replace(/[^\w\s-]/g, "").trim().replace(/\s+/g, "-");
+          return cleaned || "event";
+        }
+
+        function buildGoogleUrl(start, end) {
+          var params = new URLSearchParams({
+            action: "TEMPLATE",
+            text: config.title,
+            dates: toUtcCompact(start) + "/" + toUtcCompact(end)
+          });
+          if (config.description) params.set("details", config.description);
+          if (config.location) params.set("location", config.location);
+          return "https://calendar.google.com/calendar/render?" + params.toString();
+        }
+
+        function toOutlookDateTime(date) {
+          return date.toISOString().replace(/\.\d{3}Z$/, "Z");
+        }
+
+        function getOutlookHost() {
+          return config.outlookAccount === "live"
+            ? "https://outlook.live.com"
+            : "https://outlook.office.com";
+        }
+
+        function buildMicrosoftUrl(start, end) {
+          var params = new URLSearchParams({
+            path: "/calendar/action/compose",
+            rru: "addevent",
+            subject: config.title,
+            startdt: toOutlookDateTime(start),
+            enddt: toOutlookDateTime(end)
+          });
+          if (config.description) params.set("body", config.description);
+          if (config.location) params.set("location", config.location);
+          return getOutlookHost() + "/calendar/deeplink/compose?" + params.toString();
+        }
+
+        function buildIcsContent(start, end) {
+          var lines = [
+            "BEGIN:VCALENDAR",
+            "VERSION:2.0",
+            "PRODID:-//ACC//Annual Meeting Submit Card//EN",
+            "CALSCALE:GREGORIAN",
+            "METHOD:PUBLISH",
+            "BEGIN:VEVENT",
+            "UID:" + Date.now() + "@acc.org",
+            "DTSTAMP:" + toUtcCompact(new Date()),
+            "DTSTART:" + toUtcCompact(start),
+            "DTEND:" + toUtcCompact(end),
+            "SUMMARY:" + escapeIcs(config.title)
+          ];
+
+          if (config.description) lines.push("DESCRIPTION:" + escapeIcs(config.description));
+          if (config.location) lines.push("LOCATION:" + escapeIcs(config.location));
+
+          lines.push("END:VEVENT", "END:VCALENDAR");
+          return lines.join("\r\n");
+        }
+
+        function downloadIcs(start, end) {
+          var blob = new Blob([buildIcsContent(start, end)], { type: "text/calendar;charset=utf-8" });
+          var url = URL.createObjectURL(blob);
+          var link = document.createElement("a");
+          link.href = url;
+          link.download = safeFileName(config.title) + ".ics";
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          URL.revokeObjectURL(url);
+        }
+
+        function openExternal(url) {
+          window.open(url, "_blank", "noopener,noreferrer");
+        }
+
+        var start = getStartDate();
+        if (!start) {
+          console.warn("CalendarInvite: invalid or missing data-start value.");
+          return;
+        }
+
+        var end = getEndDate(start);
+        if (end <= start) {
+          end = new Date(start.getTime() + (60 * 60 * 1000));
+        }
+
+        var googleBtn = root.querySelector('[data-role="google"]');
+        var appleBtn = root.querySelector('[data-role="apple"]');
+        var microsoftBtn = root.querySelector('[data-role="microsoft"]');
+        var icsLink = root.querySelector('[data-role="ics-download"]');
+
+        if (googleBtn) {
+          googleBtn.addEventListener("click", function () {
+            openExternal(buildGoogleUrl(start, end));
+          });
+        }
+
+        if (appleBtn) {
+          appleBtn.addEventListener("click", function () {
+            downloadIcs(start, end);
+          });
+        }
+
+        if (icsLink) {
+          icsLink.addEventListener("click", function () {
+            downloadIcs(start, end);
+          });
+        }
+
+        if (microsoftBtn) {
+          microsoftBtn.addEventListener("click", function () {
+            openExternal(buildMicrosoftUrl(start, end));
+          });
+        }
+
+        root.setAttribute("data-calendar-invite-ready", "true");
+      });
+    }
+
+    var CALENDAR_INVITE_CMS_SCRIPT =
+      "<script>\n(" + initCalendarInvite.toString() + ")(document);\n<\\/script>";
+
+    function setStatus(message) {
+      statusText.textContent = message;
+    }
+
+    function stripComments(html) {
+      return html.replace(/<!--[\s\S]*?-->\n?/g, "").trim();
+    }
+
+    function refresh() {
+      var values = readFormValues();
+      var fragments = {
+        title: buildTitleHtml(values),
+        pre: buildCalendarInviteHtml(values),
+        login: buildLoginHtml(values),
+        active: buildActiveHtml(values),
+        closed: buildClosedHtml(),
+        footer: buildFooterHtml(values)
+      };
+
+      var labelPreview = document.getElementById("calendarEventLabelPreview");
+      if (labelPreview) {
+        labelPreview.textContent = values.title;
+      }
+
+      document.getElementById("outputTitle").value = fragments.title;
+      document.getElementById("outputPre").value = fragments.pre;
+      document.getElementById("outputLogin").value = fragments.login;
+      document.getElementById("outputActive").value = fragments.active;
+      document.getElementById("outputClosed").value = fragments.closed;
+      document.getElementById("outputFooter").value = fragments.footer;
+      document.getElementById("outputScript").value = CALENDAR_INVITE_CMS_SCRIPT;
+
+      var middle = fragments[previewState] || fragments.pre;
+      previewArea.innerHTML = [
+        stripComments(fragments.title),
+        stripComments(middle),
+        stripComments(fragments.footer)
+      ].join("\n");
+
+      if (previewState === "pre") {
+        initCalendarInvite(previewArea);
+      }
+
+      setStatus("Preview updated. Copy any fragment when ready.");
+    }
+
+    form.addEventListener("input", refresh);
+    form.addEventListener("change", refresh);
+
+    document.querySelectorAll("[data-preview-state]").forEach(function (button) {
+      button.addEventListener("click", function () {
+        previewState = button.getAttribute("data-preview-state");
+        document.querySelectorAll("[data-preview-state]").forEach(function (other) {
+          var isActive = other === button;
+          other.setAttribute("aria-pressed", isActive ? "true" : "false");
+          other.classList.toggle("btn-primary", isActive);
+          other.classList.toggle("btn-shade", !isActive);
+        });
+        refresh();
+      });
+    });
+
+    document.querySelectorAll("[data-copy]").forEach(function (button) {
+      button.addEventListener("click", async function () {
+        var targetId = button.getAttribute("data-copy");
+        var textarea = document.getElementById(targetId);
+        if (!textarea) return;
+        try {
+          await navigator.clipboard.writeText(textarea.value);
+          setStatus("Copied " + (button.getAttribute("data-copy-label") || "HTML") + " to the clipboard.");
+        } catch (error) {
+          textarea.focus();
+          textarea.select();
+          setStatus("Clipboard unavailable. Select and copy the output manually.");
+        }
+      });
+    });
+
+    refresh();
+  })();
+</script>
+
+<style>
+  .js-cms-output {
+    font-family: Consolas, Monaco, monospace;
+    resize: vertical;
+  }
+
+  #previewArea:empty::before {
+    color: var(--c_black-7, #59636e);
+    content: "Submit card preview will appear here.";
+    display: block;
+    font-size: 0.875rem;
+  }
+</style>
