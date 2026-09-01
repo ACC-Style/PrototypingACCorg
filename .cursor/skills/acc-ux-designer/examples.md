@@ -34,6 +34,7 @@ Archive (still useful): `_ui_gold_standard/_archive/follow-up-cta.html`, `card-b
 | `__generators/Person-Cards.html` | Person cards with `<template>` |
 | `__generators/Follow Up CTA.html` | CTA block builder |
 | `__generators/SponsorBlocks.html` | Tiered sponsor grids |
+| `__generators/Sitecore-URL.html` | Sitecore GUID → page `href`, media `href`, or image `src` |
 
 Sub-partials: `__generators/subs/date-card.html`, `event-card.html`, `faq.html`
 

@@ -1,0 +1,322 @@
+---
+layout: playground
+name: "Sitecore ID to URL"
+position: "Generator"
+csv_file: "none"
+---
+
+<div class="grid columns_1 columns_2:lg gap_5 reading-typography">
+  <aside class="flex flex_column gap_4">
+    <section class="bg_white br_1 br_black-3 br_round br_solid overflow_hidden">
+      <header class="bg_black-1 br-b_1 br_black-3 br_solid font_bold p_4">
+        Sitecore item
+      </header>
+      <form id="sitecoreUrlForm" class="flex flex_column gap_5 p_4">
+        <div>
+          <label class="font_bold font-size_down" for="sitecoreId">Sitecore ID</label>
+          <input
+            id="sitecoreId"
+            name="sitecoreId"
+            type="text"
+            class="br_1 br_black-3 br_round br_solid font_n1 m-t_1 p_3 w_100"
+            value="{8EE5EF9E-ADB7-4031-A80F-E7067598F82B}"
+            spellcheck="false"
+            autocomplete="off"
+            required />
+          <p class="c_black-7 font-size_down m-b_0 m-t_1">
+            Paste from Content Editor. Braces and hyphens are optional.
+          </p>
+        </div>
+
+        <fieldset class="br_0 flex flex_column gap_3 m_0 p_0">
+          <legend class="c_primary font_bold p_0">Item type</legend>
+          <div class="grid columns_1 columns_3:md gap_3" role="radiogroup" aria-label="Item type">
+            <label class="js-type-card relative br_1 br_black-3 br_round br_solid cursor_pointer flex flex_column gap_2 h:bg_black-1 p_4">
+              <input class="m_0" type="radio" name="itemType" value="page" />
+              <span class="font_bold">
+                <i class="far fa-file-medical-alt p-r_2" aria-hidden="true"></i>Page
+              </span>
+              <span class="c_black-7 font-size_down">Internal item link</span>
+            </label>
+            <label class="js-type-card relative br_1 br_black-3 br_round br_solid cursor_pointer flex flex_column gap_2 h:bg_black-1 p_4">
+              <input class="m_0" type="radio" name="itemType" value="media" checked />
+              <span class="font_bold">
+                <i class="far fa-file-pdf p-r_2" aria-hidden="true"></i>Media
+              </span>
+              <span class="c_black-7 font-size_down">PDF, PPT, file download</span>
+            </label>
+            <label class="js-type-card relative br_1 br_black-3 br_round br_solid cursor_pointer flex flex_column gap_2 h:bg_black-1 p_4">
+              <input class="m_0" type="radio" name="itemType" value="image" />
+              <span class="font_bold">
+                <i class="far fa-image p-r_2" aria-hidden="true"></i>Image
+              </span>
+              <span class="c_black-7 font-size_down"><code>src</code> for photos</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <div>
+          <label class="font_bold font-size_down" for="linkLabel" id="linkLabelCaption">Link text</label>
+          <input
+            id="linkLabel"
+            name="linkLabel"
+            type="text"
+            class="br_1 br_black-3 br_round br_solid m-t_1 p_3 w_100"
+            value="Download file" />
+          <p class="c_black-7 font-size_down m-b_0 m-t_1" id="linkLabelHint">
+            Used in the HTML snippet and preview.
+          </p>
+        </div>
+      </form>
+    </section>
+
+    <section class="bg_black-1 br_round p_4">
+      <h2 class="c_primary font_2 m-t_0">How to use</h2>
+      <p class="font-size_down m-t_0">
+        Converts a Sitecore GUID into a domain-relative
+        <code>href</code> or <code>src</code> for CMS paste.
+      </p>
+      <ul class="font-size_down marker_primary m-b_0">
+        <li><strong>Page</strong> → <code>~/link.aspx?_id={id}&amp;_z=z</code></li>
+        <li><strong>Media</strong> → <code>~/media/{id}.ashx</code></li>
+        <li><strong>Image</strong> → same media URL, used as <code>src</code></li>
+      </ul>
+    </section>
+  </aside>
+
+  <main class="flex flex_column gap_4">
+    <section class="bg_white br_1 br_black-3 br_round br_solid overflow_hidden sticky t_3 z_1">
+      <header class="bg_black-1 br-b_1 br_black-3 br_solid font_bold p_4">
+        Live preview
+      </header>
+      <div class="bg_black-1 br-b_1 br_black-3 br_dashed p_4">
+        <div id="previewArea" class="bg_white br_round p_4 reading-typography"></div>
+      </div>
+    </section>
+
+    <section class="bg_white br_1 br_black-3 br_round br_solid overflow_hidden">
+      <header class="bg_black-1 br-b_1 br_black-3 br_solid font_bold p_4" id="urlOutputHeader">
+        href
+      </header>
+      <div class="p_4">
+        <p class="c_black-7 font-size_down m-t_0" id="urlOutputNote">
+          Paste this value into an <code>href</code> attribute.
+        </p>
+        <textarea id="outputUrl" class="js-cms-output br_1 br_black-3 br_round br_solid font_n2 m_0 p_3 w_100" rows="3" readonly spellcheck="false"></textarea>
+        <div class="flex flex_row flex_wrap gap_3 m-t_3">
+          <button type="button" class="btn btn-primary" data-copy="outputUrl" data-copy-label="URL">Copy URL</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg_white br_1 br_black-3 br_round br_solid overflow_hidden">
+      <header class="bg_black-1 br-b_1 br_black-3 br_solid font_bold p_4">
+        HTML snippet
+      </header>
+      <div class="p_4">
+        <p class="c_black-7 font-size_down m-t_0">
+          Copy into a Sitecore rich-text or HTML field.
+        </p>
+        <textarea id="outputHtml" class="js-cms-output br_1 br_black-3 br_round br_solid font_n2 m_0 p_3 w_100" rows="4" readonly spellcheck="false"></textarea>
+        <div class="flex flex_row flex_wrap gap_3 m-t_3">
+          <button type="button" class="btn btn-primary" data-copy="outputHtml" data-copy-label="HTML">Copy HTML</button>
+        </div>
+        <p class="c_black-7 font-size_down m-b_0 m-t_3" id="statusText" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script>
+  (function () {
+    var form = document.getElementById("sitecoreUrlForm");
+    var previewArea = document.getElementById("previewArea");
+    var outputUrl = document.getElementById("outputUrl");
+    var outputHtml = document.getElementById("outputHtml");
+    var statusText = document.getElementById("statusText");
+    var urlOutputHeader = document.getElementById("urlOutputHeader");
+    var urlOutputNote = document.getElementById("urlOutputNote");
+    var linkLabelCaption = document.getElementById("linkLabelCaption");
+    var linkLabelHint = document.getElementById("linkLabelHint");
+    var linkLabelInput = document.getElementById("linkLabel");
+    var copyButtons = document.querySelectorAll("[data-copy]");
+    var defaults = {
+      page: "Learn more",
+      media: "Download file",
+      image: "Descriptive alt text"
+    };
+
+    function setStatus(message) {
+      statusText.textContent = message || "";
+    }
+
+    function escapeHtml(value) {
+      return String(value || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    function cleanGuid(value) {
+      return String(value || "")
+        .trim()
+        .replace(/^guid=/i, "")
+        .replace(/[{}'"]/g, "")
+        .replace(/-/g, "")
+        .replace(/\s/g, "")
+        .toUpperCase();
+    }
+
+    function isGuid(value) {
+      return /^[0-9A-F]{32}$/.test(value);
+    }
+
+    function selectedType() {
+      var checked = form.querySelector('input[name="itemType"]:checked');
+      return checked ? checked.value : "media";
+    }
+
+    function buildUrls(guid, type) {
+      var mediaUrl = "~/media/" + guid + ".ashx";
+      if (type === "page") {
+        return {
+          cms: "~/link.aspx?_id=" + guid + "&_z=z",
+          html: "~/link.aspx?_id=" + guid + "&amp;_z=z",
+          preview: "https://www.acc.org/link.aspx?_id=" + guid + "&_z=z"
+        };
+      }
+      return {
+        cms: mediaUrl,
+        html: mediaUrl,
+        preview: "https://www.acc.org/" + mediaUrl
+      };
+    }
+
+    function updateTypeChrome(type) {
+      form.querySelectorAll(".js-type-card").forEach(function (card) {
+        var selected = card.querySelector("input").checked;
+        card.classList.toggle("bg_primary-5", selected);
+        card.classList.toggle("br_primary", selected);
+        card.classList.toggle("br_black-3", !selected);
+        card.classList.toggle("h:bg_black-1", !selected);
+      });
+      if (type === "image") {
+        linkLabelCaption.textContent = "Alt text";
+        linkLabelHint.textContent = "Required for the image snippet. Describe the photo, not the file name.";
+        urlOutputHeader.textContent = "src";
+        urlOutputNote.innerHTML = "Paste this value into a <code>src</code> attribute.";
+      } else {
+        linkLabelCaption.textContent = "Link text";
+        linkLabelHint.textContent = "Used in the HTML snippet and preview.";
+        urlOutputHeader.textContent = "href";
+        urlOutputNote.innerHTML = "Paste this value into an <code>href</code> attribute.";
+      }
+    }
+
+    function renderPreview(type, urls, label) {
+      if (type === "image") {
+        previewArea.innerHTML =
+          '<p class="c_black-7 font-size_down m-t_0">Image loads from ACC.org when the ID is a published media item.</p>' +
+          '<img class="bg_black-1 br_radius max-w_20 w_100" src="' + escapeHtml(urls.preview) + '" alt="' + escapeHtml(label) + '">';
+        return;
+      }
+      if (type === "page") {
+        previewArea.innerHTML =
+          '<p class="c_black-7 font-size_down m-t_0">CMS href uses <code>~/link.aspx</code>. The preview link hits acc.org so you can confirm the item.</p>' +
+          '<a href="' + escapeHtml(urls.preview) + '" target="_blank" rel="noopener">' +
+          escapeHtml(label) +
+          '<i class="far fa-external-link p-l_2" aria-hidden="true"></i></a>';
+        return;
+      }
+      previewArea.innerHTML =
+        '<p class="c_black-7 font-size_down m-t_0">Opens the media handler on acc.org.</p>' +
+        '<a href="' + escapeHtml(urls.preview) + '" target="_blank" rel="noopener">' +
+        '<i class="far fa-arrow-to-bottom p-r_2" aria-hidden="true"></i>' +
+        escapeHtml(label) +
+        '<i class="far fa-external-link p-l_2" aria-hidden="true"></i></a>';
+    }
+
+    function buildSnippet(type, htmlUrl, label) {
+      if (type === "image") {
+        return '<img src="' + htmlUrl + '" alt="' + escapeHtml(label) + '">';
+      }
+      return '<a href="' + htmlUrl + '">' + escapeHtml(label) + "</a>";
+    }
+
+    function refresh() {
+      var type = selectedType();
+      var guid = cleanGuid(form.sitecoreId.value);
+      var label = form.linkLabel.value.trim() || defaults[type];
+      updateTypeChrome(type);
+
+      if (!guid) {
+        outputUrl.value = "";
+        outputHtml.value = "";
+        previewArea.innerHTML = '<p class="c_black-7 m_0">Paste a Sitecore ID to generate a URL.</p>';
+        copyButtons.forEach(function (button) { button.disabled = true; });
+        setStatus("");
+        return;
+      }
+
+      if (!isGuid(guid)) {
+        outputUrl.value = "";
+        outputHtml.value = "";
+        previewArea.innerHTML =
+          '<p class="c_alert m_0">That does not look like a Sitecore GUID. Use 32 hex characters, with or without braces and hyphens.</p>';
+        copyButtons.forEach(function (button) { button.disabled = true; });
+        setStatus("Fix the ID, then copy.");
+        return;
+      }
+
+      var urls = buildUrls(guid, type);
+      outputUrl.value = urls.cms;
+      outputHtml.value = buildSnippet(type, urls.html, label);
+      renderPreview(type, urls, label);
+      copyButtons.forEach(function (button) { button.disabled = false; });
+      setStatus("Preview updated. Copy the URL or HTML when ready.");
+    }
+
+    form.addEventListener("change", function (event) {
+      if (event.target.name === "itemType") {
+        var type = selectedType();
+        if (!linkLabelInput.dataset.touched) {
+          linkLabelInput.value = defaults[type];
+        }
+      }
+      refresh();
+    });
+
+    form.addEventListener("input", function (event) {
+      if (event.target === linkLabelInput) {
+        linkLabelInput.dataset.touched = "true";
+      }
+      refresh();
+    });
+
+    copyButtons.forEach(function (button) {
+      button.addEventListener("click", async function () {
+        var target = document.getElementById(button.getAttribute("data-copy"));
+        if (!target || !target.value) return;
+        try {
+          await navigator.clipboard.writeText(target.value);
+          setStatus("Copied " + (button.getAttribute("data-copy-label") || "value") + " to the clipboard.");
+        } catch (error) {
+          target.focus();
+          target.select();
+          setStatus("Clipboard unavailable. Select and copy the output manually.");
+        }
+      });
+    });
+
+    refresh();
+  })();
+</script>
+
+<style>
+  .js-cms-output {
+    font-family: Consolas, Monaco, monospace;
+    resize: vertical;
+  }
+
+</style>
