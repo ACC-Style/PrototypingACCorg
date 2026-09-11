@@ -62,7 +62,7 @@ csv_file: "none"
                 class="br_1 br_black-3 br_round br_solid m-t_1 p_3 w_100"
                 value="2026-03-28T09:00"
                 required />
-              <p class="c_black-7 font-size_down m-b_0 m-t_1">Calendar reminder start.</p>
+              <p class="c_black-7 font-size_down m-b_0 m-t_1">Window start on the card and calendar.</p>
             </div>
             <div>
               <label class="font_bold font-size_down" for="endDateTime">End</label>
@@ -73,7 +73,7 @@ csv_file: "none"
                 class="br_1 br_black-3 br_round br_solid m-t_1 p_3 w_100"
                 value="2026-10-06T13:00"
                 required />
-              <p class="c_black-7 font-size_down m-b_0 m-t_1">Submission deadline on the card and calendar end. Times are Eastern (ET).</p>
+              <p class="c_black-7 font-size_down m-b_0 m-t_1">Window end on the card (time shown) and calendar. Times are Eastern (ET).</p>
             </div>
           </div>
         </fieldset>
@@ -187,7 +187,7 @@ csv_file: "none"
 
     <section class="bg_white br_1 br_black-3 br_round br_solid overflow_hidden">
       <header class="bg_black-1 br-b_1 br_black-3 br_solid font_bold p_4">
-        Title (Label + Submission Deadline)
+        Title (Label + Submission Window)
       </header>
       <div class="p_4">
         <textarea id="outputTitle" class="js-cms-output br_1 br_black-3 br_round br_solid font_n2 m_0 p_3 w_100" rows="6" readonly spellcheck="false"></textarea>
@@ -286,11 +286,8 @@ csv_file: "none"
     var previewState = "pre";
 
     var MONTHS_ACC = [
-      "Jan.", "Feb.", "March", "April", "May", "June",
+      "Jan.", "Feb.", "Mar.", "Apr.", "May", "June",
       "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."
-    ];
-    var WEEKDAYS = [
-      "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
     ];
 
     function escapeAttribute(value) {
@@ -345,18 +342,32 @@ csv_file: "none"
       return afterStart && beforeEnd ? "-04:00" : "-05:00";
     }
 
-    function formatDeadlineDisplay(parts) {
-      var weekday = WEEKDAYS[new Date(Date.UTC(parts.year, parts.month - 1, parts.day, 12, 0, 0)).getUTCDay()];
-      var month = MONTHS_ACC[parts.month - 1];
-      var hour12 = parts.hour % 12 || 12;
-      var meridiem = parts.hour >= 12 ? "p.m." : "a.m.";
-      var time = parts.minute === 0
-        ? hour12 + " " + meridiem
-        : hour12 + ":" + pad(parts.minute) + " " + meridiem;
-      return weekday + ", " + month + " " + parts.day + " at " + time + " ET";
+    function formatMonthDay(parts) {
+      return MONTHS_ACC[parts.month - 1] + " " + parts.day;
     }
 
-    function formatDeadlineDateTime(parts) {
+    function formatTime(parts) {
+      var hour12 = parts.hour % 12 || 12;
+      var meridiem = parts.hour >= 12 ? "p.m." : "a.m.";
+      return parts.minute === 0
+        ? hour12 + " " + meridiem
+        : hour12 + ":" + pad(parts.minute) + " " + meridiem;
+    }
+
+    function isSameCalendarDay(start, end) {
+      return start.year === end.year && start.month === end.month && start.day === end.day;
+    }
+
+    function formatWindowDisplay(start, end) {
+      if (!end) return "";
+      var endStamp = formatMonthDay(end) + " at " + formatTime(end) + " ET";
+      if (!start || isSameCalendarDay(start, end)) {
+        return endStamp;
+      }
+      return formatMonthDay(start) + " - " + endStamp;
+    }
+
+    function formatIsoDateTime(parts) {
       return (
         parts.year + "-" + pad(parts.month) + "-" + pad(parts.day) +
         "T" + pad(parts.hour) + ":" + pad(parts.minute) + ":" + pad(parts.second) +
@@ -402,6 +413,8 @@ csv_file: "none"
       var eventTitle = form.eventTitle.value.trim() || "ACC Annual Scientific Session";
       return {
         submissionType: submissionType,
+        windowStart: parseDateTimeLocal(form.startDateTime.value),
+        windowEnd: parseDateTimeLocal(form.endDateTime.value),
         deadline: parseDateTimeLocal(form.endDateTime.value),
         submissionLink: form.submissionLink.value.trim(),
         submissionLocation: form.submissionLocation.value.trim(),
@@ -419,16 +432,33 @@ csv_file: "none"
     }
 
     function buildTitleHtml(values) {
-      var deadlineDisplay = values.deadline ? formatDeadlineDisplay(values.deadline) : "";
-      var deadlineDateTime = values.deadline ? formatDeadlineDateTime(values.deadline) : "";
+      var start = values.windowStart;
+      var end = values.windowEnd || values.deadline;
+      var windowDisplay = formatWindowDisplay(start, end);
+      var timeHtml = "";
+
+      if (end && windowDisplay) {
+        if (start && !isSameCalendarDay(start, end)) {
+          timeHtml =
+            '<time datetime="' + escapeAttribute(formatIsoDateTime(start)) + '">' +
+            escapeHtml(formatMonthDay(start)) +
+            '</time> - <time datetime="' + escapeAttribute(formatIsoDateTime(end)) + '">' +
+            escapeHtml(formatMonthDay(end) + " at " + formatTime(end) + " ET") +
+            "</time>";
+        } else {
+          timeHtml =
+            '<time datetime="' + escapeAttribute(formatIsoDateTime(end)) + '">' +
+            escapeHtml(windowDisplay) +
+            "</time>";
+        }
+      }
+
       return (
         '<header>\n' +
-        '<h2 class="c_primary-n2 m_0">' + escapeHtml(values.submissionType) + "</h2>\n" +
+        '<h2 class="c_primary-n2 font_medium h3 lh_1 m_0 wrap_balance">' + escapeHtml(values.submissionType) + "</h2>\n" +
         '<p class="font-size_down-1 m-x_2 m-y_0">\n' +
-        '  <strong class="block">Submission Deadline:</strong>' +
-        (deadlineDateTime
-          ? '<time datetime="' + escapeAttribute(deadlineDateTime) + '">' + escapeHtml(deadlineDisplay) + "</time>"
-          : "") + "\n" +
+        '  <strong class="block">Submission Window:</strong>' +
+        timeHtml + "\n" +
         "</p>\n" +
         '</header>'
       );
@@ -509,21 +539,37 @@ csv_file: "none"
       );
     }
 
-    function buildFooterHtml(values) {
-      var links = [];
-      if (values.instructionLocation) {
-        links.push('<li><a class="link" href="' + escapeAttribute(values.instructionLocation) + '">Instructions</a></li>');
+    function buildFooterLeadIn(hasInstructions, hasPolicies) {
+      if (hasInstructions && hasPolicies) {
+        return "Submission instructions and policies are available for download.";
       }
-      if (values.policyLocation) {
-        links.push('<li><a class="link" href="' + escapeAttribute(values.policyLocation) + '">Policies</a></li>');
+      if (hasInstructions) {
+        return "Submission instructions are available for download.";
+      }
+      if (hasPolicies) {
+        return "Submission policies are available for download.";
+      }
+      return "";
+    }
+
+    function buildFooterHtml(values) {
+      var hasInstructions = Boolean(values.instructionLocation);
+      var hasPolicies = Boolean(values.policyLocation);
+      var links = [];
+      if (hasInstructions) {
+        links.push('<li><a class="link" href="' + escapeAttribute(values.instructionLocation) + '" target="_blank" rel="noopener noreferrer">Instructions</a></li>');
+      }
+      if (hasPolicies) {
+        links.push('<li><a class="link" href="' + escapeAttribute(values.policyLocation) + '" target="_blank" rel="noopener noreferrer">Policies</a></li>');
       }
 
       var parts = [
         '<footer class="m-t_auto bg_black-2 br_radius font-size_down lh_1 m-b_n2 m-x_n2 p_3 reading-typography text_center z_3" style="--custom-font-size-modifier: 1.25;">\n'
       ];
 
-      if (links.length) {
-        parts.push('    <p class="lh_1 opacity_7">Submission instructions and policies are available for download.  </p>\n');
+      var leadIn = buildFooterLeadIn(hasInstructions, hasPolicies);
+      if (leadIn) {
+        parts.push('    <p class="lh_1 opacity_7">' + leadIn + "  </p>\n");
         parts.push('    <ul class="justify_center text_center ul_inline-pipe z_3">\n');
         parts.push("      " + links.join("\n      ") + "\n");
         parts.push("    </ul>\n");
@@ -533,7 +579,7 @@ csv_file: "none"
         parts.push(
           '    <p class="lh_1 opacity_7">Questions may be emailed to <a class="link" href="mailto:' +
           escapeAttribute(values.customerSupportEmail) +
-          '">' +
+          '" target="_blank" rel="noopener noreferrer">' +
           escapeHtml(values.customerSupportEmail) +
           "</a>.</p>\n"
         );
