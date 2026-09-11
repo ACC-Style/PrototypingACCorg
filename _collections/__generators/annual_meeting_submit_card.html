@@ -127,13 +127,14 @@ csv_file: "none"
             <p class="c_black-7 font-size_down m-b_0 m-t_1">URL or Sitecore media ID, e.g. <code>{8EE5EF9E-ADB7-4031-A80F-E7067598F82B}</code>. Media IDs convert to <code>https://www.acc.org/~/media/{id}.ashx</code>.</p>
           </div>
           <div>
-            <label class="font_bold font-size_down" for="customerSupportEmail">Customer support email</label>
+            <label class="font_bold font-size_down" for="helpContact">Help (email, FAQ URL, or blank)</label>
             <input
-              id="customerSupportEmail"
-              name="customerSupportEmail"
-              type="email"
+              id="helpContact"
+              name="helpContact"
+              type="text"
               class="br_1 br_black-3 br_round br_solid m-t_1 p_3 w_100"
               value="awards@acc.org" />
+            <p class="c_black-7 font-size_down m-b_0 m-t_1">Email keeps the questions line. A URL becomes “For Help Read the FAQs.” Leave blank to hide the line.</p>
           </div>
         </fieldset>
 
@@ -391,6 +392,22 @@ csv_file: "none"
       return slug || "submission";
     }
 
+    function resolveHelpContact(value) {
+      var trimmed = String(value || "").trim();
+      if (!trimmed) return null;
+      if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed)) {
+        return { type: "email", href: "mailto:" + trimmed, label: trimmed };
+      }
+      if (/^(https?:\/\/|\/\/|\/|~\/)/i.test(trimmed)) {
+        return { type: "faq", href: trimmed };
+      }
+      var guid = trimmed.replace(/[{}]/g, "").replace(/-/g, "").trim();
+      if (/^[0-9a-f]{32}$/i.test(guid)) {
+        return { type: "faq", href: "~/link.aspx?_id=" + guid + "&_z=z" };
+      }
+      return { type: "faq", href: trimmed };
+    }
+
     function resolveMediaUrl(value) {
       var trimmed = String(value || "").trim();
       if (!trimmed) return "";
@@ -420,7 +437,7 @@ csv_file: "none"
         submissionLocation: form.submissionLocation.value.trim(),
         instructionLocation: resolveMediaUrl(form.instructionLocation.value),
         policyLocation: resolveMediaUrl(form.policyLocation.value),
-        customerSupportEmail: form.customerSupportEmail.value.trim(),
+        helpContact: resolveHelpContact(form.helpContact.value),
         eventTitle: eventTitle,
         title: "Submit Science: " + submissionType + " for " + eventTitle,
         start: toDataDateTime(form.startDateTime.value),
@@ -575,14 +592,22 @@ csv_file: "none"
         parts.push("    </ul>\n");
       }
 
-      if (values.customerSupportEmail) {
-        parts.push(
-          '    <p class="lh_1 opacity_7">Questions may be emailed to <a class="link" href="mailto:' +
-          escapeAttribute(values.customerSupportEmail) +
-          '" target="_blank" rel="noopener noreferrer">' +
-          escapeHtml(values.customerSupportEmail) +
-          "</a>.</p>\n"
-        );
+      if (values.helpContact) {
+        if (values.helpContact.type === "faq") {
+          parts.push(
+            '    <p class="lh_1 opacity_7">For Help Read the <a class="link" href="' +
+            escapeAttribute(values.helpContact.href) +
+            '" target="_blank" rel="noopener noreferrer">FAQs</a>.</p>\n'
+          );
+        } else {
+          parts.push(
+            '    <p class="lh_1 opacity_7">Questions may be emailed to <a class="link" href="' +
+            escapeAttribute(values.helpContact.href) +
+            '" target="_blank" rel="noopener noreferrer">' +
+            escapeHtml(values.helpContact.label) +
+            "</a>.</p>\n"
+          );
+        }
       }
 
       parts.push("  </footer>");
