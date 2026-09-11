@@ -580,11 +580,15 @@ csv_file: "none"
         links.push('<li><a class="link" href="' + escapeAttribute(values.policyLocation) + '" target="_blank" rel="noopener noreferrer">Policies</a></li>');
       }
 
+      var leadIn = buildFooterLeadIn(hasInstructions, hasPolicies);
+      if (!leadIn && !values.helpContact) {
+        return "";
+      }
+
       var parts = [
         '<footer class="m-t_auto bg_black-2 br_radius font-size_down lh_1 m-b_n2 m-x_n2 p_3 reading-typography text_center z_3" style="--custom-font-size-modifier: 1.25;">\n'
       ];
 
-      var leadIn = buildFooterLeadIn(hasInstructions, hasPolicies);
       if (leadIn) {
         parts.push('    <p class="lh_1 opacity_7">' + leadIn + "  </p>\n");
         parts.push('    <ul class="justify_center text_center ul_inline-pipe z_3">\n');
