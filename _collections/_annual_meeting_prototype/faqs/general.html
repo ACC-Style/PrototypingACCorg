@@ -1,0 +1,41 @@
+---
+layout: annual/fullscreen
+name: "General FAQs"
+position: "FAQs > General"
+notes: "Attendee FAQ spoke — add questions under each group in items.csv."
+permalink: /AnnualMeeting/faqs/general/
+---
+{%- assign all_spokes = site.data.annual_meeting.faqs.spokes
+  | where: "status", "ready"
+  | sort: "spoke_sort" -%}
+{%- assign spoke = all_spokes | where: "spoke_id", "general" | first -%}
+
+<article class="reading-typography" data-role="faq-page" data-spoke="{{ spoke.spoke_id }}">
+  <header class="m-b_4">
+    <p class="font-size_down c_black-7 m-b_2">
+      <a class="link" href="{{ '/AnnualMeeting/faqs/' | relative_url }}">FAQs</a>
+      <span aria-hidden="true"> / </span>
+      {{ spoke.spoke_label }}
+    </p>
+    <h1 class="c_primary font_display m-b_2 m-t_0">{{ spoke.seo_h1 }}</h1>
+  </header>
+
+  {%- include_relative partials/intro-band.html spoke=spoke all_spokes=all_spokes -%}
+
+  <div class="grid columns_1 columns_4:lg gap_4" data-role="faq-main">
+    <aside class="col-start_1 col-end_2:lg">
+      {%- include_relative partials/jump-nav.html spoke=spoke -%}
+    </aside>
+    <div class="col-start_2:lg col-end_end">
+      {%- include_relative partials/spoke-body.html spoke=spoke -%}
+    </div>
+  </div>
+
+  <footer class="m-t_5 p-t_4 br-t_1 br_black-3 br_solid" data-role="faq-page-meta">
+    <p class="font-size_down c_black-7 m_0">
+      American College of Cardiology · Scientific Session
+      · Updated <time datetime="{{ spoke.date_modified }}">{{ spoke.date_modified }}</time>
+    </p>
+  </footer>
+</article>
+{%- include annual/faq-runtime.html -%}

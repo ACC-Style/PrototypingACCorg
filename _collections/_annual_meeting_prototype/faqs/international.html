@@ -1,14 +1,14 @@
 ---
 layout: annual/fullscreen
-name: "Generic FAQs"
-position: "FAQs > Generic"
-notes: "Empty starter spoke — add groups/items in CSV as you build content."
-permalink: /AnnualMeeting/faqs/generic/
+name: "International FAQs"
+position: "FAQs > International"
+notes: "International attendee FAQ spoke — add questions under visas, invitation-letters, and delays-denials in items.csv."
+permalink: /AnnualMeeting/faqs/international/
 ---
 {%- assign all_spokes = site.data.annual_meeting.faqs.spokes
   | where: "status", "ready"
   | sort: "spoke_sort" -%}
-{%- assign spoke = all_spokes | where: "spoke_id", "generic" | first -%}
+{%- assign spoke = all_spokes | where: "spoke_id", "international" | first -%}
 
 <article class="reading-typography" data-role="faq-page" data-spoke="{{ spoke.spoke_id }}">
   <header class="m-b_4">

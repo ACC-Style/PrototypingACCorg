@@ -16,16 +16,19 @@ lbct,fees,Fees,1,,ready
 lbct,eligibility,Eligibility & Embargo,2,,ready
 lbct,deadlines,Deadlines & Changes Before Close,3,,ready
 lbct,what-where,What & Where to Submit,4,,ready
-lbct,authors-institutions,"Authors, institutions & Disclosures",5,,ready
+lbct,authors-institutions,"Authors, Institutions & Disclosures",5,,ready
 lbct,technical,Technical & Completion,6,,ready
 lbct,after-deadline,After the Deadline,7,,ready
 lbct,acceptance,"Acceptance, Registration & Publication",8,,ready
-generic,registration-fees,Registration & Fees,1,"Who can register, what each rate includes, and how member pricing works.",ready
-generic,changes-cancellations,"Changes, Cancellations & Refunds",2,"Substitutions, transfers, refund windows, and how to update a registration.",ready
-generic,hotels-housing,Hotels & Housing,3,"The official hotel block, how to book, and how to spot unauthorized housing vendors.",ready
-generic,travel-visa,"Travel, Visa & Transportation",4,"Invitation letters, visa timing, and getting to the venue.",ready
-generic,program-sessions,Program & Sessions,5,"Session types, the online planner, and building a personal schedule.",ready
-generic,credit-certificates,Credit & Certificates,6,"Claiming CME and MOC, evaluation deadlines, and where to find your transcript.",ready
-generic,onsite,Onsite Logistics,7,"Badge pickup, check-in hours, the mobile app, and the exhibit hall.",ready
-generic,virtual-on-demand,Virtual & On Demand Access,8,"Live streaming, how long recordings stay available, and on-demand upgrades.",ready
-generic,accessibility-childcare,Accessibility & Childcare,9,"Accommodation requests, accessible services, and family or childcare options.",ready
+general,registration-fees,Registration & Fees,1,"Who can register, what each rate includes, and how member pricing works.",ready
+general,changes-cancellations,"Changes, Cancellations & Refunds",2,"Substitutions, transfers, refund windows, and how to update a registration.",ready
+general,hotels-housing,Hotels & Housing,3,"The official hotel block, how to book, and how to spot unauthorized housing vendors.",ready
+general,travel-transportation,Travel & Transportation,4,"Getting to the venue, airport options, and official shuttles.",ready
+general,program-sessions,Program & Sessions,5,"Session types, the online planner, and building a personal schedule.",ready
+general,credit-certificates,Credit & Certificates,6,"Claiming CME and MOC, evaluation deadlines, and where to find your transcript.",ready
+general,onsite,Onsite Logistics,7,"Badge pickup, check-in hours, the mobile app, and the exhibit hall.",ready
+general,virtual-on-demand,Virtual & On Demand Access,8,"Live streaming, how long recordings stay available, and on-demand upgrades.",ready
+general,accessibility-childcare,Accessibility & Childcare,9,"Accommodation requests, accessible services, and family or childcare options.",ready
+international,visas,Visas,1,"When to apply, what to bring, and what ACC can and cannot do with a U.S. visa.",ready
+international,invitation-letters,Invitation Letters,2,"Personalized invitation letters and registration confirmation for visa interviews.",ready
+international,delays-denials,"Delays, Denials & Refunds",3,"Pending applications, denials, and registration refunds if a visa is denied.",ready

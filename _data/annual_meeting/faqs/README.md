@@ -16,7 +16,7 @@ The generator (`_collections/__generators/Annual-Meeting-FAQs.html`) exposes sep
 - SEO title: ACC Annual Scientific Session FAQs
 - H1: ACC Annual Scientific Session FAQs
 - Canonical path: `/AnnualMeeting/faqs/`
-- Intro: Find answers by your role. Choose Faculty, Abstracts & Cases, or Late-Breaking Clinical Trials.
+- Intro: Find answers by your role. Choose General, International, Faculty, Abstracts & Cases, or Late-Breaking Clinical Trials.
 
 ## Editorial files (Jekyll `_data`)
 Edit CSV files in Excel and export each worksheet as **CSV UTF-8** (not XLSX). Do not reorder or rename headers.
