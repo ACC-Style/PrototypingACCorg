@@ -1,0 +1,212 @@
+---
+layout: arches_blank
+title: Assisted living near Vienna under $8,000
+name: Assisted living near Vienna under $8,000
+notes: Single-occupancy research list rendered from vienna_va_assisted_living_under_8000.csv. Prices are published starting figures.
+---
+{%- assign communities = site.data.vienna_va_assisted_living_under_8000 -%}
+{%- assign count = communities | size -%}
+{%- assign closest = 999 -%}
+{%- assign farthest = 0 -%}
+{%- assign closest_name = "" -%}
+{%- assign five_star = 0 -%}
+{%- for row in communities -%}
+  {%- assign miles = row["Est. driving distance"] | plus: 0 -%}
+  {%- if miles < closest -%}
+    {%- assign closest = miles -%}
+    {%- assign closest_name = row["Location name"] -%}
+  {%- endif -%}
+  {%- if miles > farthest -%}
+    {%- assign farthest = miles -%}
+  {%- endif -%}
+  {%- if row["Average star rating"] == "5.0" -%}
+    {%- assign five_star = five_star | plus: 1 -%}
+  {%- endif -%}
+{%- endfor -%}
+
+<div class="bg_shade-5 min-h_100" data-component="CommunityList">
+  <header class="bg_white br-b_1 br_black-3 br_solid">
+    <div class="m_auto max-w_75 p-x_4 p-y_5">
+      <p class="c_primary font_bold font_n1 m_0">Vienna, Virginia · single occupancy</p>
+      <h1 class="font_display font_5 lh_1 m-b_3 m-t_2">Assisted living under $8,000 a month</h1>
+      <p class="m_0 max-w_45">{{ count }} communities within about an hour’s drive. Amounts are published starting rates for one person. Confirm the all-in total, including care and medication, before you decide.</p>
+    </div>
+  </header>
+
+  <div class="m_auto max-w_75 p-x_4 p-b_5 p-t_4">
+    <div class="gap_3 grid columns_2 columns_4:md m-b_4">
+      <div class="bg_white br_1 br_black-3 br_radius br_solid p_4">
+        <p class="c_shade-n2 font_n1 m_0">Communities</p>
+        <p class="font_4 font_display lh_1 m_0">{{ count }}</p>
+      </div>
+      <div class="bg_white br_1 br_black-3 br_radius br_solid p_4">
+        <p class="c_shade-n2 font_n1 m_0">Drive from Vienna</p>
+        <p class="font_4 font_display lh_1 m_0">{{ closest }}–{{ farthest }} mi</p>
+        <p class="c_shade-n2 font_n1 m_0">Closest is {{ closest_name }}</p>
+      </div>
+      <div class="bg_white br_1 br_black-3 br_radius br_solid p_4">
+        <p class="c_shade-n2 font_n1 m_0">Rated 5.0</p>
+        <p class="font_4 font_display lh_1 m_0">{{ five_star }}</p>
+        <p class="c_shade-n2 font_n1 m_0">Places with no public rating stay in the list</p>
+      </div>
+      <div class="bg_white br_1 br_black-3 br_radius br_solid p_4">
+        <p class="c_shade-n2 font_n1 m_0">Monthly cap</p>
+        <p class="font_4 font_display lh_1 m_0">$8,000</p>
+        <p class="c_shade-n2 font_n1 m_0">Base rates only — care fees can add more</p>
+      </div>
+    </div>
+
+    <div class="bg_shade-5 p-b_3 p-t_3 sticky t_0 z_2">
+      <div class="gap_3 grid columns_1 columns_2:md">
+        <label>
+          <span class="block font_bold font_n1 m-b_2">Search</span>
+          <input data-role="search" type="search" class="bg_white br_1 br_black-3 br_radius br_solid font_copy p_3 w_100" placeholder="Name, city, or street">
+        </label>
+        <label>
+          <span class="block font_bold font_n1 m-b_2">Sort</span>
+          <select data-role="sort" class="bg_white br_1 br_black-3 br_radius br_solid font_copy p_3 w_100">
+            <option value="distance">Nearest</option>
+            <option value="rating">Highest rated</option>
+            <option value="name">Name</option>
+          </select>
+        </label>
+      </div>
+      <div class="flex flex_wrap gap_2 m-t_3" role="group" aria-label="Limit by driving distance">
+        <button type="button" class="btn btn-primary btn-sm" data-role="distance" data-max="all" aria-pressed="true">Any distance</button>
+        <button type="button" class="btn btn-shade btn-sm" data-role="distance" data-max="15" aria-pressed="false">Within 15 mi</button>
+        <button type="button" class="btn btn-shade btn-sm" data-role="distance" data-max="30" aria-pressed="false">Within 30 mi</button>
+        <button type="button" class="btn btn-shade btn-sm" data-role="distance" data-max="45" aria-pressed="false">Within 45 mi</button>
+      </div>
+      <p class="font_bold m-b_0 m-t_3" data-role="count" aria-live="polite">{{ count }} communities</p>
+    </div>
+
+    <p class="bg_white br_1 br_black-3 br_radius br_solid p_4" data-role="empty" hidden>No communities match that search. Clear the search or widen the distance.</p>
+
+    <div class="flex flex_column gap_3" data-role="results">
+      {%- for row in communities -%}
+        {%- assign name = row["Location name"] -%}
+        {%- assign address = row["Google address"] -%}
+        {%- assign rating = row["Average star rating"] -%}
+        {%- assign link = row["Web link"] -%}
+        {%- assign price = row["Price range (single occupancy)"] -%}
+        {%- assign miles = row["Est. driving distance"] -%}
+        {%- assign parts = address | split: ", " -%}
+        {%- assign city = parts[1] -%}
+        {%- assign state_zip = parts | last -%}
+        {%- assign state = state_zip | split: " " | first -%}
+        {%- assign rating_value = rating -%}
+        {%- if rating == "N/A" -%}
+          {%- assign rating_value = "0" -%}
+        {%- endif -%}
+        {%- capture search_blob -%}{{ name }} {{ city }} {{ state }} {{ address }} {{ price }}{%- endcapture -%}
+        <article
+          class="bg_white br_1 br_black-3 br_radius br_solid flex flex_column flex_row:md gap_4 items_start p_4 shadow_bevel-light"
+          data-component="CommunityCard"
+          data-miles="{{ miles | escape }}"
+          data-rating="{{ rating_value | escape }}"
+          data-name="{{ name | escape }}"
+          data-search="{{ search_blob | downcase | escape }}">
+          <div class="flex_none w_100 w_15:md">
+            <p class="c_primary font_4 font_display lh_1 m_0">{{ miles }} <span class="font_1">mi</span></p>
+            <p class="c_shade-n2 font_n1 m_0">{{ city }}, {{ state }}</p>
+          </div>
+          <div class="flex_auto w_100">
+            <h2 class="font_2 font_display m_0">{{ name }}</h2>
+            <p class="font_n1 m-b_3 m-t_2">
+              <a href="https://www.google.com/maps/search/?api=1&amp;query={{ address | url_encode }}">{{ address }}</a>
+            </p>
+            <div class="reading-typography">
+              <p class="m_0">{{ price }}</p>
+            </div>
+          </div>
+          <div class="flex flex_row flex_column:md flex_none gap_3 items_center items_end:md justify_between w_100 w_auto:md">
+            {%- if rating == "N/A" -%}
+              <p class="c_shade-n1 font_n1 m_0">No public rating</p>
+            {%- else -%}
+              <p class="m_0">
+                <i class="far fa-star c_accent" aria-hidden="true"></i>
+                <span class="font_bold">{{ rating }}</span>
+                <span class="c_shade-n2 font_n1">stars</span>
+              </p>
+            {%- endif -%}
+            <a class="btn btn-shade btn-sm" href="{{ link }}" target="_blank" rel="noopener noreferrer">Community site</a>
+          </div>
+        </article>
+      {%- endfor -%}
+    </div>
+
+    <p class="c_shade-n2 font_n1 m-t_4 max-w_45">Miles are estimated driving distance from Vienna. Price notes are copied from the research file and describe published single-occupancy starting rates. Many exclude medication management or a higher care level, so an all-in quote can land above $8,000.</p>
+  </div>
+</div>
+
+<script>
+(function () {
+  var root = document.querySelector('[data-component="CommunityList"]');
+  if (!root) return;
+
+  var list = root.querySelector('[data-role="results"]');
+  var cards = Array.prototype.slice.call(list.querySelectorAll('[data-component="CommunityCard"]'));
+  var empty = root.querySelector('[data-role="empty"]');
+  var count = root.querySelector('[data-role="count"]');
+  var search = root.querySelector('[data-role="search"]');
+  var sort = root.querySelector('[data-role="sort"]');
+  var filters = root.querySelectorAll('[data-role="distance"]');
+  var maxMiles = Infinity;
+
+  function apply() {
+    var query = (search.value || "").trim().toLowerCase();
+    var mode = sort.value;
+    var ordered = cards.slice().sort(function (a, b) {
+      if (mode === "name") {
+        return a.getAttribute("data-name").localeCompare(b.getAttribute("data-name"));
+      }
+      if (mode === "rating") {
+        var ratingA = parseFloat(a.getAttribute("data-rating")) || 0;
+        var ratingB = parseFloat(b.getAttribute("data-rating")) || 0;
+        if (ratingB !== ratingA) return ratingB - ratingA;
+      }
+      var milesA = parseFloat(a.getAttribute("data-miles")) || 0;
+      var milesB = parseFloat(b.getAttribute("data-miles")) || 0;
+      if (milesA !== milesB) return milesA - milesB;
+      return a.getAttribute("data-name").localeCompare(b.getAttribute("data-name"));
+    });
+
+    var shown = 0;
+    ordered.forEach(function (card) {
+      list.appendChild(card);
+      var miles = parseFloat(card.getAttribute("data-miles")) || 0;
+      var haystack = card.getAttribute("data-search") || "";
+      var match = miles <= maxMiles && (!query || haystack.indexOf(query) !== -1);
+      card.hidden = !match;
+      if (match) shown += 1;
+    });
+
+    empty.hidden = shown !== 0;
+    if (shown === cards.length) {
+      count.textContent = cards.length + " communities";
+    } else if (shown === 1) {
+      count.textContent = "1 of " + cards.length + " communities";
+    } else if (shown === 0) {
+      count.textContent = "No matches";
+    } else {
+      count.textContent = shown + " of " + cards.length + " communities";
+    }
+  }
+
+  search.addEventListener("input", apply);
+  sort.addEventListener("change", apply);
+  Array.prototype.forEach.call(filters, function (button) {
+    button.addEventListener("click", function () {
+      Array.prototype.forEach.call(filters, function (other) {
+        var selected = other === button;
+        other.setAttribute("aria-pressed", selected ? "true" : "false");
+        other.classList.toggle("btn-primary", selected);
+        other.classList.toggle("btn-shade", !selected);
+      });
+      var raw = button.getAttribute("data-max");
+      maxMiles = raw === "all" ? Infinity : parseFloat(raw);
+      apply();
+    });
+  });
+})();
+</script>
