@@ -77,7 +77,7 @@ csv_file: "none"
         <code>href</code> or <code>src</code> for CMS paste.
       </p>
       <ul class="font-size_down marker_primary m-b_0">
-        <li><strong>Page</strong> → <code>-/link.aspx?_id={id}&amp;_z=z</code></li>
+        <li><strong>Page</strong> → <code>~/link.aspx?_id={id}&amp;_z=z</code></li>
         <li><strong>Media</strong> → <code>-/media/{id}.ashx</code></li>
         <li><strong>Image</strong> → same media URL, used as <code>src</code></li>
       </ul>
@@ -181,9 +181,9 @@ csv_file: "none"
       var mediaUrl = "-/media/" + guid + ".ashx";
       if (type === "page") {
         return {
-          cms: "-/link.aspx?_id=" + guid + "&_z=z",
-          html: "-/link.aspx?_id=" + guid + "&amp;_z=z",
-          preview: "https://www.acc.org/link.aspx?_id=" + guid + "&_z=z"
+          cms: "~/link.aspx?_id=" + guid + "&_z=z",
+          html: "~/link.aspx?_id=" + guid + "&amp;_z=z",
+          preview: "https://www.acc.org/~/link.aspx?_id=" + guid + "&_z=z"
         };
       }
       return {
@@ -223,7 +223,7 @@ csv_file: "none"
       }
       if (type === "page") {
         previewArea.innerHTML =
-          '<p class="c_black-7 font-size_down m-t_0">CMS href uses <code>-/link.aspx</code>. The preview link hits acc.org so you can confirm the item.</p>' +
+          '<p class="c_black-7 font-size_down m-t_0">CMS href uses <code>~/link.aspx</code>. The preview link hits acc.org so you can confirm the item.</p>' +
           '<a href="' + escapeHtml(urls.preview) + '" target="_blank" rel="noopener">' +
           escapeHtml(label) +
           '<i class="far fa-external-link p-l_2" aria-hidden="true"></i></a>';
